@@ -40,7 +40,6 @@ Server::~Server()
 static struct pollfd	setupPollFd(int client)
 {
 	struct pollfd s;
-	// s = (struct pollfd){0};
 	s.fd = client;
 	s.events = POLLIN;
 	s.revents = 0;
@@ -50,7 +49,6 @@ static struct pollfd	setupPollFd(int client)
 //stampa finche non si blocca
 void	Server::addSocket()
 {
-	std::cout << "server fd: " << this->_server_fd << ", addr[0].fd: " << this->_addrs[0].fd << std::endl;
 	int client = accept(this->_server_fd, NULL, NULL);
 	if (client == -1)
 		throw std::runtime_error("\033[31mconnessione non accettata.\n\033[0m");
@@ -76,56 +74,20 @@ std::string	create_html(std::string body)
 	html += std::to_string(body.length() + 1);
 	html += "\r\n\r\n";
 	html += body + "\n";
-	// std::cout << html << std::endl;
 	return (html + "\n");
 }
 
-/*
-		for (int i = 1; i <= 5; i++)
-		{
-			std::cout << "revents Fd[" << i << "]:" << fds[i].revents << std::endl;
-			if (fds[i].fd != -1 && (fds[i].revents & (POLLIN) || \
-			(fds[i].revents & (POLLOUT)) || (fds[i].revents & (POLLERR))))
-			{
-				std::cout << "Entrato:\t" << fds[i].fd << std::endl;
-				char buffer[1024];
-				int bytes = read(fds[i].fd, buffer, sizeof(buffer));
-				if (bytes <= 0)
-				{
-					printf("Client %d disconnesso\n", fds[i].fd);
-					close(fds[i].fd);
-					fds[i].fd = -1;
-				}
-				else
-				{
-					// Rispondo
-					std::cout << " ----Sent message----" << std::endl;
-					std::string	html = create_html("mega gay");
-					send(fds[i].fd, html.c_str(), html.length(), 0);
-					close(fds[i].fd);
-					fds[i].fd = -1;
-				}
-			}
-*/
 void	Server::checkForConnection() //checkare tutti i socket per vedere se c'e stata una connessione di un client
 {
-	// questa cosa del read va provata da browser facendo una richiesta e poi chiudendo la pagina
-	//stampiamo quando un client viene disconnesso e vediamo se il server la stampa
-	//1024 credo sia per la struttura dell'http che richiede un minimo di caratteri (ipotesi)
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
 	{
-		// std::cout << "ARRIVA 4" << std::endl;
-		if ((*it).fd != -1 && ((*it).revents & (POLLIN) || ((*it).revents & (POLLOUT)))) //POLLERR mi sa va gestito a parte, per ora non mettia
-		{
-			//&data[i] == it
-			std::cout << "Entrato:\t" << (*it).fd << std::endl;
+		if ((*it).fd != -1 && ((*it).revents & (POLLIN) || ((*it).revents & (POLLOUT)))) 		{
 			char buffer[256];
 			int bytes = read((*it).fd, buffer, sizeof(buffer));
 			if (bytes <= 0)
 			{
 				printf("Client %d disconnesso\n", (*it).fd);
 				close((*it).fd); //si, va pullato
-				// this->_server_fd
 				(*it).fd = -1;
 			}
 			else
@@ -140,7 +102,3 @@ void	Server::checkForConnection() //checkare tutti i socket per vedere se c'e st
 		}
 	}
 }
-//ho il terminale buggato cmq mi e rimasto con i printf sullo schermo
-//raga io vado a casa
-//se ci siete ancora mi ricollego
-//a despues

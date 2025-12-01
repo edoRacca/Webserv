@@ -21,11 +21,11 @@
 #  define MAX_CONNECTION 420
 # endif
 
-class Server
+class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 {
 	private:
-		std::vector<struct pollfd> _addrs;
-		int	_server_fd;
+		std::vector<struct pollfd> _addrs; //pollfd per poll(), una struct per ogni ip:porta in ascolto
+		int	_server_fd; //con piu server, se la classe Server rimane chiamata da 1 oggetto solo e inutile
 
 	public:
 		Server();

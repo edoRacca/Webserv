@@ -20,9 +20,6 @@ static void	print_fd(struct pollfd *p, int size)
 	++count;
 }
 
-
-
-
 int	times = 10;
 
 void	ctrl_c(int sig)
@@ -44,7 +41,6 @@ int main() //da aggiungere ac e av
 		while (times--)
 		{
 			ready = poll(server.getAddrs(), server.getAddrSize(), -1);
-			print_fd(server.getAddrs(), server.getAddrSize());
 			if (ready < 0)
 				throw std::runtime_error("\033[31mPoll ha fallito.\n\033[0m");
 			if (server.getAddrs()[0].revents & POLLIN)
