@@ -10,8 +10,8 @@ void	print_addr(struct sockaddr_in &p)
 {
 	std::cout << "print of " << &p << ":\n";
 	std::cout << "sin_addr\t" << p.sin_addr.s_addr << "\n";
-	std::cout << "sin_port\t" << p.sin_port << std::endl;
-	std::cout << "sin_family\t" << p.sin_family << std::endl;
+	std::cout << "sin_port\t" << p.sin_port << " ossia: " << LISTENING_PORT << std::endl;
+	std::cout << "sin_family\t" << p.sin_family << std::endl << std::endl;
 }
 
 void	print_client(struct pollfd *p)
@@ -20,7 +20,7 @@ void	print_client(struct pollfd *p)
 	{
 		std::cout << i << std::endl;
 		std::cout << "fd:\t" << p[i].fd << "\nevents:\t" << p[i].events;
-		std::cout << "revents:\t" << p[i].revents << std::endl;
+		std::cout << "revents:\t" << p[i].revents << std::endl << std::endl;
 	}
 }
 
@@ -90,66 +90,70 @@ int main()
 	struct pollfd fds[6];
 	for (int i = 0; i < 6; i++)
 	{
-		fds[i].revents = 0; //il grandissimo sasha --> esatto
+		// fds[i].revents = 0;
 		fds[i].fd = -1;
 		fds[i].events = POLLIN;
 	}
 	fds[0].fd = server_fd;
 	std::cout << "Server listening on port: " << LISTENING_PORT << std::endl;
-	// std::vector<int> client;
-
 	while (1)
 	{
+		//La funzione poll aggiorna tutti gli eventi all'interno delle strutture 
+		// relative ad ogni socket, andando a modificare le variabili della 
+		// struttura per definire se sono stati eseguiti eventi o no
 		int ready = poll(fds, 6, -1);
 		if (ready < 0)
-            return (error("poll"));
+			return (error("poll"));
 		if (fds[0].revents & POLLIN)
 		{
-			fds[0].revents = 0;
-			// if (client_fd > 2)
-			// 	close(client_fd);
 			client_fd = accept(server_fd, NULL, NULL);
 			if (client_fd == -1)
 				return (error("il client è gay"));
 			std::cout << "connessione trovata, client: " << client_fd << std::endl;
 			for (int i = 1; i <= 5; i++)
-            {
-                if (fds[i].fd == -1)// il primo libero che trova lo assegna
-                {
-                    fds[i].fd = client_fd;
-                    fds[i].events = POLLIN;
-					std::cout << "fd client in array: " << fds[i].fd << std::endl;
-                    break;
-                }
-            }
-			for (int i = 1; i <= 5; i++)
 			{
-				if (fds[i].fd != -1 && (fds[i].revents & POLLIN))
+				if (fds[i].fd == -1)// il primo libero che trova lo assegna
 				{
-					std::cout << "Entrato:\t" << fds[i].fd << std::endl;
-					char buffer[1024];
-					int bytes = read(fds[i].fd, buffer, sizeof(buffer));
-					if (bytes <= 0)
-					{
-						printf("Client %d disconnesso\n", fds[i].fd);
-						close(fds[i].fd);
-						fds[i].fd = -1;
-					}
-					else
-					{
-						// Rispondo
-						std::cout << " ----Sent message----" << std::endl;
-						std::string	html = create_html("mega gay");
-						send(fds[i].fd, html.c_str(), html.length(), 0);
-					}
+					fds[i].fd = client_fd;
+					fds[i].events = POLLIN;
+					std::cout << "fd client in array: " << fds[i].fd << std::endl;
+					break;
 				}
-        	}
-			// send(client_fd, html.c_str(), html.length(), 0);
+			}
+		}
+		for (int i = 1; i <= 5; i++)
+		{
+			std::cout << "revents Fd[" << i << "]:" << fds[i].revents << std::endl;
+			if (fds[i].fd != -1 && (fds[i].revents & (POLLIN) || \
+			(fds[i].revents & (POLLOUT)) || (fds[i].revents & (POLLERR))))
+			{
+				std::cout << "Entrato:\t" << fds[i].fd << std::endl;
+				char buffer[1024];
+				int bytes = read(fds[i].fd, buffer, sizeof(buffer));
+				if (bytes <= 0)
+				{
+					printf("Client %d disconnesso\n", fds[i].fd);
+					close(fds[i].fd);
+					fds[i].fd = -1;
+				}
+				else
+				{
+					// Rispondo
+					std::cout << " ----Sent message----" << std::endl;
+					std::string	html = create_html("mega gay");
+					send(fds[i].fd, html.c_str(), html.length(), 0);
+					close(fds[i].fd);
+					fds[i].fd = -1;
+				}
+			}
 			// std::cout << "connessione trovata, client: " << client_fd << std::endl;
+			// send(client_fd, html.c_str(), html.length(), 0);
+			// close(fds[i].fd);
+			// std::cout << "Client chiuso: " << fds[i].fd << std::endl;
+			// fds[i].fd = -1;
 			// break ;
 		}
 	}
-	// sleep(10);
 	spread_democracy();
 }
 
