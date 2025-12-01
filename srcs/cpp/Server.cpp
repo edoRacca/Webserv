@@ -56,6 +56,6 @@ void			Server::checkForConnection() //checkare tutti i socket per vedere se c'e 
 {
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
 	{
-		if ()
+		// if ()
 	}
 }
