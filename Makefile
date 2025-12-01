@@ -1,7 +1,7 @@
 NAME = webserv
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS = 
 
 SRCS = $(addprefix srcs/, main.cpp cpp/Server.cpp)

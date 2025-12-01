@@ -5,26 +5,29 @@ static struct pollfd	setupPollFd(int client);
 
 Server::Server()
 {
+	struct sockaddr_in	address;
+	struct pollfd		srv;
+
 	std::cout << "\033[32mserver constructor!\033[0m" << std::endl;
 	// DBG_MSG("Server constructor called");
 	this->_server_fd = socket(AF_INET, SOCK_STREAM, 0);
-	struct sockaddr_in	address;
-	struct pollfd		srv;
 	if (this->_server_fd < 0)
-		throw std::exception();
+		throw std::runtime_error("\033[31mSocket ha fallito.\033[0m");
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY;
 	address.sin_port = htons(8080); //LINK: da cambiare e settare in base al config file
 	if (bind(_server_fd, (struct sockaddr*)&address, sizeof(address)) != 0)
-		throw std::exception();
+		throw std::runtime_error("\033[31mBind ha fallito.\033[0m");
 	srv.fd = _server_fd;
 	srv.events = POLLIN;
+	srv.revents = 0;
 	this->_addrs.push_back(srv);
 	std::cout << "\033[32mTutto bene col costruttore!\033[0m" << std::endl;
 }
 
 Server::~Server()
 {
+	std::cout << "\033[32mserver destructor!\033[0m" << std::endl;
 	if (this->_server_fd != -1)
 		close(this->_server_fd);
 	for (size_t i = 0; i < this->_addrs.size(); i++)
@@ -38,6 +41,7 @@ static struct pollfd	setupPollFd(int client)
 	// s = (struct pollfd){0};
 	s.fd = client;
 	s.events = POLLIN;
+	s.revents = 0;
 	return (s);
 }
 
@@ -47,8 +51,7 @@ void	Server::addSocket()
 	int client = accept(this->_addrs[0].fd, NULL, NULL);
 	if (client == -1)
 	{
-		std::cout << "\033[31mconnessione non accettata.\n\033[0m";
-		throw std::exception();
+		throw std::runtime_error("\033[31mconnessione non accettata.\n\033[0m");
 	}
 	std::cout << "connessione trovata, client: " << client << std::endl;
 	this->_addrs.push_back(setupPollFd(client));
