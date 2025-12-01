@@ -4,7 +4,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror
 CPPFLAGS = 
 
-SRCS = $(addprefix "srcs/", main.cpp, cpp/Server.cpp)
+SRCS = $(addprefix srcs/, main.cpp cpp/Server.cpp)
 
 all: $(NAME)
 

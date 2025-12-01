@@ -21,6 +21,7 @@ class Server
 {
 	private:
 		std::vector<struct pollfd> _addrs;
+		int	_server_fd;
 
 	public:
 		Server();
