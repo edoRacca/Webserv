@@ -46,11 +46,9 @@ int main() //da aggiungere ac e av
 			ready = poll(server.getAddrs(), server.getAddrSize(), -1);
 			print_fd(server.getAddrs(), server.getAddrSize());
 			if (ready < 0)
-				std::cout << "Mannaggia alla madonna poll non va\n";
-			if (ready > 0)
-				std::cout << "ready: " << ready << std::endl;
-			if (server.getAddrs()[0].revents & POLLIN)//FIXME - revents torna sempre 16 (=POLLHUP).
-			{											// dovrebbe tornare POLLIN (=1)
+				throw std::runtime_error("\033[31mPoll ha fallito.\n\033[0m");
+			if (server.getAddrs()[0].revents & POLLIN)
+			{
 				server.addSocket(); // aggiunge al vector il nuovo socket del client
 			}
 			server.checkForConnection();
