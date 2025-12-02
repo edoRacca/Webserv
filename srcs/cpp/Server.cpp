@@ -87,11 +87,15 @@ void	Server::checkForConnection() //checkare tutti i socket per vedere se c'e st
 			int bytes = recv((*it).fd, buffer, sizeof(buffer), 0);
 			if (bytes <= 0)
 			{
+				std::cout << "chiudo" << std::endl;
 				close((*it).fd);
 				(*it).fd = -1;
 			}
 			else
+			{
+				std::cout << "POLLOUT CLIENT" << std::endl;
 				(*it).events = POLLOUT;
+			}
 		}
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
 		{
