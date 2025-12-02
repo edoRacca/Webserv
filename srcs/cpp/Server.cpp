@@ -54,15 +54,6 @@ void	Server::addSocket()
 		throw std::runtime_error("\033[31mconnessione non accettata.\n\033[0m");
 	std::cout << "connessione trovata, client: " << client << std::endl;
 	this->_addrs.push_back(setupPollFd(client));
-	//NOTE - questa parte servirebbe per far leggere al server le richieste inviate da un client acceptato
-	// da capire come mai rimane in attesa
-	// char buf[1024];
-	// int rd = recv(client, buf, sizeof(buf), 0);
-	// if (rd > 0)
-	// {
-	// 	std::cout << buf << std::endl;
-	// 	this->_server_fd = POLLOUT;
-	// }
 }
 
 struct pollfd *Server::getAddrs(void)
@@ -88,11 +79,11 @@ std::string	create_html(std::string body)
 
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
 {
-	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin(); it != this->_addrs.end(); ++it)
+	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
-			char buffer[256];
+			char buffer[1024];
 			int bytes = recv((*it).fd, buffer, sizeof(buffer), 0);
 			if (bytes <= 0)
 			{
@@ -102,6 +93,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			}
 			else
 			{
+				std::cout << buffer << std::endl; //leggo la richiesta inviata dal client
 				std::cout << "POLLOUT CLIENT" << std::endl;
 				(*it).events = POLLOUT;
 			}

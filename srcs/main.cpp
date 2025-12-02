@@ -24,7 +24,7 @@ int	times = 1000;
 
 void	ctrl_c(int sig)
 {
-	std::cout << "Bro stai calmo\n" << std::endl;
+	std::cout << "\nBro stai calmo\n" << std::endl;
 	(void)sig, times = 0;
 }
 
