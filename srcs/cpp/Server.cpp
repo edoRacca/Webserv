@@ -21,21 +21,20 @@ static struct pollfd	setupPollFd(int client);
 	4)	Fare un solo poll, passandogli il vector.
 		A poll frega un cazzo di dove gli arriva la roba.
 */
-Server::Server()
+#include <fcntl.h>
+
+static struct pollfd	createServerSock(int port_n) //successivamente prendera una reference a un oggetto Config con tutti i parametri passati dal config file
 {
 	struct sockaddr_in	address;
-	struct pollfd		srv;
 	int					server_fd;
-
-	std::cout << "\033[32mserver constructor!\033[0m" << std::endl;
-	server_fd = socket(AF_INET, SOCK_STREAM, 0);
+	struct pollfd		srv;
+	
+	server_fd = socket(AF_INET, SOCK_STREAM, 0);//
 	if (server_fd < 0)
 		throw std::runtime_error("\033[31mSocket ha fallito.\033[0m");
 	address.sin_family = AF_INET;
-	//TODO: da aggiungere indirizzo ip in base a quelli richiesti dal config file
 	address.sin_addr.s_addr = INADDR_ANY;
-	//TODO: da cambiare e settare in base al config file le porte in ascolto
-	address.sin_port = htons(8080);
+	address.sin_port = htons(port_n);
 	if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) != 0)
 	{
 		close(server_fd);
@@ -49,7 +48,13 @@ Server::Server()
 	srv.fd = server_fd;
 	srv.events = POLLIN;
 	srv.revents = 0;
-	this->_addrs.push_back(srv);
+	return (srv);
+}
+
+Server::Server()
+{
+	std::cout << "\033[32mserver constructor!\033[0m" << std::endl;
+	this->_addrs.push_back(createServerSock(DEFAULT_PORT));
 	std::cout << "\033[32mTutto bene col costruttore!\033[0m" << std::endl;
 }
 
@@ -61,9 +66,11 @@ Server::~Server()
 			close(this->_addrs.data()[i].fd);
 }
 
+
 static struct pollfd	setupPollFd(int client)
 {
 	struct pollfd s;
+
 	s.fd = client;
 	s.events = POLLIN;
 	s.revents = 0;
@@ -90,7 +97,7 @@ size_t	Server::getAddrSize(void) const
 	return (this->_addrs.size());
 }
 
-std::string	create_html(std::string body)
+std::string	create_http(std::string body)
 {
 	std::string	html;
 
@@ -101,19 +108,27 @@ std::string	create_html(std::string body)
 	return (html + "\n");
 }
 
+/*
+			_addrs[0] = 3; ---->	Listen 8080
+			_addrs[1] = 4; ---->	Listen 8081
+			_addrs[2] = 5; ---->	Listen 8082
+			_addrs[3] = 6; ---->	Client A
+			_addrs[4] = 7; ---->	Client B
+			
+*/
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
 {
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
-			char buffer[1024];
+			char buffer[1024] = {0};
 			int bytes = recv((*it).fd, buffer, sizeof(buffer), 0);
 			if (bytes <= 0)
 			{
 				std::cout << "chiudo" << std::endl;
 				close((*it).fd);
-				(*it).fd = -1;
+				it = this->_addrs.erase(it) - 1;
 			}
 			else
 			{
@@ -126,7 +141,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		{
 			// Rispondo
 			std::cout << " ----Sent message----" << std::endl;
-			std::string	html = create_html("mega gay");
+			std::string	html = create_http("mega gay");
 			send((*it).fd, html.c_str(), html.length(), 0);
 			(*it).events = POLLIN;
 		}

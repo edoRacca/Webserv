@@ -3,7 +3,7 @@
 # include <iostream>
 # include <string>
 # include <poll.h>
-# include <unistd.h>
+# include <sys/unistd.h>
 # include <errno.h>
 # include <sys/socket.h>
 # include <sys/epoll.h>
@@ -23,4 +23,5 @@ std::string	ft_to_string(T data)
 	stream << data;
 	return (stream.str());
 }
+
 #endif

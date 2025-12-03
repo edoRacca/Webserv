@@ -5,12 +5,10 @@
 # include "../../includes/ether.hpp"
 
 //	1024 perché lo fa anche nginx
-# ifndef MAX_CONNECTION
-#  define MAX_CONNECTION 1024
-# endif
-# ifndef LISTENING_PORT
-#  define LISTENING_PORT 8080
-# endif
+# define MAX_CONNECTION 1024
+
+//	se nel config non ce lo specificano
+# define DEFAULT_PORT 8080
 
 class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 {
