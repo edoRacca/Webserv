@@ -5,8 +5,9 @@ FLAGS = -Wall -Wextra -Werror -g -D_GLIBCXX_DEBUG
 CPPFLAGS = -std=c++98
 
 
-SRCS = $(addprefix srcs/, main.cpp $(CPP))
-CPP = $(addprefix cpp/, Server.cpp Client.cpp)
+SRCS = $(addprefix srcs/, main.cpp $(CPP) $(PARSING))
+PARSING = $(addprefix parsing/, parseRequest.cpp)
+CPP = $(addprefix cpp/, Server.cpp Client.cpp Request.cpp)
 
 all: $(NAME)
 

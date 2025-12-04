@@ -111,14 +111,6 @@ std::string	create_http(std::string body)
 	return (html + "\n");
 }
 
-/*
-			_addrs[0] = 3; ---->	Listen 8080
-			_addrs[1] = 4; ---->	Listen 8081
-			_addrs[2] = 5; ---->	Listen 8082
-			_addrs[3] = 6; ---->	Client A
-			_addrs[4] = 7; ---->	Client B
-			
-*/
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
 {
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
@@ -139,10 +131,8 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			else
 			{
 				std::cout << buffer << std::endl; //leggo la richiesta inviata dal client
-				std::ofstream wrfile("pippo.txt");
-				wrfile << buffer;
-				// std::ofstream wrfile(filename.append(".replace").c_str());
 				std::cout << "POLLOUT CLIENT" << std::endl;
+				requestParsing(this->_clients[(*it).fd]->getRequest(), buffer);
 				(*it).events = POLLOUT;
 			}
 		}

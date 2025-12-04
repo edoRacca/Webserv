@@ -1,17 +1,25 @@
 
 #include "../hpp/Request.hpp"
 
+const std::string Request::_validmethods[3] = {
+    "POST",
+    "GET",
+    "DELETE"
+};
+
 Request::Request()
 {
-	//this->fill_checks();
+	this->_method = UNDEFINED;
+	this->_connection = UNDEFINED;
+	this->_port = UNDEFINED;
 }
 
-/*
-void	Request::fill_checks(void)
+
+/* void	Request::fill_checks(void)
 {
 	for (int i = 0; i < METH_NUM; i++)
-		this->_validmethods[i] = VALID_METHODS[i];
-}*/
+		this->_validmethods[i] = VALID_METHODS[i]; spread democracy non morirà così facilmente
+} */
 
 Request::~Request()
 {
@@ -40,64 +48,71 @@ Request&	Request::operator=(const Request &other)
 	return (*this);
 }
 
-const int	Request::getMethod() const
+std::string	Request::getValidMethod(int idx) const
+{
+	return (this->_validmethods[idx]);
+}
+
+int	Request::getMethod() const
 {
 	return (this->_method);
 }
 
-const int Request::getMethNum() const
+int Request::getMethNum() const
 {
 	return (this->METH_NUM);
 }
 
-const std::string Request::getUrl() const
+std::string Request::getUrl() const
 {
 	return (this->_url);
 }
 
-const std::string Request::getHttpVersion() const
+std::string Request::getHttpVersion() const
 {
 	return (this->_http_version);
 }
 
-const std::string Request::getHost() const
+std::string Request::getHost() const
 {
 	return (this->_host);
 }
 
-const std::string Request::getContentLenght() const
+int Request::getContentLenght() const
 {
 	return (this->_contentlength);
 }
 
-const std::string Request::getContentType() const
+std::string Request::getContentType() const
 {
 	return (this->_contenttype);
 }
 
-const std::string Request::getConnection() const
+std::string Request::getConnection() const
 {
 	return (this->_host);
 }
 
-const std::string Request::getEncoding() const
+std::string Request::getEncoding() const
 {
 	return (this->_encoding);
 }
 
-const std::string Request::getPort() const
+int Request::getPort() const
 {
 	return (this->_port);
 }
 
-const std::string Request::getBody() const
+std::string Request::getBody() const
 {
 	return (this->_body);
 }
 
+
+
 void	Request::setMethod(int method)
 {
-	this->_method = method
+	this->_method = method;
 }
 
 void	Request::setUrl(std::string url)
@@ -107,7 +122,7 @@ void	Request::setUrl(std::string url)
 
 void	Request::setHttpVersion(std::string httpversion)
 {
-	this->_http_version = http_version;
+	this->_http_version = httpversion;
 }
 
 void	Request::setHost(std::string host)
@@ -115,7 +130,7 @@ void	Request::setHost(std::string host)
 	this->_host = host;
 }
 
-void	Request::setContentLength(std::string contentlength)
+void	Request::setContentLength(int contentlength)
 {
 	this->_contentlength = contentlength;
 }
@@ -135,7 +150,7 @@ void	Request::setEncoding(std::string encoding)
 	this->_encoding = encoding;
 }
 
-void	Request::setPort(std::string port)
+void	Request::setPort(int port)
 {
 	this->_port = port;
 }
@@ -143,4 +158,10 @@ void	Request::setPort(std::string port)
 void	Request::setBody(std::string body)
 {
 	this->_body = body;
+}
+
+std::ostream &operator<<(std::ostream &os, Request &obj)
+{
+	os << "Method: " << obj.getMethod() << "\nURL: " << obj.getUrl() << "\nVERSION: " << obj.getHttpVersion() << std::endl;
+	return (os);
 }

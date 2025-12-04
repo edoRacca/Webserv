@@ -1,12 +1,9 @@
 #ifndef REQUEST_HPP
 #define REQUEST_HPP
 
-#include "../../includes/ether.hpp"
+# include "../../includes/ether.hpp"
 
-class Request;
-class Response;
-
-#define VALID_METHODS "POST", "GET", "DELETE"
+# define UNDEFINED -1
 
 /*
 ##	CONTENUTO, DESCRIZIONE			ESEMPIO
@@ -42,16 +39,17 @@ private:
 		DELETE,
 		METH_NUM,
 	};
-	int 		_method;
-	std::string _url;
-	std::string _http_version;
-	std::string _host;
-	int 		_contentlength;
-	std::string _contenttype;
-	std::string _connection;
-	std::string _encoding;
-	int 		_port;
-	std::string _body;
+	static const std::string	_validmethods[3];
+	int 						_method;
+	std::string 				_url;
+	std::string 				_http_version;
+	std::string 				_host;
+	int 						_contentlength;
+	std::string 				_contenttype;
+	std::string 				_connection;
+	std::string 				_encoding;
+	int 						_port;
+	std::string 				_body;
 
 	// void		fill_checks(void);
 
@@ -62,30 +60,32 @@ public:
 	Request &operator=(const Request &other);
 
 	//getters
-	const int			getMethNum() const;
-	const int			getMethod() const;
-	const std::string 	getUrl() const;
-	const std::string 	getHttpVersion() const;
-	const std::string 	getHost() const;
-	const int 			getContentLenght() const;
-	const std::string 	getContentType() const;
-	const std::string 	getConnection() const;
-	const std::string 	getEncoding() const;
-	const int 			getPort() const;
-	const std::string 	getBody() const;
+	std::string	getValidMethod(int idx) const;
+	int			getMethNum() const;
+	int			getMethod() const;
+	std::string 	getUrl() const;
+	std::string 	getHttpVersion() const;
+	std::string 	getHost() const;
+	int 			getContentLenght() const;
+	std::string 	getContentType() const;
+	std::string 	getConnection() const;
+	std::string 	getEncoding() const;
+	int 			getPort() const;
+	std::string 	getBody() const;
 	
 	//setters
-	void 	setRequest(std::string); // format request
-	int	 	setMethod(int method) const;
+	void	setMethod(int method);
 	void 	setUrl(std::string);
 	void 	setHttpVersion(std::string);
 	void 	setHost(std::string);
-	void	setContentLenght(int);
+	void	setContentLength(int);
 	void	setContentType(std::string);
 	void	setConnection(std::string);
 	void 	setEncoding(std::string);
 	void 	setPort(int);
 	void	setBody(std::string);
 };
+
+std::ostream &operator<<(std::ostream &os, Request &obj);
 
 #endif

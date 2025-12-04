@@ -22,6 +22,11 @@ Client	Client::operator=(const Client &other)
 	return (*this);
 }
 
+Request	&Client::getRequest()
+{
+	return (this->_request);
+}
+
 	// void 	setRequest(std::string); // format request
 	// void	setMethNum(int);
 	// void 	setMethod(int);

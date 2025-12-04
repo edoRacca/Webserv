@@ -1,5 +1,6 @@
 #ifndef ETHER_HPP
 # define ETHER_HPP
+
 # include <iostream>
 # include <fstream>
 # include <ostream>
@@ -19,6 +20,10 @@
 # include <cstdlib>
 # include <sstream>
 
+# include "../srcs/hpp/Request.hpp"
+
+class Request;
+
 template <typename T>
 std::string	ft_to_string(T data)
 {
@@ -27,5 +32,8 @@ std::string	ft_to_string(T data)
 	stream << data;
 	return (stream.str());
 }
+
+int			lineParsing(Request &request, std::string line);
+int			requestParsing(Request &request, std::string input);
 
 #endif

@@ -1,9 +1,9 @@
-
 #ifndef SERVER_HPP
 # define SERVER_HPP
 
 # include "../../includes/ether.hpp"
 # include "Client.hpp"
+# include "Request.hpp"
 
 //	1024 perché lo fa anche nginx
 # define MAX_CONNECTION 1024

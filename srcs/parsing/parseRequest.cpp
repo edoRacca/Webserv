@@ -16,9 +16,13 @@ int	lineParsing(Request &request, std::string line)
 
 	method = line.substr(0, line.find(' '));
 	for (i = 0; i < request.getMethNum(); i++)
-		if (method == VALID_METHODS[i])
+	{
+		if (method == request.getValidMethod(i))
 			request.setMethod(i);
-	if (i == request.getMethNum())
+	}
+	std::cout << "METODO: " << request.getMethod() << std::endl;
+	std::cout << "i: " << i << std::endl;
+	if (request.getMethod() == UNDEFINED)
 		return (errorParsing(400, "Bad post\n")); // ERROR : METODO NON RICONOSCIUTO
 	request.setUrl(line.substr(method.length() + 1, line.find(' ')));
 	//controlli sulla url
@@ -27,8 +31,9 @@ int	lineParsing(Request &request, std::string line)
 	request.setHttpVersion(line.substr(method.length() + \
 	request.getUrl().length() + 1, line.find('\n')));
 	//controlli sul http version
-	if (request.getHttpVersion().empty() == true)
+	if (!request.getHttpVersion().compare("HTTP/1.1\r"))
 		return (errorParsing(400, "Empty request\n"));
+	return (0);
 }
 
 // int	headerParsing(Request &request, std::istringstream header);
@@ -44,6 +49,7 @@ int	requestParsing(Request &request, std::string input)
 	err = lineParsing(request, lines);
 	if (err)
 		return (err);
+	return (0);
 }
 
 
