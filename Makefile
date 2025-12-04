@@ -21,7 +21,7 @@ fclean:
 
 re: fclean all
 
-run: $(NAME)
+run: re
 	clear ; ./$(NAME)
 
 val: $(NAME)

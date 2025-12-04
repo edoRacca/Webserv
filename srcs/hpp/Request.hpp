@@ -6,6 +6,8 @@
 class	Request;
 class	Response;
 
+# define VALID_METHODS "POST", "GET", "DELETE" 
+
 /*
 ##	CONTENUTO, DESCRIZIONE			ESEMPIO
 
@@ -37,9 +39,11 @@ class Request
 		{
 			POST,
 			GET,
-			DELETE
+			DELETE,
+			METH_NUM,
 		};
 		enum e_methods	_method;
+		std::string		_validmethods[METH_NUM];
 		std::string		_url;
 		std::string		_http_version;
 		std::string		_host;
@@ -50,6 +54,7 @@ class Request
 		int				_port;
 		std::string		_body;
 
+		void		fill_checks(void);
 	public:
 		Request();
 		~Request();
@@ -57,6 +62,7 @@ class Request
 		Request	&operator=(const Request &other);
 
 		std::string getRequest() const; //format request
+		
 };
 
 #endif

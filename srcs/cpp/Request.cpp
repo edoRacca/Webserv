@@ -3,7 +3,13 @@
 
 Request::Request()
 {
+	this->fill_checks();
+}
 
+void	Request::fill_checks(void)
+{
+	for (int i = 0; i < METH_NUM; i++)
+		this->_validmethods[i] = VALID_METHODS[i];
 }
 
 Request::~Request()
