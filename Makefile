@@ -29,4 +29,3 @@ val: $(NAME)
 	clear ; valgrind ./$(NAME)
 
 .PHONY: all clean fclean run val
-# .SILEN

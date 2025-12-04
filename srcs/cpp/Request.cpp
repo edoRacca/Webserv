@@ -14,7 +14,6 @@ Request::Request()
 	this->_port = UNDEFINED;
 }
 
-
 /* void	Request::fill_checks(void)
 {
 	for (int i = 0; i < METH_NUM; i++)
@@ -108,8 +107,6 @@ std::string Request::getBody() const
 	return (this->_body);
 }
 
-
-
 void	Request::setMethod(int method)
 {
 	this->_method = method;
@@ -162,6 +159,7 @@ void	Request::setBody(std::string body)
 
 std::ostream &operator<<(std::ostream &os, Request &obj)
 {
-	os << "Method: " << obj.getMethod() << "\nURL: " << obj.getUrl() << "\nVERSION: " << obj.getHttpVersion() << std::endl;
+	os << "Method: " << obj.getValidMethod(obj.getMethod()) << "\nURL: " << \
+	obj.getUrl() << "\nVERSION: " << obj.getHttpVersion() << std::endl;
 	return (os);
 }

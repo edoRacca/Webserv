@@ -9,6 +9,7 @@ static int	errorParsing(int err, std::string s)
 	return (err);
 }
 
+//GET /index.html HTTP/1.1
 int	lineParsing(Request &request, std::string line)
 {
 	std::string	method;
@@ -29,7 +30,7 @@ int	lineParsing(Request &request, std::string line)
 	if (request.getUrl().empty() == true)
 		return (errorParsing(400, "Empty request\n"));
 	request.setHttpVersion(line.substr(method.length() + \
-	request.getUrl().length() + 1, line.find('\n')));
+	request.getUrl().length(), line.find('\n')));
 	//controlli sul http version
 	if (!request.getHttpVersion().compare("HTTP/1.1\r"))
 		return (errorParsing(400, "Empty request\n"));
@@ -47,6 +48,7 @@ int	requestParsing(Request &request, std::string input)
 
 	std::getline(s, lines, '\n');
 	err = lineParsing(request, lines);
+	std::cout << request << std::endl;
 	if (err)
 		return (err);
 	return (0);

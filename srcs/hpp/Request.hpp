@@ -60,9 +60,9 @@ public:
 	Request &operator=(const Request &other);
 
 	//getters
-	std::string	getValidMethod(int idx) const;
-	int			getMethNum() const;
-	int			getMethod() const;
+	std::string		getValidMethod(int idx) const;
+	int				getMethNum() const;
+	int				getMethod() const;
 	std::string 	getUrl() const;
 	std::string 	getHttpVersion() const;
 	std::string 	getHost() const;
