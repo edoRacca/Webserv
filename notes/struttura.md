@@ -42,7 +42,7 @@ contiene:
 - location
 }
 
-`ANSWER` -->  	{
+`RESPONSE` -->  	{
 descrizione:	(attuale create_http)
 }
 
@@ -50,3 +50,15 @@ descrizione:	(attuale create_http)
 descrizione:	una classe/struct che contiene i dati presi dal config
 contiene:
 }
+
+			CLIENT A }	
+SERVER ---> CLIENT B } --->	{Response, 	Request}
+			CLIENT C }			|			|
+								|			|
+								|			Request_data
+								|			Parsing richiesta
+								|			
+								|
+								|
+								Tornare codice errore
+								Tornare risorsa

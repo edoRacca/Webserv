@@ -14,7 +14,6 @@ class Client
 		int 		_sockfd;
 		// Request		_request;
 		// Response	_response;
-
 	public:
 		Client(int sockfd);
 		~Client();
