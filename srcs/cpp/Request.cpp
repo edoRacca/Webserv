@@ -1,7 +1,7 @@
 
 #include "../hpp/Request.hpp"
 
-const std::string Request::_validmethods[3] = {
+const std::string Request::_validmethods[METH_NUM] = {
     "POST",
     "GET",
     "DELETE"
@@ -9,9 +9,9 @@ const std::string Request::_validmethods[3] = {
 
 Request::Request()
 {
-	this->_method = UNDEFINED;
+	this->_method = "GET";
 	this->_connection = UNDEFINED;
-	this->_port = UNDEFINED;
+	this->_port = -1;
 }
 
 /* void	Request::fill_checks(void)
@@ -52,14 +52,14 @@ std::string	Request::getValidMethod(int idx) const
 	return (this->_validmethods[idx]);
 }
 
-int	Request::getMethod() const
+std::string	Request::getMethod() const
 {
 	return (this->_method);
 }
 
 int Request::getMethNum() const
 {
-	return (this->METH_NUM);
+	return (METH_NUM);
 }
 
 std::string Request::getUrl() const
@@ -109,7 +109,7 @@ std::string Request::getBody() const
 
 void	Request::setMethod(int method)
 {
-	this->_method = method;
+	this->_method = this->_validmethods[method];
 }
 
 void	Request::setUrl(std::string url)
@@ -159,7 +159,7 @@ void	Request::setBody(std::string body)
 
 std::ostream &operator<<(std::ostream &os, Request &obj)
 {
-	os << "Method: " << obj.getValidMethod(obj.getMethod()) << "\nURL: " << \
+	os << "Method: " << obj.getMethod() << "\nURL: " << \
 	obj.getUrl() << "\nVERSION: " << obj.getHttpVersion() << std::endl;
 	return (os);
 }

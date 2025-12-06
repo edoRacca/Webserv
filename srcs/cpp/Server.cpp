@@ -131,7 +131,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			else
 			{
 				std::cout << buffer << std::endl; //leggo la richiesta inviata dal client
-				std::cout << "POLLOUT CLIENT" << std::endl;
+				std::cout << "\033[33m" << "RICHIESTA CLIENT" << "\033[0m" << std::endl;
 				requestParsing(this->_clients[(*it).fd]->getRequest(), buffer);
 				(*it).events = POLLOUT;
 			}

@@ -3,7 +3,15 @@
 
 # include "../../includes/ether.hpp"
 
-# define UNDEFINED -1
+# define UNDEFINED ""
+
+enum	e_methods
+{
+	POST,
+	GET,
+	DELETE,
+	METH_NUM,
+};
 
 /*
 ##	CONTENUTO, DESCRIZIONE			ESEMPIO
@@ -31,16 +39,10 @@ _uri:		/
 // FIXME - gestire transfer-encoding
 class Request
 {
+
 private:
-	enum e_methods
-	{
-		POST,
-		GET,
-		DELETE,
-		METH_NUM,
-	};
-	static const std::string	_validmethods[3];
-	int 						_method;
+	static const std::string	_validmethods[METH_NUM];
+	std::string					_method;
 	std::string 				_url;
 	std::string 				_http_version;
 	std::string 				_host;
@@ -62,7 +64,7 @@ public:
 	//getters
 	std::string		getValidMethod(int idx) const;
 	int				getMethNum() const;
-	int				getMethod() const;
+	std::string		getMethod() const;
 	std::string 	getUrl() const;
 	std::string 	getHttpVersion() const;
 	std::string 	getHost() const;

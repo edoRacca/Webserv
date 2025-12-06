@@ -5,7 +5,7 @@
 
 static int	errorParsing(int err, std::string s)
 {
-	std::cerr << s << std::endl;
+	std::cerr << "\033[31m" << s << "\033[0m" << std::endl;
 	return (err);
 }
 
@@ -22,7 +22,7 @@ int	lineParsing(Request &request, std::string line)
 			request.setMethod(i);
 	}
 	if (request.getMethod() == UNDEFINED)
-		return (errorParsing(400, "Bad post\n")); // ERROR : METODO NON RICONOSCIUTO
+		return (errorParsing(400, "Bad post\n"));// ERROR : METODO NON RICONOSCIUTO
 	request.setUrl(line.substr(method.length() + 1, line.find(' ', method.length() + 1) - (method.length() + 1)));
 	if (request.getUrl().empty() == true)
 		return (errorParsing(400, "Error in URL\n"));
@@ -31,12 +31,27 @@ int	lineParsing(Request &request, std::string line)
 		request.getUrl().length() + 1) - (method.length() + 1) - (request.getUrl().length() + 1)));
 	//controlli sul http version
 	if (request.getHttpVersion().compare("HTTP/1.1\r") != 0)
-		return (errorParsing(400, "Error i HTTP Version\n"));
+		return (errorParsing(400, "Error in HTTP Version\n"));
 	return (0);
 }
 
-// int	headerParsing(Request &request, std::istringstream header);
+// int	headerParsing(Request &request, std::istringstream header)
+// {
+// 	//parsing e si riempe la mappa
+// 	//se ci sono le chiavi obbligatorie, si riempie request, senno vaffanculo
+// 	//svuotare mappa
+// }
 
+
+/*
+Host: localhost:8080
+User-Agent: curl/8.17.1-DEV
+Accept: /
+Content-Length: 10
+Content-Type: application/x-www-form-urlencoded
+
+
+*/
 //	METHOD URL VERSIONE_HTTP\r\n
 int	requestParsing(Request &request, std::string input)
 {
@@ -63,3 +78,5 @@ int	requestParsing(Request &request, std::string input)
 // Content-Length: 63\r\n
 // \r\n
 // {"to":"+391234567890","from":"MAGICO","text":"Messaggio test"}
+
+
