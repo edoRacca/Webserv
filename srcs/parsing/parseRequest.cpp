@@ -50,39 +50,31 @@ int	headerParsing(Request &request, std::istringstream &header)
 	std::string	key;
 
 	request.reset_request();
-	while (std::getline(header, line))
+	request.printHeader();
+	while (std::getline(header, line) && line != "\r")
 	{
-		if (request.getHeader().find(line.substr(0, ':')) != request.getHeader().end())
+		key = line.substr(0, line.find(':'));
+		if (request.getHeader().find(key) != request.getHeader().end())
 		{
-			key = line.substr(0, ':');
-			std::cout << key << ":OK!\n";
 			request.getHeader()[key] = line.substr(key.length() + 2);
-			std::cout << request.getHeader()[line.substr(0, ':')] << std::endl;
+			std::cout << "\033[32m";
+			std::cout << key << ": " << request.getHeader()[key] << std::endl;
+			std::cout << "\033[0m";
 		}
 		else
-			return (errorParsing(104, (std::string)"Campo header illegale: " + line.substr(0, ':')));
+			return (errorParsing(104, (std::string)"Campo header illegale: " + key));
 	}
-	if (!request.checkVal("Host") || \
-	!request.checkVal("Accept") || \
-	!request.checkVal("User-Agent"))
-		return (errorParsing(104, "Una flag obbligatoria in non e definita.\n"));
-	if (request.getMethod() == "GET")
-	{
-
-	}
-	else if (request.getMethod() == "POST")
-	{
-		if (!request.checkVal("Host") || \
-		!request.checkVal("Accept") || \
-		!request.checkVal("Content-Length") || \
-		!request.checkVal("Content-Type") || \
-		!request.checkVal("User-Agent"))
-			return (errorParsing(104, "Una flag obbligatoria in POST non e definita.\n"));
-	}
-	// else if (request.getMethod() == "DELETE")
+	// if (!request.checkVal("Host") || \
+	// 	!request.checkVal("Accept") || \
+	// 	!request.checkVal("User-Agent"))
+	// 	return (errorParsing(104, "Una flag obbligatoria non e definita.\n"));	
+	// else if (request.getMethod() == "POST")
 	// {
-	// 
+	// 	if (!request.checkVal("Content-Length") || \
+	// 	!request.checkVal("Content-Type"))
+	// 		return (errorParsing(104, "Una flag obbligatoria POST non e definita.\n"));
 	// }
+	return (0);
 }
 
 // GET METH REQUESTED FIELDS
@@ -113,7 +105,6 @@ int	requestParsing(Request &request, std::string input)
 		return (err);
 	if ((err = headerParsing(request, s)) != 0)
 		return (err);
-	
 	return (0);
 }
 

@@ -89,7 +89,7 @@ std::string Request::getBody() const
 	return (this->_body);
 }
 
-std::map<std::string, std::string>	Request::getHeader() const
+std::map<std::string, std::string>	&Request::getHeader()
 {
 	return (this->_header);
 }
@@ -127,7 +127,6 @@ void		Request::setHeaderVal(std::string key, std::string val)
 	if (checkKey(key))
 	{
 		this->_header[key] = val;
-		// std::cout << "header set at: " << key << std::endl; 
 	}
 	else
 		std::cout << "Key: " + key + " does not exist in header map" << std::endl;
@@ -135,18 +134,29 @@ void		Request::setHeaderVal(std::string key, std::string val)
 
 bool	Request::checkKey(std::string key)
 {
-	if (this->_header.find(key) != this->_header.end())
+	if (this->_header.find(key) == this->_header.end())
 		return (false);
 	return (true);
 }
 
-bool	Request::checkVal(std::string key)
+bool	Request::_checkSingleVal(std::string key)
 {
+	std::cout << "\033[33mChecking key:\t" + key + "\033[0m\n";
 	if (checkKey(key) == false)
 		return (false);
-	if (this->_header.find(key) != this->_header.end())
+	if (this->_header.find(key) == this->_header.end())
 		return (false);
+	std::cout << key + "\033[32m è stata riempita!\n\033[0m";
 	return (true);
+}
+
+void	Request::printHeader(void)
+{
+	for (std::map<std::string, std::string>::const_iterator it = _header.begin(); it != _header.end(); it++)
+	{
+		std::cout << "Key: " << it->first << std::endl;
+		std::cout << "Value: " << it->second << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &os, Request &obj)

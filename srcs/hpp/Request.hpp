@@ -2,7 +2,7 @@
 #define REQUEST_HPP
 
 # include "../../includes/ether.hpp"
-# include <map>
+# include <stdarg.h>
 
 # define UNDEFINED ""
 
@@ -51,6 +51,7 @@ private:
 	std::string 						_http_version; // LINE
 	std::string							_body;
 
+	bool		_checkSingleVal(std::string key);
 public:
 
 	Request();
@@ -67,7 +68,7 @@ public:
 	std::string 						getUrl() const;
 	std::string 						getHttpVersion() const;
 	std::string 						getBody() const;
-	std::map<std::string, std::string>	getHeader() const;
+	std::map<std::string, std::string>	&getHeader();
 	std::string							getHeaderVal(std::string key);
 
 	//setters
@@ -76,9 +77,11 @@ public:
 	void 		setUrl(std::string);
 	void		setBody(std::string);
 	void		setHeaderVal(std::string key, std::string val);
-	bool		checkVal(std::string key);
+	bool		checkVal(int n, ...);
 	bool		checkKey(std::string key);
-	
+
+	void	printHeader(void);
+
 };
 
 std::ostream &operator<<(std::ostream &os, Request &obj);

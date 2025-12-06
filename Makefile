@@ -25,6 +25,9 @@ re: fclean all
 run: re
 	clear ; ./$(NAME)
 
+gdb: re
+	clear ; gdb ./$(NAME)
+
 val: $(NAME)
 	clear ; valgrind ./$(NAME)
 
