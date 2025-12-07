@@ -24,7 +24,7 @@ int	times = 1000;
 
 void	ctrl_c(int sig)
 {
-	std::cout << "\nPER LA LIBERTÀ\n" << std::endl;
+	std::cout << "\nPROSCIUTTO\n" << std::endl;
 	(void)sig, times = 0;
 }
 

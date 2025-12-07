@@ -32,6 +32,8 @@ static int	headerEndlineCheck(std::istringstream &header, Request &request)
 		std::getline(header, line);
 		if (line.empty())
 			return(errorParsing(405, "Method not allowed\n"));
+		request.setBody(line);
+		// std::cout << "Body: " << request.getBody() << std::endl;
 	}
 	return (200);
 }
@@ -79,7 +81,6 @@ int	headerParsing(Request &request, std::istringstream &header)
 		key = line.substr(0, line.find(':'));
 		request.setHeaderVal(key, removeWhitespaces(line.substr(key.length() + 1)));
 	}
-	// request.printHeader();
 	if (!request.checkHeader())
 		return (false);
 	return (headerEndlineCheck(header, request));
