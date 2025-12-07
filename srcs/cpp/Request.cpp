@@ -50,18 +50,17 @@ void	Request::resetRequest(void)
 	this->_header["Accept"] = "";
 	this->_header["Content-Length"] = "";
 	this->_header["Content-Type"] = "";
-	this->_header["Connection"] = "";
+	this->_header["Connection"] = "keep-alive";
 	this->_header["Transfer-Encoding"] = "unchunked";
+	this->_header["Authorization"] = "";
 }
 
 // FIXME Quetsa funzione controlla che se uno dei membri richiesti è assente 
-// restituisce l'errore di corrispondeznza e questa cosa va gestita, per ora resituiamo
+// restituisce l'errore di corrispondenza e questa cosa va gestita, per ora restituiamo
 // true e false
 int	Request::checkHeader(void)
 {
-	if (!this->checkVal("Host") || \
-		!this->checkVal("Accept") || \
-		!this->checkVal("User-Agent"))
+	if (!this->checkVal("Host") || !this->checkVal("Accept") || !this->checkVal("User-Agent"))
 		return (false);
 	if (this->_method == "POST")
 		return (this->_checkPost());
@@ -74,8 +73,7 @@ int	Request::checkHeader(void)
 
 int	Request::_checkPost(void)
 {
-	if (!this->checkVal("Content-Length") || \
-		!this->checkVal("Content-Type"))
+	if (!this->checkVal("Content-Length") || !this->checkVal("Content-Type"))
 			return (false);
 	return (true);
 }
@@ -87,6 +85,8 @@ int	Request::_checkGet(void)
 
 int	Request::_checkDelete(void)
 {
+	if (!this->checkVal("Authorization"))
+		return (false);
 	return (true);
 }
 
@@ -155,12 +155,9 @@ void	Request::setBody(std::string body)
 
 void		Request::setHeaderVal(std::string key, std::string val)
 {
-	if (checkKey(key))
-	{
-		this->_header[key] = val;
-	}
-	else
-		std::cout << "Key: " + key + " does not exist in header map" << std::endl;
+	if (!checkKey(key))
+		DBG_MSG("Key: " + key + " does not exist and has been added to header map");
+	this->_header[key] = val;
 }
 
 bool	Request::checkKey(std::string key)

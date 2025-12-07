@@ -13,7 +13,6 @@ static int	errorParsing(int err, std::string s)
 // connessione e ricava il metodo, l'url dell'oggetto della connessione e la 
 // versione http. Questo perchè in base al metodo si va a stabilire il tipo
 // di richiesta e quindi i membri che ci aspettiamo di trovare.
-
 int	lineParsing(Request &request, std::string line)
 {
 	std::string	method;
@@ -40,23 +39,25 @@ int	lineParsing(Request &request, std::string line)
 
 // REVIEW - Questa funzione va a controllare il formato dell'header della 
 // richiesta di connessione e si assicura che ci siano tutti i membri necessari in
-// in base ai metodi che dobbiamo gestire -GET -POST -DELETE 
+// in base ai metodi che dobbiamo gestire -GET -POST -DELETE
+// 
 int	headerParsing(Request &request, std::istringstream &header)
 {
-	std::string	line;
-	std::string	key;
+// da fare refactor -> riempire tutti campi definiti obbligatori, controllare che non siano vuoti e poi fillare la mappa con i rimanenti
+	std::string		line;
+	std::string		key;
+	// std::streampos	pos = header.tellg(); //salva la posizione dello stream
+	// header.clear();
+	// header.seekg(pos);
 
 	request.resetRequest();
 	while (std::getline(header, line) && line != "\r") // da trimmare \r
 	{
 		key = line.substr(0, line.find(':'));
-		if (request.getHeader().find(key) != request.getHeader().end())
-			request.getHeader()[key] = line.substr(key.length() + 2);
-		else
-			return (errorParsing(104, (std::string)"Campo header illegale: " + key));
+		request.setHeaderVal(key, line.substr(key.length() + 2));
 	}
 	request.printHeader();
-	if (request.checkHeader() == false)
+	if (!request.checkHeader())
 		return (false);
 	return (1);
 }

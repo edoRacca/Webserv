@@ -126,7 +126,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 {
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
 	{
-		std::cout << "Client pointer: " << &this->_clients[(*it).fd] << std::endl;
+		// std::cout << "Client pointer: " << &this->_clients[(*it).fd] << std::endl;
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
 			char buffer[1024] = {0};

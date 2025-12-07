@@ -22,6 +22,14 @@
 
 # include "../srcs/hpp/Request.hpp"
 
+# define DEBUG 1
+
+#if defined(DEBUG) && DEBUG
+  #define DBG_MSG(msg) (std::cout << (msg) << std::endl)
+#else
+  #define DBG_MSG(msg) ((void)0)
+#endif
+
 class Request;
 
 template <typename T>
