@@ -3,10 +3,37 @@
 #include "../hpp/Client.hpp"
 #include "../hpp/Request.hpp"
 
+std::string	removeWhitespaces(std::string line)
+{
+	size_t 		i = 0;
+
+	if (!std::isspace(line[0]))
+		return (line);
+	while (std::isspace(line[i]))
+		i++;	
+	return(line.substr(i));
+}
+
 static int	errorParsing(int err, std::string s)
 {
 	std::cerr << "\033[31m" << s << "\033[0m" << std::endl;
 	return (err);
+}
+
+static int	headerEndlineCheck(std::istringstream &header, Request &request)
+{
+	std::string line;
+
+	if (!line.empty())
+		return(errorParsing(400, "Bad format request\n"));
+	if (request.getMethod().compare("POST") == 0 && \
+		std::atoi(request.getHeaderVal("Content-Length").c_str()) > 0)
+	{
+		std::getline(header, line);
+		if (line.empty())
+			return(errorParsing(405, "Method not allowed\n"));
+	}
+	return (200);
 }
 
 // REVIEW Questa funzione va a prendere la prima riga dell'header per stabilire il tipo di 
@@ -25,15 +52,15 @@ int	lineParsing(Request &request, std::string line)
 			request.setMethod(i);
 	}
 	if (request.getMethod() == UNDEFINED)
-		return (errorParsing(400, "Bad method"));// ERROR : METODO NON RICONOSCIUTO
+		return (errorParsing(400, "Bad request"));// ERROR : METODO NON RICONOSCIUTO
 	request.setUrl(line.substr(method.length() + 1, line.find(' ', method.length() + 1) - (method.length() + 1)));
 	if (request.getUrl().empty() == true)
-		return (errorParsing(400, "Error in URL\n"));
+		return (errorParsing(400, "Bad request\n"));
 	request.setHttpVersion(line.substr(method.length() + 1 + \
 		request.getUrl().length() + 1, line.find('\n', method.length() + 1 + \
 		request.getUrl().length() + 1) - (method.length() + 1) - (request.getUrl().length() + 1)));
 	if (request.getHttpVersion().compare("HTTP/1.1\r") != 0)
-		return (errorParsing(400, "Error in HTTP Version\n"));
+		return (errorParsing(400, "Bad request\n"));
 	return (0);
 }
 
@@ -50,21 +77,12 @@ int	headerParsing(Request &request, std::istringstream &header)
 	while (std::getline(header, line) && line != "\r") // da trimmare \r
 	{
 		key = line.substr(0, line.find(':'));
-		request.setHeaderVal(key, line.substr(key.length() + 2));
+		request.setHeaderVal(key, removeWhitespaces(line.substr(key.length() + 1)));
 	}
 	// request.printHeader();
-
 	if (!request.checkHeader())
 		return (false);
-
-	key = line.substr(0, line.find(':'));
-	if (line.empty() && line.c_str() != NULL)
-	{
-		std::getline(header, line);
-		if (line.empty() && line.c_str() != NULL)
-			return(errorParsing(400, "Bad header indentation!\n"));
-	}
-	return (1);
+	return (headerEndlineCheck(header, request));
 }
 
 // POST /contact HTTP/1.1
@@ -101,17 +119,4 @@ int	requestParsing(Request &request, std::string input)
 		return (err);
 	return (0);
 }
-
-
-// POST /api/v1/messages HTTP/1.1\r\nHost: esempio.com\nUser-Agent: curl/8.5.0\nAccept: */*\nContent-Type: application/json\nContent-Length: 63
-
-// POST /api/v1/messages HTTP/1.1\r\n
-// Host: esempio.com\r\n
-// User-Agent: curl/8.5.0\r\n
-// Accept: */*\r\n
-// Content-Type: application/json\r\n
-// Content-Length: 63\r\n
-// \r\n
-// {"to":"+391234567890","from":"MAGICO","text":"Messaggio test"}
-
 
