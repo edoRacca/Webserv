@@ -1,10 +1,12 @@
 #ifndef REQUEST_HPP
-#define REQUEST_HPP
+# define REQUEST_HPP
 
 # include "../../includes/ether.hpp"
 # include <stdarg.h>
 
 # define UNDEFINED ""
+
+typedef std::map<std::string, std::string> headermap;
 
 enum	e_methods
 {
@@ -36,13 +38,14 @@ _host:		localhost:8080
 _content:	10
 _uri:		/
 */
-
 // FIXME - gestire transfer-encoding
+
 class Request
 {
+
 	private:
 		static const std::string			_validmethods[METH_NUM];
-		std::map<std::string, std::string>	_header;
+		headermap							_header;
 		std::string							_method; // LINE
 		std::string 						_url; // LINE
 		std::string 						_http_version; // LINE
@@ -64,7 +67,7 @@ class Request
 		std::string 						getUrl() const;
 		std::string 						getHttpVersion() const;
 		std::string 						getBody() const;
-		std::map<std::string, std::string>	&getHeader();
+		headermap							&getHeader();
 		std::string							getHeaderVal(std::string key);
 
 		//setters

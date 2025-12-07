@@ -22,12 +22,6 @@ Request::Request()
 	resetRequest();
 }
 
-/* void	Request::fill_checks(void)
-{
-	for (int i = 0; i < METH_NUM; i++)
-		this->_validmethods[i] = VALID_METHODS[i];
-} */
-
 Request::~Request()
 {
 	
@@ -126,7 +120,7 @@ std::string Request::getBody() const
 	return (this->_body);
 }
 
-std::map<std::string, std::string>	&Request::getHeader()
+headermap	&Request::getHeader()
 {
 	return (this->_header);
 }
@@ -189,7 +183,7 @@ bool	Request::checkVal(std::string key)
 
 void	Request::printHeader(void)
 {
-	for (std::map<std::string, std::string>::const_iterator it = _header.begin(); it != _header.end(); it++)
+	for (headermap::const_iterator it = _header.begin(); it != _header.end(); it++)
 	{
 		std::cout << "Key: " << it->first << std::endl;
 		std::cout << "Value: " << it->second << std::endl;

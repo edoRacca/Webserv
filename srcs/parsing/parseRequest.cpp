@@ -51,12 +51,7 @@ int	headerParsing(Request &request, std::istringstream &header)
 	{
 		key = line.substr(0, line.find(':'));
 		if (request.getHeader().find(key) != request.getHeader().end())
-		{
 			request.getHeader()[key] = line.substr(key.length() + 2);
-			// std::cout << "\033[32m";
-			// std::cout << key << ": " << request.getHeader()[key] << std::endl;
-			// std::cout << "\033[0m";
-		}
 		else
 			return (errorParsing(104, (std::string)"Campo header illegale: " + key));
 	}
