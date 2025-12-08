@@ -4,7 +4,7 @@
 
 static int	lineParsing(Request &request, std::string line);
 static int	headerParsing(Request &request, std::istringstream &header);
-static int	headerEndlineCheck(std::istringstream &header, Request &request);
+static int	bodyParsing(Request &request, std::istringstream &header);
 std::string	removeWhitespaces(std::string line);
 static int	errorParsing(int err, std::string s);
 
@@ -19,6 +19,8 @@ int	requestParsing(Request &request, std::string input)
 		return (err);
 	std::cout << request << std::endl;
 	if ((err = headerParsing(request, s)) == false)
+		return (err);
+	if ((err = bodyParsing(request, s)) == false)
 		return (err);
 	return (0);
 }
@@ -63,15 +65,15 @@ static int	headerParsing(Request &request, std::istringstream &header)
 	while (std::getline(header, line) && line != "\r") // da trimmare \r
 	{
 		key = line.substr(0, line.find(':'));
-		request.setHeaderVal(key, removeWhitespaces(line.substr(key.length() + 1)));
+		request.setHeaderVal(key, line.substr(key.length() + 2));
 	}
 	if (!request.checkHeader())
 		return (false);
-	return (headerEndlineCheck(header, request));
+	return (true);
 }
 
 //FIXME - non va letta una nuova linea
-static int	headerEndlineCheck(std::istringstream &header, Request &request)
+static int	bodyParsing(Request &request, std::istringstream &header)
 {
 	std::string line;
 
@@ -84,7 +86,6 @@ static int	headerEndlineCheck(std::istringstream &header, Request &request)
 		if (line.empty())
 			return(errorParsing(405, "Method not allowed\n"));
 		request.setBody(line);
-		// std::cout << "Body: " << request.getBody() << std::endl;
 	}
 	return (200);
 }

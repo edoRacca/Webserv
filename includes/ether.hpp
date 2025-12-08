@@ -25,7 +25,7 @@
 # define DEBUG 1
 
 #if defined(DEBUG) && DEBUG
-  #define DBG_MSG(msg) (std::cout << (msg) << std::endl)
+  #define DBG_MSG(msg) (std::cout << "\033[31m" << (msg) << "\033[0m" << std::endl)
 #else
   #define DBG_MSG(msg) ((void)0)
 #endif

@@ -59,7 +59,7 @@ void	Request::resetRequest(void)
 // true e false
 int	Request::checkHeader(void)
 {
-	if (!this->checkVal("Host") || !this->checkVal("Accept") || !this->checkVal("User-Agent"))
+	if (!this->checkVal("Host") || this->getHeaderVal("Host").find(' ') || !this->checkVal("Accept") || !this->checkVal("User-Agent"))
 		return (false);
 	if (this->_method == "POST")
 		return (this->_checkPost());
@@ -154,6 +154,11 @@ void	Request::setBody(std::string body)
 
 void	Request::setHeaderVal(std::string key, std::string val)
 {
+	if (val.find(' ') != std::string::npos)
+	{
+		DBG_MSG("Val: " + val + " stores one or more spaces");
+		return ;
+	}
 	if (!checkKey(key))
 		DBG_MSG("Key: " + key + " does not exist and has been added to header map");
 	this->_header[key] = val;
