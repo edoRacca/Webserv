@@ -4,7 +4,7 @@
 
 static int	instructionBlock(Conf &conf, std::vector<std::string> &list, int i);
 static int	newOpenBlock(Conf &conf, std::vector<std::string> &list, int *i);
-static int	closeBlock(Conf &conf, int line);
+static int	closeBlock(Conf &conf, int line, std::string token);
 static void	blockError(std::string block, int line, int flag);
 
 void	confParseEvent(Conf &conf, std::vector<std::string> list, int line);
@@ -46,22 +46,22 @@ void	confParse(Conf &conf, std::ifstream &fd)
 		i++;
 		while (!line.empty())
 		{
-//			std::cout << "\033[33mLine " << i << ": " << line << "\033[0m" << std::endl;
+			//std::cout << "\033[33mLine " << i << ": " << line << "\033[0m" << std::endl;
 			line = removeWhitespaces(line);
 			if (line[0] == ';')
 				instructionBlock(conf, list, i);
 			else if (line[0] == '{')
 				newOpenBlock(conf, list, &i);
 			else if (line[0] == '}')
-				closeBlock(conf, i);
+				closeBlock(conf, i, line);
 			else if (line[0] == '#')
 				break ;
 			else 
 				token = line.substr(0, find_first_special_char(line));
 			if (!token.empty())
 				list.push_back(token);
-//			if (!list.empty())
-//				std::cout << "\033[34mlist: " << (*list.rbegin()) << "\033[0m" << std::endl;
+			//if (!list.empty())
+			//std::cout << "\033[34mlist: " << (*list.rbegin()) << "\033[0m" << std::endl;
 			line = line.substr(find_first_special_char(line));
 			if (token.empty() == false)
 				std::cout << "\033[34mCurrent token:\t\033[33m" << token << "\033[0m\n";
@@ -70,6 +70,8 @@ void	confParse(Conf &conf, std::ifstream &fd)
 	}
 	if (list.size() != 0)
 		blockError("", i, CONF_INSTRUCTION_UNFINISHED);
+	if (conf.getEvents() || conf.getHttp() || conf.getServer() || conf.getLocation())
+		blockError(conf.checkOpenBlock(), i, CONF_BLOCK_CLOSE);
 	conf.print();
 //	for (size_t i = 0; i < list.size(); ++i) 
 //		std::cout << list[i] << " \n";
@@ -116,8 +118,10 @@ static int	newOpenBlock(Conf &conf, std::vector<std::string> &list, int *i)
 	return (1);
 }
 
-static int	closeBlock(Conf &conf, int line)
+static int	closeBlock(Conf &conf, int line, std::string token)
 {
+	std::cout << "Close block token: " << token << ", http: " << conf.getHttp() << ", server: " << conf.getServer() << ", location: " << conf.getLocation() << std::endl;
+
 	if (conf.getEvents())
 		conf.setEvents(false);
 	else if (conf.getHttp() && !conf.getServer() && !conf.getLocation() && !conf.getEvents())

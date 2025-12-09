@@ -84,6 +84,8 @@ class Conf
 		void	setServer(bool val);
 		void	setLocation(bool val);
 
+		std::string	checkOpenBlock(void) const;
+
 //SECTION - utils
 		void	print(void) const;
 //SECTION - settings getters/setters
