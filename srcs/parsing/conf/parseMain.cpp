@@ -2,12 +2,14 @@
 #include "../../../includes/ether.hpp"
 #include "../../hpp/Conf.hpp"
 
-int	newOpenBlock(Conf &conf, std::vector<std::string> &list)
+int	newOpenBlock(Conf &conf, std::vector<std::string> &list, int *i)
 {
 	if (list.size() != 1)
-		throw Conf::ConfException("Error in format configuration");
+		throw Conf::ConfException("Error in format configuration in line " + *i);
 	if (list[0] == "http" && conf.getHttp() == false)
 		conf.setHttp(true);
+	else
+		throw Conf::ConfException("Impossible to open http block into another in line " + *i);
 	return (1);
 }
 
@@ -19,7 +21,7 @@ void	parseMain(Conf &conf, std::ifstream &fd)
 	int i = 0;
 
 	(void)conf;
-	while (std::getline(fd, line)) //ciclo finche non trovo http o events come parola
+	while (std::getline(fd, line))
 	{
 		i++;
 		while (!line.empty())
@@ -27,7 +29,7 @@ void	parseMain(Conf &conf, std::ifstream &fd)
 			std::cout << "\033[33mLine " << i << ": " << line << "\033[0m" << std::endl;
 			line = removeWhitespaces(line);
 			if (line[0] == '{')
-				newOpenBlock(conf, list);
+				newOpenBlock(conf, list, &i);
 			// else if (line[0] == '}')
 				// newOpenBlock();
 			// else if (line[0] == ';')
