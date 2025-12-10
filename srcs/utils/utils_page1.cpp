@@ -57,9 +57,9 @@ size_t	find_first_special_char(std::string line)
 {
 	size_t i = 0;
 
-	while(line[i] != 0 && !std::isspace(line[i]) && !std::strchr("{};", line[i]))
+	while(line[i] != 0 && !std::isspace(line[i]) && !std::strchr("{};#", line[i]))
 		i++;
-	return(i + (line[0] == '{' || line[0] == '}' || line[0] == ':'));
+	return(i + (line[0] == '{' || line[0] == '}' || line[0] == ';' || line[0] == '#'));
 }
 
 bool	is_there_special_char(std::string line)

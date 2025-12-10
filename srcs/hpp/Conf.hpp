@@ -61,6 +61,10 @@ class Conf
 		bool				_server;
 		bool				_location;
 
+//SECTION - settings got from parsing
+//	SECTION - main block 
+		std::string			_user;
+
 	//canonic
 	public:
 		Conf(std::string filepath);
@@ -80,7 +84,12 @@ class Conf
 		void	setServer(bool val);
 		void	setLocation(bool val);
 
-
+//SECTION - utils
+		void	print(void) const;
+//SECTION - settings getters/setters
+//	SECTION - main block
+		std::string	getMainUser(void) const;
+		void		setMainUser(std::string);
 		// exception
 		class ConfException: public std::exception
 		{
@@ -92,7 +101,16 @@ class Conf
 				~ConfException() throw() {};
 		};
 };
+//conf errors
+enum	e_conf_error
+{
+	CONF_BLOCK_OPEN,
+	CONF_BLOCK_CLOSE,
+	CONF_BLOCK_FORMAT,
+	CONF_INSTRUCTION_UNFINISHED,
+	CONF_INSTRUCTION_EMPTY,
+};
 
-void	parseMain(Conf &conf, std::ifstream &fd);
+void	confParse(Conf &conf, std::ifstream &fd);
 
 #endif

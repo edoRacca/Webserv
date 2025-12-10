@@ -5,9 +5,13 @@ Conf::Conf(std::string filepath): _file(filepath)
 {
 	std::ifstream fd(filepath.c_str(), std::ios_base::in);
 
+	this->_events = false;
+	this->_http = false;
+	this->_server = false;
+	this->_location = false;
 	if (fd.fail())
 		throw ConfException("Invalid configuration file");
-	parseMain(*this, fd);
+	confParse(*this, fd);
 }
 
 Conf::~Conf()
@@ -63,4 +67,27 @@ void	Conf::setServer(bool val)
 void	Conf::setLocation(bool val)
 {
 	this->_location = val;
+}
+
+//SECTION - utils
+
+void	Conf::print(void) const
+{
+	std::cout << "\033[35mPrint of all configurations:\n";
+	std::cout << "\033[33m{MAIN BLOCK}\n";
+	if (this->_user.empty() == false)
+		std::cout << "\033[34mUser:\t\033[33m" << this->_user << "\n";
+	std::cout << "\033[0m";
+}
+
+//SECTION - settings getters/setters
+//	SECTION - main block
+std::string	Conf::getMainUser(void) const
+{
+	return (this->_user);
+}
+
+void		Conf::setMainUser(std::string user)
+{
+	this->_user = user;
 }
