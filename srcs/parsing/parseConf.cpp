@@ -97,12 +97,12 @@ static int	newOpenBlock(Conf &conf, std::vector<std::string> &list, int *i)
 {
 //	std::cout << "List size: " << list.size() << std::endl;
 //	std::cout << "List val: " << list[0] << std::endl;
-	if (list.size() > 1 && list[0] == "location")
-		;//FIXME - gestire location
-	else if (list.size() != 1)
+	if (list.size() > 1 && list[0] != "location")//FIXME - gestire location
 		blockError(list[0], *i, CONF_BLOCK_FORMAT);
+	else if (list.size() < 1)
+		blockError("", *i, CONF_BLOCK_EMPTY);
 	if (list[0] == "events" && !conf.getHttp() && !conf.getEvents())
-		conf.setEvents(true);	
+		conf.setEvents(true);
 	else if (list[0] == "http" && !conf.getHttp() && !conf.getEvents())
 		conf.setHttp(true);
 	//server dentro ad http non gia aperto e fuori da location o da events
@@ -138,12 +138,14 @@ static void	blockError(std::string block, int line, int flag)
 	error = "\033[31mConfException: in line " + ft_to_string(line);
 	if (flag == CONF_BLOCK_CLOSE)
 		throw Conf::ConfException(error + ":\tcannot close current block\033[0m");
+	else if (flag == CONF_BLOCK_FORMAT)
+		throw Conf::ConfException(error + ":\tInvalid open block format\033[0m");
+	else if (flag == CONF_BLOCK_EMPTY)
+		throw Conf::ConfException(error + ":\tBlock is empty, lol\033[0m");
 	else if (flag == CONF_INSTRUCTION_UNFINISHED)
 		throw Conf::ConfException(error + ":\tmissing ; before block end\033[0m");
 	else if (flag == CONF_INSTRUCTION_EMPTY)
 		throw Conf::ConfException(error + ":\tinstruction is empty\033[0m");
-	else if (flag == CONF_BLOCK_FORMAT)
-		throw Conf::ConfException(error + ":\tInvalid open block format\033[0m");
 	error += ", block " + block + ":\t";
 	if (!block.compare("events") && \
 		!block.compare("http") && \
