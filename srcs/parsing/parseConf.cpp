@@ -34,6 +34,29 @@ void	confParseMain(Conf &conf, std::vector<std::string> list, int line);
 											When a token separator is found,
 											list is reset.
 */
+
+/*
+;#verrò ignorato
+events {}
+http
+{
+	server
+	{
+		location /gino pippo#verrò ignorato pure io
+		{
+			
+		}
+		location /www
+		{#verrò ignorato pure io
+			
+		}
+	#verrò ignorato pure io
+	}
+	server
+	{
+		scimmie omosessuali negre;
+	}
+}*/
 void	confParse(Conf &conf, std::ifstream &fd)
 {
 	std::string					line;
@@ -118,7 +141,7 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 	else if (list[0] == "location" && conf.getServer() && conf.getHttp() && !conf.getLocation() && !conf.getEvents())
 		conf.setLocation(true);
 	else
-		blockError(list[0], line, CONF_BLOCK_OPEN);
+		blockError(list[0], line, CONF_BLOCK_INVALID);
 	list.clear();
 	return (1);
 }
@@ -129,12 +152,12 @@ static int	closeBlock(Conf &conf, int line, std::string token)
 	(void)token;
 	if (conf.getEvents())
 		conf.setEvents(false);
-	else if (conf.getHttp() && !conf.getServer() && !conf.getLocation() && !conf.getEvents())
-		conf.setHttp(false);
-	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
-		conf.setServer(false);
 	else if (conf.getHttp() && conf.getServer() && conf.getLocation() && !conf.getEvents())
 		conf.setLocation(false);
+	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
+		conf.setServer(false);
+	else if (conf.getHttp() && !conf.getServer() && !conf.getLocation() && !conf.getEvents())
+		conf.setHttp(false);
 	else
 		blockError("", line, CONF_BLOCK_CLOSE);
 	return (1);
@@ -145,9 +168,7 @@ static void	blockError(std::string block, int line, int flag)
 	std::string	error;
 
 	error = "ConfException: in line \033[33m" + ft_to_string(line);
-	if (block.compare("events") && block.compare("http") && block.compare("server") && block.compare("location"))
-		error += ": " + block + " is not allowed (allowed: events, http, server, location)";
-	else if (flag == CONF_BLOCK_CLOSE)
+	if (flag == CONF_BLOCK_CLOSE)
 		throw Conf::ConfException(error + ": cannot close " + block + "\033[0m");
 	else if (flag == CONF_BLOCK_FORMAT)
 		throw Conf::ConfException(error + ": invalid open block format\033[0m");
@@ -158,11 +179,13 @@ static void	blockError(std::string block, int line, int flag)
 	else if (flag == CONF_INSTRUCTION_EMPTY)
 		throw Conf::ConfException(error + ": instruction is empty\033[0m");
 	else if (flag == CONF_BLOCK_OPEN)
-		throw Conf::ConfException(error + ": block opened into antoher\033[0m");
+		throw Conf::ConfException(error + ": block opened into another block\033[0m");
 	else if (flag == CONF_MULT_BLOCK)
 		throw Conf::ConfException(error + ": multiple block " + block + "\033[0m");
+	if (block.compare("events") && block.compare("http") && block.compare("server") && block.compare("location"))
+		error += ": " + block + " is not allowed (allowed: events, http, server, location)";
 	else
-		error += "block order violated.";
+		error += " block order violated.";
 	throw Conf::ConfException(error);
 }
 
