@@ -59,10 +59,10 @@ class Conf
 		bool				_events;
 		bool				_http;
 		bool				_server;
-		bool				_location;
+		bool				_location;\
 
-//SECTION - settings got from parsing
-//	SECTION - main block 
+		//SECTION - settings got from parsing
+		//SECTION - main block 
 		std::string			_user;
 
 	//canonic
@@ -110,6 +110,7 @@ enum	e_conf_error
 	CONF_BLOCK_CLOSE,
 	CONF_BLOCK_FORMAT,
 	CONF_BLOCK_EMPTY,
+	CONF_MULT_BLOCK,
 	CONF_INSTRUCTION_UNFINISHED,
 	CONF_INSTRUCTION_EMPTY,
 };

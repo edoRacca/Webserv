@@ -25,7 +25,7 @@ int	times = 1000;
 
 void	spread_democracy(int sig)
 {
-	std::cout << "\nGOLD EXPERIENCE!\n" << std::endl;
+	std::cout << "\nONOLULU ARRIVO!\n" << std::endl;
 	(void)sig, times = 0;
 }
 
