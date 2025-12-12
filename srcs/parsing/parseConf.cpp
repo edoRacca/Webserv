@@ -139,17 +139,17 @@ static void	blockError(std::string block, int line, int flag)
 
 	error = "ConfException: in line \033[33m" + ft_to_string(line);
 	if (flag == CONF_BLOCK_CLOSE)
-		throw Conf::ConfException(error + "\033[0m: \033[33mcannot close current block, some blocks are still open\033[0m");
+		throw Conf::ConfException(error + ": cannot close " + block + "\033[0m");
 	else if (flag == CONF_BLOCK_FORMAT)
-		throw Conf::ConfException(error + ":\tInvalid open block format\033[0m");
+		throw Conf::ConfException(error + ": invalid open block format\033[0m");
 	else if (flag == CONF_BLOCK_EMPTY)
-		throw Conf::ConfException(error + ":\tBlock is empty, lol\033[0m");
+		throw Conf::ConfException(error + ": block is empty, lol\033[0m");
 	else if (flag == CONF_INSTRUCTION_UNFINISHED)
-		throw Conf::ConfException(error + ":\tmissing ; before block end\033[0m");
+		throw Conf::ConfException(error + ": missing ; before block end\033[0m");
 	else if (flag == CONF_INSTRUCTION_EMPTY)
-		throw Conf::ConfException(error + ":\tinstruction is empty\033[0m");
+		throw Conf::ConfException(error + ": instruction is empty\033[0m");
 	else if (flag == CONF_BLOCK_OPEN)
-		throw Conf::ConfException(error + ":\tblock opened into antoher\033[0m");
+		throw Conf::ConfException(error + ": block opened into antoher\033[0m");
 	error += ", block " + block + ":\t";
 	if (block.compare("events") && block.compare("http") && block.compare("server") && block.compare("location"))
 		error += "is not allowed (allowed: events, http, server, location)";
