@@ -1,12 +1,17 @@
 NAME = webserv
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g -D_GLIBCXX_DEBUG
 CPPFLAGS = -std=c++98
 
 
-SRCS = $(addprefix srcs/, main.cpp $(CPP))
-CPP = $(addprefix cpp/, Server.cpp)
+SRCS = $(addprefix srcs/, main.cpp $(CPP) $(PARSING) $(UTILS))
+
+PARSING = $(addprefix parsing/, parseConf.cpp parseRequest.cpp $(CONF_PARSING))
+CONF_PARSING = $(addprefix conf/, parseEvent.cpp parseMain.cpp parseServer.cpp parseLocation.cpp parseHttp.cpp)
+
+CPP = $(addprefix cpp/, Server.cpp Client.cpp Request.cpp Conf.cpp)
+UTILS = $(addprefix utils/, utils_page1.cpp)
 
 all: $(NAME)
 
@@ -21,11 +26,13 @@ fclean:
 
 re: fclean all
 
-run: $(NAME)
+run: re
 	clear ; ./$(NAME)
+
+gdb: re
+	clear ; gdb ./$(NAME)
 
 val: $(NAME)
 	clear ; valgrind ./$(NAME)
 
 .PHONY: all clean fclean run val
-# .SILEN
