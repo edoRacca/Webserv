@@ -3,7 +3,7 @@
 
 //NOTE - Allowed server instructions
 /*
-	//FIXME - aggiungere
+	//FIXME - aggiungere gestione parametri (vedi struttura.md)
 */
 void	confParseServer(Conf &conf, std::vector<std::string> list, int line)
 {

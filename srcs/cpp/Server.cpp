@@ -22,7 +22,6 @@ static struct pollfd	setupPollFd(int client);
 	4)	Fare un solo poll, passandogli il vector.
 		A poll frega un cazzo di dove gli arriva la roba.
 */
-
 static struct pollfd	createServerSock(int port_n) //successivamente prendera una reference a un oggetto Config con tutti i parametri passati dal config file
 {
 	struct sockaddr_in	address;
@@ -57,6 +56,21 @@ static struct pollfd	createServerSock(int port_n) //successivamente prendera una
 	server {listen 80 81;}
 	server {listen 82;}
 	server {}	->mettere porta 80 (predefinita)
+
+	//FIXME - gestione blocchi server config
+	costruttore server deve prendere come argomento:
+	@std::vector<t_conf_server>:	ogni elemento è un blocco server nel conf
+
+	Ogni blocco server contiene una o più porte in ascolto.
+	Dobbiamo fare due cicli for:
+	1)	per ogni elemento di std::vector<t_conf_server>:
+	{
+		2)	per ogni porta su cui l'elemento ascolta:
+		{
+			this->_addrs.push_back(createServerSock(PORT))
+		}
+		collegare tutti gli addrs al t_conf_server corrente
+}
 */
 Server::Server()
 {
@@ -85,6 +99,7 @@ Server::~Server()
 	}
 }
 
+//crea una struct pollfd con l'fd del client, dato da accept()
 static struct pollfd	setupPollFd(int client)
 {
 	struct pollfd s;

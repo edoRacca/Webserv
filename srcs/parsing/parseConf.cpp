@@ -8,28 +8,6 @@ void	confParseServer(Conf &conf, std::vector<std::string> list, int line);
 void	confParseLocation(Conf &conf, std::vector<std::string> list, int line);
 void	confParseMain(Conf &conf, std::vector<std::string> list, int line);
 
-//ANCHOR - confParse
-/*
-	Read configuration file. Parse it. Saves data in Conf class.
-
-	@special:	throw exceptions
-	@input:		[Conf &conf]-------------->	reference to conf class.
-				[std::ifstream &fd]------->	reference to conf file stream.
-	@return:	none 
-	@var:	
-		[std::string line]-------------->	current line read
-		[std::string token]------------->	current token.
-											tokens are separated by:
-											-	ISSPACE (see ascii)
-											-	#	comments sign
-											-	;	instruction end sign
-											-	{	open block sign
-											-	}	close block sign
-		[std::vector<std::string> list]->	list of all tokens.
-											When a token separator is found,
-											list is reset.
-*/
-
 static void	blockError(std::string block, int line, int flag)
 {
 	std::string	error;
@@ -60,6 +38,11 @@ static void	blockError(std::string block, int line, int flag)
 	throw Conf::ConfException(error);
 }
 
+/*
+	-	controlla che la lista di istruzioni non sia vuota.
+	-	viene chiamata una funzione in base al tipo di blocco corrente
+	-	la lista di istruzioni viene svuotata
+*/
 static int	instructionBlock(Conf &conf, std::vector<std::string> &list, int i)
 {
 	if (list.size() < 1)
@@ -111,6 +94,12 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 	return (1);
 }
 
+/*
+	- 	chiude il blocco corrente.
+	-	se viene chiuso un blocco server, 
+		i suoi dati vengono pushati nel vector<t_conf_server>
+	-	se non ci sono blocchi da chiudere, errore
+*/
 static int	closeBlock(Conf &conf, int line)
 {
 	if (conf.getEvents())
@@ -141,6 +130,27 @@ void	instructionError(std::vector<std::string> &list, int line, std::string s)
 	throw Conf::ConfException(error);
 }
 
+//ANCHOR - confParse
+/*
+	Read configuration file. Parse it. Saves data in Conf class.
+
+	@special:	throw exceptions
+	@input:		[Conf &conf]-------------->	reference to conf class.
+				[std::ifstream &fd]------->	reference to conf file stream.
+	@return:	none 
+	@var:	
+		[std::string line]-------------->	current line read
+		[std::string token]------------->	current token.
+											tokens are separated by:
+											-	ISSPACE (see ascii)
+											-	#	comments sign
+											-	;	instruction end sign
+											-	{	open block sign
+											-	}	close block sign
+		[std::vector<std::string> list]->	list of all tokens.
+											When a token separator is found,
+											list is reset.
+*/
 void	confParse(Conf &conf, std::ifstream &fd)
 {
 	std::string					line;

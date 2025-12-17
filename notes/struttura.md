@@ -49,6 +49,42 @@ descrizione:	(attuale create_http)
 `CONF` --> 	{
 descrizione:	una classe/struct che contiene i dati presi dal config
 contiene:
+- struct s_conf_server:			contenuto blocchi server
+- std::vector<t_conf_server>:	array di blocchi server	
+- struct s_conf_location:		contenuto blocchi location
+}
+
+`CONF_SERVER` --> 	{
+descrizione:	struct che contiene i dati di un blocco server
+contiene:
+- location(std::map<std::string, t_conf_location>):	
+	mappa di location accettate <-->	struct s_conf_location
+	esempio:	location /pippo
+		provando ad accedere a location["/pippo"] : ottengo dati location
+
+- ipports(std::map<std::string, int>):
+	mappa di indirizzi ip <--->	numero porta associata
+	esempio:	listen 127.0.0.1:8080
+		provando ad accedere a ipports["127.0.0.1"] : ottengo 8080
+
+- root(std::string):	path dove trovare i file. Viene inserita prima della path richiesta.
+	esempio:	root /var/www/html
+		POST /images/piedini_loli HTTP/1.1
+		/images/piedini_loli ----->	/var/www/html/images/piedini_loli
+
+- server_names(std::vector<std::string>):
+	vector di nomi del server.
+	esempio:	server_name server server.com www.server.com *server.com
+		##	POST / HTTP/1.1
+		##	Host: server
+		essendo che host == server_name, questo server verrà usato per la richiesta
+
+- client_max_body_size(int):	massima lunghezza del body per le richieste client	
+}
+
+`CONF_LOCATION` --> 	{
+descrizione:	struct che contiene i dati di un blocco location
+contiene:
 }
 
 			CLIENT A }	
