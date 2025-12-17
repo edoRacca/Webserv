@@ -18,7 +18,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 	private:
 		std::vector<struct pollfd>	_addrs; //pollfd per poll(), una struct per ogni ip:porta in ascolto
 		std::map<int, Client *>		_clients;
-		// std::map<struct pollfd *, int>	_ROBBA;
+		// std::map<int, std::vector<location_struct>>	_ROBBA;
 		int							_server_num;
 
 	public:

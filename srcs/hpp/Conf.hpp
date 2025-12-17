@@ -59,22 +59,45 @@ enum	e_conf_error
   }
 */
 
+/*
+	{struttura server}	->	push ARRAY SERVER
+*/
+struct s_conf_server
+{
+	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
+	std::map<std::string, int>				ipports;//listen 80; listen 127.0.0.1:8080; listen 443 ssl;
+	std::string								root;//root /var/www/html;
+	std::vector<std::string>				server_names;//server_name example.com www.example.com *example.com;
+	int										client_max_body_size;//client_max_body_size 10m;
+// //	std::map<>								error_pages;//error_page 404 /404.html;	error_page 500 502 503 504 /50x.html;
+// //	std::string								access_log;//access_log /var/log/nginx/access.log;
+// //	std::string								error_log;//error_log /var/log/nginx/access.log;
+};
+
+struct s_conf_location
+{
+	
+};
+
 class Conf
 {
 	private:
-		const std::string	_file;
-		bool				_events;
-		bool				_http;
-		bool				_server;
-		bool				_location;
+		const std::string			_file;
+		bool						_events;
+		bool						_http;
+		bool						_server;
+		bool						_location;
 
-		int					_nevents;
-		int					_nhttp;
-		int					_nserver;
+		int							_nevents;
+		int							_nhttp;
+		int							_nserver;
 
 		//SECTION - settings got from parsing
 		//SECTION - main block
-		std::string			_user;
+		std::string					_user;
+		t_conf_server				_srvblock;
+		t_conf_location				_locblock;
+		std::vector<t_conf_server>	_srv_conf;
 
 	//canonic
 	public:
@@ -97,6 +120,9 @@ class Conf
 
 		void	updateBlock(int block_type);
 		int		getBlockNumber(int block_type);
+
+		std::vector<t_conf_server>	&getConfServer(void);
+		t_conf_server				getServerBlock(void) const;
 
 		std::string	checkOpenBlock(void) const;
 		std::string	missingBlock() const;
@@ -129,25 +155,17 @@ std::ostream &operator<<(std::ostream &os, Conf &c);
 void	confParse(Conf &conf, std::ifstream &fd);
 
 /*
-	{struttura server}	->	push ARRAY SERVER
+	QUALE SERVER SCEGLIERE?
+
+	//SECTION -	server_name
+	-	prendiamo richiesta: leggiamo la richiesta
+	-	recuperiamo host dall'header
+	-	confronto host con server_name
+
+	1)	se host == server_name
+	2)	wildcard
+	3)	default server (puo contenere lettere, numeri e punto, in altri casi da errore)
 */
-
-struct s_conf_server
-{
-	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
-//	std::map<>								error_pages;//error_page 404 /404.html;	error_page 500 502 503 504 /50x.html;
-	std::vector<int>						ports;//listen 80; listen 127.0.0.1:8080; listen 443 ssl;
-	// std::pair<>								server_name;//server_name example.com www.example.com;
-	std::string								root;//root /var/www/html;
-	std::string								access_log;//access_log /var/log/nginx/access.log;
-	std::string								error_log;//error_log /var/log/nginx/access.log;
-	int										client_max_body_size;//client_max_body_size 10m;
-};
-
-struct s_conf_location
-{
-	
-};
-
+//
 
 #endif

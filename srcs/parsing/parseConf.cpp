@@ -118,7 +118,10 @@ static int	closeBlock(Conf &conf, int line)
 	else if (conf.getHttp() && conf.getServer() && conf.getLocation() && !conf.getEvents())
 		conf.setLocation(false);
 	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
+	{
+		conf.getConfServer().push_back(conf.getServerBlock());
 		conf.setServer(false);
+	}
 	else if (conf.getHttp() && !conf.getServer() && !conf.getLocation() && !conf.getEvents())
 		conf.setHttp(false);
 	else

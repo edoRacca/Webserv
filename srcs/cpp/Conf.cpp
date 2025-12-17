@@ -12,6 +12,8 @@ Conf::Conf(std::string filepath): _file(filepath)
 	this->_nevents = 0;
 	this->_nhttp = 0;
 	this->_nserver = 0;
+	std::memset(&this->_srvblock, 0, sizeof(this->_srvblock));
+	std::memset(&this->_locblock, 0, sizeof(this->_locblock));
 	if (fd.fail())
 		throw ConfException("Invalid configuration file");
 	confParse(*this, fd);
@@ -94,6 +96,16 @@ int		Conf::getBlockNumber(int block_type)
 		return (this->_nserver);
 	std::cerr << "\033[31mConf: Unrecognized block number\033[0m\n";
 	return (-1);
+}
+
+std::vector<t_conf_server>	&Conf::getConfServer(void)
+{
+	return (this->_srv_conf);
+}
+
+t_conf_server	Conf::getServerBlock(void) const
+{
+	return (this->_srvblock);
 }
 
 std::string	Conf::checkOpenBlock(void) const
