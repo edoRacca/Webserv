@@ -12,11 +12,19 @@ Conf::Conf(std::string filepath): _file(filepath)
 	this->_nevents = 0;
 	this->_nhttp = 0;
 	this->_nserver = 0;
-	std::memset(&this->_srvblock, 0, sizeof(this->_srvblock));
+//	std::memset(&this->_srvblock, 0, sizeof(this->_srvblock));
 	std::memset(&this->_locblock, 0, sizeof(this->_locblock));
 	if (fd.fail())
 		throw ConfException("Invalid configuration file");
 	confParse(*this, fd);
+}
+
+s_conf_server::s_conf_server()
+{
+	this->root = DEFAULT_CONF_ROOT;
+	this->ipports[DEFAULT_CONF_IP] = DEFAULT_CONF_PORT;
+	this->server_names.push_back(DEFAULT_CONF_SERVNAME);
+	this->client_max_body_size = DEFAULT_CONF_BODYSIZE;
 }
 
 Conf::~Conf()

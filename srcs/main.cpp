@@ -36,7 +36,7 @@ int main(int ac, char **av) //da aggiungere ac e av
 	try
 	{
 		if (ac < 2)
-			Conf conf(CONF_DEFAULT_PATH);
+			Conf conf(DEFAULT_CONF_PATH);
 		else if (ac == 2)
 			Conf conf(av[1]);
 		else

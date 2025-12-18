@@ -87,7 +87,9 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 		conf.updateBlock(conf.B_SERVER);
 	}
 	else if (list[0] == "location" && conf.getServer() && conf.getHttp() && !conf.getLocation() && !conf.getEvents())
+	{
 		conf.setLocation(true);
+	}
 	else
 		blockError(list[0], line, CONF_BLOCK_INVALID);
 	list.clear();
@@ -105,7 +107,10 @@ static int	closeBlock(Conf &conf, int line)
 	if (conf.getEvents())
 		conf.setEvents(false);
 	else if (conf.getHttp() && conf.getServer() && conf.getLocation() && !conf.getEvents())
+	{
+		// conf.getServerBlock()[] = 
 		conf.setLocation(false);
+	}
 	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
 		conf.getConfServer().push_back(conf.getServerBlock());

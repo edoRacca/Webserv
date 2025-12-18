@@ -2,10 +2,14 @@
 # define CONF_HPP
 
 # include "../../includes/ether.hpp"
-# define CONF_DEFAULT_PATH "default.conf"
+# define DEFAULT_CONF_PATH "default.conf"
+# define DEFAULT_CONF_ROOT "/www/var"
+# define DEFAULT_CONF_PORT 80
+# define DEFAULT_CONF_IP "127.0.0.1"
+# define DEFAULT_CONF_SERVNAME "localhost"
+# define DEFAULT_CONF_BODYSIZE 1024
 
 typedef struct s_conf_server	t_conf_server;
-
 typedef struct s_conf_location	t_conf_location;
 
 enum	e_conf_error
@@ -64,14 +68,16 @@ enum	e_conf_error
 */
 struct s_conf_server
 {
+	s_conf_server();
+
 	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
 	std::map<std::string, int>				ipports;//listen 80; listen 127.0.0.1:8080; listen 443 ssl;
 	std::string								root;//root /var/www/html;
 	std::vector<std::string>				server_names;//server_name example.com www.example.com *example.com;
 	int										client_max_body_size;//client_max_body_size 10m;
-// //	std::map<>								error_pages;//error_page 404 /404.html;	error_page 500 502 503 504 /50x.html;
-// //	std::string								access_log;//access_log /var/log/nginx/access.log;
-// //	std::string								error_log;//error_log /var/log/nginx/access.log;
+	// std::map<>							error_pages;//error_page 404 /404.html;	error_page 500 502 503 504 /50x.html;
+	// std::string							access_log;//access_log /var/log/nginx/access.log;
+	// std::string							error_log;//error_log /var/log/nginx/access.log;
 };
 
 struct s_conf_location
@@ -95,9 +101,11 @@ class Conf
 		//SECTION - settings got from parsing
 		//SECTION - main block
 		std::string					_user;
-		t_conf_server				_srvblock;
-		t_conf_location				_locblock;
-		std::vector<t_conf_server>	_srv_conf;
+		t_conf_server				_srvblock; // temporanea per blocchi server gestiti attualmente
+		t_conf_location				_locblock; // temporanea per blocchi location gestiti attualmente
+		std::vector<t_conf_server>	_srv_conf; // vettore di blocchi server
+		// logica -> nel blocco server tmp mettiamo nella mappa di server block attuale l'URI della location con valore la struct riempita della location
+		// usciamo da blocco location e alla fine del blocco server pushamo blocco server temporaneo in _srv_conf
 
 	//canonic
 	public:
