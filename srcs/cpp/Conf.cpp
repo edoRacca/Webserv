@@ -89,7 +89,7 @@ void	Conf::setLocation(bool val)
 
 void	Conf::setCurrLocation(std::string curr)
 {
-	this->_currlocation = curr;
+	this->_locblock.path = curr;
 }
 
 void	Conf::updateBlock(int block_type)

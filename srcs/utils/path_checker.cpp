@@ -8,7 +8,6 @@ bool	valid_directory(std::string directory)
 
 	directory = directory.substr(directory[0] == '/');
 	dir_fd = opendir(directory.c_str());
-	std::cout << directory << std::endl;
 	valid = (dir_fd != NULL);
 	return (closedir(dir_fd), valid);
 }
