@@ -13,12 +13,12 @@ static void	blockError(std::string block, int line, int flag)
 	std::string	error;
 	std::string	error2;
 
-	error = "ConfException: in line \033[33m" + ft_to_string(line);
+	error = "ConfException in line \033[33m" + ft_to_string(line);
 	error2 = "ConfException:\033[33m";
 	if (flag == CONF_BLOCK_CLOSE)
 		throw Conf::ConfException(error + ": cannot close " + block + "\033[0m");
 	else if (flag == CONF_BLOCK_FORMAT)
-		throw Conf::ConfException(error + ": invalid open block format\033[0m");
+		throw Conf::ConfException(error + ": invalid block format\033[0m");
 	else if (flag == CONF_BLOCK_EMPTY)
 		throw Conf::ConfException(error + ": block is empty, lol\033[0m");
 	else if (flag == CONF_INSTRUCTION_UNFINISHED)
@@ -70,7 +70,7 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 	else if (list.size() < 1)
 		blockError("", line, CONF_BLOCK_EMPTY);
 	else if ((list[0] == "events" && conf.getBlockNumber(conf.B_EVENTS) > 0) || \
-	(list[0] == "http" && conf.getBlockNumber(conf.B_HTTP) > 0))
+		(list[0] == "http" && conf.getBlockNumber(conf.B_HTTP) > 0))
 		blockError(list[0], line, CONF_MULT_BLOCK);
 	if (list[0] == "events" && !conf.getHttp() && !conf.getEvents())
 	{

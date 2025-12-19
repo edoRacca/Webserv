@@ -6,10 +6,11 @@ bool	valid_directory(std::string directory)
 	DIR		*dir_fd;
 	bool	valid;
 
+	directory = directory.substr(directory[0] == '/');
 	dir_fd = opendir(directory.c_str());
+	std::cout << directory << std::endl;
 	valid = (dir_fd != NULL);
-	closedir(dir_fd);
-	return (valid);
+	return (closedir(dir_fd), valid);
 }
 
 //returns 1 if directory is valid, else 0
