@@ -26,10 +26,7 @@ void	confParseServer(Conf &conf, std::vector<std::string> list, int line)
 	else if (list[0] == "client_max_body_size")
 		parseBodySize(conf, list, line);
 	else
-	{
-		std::cerr << "\033[31mConf server, line " << line << ":\t\
-		unrecognized instruction:\t" << list[0] << "\n\033[0m";
-	}
+		instructionError(list, line, "unrecognized instruction: ");
 }
 
 /*

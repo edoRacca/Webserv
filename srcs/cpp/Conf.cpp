@@ -5,8 +5,6 @@ Conf::Conf(std::string filepath): _file(filepath)
 {
 	std::ifstream fd(filepath.c_str(), std::ios_base::in);
 
-//	std::memset((void*)this, 0, sizeof(this));//NOTE - se scommenti linea sotto crasha std::map
-//	std::memset((void*)&this->_srvblock, 0, sizeof(this->_srvblock));
 	this->_events = 0;
 	this->_http = 0;
 	this->_server = 0;
@@ -15,7 +13,6 @@ Conf::Conf(std::string filepath): _file(filepath)
 	this->_nhttp = 0;
 	this->_nserver = 0;
 	this->_srvblock.client_max_body_size = 0;
-//	std::memset((void*)&this->_locblock, 0, sizeof(this->_locblock));
 	if (fd.fail())
 		throw ConfException("Invalid configuration file");
 	confParse(*this, fd);

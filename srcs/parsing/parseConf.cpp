@@ -34,9 +34,9 @@ static void	blockError(std::string block, int line, int flag)
 	else if (flag == CONF_PATH_INVALID)
 		throw Conf::ConfException(error + ": " + block + " does not exist!\033[0m");
 	if (block.compare("events") && block.compare("http") && block.compare("server") && block.compare("location"))
-		error += ": " + block + " is not allowed (allowed: events, http, server, location)";
+		error += ": " + block + " is not allowed (allowed: events, http, server, location)\033[0m";
 	else
-		error += " block order violated.";
+		error += " block order violated.\033[0m";
 	throw Conf::ConfException(error);
 }
 
@@ -65,6 +65,8 @@ static int	instructionBlock(Conf &conf, std::vector<std::string> &list, int i)
 
 static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 {
+	if (list.size() == 0)
+		blockError("unnamed block", line, CONF_BLOCK_INVALID);
 	if (list.size() > 1UL + (list[0] == "location"))
 		blockError(list[0], line, CONF_BLOCK_FORMAT);
 	else if (list.size() < 1)
@@ -139,7 +141,7 @@ void	instructionError(std::vector<std::string> &list, int line, std::string s)
 	error += ", instruction \033[34m";
 	for (size_t i = 0; i < list.size(); i++)
 		error += list[i] + " ";
-	error += "\033[31m\b:\n" + s + "\033[0m";
+	error += "\033[31m\b: " + s + "\033[0m";
 	throw Conf::ConfException(error);
 }
 
