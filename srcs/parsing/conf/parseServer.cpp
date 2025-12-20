@@ -78,6 +78,7 @@ static void	parseListen(Conf &conf, std::vector<std::string> list, int line)
 	std::string	ip;
 	std::string	ip_port;
 	int			ip_len;
+	int			port;
 
 	if (list.size() > 2)
 		instructionError(list, line, "listen does not manage flags, such as ssl");
@@ -101,16 +102,19 @@ static void	parseListen(Conf &conf, std::vector<std::string> list, int line)
 	if (ip_port[0] == ':')
 		ip_port.erase(0, 1);
 	//SECTION - mappatura ip - porta
-	if (conf.getServerBlock().ipports.find(ip) != conf.getServerBlock().ipports.end())
-		instructionWarning(list, line, "ip addr already set for this server");
+//	if (conf.getServerBlock().ipports.find(ip) != conf.getServerBlock().ipports.end() && (*conf.getServerBlock().ipports.find(ip)).second == std::atoi(ip_port.c_str()))
+//		instructionWarning(list, line, "ip addr already set for this server");
 	if (ip_port.empty())
-		conf.getServerBlock().ipports[ip] = DEFAULT_CONF_PORT;
+		port = DEFAULT_CONF_PORT;
 	else
-		conf.getServerBlock().ipports[ip] = std::atoi(ip_port.c_str());
+		port = std::atoi(ip_port.c_str());
+	std::pair<std::string, int> ipport(ip, port);
+	if (conf.getServerBlock().ipports.count(ipport) != 0)
+		instructionError(list, line, "duplicated ip_address:port");
+	conf.getServerBlock().ipports[ipport].push_back("");
 	if (ip_port.find_first_not_of("0123456789") != std::string::npos)
 		instructionError(list, line, "listen syntax violated");
-	std::cout << "\033[35mparseListen, line " << line << ": added " << ip << ":" << \
-	conf.getServerBlock().ipports[ip] << "\n\033[0m";
+	// std::cout << "\033[35mparseListen, line " << line << ": added " << ip << ":" << std::endl;
 }
 
 static void	parseRoot(Conf &conf, std::vector<std::string> list, int line)

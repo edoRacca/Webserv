@@ -11,6 +11,7 @@
 
 typedef struct s_conf_server	t_conf_server;
 typedef struct s_conf_location	t_conf_location;
+typedef std::map<std::pair<std::string, int>, std::vector<std::string> > SrvNameMap;
 
 enum	e_conf_error
 {
@@ -70,12 +71,12 @@ enum	e_conf_error
 struct s_conf_server
 {
 	void	set_if_empty(void);
-	void	set(void);
+	void	set(SrvNameMap &all_ip_ports);
 
 	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
-	std::map<std::string, int>				ipports;//listen 80; listen 127.0.0.1:8080; listen 443 ssl;
+	SrvNameMap								ipports;//listen 80; listen 127.0.0.1:8080; listen 443 ssl;
 	std::string								root;//root /var/www/html;
-	std::string								index;//root /var/www/html;
+	std::string								index;//index /var/www/html;
 	std::vector<std::string>				server_names;//server_name example.com www.example.com *example.com;
 	int										client_max_body_size;//client_max_body_size 10m;
 	// std::map<>							error_pages;//error_page 404 /404.html;	error_page 500 502 503 504 /50x.html;
@@ -88,8 +89,6 @@ struct s_conf_location
 	std::string		path;
 	
 };
-
-typedef std::map<std::pair<std::string, std::string>, std::vector<std::string>> SrvNameMap;
 
 class Conf
 {
@@ -129,6 +128,7 @@ class Conf
 		bool		getServer() const;
 		bool		getLocation() const;
 		std::string	getCurrLocation() const;
+		SrvNameMap	&getSrvNameMap();
 
 		// setters
 		void	setEvents(bool val);
@@ -153,6 +153,9 @@ class Conf
 
 		void		addServerName(std::string name);
 		bool		findServerName(std::string name);
+
+		bool		checkDuplicateServerName();
+		bool		checkDuplicateIpPort();
 
 		enum	e_block_type
 		{

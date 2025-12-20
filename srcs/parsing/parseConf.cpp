@@ -86,6 +86,7 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 	else if (list[0] == "server" && conf.getHttp() && !conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
 		conf.setServer(true);
+		conf.getServerBlock().set(conf.getSrvNameMap());
 		conf.updateBlock(conf.B_SERVER);
 	}
 	else if (list[0] == "location" && conf.getServer() && conf.getHttp() && !conf.getLocation() && !conf.getEvents())
@@ -119,6 +120,7 @@ static int	closeBlock(Conf &conf, int line)
 	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
 		conf.getServerBlock().set_if_empty();
+		conf.getSrvNameMap() = conf.getServerBlock().ipports;
 		conf.getConfServer().push_back(conf.getServerBlock());
 		conf.setServer(false);
 	}
@@ -181,7 +183,7 @@ void	confParse(Conf &conf, std::ifstream &fd)
 	std::vector<std::string>	list;
 	int i = 0;
 
-	std:: cout << "Conf: \033[35mPrint of all token:\n";
+	//std:: cout << "Conf: \033[35mPrint of all token:\n";
 	while (std::getline(fd, line))
 	{
 		i++;
@@ -201,8 +203,8 @@ void	confParse(Conf &conf, std::ifstream &fd)
 			if (!token.empty())
 				list.push_back(token);
 			line = line.substr(find_first_special_char(line));
-			if (token.empty() == false)
-				std::cout << "\033[34mCurrent token:\t\033[33m" << token << "\033[0m\n";
+			// if (token.empty() == false)
+			// 	std::cout << "\033[34mCurrent token:\t\033[33m" << token << "\033[0m\n";
 			token = "";
 		}
 	}

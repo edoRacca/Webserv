@@ -30,18 +30,21 @@ void	s_conf_server::set_if_empty(void)
 	if (!this->index.empty() && !valid_file(this->root + this->index))
 		throw (Conf::ConfException("cannot open " + this->root + this->index + "\n"));
 	if (this->ipports.size() == 0)
-		this->ipports[DEFAULT_CONF_IP] = DEFAULT_CONF_PORT;
+	{
+		std::pair<std::string, int> ipport(DEFAULT_CONF_IP, DEFAULT_CONF_PORT);
+		this->ipports[ipport] = this->server_names;
+	}
 	if (this->server_names.size() == 0)
 		this->server_names.push_back(DEFAULT_CONF_SERVNAME);
 	if (this->client_max_body_size == 0)
 		this->client_max_body_size = DEFAULT_CONF_BODYSIZE;
 }
 
-void	s_conf_server::set(void)
+void	s_conf_server::set(SrvNameMap &all_ip_ports)
 {
 	this->root.clear();
 	this->index.clear();
-	this->ipports.clear();
+	this->ipports = all_ip_ports;
 	this->server_names.clear();
 	this->client_max_body_size = 0;
 }
@@ -86,6 +89,11 @@ std::string	Conf::getCurrLocation() const
 	return (this->_currlocation);
 }
 
+SrvNameMap	&Conf::getSrvNameMap()
+{
+	return (this->_srvnamemap);
+}
+
 void	Conf::setEvents(bool val)
 {
 	this->_events = val;
@@ -98,8 +106,6 @@ void	Conf::setHttp(bool val)
 
 void	Conf::setServer(bool val)
 {
-	if (val == true)
-		this->_srvblock.set();
 	this->_server = val;
 }
 
@@ -196,11 +202,16 @@ void		Conf::addServerName(std::string name)
 
 bool		Conf::findServerName(std::string name)
 {
+	// this->_srvnamemap.count(std::pair<>)
 	return (this->_server_names.count(name) > 0);
 }
 
+bool		checkDuplicateServerName();
+bool		checkDuplicateIpPort();
+
 std::ostream &operator<<(std::ostream &os, Conf &c)
 {
+	return (os);
 	os << "####################################\n";
 	os << "\033[35mPrint of all configurations:\n";
 	os << "\033[33m{MAIN BLOCK}\n";
@@ -214,9 +225,8 @@ std::ostream &operator<<(std::ostream &os, Conf &c)
 		for (size_t j = 0; j < c.getConfServer()[i].server_names.size(); j++)//per ogni nome
 			os << "\n" << c.getConfServer()[i].server_names[j];
 		os << "\n\033[34mip ports:\033[33m";
-		for (std::map<std::string, int>::iterator j = c.getConfServer()[i].ipports.begin(); \
-		j != c.getConfServer()[i].ipports.end(); j++)
-			os << "\nlistening on " << (*j).first << ":" << (*j).second;
+		// for (std::map<std::string, int>::iterator j = c.getConfServer()[i].ipports.begin(); j != c.getConfServer()[i].ipports.end(); j++)
+		// 	os << "\nlistening on " << (*j).first << ":" << (*j).second;
 		os << "\n\033[34mroot: \033[33m" << c.getConfServer()[i].root;
 		os << "\n\033[34mindex: \033[33m" << c.getConfServer()[i].index;
 		os << "\n\033[34mbody_size: \033[33m" << c.getConfServer()[i].client_max_body_size;
