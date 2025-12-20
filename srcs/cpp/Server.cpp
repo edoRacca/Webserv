@@ -163,7 +163,7 @@ std::string	create_http(std::string body)
 
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
 {
-	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin(); it != this->_addrs.end(); ++it)
+	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
