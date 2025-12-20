@@ -50,7 +50,6 @@ static void	parseServerName(Conf &conf, std::vector<std::string> list, int line)
 		if (conf.findServerName(list[i]))
 			instructionError(list, line, "Server name already defined");
 		conf.addServerName(list[i]);
-		conf.getServerBlock().server_names.push_back(list[i]);
 	}
 }
 
@@ -98,6 +97,8 @@ static void	parseListen(Conf &conf, std::vector<std::string> list, int line)
 		list[1].erase(0, 1);
 	if (list[1][0] == ':')
 		list[1].erase(0, 1);//SECTION - mappatura ip - porta
+	if (conf.getServerBlock().ipports.find(ip_addr) != conf.getServerBlock().ipports.end())
+		instructionWarning(list, line, "ip addr already set for this server");
 	if (list[1].empty())
 		conf.getServerBlock().ipports[ip_addr] = DEFAULT_CONF_PORT;
 	else

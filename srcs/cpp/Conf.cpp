@@ -5,26 +5,25 @@ Conf::Conf(std::string filepath): _file(filepath)
 {
 	std::ifstream fd(filepath.c_str(), std::ios_base::in);
 
-	this->_events = false;
-	this->_http = false;
-	this->_server = false;
-	this->_location = false;
-	this->_nevents = 0;
-	this->_nhttp = 0;
-	this->_nserver = 0;
-//	std::memset(&this->_srvblock, 0, sizeof(this->_srvblock));
+	std::memset((void*)this, 0, sizeof(this));//NOTE - se scommenti linea sotto crasha std::map
+//	std::memset((void*)&this->_srvblock, 0, sizeof(this->_srvblock));
+	this->_srvblock.client_max_body_size = 0;
 	std::memset((void*)&this->_locblock, 0, sizeof(this->_locblock));
 	if (fd.fail())
 		throw ConfException("Invalid configuration file");
 	confParse(*this, fd);
 }
 
-s_conf_server::s_conf_server()
+void	s_conf_server::set_if_empty(void)
 {
-	this->root = DEFAULT_CONF_ROOT;
-	this->ipports[DEFAULT_CONF_IP] = DEFAULT_CONF_PORT;
-	this->server_names.push_back(DEFAULT_CONF_SERVNAME);
-	this->client_max_body_size = DEFAULT_CONF_BODYSIZE;
+	if (this->root.empty())
+		this->root = DEFAULT_CONF_ROOT;
+	if (this->ipports.size() == 0)
+		this->ipports[DEFAULT_CONF_IP] = DEFAULT_CONF_PORT;
+	if (this->server_names.size() == 0)
+		this->server_names.push_back(DEFAULT_CONF_SERVNAME);
+	if (this->client_max_body_size == 0)
+		this->client_max_body_size = DEFAULT_CONF_BODYSIZE;
 }
 
 Conf::~Conf()
@@ -170,6 +169,7 @@ void		Conf::setMainUser(std::string user)
 void		Conf::addServerName(std::string name)
 {
 	this->_server_names[name] = name;
+	this->_srvblock.server_names.push_back(name);
 }
 
 bool		Conf::findServerName(std::string name)
@@ -179,19 +179,24 @@ bool		Conf::findServerName(std::string name)
 
 std::ostream &operator<<(std::ostream &os, Conf &c)
 {
-	std::cout << "\033[35mPrint of all configurations:\n";
-	std::cout << "\033[33m{MAIN BLOCK}\n";
+	os << "\033[35mPrint of all configurations:\n";
+	os << "\033[33m{MAIN BLOCK}\n";
 	if (c.getMainUser().empty() == false)
-		std::cout << "\033[34mUser:\t\033[33m" << c.getMainUser() << "\n";
-	std::cout << "\033[33m{SERVER BLOCK}\n";
-	for (size_t i = 0; i < c.getConfServer().size(); i++)
+		os << "\033[34mUser:\t\033[33m" << c.getMainUser() << "\n";
+	os << "\033[33m{SERVER BLOCK}\n";
+	for (size_t i = 0; i < c.getConfServer().size(); i++)//per ogni server
 	{
-		std::cout << "Printing " << c.getConfServer()[i].server_names[0];
-		std::cout << "\n\033[34mServer names:\033[34m\n";
-		for (size_t j = 0; i < c.getConfServer().size(); i++)
-			std::cout << c.getConfServer()[i].server_names[j] << "\n";
-		//FIXME - printare tutte le porte del server
+		os << "\033[35mPrinting " << c.getConfServer()[i].server_names[0];
+		os << "\n\033[34mServer names:\033[33m";
+		for (size_t j = 0; i < c.getConfServer()[i].server_names.size(); i++)//per ogni nome
+			os << "\n" << c.getConfServer()[i].server_names[j];
+		os << "\n\033[34mip ports:\033[33m";
+		for (std::map<std::string, int>::iterator j = c.getConfServer()[i].ipports.begin(); \
+		j != c.getConfServer()[i].ipports.end(); j++)
+			os << "\nlistening on " << (*j).first << ":" << (*j).second;
+		os << "\n\033[34mroot: \033[33m" << c.getConfServer()[i].root;
+		os << "\n\033[34mbody_size: \033[33m" << c.getConfServer()[i].client_max_body_size;
 	}
-	std::cout << "\033[0m";
+	os << "\033[0m";
 	return (os);
 }

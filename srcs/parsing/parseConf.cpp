@@ -118,6 +118,7 @@ static int	closeBlock(Conf &conf, int line)
 	}
 	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
+		conf.getServerBlock().set_if_empty();
 		conf.getConfServer().push_back(conf.getServerBlock());
 		conf.setServer(false);
 	}
@@ -144,11 +145,11 @@ void	instructionWarning(std::vector<std::string> &list, int line, std::string s)
 {
 	std::string	error;
 
-	error = "\033[31mConfException: in line " + ft_to_string(line);
+	error = "\033[31mConfWarning: in line " + ft_to_string(line);
 	error += ", instruction \033[34m";
 	for (size_t i = 0; i < list.size(); i++)
 		error += list[i] + " ";
-	error += "\033[31m\b:\nWarning: " + s + "\033[0m";
+	error += "\033[31m\b:\n" + s + "\033[0m";
 	std::cerr << error << std::endl;
 }
 
