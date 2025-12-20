@@ -7,6 +7,7 @@ int	valid_ip_address(std::string addr)
 {
 	size_t	dots;
 	int		len;
+	int		ip;
 
 	dots = 0;
 	for (len = 0; addr[len] && addr[len] != ':'; len++)
@@ -17,11 +18,10 @@ int	valid_ip_address(std::string addr)
 	}
 	if (dots != 3)
 		return (false);
-	if (addr.find_first_of(".:\0", 1) > 3)
-		return (false);
 	for (int i = 4; i; i--)
 	{
-		if (std::atoi(addr.c_str()) > UINT8_MAX || (std::atoi(addr.c_str()) != 0 && addr[0] == '0'))
+		ip = std::atoi(addr.c_str());
+		if (ip > UINT8_MAX || (ip != 0 && addr[0] == '0'))
 			return (false);
 		while (addr[0] != '.' && addr[0] != ':' && !addr.empty())
 			addr.erase(0, 1);

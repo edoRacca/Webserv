@@ -71,7 +71,7 @@ enum	e_conf_error
 struct s_conf_server
 {
 	void	set_if_empty(void);
-	void	set(SrvNameMap &all_ip_ports);
+	void	set(void);
 
 	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
 	SrvNameMap								ipports;//listen 80; listen 127.0.0.1:8080; listen 443 ssl;
@@ -136,6 +136,7 @@ class Conf
 		void	setServer(bool val);
 		void	setLocation(bool val);
 		void	setCurrLocation(std::string curr);
+		void	setSrvNameMap(SrvNameMap curr);
 
 		void	updateBlock(int block_type);
 		int		getBlockNumber(int block_type);

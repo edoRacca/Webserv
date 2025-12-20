@@ -37,11 +37,11 @@ void	s_conf_server::set_if_empty(void)
 		this->client_max_body_size = DEFAULT_CONF_BODYSIZE;
 }
 
-void	s_conf_server::set(SrvNameMap &all_ip_ports)
+void	s_conf_server::set(void)
 {
 	this->root.clear();
 	this->index.clear();
-	this->ipports = all_ip_ports;
+	this->ipports.clear();
 	this->server_names.clear();
 	this->client_max_body_size = 0;
 }
@@ -89,6 +89,23 @@ std::string	Conf::getCurrLocation() const
 SrvNameMap	&Conf::getSrvNameMap()
 {
 	return (this->_srvnamemap);
+}
+
+void	Conf::setSrvNameMap(SrvNameMap curr)
+{
+	std::string	error;
+
+	for (SrvNameMap::iterator it = curr.begin(); it != curr.end(); ++it)
+	{
+		if (this->_srvnamemap.count((*it).first) != 0)
+		{
+			error = "Duplicated ip, port server name \
+			combination: ";
+			error += (*it).first.first + ":" + ft_to_string((*it).first.second);
+			throw Conf::ConfException(error);
+		}
+		this->_srvnamemap[(*it).first] = this->_srvblock.server_names;
+	}
 }
 
 void	Conf::setEvents(bool val)
@@ -208,7 +225,6 @@ bool		checkDuplicateIpPort();
 
 std::ostream &operator<<(std::ostream &os, Conf &c)
 {
-	return (os);
 	os << "####################################\n";
 	os << "\033[35mPrint of all configurations:\n";
 	os << "\033[33m{MAIN BLOCK}\n";
@@ -222,11 +238,23 @@ std::ostream &operator<<(std::ostream &os, Conf &c)
 		for (size_t j = 0; j < c.getConfServer()[i].server_names.size(); j++)//per ogni nome
 			os << "\n" << c.getConfServer()[i].server_names[j];
 		os << "\n\033[34mip ports:\033[33m";
-		// for (std::map<std::string, int>::iterator j = c.getConfServer()[i].ipports.begin(); j != c.getConfServer()[i].ipports.end(); j++)
-		// 	os << "\nlistening on " << (*j).first << ":" << (*j).second;
 		os << "\n\033[34mroot: \033[33m" << c.getConfServer()[i].root;
 		os << "\n\033[34mindex: \033[33m" << c.getConfServer()[i].index;
-		os << "\n\033[34mbody_size: \033[33m" << c.getConfServer()[i].client_max_body_size;
+		os << "\n\033[34mbody_size: \033[33m" << c.getConfServer()[i].client_max_body_size << std::endl;
+	}
+	os << std::endl << "\n\033[34mIp Addresses list: \033[0m" << std::endl;
+	for (SrvNameMap::iterator it = c.getSrvNameMap().begin(); it != c.getSrvNameMap().end(); ++it)
+	{
+		os << "IP ADDRESS -> " << (*it).first.first << ":" << (*it).first.second << \
+		" | SERVER NAME -> ";
+		for (size_t i = 0; i < (*it).second.size(); i++)
+		{
+			os << (*it).second[i];
+			if (i + 1 != (*it).second.size())
+				os << ", ";
+			else
+				os << std::endl;
+		}
 	}
 	os << "\033[0m";
 	return (os);

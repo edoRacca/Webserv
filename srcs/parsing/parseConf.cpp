@@ -88,7 +88,7 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 	else if (list[0] == "server" && conf.getHttp() && !conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
 		conf.setServer(true);
-		conf.getServerBlock().set(conf.getSrvNameMap());
+		conf.getServerBlock().set();
 		conf.updateBlock(conf.B_SERVER);
 	}
 	else if (list[0] == "location" && conf.getServer() && conf.getHttp() && !conf.getLocation() && !conf.getEvents())
@@ -122,7 +122,7 @@ static int	closeBlock(Conf &conf, int line)
 	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
 		conf.getServerBlock().set_if_empty();
-		conf.getSrvNameMap() = conf.getServerBlock().ipports;
+		conf.setSrvNameMap(conf.getServerBlock().ipports);
 		conf.getConfServer().push_back(conf.getServerBlock());
 		conf.setServer(false);
 	}
