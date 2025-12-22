@@ -11,7 +11,11 @@ static void	parseBodySize(Conf &conf, std::vector<std::string> list, int line);
 
 //NOTE - Allowed server instructions
 /*
-	//FIXME - aggiungere gestione parametri (vedi struttura.md)
+	-	ServerName
+	-	Listen
+	-	Root
+	-	Index
+	-	BodySize
 */
 void	confParseServer(Conf &conf, std::vector<std::string> list, int line)
 {
@@ -26,15 +30,9 @@ void	confParseServer(Conf &conf, std::vector<std::string> list, int line)
 	else if (list[0] == "client_max_body_size")
 		parseBodySize(conf, list, line);
 	else
-		instructionError(list, line, "unrecognized instruction: ");
+		instructionError(list, line, "unrecognized instruction");
 }
 
-/*
-// NOTE i controlli sono stati inseriti per evitare che 
-		nel conf file uno dei nomi del server sia stato
-		già definito.
-		Non so se sia giusto accertarcene.
-*/
 static void	parseServerName(Conf &conf, std::vector<std::string> list, int line)
 {
 	size_t	size;
@@ -49,27 +47,6 @@ static void	parseServerName(Conf &conf, std::vector<std::string> list, int line)
 		conf.addServerName(list[i]);
 	}
 }
-
-/*
-//NOTE - da testare:
-	-	Casi normali:
-	listen 127.0.0.1:8000;
-	listen 127.0.0.1;
-	listen 8000;
-	listen *:8000;
-//FIXME - non gestisce:
-	-	Casi normali:
-	listen 127.0.0.1:8000;
-	listen 127.0.0.1;
-	listen 8000;
-	listen *:8000;
-	-	IPv6 addresses
-	listen [::]:8000;
-	listen [::1];
-	-	DNS
-	listen unix:/var/run/nginx.sock;
-	listen localhost:8000;
-*/
 
 static std::string checkListenIp(std::vector<std::string> list, int line, std::string &ip)
 {
@@ -111,6 +88,21 @@ static void checkListenPort(Conf &conf, std::vector<std::string> list, int line,
 	conf.getServerBlock().ipports[ipport].push_back("");
 }
 
+/*
+//NOTE - da testare:
+	-	Casi normali:
+	listen 127.0.0.1:8000;
+	listen 127.0.0.1;
+	listen 8000;
+	listen *:8000;
+//FIXME - non gestisce:
+	-	IPv6 addresses
+	listen [::]:8000;
+	listen [::1];
+	-	DNS
+	listen unix:/var/run/nginx.sock;
+	listen localhost:8000;
+*/
 static void	parseListen(Conf &conf, std::vector<std::string> list, int line)
 {
 	std::string	ip_port;

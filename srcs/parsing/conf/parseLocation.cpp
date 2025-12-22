@@ -1,13 +1,15 @@
 #include "../../../includes/ether.hpp"
 #include "../../hpp/Conf.hpp"
 
-//NOTE - Allowed server instructions
+void		instructionError(std::vector<std::string>&list, int line, std::string s);
+void		instructionWarning(std::vector<std::string> &list, int line, std::string s);
+
+//NOTE - Allowed location instructions
 /*`
 	//FIXME - aggiungere
 */
 void	confParseLocation(Conf &conf, std::vector<std::string> list, int line)
 {
 	(void)conf, (void)list, (void)line;
-	std::cerr << "\033[31mConf location, line " << line << ":\t\
-	unrecognized instruction:\t" << list[0] << "\n\033[0m";
+	instructionError(list, line, "unrecognized instruction");
 }

@@ -14,17 +14,19 @@ void	spread_democracy(int sig)
 
 int main(int ac, char **av) //da aggiungere ac e av
 {
+	std::string	conf_path;
+
 	signal(SIGINT, spread_democracy);
 	std::cout << "\033[32mIl server si spegnerà tra " << times << " secondi.\n\033[0m";
 	try
 	{
 		if (ac < 2)
-			Conf conf(DEFAULT_CONF_PATH);
+			conf_path = DEFAULT_CONF_PATH;
 		else if (ac == 2)
-			Conf conf(av[1]);
+			conf_path = av[1];
 		else
 			throw std::runtime_error("\033[31mToo many configuration files\nPlease pass only one!\033[0m");
-		Server server;
+		Server server((Conf){conf_path});
 		while (times)
 		{
 			int ready = poll(server.getAddrs(), server.getAddrSize(), -1);

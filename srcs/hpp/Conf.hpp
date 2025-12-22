@@ -87,7 +87,6 @@ struct s_conf_server
 struct s_conf_location
 {
 	std::string		path;
-	
 };
 
 class Conf

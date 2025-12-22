@@ -3,6 +3,7 @@
 
 # include "../../includes/ether.hpp"
 # include "Client.hpp"
+# include "Conf.hpp"
 # include "Request.hpp"
 
 //	1024 perché lo fa anche nginx
@@ -12,6 +13,10 @@
 # define DEFAULT_PORT 8080
 
 # define DEFAULT_ROUTE "0.0.0.0"
+
+//Inizializza una struct pollfd settando l'fd a -1.
+//utilizzato per tornare errore.
+# define CONNECTION_FAIL (struct pollfd){-1, -1, -1}
 
 class Client;
 
@@ -24,7 +29,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		int							_server_num;
 
 	public:
-		Server();
+		Server(Conf conf);
 		~Server();
 
 		void 			addSocket();

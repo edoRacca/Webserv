@@ -39,7 +39,9 @@ static struct pollfd	createServerSock(int port_n) //successivamente prendera una
 	if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) != 0)
 	{
 		close(server_fd);
-		throw std::runtime_error("\033[31mBind ha fallito.\033[0m");
+		//throw std::runtime_error("\033[31mBind ha fallito.\033[0m");
+		std::cout << port_n << " cannot be binded\n";
+		return (CONNECTION_FAIL);
 	}
 	if (listen(server_fd, MAX_CONNECTION) != 0)
 	{
@@ -72,13 +74,26 @@ static struct pollfd	createServerSock(int port_n) //successivamente prendera una
 		collegare tutti gli addrs al t_conf_server corrente
 }
 */
-Server::Server()
+Server::Server(Conf conf)
 {
-	this->_server_num = 0;
+	pollfd	port_connection;
+
 	std::cout << "\033[32mserver constructor!\033[0m" << std::endl;
-	//for
-	this->_addrs.push_back(createServerSock(DEFAULT_PORT));
-	// _ROBBA[&(*(_addrs.rbegin()))] = 1;
+	this->_server_num = 0;
+	if (conf.getSrvNameMap().size() == 0)
+		throw (std::runtime_error("specify at least one listen in conf file"));
+	for (SrvNameMap::iterator it = conf.getSrvNameMap().begin(); \
+		it != conf.getSrvNameMap().end(); it++)
+	{
+		port_connection = createServerSock((*it).first.second);
+		if (port_connection.fd != -1)
+		{
+			this->_addrs.push_back(port_connection);
+			this->_server_num++;
+		}
+	}
+	if (this->_server_num == 0)
+		throw (std::runtime_error("no server could be binded."));
 	std::cout << "\033[32mTutto bene col costruttore!\033[0m" << std::endl;
 }
 

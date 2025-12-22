@@ -5,6 +5,8 @@ Conf::Conf(std::string filepath): _file(filepath)
 {
 	std::ifstream fd(filepath.c_str(), std::ios_base::in);
 
+	if (fd.fail())
+		throw ConfException("Invalid configuration file");
 	this->_events = 0;
 	this->_http = 0;
 	this->_server = 0;
@@ -13,8 +15,6 @@ Conf::Conf(std::string filepath): _file(filepath)
 	this->_nhttp = 0;
 	this->_nserver = 0;
 	this->_srvblock.client_max_body_size = 0;
-	if (fd.fail())
-		throw ConfException("Invalid configuration file");
 	confParse(*this, fd);
 }
 
