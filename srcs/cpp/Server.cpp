@@ -178,8 +178,8 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
-			char buffer[1024] = {0};
-			int bytes = recv((*it).fd, buffer, sizeof(buffer), 0);
+			char buffer[2048] = {0};
+			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
 			if (bytes <= 0)
 			{
 				//da mettere in una funzione a parte
