@@ -22,7 +22,7 @@ int	valid_ip_address(std::string addr)
 	for (int i = 4; i; i--)
 	{
 		ip = std::atoi(addr.c_str());
-		if (ip > UINT8_MAX || (ip != 0 && addr[0] == '0'))
+		if ((i == 4 && ip != 127) || ip > UINT8_MAX || (ip != 0 && addr[0] == '0'))
 			return (false);
 		while (addr[0] != '.' && addr[0] != ':' && !addr.empty())
 			addr.erase(0, 1);
@@ -38,6 +38,23 @@ int	valid_ip_address(std::string addr)
 		addr.erase(0, 1);
 	}
 	return (len);
+}
+
+//if s is not a valid_ip, crash
+int	atohex(std::string s)
+{
+	int	hex = 0;
+
+	for (size_t i = 0;;)
+	{
+		std::cout << s.substr(i) << std::endl;
+		hex = hex * 16 * 16 + std::atoi(s.substr(i).c_str());
+		i = s.find(".", i);
+		if (i == s.npos)
+			break ;
+		i++;
+	}
+	return (hex);
 }
 
 // listen 127.0..:9090

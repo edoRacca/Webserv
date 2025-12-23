@@ -22,7 +22,7 @@ static struct pollfd	setupPollFd(int client);
 	4)	Fare un solo poll, passandogli il vector.
 		A poll frega un cazzo di dove gli arriva la roba.
 */
-static struct pollfd	createServerSock(int port_n) //successivamente prendera una reference a un oggetto Config con tutti i parametri passati dal config file
+static struct pollfd	createServerSock(int addr, int port_n) //successivamente prendera una reference a un oggetto Config con tutti i parametri passati dal config file
 {
 	struct sockaddr_in	address;
 	int					server_fd;
@@ -33,13 +33,13 @@ static struct pollfd	createServerSock(int port_n) //successivamente prendera una
 	if (server_fd < 0)
 		throw std::runtime_error("\033[31mSocket ha fallito.\033[0m");
 	address.sin_family = AF_INET;
-	address.sin_addr.s_addr = INADDR_ANY;
+	address.sin_addr.s_addr = INADDR_ANY;// 7F000001 
 	address.sin_port = htons(port_n);
 	setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
 	if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) != 0)
 	{
 		close(server_fd);
-		std::cout << port_n << " cannot be binded\n";
+		std::cout << addr << ":" << port_n << " cannot be binded\n";
 		return (CONNECTION_FAIL);
 	}
 	if (listen(server_fd, MAX_CONNECTION) != 0)
@@ -85,7 +85,7 @@ Server::Server(Conf &conf)
 	for (SrvNameMap::iterator it = conf.getSrvNameMap().begin(); \
 		it != conf.getSrvNameMap().end(); it++)
 	{
-		port_connection = createServerSock((*it).first.second);
+		port_connection = createServerSock(atohex((*it).first.first.c_str()), (*it).first.second);
 		if (port_connection.fd != -1)
 		{
 			this->_addrs.push_back(port_connection);
@@ -133,7 +133,7 @@ void	Server::addSocket(int index)
 	std::cout << "connessione trovata, client: " << client << std::endl;
 	this->_addrs.push_back(setupPollFd(client));
 	//creiamo oggetto client e lo aggiungiano alla std::map
-	this->_clients[client] = new Client(client, this->_addrs.data()[0].fd);
+	this->_clients[client] = new Client(client, this->_addrs.data()[index].fd);
 	std::cout << &this->_clients[client] << std::endl;
 }
 

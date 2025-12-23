@@ -51,7 +51,7 @@ static void	parseServerName(Conf &conf, std::vector<std::string> list, int line)
 static std::string checkListenIp(std::vector<std::string> list, int line, std::string &ip)
 {
 	std::string	ip_port;
-	int			ip_len = 7;
+	int			ip_len = 0;
 
 	ip_port = list[1];
 	if (ip_port[0] == '*')
@@ -62,12 +62,10 @@ static std::string checkListenIp(std::vector<std::string> list, int line, std::s
 		ip = DEFAULT_CONF_IP;
 	if (ip_port[0] == '*' && ip_port[1] != ':')
 		instructionWarning(list, line, "wildcard ip addr needs a : separator");
-	if (ip_len)
-		ip_port = ip_port.substr(ip_len);
-	if (ip_port[0] == '*' || ip_port[0] == ':')
-		ip_port.erase(0, 1 + (ip_port[0] == '*' && ip_port[1] == ':'));
-	// if (ip_port[0] == ':')
-		// ip_port.erase(0, 1);
+	if (ip_len)//
+		ip_port = ip_port.substr(ip_len);//
+	if (ip_port[0] == '*'  || ip_port[0] == ':')
+		ip_port.erase(0, 1  + (ip_port[0] == '*' && ip_port[1] == ':') );
 	return (ip_port);
 }
 
