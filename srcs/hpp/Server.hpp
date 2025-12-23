@@ -32,7 +32,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		Server(Conf &conf);
 		~Server();
 
-		void 			addSocket();
+		void 			addSocket(int index);
 		struct pollfd	*getAddrs(void);
 		size_t			getAddrSize(void) const;
 		void			checkForConnection();

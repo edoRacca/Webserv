@@ -33,8 +33,14 @@ int main(int ac, char **av) //da aggiungere ac e av
 			int ready = poll(server.getAddrs(), server.getAddrSize(), -1);
 			if (ready < 0 && times != 0)
 				throw std::runtime_error("\033[31mPoll ha fallito.\nPorta occupata\n\033[0m");
-			if (server.getAddrs()[0].revents & POLLIN)
-				server.addSocket(); // aggiunge al vector il nuovo socket del client
+			for (int i = 0; i < server.getServerNum(); i++)
+			{
+				if (server.getAddrs()[i].revents & POLLIN)
+				{
+					std::cout << "Sento voci..." << i << std::endl;
+					server.addSocket(i); // aggiunge al vector il nuovo socket del client
+				}
+			}
 			server.checkForConnection();
 		}
 	}

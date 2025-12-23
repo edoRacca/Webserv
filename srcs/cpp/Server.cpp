@@ -47,7 +47,7 @@ static struct pollfd	createServerSock(int port_n) //successivamente prendera una
 		close(server_fd);
 		throw std::runtime_error("\033[31mIl server ha le orecchie tappate.\033[0m");
 	}
-	std::cout << port_n << std::endl;
+	// std::cout << port_n << std::endl;
 	srv.fd = server_fd;
 	srv.events = POLLIN;
 	srv.revents = 0;
@@ -94,6 +94,7 @@ Server::Server(Conf &conf)
 	}
 	if (this->_server_num == 0)
 		throw (std::runtime_error("no server could be binded."));
+	std::cout << "servers num: " << this->_server_num << std::endl;
 	std::cout << "\033[32mTutto bene col costruttore!\033[0m" << std::endl;
 }
 
@@ -102,7 +103,7 @@ Server::~Server()
 	std::cout << "\033[32mserver destructor!\033[0m" << std::endl;
 	if (this->_addrs.data()[0].fd != -1)
 		close(this->_addrs.data()[0].fd);
-	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + 1; it != this->_addrs.end(); ++it)
+	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + this->_server_num; it != this->_addrs.end(); ++it)
 	{
 		close((*it).fd);
 		delete this->_clients[(*it).fd];
@@ -124,9 +125,9 @@ static struct pollfd	setupPollFd(int client)
 
 //stampa finche non si blocca
 // TODO - da aggiungere parametro su addSocket con il socket del server di riferimento
-void	Server::addSocket()
+void	Server::addSocket(int index)
 {
-	int client = accept(this->_addrs.data()[0].fd, NULL, NULL);
+	int client = accept(this->_addrs.data()[index].fd, NULL, NULL);
 	if (client == -1)
 		throw std::runtime_error("\033[31mconnessione non accettata.\n\033[0m");
 	std::cout << "connessione trovata, client: " << client << std::endl;
