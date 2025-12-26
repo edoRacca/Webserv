@@ -86,6 +86,7 @@ Server::Server(Conf &conf)
 		port_connection = createServerSock((*it).first.second);
 		if (port_connection.fd != -1)
 		{
+			// this->_server_data[port_connection.fd] = (*it).second;
 			this->_addrs.push_back(port_connection);
 			this->_server_num++;
 		}

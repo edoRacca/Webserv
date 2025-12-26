@@ -76,6 +76,7 @@ static void checkListenPort(Conf &conf, std::vector<std::string> list, int line,
 	std::pair<std::string, int> ipport(ip, port);
 	if (conf.getServerBlock().ipports.count(ipport) != 0)
 		instructionError(list, line, "duplicated ip_address:port");
+	//prendere blocco globale
 	conf.getServerBlock().ipports[ipport].push_back("");
 }
 
