@@ -31,8 +31,8 @@ int main(int ac, char **av) //da aggiungere ac e av
 		while (times)
 		{
 			int ready = poll(server.getAddrs(), server.getAddrSize(), -1);
-			if (ready < 0 && times != 0)
-				throw std::runtime_error("\033[31mPoll ha fallito.\nPorta occupata\n\033[0m");
+			if (ready < 0 && times)
+				throw std::runtime_error("\033[1;31mPoll ha fallito.\nPorta occupata\n\033[0m");
 			for (int i = 0; i < server.getServerNum(); i++)
 			{
 				if (server.getAddrs()[i].revents & POLLIN)

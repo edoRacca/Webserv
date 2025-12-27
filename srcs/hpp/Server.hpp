@@ -66,7 +66,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		void			checkForConnection();
 		int				getServerNum() const;
 
-		void			printServerConfiguration() const;
+		void			printServerConfiguration(Conf &conf, SrvNameMap::iterator &it) const;
 };
 
 enum	e_http_codes

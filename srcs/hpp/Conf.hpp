@@ -149,7 +149,6 @@ class Conf
 		std::string									_user;
 		t_conf_server								_srvblock; // temporanea per blocchi server gestiti attualmente
 		t_conf_location								_locblock; // temporanea per blocchi location gestiti attualmente
-		std::string									_currlocation;
 		std::vector<t_conf_server>					_srv_conf; // vettore di blocchi server
 		std::map<std::string, std::string>			_server_names;
 		SrvNameMap									_srvnamemap;

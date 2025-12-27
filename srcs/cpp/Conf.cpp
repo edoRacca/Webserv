@@ -88,7 +88,7 @@ int	Conf::getIpPortNumber() const
 
 std::string	Conf::getCurrLocation() const
 {
-	return (this->_currlocation);
+	return (this->_locblock.path);
 }
 
 SrvNameMap	&Conf::getSrvNameMap()

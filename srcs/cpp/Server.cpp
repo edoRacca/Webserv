@@ -52,26 +52,6 @@ static struct pollfd	createServerSock(int port_n) //successivamente prendera una
 	return (srv);
 }
 
-/*
-	server {listen 80 81;}
-	server {listen 82;}
-	server {}	->mettere porta 80 (predefinita)
-
-	//FIXME - gestione blocchi server config
-	costruttore server deve prendere come argomento:
-	@std::vector<t_conf_server>:	ogni elemento è un blocco server nel conf
-
-	Ogni blocco server contiene una o più porte in ascolto.
-	Dobbiamo fare due cicli for:
-	1)	per ogni elemento di std::vector<t_conf_server>:
-	{
-		2)	per ogni porta su cui l'elemento ascolta:
-		{
-			this->_addrs.push_back(createServerSock(PORT))
-		}
-		collegare tutti gli addrs al t_conf_server corrente
-}
-*/
 Server::Server(Conf &conf)
 {
 	pollfd	port_connection;
@@ -79,7 +59,7 @@ Server::Server(Conf &conf)
 	// std::cout << "\033[32mServer constructor!\033[0m" << std::endl;
 	this->_server_num = 0;
 	if (conf.getSrvNameMap().size() == 0)
-		throw (std::runtime_error("specify at least one listen in conf file"));
+		throw (std::runtime_error("\nSpecify at least one listen in conf file"));
 	this->_srvnamemap = &conf.getSrvNameMap();
 	for (SrvNameMap::iterator it = conf.getSrvNameMap().begin(); \
 		it != conf.getSrvNameMap().end(); it++)
@@ -89,15 +69,16 @@ Server::Server(Conf &conf)
 		{
 			this->_server_data[port_connection.fd] = &(*it).second;
 			this->_addrs.push_back(port_connection);
+			printServerConfiguration(conf, it);
 			this->_server_num++;
-			std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num << "\033[0m" << std::endl;
-			std::cout << "Listening on -> \033[1;33m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl << std::endl;
+			//std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num << "\033[0m" << std::endl;
+			//std::cout << "Listening on -> \033[1;33m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl << std::endl;
 		}
 		else
 			std::cout << std::endl << "\033[1;31mCan't bind ip:port -> " << (*it).first.first << ":" << (*it).first.second << std::endl;
 	}
 	if (this->_server_num == 0)
-		throw (std::runtime_error("no server could be binded."));
+		throw (std::runtime_error("\nNo server could be binded."));
 	// std::cout << "\033[32mTutto bene col costruttore!\033[0m" << std::endl;
 }
 
@@ -229,7 +210,31 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 
 // Server -> 
 
-void			Server::printServerConfiguration() const
+void			Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator &it) const
 {
-	std::cout << "Number of servers -> " << this->_server_num << std::endl;
+	(void)conf;
+	std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num + 1<< "\033[0m" << std::endl;
+	std::cout << "Listening on -> \033[1;33m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl;
+	// std::cout << "Configuration\n{\n";
+	std::cout << "\033[1;35m{\033[0m\n";
+	std::cout << "\033[0m\033[1;35m    root ->\t\t\033[3;37m" << (*it).second.root << std::endl;
+	std::cout << "\033[0m\033[1;35m    index ->\t\t\033[3;37m" << (*it).second.index << std::endl;
+	std::cout << "\033[0m\033[1;35m    client_max_body ->\033[3;37m\t" << (*it).second.client_max_body_size << std::endl;
+	std::cout << "\033[0m\033[1;35m    server names ->\033[3;37m\t";
+	for (size_t i = 0; i < (*it).second.server_names.size(); i++)
+	{
+		if (i != 0)
+			std::cout << "\t\t\t";
+		std::cout << (*it).second.server_names[i] << std::endl;
+	}
+	std::cout << "\033[0m\033[1;35m    location ->\t\033[3;37m\t";
+	for (std::map<std::string, t_conf_location>::iterator it_loc = (*it).second.location.begin(); \
+		it_loc != (*it).second.location.end(); it_loc++)
+	{
+		// std::cout << "PISELLO NEGRO\n";
+		if (it_loc != (*it).second.location.begin())
+			std::cout << "\t\t\t";
+		std::cout << (*it_loc).first << std::endl;
+	}
+	std::cout << "\033[0m\033[1;35m}\033[0m" << std::endl;
 }
