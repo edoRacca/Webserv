@@ -11,5 +11,5 @@ void		instructionWarning(std::vector<std::string> &list, int line, std::string s
 void	confParseLocation(Conf &conf, std::vector<std::string> list, int line)
 {
 	(void)conf, (void)list, (void)line;
-	instructionError(list, line, "unrecognized instruction");
+	// instructionError(list, line, "unrecognized instruction");
 }

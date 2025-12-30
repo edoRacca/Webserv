@@ -69,6 +69,7 @@ Server::Server(Conf &conf)
 		{
 			this->_server_data[port_connection.fd] = &(*it).second;
 			this->_addrs.push_back(port_connection);
+			std::cout << "SERVER_P: " << (*it).second.location.empty() << std::endl;
 			printServerConfiguration(conf, it);
 			this->_server_num++;
 			//std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num << "\033[0m" << std::endl;
@@ -210,7 +211,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 
 // Server -> 
 
-void			Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator &it) const
+void			Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
 {
 	(void)conf;
 	std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num + 1<< "\033[0m" << std::endl;
@@ -231,10 +232,9 @@ void			Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator &it) co
 	for (std::map<std::string, t_conf_location>::iterator it_loc = (*it).second.location.begin(); \
 		it_loc != (*it).second.location.end(); it_loc++)
 	{
-		// std::cout << "PISELLO NEGRO\n";
 		if (it_loc != (*it).second.location.begin())
 			std::cout << "\t\t\t";
 		std::cout << (*it_loc).first << std::endl;
 	}
-	std::cout << "\033[0m\033[1;35m}\033[0m" << std::endl;
+	std::cout << "\n\033[0m\033[1;35m}\033[0m" << std::endl;
 }

@@ -19,23 +19,38 @@ Conf::Conf(std::string filepath): _file(filepath)
 	confParse(*this, fd);
 }
 
-void	set_if_empty(t_conf_server &server, Conf &conf)
+void	s_conf_server::set_if_empty(Conf &conf)
 {
-	if (server.root.empty())
-		server.root = DEFAULT_CONF_ROOT;
-	if (*server.root.rbegin() != '/')
-		server.root.push_back('/');
-	if (!server.index.empty() && !valid_file(server.root + server.index))
-		throw (Conf::ConfException("cannot open " + server.root + server.index + "\n"));
-	if (server.server_names.size() == 0)
-		server.server_names.push_back(DEFAULT_CONF_SERVNAME);
-	if (server.client_max_body_size == 0)
-		server.client_max_body_size = DEFAULT_CONF_BODYSIZE;
+	//if (this->location.empty())
+	conf.getServerBlock().location[conf.getCurrLocation()] = conf.getCopyLocationBlock();
+	if (this->root.empty())
+		this->root = DEFAULT_CONF_ROOT;
+	if (*this->root.rbegin() != '/')
+		this->root.push_back('/');
+	if (!this->index.empty() && !valid_file(this->root + this->index))
+		throw (Conf::ConfException("cannot open " + this->root + this->index + "\n"));
+	if (this->server_names.size() == 0)
+		this->server_names.push_back(DEFAULT_CONF_SERVNAME);
+	if (this->client_max_body_size == 0)
+		this->client_max_body_size = DEFAULT_CONF_BODYSIZE;	
+	//conf.getSrvNameMap()[std::pair<std::string, int>(DEFAULT_CONF_IP, DEFAULT_CONF_PORT)] = conf.getServerBlock();
 	for (int i = conf.getIpPortNumber(); i < (int)conf.getIpPort().size(); i++)
 	{
-		conf.getSrvNameMap()[conf.getPairIpPort(i)] = conf.getServerBlock();
-		conf.incrementIpPortNumber();
+		conf.getSrvNameMap()[conf.getPairIpPort(i)] = *this;
 	}
+}
+
+void	s_conf_location::set_if_empty(Conf &conf)
+{
+	(void)conf;
+	if (this->path.empty())
+		this->path = "/";
+	if (this->root.empty())
+		this->root = "";
+	if (this->alias.empty())
+		this->alias = "";
+	if (this->proxy_pass.empty())
+		this->proxy_pass = "";
 }
 
 void	s_conf_server::set(void)
@@ -44,6 +59,15 @@ void	s_conf_server::set(void)
 	this->index.clear();
 	this->server_names.clear();
 	this->client_max_body_size = 0;
+	this->location.clear();
+}
+
+void	s_conf_location::set(std::string path)
+{
+	this->path = path;
+	this->root.clear();
+	this->alias.clear();
+	this->proxy_pass.clear();
 }
 
 Conf::~Conf()
@@ -204,6 +228,11 @@ t_conf_server	&Conf::getServerBlock(void)
 }
 
 t_conf_location	&Conf::getLocationBlock(void)
+{
+	return (this->_locblock);
+}
+
+t_conf_location	Conf::getCopyLocationBlock(void)
 {
 	return (this->_locblock);
 }

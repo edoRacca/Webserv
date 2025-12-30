@@ -96,6 +96,7 @@ static int	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 		if (!valid_directory(list[1]))
 			blockError(list[1], line, CONF_PATH_INVALID);
 		conf.setCurrLocation(list[1]);
+		conf.getLocationBlock().set(list[1]);
 		conf.setLocation(true);
 	}
 	else
@@ -116,12 +117,16 @@ static int	closeBlock(Conf &conf, int line)
 		conf.setEvents(false);
 	else if (conf.getHttp() && conf.getServer() && conf.getLocation() && !conf.getEvents())
 	{
-		conf.getServerBlock().location[conf.getCurrLocation()] = conf.getLocationBlock();
+		conf.getLocationBlock().set_if_empty(conf);
+		std::cout << "aggiungo " << conf.getCurrLocation() << "\n";
+		conf.getServerBlock().location[conf.getCurrLocation()] = conf.getCopyLocationBlock();
+		conf.getLocationBlock().set("");
 		conf.setLocation(false);
 	}
 	else if (conf.getHttp() && conf.getServer() && !conf.getLocation() && !conf.getEvents())
 	{
-		set_if_empty(conf.getServerBlock(), conf);
+		conf.getLocationBlock().set_if_empty(conf);
+		conf.getServerBlock().set_if_empty(conf);
 		conf.getConfServer().push_back(conf.getServerBlock());
 		conf.setServer(false);
 	}
@@ -217,4 +222,5 @@ void	confParse(Conf &conf, std::ifstream &fd)
 	if (conf.getEvents() || conf.getHttp() || conf.getServer() || conf.getLocation())
 		blockError(conf.checkOpenBlock(), i, CONF_BLOCK_CLOSE);
 	// std::cout << conf << std::endl;
+	std::cout << "END OF CONFPARSE: " << conf.getConfServer()[0].location[conf.getCurrLocation()].path << std::endl;
 }

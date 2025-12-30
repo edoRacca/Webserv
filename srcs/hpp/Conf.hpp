@@ -9,7 +9,8 @@
 # define DEFAULT_CONF_SERVNAME "localhost"
 # define DEFAULT_CONF_BODYSIZE 1024
 
-class	conf;
+class	Conf;
+
 typedef struct s_conf_server	t_conf_server;
 typedef struct s_conf_location	t_conf_location;
 // 127.0.0.1:80 --> tutti i dati server
@@ -29,26 +30,6 @@ enum	e_conf_error
 	CONF_PATH_INVALID,
 };
 
-// #events
-// #http
-// # server
-// #  location
-
-// #events minimo 0, massimo 1
-// #http 1 e uno solo
-// #server minimo 1, massimo INFINITI
-// #location minimo 0, massimo INFINITI
-
-//getline
-//find(something different from ISSPACE)
-// if npos
-//	IGNORE
-//1)	prendi prima cosa che non e ISSPACE fino a ISSPACE successiva
-//2)	push back in un vector
-//3)	togliere dalla linea letta
-//4.1)	quando trovi ';', analizzi la stringa, ripeti punto 1
-//4.2)	quando trovi '{', entri strato/dai errore, ripeti punto 1
-//4.3)	quando trovi '}', esci strato/dai errore, ripeti punto 1.
 
 
 /*
@@ -73,6 +54,7 @@ enum	e_conf_error
 struct s_conf_server
 {
 	void	set(void);
+	void	set_if_empty(Conf &conf);
 
 	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
 	std::string								root;//root /var/www/html;
@@ -84,13 +66,6 @@ struct s_conf_server
 	// std::string							error_log;//error_log /var/log/nginx/access.log;
 };
 
-/*
-location / 
-{
-    error_page 404 = @fallback;
-}
-
-*/
 /*
 //SECTION - cosa fa proxy_pass
 in parole povere: cambia indirizzo ip
@@ -121,8 +96,12 @@ Before version 1.1.12, if proxy_pass is specified without a URI, the original re
 In some cases, the part of a request URI to be replaced cannot be determined:
 
 */
+
 struct s_conf_location
 {
+	void	set(std::string path);
+	void	set_if_empty(Conf &conf);
+
 	std::string		path;//da togliere
 	std::string		root;// fa append su URI (root + URI)
 	std::string		alias;// sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
@@ -180,7 +159,6 @@ class Conf
 		void	setLocation(bool val);
 		void	setCurrLocation(std::string curr);
 		void	incrementIpPortNumber(void);
-//		void	setSrvNameMap(SrvNameMap curr);
 		void	setIpPort(std::string ip, int port);
 		
 		void	updateBlock(int block_type);
@@ -189,6 +167,7 @@ class Conf
 		std::vector<t_conf_server>					&getConfServer(void);
 		t_conf_server								&getServerBlock(void);
 		t_conf_location								&getLocationBlock();
+		t_conf_location								getCopyLocationBlock();
 		std::vector<std::pair<std::string, int> >	&getIpPort();
 		std::pair<std::string, int>					&getPairIpPort(int i);
 		
@@ -201,7 +180,9 @@ class Conf
 		
 		void		addServerName(std::string name);
 		bool		findServerName(std::string name);
+
 		
+
 		bool		checkDuplicateServerName();
 		bool		checkDuplicateIpPort();
 		
@@ -242,6 +223,6 @@ void	confParse(Conf &conf, std::ifstream &fd);
 */
 //
 
-void	set_if_empty(t_conf_server &server, Conf &conf);
+
 
 #endif
