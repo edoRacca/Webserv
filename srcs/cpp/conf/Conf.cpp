@@ -97,6 +97,8 @@ void	s_conf_location::set(std::string path)
 	this->root.clear();
 	this->alias.clear();
 	this->cgiparam.clear();
+	this->autoindex = false;
+	this->ret.first = 0, this->ret.second.clear();
 }
 
 //SECTION - ip port check

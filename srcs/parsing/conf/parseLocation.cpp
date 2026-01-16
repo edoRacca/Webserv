@@ -19,6 +19,10 @@ void	confParseLocation(Conf &conf, std::vector<std::string> list, int line)
 		parseRoot(conf, list, line);
 	else if (list[0] == "fastcgi_param")
 		parseCgiParam(conf, list, line);
+	else if (list[0] == "return")
+		;
+	else if (list[0] == "autoindex")
+		conf.getLocationBlock().autoindex = true;
 	else
 		instructionError(list, line, "unrecognized instruction");
 }
@@ -62,8 +66,8 @@ static void parseCgiParam(Conf &conf, std::vector<std::string> &list, int line)
 	if (list[1] != list[2].substr(path_size - type_size, type_size))
 		instructionError(list, line, "CGI extension doesn't match path");
 //		3)	controllare che path esista
-	// if (valid_directory(list[2]) == false)
-	// 	instructionError(list, line, "invalid Cgi path");
+	if (valid_file(list[2]) == false)
+		instructionError(list, line, "invalid CGI path");
 	std::pair<std::string, std::string> p(list[1], list[2]);
 	conf.getLocationBlock().cgiparam.push_back(p);
 }

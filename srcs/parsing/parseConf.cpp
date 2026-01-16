@@ -180,7 +180,6 @@ static void	closeBlock(Conf &conf, std::vector<std::string> &list, int line)
 			conf.getLocationBlock().set_if_empty(conf);
 			conf.getServerBlock().set_if_empty(conf);
 			conf.getConfServer().push_back(conf.getServerBlock());
-			//conf.getLocationBlock().set("");
 			conf.setServer(false);
 			break ;
 		default :
@@ -243,7 +242,7 @@ static void	blockError(std::string block, int line, int flag)
 	else if (flag == CONF_PATH_INVALID)
 		throw Conf::ConfException(error + ": " + block + " does not exist!\033[0m");
 	else if (flag == CONF_MULT_LOCATION)
-		throw Conf::ConfException(error + "path location already exist\033[0m");
+		throw Conf::ConfException(error + " path location already exist\033[0m");
 	else if (block != "events" && block != "http" && \
 	block != "server" && block != "location")
 		error += ": " + block + " is not allowed (allowed: events, http, server, location)\033[0m";

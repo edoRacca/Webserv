@@ -10,6 +10,7 @@ typedef struct s_conf_location	t_conf_location;
 typedef std::vector<t_conf_server>	ServerVector;
 typedef std::vector<std::pair<std::string, int> >	IpPortVector;
 typedef std::pair<std::string, int>	IpPortPair;
+typedef std::pair<int, std::string>	CodeUriPair;
 typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 typedef std::vector<std::pair<std::string, std::string> >	CgiParam;
 
@@ -67,9 +68,11 @@ struct s_conf_location
 	void	set_if_empty(Conf &conf);
 
 	CgiParam		cgiparam;
-	std::string		path;//location /images {}
-	std::string		root;// fa append su URI (root + URI)
-	std::string		alias;// sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
+	std::string		path; //location /images {}
+	std::string		root; // fa append su URI (root + URI)
+	std::string		alias; // sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
+	CodeUriPair		ret; // pair code and uri/text
+	bool			autoindex; //set autoindex mode on
 };
 
 class Conf
