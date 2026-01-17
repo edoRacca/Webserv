@@ -251,6 +251,47 @@ static void	blockError(std::string block, int line, int flag)
 	throw Conf::ConfException(error);
 }
 
+static void	blockError(std::string block, int line, int flag)
+{
+	std::string error;
+	std::string error2;
+
+	error = "ConfException in line \033[33m" + ft_to_string(line);
+	error2 = "ConfException:\033[33m";
+	switch (flag)
+	{
+	case CONF_BLOCK_CLOSE: 
+		throw Conf::ConfException(error + ": cannot close " + block + COLOR_RESET);
+	case CONF_BLOCK_FORMAT:
+		throw Conf::ConfException(error + ": invalid block format"COLOR_RESET);
+	case CONF_BLOCK_EMPTY:
+		throw Conf::ConfException(error + ": block is empty, lol"COLOR_RESET);
+	case CONF_BLOCK_UNIFINISHED:
+		throw Conf::ConfException(error + ": " + block + " block never closed"COLOR_RESET);
+	case CONF_INSTRUCTION_UNFINISHED:
+		throw Conf::ConfException(error + ": missing ; before block end"COLOR_RESET);
+	case CONF_INSTRUCTION_EMPTY:
+		throw Conf::ConfException(error + ": instruction is empty"COLOR_RESET);
+	case CONF_BLOCK_OPEN:
+		throw Conf::ConfException(error + ": block cannot be opened"COLOR_RESET);
+	case CONF_MULT_BLOCK:
+		throw Conf::ConfException(error + ": multiple block " + block + COLOR_RESET);
+	case CONF_MISSING_BLOCK:
+		throw Conf::ConfException(error2 + " missing " + block + " in configuration file"COLOR_RESET);
+	case CONF_PATH_INVALID:
+		throw Conf::ConfException(error + ": " + block + " does not exist!"COLOR_RESET);
+	case CONF_MULT_LOCATION:
+		throw Conf::ConfException(error + " path location already exist"COLOR_RESET);	
+		break;
+	if (block != "events" && block != "http" && \
+	block != "server" && block != "location")
+		error += ": " + block + " is not allowed (allowed: events, http, server, location)"COLOR_RESET;
+	else
+		error += " block order violated."COLOR_RESET;
+	throw Conf::ConfException(error);
+	}
+}
+
 //NOTE - old istruction block function
 /*
 {
