@@ -23,7 +23,7 @@ std::ostream &operator<<(std::ostream &os, t_conf_server &srv)
 	os << "\033[0m\033[1;35m    root ->\t\t\033[3;37m" << srv.root << std::endl;
 	os << "\033[0m\033[1;35m    index ->\t\t\033[3;37m" << srv.index << std::endl;
 	os << "\033[0m\033[1;35m    client_max_body ->\033[3;37m\t" << srv.client_max_body_size << std::endl;
-	os << "\033[0m\033[1;35m    autoindex -> \033[37m\t" << (srv.autoindex ? true : false) << std::endl;
+	os << "\033[0m\033[1;35m    autoindex -> \033[37m\t" << (srv.autoindex ? "true" : "false") << std::endl;
 	os << "\033[0m\033[1;35m    server names ->\033[3;37m";
 	os << srv.server_names;
 	os << "\033[0m";

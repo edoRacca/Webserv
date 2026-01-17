@@ -45,6 +45,7 @@ struct s_conf_server
 	int										client_max_body_size;//client_max_body_size 10m;
 	bool									listen_set;//is listen istruction set?
 	bool									autoindex;//is autoindex tette?
+	std::map<int, std::string> 				err_pages;//error codes associated to their error page
 	// std::map<>							error_pages;//error_page 404 /404.html;	error_page 500 502 503 504 /50x.html;
 	// std::string							access_log;//access_log /var/log/nginx/access.log;
 	// std::string							error_log;//error_log /var/log/nginx/access.log;
@@ -66,21 +67,22 @@ _______________________________
 */
 struct s_conf_location
 {
-	void			set(std::string path);
-	void			set_if_empty(Conf &conf);
-	std::string 	getRetUri() const;
-	int				getRetCode() const;
-	void			setRetUri(std::string uri);
-	void			setRetCode(int code);
+	void						set(std::string path);
+	void						set_if_empty(Conf &conf);
+	std::string 				getRetUri() const;
+	int							getRetCode() const;
+	void						setRetUri(std::string uri);
+	void						setRetCode(int code);
 
-	CgiParam		cgiparam;
-	std::string		path; //location /images {}
-	std::string		root; // fa append su URI (root + URI)
-	std::string		alias; // sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
-	std::string		ret_uri;
-	std::string		ret_text;
-	int				ret_code;
-	bool			autoindex; //set autoindex mode on
+	CgiParam					cgiparam;
+	std::string					path; //location /images {}
+	std::string					root; // fa append su URI (root + URI)
+	std::string					alias; // sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
+	std::string					ret_uri;
+	std::string					ret_text;
+	int							ret_code;
+	bool						autoindex; //set autoindex mode on
+	std::map<int, std::string>	kerr_pages;
 };
 
 class Conf
