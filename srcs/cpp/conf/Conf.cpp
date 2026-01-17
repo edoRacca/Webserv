@@ -89,8 +89,8 @@ void	s_conf_location::set_if_empty(Conf &conf)
 		this->root = "";
 	if (this->alias.empty())
 		this->alias = "";
-	if (this->ret.first == 0 && !this->ret.second.empty())
-		this->ret.first = 302; //HTTP_RD_FOUND
+	if (this->ret_code == 0 && !this->ret_uri.empty())
+		this->ret_code = 302; //HTTP_RD_FOUND
 }
 
 void	s_conf_location::set(std::string path)
@@ -100,7 +100,7 @@ void	s_conf_location::set(std::string path)
 	this->alias.clear();
 	this->cgiparam.clear();
 	this->autoindex = false;
-	this->ret.first = 0, this->ret.second.clear();
+	this->ret_code = 0, this->ret_uri.clear();
 }
 
 //SECTION - ip port check

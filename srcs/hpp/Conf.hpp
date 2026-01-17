@@ -2,6 +2,7 @@
 # define CONF_HPP
 
 # include "../../includes/ether.hpp"
+# include "../../includes/status_codes.hpp"
 
 class	Conf;
 typedef struct s_conf_server	t_conf_server;
@@ -10,7 +11,6 @@ typedef struct s_conf_location	t_conf_location;
 typedef std::vector<t_conf_server>	ServerVector;
 typedef std::vector<std::pair<std::string, int> >	IpPortVector;
 typedef std::pair<std::string, int>	IpPortPair;
-typedef std::pair<int, std::string>	CodeUriPair;
 typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 typedef std::vector<std::pair<std::string, std::string> >	CgiParam;
 
@@ -64,21 +64,26 @@ _______________________________
 */
 struct s_conf_location
 {
-	void	set(std::string path);
-	void	set_if_empty(Conf &conf);
+	void			set(std::string path);
+	void			set_if_empty(Conf &conf);
+	std::string 	getRetUri() const;
+	int				getRetCode() const;
+	void			setRetUri(std::string uri);
+	void			setRetCode(int code);
 
 	CgiParam		cgiparam;
 	std::string		path; //location /images {}
 	std::string		root; // fa append su URI (root + URI)
 	std::string		alias; // sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
-	CodeUriPair		ret; // pair code and uri/text
+	std::string		ret_uri;
+	int				ret_code;
 	bool			autoindex; //set autoindex mode on
 };
 
 class Conf
 {
 	private:
-		const std::string			_file;//configuration file path
+		const std::string			_file; //configuration file path
 		bool						_events;
 		bool						_http;
 		bool						_server;
@@ -107,7 +112,8 @@ class Conf
 		Conf(const Conf &other);
 		Conf	&operator=(const Conf &other);
 
-	//SECTION - getters (utils/conf/getter.cpp)
+		//SECTION - getters (utils/conf/getter.cpp)
+		
 		//SECTION - block type
 		bool			getEvents() const;
 		bool			getHttp() const;
@@ -115,38 +121,52 @@ class Conf
 		bool			getLocation() const;
 		int				getBlockNumber(int block_type) const;
 		int				getBlockType(void) const;
+		
 		//SECTION - main block
-		std::string		getMainUser(void) const;
+		std::string		getMainUser(void) const; // TODO - da togliere parsing blocco main
+		
 		//SECTION - server block
 		ServerVector	&getConfServer(void);
 		t_conf_server	&getServerBlock(void);
+		
 		//SECTION - location block
 		t_conf_location	&getLocationBlock();
 		t_conf_location	getCopyLocationBlock() const;
 		std::string		getCurrLocation() const;
+		
+
 		//SECTION - ip port
 		int				getIpPortNumber() const;
 		IpPortPair		&getPairIpPort(int i);
 		IpPortVector	&getIpPort();
+		
 		//SECTION - SrvNameMap
 		SrvNameMap		&getSrvNameMap();
-	//SECTION - setters (utils/conf/setter.cpp)
+		
+		//SECTION - setters (utils/conf/setter.cpp)
+		
 		//SECTION - block type
 		void			setEvents(bool val);
 		void			setHttp(bool val);
 		void			setServer(bool val);
 		void			setLocation(bool val, std::string path);
 		void			updateBlock(int block_type);
+
 		//SECTION - main type
 		void			setMainUser(std::string);
+
 		//SECTION - location block
 		void			setCurrLocation(std::string curr);
+
+		
 		//SECTION - ip port
 		void			incrementIpPortNumber(void);
 		void			setIpPort(std::string ip, int port);
+		
 		//SECTION - Server Name
 		void			addServerName(std::string name);
-	//SECTION - checks (cpp/Conf.cpp)
+		
+		//SECTION - checks (cpp/Conf.cpp)
 		bool			checkIpPort(std::string ip, int port) const;
 		bool			findServerName(std::string name);//is name already saved?
 		bool			checkDuplicateIpPort();

@@ -24,6 +24,8 @@ void	confParseLocation(Conf &conf, std::vector<std::string> list, int line)
 		parseReturn(conf, list, line);
 	else if (list[0] == "autoindex")
 		conf.getLocationBlock().autoindex = true;
+	else if (list[0] == "error_page")
+		; // da gestire come return -> error_page <code> [uri error page]
 	else
 		instructionError(list, line, "unrecognized instruction");
 }
@@ -78,50 +80,39 @@ return code [text]
 return code URL
 return URL
 return code
-*/
-bool charFinder(const std::string &literal, int(*check)(int))
-{
-	int index;
-	int end;
 
-	index = 0;
-	end = literal.size();
+return 12
+*/
+
+static bool checkValidCode(int code)
+{
+	int	valid_codes[] = VALID_HTTP_CODES;
 	
-	while (!literal.empty() && index < end)
-	{
-		if (check(literal[index]) == false)
-			return (false);
-		index++;
-	}
-	return (true);
 }
 
 static void parseReturn(Conf &conf, std::vector<std::string> &list, int line)
 {
-	int code = std::atoi(list[1].c_str());
+	bool is_code_valid = charFinder(list[1], std::isdigit);
+	bool code;
 
 	if (list.size() < 2 || list.size() > 3)
 		instructionError(list, line, "return needs this syntax:	return code [text] |"\
 		"return code URL | return URL | return code\n");
-	if (list.size() == 2)// URL o code
+	if (list.size() == 2) //URL o code
 	{
-		if (!code)
+		if (!is_code_valid || !code)
 		{
-			if (!valid_directory(list[2]))
-				conf.getCurrLocation();
-			
-		}	//error
-			;//verifica uri
-		// check se e uri
-		//se si -> inserisco dati
-		// se no -> e un code? atoi fallisce?
-		// se fallisce -> errore
+			conf.getLocationBlock().ret_uri = list[1];
+			conf.getLocationBlock().ret_code = 302;
+		}
+		else if (code >= 300 && code < 309)
+			instructionError(list, line, "return code between 300 and 308 must have an uri\n");
+		else
+			conf.getLocationBlock().ret_code = code;
+		return ;
 	}
-	else
-	{
-		if (code >= 300 && code < 309)
-			instructionError(list, line, "return code for redirect must be between 300 and 308\n");
-		conf.getLocationBlock().ret.first = code;
-		conf.getLocationBlock().ret.second = list[2];
-	}
+	if (code >= 300 && code < 309)
+		instructionError(list, line, "return code between 300 and 308 must have an uri\n");
+		// conf.getLocationBlock().ret_code = code;
+		// conf.getLocationBlock().ret_uri = list[2];
 }

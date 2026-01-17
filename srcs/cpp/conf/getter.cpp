@@ -93,6 +93,16 @@ std::string	Conf::getCurrLocation() const
 	return (this->_locblock.path);
 }
 
+std::string t_conf_location::getRetUri() const
+{
+	return (this->ret_uri);
+}
+
+int t_conf_location::getRetCode() const
+{
+	return (this->ret_code);
+}
+
 //SECTION - ip port
 
 //returns the number of IpPort.

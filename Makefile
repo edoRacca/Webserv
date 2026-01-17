@@ -30,6 +30,9 @@ re: fclean all
 run: re
 	clear ; ./$(NAME)
 
+spaghetti: re
+	clear ; ./$(NAME)
+
 gdb: re
 	clear ; gdb ./$(NAME)
 

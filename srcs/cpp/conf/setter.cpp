@@ -61,10 +61,10 @@ void		Conf::setMainUser(std::string user)
 
 //SECTION - location block
 
-void	Conf::setCurrLocation(std::string curr)
-{
-	this->_locblock.path = curr;
-}
+void	Conf::setCurrLocation(std::string curr)		{this->_locblock.path = curr;}
+void	t_conf_location::setRetUri(std::string uri)	{this->ret_uri = uri;}
+void	t_conf_location::setRetCode(int code)		{this->ret_code = code;}
+
 
 //SECTION - ip port
 

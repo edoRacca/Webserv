@@ -213,7 +213,7 @@ void	instructionWarning(std::vector<std::string> &list, int line, std::string s)
 	std::cerr << error << std::endl;
 }
 
-// NOTE - throw exception for block errors
+/*
 static void	blockError(std::string block, int line, int flag)
 {
 	std::string	error;
@@ -249,8 +249,9 @@ static void	blockError(std::string block, int line, int flag)
 	else
 		error += " block order violated."COLOR_RESET;
 	throw Conf::ConfException(error);
-}
+} */
 
+// NOTE - throw exception for block errors
 static void	blockError(std::string block, int line, int flag)
 {
 	std::string error;
@@ -281,15 +282,14 @@ static void	blockError(std::string block, int line, int flag)
 	case CONF_PATH_INVALID:
 		throw Conf::ConfException(error + ": " + block + " does not exist!"COLOR_RESET);
 	case CONF_MULT_LOCATION:
-		throw Conf::ConfException(error + " path location already exist"COLOR_RESET);	
-		break;
+		throw Conf::ConfException(error + " path location already exist"COLOR_RESET);
+	}
 	if (block != "events" && block != "http" && \
 	block != "server" && block != "location")
 		error += ": " + block + " is not allowed (allowed: events, http, server, location)"COLOR_RESET;
 	else
 		error += " block order violated."COLOR_RESET;
 	throw Conf::ConfException(error);
-	}
 }
 
 //NOTE - old istruction block function

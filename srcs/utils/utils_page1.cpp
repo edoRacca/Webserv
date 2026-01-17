@@ -74,6 +74,25 @@ bool	is_there_special_char(std::string line)
 	}
 	return(false);
 }
+
+//REVIEW - Verifica che la funzione sia verificata in tutta la stringa
+bool charFinder(const std::string literal, int(*check)(int))
+{
+	int index;
+	int end;
+
+	index = 0;
+	end = literal.size();
+	
+	while (!literal.empty() && index < end)
+	{
+		if (check(literal[index]) == false)
+			return (false);
+		index++;
+	}
+	return (true);
+}
+
 //
 //     /{  :; http    xvzv   dsdcsdf 
 // {
