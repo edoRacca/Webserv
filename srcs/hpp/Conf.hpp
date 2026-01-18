@@ -82,7 +82,7 @@ struct s_conf_location
 	std::string					ret_text;
 	int							ret_code;
 	bool						autoindex; //set autoindex mode on
-	std::map<int, std::string>	kerr_pages;
+	std::map<int, std::string>	err_pages;
 };
 
 class Conf
