@@ -47,7 +47,7 @@ std::string	ft_to_string(T data)
 	return (stream.str());
 }
 
-int			requestParsing(Request &request, std::string input, SrvNameMap &srv_names);
+int			requestParsing(Request &request, std::string input, SrvNameMap &srv_namessrv_names);
 
 //SEXTION - utils
 std::string	removeWhitespaces(std::string line);
