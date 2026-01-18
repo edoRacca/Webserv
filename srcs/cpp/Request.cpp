@@ -177,7 +177,7 @@ void	Request::setHeaderVal(std::string key, std::string val, SrvNameMap &srv_nam
 		if (val.compare(0, 9, "localhost") == 0)
 			val.replace(0, 9, "127.0.0.1");
 	}
-	// if (key == "Host")
+	// if (key == "Host") Ma che caz?
 	// {
 	// 	for (SrvNameMap::iterator it = srv_names.begin(); it != srv_names.end(); it++)
 	// 	{
