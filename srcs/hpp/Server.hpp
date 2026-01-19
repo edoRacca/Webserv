@@ -65,6 +65,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		size_t			getAddrSize(void) const;
 		void			checkForConnection();
 		int				getServerNum() const;
+		SrvNameMap		&getSrvNameMap() const;
 
 		void			printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const;
 };

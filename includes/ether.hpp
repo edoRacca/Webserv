@@ -37,6 +37,9 @@
 #endif
 
 class Request;
+typedef struct s_conf_server	t_conf_server;
+typedef std::pair<std::string, int>	IpPortPair;
+typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 
 template <typename T>
 std::string	ft_to_string(T data)

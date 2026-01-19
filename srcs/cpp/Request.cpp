@@ -171,20 +171,32 @@ void	Request::setBody(std::string body)
 
 void	Request::setHeaderVal(std::string key, std::string val, SrvNameMap &srv_names)
 {
-	// poi da togliere finito il parsing per i server name
-	if (key == "Host")
-	{
-		if (val.compare(0, 9, "localhost") == 0)
-			val.replace(0, 9, "127.0.0.1");
+	size_t 	endpoint;
+	
+	if (key == "Host" && !isdigit(val[0]))
+	{//www.name.it:9090
+		endpoint = val.find_last_of(':');
+		if (endpoint == std::string::npos)
+			return (this->_header[key] = "", (void)0);
+		std::string name(val.substr(0, endpoint));
+		std::cout << "DNS SOLVING " << name << "\n";
+		for (SrvNameMap::iterator it = srv_names.begin(); it != srv_names.end(); it++)// Ma che caz?
+		{
+			for (std::vector<std::string>::iterator vit = (*it).second.server_names.begin(); \
+			vit != (*it).second.server_names.end(); vit++)
+			{
+				std::cout << "Checking vit " << *vit << "\n";
+				if (name == *vit)
+				{//KEY == HOST VALORE IP:PORTA
+					std::cout << "Trovato il figlio di puttana\n";
+					this->_header[key] = (*it).first.first; //associo ip del server
+					this->_header[key].append(val.substr(endpoint)); // appendo la porta presa da val
+					std::cout << "adesso e " << this->_header[key] << "\n";
+					return ;
+				}
+			}
+		}
 	}
-	// if (key == "Host") Ma che caz?
-	// {
-	// 	for (SrvNameMap::iterator it = srv_names.begin(); it != srv_names.end(); it++)
-	// 	{
-	// 		if ()
-	// 	}
-		
-	// }
 	
 	if (val.find(' ') != std::string::npos)
 	{

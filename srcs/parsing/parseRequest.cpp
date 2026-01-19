@@ -72,7 +72,7 @@ static int	headerParsing(Request &request, std::istringstream &header, SrvNameMa
 			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "invalid \\r"));
 		std::cout << "LINES :" << line << std::endl;
 		key = line.substr(0, line.find(':'));
-		request.setHeaderVal(key, line.substr(key.length() + 2));
+		request.setHeaderVal(key, line.substr(key.length() + 2), srv_names);
 	}
 	if (!request.checkHeader())
 		return (1);
@@ -111,6 +111,26 @@ static int	errorParsing(Request &request, e_http_codes code, std::string info)
 	{
 		case HTTP_CE_BAD_REQUEST :
 			SWITCH_LOG(info, "Http ClientError: Bad Request");
+		case HTTP_CE_UNATHORIZED :
+			SWITCH_LOG(info, "Http ClientError: Unathorized");
+		case HTTP_CE_FORBIDDEN:
+			SWITCH_LOG(info, "Http ClientError: Forbidden");
+		case HTTP_CE_NOT_FOUND:
+			SWITCH_LOG(info, "Http ClientError: Not found");
+		case HTTP_CE_METHOD_NOT_ALLOWED:
+			SWITCH_LOG(info, "Http ClientError: Method not allowed");
+		case HTTP_CE_CONFLICT:
+			SWITCH_LOG(info, "Http ClientError: Another process is currently using the requested resource");
+		case HTTP_CE_LENGTH_REQUIRED:
+			SWITCH_LOG(info, "Http ClientError: Lenght required");
+		case HTTP_CE_URI_TOO_LONG:
+			SWITCH_LOG(info, "Http ClientError: Uri too long");
+		case HTTP_CE_MEDIA_TYPE:
+			SWITCH_LOG(info, "Http ClientError: Media type of requested file is unknown");
+		case HTTP_CE_IM_TEAPOT:
+			SWITCH_LOG(info, "Http ClientError: Want a cup of tea?" CHARIZARD);
+		default :
+			SWITCH_LOG(info, "Http ClientError: Wtf" PIEDI_DELLA_ZIA_DEL_TUO_RAGAZZO);	
 	}
 	request.setStatusCode(code);
 	return (1);

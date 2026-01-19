@@ -5,17 +5,28 @@
 #include <signal.h>
 
 bool	server_run = true;
-/*
+
 int		test_request(Conf &conf, Server &server)
 {
 	std::ifstream	file("test_request");
 	std::string		input;
+	Request			request;
 
+	(void)conf;
 	if (file.fail())
 		return (std::cout << "cannot open test_request\n" << std::endl, 1);
-	// std::getline();
+	std::getline(file, input, '\0');
+	std::cout << "\033[0;2m\n-------REQUEST PARSING STARTED------...\n" COLOR_RESET << "\n";
+	if (requestParsing(request, input, server.getSrvNameMap()) != 0)
+	{
+		std::cout << "BELIN SI È ROTTO TUTTO\n\n";
+		return (1);
+	}
+	std::cout << "\033[0;2mEnd." COLOR_RESET << "\n";
+	std::cout << "\033[33m[RESULT]" COLOR_RESET << "\n";
+	std::cout << request << "\n";
+	return (0);
 }
-*/
 
 void	stopServer(int sig)
 {
@@ -44,7 +55,7 @@ int main(int ac, char **av)
 		get_conf_path(ac, av, conf_path);
 		Conf config(conf_path);
 		Server server(config);
-		// return (test_request(conf, server));
+		return (test_request(config, server));
 		while (server_run)
 		{
 			int ready = poll(server.getAddrs(), server.getAddrSize(), -1);

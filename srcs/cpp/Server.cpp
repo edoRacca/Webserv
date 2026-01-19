@@ -113,6 +113,11 @@ int	Server::getServerNum() const
 	return (this->_server_num);
 }
 
+SrvNameMap		&Server::getSrvNameMap() const
+{
+	return (*this->_srvnamemap);
+}
+
 std::string	create_http(std::string url)
 {
 	std::string	html;
@@ -167,7 +172,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			else
 			{
 				//leggo la richiesta inviata dal client
-				requestParsing(this->_clients[(*it).fd]->getRequest(), buffer);
+				requestParsing(this->_clients[(*it).fd]->getRequest(), buffer, *this->_srvnamemap);
 				std::cout << "\033[33m" << "RICHIESTA CLIENT GESTITA DA SERVER " << this->_clients[(*it).fd]->getRequest().getHost() << "\033[0m" << std::endl;
 				std::cout << "SERVER DI RIFERIMENTO: " << (*this->_srvnamemap)[(this->_clients[(*it).fd])->getRequest().getHost()] << std::endl;
 				// una volta parsata la richiesta HTTP va fatta la risposta vedendo in base al client uale server 
