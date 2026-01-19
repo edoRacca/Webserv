@@ -244,5 +244,9 @@ std::ostream &operator<<(std::ostream &os, Request &obj)
 {
 	os << "Method: " << obj.getMethod() << "\nURL: " << \
 	obj.getUrl() << "\nVERSION: " << obj.getHttpVersion() << std::endl;
+	std::cout << "\033[32m--Request header print--\n" COLOR_RESET;
+	obj.printHeader();
+	std::cout << "\033[32mStatusCode: " COLOR_RESET << obj.getStatusCode();
+	std::cout << std::endl;
 	return (os);
 }
