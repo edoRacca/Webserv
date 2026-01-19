@@ -44,14 +44,9 @@ Request&	Request::operator=(const Request &other)
 
 void	Request::resetRequest(void)
 {
-	this->_header["Host"] = "";
-	this->_header["User-Agent"] = "";
-	this->_header["Accept"] = "";
-	this->_header["Content-Length"] = "";
-	this->_header["Content-Type"] = "";
+	this->_header.clear();
 	this->_header["Connection"] = "keep-alive";
 	this->_header["Transfer-Encoding"] = "unchunked";
-	this->_header["Authorization"] = "";
 	this->_error = false;
 }
 
@@ -189,8 +184,8 @@ void	Request::setHeaderVal(std::string key, std::string val, SrvNameMap &srv_nam
 		DBG_MSG("Val: " + val + " stores one or more spaces");
 		return ;
 	}
-	if (!checkKey(key))
-		DBG_MSG("Key: " + key + " does not exist and has been added to header map");
+	//if (!checkKey(key))
+	//	DBG_MSG("Key: " + key + " does not exist and has been added to header map");
 	this->_header[key] = val;
 }
 

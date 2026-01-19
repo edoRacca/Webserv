@@ -36,6 +36,9 @@ spaghetti: re
 gdb: re
 	clear ; gdb ./$(NAME)
 
+giddibi: re
+	clear ; gdb ./$(NAME)
+
 val: $(NAME)
 	clear ; valgrind ./$(NAME)
 

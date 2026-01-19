@@ -8,7 +8,7 @@ static int	lineParsing(Request &request, std::string line);
 static int	headerParsing(Request &request, std::istringstream &header, SrvNameMap &srv_names);
 static int	bodyParsing(Request &request, std::istringstream &header);
 std::string	removeWhitespaces(std::string line);
-static int	errorParsing(Request &request, e_http_codes code);
+//static int	errorParsing(Request &request, e_http_codes code);
 static int	errorParsing(Request &request, e_http_codes code, std::string info);
 
 int	requestParsing(Request &request, std::string input, SrvNameMap &srv_names)
@@ -31,6 +31,12 @@ int	requestParsing(Request &request, std::string input, SrvNameMap &srv_names)
 // connessione e ricava il metodo, l'url dell'oggetto della connessione e la 
 // versione http. Questo perchè in base al metodo si va a stabilire il tipo
 // di richiesta e quindi i membri che ci aspettiamo di trovare.
+// POST /HTTP/1.1
+// Host: localhost:9006
+// User-Agent: curl/8.17.1-DEV
+// Accept: */*
+// Content-Length: 10
+// Content-Type: application/x-www-form-urlencoded
 static int	lineParsing(Request &request, std::string line)
 {
 	std::string	method;
@@ -43,15 +49,17 @@ static int	lineParsing(Request &request, std::string line)
 			request.setMethod(i);
 	}
 	if (request.getMethod() == UNDEFINED)
-		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "no method"));
+		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Invalid method"));
+	if (line.substr(method.length() + 1).find(' ') == std::string::npos)
+		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Invalid first line format"));
 	request.setUrl(line.substr(method.length() + 1, line.find(' ', method.length() + 1) - (method.length() + 1)));
 	if (request.getUrl().empty() == true)
-		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "No uri"));
+		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Invalid URI format"));
 	request.setHttpVersion(line.substr(method.length() + 1 + \
 		request.getUrl().length() + 1, line.find('\n', method.length() + 1 + \
 		request.getUrl().length() + 1) - (method.length() + 1) - (request.getUrl().length() + 1)));
 	if (request.getHttpVersion().compare("HTTP/1.1\r") != 0)
-		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Bad http version"));
+		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Invalid HTTP version or format"));
 	return (0);
 }
 
@@ -68,11 +76,10 @@ static int	headerParsing(Request &request, std::istringstream &header, SrvNameMa
 	while (std::getline(header, line) && line != "\r") // da trimmare \r
 	{
 		if (line.rbegin()[0] != '\r')
-			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "missing \\r"));
+			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Missing \\r at the end of line"));
 		line.erase(line.size() - 1);
 		if (line.find_first_of('\r') != std::string::npos)
-			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "invalid \\r"));
-		std::cout << "LINES :" << line << std::endl;
+			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Invalid \\r"));
 		sep = line.find(':');
 		if (sep == std::string::npos)
 			return (0);
@@ -83,7 +90,7 @@ static int	headerParsing(Request &request, std::istringstream &header, SrvNameMa
 			return (0);
 	}
 	if (!request.checkHeader())
-		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "miss header"));
+		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Missing head"));
 	return (0);
 }
 
@@ -93,22 +100,22 @@ static int	bodyParsing(Request &request, std::istringstream &header)
 	std::string line;
 
 	if (!line.empty())
-		return(errorParsing(request, HTTP_CE_BAD_REQUEST, "No body"));
+		return(errorParsing(request, HTTP_CE_BAD_REQUEST, "Missing body PORCA MADONNA"));
 	if (request.getMethod().compare("POST") == 0 && \
 		std::atoi(request.getHeaderVal("Content-Length").c_str()) > 0)
 	{
 		std::getline(header, line);
 		if (line.empty())
-			return(errorParsing(request, HTTP_CE_METHOD_NOT_ALLOWED));
+			return(errorParsing(request, HTTP_CE_METHOD_NOT_ALLOWED, "Missing body"));
 		request.setBody(line);
 	}
 	return (0);
 }
-
+/*
 static int	errorParsing(Request &request, e_http_codes code)
 {
 	return (errorParsing(request, code, ""));
-}
+}*/
 
 static int	errorParsing(Request &request, e_http_codes code, std::string info)
 {
