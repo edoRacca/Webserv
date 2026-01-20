@@ -127,14 +127,14 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 	std::string	body;
 	std::string	conttype;
 	std::string	url = client.getRequest().getUrl();
-	std::cout << "url: " << url << std::endl;
 	if (url.length() > 4 && url.substr(url.length() - 4) == ".css")
 	{
+		std::cout << "\033[1;31mERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << "\033[0m" << std::endl;
 		conttype = "text/css";
 		if (client.getRequest().getStatusCode() != 200)
 			file.open("www/var/errors/default/default.css");
 		else if (client.getRequest().getRequestErrorBool())
-			file.open("www/var/errors/dns/dns_error.css");
+			file.open("www/var/errors/dns/style.css");
 		else
 			file.open("www/var/style.css");
 	}
@@ -144,7 +144,7 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 		if (client.getRequest().getStatusCode() != 200)
 			file.open("www/var/errors/default/default.html");
 		else if (client.getRequest().getRequestErrorBool())
-			file.open("www/var/errors/dns/dns.html");
+			file.open("www/var/errors/dns/dns_error.html");
 		else
 			file.open("www/var/index.html");
 	}
@@ -163,7 +163,7 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 	html += ft_to_string(body.length() + 1);
 	html += "\r\n\r\n";
 	html += body + "\n";
-	std::cout << html << "\n";
+	// std::cout << html << "\n";
 	return (html + "\n");
 }
 
@@ -216,7 +216,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				convertDnsToIp(request, request.getHost(), *this->_srvnamemap);
 				if ((*this->_srvnamemap).count(request.getHost()) == 0)
 				{
-					this->_clients[(*it).fd]->getRequest().setStatusCode(HTTP_CE_BAD_REQUEST);
+					//this->_clients[(*it).fd]->getRequest().setStatusCode(HTTP_CE_BAD_REQUEST);
 					(*it).events = POLLOUT;
 					std::cout << "server not found\n";
 					return ;
@@ -282,7 +282,7 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 		// std::cout << "DNS PORT SOLVING " << port << "\n";
 		// for (SrvNameMap::iterator it = srv_names.begin(); it != srv_names.end(); it++)// Ma che caz?
 		// {
-			// for (std::vector<std::string>::iterator vit = (*it).second.server_names.begin(); \
+			// for (std::vector<std::string>::iterator vit = (*it).second.server_names.begin();
 			// vit != (*it).second.server_names.end(); vit++)
 			// {
 				// std::cout << "Checking vit " << *vit << "\n";

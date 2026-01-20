@@ -31,7 +31,7 @@ run: re
 	clear ; ./$(NAME)
 
 run+: re
-	clear ; echo "Grazie per aver scelto il servizio plus!" ./$(NAME)
+	clear ; echo "Grazie per aver scelto il servizio plus!\nOra potrete usufruire del servizio pulizia piedi della zia del tuo ragazzo senza costi aggiuntivi!" && ./$(NAME)
 
 spaghetti: re
 	clear ; ./$(NAME)
