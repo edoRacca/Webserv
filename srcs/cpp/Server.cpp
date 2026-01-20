@@ -118,7 +118,7 @@ SrvNameMap		&Server::getSrvNameMap() const
 	return (*this->_srvnamemap);
 }
 
-std::string	create_http(std::string url) // create http va messo anche percorso per il file
+std::string	create_http(Client &client) // create http va messo anche percorso per il file
 {
 	std::string	html;
 	std::fstream file;
@@ -126,14 +126,20 @@ std::string	create_http(std::string url) // create http va messo anche percorso 
 	std::string	body;
 	std::string	conttype("text/html");
 
+	std::string	url = client.getRequest().getUrl();
 	std::cout << "url: " << url << std::endl;
 	if (url.length() > 4 && url.substr(url.length() - 4) == ".css")
 	{
-		file.open("www/var/style.css");
 		conttype = "text/css";
+		if (client.getRequest().getStatusCode() == 200)
+			file.open("www/var/errors/default/default.css");
+		else
+			file.open("www/var/style.css");
 	}
 	else
+	{
 		file.open("www/var/index.html");
+	}
 	if (file.is_open())
 	{
 		while (std::getline(file, line))
@@ -192,7 +198,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		{
 			// Rispondo
 			std::cout << " ----Sent message----" << std::endl;
-			std::string	html = create_http(this->_clients[(*it).fd]->getRequest().getUrl());
+			std::string	html = create_http(this->_clients[(*it).fd]);
 			send((*it).fd, html.c_str(), html.length(), 0);
 			(*it).events = POLLIN;
 		}
@@ -210,8 +216,10 @@ void	convertDnsToIp(IpPortPair &ipport, SrvNameMap &srvmap)
 {
 	if (std::isdigit(ipport.first[0]) != 0)
 		return;
+	std::cout << "------------DNS CONVERSION------------\n";
 	if (ipport.first == "localhost")
 	{
+		std::cout << "DNS: convert localhost ----> 127.0.0.1\n";
 		ipport.first = "127.0.0.1";
 		return ;
 	}
@@ -222,7 +230,6 @@ void	convertDnsToIp(IpPortPair &ipport, SrvNameMap &srvmap)
 		{
 			if (ipport.first == *vit && ipport.second == (*it).first.second)
 			{
-				std::cout << "\n---------------DNS CONVERSION----------------\n";
 				std::cout << "DNS: convert " << ipport.first;
 				ipport.first = (*it).first.first;
 				std::cout << " ----> " << ipport.first << "\n";
@@ -231,7 +238,6 @@ void	convertDnsToIp(IpPortPair &ipport, SrvNameMap &srvmap)
 			}
 		}
 	}
-	std::cout << "------------DNS CONVERSION------------\n";
 	std::cout << "				FAIL!					\n";
 	std::cout << "------------DNS CONVERSION------------\n";
 }
