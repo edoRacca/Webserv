@@ -134,7 +134,7 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 		if (client.getRequest().getStatusCode() != 200)
 			file.open("www/var/errors/default/default.css");
 		else if (client.getRequest().getRequestErrorBool())
-			file.open("www/var/errors/dns/dns.css");
+			file.open("www/var/errors/dns/dns_error.css");
 		else
 			file.open("www/var/style.css");
 	}
@@ -146,7 +146,7 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 		else if (client.getRequest().getRequestErrorBool())
 			file.open("www/var/errors/dns/dns.html");
 		else
-			file.open("www/var/style.css");
+			file.open("www/var/index.html");
 	}
 	if (file.is_open())
 	{
@@ -200,9 +200,10 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			}
 			else
 			{
-				(void)buffer;
+				// (void)buffer;
 				// this->_clients[(*it).fd]->getRequest() = fileToString();
 				Request	&request = this->_clients[(*it).fd]->getRequest();
+				std::cout << buffer << std::endl;
 				//leggo la richiesta inviata dal client
 				// if (requestParsing(request, fileToString("test_request")))
 				if (requestParsing(request, buffer))

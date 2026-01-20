@@ -30,6 +30,9 @@ re: fclean all
 run: re
 	clear ; ./$(NAME)
 
+run+: re
+	clear ; echo "Grazie per aver scelto il servizio plus!" ./$(NAME)
+
 spaghetti: re
 	clear ; ./$(NAME)
 
