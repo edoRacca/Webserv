@@ -133,6 +133,8 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 		conttype = "text/css";
 		if (client.getRequest().getStatusCode() != 200)
 			file.open("www/var/errors/default/default.css");
+		else if (client.getRequest().getRequestErrorBool())
+			file.open("www/var/errors/dns/dns.css");
 		else
 			file.open("www/var/style.css");
 	}
@@ -141,8 +143,10 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 		conttype = "text/html";
 		if (client.getRequest().getStatusCode() != 200)
 			file.open("www/var/errors/default/default.html");
+		else if (client.getRequest().getRequestErrorBool())
+			file.open("www/var/errors/dns/dns.html");
 		else
-			file.open("www/var/index.html");
+			file.open("www/var/style.css");
 	}
 	if (file.is_open())
 	{
@@ -161,6 +165,17 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 	html += body + "\n";
 	std::cout << html << "\n";
 	return (html + "\n");
+}
+
+std::string	fileToString(std::string filename)
+{
+	std::ifstream	fd(filename.c_str());
+	std::string		file;
+
+	if (fd.fail())
+		abort();
+	std::getline(fd, file, '\0');
+	return (file);
 }
 
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
@@ -185,8 +200,11 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			}
 			else
 			{
+				(void)buffer;
+				// this->_clients[(*it).fd]->getRequest() = fileToString();
 				Request	&request = this->_clients[(*it).fd]->getRequest();
 				//leggo la richiesta inviata dal client
+				// if (requestParsing(request, fileToString("test_request")))
 				if (requestParsing(request, buffer))
 				{
 					(*it).events = POLLOUT;
@@ -194,7 +212,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 					return ;
 				}
 				std::cout << request << std::endl;
-				convertDnsToIp(request.getHost(), *this->_srvnamemap);
+				convertDnsToIp(request, request.getHost(), *this->_srvnamemap);
 				if ((*this->_srvnamemap).count(request.getHost()) == 0)
 				{
 					this->_clients[(*it).fd]->getRequest().setStatusCode(HTTP_CE_BAD_REQUEST);
@@ -219,14 +237,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	}
 }
 
-/*
-	ipPortPair
-
-	doppio for
-		se IP == serv_name && PORT == port 
-*/
-
-void	convertDnsToIp(IpPortPair &ipport, SrvNameMap &srvmap)
+void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 {
 	if (std::isdigit(ipport.first[0]) != 0)
 		return;
@@ -252,8 +263,7 @@ void	convertDnsToIp(IpPortPair &ipport, SrvNameMap &srvmap)
 			}
 		}
 	}
-	std::cout << "				FAIL!					\n";
-	std::cout << "------------DNS CONVERSION------------\n";
+	request.setRequestErrorBool(true);
 }
 
 // Vecchio controllo sulla corrispondenza dns ip

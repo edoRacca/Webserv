@@ -21,7 +21,7 @@ int		test_request(Conf &conf, Server &server)
 	std::cout << "\033[0;2m\n-------REQUEST PARSING STARTED------...\n" COLOR_RESET << "\n";
 	if (requestParsing(request, input) != 0)
 		return (1);
-	convertDnsToIp(request.getHost(), server.getSrvNameMap());
+	convertDnsToIp(request, request.getHost(), server.getSrvNameMap());
 	std::cout << "\033[0;2mEnd." COLOR_RESET << "\n";
 	std::cout << "\033[33m[RESULT]" COLOR_RESET << "\n";
 	std::cout << request << "\n";
