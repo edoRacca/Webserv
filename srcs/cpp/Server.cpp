@@ -217,9 +217,10 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				if ((*this->_srvnamemap).count(request.getHost()) == 0)
 				{
 					//this->_clients[(*it).fd]->getRequest().setStatusCode(HTTP_CE_BAD_REQUEST);
-					(*it).events = POLLOUT;
-					std::cout << "server not found\n";
-					return ;
+					request.setRequestErrorBool(true);
+					std::cout << "Error bool: " << (request.getRequestErrorBool() == true ? "true" : "false") << std::endl;
+					std::cout << "status code: " << request.getStatusCode() << std::endl;
+					request.setStatusCode(HTTP_OK);
 				}
 				std::cout << "\033[33m" << "RICHIESTA CLIENT GESTITA DA SERVER " << request.getHost() << "\033[0m" << std::endl;
 				std::cout << "SERVER DI RIFERIMENTO: " << (*this->_srvnamemap)[request.getHost()] << std::endl;
@@ -240,7 +241,8 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 
 void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 {
-	if (std::isdigit(ipport.first[0]) != 0)
+	std::cout << "Host CONVERT DNS: " << ipport.first << "," << ipport.second << std::endl;
+	if (std::isdigit(ipport.first[0]) != 0) //connessione dell'uganda HAHAHHAHA //non so come mai share mi lagga quindi non vedo in tempo reale, vuoi evitare la rimozione degli space? si
 		return;
 	std::cout << "------------DNS CONVERSION------------\n";
 	if (ipport.first == "localhost")

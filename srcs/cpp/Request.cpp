@@ -155,11 +155,9 @@ IpPortPair	&Request::getHost()
 	if (!this->_ipport.first.empty())
 		return (this->_ipport);
 	ipport = this->_header["Host"];
-	// std::cout << "excuseme wtf?: " << this->_header["Host"] << "\n";
 	ip = ipport.substr(0, ipport.find(':'));
 	port = std::atoi(ipport.substr(ipport.find(':') + 1).c_str());
-	// std::cout << "convert: " << ipport << " ip: " << ip << " port: " << port << "\n";
-	this->_ipport = IpPortPair(ip, port);	
+	this->_ipport = IpPortPair(ip, port);
 	return (this->_ipport);
 }
 
@@ -216,10 +214,6 @@ void	Request::setBodyLen(size_t len)
 bool	Request::setHeaderVal(std::string key, std::string val)
 {
 	std::cout << "\033[33mNEW:" COLOR_RESET << key << " " << val << "\n";
-	if (find_first_whitespace(val) != val.length())
-		return (1);
-	if (key != "Host" && val.find(':') != std::string::npos)
-		return (1);
 	if (key == "Content-Length" && !charFinder(val, std::isdigit))
 		return (1);
 	this->_header[key] = val;
