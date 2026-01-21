@@ -1,18 +1,6 @@
 
 #include "../hpp/Request.hpp"
 
-/*
-Host: localhost:8080
-User-Agent: curl/8.17.1-DEV
-Accept: /
-Content-Length: 10 (SOLO POST)
-Content-Type: application/x-www-form-urlencoded (SOLO POST)
-
-	POST,
-	GET,
-	DELETE,
-	HEAD,
-*/
 Request::Request()
 {
 	this->_validmethods[POST] = "POST";
@@ -63,6 +51,9 @@ int	Request::checkHeader(void)
 {
 	if (!this->checkVal("Host") || !this->checkVal("Accept") || !this->checkVal("User-Agent"))
 		return (false);
+	if (this->_header["Transfer-Encoding"] != "chunked" && \
+	this->_header["Transfer-Encoding"] != "unchunked")
+		return (1);
 	if (this->_method == "POST")
 		return (this->_checkPost());
 	else if (this->_method == "GET")
@@ -76,8 +67,10 @@ int	Request::checkHeader(void)
 
 int	Request::_checkPost(void)
 {
+	if (this->checkVal("Transfer-Encoding"))
+		return (true);
 	if (!this->checkVal("Content-Length") || !this->checkVal("Content-Type"))
-			return (false);
+		return (false);
 	return (true);
 }
 
@@ -110,8 +103,6 @@ int Request::getMethNum() const
 
 e_methods	Request::getMethodEnum() const
 {
-	int	i;
-
 	for (int i = 0; i != METH_NUM; i ++)
 	{
 		if (this->_validmethods[i] == this->_method)

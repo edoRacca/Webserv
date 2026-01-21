@@ -7,8 +7,9 @@ CPPFLAGS = -std=c++98
 
 SRCS = $(addprefix srcs/, main.cpp $(CPP) $(PARSING) $(UTILS))
 
-PARSING = $(addprefix parsing/, parseConf.cpp parseRequest.cpp $(CONF_PARSING))
+PARSING = $(addprefix parsing/, parseConf.cpp parseRequest.cpp $(CONF_PARSING) $(REQUEST_PARSING))
 CONF_PARSING = $(addprefix conf/, parseEvent.cpp parseMain.cpp parseServer.cpp parseLocation.cpp parseHttp.cpp)
+REQUEST_PARSING = $(addprefix request/, utils.cpp)
 
 CPP = $(addprefix cpp/, Server.cpp Client.cpp Request.cpp \
 		$(addprefix conf/, getter.cpp setter.cpp print.cpp Conf.cpp))

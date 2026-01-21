@@ -7,16 +7,17 @@
 static int	lineParsing(Request &request, std::string line);
 static int	headerParsing(Request &request, std::istringstream &header);
 static int	bodyParsing(Request &request, std::istringstream &header);
+bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 std::string	removeWhitespaces(std::string line);
-//static int	errorParsing(Request &request, e_http_codes code);
-static int	errorParsing(Request &request, e_http_codes code, std::string info);
+int	errorParsing(Request &request, e_http_codes code);
+int	errorParsing(Request &request, e_http_codes code, std::string info);
 
 int	requestParsing(Request &request, std::string input)
 {
 	std::string			lines = "\r";
 	std::istringstream	s(input);
 
-	while (lines == "\r")
+	while (lines == "\r")//accept start lines with '\r'
 		std::getline(s, lines, '\n');
 	if (lineParsing(request, lines) != 0) // first line parsing
 		return (request.getStatusCode());
@@ -32,12 +33,6 @@ int	requestParsing(Request &request, std::string input)
 // connessione e ricava il metodo, l'url dell'oggetto della connessione e la 
 // versione http. Questo perchè in base al metodo si va a stabilire il tipo
 // di richiesta e quindi i membri che ci aspettiamo di trovare.
-// POST /HTTP/1.1
-// Host: localhost:9006
-// User-Agent: curl/8.17.1-DEV
-// Accept: */*
-// Content-Length: 10
-// Content-Type: application/x-www-form-urlencoded
 static int	lineParsing(Request &request, std::string line)
 {
 	std::string	field;
@@ -105,6 +100,9 @@ static int	headerParsing(Request &request, std::istringstream &header)
 		else
 			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Empty header val"));
 	}
+	if (request.getBodyLen() != 0 && \
+	request.getHeaderVal("Transfer-Encoding") == "chunked")
+		request.setHeaderVal("Transfer-Encoding", "unchunked");
 	if (!request.checkHeader())
 		return (errorParsing(request, HTTP_CE_BAD_REQUEST, "Missing head"));
 	return (0);
@@ -127,51 +125,31 @@ static int	bodyParsing(Request &request, std::istringstream &stream)
 			return(errorParsing(request, HTTP_CE_BAD_REQUEST, "No \\r in body"));
 		body += line;
 	}
+	request.setBody(body);
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			if (body.empty())
-				;//ERRORE
-			if (request.getBodyLen() == 0 && \
-			request.getHeaderVal("Transfer-Encoding") != "chunked")
-				;//ERRORE
-			if (request.getBodyLen() || request.getBodyLen() != body.length())
-					;//ERRORE
-			break ;
+			return (bodyChecker(request, body, false));
 		case GET :
-			if (body.empty())
-				break ;
-			if (request.getBodyLen() == 0 && \
-			request.getHeaderVal("Transfer-Encoding") != "chunked")
-				;//ERRORE
-			if (request.getBodyLen() || request.getBodyLen() != body.length())
-				;//ERRORE
-		case DELETE ://body e delete???
-			if (body.empty())
-				break ;
-			if (request.getBodyLen() == 0 && \
-			request.getHeaderVal("Transfer-Encoding") != "chunked")
-				;//ERRORE
-			if (request.getBodyLen() || request.getBodyLen() != body.length())
-				;//ERRORE
+			return (bodyChecker(request, body, true));
+		case DELETE :
+			return (bodyChecker(request, body, true));
 		case HEAD :
-		if (!body.empty())
-			;//ERRORE
-		break ;
-		default :
-			;//errore
+			if (!body.empty())
+				return (errorParsing(request, HTTP_CE_BAD_REQUEST, "head must have empty body"));
+			return (0);
+		case METH_NUM :
+			return (errorParsing(request, HTTP_CE_BAD_REQUEST, "BodyParsing: no method"));
 	}
-	request.setBody(body);
 	return (0);
 }
 
-/*
-static int	errorParsing(Request &request, e_http_codes code)
+int	errorParsing(Request &request, e_http_codes code)
 {
 	return (errorParsing(request, code, ""));
-}*/
+}
 
-static int	errorParsing(Request &request, e_http_codes code, std::string info)
+int	errorParsing(Request &request, e_http_codes code, std::string info)
 {
 	int	int_code;
 
