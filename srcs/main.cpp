@@ -49,10 +49,14 @@ void	get_conf_path(int ac, char **av, std::string &path)
 }
 
 /*
-TODO - 21/01
-[X]	RFC request
-[ ]	refactoring server
+TODO - 22/01
 [ ]	refactoring request
+[ ]	da decidere con Edo e Leo
+	PROPOSTA
+	[ ]	parsing header rimasti
+	[ ]	fare un .html con bottone che richiede uri specifica
+	[ ]	risolverlo senza usare root e index
+	[ ]	dare errore se non viene trovato
 */
 int main(int ac, char **av)
 {

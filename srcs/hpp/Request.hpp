@@ -53,23 +53,21 @@ class Request
 {
 
 	private:
-		
-		std::string							_validmethods[METH_NUM];
-		headermap							_header;
-		std::string							_method; // LINE
-		std::string 						_url; // LINE
-		std::string 						_http_version; // LINE
-		std::string							_body;
-		IpPortPair							_ipport;
-		e_http_codes						_status_code;
-		size_t								_max_method_length;
-		size_t								_body_len;
-		bool								_error; //GIORGIOVANNI
+		std::string		_validmethods[METH_NUM];
+		headermap		_header;
+		std::string		_method; // LINE
+		std::string 	_url; // LINE
+		std::string 	_http_version; // LINE
+		std::string		_body;
+		IpPortPair		_ipport;
+		e_http_codes	_status_code;
+		size_t			_max_method_length;
+		size_t			_body_len;
+		bool			_error; //GIORGIOVANNI
 
-		int									_checkPost(void);
-		int									_checkGet(void);
-		int									_checkDelete(void);
-
+		int				_checkPost(void);
+		int				_checkGet(void);
+		int				_checkDelete(void);
 	public:
 		
 		Request();
@@ -78,35 +76,37 @@ class Request
 		Request &operator=(const Request &other);
 
 		//getters
-		std::string							getValidMethod(int idx) const;
-		int									getMethNum() const;
-		std::string							getMethod() const;
-		e_methods							getMethodEnum() const;
-		std::string 						getUrl() const;
-		std::string 						getHttpVersion() const;
-		std::string 						getBody() const;
-		headermap							&getHeader();
-		std::string							getHeaderVal(std::string key);
-		IpPortPair							&getHost();
-		e_http_codes						getStatusCode() const;
-		size_t								getBodyLen() const;
-		bool								getRequestErrorBool() const;
+		std::string		getValidMethod(int idx) const;
+		int				getMethNum() const;
+		std::string		getMethod() const;
+		e_methods		getMethodEnum() const;
+		std::string 	getUrl() const;
+		std::string 	getHttpVersion() const;
+		std::string 	getBody() const;
+		headermap		&getHeader();
+		std::string		getHeaderVal(std::string key);
+		IpPortPair		&getHost();
+		e_http_codes	getStatusCode() const;
+		size_t			getBodyLen() const;
+		bool			getRequestErrorBool() const;
 
 		//setters
-		void								setMethod(std::string method);
-		void								setHttpVersion(std::string version);
-		void 								setUrl(std::string);
-		void								setBody(std::string);
-		bool								setHeaderVal(std::string key, std::string val);
-		void								setStatusCode(e_http_codes status_code);
-		void								setRequestErrorBool(bool error);
-		void								setBodyLen(size_t len);
-		bool								checkVal(std::string key);
-		bool								checkKey(std::string key);
-		int									checkHeader(void);
+		void			setMethod(std::string method);
+		void			setHttpVersion(std::string version);
+		void 			setUrl(std::string);
+		void			setBody(std::string);
+		bool			setHeaderVal(std::string key, std::string val);
+		void			setStatusCode(e_http_codes status_code);
+		void			setRequestErrorBool(bool error);
+		void			setBodyLen(size_t len);
+		bool			checkVal(std::string key);
+		bool			checkKey(std::string key);
+		int				checkHeader(void);
 
-		void								resetRequest(void);
-		void								printHeader(void);
+		int				fail(e_http_codes code);
+		int				fail(e_http_codes code, std::string info);
+		void			resetRequest(void);
+		void			printHeader(void);
 
 };
 
