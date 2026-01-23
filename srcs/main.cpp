@@ -49,14 +49,12 @@ void	get_conf_path(int ac, char **av, std::string &path)
 }
 
 /*
-TODO - 22/01
-[ ]	refactoring request
-[ ]	da decidere con Edo e Leo
-	PROPOSTA
-	[ ]	parsing header rimasti
-	[ ]	fare un .html con bottone che richiede uri specifica
-	[ ]	risolverlo senza usare root e index
-	[ ]	dare errore se non viene trovato
+TODO - 23/01
+[X]	refactoring request
+[ ]	fare un .html con bottone che richiede uri specifica
+[ ]	risolverlo con root, alias, index
+[ ]	dare errore se non viene trovato
+[ ]	parsing accept
 */
 int main(int ac, char **av)
 {

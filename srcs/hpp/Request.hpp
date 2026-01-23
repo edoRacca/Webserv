@@ -25,6 +25,7 @@ typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 		2.1)	aggiungerlo al costruttore di Request (Request.cpp);
 		2.2)	fare funzione di Request chiamata check[nome nuovo metodo];
 		2.3)	richiamare la nuova funzione in checkHeader;
+	3)	in parseRequest.cpp amplia lo switch in bodyParsing;
 */
 enum	e_methods
 {

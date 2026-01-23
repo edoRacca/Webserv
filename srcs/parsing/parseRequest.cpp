@@ -39,6 +39,8 @@ static int	lineParsing(Request &request, std::string line)
 {
 	std::string	field;
 
+	if (std::isspace(line[0]) != 0)
+		return (request.fail(HTTP_CE_BAD_REQUEST, "First line format"));
 	if (getNextFirstLineField(line, field) == 1)
 		return (request.fail(HTTP_CE_BAD_REQUEST, "Method Format"));
 //SECTION - method
@@ -97,15 +99,14 @@ static int	headerParsing(Request &request, std::istringstream &header)
 		line = removeWhitespaces(line);
 		if (line.empty())
 			return (request.fail(HTTP_CE_BAD_REQUEST, "Empty header val"));
-		else if (request.setHeaderVal(key, line))
+		else if (request.setHeaderVal(key, line) == 1)
 			return (request.fail(HTTP_CE_BAD_REQUEST, line));
 	}
 //NOTE - se presenti sia Cont-Len e T-Encoding, togliere T-encoding
 	if (request.getBodyLen() != 0 && \
 	request.getHeaderVal("Transfer-Encoding") == "chunked")
 		request.setHeaderVal("Transfer-Encoding", "unchunked");
-//NOTE - controlli sui nostri header, se va male 
-//		LI RIMANDIAMO A CASA LORO https://www.youtube.com/watch?v=U0BIbIIe7d4
+//NOTE - controlli sui nostri header
 	if (request.checkHeader() == 1)
 		return (1);
 	return (0);
@@ -146,23 +147,3 @@ static int	bodyParsing(Request &request, std::istringstream &stream)
 	}
 	return (0);
 }
-
-// POST /contact HTTP/1.1
-// Host: example.com
-// User-Agent: curl/8.6.0
-// Accept: */*
-// \r\n
-// User-Agent: curl/8.6.0
-
-// POST /contact HTTP/1.1
-// Host: example.com
-// User-Agent: curl/8.6.0
-// Accept: */*
-// \r\n
-
-// POST /contact HTTP/1.1
-// Host: example.com
-// \r\n
-// User-Agent: curl/8.6.0
-// Accept: */*
-// \r\n

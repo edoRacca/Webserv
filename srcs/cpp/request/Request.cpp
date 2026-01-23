@@ -73,7 +73,7 @@ int	Request::checkHeader(void)
 	else if (this->_method == "DELETE")
 		return (this->_checkDelete());
 	std::cout << "\033[31mWARNING: METHOD " COLOR_RESET << this->_method;
-	std::cout << "\033[31m HAS NO PARSING!!" COLOR_RESET << std::endl;
+	std::cout << "\033[31m HAS NO PARSING!!" COLOR_RESET << std::endl << std::endl;
 	return (0);
 }
 
@@ -167,8 +167,8 @@ void	Request::findRightPath(t_conf_server *srv)
 {
 	typedef std::map<std::string, t_conf_location> maplocation;
 	// controllo se esiste uri nelle location, altrimenti root server
-	std::cout << "\033[33m FINDRIGHTPATH" COLOR_RESET;
-	std::cout << "url: " << getUrl() << std::endl;
+	std::cout << "\033[33m FINDRIGHTPATH: " COLOR_RESET;
+	std::cout << "url: " << getUrl() << " ";
 	std::string tmpuri;
 
 	for (maplocation::iterator it = srv->location.begin(); it != srv->location.end(); ++it)
@@ -206,7 +206,7 @@ void	Request::findRightPath(t_conf_server *srv)
 		else
 			this->setUrl(srv->root + this->getUrl());
 	}
-	std::cout << "RESULT " << this->getUrl() << " " << std::endl;
+	std::cout << "---> RESULT: " << this->getUrl() << " " << std::endl << std::endl;
 	//casi di uri
 	/*
 		location /

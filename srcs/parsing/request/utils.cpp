@@ -21,10 +21,10 @@ bool	bodyChecker(Request &request, std::string &body, bool accept_empty)
 
 bool	getNextFirstLineField(std::string &line, std::string &field)
 {
-	trim_diff_left(line, ' ');
 	if (!line[0] || !line[1] || trim_equal_left(line, ' ') == 1)
 		return (1);
 	field = line;
+	trim_diff_left(line, ' ');
 	trim_diff_right(field, ' ');
 	return (0);
 }

@@ -91,11 +91,11 @@ void	Server::addSocket(int index)
 	int client = accept(this->_addrs.data()[index].fd, NULL, NULL);
 	if (client == -1)
 		throw std::runtime_error("\033[31mconnessione non accettata.\n\033[0m");
-	std::cout << "connessione trovata, client: " << client << std::endl;
+	// std::cout << "connessione trovata, client: " << client << std::endl;
 	this->_addrs.push_back(setupPollFd(client));
 	//creiamo oggetto client e lo aggiungiano alla std::map
 	this->_clients[client] = new Client(client, this->_addrs.data()[index].fd);
-	std::cout << &this->_clients[client] << std::endl;
+	// std::cout << &this->_clients[client] << std::endl;
 }
 
 struct pollfd *Server::getAddrs(void)
@@ -126,21 +126,22 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 	std::string	line;
 	std::string	body;
 	std::string	conttype;
-	std::string	url = client.getRequest().getUrl();
+	std::string	url = client.getRequest().getUrl().erase(0, 1);
 	std::cout << "HTTP FUNC ERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << std::endl;
 	std::cout << "HTTP FUNC STATUS: " << client.getRequest().getStatusCode() << std::endl;
+	std::cout << "URL: " << url << std::endl;
 	//create http
 	//  /index.html
 	if (url.length() > 4 && url.substr(url.length() - 4) == ".css")
 	{
-		std::cout << "\033[1;31mERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << "\033[0m" << std::endl;
+		//std::cout << "\033[1;31mERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << "\033[0m" << std::endl;
 		conttype = "text/css";
 		if (client.getRequest().getStatusCode() != 200)
 			file.open("www/var/errors/default/default.css");
 		else if (client.getRequest().getRequestErrorBool())
 			file.open("www/var/errors/dns/style.css");
 		else
-			file.open("www/var/style.css");
+			file.open(url.c_str());
 	}
 	else
 	{
@@ -150,7 +151,7 @@ std::string	create_http(Client &client) // create http va messo anche percorso p
 		else if (client.getRequest().getRequestErrorBool())
 			file.open("www/var/errors/dns/dns_error.html");
 		else
-			file.open("www/var/index.html");
+			file.open(url.c_str());
 	}
 	if (file.is_open())
 	{
@@ -192,8 +193,10 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
 			if (bytes <= 0)
 			{
+				static int	n;
 				//da mettere in una funzione a parte
-				std::cout << "chiudo" << std::endl;
+				std::cout << "chiudo connessione " << n++ << std::endl;
+				std::cout << "----------------------------------------------------------\n";
 				close((*it).fd);
 				if (this->_clients[(*it).fd])
 				{
@@ -204,11 +207,11 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			}
 			else
 			{
-				std::cout << (*this->_srvnamemap) << std::endl;
+				//std::cout << (*this->_srvnamemap) << std::endl;
 				// (void)buffer;
 				// this->_clients[(*it).fd]->getRequest() = fileToString();
 				Request	&request = this->_clients[(*it).fd]->getRequest();
-				std::cout << buffer << std::endl;
+				//std::cout << buffer << std::endl;
 				//leggo la richiesta inviata dal client
 				// if (requestParsing(request, fileToString("test_request")))
 				if (requestParsing(request, buffer))
@@ -228,8 +231,8 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				{
 					request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
 					//funziona che trova location giusta
-					std::cout << "\033[33m" << "RICHIESTA CLIENT GESTITA DA SERVER " << request.getHost() << "\033[0m" << std::endl;
-					std::cout << "SERVER DI RIFERIMENTO: " << (*this->_srvnamemap)[request.getHost()] << std::endl;
+					//std::cout << "\033[33m" << "RICHIESTA CLIENT GESTITA DA SERVER " << request.getHost() << "\033[0m" << std::endl;
+					//std::cout << "SERVER DI RIFERIMENTO: " << (*this->_srvnamemap)[request.getHost()] << std::endl;
 				}
 				(*it).events = POLLOUT;
 			}
@@ -247,13 +250,13 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 
 void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 {
-	std::cout << "Host CONVERT DNS: " << ipport.first << "," << ipport.second << std::endl;
-	if (std::isdigit(ipport.first[0]) != 0) //connessione dell'uganda HAHAHHAHA //non so come mai share mi lagga quindi non vedo in tempo reale, vuoi evitare la rimozione degli space? si
+	if (std::isdigit(ipport.first[0]) != 0)
 		return;
 	std::cout << "------------DNS CONVERSION------------\n";
+	std::cout << "Host CONVERT DNS: " << ipport.first << "," << ipport.second << std::endl;
 	if (ipport.first == "localhost")
 	{
-		std::cout << "DNS: convert localhost ----> 127.0.0.1\n";
+		std::cout << "DNS: convert localhost ----> 127.0.0.1\n\n";
 		ipport.first = "127.0.0.1";
 		return ;
 	}
