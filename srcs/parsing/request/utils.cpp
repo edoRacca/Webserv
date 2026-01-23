@@ -18,3 +18,8 @@ bool	bodyChecker(Request &request, std::string &body, bool accept_empty)
 		return (request.fail(HTTP_CE_BAD_REQUEST, "invalid body len"));
 	return (0);
 }
+
+// bool	getNextField(Request &request, std::string line, std::string &field)
+// {
+
+// }
