@@ -49,12 +49,9 @@ void	get_conf_path(int ac, char **av, std::string &path)
 }
 
 /*
-TODO - 23/01
-[X]	refactoring request
-[X]	risolverlo con root, alias, index
-[X]	dare errore se non viene trovato
-[X]	fare un .html con bottone che richiede uri specifica
-[ ]	parsing accept
+//TODO - 24/01
+[X]	fixed bug problem not found
+[ ]	autoindex
 */
 int main(int ac, char **av)
 {

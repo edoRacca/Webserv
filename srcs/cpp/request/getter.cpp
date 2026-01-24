@@ -7,6 +7,7 @@
 		-	Headers
 		-	Body
 		-	Status code, error bool
+		-	Flags (autoindex)
 */
 
 //SECTION - method
@@ -130,4 +131,11 @@ e_http_codes	Request::getStatusCode() const
 bool	Request::getRequestErrorBool() const
 {
 	return (this->_error);
+}
+
+//SECTION - Flags (autoindex)
+
+bool	Request::getAutoIndexBool() const
+{
+	return (this->_autoindex);
 }

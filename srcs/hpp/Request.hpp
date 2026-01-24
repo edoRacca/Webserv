@@ -52,6 +52,7 @@ class Request
 		size_t			_max_method_length;
 		size_t			_body_len;
 		bool			_error;
+		bool			_autoindex;
 
 		int				_checkPost(void);
 		int				_checkGet(void);
@@ -90,6 +91,7 @@ class Request
 		std::string 	getBody() const;
 		e_http_codes	getStatusCode() const;
 		bool			getRequestErrorBool() const;
+		bool			getAutoIndexBool() const;
 	//ANCHOR - setters.cpp
 		void			setMethod(std::string method);
 		void 			setUrl(std::string);

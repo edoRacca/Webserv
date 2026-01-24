@@ -91,11 +91,9 @@ void	Server::addSocket(int index)
 	int client = accept(this->_addrs.data()[index].fd, NULL, NULL);
 	if (client == -1)
 		throw std::runtime_error("\033[31mconnessione non accettata.\n\033[0m");
-	// std::cout << "connessione trovata, client: " << client << std::endl;
 	this->_addrs.push_back(setupPollFd(client));
 	//creiamo oggetto client e lo aggiungiano alla std::map
 	this->_clients[client] = new Client(client, this->_addrs.data()[index].fd);
-	// std::cout << &this->_clients[client] << std::endl;
 }
 
 struct pollfd *Server::getAddrs(void)
@@ -116,6 +114,27 @@ int	Server::getServerNum() const
 SrvNameMap		&Server::getSrvNameMap() const
 {
 	return (*this->_srvnamemap);
+}
+
+std::string	createHtml(Client &client, const std::string &body, const std::string &type)
+{
+	std::ostringstream	response;
+	std::string			http_codes_str[] = VALID_HTTP_STR;
+	std::string			url = client.getRequest().getUrl().erase(0, 1);
+	int 				status = client.getRequest().getStatusCode();
+
+	response << "HTTP/1.1 "
+	         << status << " "
+	         << http_codes_str[checkValidCode(status)] << "\r\n";
+	response << "Content-Type: " << type << "\r\n";
+	response << "Content-Length: " << body.size() << "\r\n\r\n";
+	response << body << "\n\n";
+
+	std::cout << "CREATE RESPONSE ERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << std::endl;
+	std::cout << "CREATE RESPONSE STATUS: " << client.getRequest().getStatusCode() << std::endl;
+	std::cout << "URL: " << url << std::endl;
+
+	return (response.str());
 }
 
 static void	choose_file(Client &client, std::string &type, std::string fname, std::fstream &file, std::string url)
@@ -147,38 +166,92 @@ static void	choose_file(Client &client, std::string &type, std::string fname, st
 	}
 }
 
+std::string	test(std::string url)
+{
+	static DIR	*dir;
+	dirent		*content;
+
+	if (url.empty())
+	{
+		if (dir)
+			closedir(dir);
+		dir = NULL;
+		return ("");
+	}
+	if (!dir)
+	{
+		url.erase(0, 1);
+		dir = opendir(url.c_str());
+		if (!dir)
+			return ("");
+	}
+	printf("dir %s aperta!\n", url.c_str());
+	content = readdir(dir);
+	if (!content)
+	{
+		closedir(dir);
+		printf("dir %s chiusa!\n", url.c_str());
+		dir = NULL;
+		return ("");
+	}
+	printf("content name: %s, content type: %s\n", content->d_name, (content->d_type == 4) ? "folder" : "file");
+	return (content->d_name);
+}
+
+void	createAutoindex(Client &client, std::string &body)
+{
+	std::ifstream file("www/var/autoindex/autoindex.html");
+	std::string line;
+
+	test(client.getRequest().getUrl());
+	while (std::getline(file, line))
+	{
+		line.push_back('\n');
+		if (line.find("{PATH}")	!= std::string::npos)
+			body += line.replace(line.find('{'), 6, client.getRequest().getUrl());
+		else if (line.find("{NAME}") != std::string::npos)
+		{
+			std::string src(test(client.getRequest().getUrl()));
+			body += line.replace(line.find("{NAME}"), 6, src);
+		}
+		else
+			body += line;
+	}
+	std::cout << body << "\n";
+	test("");
+}
+
 std::string	createResponse(Client &client) // create html va messo anche percorso per il file
 {
-	std::string	html;
-	std::fstream file;
-	std::string	http_codes_str[] = VALID_HTTP_STR;
-	std::string	body;
-	std::string	type;
-	std::string	url = client.getRequest().getUrl().erase(0, 1);
+	std::fstream	file;
+	std::string		body;
+	std::string		type(".html");
+	std::string		url = client.getRequest().getUrl().erase(0, 1);
 
+	std::cout << "STATUS CODE NOW: " << client.getRequest().getStatusCode() << "\n";
+	std::cout << "TYPE NOW: " << client.getRequest().getUrl() << std::endl;
+	std::cout << "ERROR NOW: " << client.getRequest().getRequestErrorBool() << std::endl;
 	if (url.find_last_of('.') != std::string::npos)
 		type = url.substr(url.find_last_of('.'));
+	std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
+	if (client.getRequest().getAutoIndexBool())
+		createAutoindex(client, body);
 	if (type == ".css")
 		choose_file(client, type, "style.css", file, url);
 	else if (type == ".html")
 		choose_file(client, type, "index.html", file, url);
+	else if (type == ".ico")
+		choose_file(client, type, "favicon.ico", file, url);
+	else if (client.getRequest().getRequestErrorBool() == true)
+	{
+		type = ".html";
+		choose_file(client, type, "default.html", file, url);
+	}
 	else
 		client.getRequest().fail(HTTP_CE_NOT_FOUND, "File extension not recognized!");
-	body = file_opener(file);
-	std::cout << "HTTP FUNC ERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << std::endl;
-	std::cout << "HTTP FUNC STATUS: " << client.getRequest().getStatusCode() << std::endl;
-	std::cout << "URL: " << url << std::endl;
-	html += "HTTP/1.1 ";
-	html += ft_to_string(client.getRequest().getStatusCode());
-	html += " " + http_codes_str[checkValidCode(client.getRequest().getStatusCode())];
-	html += "\r\n";
-	html += "Content-Type: " + type + "\r\n";
-	html += "Content-Length: ";
-	html += ft_to_string(body.length() + 1);
-	html += "\r\n\r\n";
-	html += body + "\n";
-	// std::cout << html << "\n";
-	return (html + "\n");
+	if (body.empty())
+		body = file_opener(file);
+	return (createHtml(client, body, type));
 }
 
 std::string	fileToString(std::string filename)
@@ -230,17 +303,21 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 					std::cout << "errore\n";
 					return ;
 				}
-				if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
-						request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
 				convertDnsToIp(request, request.getHost(), *this->_srvnamemap);
-				if ((*this->_srvnamemap).count(request.getHost()) == 0)
+				std::cout << "pair: " << request.getHost() << "\n";
+				std::cout << "Server nums: " << (*this->_srvnamemap).count(request.getHost()) << std::endl;
+				if ((*this->_srvnamemap).count(request.getHost()) == 0)//condition
 				{
 					request.setRequestErrorBool(true);
 					request.setStatusCode(HTTP_OK);
 					std::cout << "SERVER NOT FOUND\n" << std::endl;
 				}
 				else
+				{
+					if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
+						request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
 					request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
+				}
 				(*it).events = POLLOUT;
 			}
 		}
@@ -282,71 +359,9 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 			}
 		}
 	}
+	std::cout << "Qui ci arrivo?" << std::endl << std::endl;
 	request.setRequestErrorBool(true);
 }
-
-// Vecchio controllo sulla corrispondenza dns ip
-// size_t 	endpoint;
-	// 
-	// if (key == "Host" && !isdigit(val[0]))
-	// {//www.name.it:9090
-		// endpoint = val.find_last_of(':');
-		// if (endpoint == std::string::npos)
-			// return (this->_header[key] = "", (void)0);
-		// std::string name(val.substr(0, endpoint));
-		// std::string s_port(val.substr(endpoint + 1));
-		// int			port = std::atoi(s_port.c_str());
-		// std::cout << "DNS IP SOLVING " << name << "\n";
-		// std::cout << "DNS PORT SOLVING " << port << "\n";
-		// for (SrvNameMap::iterator it = srv_names.begin(); it != srv_names.end(); it++)// Ma che caz?
-		// {
-			// for (std::vector<std::string>::iterator vit = (*it).second.server_names.begin();
-			// vit != (*it).second.server_names.end(); vit++)
-			// {
-				// std::cout << "Checking vit " << *vit << "\n";
-				// if (name == *vit && port == (*it).first.second)
-				// {//KEY == HOST VALORE IP:PORTA
-					// CONTROLLA ANCHE PORTA
-					// std::cout << "Trovato il figlio di puttana\n";
-					// this->_header[key] = (*it).first.first; //associo ip del server
-					// this->_header[key].append(val.substr(endpoint)); // appendo la porta presa da val
-					// std::cout << "adesso e " << this->_header[key] << "\n";
-					// return ;
-				// }
-			// }
-		// }
-	// }
-
-
-// Server -> 
-/*
-void	Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
-{
-	(void)conf;
-	std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num + 1<< "\033[0m" << std::endl;
-	std::cout << "Listening on -> \033[1;33m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl;
-	// std::cout << "Configuration\n{\n";
-	std::cout << "\033[1;35m{\033[0m\n";
-	std::cout << "\033[0m\033[1;35m    root ->\t\t\033[3;37m" << (*it).second.root << std::endl;
-	std::cout << "\033[0m\033[1;35m    index ->\t\t\033[3;37m" << (*it).second.index << std::endl;
-	std::cout << "\033[0m\033[1;35m    client_max_body ->\033[3;37m\t" << (*it).second.client_max_body_size << std::endl;
-	std::cout << "\033[0m\033[1;35m    server names ->\033[3;37m\t";
-	for (size_t i = 0; i < (*it).second.server_names.size(); i++)
-	{
-		if (i != 0)
-			std::cout << "\t\t\t";
-		std::cout << (*it).second.server_names[i] << std::endl;
-	}
-	std::cout << "\033[0m\033[1;35m    location ->\t\033[3;37m\t";
-	for (std::map<std::string, t_conf_location>::iterator it_loc = (*it).second.location.begin(); \
-		it_loc != (*it).second.location.end(); it_loc++)
-	{
-		if (it_loc != (*it).second.location.begin())
-			std::cout << "\t\t\t";
-		std::cout << (*it_loc).first << std::endl;
-	}
-	std::cout << "\n\033[0m\033[1;35m}\033[0m" << std::endl;
-}*/
 
 void			Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
 {

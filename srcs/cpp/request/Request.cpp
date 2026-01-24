@@ -29,6 +29,7 @@ void	Request::resetRequest(void)
 	this->_header["Transfer-Encoding"] = "unchunked";
 	this->_status_code = HTTP_OK;
 	this->_error = false;
+	this->_autoindex = false;
 }
 
 Request::~Request()
@@ -158,7 +159,7 @@ int	Request::fail(e_http_codes code, std::string info)
 			SWITCH_LOG(info, "ClientError: Wtf" PIEDI_DELLA_ZIA_DEL_TUO_RAGAZZO);	
 	}
 	this->setStatusCode(code);
-	this->setRequestErrorBool(true);
+	// this->setRequestErrorBool(true);
 	return (1);
 }
 
@@ -181,28 +182,17 @@ void	Request::findRightPath(t_conf_server *srv)
 	}
 	if (tmpuri.empty()) // se non trova location corretta
 	{
-		if (this->getUrl() == "/")//da spostare sopra!
+		if (this->getUrl() == "/")
 			manageIndex(srv, NULL);
 		this->setUrl(srv->root + this->getUrl());
 	}
 	else
 	{
-		/*
-			URL =		/dir/
-			tmpuri =	/dir/
-			alias = 	/www/var/
-
-			index.html
-			/www/var/index.html
-			&list[0 + uri[0] == '/'] che sesso che mi fai quando fai così
-		*/
-		if (this->getUrl().rbegin()[0] == '/')//da spostare sopra!
-			manageIndex(srv, NULL);
+		if (this->getUrl().rbegin()[0] == '/')
+			manageIndex(srv, &srv->location[tmpuri]);
 		if (!srv->location[tmpuri].alias.empty())
 		{
 			this->setUrl(this->getUrl().erase(0, tmpuri.length()));
-			if (this->getUrl().empty())
-				;//
 			this->setUrl(srv->location[tmpuri].alias + this->getUrl());
 		}
 		else if (!srv->location[tmpuri].root.empty())
@@ -235,7 +225,7 @@ void	Request::manageIndex(t_conf_server *srv, t_conf_location *loc)
 	if (loc->index.empty() == false)
 		this->setUrl(this->getUrl().append(loc->index));
 	else if (loc->autoindex == true)
-		this->setUrl(this->getUrl().append("autoindex/autoindex.html"));
+		this->_autoindex = true;
 	else
-		;//FORBIDDEN: autoindex e location non settate
+		this->fail(HTTP_CE_FORBIDDEN, "undefined autoindex and index parameters");//FORBIDDEN: autoindex e location non settate
 }

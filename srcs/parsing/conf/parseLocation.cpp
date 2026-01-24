@@ -143,9 +143,9 @@ static void	parseAutoindex(Conf &conf, std::vector<std::string> &list, int line)
 {
 	if (list.size() != 2)
 		instructionError(list, line, "autoindex usage: autoindex <on | off>");
-	else if (list[1] == "on")
+	else if (list[1] == "on" || list[1] == "true")
 		conf.getLocationBlock().autoindex = true;
-	else if (list[1] == "off")
+	else if (list[1] == "off" || list[1] == "false")
 		conf.getLocationBlock().autoindex = false;
 	else
 		instructionError(list, line, "autoindex usage: autoindex <on | off>");

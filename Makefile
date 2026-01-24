@@ -30,7 +30,7 @@ fclean:
 
 re: fclean all
 
-runner: re
+runner: $(NAME)
 	clear ; ./$(NAME)
 
 # BladeRunner: 
