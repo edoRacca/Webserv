@@ -134,10 +134,11 @@ std::string	createHtml(Client &client, const std::string &body, const std::strin
 	std::cout << "CREATE RESPONSE STATUS: " << client.getRequest().getStatusCode() << std::endl;
 	std::cout << "URL: " << url << std::endl;
 
+	// std::cout << response.str() << std::endl;
 	return (response.str());
 }
-// s_conf_location *ciao = (*this->_srvnamemap)[request.getHost()].location;
 
+//FIXME - da inserire append root/alias in config file
 std::string	Server::checkErrorPages(Request &request)
 {
 	std::ifstream	file;
@@ -170,13 +171,13 @@ void	Server::choose_file(Client &client, std::string &type, std::string fname, s
 	{
 		std::string	fname = checkErrorPages(client.getRequest());
 		file.open(("www/var/errors/" + fname).c_str());
-		std::cout << "fname " << fname << std::endl;
+		// std::cout << "fname not 200: " << fname << std::endl;
 	}
 	else if (client.getRequest().getRequestErrorBool())
 	{
 		type = ".html";
 		file.open(("www/var/errors/dns/" + fname).c_str());
-		std::cout << "www/var/errors/dns/" + fname << std::endl;
+		// std::cout << "www/var/errors/dns/" + fname << std::endl;
 	}
 	else
 	{
@@ -184,11 +185,11 @@ void	Server::choose_file(Client &client, std::string &type, std::string fname, s
 		if (file.fail())
 		{
 			client.getRequest().fail(HTTP_CE_NOT_FOUND, url + " file not found!");
-			file.open(("www/var/errors/standard/" + fname).c_str());
-			std::cout << "www/var/errors/standard/" + fname << std::endl;
+			file.open(("www/var/errors/" + fname).c_str());
+			// std::cout << "www/var/errors/" + fname << std::endl;
 		}
-		else
-			std::cout << url << std::endl;
+		// else
+			// std::cout << url << std::endl;
 	}
 }
 
@@ -212,16 +213,16 @@ dirent	*test(std::string url)
 		if (!dir)
 			return (NULL);
 	}
-	printf("dir %s aperta!\n", url.c_str());
+	// printf("dir %s aperta!\n", url.c_str());
 	content = readdir(dir);
 	if (!content)
 	{
 		closedir(dir);
-		printf("dir %s chiusa!\n", url.c_str());
+		// printf("dir %s chiusa!\n", url.c_str());
 		dir = NULL;
 		return (NULL);
 	}
-	printf("content name: %s, content type: %s\n", content->d_name, (content->d_type == 4) ? "folder" : "file");
+	// printf("content name: %s, content type: %s\n", content->d_name, (content->d_type == 4) ? "folder" : "file");
 	return (content);
 }
 
@@ -298,7 +299,7 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 {
 	std::fstream	file;
 	std::string		body;
-	std::string		type(".html");
+	std::string		type/* (".html") */;
 	std::string		url = client.getRequest().getUrl().erase(0, 1);
 
 	// std::cout << "STATUS CODE NOW: " << client.getRequest().getStatusCode() << "\n";
@@ -309,7 +310,7 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
 	if (client.getRequest().getAutoIndexBool())
 		createAutoindex(client, body);
-	if (type == ".css")
+	else if (type == ".css")
 		this->choose_file(client, type, "style.css", file, url);
 	else if (type == ".html")
 		this->choose_file(client, type, "index.html", file, url);
@@ -346,6 +347,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				static int	n;
 				//da mettere in una funzione a parte
 				std::cout << "chiudo connessione " << n++ << std::endl;
+				std::cout << "======================================" << std::endl;
 				std::cout << "\033[2J\033[H";
 				close((*it).fd);
 				if (this->_clients[(*it).fd])
@@ -366,7 +368,6 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 					return ;
 				}
 				convertDnsToIp(request, request.getHost(), *this->_srvnamemap);
-				std::cout << "pair: " << request.getHost() << "\n";
 				std::cout << "Server nums: " << (*this->_srvnamemap).count(request.getHost()) << std::endl;
 				if ((*this->_srvnamemap).count(request.getHost()) == 0)//condition
 				{
@@ -386,7 +387,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
 		{
 			// Rispondo
-			std::cout << " ----Sent message----" << std::endl;
+			//std::cout << " ----Sent message----" << std::endl;
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
 			send((*it).fd, html.c_str(), html.length(), 0);
 			(*it).events = POLLIN;
@@ -398,11 +399,11 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 {
 	if (std::isdigit(ipport.first[0]) != 0)
 		return;
-	std::cout << "------------DNS CONVERSION------------\n";
-	std::cout << "Host CONVERT DNS: " << ipport.first << "," << ipport.second << std::endl;
+	// std::cout << "------------DNS CONVERSION------------\n";
+	// std::cout << "Host CONVERT DNS: " << ipport.first << "," << ipport.second << std::endl;
 	if (ipport.first == "localhost")
 	{
-		std::cout << "DNS: convert localhost ----> 127.0.0.1\n\n";
+		// std::cout << "DNS: convert localhost ----> 127.0.0.1\n\n";
 		ipport.first = "127.0.0.1";
 		return ;
 	}
@@ -413,15 +414,15 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 		{
 			if (ipport.first == *vit && ipport.second == (*it).first.second)
 			{
-				std::cout << "DNS: convert " << ipport.first;
+				// std::cout << "DNS: convert " << ipport.first;
 				ipport.first = (*it).first.first;
 				std::cout << " ----> " << ipport.first << "\n";
-				std::cout << "---------------DNS CONVERSION----------------\n";
+				// std::cout << "---------------DNS CONVERSION----------------\n";
 				return ;
 			}
 		}
 	}
-	std::cout << "Qui ci arrivo?" << std::endl << std::endl;
+	// std::cout << "Qui ci arrivo?" << std::endl << std::endl;
 	request.setRequestErrorBool(true);
 }
 
