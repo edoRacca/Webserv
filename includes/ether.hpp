@@ -73,6 +73,7 @@ bool		trim_diff_right(std::string &s, char c);
 
 bool		valid_directory(std::string directory);
 bool		valid_file(std::string file);
+void	  add_root_alias(std::string &file, std::string root, std::string alias);
 int			valid_ip_address(std::string addr);
 int			atohex(std::string s);
 int 		checkValidCode(int code);

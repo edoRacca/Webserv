@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Server.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 12:51:30 by lparolis          #+#    #+#             */
-/*   Updated: 2026/01/26 13:17:47 by lparolis         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../../hpp/Server.hpp"
-#include "setup_utils.cpp"
 
 std::string				createHtml(Client &client, const std::string &body, const std::string &type);
 void 					listDirectoriesAutoIndex(std::string &body, dirent *cont);
 static dirent			*findUrlDirectory(std::string url);
-static struct pollfd	createServerSock(int port_n);
-static struct pollfd	setupPollFd(int client);
+struct pollfd			createServerSock(int port_n);
+struct pollfd			setupPollFd(int client);
 
 // NOTE - aggiungiamo il socket del server al vector di server
 Server::Server(Conf &conf)
@@ -127,28 +115,60 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 {
 	std::fstream	file;
 	std::string		body;
-	std::string		type(".html");
+	std::string		type("text/");
 	std::string		url = client.getRequest().getUrl().erase(0, 1);
 
-	// std::cout << "STATUS CODE NOW: " << client.getRequest().getStatusCode() << "\n";
-	// std::cout << "TYPE NOW: " << client.getRequest().getUrl() << std::endl;
-	// std::cout << "ERROR NOW: " << client.getRequest().getRequestErrorBool() << std::endl;
+	//TODO Va fatta una funzione che cambi il content-type in base al tipo di file
 	if (url.find_last_of('.') != std::string::npos)
-		type = url.substr(url.find_last_of('.'));
+	{
+		if (url.substr(url.find_last_of('.')) == ".ico")
+			type = "image/";
+		type += url.substr(url.find_last_of('.')).erase(0, 1);
+	}
+	else if (url.rbegin()[0] == '/')
+		type += "html";
+	else
+		std::cout << "passed a file in choose_file with no extension!" << std::endl;	
 	std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
 	if (client.getRequest().getAutoIndexBool())
 		createAutoindex(client, body);
-	if (type == ".css")
-		this->choose_file(client, type, "style.css", file, url);
-	else if (type == ".html")
-		this->choose_file(client, type, "index.html", file, url);
-	else if (type == ".ico")
-		this->choose_file(client, type, "favicon.ico", file, url);
 	else
-		client.getRequest().fail(HTTP_CE_NOT_FOUND, "File extension not recognized!");
+	{
+		std::cout << "Url della request: " << url << std::endl;
+		choose_file(client, file, url);
+	}
+//	else
+//		client.getRequest().fail(HTTP_CE_NOT_FOUND, "File extension not recognized!");
+	std::cout << "URL after: " << url << std::endl;
 	if (body.empty())
 		body = file_opener(file);
 	return (createHtml(client, body, type));
+}
+
+void	Server::choose_file(Client &client, std::fstream &file, std::string url)
+{
+	std::string	fname;
+
+	if (client.getRequest().getRequestErrorBool())
+		file.open("www/var/errors/dns/index.html");
+	else if (client.getRequest().getStatusCode() != 200)
+	{
+		fname = checkErrorPages(client.getRequest());
+		file.open((fname).c_str());
+		std::cout << "NAME ERROR: " << fname << std::endl;
+		// std::cout << "fname not 200: " << fname << std::endl;
+	}
+	else
+	{
+		file.open(url.c_str());
+		if (file.fail())
+		{
+			client.getRequest().fail(HTTP_CE_NOT_FOUND, url + " file not found!");
+			fname = checkErrorPages(client.getRequest());
+			file.open((fname).c_str());
+			std::cout << "NAME ERROR: " << fname << std::endl;
+		}
+	}
 }
 
 // NOTE - crea un body per autoindex delle cartelle, utilizza dirent * e findUrlDirectory()
@@ -190,37 +210,6 @@ void	Server::createAutoindex(Client &client, std::string &body)
 	}
 }
 
-void	Server::choose_file(Client &client, std::string &type, std::string fname, std::fstream &file, std::string url)
-{
-	type.erase(0, 1);
-	type = "text/" + type;
-
-	if (client.getRequest().getStatusCode() != 200)
-	{
-		std::string	fname = checkErrorPages(client.getRequest());
-		file.open(("www/var/errors/" + fname).c_str());
-		// std::cout << "fname not 200: " << fname << std::endl;
-	}
-	else if (client.getRequest().getRequestErrorBool())
-	{
-		// if (fname.substr(url.find_last_of('.')))
-		file.open(("www/var/errors/dns/" + fname).c_str());
-		std::cout << "STOCAZZO DI FILE: " + fname << std::endl;
-	}
-	else
-	{
-		file.open(url.c_str());
-		if (file.fail())
-		{
-			client.getRequest().fail(HTTP_CE_NOT_FOUND, url + " file not found!");
-			file.open(("www/var/errors/" + fname).c_str());
-			// std::cout << "www/var/errors/" + fname << std::endl;
-		}
-		// else
-			// std::cout << url << std::endl;
-	}
-}
-
 // NOTE - crea html come body per la risposta da inviare al client
 std::string	createHtml(Client &client, const std::string &body, const std::string &type)
 {
@@ -249,6 +238,7 @@ std::string	Server::checkErrorPages(Request &request)
 {
 	std::ifstream	file;
 	s_conf_server 	*server = &(*this->_srvnamemap)[request.getHost()];
+	s_conf_location	*loc; //?
 	int				status_code = request.getStatusCode();
 	std::string 	url = request.getUrl();
 
@@ -256,20 +246,24 @@ std::string	Server::checkErrorPages(Request &request)
 	{
 		if (server->err_pages.count(status_code) > 0) // check su server se ci sono error pages adeguate
 		{
-			file.open(("www/var/errors/" + server->err_pages[status_code]).c_str());
+			file.open((server->root.substr(1) + server->err_pages[status_code]).c_str());
+			std::cout << "Status code error page: " << status_code << std::endl; 
+			std::cout << "Server prova ad aprire: " << server->root.substr(1) + server->err_pages[status_code] << std::endl;
 			if (file.fail() == true)
-				return ("default.html");
-			return (server->err_pages[status_code]); // ritorni error page server
+				return (server->root.substr(1) + "/errors/default.html");
+			return (server->root.substr(1) + server->err_pages[status_code]); // ritorni error page server
 		}
 	}
 	else if (server->location[url].err_pages.count(status_code) > 0) // controllo se location ha l'error page richiesta
 	{
-		file.open(("www/var/errors/" + server->location[url].err_pages[status_code]).c_str());
+		loc = &server->location[url];
+		file.open((server->root.substr(1) + server->location[url].err_pages[status_code]).c_str());
+		std::cout << "Location prova ad aprire: " << loc->root + server->location[url].err_pages[status_code] << std::endl;
 		if (file.fail() == true)
-			return ("default.html");
-		return (server->location[url].err_pages[status_code]);
+			return (loc->root.substr(1) + "/errors/default.html");
+		return (loc->root.substr(1) + server->location[url].err_pages[status_code]);
 	}
-	return ("default.html"); // return di default
+	return (server->root.substr(1) + "/errors/default.html"); // return di default
 }
 
 // NOTE - cerca directory dentro l'URL passato come parametro, viene chiamata come gnl e ad ogni ritorno ritorna la cartella successiva
@@ -376,19 +370,10 @@ void	Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
 	std::cout << (*it).second;
 }
 
-//NOTE - crea una struct pollfd con l'fd del client, dato da accept()
-static struct pollfd	setupPollFd(int client)
-{
-	struct pollfd s;
 
-	s.fd = client;
-	s.events = POLLIN;
-	s.revents = 0;
-	return (s);
-}
 
-// NOTE - crea un socket listen per il server che vogliamo creare
-static struct pollfd	createServerSock(int port_n)
+/* // NOTE - crea un socket listen per il server che vogliamo creare
+struct pollfd	createServerSock(int port_n)
 {
 	struct sockaddr_in	address;
 	int					server_fd;
@@ -417,9 +402,9 @@ static struct pollfd	createServerSock(int port_n)
 	srv.events = POLLIN;
 	srv.revents = 0;
 	return (srv);
-}
+} */
 
-std::string	fileToString(std::string filename)
+/* std::string	fileToString(std::string filename)
 {
 	std::ifstream	fd(filename.c_str());
 	std::string		file;
@@ -428,7 +413,7 @@ std::string	fileToString(std::string filename)
 		abort();
 	std::getline(fd, file, '\0');
 	return (file);
-}
+} */
 
 // NOTE - creiamo oggetto client e lo aggiungiano alla mappa di puntatori client 
 void	Server::addSocket(int index)

@@ -109,13 +109,11 @@ int checkValidCode(int code)
 
 std::string	file_opener(std::fstream &file)
 {
-	std::string		line;
-	std::string		ret;
+	std::string			ret;
 
 	if (file.is_open())
 	{
-		while (std::getline(file, line))
-			ret += line + "\n";
+		std::getline(file, ret, '\0');
 		file.close();
 	}
 	else
