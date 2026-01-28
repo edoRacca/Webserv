@@ -116,6 +116,7 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 		if (loc)
 			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
+
 	}
 	(*it).events = POLLOUT;
 }
@@ -143,18 +144,15 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	}
 		std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
 	if (client.getRequest().getAutoIndexBool())
-	{
 		createAutoindex(client, body);
-	}
 	else if (client.getLocConf().run_script == true)
 		std::cout << "AAAA\n\n\n\n";
 	else
-	{
-		std::cout << "Url della request: " << url << std::endl;
 		choose_file(client, file, url);
-	}
 	std::cout << "URL after: " << url << std::endl;
+	// std::cout << body << "\n";
 	runMethod(client, body, file);
+	std::cout << body << "\n";
 	return (createHtml(client, body, type));
 }
 
@@ -165,7 +163,7 @@ void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 		case GET:
 			if (client.getLocConf().run_script == true)
 				run_script(client, body);
-			else if (body.empty() == false)
+			else if (body.empty() == true)
 				body = file_opener(file);
 			break ;
 		case DELETE:

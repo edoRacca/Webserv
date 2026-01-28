@@ -167,8 +167,10 @@ int	Request::fail(e_http_codes code, std::string info)
 
 void	normalize_url(std::string *url)
 {
-	if ((*url)[0] == '/')
-		(*url) = (*url).erase(0, 1);
+	// if ((*url)[0] == '/')
+	// 	(*url) = (*url).erase(0, 1);
+	if ((*url)[0] != '/')
+		(*url) = '/' + (*url);
 	if ((*url).rbegin()[0] != '/')
 		(*url).push_back('/');
 }
