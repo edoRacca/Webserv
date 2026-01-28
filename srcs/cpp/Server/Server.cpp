@@ -113,6 +113,7 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 		t_conf_server	srv = (*this->_srvnamemap)[request.getHost()];
 		this->_clients[(*it).fd]->getSrvConf() = srv;
 		t_conf_location	*loc = request.findRightLocation(&srv);
+		std::cout << *loc << "\n\n";
 		if (loc)
 			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
@@ -129,6 +130,7 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	std::string		type("text/");
 	std::string		url = client.getRequest().getUrl();
 
+	std::cout << "createResponse " << url << std::endl;
 	//TODO Va fatta una funzione che cambi il content-type in base al tipo di file
 	if (url.find_last_of('.') != std::string::npos)
 	{

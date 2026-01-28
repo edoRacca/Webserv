@@ -73,14 +73,11 @@ void	delete_method(Client &client, std::string &body, std::fstream &file)
 
 	std::cout << "\033[31mMETHOD DELETE\033[0m\nbody:" << body << "\nurl:" << url << "\n";
 	//1)	errore/autoindex
-	if (client.getRequest().getStatusCode() == HTTP_CE_NOT_FOUND)
-	{
-		std::cout << "file non trovato. Decidere quale status code tornare\n";
-	}
 	if (client.getRequest().getStatusCode() != 200 || \
 	client.getRequest().getDnsErrorBool() == true || \
 	client.getRequest().getAutoIndexBool() == true)
 	{
+		std::cout << "fail" << std::endl;
 		if (body.empty() == false)
 			body = file_opener(file);
 		return ;

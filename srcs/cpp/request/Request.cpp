@@ -247,6 +247,7 @@ void	Request::findRightPath(t_conf_server *srv)
 	*/
 }
 
+// NOTE - controlliamo se autoindex e index sono settati e li impostiamo
 void	Request::manageIndex(t_conf_server *srv, t_conf_location *loc)
 {
 	if (!loc)
