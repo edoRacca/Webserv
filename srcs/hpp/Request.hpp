@@ -67,6 +67,7 @@ class Request
 		Request &operator=(const Request &other);
 	//SECTION - checks
 		void			findRightPath(t_conf_server *srv);
+		t_conf_location	*findRightLocation(t_conf_server *srv);
 		bool			checkVal(std::string key);
 		bool			checkKey(std::string key);
 		int				checkHeader(void);
@@ -90,7 +91,7 @@ class Request
 		size_t			getBodyLen() const;
 		std::string 	getBody() const;
 		e_http_codes	getStatusCode() const;
-		bool			getRequestErrorBool() const;
+		bool			getDnsErrorBool() const;
 		bool			getAutoIndexBool() const;
 	//ANCHOR - setters.cpp
 		void			setMethod(std::string method);

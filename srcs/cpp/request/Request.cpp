@@ -165,22 +165,50 @@ int	Request::fail(e_http_codes code, std::string info)
 
 //SECTION - request uri modifiers
 
+void	normalize_url(std::string *url)
+{
+	if ((*url)[0] == '/')
+		(*url) = (*url).erase(0, 1);
+	if ((*url).rbegin()[0] != '/')
+		(*url).push_back('/');
+}
+
+std::string	normalize_url(std::string url)
+{
+	normalize_url(&url);
+	return (url);
+}
+
+t_conf_location	*Request::findRightLocation(t_conf_server *srv)
+{
+	typedef std::map<std::string, t_conf_location> maplocation;
+	std::string	url_longest;
+	std::string	url_temp;
+	std::string	url_request;
+
+	url_request = normalize_url(this->getUrl());
+	for (maplocation::iterator it = srv->location.begin(); it != srv->location.end(); ++it)
+	{
+		url_temp = normalize_url((*it).first);
+		if (url_temp == (url_request.substr(0, url_temp.length())) && \
+		url_temp.length() > url_longest.length())
+			url_longest = url_temp;
+	}
+	if (url_longest.empty())
+		return (NULL);
+	return (&(*srv).location[url_longest]);
+}
+
 // std::map<std::string, t_conf_location>
 void	Request::findRightPath(t_conf_server *srv)
 {
-	typedef std::map<std::string, t_conf_location> maplocation;
 	// controllo se esiste uri nelle location, altrimenti root server
 	std::cout << "\033[33m FINDRIGHTPATH: " COLOR_RESET;
 	std::cout << "url: " << getUrl() << std::endl;
-	std::string tmpuri;
+	t_conf_location *loc;
 
-	for (maplocation::iterator it = srv->location.begin(); it != srv->location.end(); ++it)
-	{
-		if ((*it).first.compare(this->getUrl().substr(0, (*it).first.length())) == 0 && \
-			(*it).first.length() > tmpuri.length())
-			tmpuri = (*it).first;
-	}
-	if (tmpuri.empty())
+	loc = this->findRightLocation(srv);
+	if (loc == NULL)
 	{
 		if (this->getUrl() == "/")
 			manageIndex(srv, NULL);
@@ -189,8 +217,8 @@ void	Request::findRightPath(t_conf_server *srv)
 	else
 	{
 		if (this->getUrl().rbegin()[0] == '/')
-			manageIndex(srv, &srv->location[tmpuri]);
-		this->setUrl(app_root_alias(this->getUrl(), *srv, tmpuri));
+			manageIndex(srv, loc);
+		this->setUrl(app_root_alias(this->getUrl(), *srv, loc->path));
 		/*if (!srv->location[tmpuri].alias.empty())
 		{
 			this->setUrl(this->getUrl().erase(0, tmpuri.length()));

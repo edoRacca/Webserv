@@ -28,6 +28,16 @@ Request	&Client::getRequest()
 	return (this->_request);
 }
 
+t_conf_server	&Client::getSrvConf()
+{
+	return (this->_srv_config);
+}
+
+t_conf_location	&Client::getLocConf()
+{
+	return (this->_loc_config);
+}
+
 	// void 	setRequest(std::string); // format request
 	// void	setMethNum(int);
 	// void 	setMethod(int);

@@ -26,7 +26,7 @@
 # include <fcntl.h>
 # include <fstream>
 
-# include "../srcs/hpp/Request.hpp"
+# include "../srcs/hpp/Conf.hpp"
 # include "../srcs/utils/print.tpp"
 
 # define COLOR_RESET "\033[0m"
@@ -39,6 +39,7 @@
 #endif
 
 class Request;
+class Client;
 typedef struct s_conf_server    t_conf_server;
 typedef struct s_conf_location	t_conf_location;
 typedef std::pair<std::string, int>	IpPortPair;
@@ -82,6 +83,8 @@ std::string	app_root_alias(std::string file, t_conf_location &loc);
 int			    valid_ip_address(std::string addr);
 int			    atohex(std::string s);
 int 		    checkValidCode(int code);
+
+void		run_script(Client &client, std::string &body);
 
 #define CHARIZARD "                 .\"-,.__\n\
                  `.     `.  ,\n\

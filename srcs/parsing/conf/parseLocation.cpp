@@ -31,6 +31,11 @@ void	confParseLocation(Conf &conf, std::vector<std::string> list, int line)
 		parseAutoindex(conf, list, line);
 	else if (list[0] == "error_page")
 		parseErrorPages(conf, list, line);
+	else if (list[0] == "script")
+	{
+		if (list.size() > 1 && list[1] == "on")
+			conf.getLocationBlock().run_script = true;
+	}
 	else
 		instructionError(list, line, "unrecognized instruction");
 }
@@ -81,7 +86,8 @@ static void parseCgiParam(Conf &conf, std::vector<std::string> &list, int line)
 		instructionError(list, line, "wrong parameters number for fastcgi_params instruction");
 //		.cgi	/path.cgi
 //		1)	controllare che sia estensione valida (eseguibile compilato, python, php)
-	if (list[1] != ".php" && list[1] != ".py" && list[1] != "exec")
+	if (list[1] != ".php" && list[1] != ".py" && list[1] != "exec" && \
+		list[1] != ".cgi")
 		instructionError(list, line, "invalid CGI extension");
 //		2)	controllare che path finisca con cgi
 	type_size = list[1].size();

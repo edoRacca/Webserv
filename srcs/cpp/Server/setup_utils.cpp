@@ -74,7 +74,7 @@ void	delete_method(Client &client, std::string &body, std::fstream &file)
 	std::cout << "\033[31mMETHOD DELETE\033[0m\nbody:" << body << "\nurl:" << url << "\n";
 	//1)	errore/autoindex
 	if (client.getRequest().getStatusCode() != 200 || \
-	client.getRequest().getRequestErrorBool() == true || \
+	client.getRequest().getDnsErrorBool() == true || \
 	client.getRequest().getAutoIndexBool() == true)
 	{
 		if (body.empty() == false)

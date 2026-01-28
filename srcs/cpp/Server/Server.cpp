@@ -90,7 +90,8 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 {//FIXME - TESTING PER POST
 	(void)buffer;
 	Request	&request = this->_clients[(*it).fd]->getRequest();
-	if (requestParsing(request, fileToString("test_request")) != 0)
+	// if (requestParsing(request, fileToString("test_request")) != 0)
+	if (requestParsing(request, buffer) != 0)
 	{
 		(*it).events = POLLOUT;
 		// TODO - da settare status code corretto senza fare return
@@ -109,6 +110,11 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 	{
 		if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
 			request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
+		t_conf_server	srv = (*this->_srvnamemap)[request.getHost()];
+		this->_clients[(*it).fd]->getSrvConf() = srv;
+		t_conf_location	*loc = request.findRightLocation(&srv);
+		if (loc)
+			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
 	}
 	(*it).events = POLLOUT;
@@ -140,6 +146,8 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	{
 		createAutoindex(client, body);
 	}
+	else if (client.getLocConf().run_script == true)
+		std::cout << "AAAA\n\n\n\n";
 	else
 	{
 		std::cout << "Url della request: " << url << std::endl;
@@ -155,7 +163,9 @@ void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 	switch (client.getRequest().getMethodEnum())
 	{
 		case GET:
-			if (body.empty() == false)
+			if (client.getLocConf().run_script == true)
+				run_script(client, body);
+			else if (body.empty() == false)
 				body = file_opener(file);
 			break ;
 		case DELETE:
@@ -176,7 +186,7 @@ void	Server::choose_file(Client &client, std::fstream &file, std::string url)
 {
 	std::string	fname;
 
-	if (client.getRequest().getRequestErrorBool())
+	if (client.getRequest().getDnsErrorBool())
 		file.open("www/var/errors/dns/index.html");
 	else if (client.getRequest().getStatusCode() != 200)
 	{
@@ -253,7 +263,7 @@ std::string	createHtml(Client &client, const std::string &body, const std::strin
 	response << "Content-Length: " << body.size() << "\r\n\r\n";
 	response << body << "\n\n";
 
-	std::cout << "CREATE RESPONSE ERROR: " << (client.getRequest().getRequestErrorBool() == true ? "true" : "false") << std::endl;
+	std::cout << "CREATE RESPONSE ERROR: " << (client.getRequest().getDnsErrorBool() == true ? "true" : "false") << std::endl;
 	std::cout << "CREATE RESPONSE STATUS: " << client.getRequest().getStatusCode() << std::endl;
 	std::cout << "URL: " << url << std::endl;
 

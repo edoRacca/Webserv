@@ -1,17 +1,24 @@
 #ifndef CLIENT_HPP
 # define CLIENT_HPP
 
-# include "../../includes/ether.hpp"
 # include "Request.hpp"
+# include "Conf.hpp"
 
+typedef struct s_conf_server	t_conf_server;
+typedef struct s_conf_location	t_conf_location;
+
+struct s_conf_server;
+struct s_conf_location;
 class	Request;
 
 class Client
 {
 	private:
-		int 		_sockfd;
-		int			_srvfd;
-		Request		_request;
+		int 				_sockfd;
+		int					_srvfd;
+		Request				_request;
+		t_conf_server		_srv_config;
+		t_conf_location		_loc_config;
 
 	public:
 		Client(int sockfd, int srvfd);
@@ -19,8 +26,10 @@ class Client
 		Client(const Client &other);
 		Client	operator=(const Client &other);
 
-		Request	&getRequest();
-
+		//SECTION - getters
+		Request			&getRequest();
+		t_conf_server	&getSrvConf();
+		t_conf_location	&getLocConf();
 };
 
 #endif

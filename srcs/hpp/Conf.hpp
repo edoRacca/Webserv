@@ -81,6 +81,7 @@ struct s_conf_location
 	std::string					ret_text;
 	int							ret_code;
 	bool						autoindex; //set autoindex mode on
+	bool						run_script; //set script mode on
 	std::map<int, std::string>	err_pages;
 };
 

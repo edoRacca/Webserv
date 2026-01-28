@@ -130,7 +130,7 @@ e_http_codes	Request::getStatusCode() const
 		-	StatusCode != 2xx
 		-	DnsError
 */
-bool	Request::getRequestErrorBool() const
+bool	Request::getDnsErrorBool() const
 {
 	return (this->_error);
 }
