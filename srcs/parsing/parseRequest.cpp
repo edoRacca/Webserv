@@ -105,7 +105,7 @@ static int	headerParsing(Request &request, std::istringstream &header)
 //NOTE - se presenti sia Cont-Len e T-Encoding, togliere T-encoding
 	if (request.getBodyLen() != 0 && \
 	request.getHeaderVal("Transfer-Encoding") == "chunked")
-		request.setHeaderVal("Transfer-Encoding", "unchunked");
+		return(request.fail(HTTP_CE_BAD_REQUEST, "Conflicting body length and transfer encoding"));
 //NOTE - controlli sui nostri header
 	if (request.checkHeader() == 1)
 		return (1);

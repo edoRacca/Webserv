@@ -28,6 +28,7 @@
 
 # include "../srcs/hpp/Conf.hpp"
 # include "../srcs/utils/print.tpp"
+# include "../srcs/utils/string/string.tpp"
 
 # define COLOR_RESET "\033[0m"
 # define DEBUG 0
@@ -44,15 +45,6 @@ typedef struct s_conf_server    t_conf_server;
 typedef struct s_conf_location	t_conf_location;
 typedef std::pair<std::string, int>	IpPortPair;
 typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
-
-template <typename T>
-std::string	ft_to_string(T data)
-{
-	std::ostringstream	stream;
-
-	stream << data;
-	return (stream.str());
-}
 
 int			requestParsing(Request &request, std::string input);
 

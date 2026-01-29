@@ -1,0 +1,27 @@
+#include "../../../includes/ether.hpp"
+
+template <typename T>
+std::string	ft_to_string(T data)
+{
+	std::ostringstream	stream;
+
+	stream << data;
+	return (stream.str());
+}
+
+template <typename old_s, typename new_s>
+void	find_and_replace(std::string &str, old_s to_replace, new_s content)
+{
+	//controlli iniziali del cazzo
+	std::string	temp_replace;
+	std::string	temp_content;
+
+	temp_replace = ft_to_string(to_replace);
+	temp_content = ft_to_string(content);
+	std::cout << "str parte come: |" << str << "|\n";
+	if (str.find(temp_replace) != std::string::npos)
+		str.replace(str.find(temp_replace), temp_replace.size(), temp_content);
+	else
+		std::cout << temp_replace << " not found in " << str << "\n";
+	std::cout << "str diventa: |" << str << "|\n";
+}

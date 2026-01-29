@@ -56,8 +56,12 @@ std::string	fileToString(std::string filename)
 	return (file);
 }
 
-/*
 
+/*
+	@client: reference to client object
+	@body: reference to response body
+
+	exece
 */
 void	delete_method(Client &client, std::string &body)
 {
@@ -77,16 +81,14 @@ void	delete_method(Client &client, std::string &body)
 	std::cout << "Url in delete method: " << url << std::endl;
 	if (url.rbegin()[0] == '/')
 		url.erase(url.find_last_of('/'), 1);
-	if (std::remove(url.c_str()) == 0)
+	if (std::remove(url.c_str()) == 0)//file cancellato
 	{
-		file.open("www/var/200.html");
-		// std::cout << "body_empty: " << body << "\n";
+		file.open("www/var/2xx.html");
 		body = file_opener(file, "delete_method: cannot open file on success");
-		// std::cout << "body_full: " << body << "\n";
-		if (body.find("{MSG}") != std::string::npos)
-			body.replace(body.find("{MSG}"), 5, "file " + url + " deleted successfully!");
+		find_and_replace(body, "{MSG}", "file " + url + " deleted successfully!");
+		find_and_replace(body, "{CODE}", HTTP_OK_NO_CONTENT);
 		return ;
-	}
+	}//cancellazione fallita
 	if (valid_directory(url))
 	{
 		client.getRequest().setStatusCode(HTTP_CE_FORBIDDEN);

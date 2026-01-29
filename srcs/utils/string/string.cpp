@@ -96,3 +96,4 @@ bool	trim_diff_right(std::string &s, char c)
 	s.erase(start, end);
 	return (0);
 }
+
