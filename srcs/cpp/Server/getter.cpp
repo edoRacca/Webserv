@@ -20,3 +20,8 @@ SrvNameMap		&Server::getSrvNameMap() const
 {
 	return (*this->_srvnamemap);
 }
+
+const std::string	&Server::getProtectedFiles() const
+{
+	return (this->_protected_files);
+}

@@ -18,10 +18,10 @@ void	find_and_replace(std::string &str, old_s to_replace, new_s content)
 
 	temp_replace = ft_to_string(to_replace);
 	temp_content = ft_to_string(content);
-	std::cout << "str parte come: |" << str << "|\n";
+	// std::cout << "str parte come: |" << str << "|\n";
 	if (str.find(temp_replace) != std::string::npos)
 		str.replace(str.find(temp_replace), temp_replace.size(), temp_content);
 	else
 		std::cout << temp_replace << " not found in " << str << "\n";
-	std::cout << "str diventa: |" << str << "|\n";
+	// std::cout << "str diventa: |" << str << "|\n";
 }

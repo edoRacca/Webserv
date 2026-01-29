@@ -63,15 +63,19 @@ std::string	fileToString(std::string filename)
 
 	exece
 */
-void	delete_method(Client &client, std::string &body)
+void	Server::deleteMethod(Client &client, std::string &body)
 {
 	std::string		url = client.getRequest().getUrl();
 	std::fstream	file;
+	int				status_code;
+	bool			dns;
+	bool			autoindex;
 
 	std::cout << "\033[31mMETHOD DELETE\033[0m\nbody:" << body << "\nurl:" << url << "\n";
-	if (client.getRequest().getStatusCode() != 200 || \
-		client.getRequest().getDnsErrorBool() == true || \
-		client.getRequest().getAutoIndexBool() == true)
+	status_code = client.getRequest().getStatusCode();
+	dns = client.getRequest().getDnsErrorBool();
+	autoindex = client.getRequest().getAutoIndexBool();
+	if (status_code != 200 || dns == true || autoindex == true)
 	{
 		std::cout << "fail" << std::endl;
 		if (body.empty() == false)
@@ -79,6 +83,13 @@ void	delete_method(Client &client, std::string &body)
 		return ;
 	}
 	std::cout << "Url in delete method: " << url << std::endl;
+	if (this->_protected_files.find(url) != std::string::npos)
+	{
+		// std::cout << "Non si fa!" << 
+		client.getRequest().fail(HTTP_CE_FORBIDDEN);
+		file.open("www/var/errors/403.html");
+		return ;
+	}
 	if (url.rbegin()[0] == '/')
 		url.erase(url.find_last_of('/'), 1);
 	if (std::remove(url.c_str()) == 0)//file cancellato

@@ -28,26 +28,30 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		std::map<int, Client *>			_clients;
 		std::map<int, t_conf_server *>	_server_data;
 		SrvNameMap						*_srvnamemap;
+		std::string						_protected_files;
 		int								_server_num;
 
 	public:
 		Server(Conf &conf);
 		~Server();
 
-		void 			addSocket(int index);
-		struct pollfd	*getAddrs(void);
-		size_t			getAddrSize(void) const;
-		void			processRequest(std::vector<struct pollfd>::iterator it, char *buffer);
-		void			checkForConnection();
-		int				getServerNum() const;
-		SrvNameMap		&getSrvNameMap() const;
+		void 				addSocket(int index);
+		struct pollfd		*getAddrs(void);
+		size_t				getAddrSize(void) const;
+		void				processRequest(std::vector<struct pollfd>::iterator it, char *buffer);
+		void				checkForConnection();
+		int					getServerNum() const;
+		SrvNameMap			&getSrvNameMap() const;
+		const std::string	&getProtectedFiles() const;
 
-		void			printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const;
-		void			choose_file(Client &client, std::fstream &file, std::string url);
-		void			createAutoindex(Client &client, std::string &body);
-		std::string		createResponse(Client &client);
-		std::string		checkErrorPages(Request &request);
-		void			runMethod(Client &client, std::string &body, std::fstream &file);
+		void				printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const;
+		void				choose_file(Client &client, std::fstream &file, std::string url);
+		void				createAutoindex(Client &client, std::string &body);
+		std::string			createResponse(Client &client);
+		std::string			checkErrorPages(Request &request);
+
+		void				runMethod(Client &client, std::string &body, std::fstream &file);
+		void				deleteMethod(Client &client, std::string &body);
 
 };
 

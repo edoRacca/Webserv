@@ -50,7 +50,6 @@ void	get_conf_path(int ac, char **av, std::string &path)
 
 /*
 //TODO - 27/01
-[ ]	DELETE (ci si prova dai)
 */
 int main(int ac, char **av)
 {
@@ -82,4 +81,16 @@ int main(int ac, char **av)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	return (0);
 }
+
+// int	main(int ac, char **av)
+// {
+// 	std::string str;
+
+// 	if (ac == 1)
+// 		ft_ls("www/", str);
+// 	else
+// 		ft_ls(av[1], str);
+// 	std::cout << str << std::endl;
+// }

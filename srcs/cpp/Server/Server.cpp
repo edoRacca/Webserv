@@ -3,7 +3,6 @@
 
 std::string				createHtml(Client &client, const std::string &body, const std::string &type);
 void 					listDirectoriesAutoIndex(std::string &body, dirent *cont);
-void					delete_method(Client &client, std::string &body);
 struct pollfd			createServerSock(int port_n);
 struct pollfd			setupPollFd(int client);
 std::string				fileToString(std::string filename);
@@ -35,6 +34,7 @@ Server::Server(Conf &conf)
 	}
 	if (this->_server_num == 0)
 		throw (std::runtime_error("\nNo server could be binded."));
+	ft_ls("www/", this->_protected_files);
 }
 
 Server::~Server()
@@ -169,7 +169,7 @@ void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 				body = file_opener(file, "runMethod GET: Cannot open file");
 			break ;
 		case DELETE:
-			delete_method(client, body);
+			this->deleteMethod(client, body);
 			break ;
 		case POST:
 			;//funzione che gestisce POST
@@ -219,10 +219,8 @@ void	Server::createAutoindex(Client &client, std::string &body)
 	while (std::getline(file, line))
 	{
 		line.push_back('\n');
-		if (line.find("{PATH}")	!= std::string::npos)
-			body += line.replace(line.find('{'), 6, url);
-		else
-			body += line;
+		find_and_replace(line, "{PATH}", url);
+		body += line;
 		if (line.find("<tbody>") != std::string::npos)
 			break ;
 	}
@@ -303,35 +301,6 @@ std::string	Server::checkErrorPages(Request &request)
 		return (app_root_alias(server->location[url].err_pages[status_code], *loc));
 	}
 	return (server->root + "/errors/default.html"); // return di default
-}
-
-// NOTE - cerca directory dentro l'URL passato come parametro, viene chiamata come gnl e ad ogni ritorno ritorna la cartella successiva
-dirent	*findUrlDirectory(std::string url)
-{
-	static DIR	*dir;
-	dirent		*content;
-
-	if (url.empty())
-	{
-		if (dir)
-			closedir(dir);
-		dir = NULL;
-		return (NULL);
-	}
-	if (!dir)
-	{
-		dir = opendir(url.c_str());
-		if (!dir)
-			return (NULL);
-	}
-	content = readdir(dir);
-	if (!content)
-	{
-		closedir(dir);
-		dir = NULL;
-		return (NULL);
-	}
-	return (content);
 }
 
 // NOTE - prende da un file statico l'html e cambia parametri variabili che servono per il body html

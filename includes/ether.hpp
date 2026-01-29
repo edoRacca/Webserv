@@ -77,6 +77,9 @@ int			    valid_ip_address(std::string addr);
 int			    atohex(std::string s);
 int 		    checkValidCode(int code);
 
+dirent	*findUrlDirectory(std::string url);
+void	  ft_ls(std::string path, std::string &files);
+
 void		run_script(Client &client, std::string &body);
 
 #define CHARIZARD "                 .\"-,.__\n\
