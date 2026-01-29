@@ -59,9 +59,10 @@ std::string	fileToString(std::string filename)
 /*
 
 */
-void	delete_method(Client &client, std::string &body, std::fstream &file)
+void	delete_method(Client &client, std::string &body)
 {
-	std::string	url = client.getRequest().getUrl();
+	std::string		url = client.getRequest().getUrl();
+	std::fstream	file;
 
 	std::cout << "\033[31mMETHOD DELETE\033[0m\nbody:" << body << "\nurl:" << url << "\n";
 	if (client.getRequest().getStatusCode() != 200 || \
@@ -78,11 +79,12 @@ void	delete_method(Client &client, std::string &body, std::fstream &file)
 		url.erase(url.find_last_of('/'), 1);
 	if (std::remove(url.c_str()) == 0)
 	{
-		file.open("www/var/index.html");
-		if (file.fail())
-			return ;
+		file.open("www/var/200.html");
+		// std::cout << "body_empty: " << body << "\n";
 		body = file_opener(file, "delete_method: cannot open file on success");
-		body.replace(body.find("{MSG}"), 5, "file " + url + " deleted successfully!");
+		// std::cout << "body_full: " << body << "\n";
+		if (body.find("{MSG}") != std::string::npos)
+			body.replace(body.find("{MSG}"), 5, "file " + url + " deleted successfully!");
 		return ;
 	}
 	if (valid_directory(url))

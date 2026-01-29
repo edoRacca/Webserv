@@ -3,7 +3,7 @@
 
 std::string				createHtml(Client &client, const std::string &body, const std::string &type);
 void 					listDirectoriesAutoIndex(std::string &body, dirent *cont);
-void					delete_method(Client &client, std::string &body, std::fstream &file);
+void					delete_method(Client &client, std::string &body);
 struct pollfd			createServerSock(int port_n);
 struct pollfd			setupPollFd(int client);
 std::string				fileToString(std::string filename);
@@ -130,7 +130,7 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	std::string		type("text/");
 	std::string		url = client.getRequest().getUrl();
 
-	std::cout << "createResponse " << url << std::endl;
+	// std::cout << "createResponse " << url << std::endl;
 	//TODO Va fatta una funzione che cambi il content-type in base al tipo di file
 	if (url.find_last_of('.') != std::string::npos)
 	{
@@ -141,10 +141,10 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	else
 	{
 		type += "html";
-		if (url.rbegin()[0] != '/')
-			std::cout << "passed a file in choose_file with no extension!" << std::endl;
+		// if (url.rbegin()[0] != '/')
+			// std::cout << "passed a file in choose_file with no extension!" << std::endl;
 	}
-		std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
+		// std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
 	if (client.getRequest().getAutoIndexBool())
 		createAutoindex(client, body);
 	else if (client.getLocConf().run_script == true)
@@ -169,7 +169,7 @@ void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 				body = file_opener(file, "runMethod GET: Cannot open file");
 			break ;
 		case DELETE:
-			delete_method(client, body, file);
+			delete_method(client, body);
 			break ;
 		case POST:
 			;//funzione che gestisce POST
@@ -262,8 +262,8 @@ std::string	createHtml(Client &client, const std::string &body, const std::strin
 	response << "Content-Length: " << body.size() << "\r\n\r\n";
 	response << body << "\n\n";
 
-	std::cout << "CREATE RESPONSE ERROR: " << (client.getRequest().getDnsErrorBool() == true ? "true" : "false") << std::endl;
-	std::cout << "CREATE RESPONSE STATUS: " << client.getRequest().getStatusCode() << std::endl;
+	// std::cout << "CREATE RESPONSE ERROR: " << (client.getRequest().getDnsErrorBool() == true ? "true" : "false") << std::endl;
+	// std::cout << "CREATE RESPONSE STATUS: " << client.getRequest().getStatusCode() << std::endl;
 	std::cout << "URL: " << url << std::endl;
 
 	// std::cout << response.str() << std::endl;
@@ -284,8 +284,8 @@ std::string	Server::checkErrorPages(Request &request)
 		if (server->err_pages.count(status_code) > 0) // check su server se ci sono error pages adeguate
 		{
 			file.open((server->root + server->err_pages[status_code]).c_str());
-			std::cout << "Status code error page: " << status_code << std::endl; 
-			std::cout << "Server prova ad aprire: " << server->root + server->err_pages[status_code] << std::endl;
+			// std::cout << "Status code error page: " << status_code << std::endl; 
+			// std::cout << "Server prova ad aprire: " << server->root + server->err_pages[status_code] << std::endl;
 			if (file.fail() == true)
 				return (app_root_alias("/errors/default.html", *server));
 				// return (server->root + "/errors/default.html");

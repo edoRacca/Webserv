@@ -10,8 +10,8 @@ typedef struct s_conf_location	t_conf_location;
 std::string	app_root_alias(std::string file, std::string root, std::string alias, \
  std::string replace)
 {
-	std::cout << "append_root_alias" << std::endl;
-	std::cout << "BEFORE " << file << std::endl;
+	// std::cout << "append_root_alias" << std::endl;
+	// std::cout << "BEFORE " << file << std::endl;
 
 	if (alias.empty() == false)
 	{
@@ -29,7 +29,7 @@ std::string	app_root_alias(std::string file, std::string root, std::string alias
 	}
 	else
 		std::cout << "no root or alias\n";
-	std::cout << "AFTER " << file << std::endl;
+	// std::cout << "AFTER " << file << std::endl;
 	return (file);
 }
 

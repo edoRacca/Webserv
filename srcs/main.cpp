@@ -56,6 +56,7 @@ int main(int ac, char **av)
 {
 	std::string	conf_path;
 
+	close(open("www/var/index.html", O_CREAT | O_APPEND, 0666));
 	signal(SIGINT, stopServer);
 	std::cout << "\033[1;32mStarting web server ...\033[0m" << std::endl;
 	try
