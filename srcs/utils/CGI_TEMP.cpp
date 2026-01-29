@@ -1,5 +1,6 @@
 #include "../../includes/ether.hpp"
 #include "../hpp/Client.hpp"
+#include <sys/wait.h>
 
 static void	run_cmd(char *const argv[], std::string &output);
 
@@ -38,6 +39,7 @@ static void	run_cmd(char *const argv[], std::string &output)
 		return (std::cout << "run_script fatal error\n", (void)0);
 	}
 	close(pipe_fd[1]);
+	wait(NULL);
 	std::string	filename("/dev/fd/" + ft_to_string(pipe_fd[0]));
 	std::fstream	output_fd(filename.c_str());
 	std::getline(output_fd, output, '\0');

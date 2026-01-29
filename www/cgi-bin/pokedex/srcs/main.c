@@ -6,7 +6,7 @@
 /*   By: alerusso <alerusso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:03:20 by alerusso          #+#    #+#             */
-/*   Updated: 2026/01/28 11:31:22 by alerusso         ###   ########.fr       */
+/*   Updated: 2026/01/29 10:15:36 by alerusso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ char	*entries[] = {"NAME", "TYPE", "STATS", "GENDER_RATIO", "GROWTH", \
 
 int	main(int ac, char **av)
 {
+	ft_printf("pwd: %s\n", getcwd(NULL, 0));
 	char	***data;
 	if (ac == 1)
 		return (ft_printf("Please give a valid pokemon name\n"));
 	STR(pokemon, av[1]);
 	pokemon.m->str_upper(&pokemon);
-	daft_init("media", "SETTINGS.md");
+	daft_init("../media", "SETTINGS.md");
 	daft_swap(POKEDEX);
 	data = daft_get(pokemon.buff);
 	if (!data)
