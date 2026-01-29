@@ -164,7 +164,7 @@ void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 	{
 		case GET:
 			if (client.getLocConf().run_script == true)
-				/*run_script(client, body)*/;
+				run_script(client, body);
 			else if (body.empty() == true)
 				body = file_opener(file);
 			break ;
