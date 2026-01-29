@@ -169,7 +169,7 @@ void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 				body = file_opener(file, "runMethod GET: Cannot open file");
 			break ;
 		case DELETE:
-			this->deleteMethod(client, body);
+			this->deleteMethod(client, body, &file);
 			break ;
 		case POST:
 			;//funzione che gestisce POST

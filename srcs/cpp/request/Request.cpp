@@ -159,7 +159,6 @@ int	Request::fail(e_http_codes code, std::string info)
 			SWITCH_LOG(info, "ClientError: Wtf" PIEDI_DELLA_ZIA_DEL_TUO_RAGAZZO);	
 	}
 	this->setStatusCode(code);
-	// this->setRequestErrorBool(true);
 	return (1);
 }
 
