@@ -30,6 +30,8 @@ void	Request::resetRequest(void)
 	this->_status_code = HTTP_OK;
 	this->_error = false;
 	this->_autoindex = false;
+	this->_run_script = false;
+	this->_body_len = 0;
 }
 
 Request::~Request()
@@ -162,24 +164,6 @@ int	Request::fail(e_http_codes code, std::string info)
 	return (1);
 }
 
-//SECTION - request uri modifiers
-
-void	normalize_url(std::string *url)
-{
-	// if ((*url)[0] == '/')
-	// 	(*url) = (*url).erase(0, 1);
-	if ((*url)[0] != '/')
-		(*url) = '/' + (*url);
-	if ((*url).rbegin()[0] != '/')
-		(*url).push_back('/');
-}
-
-std::string	normalize_url(std::string url)
-{
-	normalize_url(&url);
-	return (url);
-}
-
 t_conf_location	*Request::findRightLocation(t_conf_server *srv)
 {
 	typedef std::map<std::string, t_conf_location> maplocation;
@@ -219,6 +203,8 @@ void	Request::findRightPath(t_conf_server *srv)
 	{
 		if (this->getUrl().rbegin()[0] == '/')
 			manageIndex(srv, loc);
+		else if (loc->run_script == true)
+			this->_run_script = true;
 		this->setUrl(app_root_alias(this->getUrl(), *srv, loc->path));
 		/*if (!srv->location[tmpuri].alias.empty())
 		{
@@ -252,7 +238,9 @@ void	Request::manageIndex(t_conf_server *srv, t_conf_location *loc)
 	if (!loc)
 		return(this->setUrl(this->getUrl().append(srv->index)));
 	if (loc->index.empty() == false)
+	{
 		this->setUrl(this->getUrl().append(loc->index));
+	}
 	else if (loc->autoindex == true)
 		this->_autoindex = true;
 	else

@@ -61,3 +61,29 @@ std::string	app_root_alias(std::string file, t_conf_location &loc)
 	file = app_root_alias(file, loc.root, loc.alias, loc.path);
 	return (file);
 }
+
+//SECTION - normalize_url
+
+//normalize an url in this form: /dir/dir/file/
+//@url: address of url
+//----------------------
+//@ret: void
+void	normalize_url(std::string *url)
+{
+	// if ((*url)[0] == '/')
+	// 	(*url) = (*url).erase(0, 1);
+	if ((*url)[0] != '/')
+		(*url) = '/' + (*url);
+	if ((*url).rbegin()[0] != '/')
+		(*url).push_back('/');
+}
+
+//normalize an url in this form: /dir/dir/file/
+//@url: copy of url
+//----------------------
+//@ret: new url
+std::string	normalize_url(std::string url)
+{
+	normalize_url(&url);
+	return (url);
+}

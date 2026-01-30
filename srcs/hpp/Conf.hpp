@@ -65,6 +65,7 @@ _______________________________
 */
 struct s_conf_location
 {
+	s_conf_location();
 	void						set(std::string path);
 	void						set_if_empty(Conf &conf);
 	std::string 				getRetUri() const;

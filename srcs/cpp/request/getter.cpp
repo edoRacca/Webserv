@@ -141,3 +141,8 @@ bool	Request::getAutoIndexBool() const
 {
 	return (this->_autoindex);
 }
+
+bool	Request::getRunScriptBool() const
+{
+	return (this->_run_script);
+}

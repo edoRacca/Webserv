@@ -29,10 +29,11 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		std::map<int, t_conf_server *>	_server_data;
 		SrvNameMap						*_srvnamemap;
 		std::string						_protected_files;
+		const char						**_env;
 		int								_server_num;
 
 	public:
-		Server(Conf &conf);
+		Server(Conf &conf, const char **env);
 		~Server();
 
 		void 				addSocket(int index);
@@ -44,6 +45,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		SrvNameMap			&getSrvNameMap() const;
 		const std::string	&getProtectedFiles() const;
 
+		void				listDirectoriesAutoIndex(std::string &body, std::string &url, dirent *cont);
 		void				printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const;
 		void				choose_file(Client &client, std::fstream &file, std::string url);
 		void				createAutoindex(Client &client, std::string &body);

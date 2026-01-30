@@ -16,6 +16,7 @@ void	run_script(Client &client, std::string &body)
 	char const	*argv[3] = {cmd, arg, NULL};
 	run_cmd((char *const *)argv, output);
 	std::cout << output << "\n";
+	body = output;
 	(void)body;
 }
 

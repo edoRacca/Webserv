@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lparolis <lparolis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alerusso <alerusso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:03:20 by alerusso          #+#    #+#             */
-/*   Updated: 2026/01/29 16:59:19 by lparolis         ###   ########.fr       */
+/*   Updated: 2026/01/30 08:55:39 by alerusso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 		return (ft_printf("Please give a valid pokemon name\n"));
 	STR(pokemon, av[1]);
 	pokemon.m->str_upper(&pokemon);
-	daft_init("www/cgi-bin/media", "SETTINGS.md");
+	daft_init("www/cgi-bin/pokedex/media", "SETTINGS.md");
 	daft_swap(POKEDEX);
 	data = daft_get(pokemon.buff);
 	if (!data)

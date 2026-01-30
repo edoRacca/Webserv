@@ -51,7 +51,7 @@ void	get_conf_path(int ac, char **av, std::string &path)
 /*
 //TODO - 27/01
 */
-int main(int ac, char **av)
+int main(int ac, char **av, const char **env)
 {
 	std::string	conf_path;
 
@@ -62,7 +62,7 @@ int main(int ac, char **av)
 	{
 		get_conf_path(ac, av, conf_path);
 		Conf config(conf_path);
-		Server server(config);
+		Server server(config, env);
 		// return (test_request(config, server));
 		while (server_run)
 		{

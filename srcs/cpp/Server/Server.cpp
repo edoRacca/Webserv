@@ -10,7 +10,7 @@ dirent					*findUrlDirectory(std::string url);
 
 
 // NOTE - aggiungiamo il socket del server al vector di server
-Server::Server(Conf &conf)
+Server::Server(Conf &conf, const char **env):_env(env)
 {
 	pollfd	port_connection;
 
@@ -147,8 +147,6 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 		// std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
 	if (client.getRequest().getAutoIndexBool())
 		createAutoindex(client, body);
-	else if (client.getLocConf().run_script == true)
-		std::cout << "AAAA\n\n\n\n";
 	else
 		choose_file(client, file, url);
 	std::cout << "URL after: " << url << std::endl;
@@ -160,12 +158,14 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 
 void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
 {
+	if (body.empty() == false)
+		return ;
 	switch (client.getRequest().getMethodEnum())
 	{
 		case GET:
-			if (client.getLocConf().run_script == true)
+			if (client.getRequest().getRunScriptBool() == true)
 				run_script(client, body);
-			else if (body.empty() == true)
+			else
 				body = file_opener(file, "runMethod GET: Cannot open file");
 			break ;
 		case DELETE:
@@ -229,7 +229,7 @@ void	Server::createAutoindex(Client &client, std::string &body)
 	{
 		std::string dname = content->d_name;
 		if (dname != "..")
-			listDirectoriesAutoIndex(body, content);
+			listDirectoriesAutoIndex(body, url, content);//FIXME - da vedere qui per stat
 		content = findUrlDirectory(url); 
 	}
 	while (std::getline(file, line))
@@ -304,15 +304,19 @@ std::string	Server::checkErrorPages(Request &request)
 }
 
 // NOTE - prende da un file statico l'html e cambia parametri variabili che servono per il body html
-void listDirectoriesAutoIndex(std::string &body, dirent *cont)
+void Server::listDirectoriesAutoIndex(std::string &body, std::string &url, dirent *cont)
 {
 	std::ifstream var("www/var/autoindex/var.html");
+	std::string	path;
 	std::string line;
 	std::string	s_cont;
 	struct stat	info;
 
 	s_cont = (std::string)cont->d_name + (cont->d_type == 8 ? "" : "/");
-	stat(cont->d_name, &info);
+	std::memset(&info, 0, sizeof(struct stat));
+	path = url + '/' + cont->d_name;
+	std::cout << "\033[32m" << path << COLOR_RESET << std::endl;
+	stat(path.c_str(), &info);
 	if (var.fail())
 	{
 		std::cout << "Could not open html file!\n";
@@ -321,18 +325,13 @@ void listDirectoriesAutoIndex(std::string &body, dirent *cont)
 	while(std::getline(var, line))
 	{
 		line.append("\n");
-		size_t pos = line.find("href=\"");
-		if (pos != std::string::npos)
-			line.replace(pos, 6, "href=\"" + s_cont);
-		pos = line.find("{NAME}");
-		if (pos != std::string::npos)
-			line.replace(pos, 6, s_cont);
-		pos = line.find("{SIZE}");
-		if (pos != std::string::npos)
-			line.replace(pos, 6, ft_to_string(info.st_size) + " byte");
-		pos = line.find("{MODIFY}");
-		if (pos != std::string::npos)
-			line.replace(pos, 8, ft_to_string(info.st_mtim.tv_sec));
+		std::cout << "\033[31m VALGRIND conditional check\033[0m\n";
+		std::cout << info.st_size << info.st_mtim.tv_sec << std::endl;
+		std::cout << "\033[31m VALGRIND END\033[0m\n";
+		find_and_replace(line, "href=\"", "href=\"" + s_cont);
+		find_and_replace(line, "{NAME}", s_cont);
+		find_and_replace(line, "{SIZE}", info.st_size);
+		find_and_replace(line, "{MODIFY}", info.st_mtim.tv_sec);
 		body += line;
 	}
 }
@@ -371,7 +370,7 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 void	Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
 {
 	(void)conf;
-	return ;
+	// return ;
 	std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num + 1<< "\033[0m" << std::endl;
 	std::cout << "Listening on -> \033[1;32m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl;
 	std::cout << (*it).second;

@@ -57,12 +57,17 @@ static void	parseAlias(Conf &conf, std::vector<std::string> &list, int line)
 
 static void	parseRoot(Conf &conf, std::vector<std::string> &list, int line)
 {
+	std::string	url;
+
 	if (list.size() != 2)
 		instructionError(list, line, "wrong parameters number for root instruction");
 	if (!conf.getLocationBlock().alias.empty())
 		instructionError(list, line, "invalid parameter \"root\": alias already exists");
 	if (valid_directory(list[1]) == false)
 		instructionError(list, line, "invalid root path");
+	url = list[1] + (conf.getCurrLocation().c_str() + 1);
+	if (valid_directory(url) == false)
+		instructionError(list, line, url + " is not valid");
 	if (list[1].rbegin()[0] == '/')
 		list[1].erase(list[1].length() - 1);
 	conf.getLocationBlock().root = list[1];

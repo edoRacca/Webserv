@@ -104,6 +104,11 @@ void	s_conf_location::set(std::string path)
 	this->ret_code = 0, this->ret_uri.clear(), this->ret_text.clear();
 }
 
+s_conf_location::s_conf_location()
+{
+	this->set("");
+}
+
 //SECTION - ip port check
 
 bool	Conf::checkIpPort(std::string ip, int port) const

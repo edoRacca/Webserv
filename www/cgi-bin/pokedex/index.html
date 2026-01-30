@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>My C++ Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+	<style type="text/css">
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f3f4f6; /* Grigio chiarissimo per far risaltare il rosso */
+        color: #1f2937;
+        line-height: 1.6;
+    }
+
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        background: #ee1515; /* Rosso Pokémon */
+        color: white;
+        border-bottom: 10px solid #222;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 3px 3px 0px #222;
+    }
+
+    header p {
+        color: rgba(255,255,255,0.8);
+        font-weight: bold;
+    }
+
+    main {
+        max-width: 800px;
+        margin: -30px auto 40px; /* Alza le card sopra l'header */
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        border: 4px solid #222;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 8px 8px 0px #222;
+        transition: all 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 10px 10px 0px #ee1515;
+    }
+
+    .card h2 {
+        color: #ee1515;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+    }
+
+    /* Stile per l'istruzione CGI */
+    code {
+        background: #222;
+        color: #51ff00; /* Verde terminale */
+        padding: 10px 15px;
+        border-radius: 8px;
+        display: block;
+        margin-top: 10px;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+    }
+
+    .ok {
+        color: #10b981;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        color: #6b7280;
+        font-size: 0.8rem;
+    }
+	</style>
+</head>
+<body>
+
+    <header>
+        <h1>Pokemon database</h1>
+        <p>Script di prova per webserver</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Server Status</h2>
+            <p>Inserisci /script/pokedex/POKEMON_NAME</p>
+        </section>
+
+        <!-- <section class="card">
+            <h2>Dettagli</h2>
+            <ul>
+                <li><strong>Protocollo:</strong> HTTP/1.1</li>
+                <li><strong>Metodo:</strong> GET</li>
+                <li><strong>Documento:</strong> index.html</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Prossimi step</h2>
+            <ul>
+                <li>Gestione 404 / 500</li>
+                <li>Directory listing</li>
+                <li>CGI</li>
+                <li>Upload file</li>
+            </ul>
+        </section> -->
+    </main>
+
+    <footer>
+        <p>My Web Server • Powered by I PIEDI DELLA ZIA DEL TUO RAGAZZO</p>
+    </footer>
+
+</body>
+</html>

@@ -136,8 +136,9 @@ static void	openBlock(Conf &conf, std::vector<std::string> &list, int line)
 			conf.setServer(true);
 			break ;
 		case (Conf::B_LOCATION) :
-			if (!valid_directory(list[1]))
-				blockError(list[1], line, CONF_PATH_INVALID);
+			// if (!valid_directory(list[1]))
+			// 	blockError(list[1], line, CONF_PATH_INVALID);
+			normalize_url(&list[1]);//NOTE - location checks removed!
 			if (conf.getServerBlock().location.count(list[1]) > 0)
 				blockError(list[1], line, CONF_MULT_LOCATION);
 			conf.setLocation(true, list[1]);
@@ -177,9 +178,7 @@ static void	closeBlock(Conf &conf, std::vector<std::string> &list, int line)
 			conf.setLocation(false, "");
 			break ;
 		case (Conf::B_SERVER) :
-			// conf.getLocationBlock().set_if_empty(conf);
 			conf.getServerBlock().set_if_empty(conf);
-			
 			conf.getConfServer().push_back(conf.getServerBlock());
 			conf.setServer(false);
 			break ;

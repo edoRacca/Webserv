@@ -53,6 +53,7 @@ class Request
 		size_t			_body_len;
 		bool			_error;
 		bool			_autoindex;
+		bool			_run_script;
 
 		int				_checkPost(void);
 		int				_checkGet(void);
@@ -93,6 +94,7 @@ class Request
 		e_http_codes	getStatusCode() const;
 		bool			getDnsErrorBool() const;
 		bool			getAutoIndexBool() const;
+		bool			getRunScriptBool() const;
 	//ANCHOR - setters.cpp
 		void			setMethod(std::string method);
 		void 			setUrl(std::string);
