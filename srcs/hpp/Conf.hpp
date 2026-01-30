@@ -74,15 +74,15 @@ struct s_conf_location
 	void						setRetCode(int code);
 
 	CgiParam					cgiparam;
-	std::string					path; //location /images {}
-	std::string					root; // fa append su URI (root + URI)
-	std::string					alias; // sostituisce parola (alias + URI senza parola) -> sempre con / alla fine del path di alias
+	std::string					conf_root; //location BEFORE root/alias
+	std::string					root; //location AFTER root/alias
 	std::string					index;
 	std::string					ret_uri;
 	std::string					ret_text;
 	int							ret_code;
 	bool						autoindex; //set autoindex mode on
 	bool						run_script; //set script mode on
+	bool						alias;
 	std::map<int, std::string>	err_pages;
 };
 

@@ -83,24 +83,22 @@ void	s_conf_server::set(void)
 void	s_conf_location::set_if_empty(Conf &conf)
 {
 	(void)conf;
-	if (this->path.empty())
-		this->path = "/";
+	if (this->conf_root.empty())
+		this->conf_root = "/";
 	if (this->root.empty())
 		this->root = "";
-	if (this->alias.empty())
-		this->alias = "";
 	if (this->ret_code == 0 && !this->ret_uri.empty())
 		this->ret_code = 302; //HTTP_RD_FOUND
 }
 
 void	s_conf_location::set(std::string path)
 {
-	this->path = path;
 	this->root.clear();
-	this->alias.clear();
+	this->conf_root = normalize_url(path);
 	this->cgiparam.clear();
 	this->autoindex = false;
 	this->run_script = false;
+	this->alias = false;
 	this->ret_code = 0, this->ret_uri.clear(), this->ret_text.clear();
 }
 

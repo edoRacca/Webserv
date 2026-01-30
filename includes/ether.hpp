@@ -69,9 +69,9 @@ bool		    trim_diff_right(std::string &s, char c);
 bool		    valid_directory(std::string directory);
 bool		    valid_file(std::string file);
 
-std::string		app_root_alias(std::string file, t_conf_server &srv);
-std::string		app_root_alias(std::string file, t_conf_server &srv, std::string loc);
-std::string		app_root_alias(std::string file, t_conf_location &loc);
+std::string		url_rooting(std::string file, t_conf_server &srv);
+std::string		url_rooting(std::string file, t_conf_server &srv, std::string loc);
+std::string		url_rooting(std::string file, t_conf_location &loc);
 void			normalize_url(std::string *url);
 std::string		normalize_url(std::string url);
 

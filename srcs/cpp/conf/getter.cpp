@@ -91,7 +91,7 @@ t_conf_location	Conf::getCopyLocationBlock(void) const
 
 std::string	Conf::getCurrLocation() const
 {
-	return (this->_locblock.path);
+	return (this->_locblock.conf_root);
 }
 
 std::string t_conf_location::getRetUri() const

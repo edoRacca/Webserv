@@ -171,7 +171,6 @@ t_conf_location	*Request::findRightLocation(t_conf_server *srv)
 	std::string	url_temp;
 	std::string	url_request;
 
-	url_request = normalize_url(this->getUrl());
 	for (maplocation::iterator it = srv->location.begin(); it != srv->location.end(); ++it)
 	{
 		url_temp = normalize_url((*it).first);
@@ -192,12 +191,13 @@ void	Request::findRightPath(t_conf_server *srv)
 	std::cout << "url: " << getUrl() << std::endl;
 	t_conf_location *loc;
 
+	normalize_url(&this->_url);
 	loc = this->findRightLocation(srv);
 	if (loc == NULL)
 	{
 		if (this->getUrl() == "/")
 			manageIndex(srv, NULL);
-		this->setUrl(app_root_alias(this->getUrl(), *srv));
+		this->_url = url_rooting(this->_url, *srv);
 	}
 	else
 	{
@@ -205,31 +205,9 @@ void	Request::findRightPath(t_conf_server *srv)
 			manageIndex(srv, loc);
 		else if (loc->run_script == true)
 			this->_run_script = true;
-		this->setUrl(app_root_alias(this->getUrl(), *srv, loc->path));
-		/*if (!srv->location[tmpuri].alias.empty())
-		{
-			this->setUrl(this->getUrl().erase(0, tmpuri.length()));
-			this->setUrl(srv->location[tmpuri].alias + this->getUrl());
-		}
-		else if (!srv->location[tmpuri].root.empty())
-			this->setUrl(srv->location[tmpuri].root + this->getUrl()); //root
-		else
-			this->setUrl(srv->root + this->getUrl());*/
+		this->_url = url_rooting(this->_url, *srv);
 	}
 	std::cout << "\t---> RESULT: " << this->getUrl() << " " << std::endl << std::endl;
-	//casi di uri
-	/*
-		location /
-		location /cartella
-		1) uri = "/"
-			pseudocodice
-		2) uri = "/index.html"
-			pseudocodice
-		3) uri = "/cartella/index.html"
-			pseudocodice
-		4) uri = "/cartella1/cartella2/index.html"
-			pseudocodice
-	*/
 }
 
 // NOTE - controlliamo se autoindex e index sono settati e li impostiamo

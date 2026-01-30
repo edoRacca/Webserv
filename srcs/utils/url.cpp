@@ -7,37 +7,24 @@ typedef struct s_conf_location	t_conf_location;
 
 //SECTION - app root/alias to a file
 
-std::string	app_root_alias(std::string file, std::string root, std::string alias, \
- std::string replace)
+//DO NOT USE THIS USE OTHERS OVERLOAD
+void	url_rooting(std::string &file, std::string &root)
 {
 	// std::cout << "append_root_alias" << std::endl;
 	// std::cout << "BEFORE " << file << std::endl;
 
-	if (alias.empty() == false)
-	{
-		if (alias[0] == '/')
-			alias.erase(0, 1);
-		std::cout << "replace " << replace << " with " << alias << std::endl;
-		if (file.find(replace) != std::string::npos)//find /srcs/
-			file.replace(0, replace.length(), alias);
-	}
-	else if (root.empty() == false)
-	{
-		if (root[0] == '/')
-			root.erase(0, 1);
-		file = root + file;
-	}
-	else
-		std::cout << "no root or alias\n";
-	// std::cout << "AFTER " << file << std::endl;
-	return (file);
+	if (root.empty() == true)
+		return (std::cout << "no root\n", (void)0);
+	normalize_url(&root);
+	file = root + file;
+	return ;
 }
 
 //append root or alias to a file
 //this overload appends SERVER root
-std::string	app_root_alias(std::string file, t_conf_server &srv)
+std::string	url_rooting(std::string file, t_conf_server &srv)
 {
-	file = app_root_alias(file, srv.root, "", "");
+	url_rooting(file, srv.root);
 	return (file);
 }
 
@@ -45,20 +32,26 @@ std::string	app_root_alias(std::string file, t_conf_server &srv)
 //this overload appends: 
 // if (srv.location.count(loc) == OK) --> append LOCATION alias/root
 // else append SERVER root
-std::string	app_root_alias(std::string file, t_conf_server &srv, std::string loc)
+std::string	url_rooting(std::string file, t_conf_server &srv, std::string loc)
 {
 	if (srv.location.count(loc) != 0)
-		file = app_root_alias(file, srv.location[loc].root, srv.location[loc].alias, loc);
+	{
+		if (srv.location[loc].alias == true)
+			file.clear();
+		url_rooting(file, srv.location[loc].root);
+	}
 	else
-		file = app_root_alias(file, srv.root, "", "");
+		url_rooting(file, srv.root);
 	return (file);
 }
 
 //append root or alias to a file
 //this overload appends LOCATION alias/root
-std::string	app_root_alias(std::string file, t_conf_location &loc)
+std::string	url_rooting(std::string file, t_conf_location &loc)
 {
-	file = app_root_alias(file, loc.root, loc.alias, loc.path);
+	if (loc.alias == true)
+		file.clear();
+	url_rooting(file, loc.root);
 	return (file);
 }
 
@@ -70,10 +63,8 @@ std::string	app_root_alias(std::string file, t_conf_location &loc)
 //@ret: void
 void	normalize_url(std::string *url)
 {
-	// if ((*url)[0] == '/')
-	// 	(*url) = (*url).erase(0, 1);
-	if ((*url)[0] != '/')
-		(*url) = '/' + (*url);
+	if ((*url)[0] == '/')
+		(*url).erase(0, 1);
 	if ((*url).rbegin()[0] != '/')
 		(*url).push_back('/');
 }

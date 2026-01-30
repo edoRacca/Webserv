@@ -117,7 +117,6 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 		if (loc)
 			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
-
 	}
 	(*it).events = POLLOUT;
 }
@@ -128,8 +127,9 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	std::fstream	file;
 	std::string		body;
 	std::string		type("text/");
-	std::string		url = client.getRequest().getUrl();
+	std::string		url;
 
+	url = client.getRequest().getUrl();
 	// std::cout << "createResponse " << url << std::endl;
 	//TODO Va fatta una funzione che cambi il content-type in base al tipo di file
 	if (url.find_last_of('.') != std::string::npos)
@@ -285,9 +285,9 @@ std::string	Server::checkErrorPages(Request &request)
 			// std::cout << "Status code error page: " << status_code << std::endl; 
 			// std::cout << "Server prova ad aprire: " << server->root + server->err_pages[status_code] << std::endl;
 			if (file.fail() == true)
-				return (app_root_alias("/errors/default.html", *server));
+				return (url_rooting("/errors/default.html", *server));
 				// return (server->root + "/errors/default.html");
-			return (app_root_alias(server->err_pages[status_code], *server));
+			return (url_rooting(server->err_pages[status_code], *server));
 			// return (server->root + server->err_pages[status_code]); // ritorni error page server
 		}
 	}
@@ -297,8 +297,8 @@ std::string	Server::checkErrorPages(Request &request)
 		file.open((server->root + server->location[url].err_pages[status_code]).c_str());
 		std::cout << "Location prova ad aprire: " << loc->root + server->location[url].err_pages[status_code] << std::endl;
 		if (file.fail() == true)
-			return (app_root_alias("/errors/default.html", *loc));
-		return (app_root_alias(server->location[url].err_pages[status_code], *loc));
+			return (url_rooting("/errors/default.html", *loc));
+		return (url_rooting(server->location[url].err_pages[status_code], *loc));
 	}
 	return (server->root + "/errors/default.html"); // return di default
 }
