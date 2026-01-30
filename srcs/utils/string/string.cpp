@@ -61,7 +61,7 @@ bool	trim_equal_right(std::string &s, char c)
 	start = s.find_first_of(c);
 	if (start == std::string::npos)
 		return (1);
-	start = s.find_first_not_of(c);
+	start = s.find_first_not_of(c, start);
 	if (start == std::string::npos)
 		return (1);
 	end = s.substr(start).length();
@@ -88,7 +88,7 @@ bool	trim_diff_right(std::string &s, char c)
 	start = s.find_first_not_of(c);
 	if (start == std::string::npos)
 		return (1);
-	start = s.find_first_of(c);
+	start = s.find_first_of(c, start);
 	if (start == std::string::npos)
 		return (1);
 	end = s.substr(start).length();

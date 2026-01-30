@@ -24,8 +24,12 @@ void	url_rooting(std::string &file, std::string &root)
 //this overload appends SERVER root
 std::string	url_rooting(std::string file, t_conf_server &srv)
 {
-	url_rooting(file, srv.root);
-	return (file);
+	std::string	dir;
+
+	dir = file;
+	trim_diff_right(dir, '/');
+	dir = normalize_url(dir);
+	return (url_rooting(file, srv, dir));
 }
 
 //append root or alias to a file
@@ -36,8 +40,9 @@ std::string	url_rooting(std::string file, t_conf_server &srv, std::string loc)
 {
 	if (srv.location.count(loc) != 0)
 	{
+		size_t	i = file.find_last_of('/');
 		if (srv.location[loc].alias == true)
-			file.clear();
+			file.erase(file.find_last_of('/'), )
 		url_rooting(file, srv.location[loc].root);
 	}
 	else

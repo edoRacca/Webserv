@@ -171,6 +171,10 @@ t_conf_location	*Request::findRightLocation(t_conf_server *srv)
 	std::string	url_temp;
 	std::string	url_request;
 
+	url_request = this->_url;
+	if (url_request.rbegin()[0] != '/')
+		trim_diff_right(url_request, '/');
+	url_request = normalize_url(url_request);
 	for (maplocation::iterator it = srv->location.begin(); it != srv->location.end(); ++it)
 	{
 		url_temp = normalize_url((*it).first);
@@ -191,22 +195,12 @@ void	Request::findRightPath(t_conf_server *srv)
 	std::cout << "url: " << getUrl() << std::endl;
 	t_conf_location *loc;
 
-	normalize_url(&this->_url);
 	loc = this->findRightLocation(srv);
-	if (loc == NULL)
-	{
-		if (this->getUrl() == "/")
-			manageIndex(srv, NULL);
-		this->_url = url_rooting(this->_url, *srv);
-	}
-	else
-	{
-		if (this->getUrl().rbegin()[0] == '/')
-			manageIndex(srv, loc);
-		else if (loc->run_script == true)
-			this->_run_script = true;
-		this->_url = url_rooting(this->_url, *srv);
-	}
+	if (this->getUrl().rbegin()[0] == '/')
+		manageIndex(srv, loc);
+	else if (loc != NULL && loc->run_script == true)
+		this->_run_script = true;
+	this->_url = url_rooting(this->_url, *srv);
 	std::cout << "\t---> RESULT: " << this->getUrl() << " " << std::endl << std::endl;
 }
 
