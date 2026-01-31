@@ -1,4 +1,3 @@
-
 #include "../../includes/ether.hpp"
 
 //returns 1 if directory is valid, else 0

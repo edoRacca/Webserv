@@ -8,6 +8,8 @@ static void	parseRoot(Conf &conf, std::vector<std::string> &list, int line);
 static void parseCgiParam(Conf &conf, std::vector<std::string> &list, int line);
 static void parseReturn(Conf &conf, std::vector<std::string> &list, int line);
 static void	parseIndex(Conf &conf, std::vector<std::string> list, int line);
+static void	parseScriptBool(Conf &conf, std::vector<std::string> list, int line);
+static void	parseScriptType(Conf &conf, std::vector<std::string> list, int line);
 static void	parseAutoindex(Conf &conf, std::vector<std::string> &list, int line);
 static void	parseErrorPages(Conf &conf, std::vector<std::string> &list, int line);
 
@@ -32,10 +34,9 @@ void	confParseLocation(Conf &conf, std::vector<std::string> list, int line)
 	else if (list[0] == "error_page")
 		parseErrorPages(conf, list, line);
 	else if (list[0] == "script")
-	{
-		if (list.size() > 1 && list[1] == "on")
-			conf.getLocationBlock().run_script = true;
-	}
+		parseScriptBool(conf, list, line);
+	else if (list[0] == "script_type")
+		parseScriptType(conf, list, line);
 	else
 		instructionError(list, line, "unrecognized instruction");
 }
@@ -161,26 +162,6 @@ static void	parseAutoindex(Conf &conf, std::vector<std::string> &list, int line)
 		instructionError(list, line, "autoindex usage: autoindex <on | off>");
 }
 
-/*
-error_page code ... [=[response]] uri
-default:
- 
-context: http, server, location, if in location
- 
-Defines the URI that will be shown for the specified errors. error_page directives are inherited from the previous level only if there are no error_page directives defined on the current level. A uri value can contain variables. Example:
-
-error_page 404             /404.html;
-Furthermore, it is possible to change the response code to another using the =response syntax, for example:
-
-If an error response is processed by a proxied server or a FastCGI server, and the server may return different response codes (e.g., 200, 302, 401 or 404), it is possible to respond with the code it returns:
-
-It is also possible to use redirects for error processing:
-
-error_page 403      http://example.com/forbidden.html;
-error_page 404 =301 http://example.com/notfound.html;
-In this case, by default, the response code 302 is returned to the client. It can only be changed to one of the redirect status codes (301, 302, 303, and 307). If there is no need to change URI during internal redirection it is possible to pass error processing into a named location:
-
-*/
 static void	parseErrorPages(Conf &conf, std::vector<std::string> &list, int line)
 {
 	if (list.size() != 3)
@@ -199,4 +180,23 @@ static void	parseErrorPages(Conf &conf, std::vector<std::string> &list, int line
 	if (conf.getLocationBlock().err_pages.count(code) > 0)
 		instructionError(list, line, "error page for this status code already set");
 	conf.getLocationBlock().err_pages[code] = list[2];
+}
+
+static void	parseScriptBool(Conf &conf, std::vector<std::string> list, int line)
+{
+	if (list.size() != 2)
+		instructionError(list, line, "bad script params number");
+	else if (list[1] == "on")
+		conf.getLocationBlock().run_script = true;
+	else if (list[1] == "off")
+		conf.getLocationBlock().run_script = false;
+	else
+		instructionError(list, line, "script accepts on \"or\" \"off\" only");
+}
+
+static void	parseScriptType(Conf &conf, std::vector<std::string> list, int line)
+{
+	if (list.size() != 2)
+		instructionError(list, line, "bad script_type params number");
+	conf.getLocationBlock().script_type = list[1];
 }

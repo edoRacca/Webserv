@@ -109,3 +109,22 @@ bool	trim_diff_right(std::string &s, char c)
 	return (0);
 }
 
+void	vect_split(std::vector<std::string> vect, std::string s, char c)
+{
+	std::string	temp;
+	size_t		i;
+
+	while (s.empty() == false)
+	{
+		i = s.find(c);
+		if (i == std::string::npos)
+		{
+			vect.push_back(s);
+			return ;
+		}
+		temp = s.substr(0, i);
+		s.erase(0, temp.length());
+		temp.erase(0, 1);
+		vect.push_back(temp);
+	}
+}

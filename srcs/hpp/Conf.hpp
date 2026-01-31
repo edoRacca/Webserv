@@ -79,6 +79,7 @@ struct s_conf_location
 	std::string					index;
 	std::string					ret_uri;
 	std::string					ret_text;
+	std::string					script_type;
 	int							ret_code;
 	bool						autoindex; //set autoindex mode on
 	bool						run_script; //set script mode on

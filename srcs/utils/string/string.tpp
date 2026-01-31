@@ -10,9 +10,8 @@ std::string	ft_to_string(T data)
 }
 
 template <typename old_s, typename new_s>
-void	find_and_replace(std::string &str, old_s to_replace, new_s content)
+bool	find_and_replace(std::string &str, old_s to_replace, new_s content)
 {
-	//controlli iniziali del cazzo
 	std::string	temp_replace;
 	std::string	temp_content;
 
@@ -21,6 +20,9 @@ void	find_and_replace(std::string &str, old_s to_replace, new_s content)
 	// std::cout << "str parte come: |" << str << "|\n";
 	if (str.find(temp_replace) != std::string::npos)
 		str.replace(str.find(temp_replace), temp_replace.size(), temp_content);
+	else
+		return (0);
+	return (1);
 	// else
 	// 	std::cout << temp_replace << " not found in " << str << "\n";
 	// std::cout << "str diventa: |" << str << "|\n";

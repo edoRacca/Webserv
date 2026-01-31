@@ -85,6 +85,7 @@ void	  ft_ls(std::string path, std::string &files);
 
 void		run_script(Client &client, std::string &body);
 std::string	env_value(const char **env, std::string key);
+void		vect_split(std::vector<std::string> vect, std::string s, char c);
 
 #define CHARIZARD "                 .\"-,.__\n\
                  `.     `.  ,\n\

@@ -41,7 +41,7 @@ static void	print_field(char **field)
 
 	key = field[0];
 	href_flag = false;
-	ft_printf("%s: ", key);
+	ft_printf("|%s: ", key);
 	for (int i = 0; href_keys[i]; i++)
 	{
 		if (ft_strncmp(key, href_keys[i], INT_MAX) == 0)

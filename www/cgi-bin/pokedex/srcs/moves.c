@@ -22,10 +22,9 @@ int	main(int ac, char **av)
 		ft_printf("move %s not found.\n", move.buff);
 		return (str_terminate(), daft_quit(), 1);
 	}
-	ft_printf("|%s|\n", data[0]);
 	for (int i = 1; data[i]; i++)
 	{
-		ft_printf("%s: %s\n", info[i], data[i]);
+		ft_printf("|%s: %s\n", info[i], data[i]);
 	}
 	return (str_terminate(), free_matrix(info), daft_quit(), 0);
 }
