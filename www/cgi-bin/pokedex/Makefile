@@ -1,4 +1,4 @@
-CGIS = pokedex moves
+CGIS = pokemon moves
 
 CC      = cc
 CFLAGS  = -Wall -Werror -Wextra -g

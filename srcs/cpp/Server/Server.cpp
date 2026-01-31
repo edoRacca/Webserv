@@ -2,7 +2,6 @@
 #include "../../hpp/Server.hpp"
 
 std::string				createHtml(Client &client, const std::string &body, const std::string &type);
-void 					listDirectoriesAutoIndex(std::string &body, dirent *cont);
 struct pollfd			createServerSock(int port_n);
 struct pollfd			setupPollFd(int client);
 std::string				fileToString(std::string filename);
@@ -34,7 +33,7 @@ Server::Server(Conf &conf, const char **env):_env(env)
 	}
 	if (this->_server_num == 0)
 		throw (std::runtime_error("\nNo server could be binded."));
-	ft_ls("www/", this->_protected_files);
+	ft_ls("./", this->_protected_files);
 }
 
 Server::~Server()

@@ -2,22 +2,43 @@
 #include "../hpp/Client.hpp"
 #include <sys/wait.h>
 
-static void	run_cmd(char *const argv[], std::string &output);
+static void			run_cmd(char *const argv[], std::string &output);
+static std::string	get_arg(std::string &url);
 
 void	run_script(Client &client, std::string &body)
 {
 	std::string	output;
+	std::string cmd;
 	std::cout << "run_script\n";
 
-	const char	*cmd = client.getLocConf().cgiparam[0].second.c_str();
 	std::string	url = client.getRequest().getUrl();
-	std::string	arg_string(url.substr(url.find_last_of('/') + 1, url.length()));
+	if (url.find('?'))
+		cmd = url.substr(0, url.find_last_of('?'));
+	else
+		cmd = client.getLocConf().cgiparam[0].second;
+	std::cout << "cmd: " << cmd << std::endl;
+	std::string	arg_string = get_arg(url);
 	const char	*arg = arg_string.c_str();
-	char const	*argv[3] = {cmd, arg, NULL};
+	char const	*argv[3] = {cmd.c_str(), arg, NULL};
+	std::cout << "cmd: " << argv[0] << "\n";
+	std::cout << "arg: " << argv[1] << "\n";
 	run_cmd((char *const *)argv, output);
 	std::cout << output << "\n";
 	body = output;
 	(void)body;
+}
+
+static std::string	get_arg(std::string &url)
+{
+	char	trim_char;
+
+	if (url.find('?'))
+		trim_char = '?';
+	else
+		trim_char = '/';
+	std::string	arg_string(url.substr(url.find_last_of(trim_char) + 1, url.length()));
+	find_and_replace(arg_string, "value=", "");
+	return (arg_string);
 }
 
 static void	run_cmd(char *const argv[], std::string &output)
