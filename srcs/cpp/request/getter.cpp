@@ -60,6 +60,11 @@ std::string Request::getUrl() const
 	return (this->_url);
 }
 
+std::string Request::getUrlOriginal() const
+{
+	return (this->_url_orig);
+}
+
 //SECTION - HttpVersion
 
 //torna sempre HTTP/1.1, altrimenti parsing fallisce

@@ -1,4 +1,11 @@
-pokedex: 
-	cc -Wall -Werror -Wextra -g srcs/main.c libft.a -o output/pokedex.cgi
+CGIS = pokedex moves
 
-.PHONY: pokedex
+CC      = cc
+CFLAGS  = -Wall -Werror -Wextra -g
+SRC_DIR = srcs
+OUT_DIR = output
+
+all: $(CGIS:%=$(OUT_DIR)/%.cgi)
+
+$(OUT_DIR)/%.cgi: $(SRC_DIR)/%.c libft.a
+	$(CC) $(CFLAGS) $< libft.a -o $@

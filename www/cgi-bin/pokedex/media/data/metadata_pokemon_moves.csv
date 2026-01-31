@@ -1,809 +1,809 @@
 name,id,accuracy,pp,power,priority,type,generation,short_descripton,damage_class
-Pound,1,100.0,35,40.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-KarateChop,2,100.0,25,50.0,0,Fighting,GenerationI,Hasanincreasedchanceforacriticalhit.,Physical
-DoubleSlap,3,85.0,10,15.0,0,Normal,GenerationI,Hits2-5timesinoneturn.,Physical
-CometPunch,4,85.0,15,18.0,0,Normal,GenerationI,Hits2-5timesinoneturn.,Physical
-MegaPunch,5,85.0,20,80.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-PayDay,6,100.0,20,40.0,0,Normal,GenerationI,Scattersmoneyonthegroundworthfivetimestheuser'slevel.,Physical
-FirePunch,7,100.0,15,75.0,0,Fire,GenerationI,Hasa$effect_chance%chancetoburnthetarget.,Physical
-IcePunch,8,100.0,15,75.0,0,Ice,GenerationI,Hasa$effect_chance%chancetofreezethetarget.,Physical
-ThunderPunch,9,100.0,15,75.0,0,Electric,GenerationI,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-Scratch,10,100.0,35,40.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ViceGrip,11,100.0,30,55.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Guillotine,12,30.0,5,,0,Normal,GenerationI,Causesaone-hitKO.,Physical
-RazorWind,13,100.0,10,80.0,0,Normal,GenerationI,Requiresaturntochargebeforeattacking.,Special
-SwordsDance,14,,20,,0,Normal,GenerationI,Raisestheuser'sAttackbytwostages.,Status
-Cut,15,95.0,30,50.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Gust,16,100.0,35,40.0,0,Flying,GenerationI,InflictsregulardamageandcanhitPokémonintheair.,Special
-WingAttack,17,100.0,35,60.0,0,Flying,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Whirlwind,18,,20,,-6,Normal,GenerationI,Immediatelyendswildbattles.ForcestrainerstoswitchPokémon.,Status
-Fly,19,95.0,15,90.0,0,Flying,GenerationI,"Userflieshighintotheair,dodgingallattacks,andhitsnextturn.",Physical
-Bind,20,85.0,20,15.0,0,Normal,GenerationI,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Physical
-Slam,21,75.0,20,80.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-VineWhip,22,100.0,25,45.0,0,Grass,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Stomp,23,100.0,20,65.0,0,Normal,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-DoubleKick,24,100.0,30,30.0,0,Fighting,GenerationI,Hitstwiceinoneturn.,Physical
-MegaKick,25,75.0,5,120.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-JumpKick,26,95.0,10,100.0,0,Fighting,GenerationI,"Iftheusermisses,ittakeshalfthedamageitwouldhaveinflictedinrecoil.",Physical
-RollingKick,27,85.0,15,60.0,0,Fighting,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-SandAttack,28,100.0,15,,0,Ground,GenerationI,Lowersthetarget'saccuracybyonestage.,Status
-Headbutt,29,100.0,15,70.0,0,Normal,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-HornAttack,30,100.0,25,65.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-FuryAttack,31,85.0,20,15.0,0,Normal,GenerationI,Hits2-5timesinoneturn.,Physical
-HornDrill,32,30.0,5,,0,Normal,GenerationI,Causesaone-hitKO.,Physical
-Tackle,33,100.0,35,40.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BodySlam,34,100.0,15,85.0,0,Normal,GenerationI,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-Wrap,35,90.0,20,15.0,0,Normal,GenerationI,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Physical
-TakeDown,36,85.0,20,90.0,0,Normal,GenerationI,Userreceives1/4thedamageitinflictsinrecoil.,Physical
-Thrash,37,100.0,10,120.0,0,Normal,GenerationI,"Hitseveryturnfor2-3turns,thenconfusestheuser.",Physical
-DoubleEdge,38,100.0,15,120.0,0,Normal,GenerationI,Userreceives1/3thedamageinflictedinrecoil.,Physical
-TailWhip,39,100.0,30,,0,Normal,GenerationI,Lowersthetarget'sDefensebyonestage.,Status
-PoisonSting,40,100.0,35,15.0,0,Poison,GenerationI,Hasa$effect_chance%chancetopoisonthetarget.,Physical
-Twineedle,41,100.0,20,25.0,0,Bug,GenerationI,Hitstwiceinthesameturn.Hasa$effect_chance%chancetopoisonthetarget.,Physical
-PinMissile,42,95.0,20,25.0,0,Bug,GenerationI,Hits2-5timesinoneturn.,Physical
-Leer,43,100.0,30,,0,Normal,GenerationI,Lowersthetarget'sDefensebyonestage.,Status
-Bite,44,100.0,25,60.0,0,Dark,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-Growl,45,100.0,40,,0,Normal,GenerationI,Lowersthetarget'sAttackbyonestage.,Status
-Roar,46,,20,,-6,Normal,GenerationI,Immediatelyendswildbattles.ForcestrainerstoswitchPokémon.,Status
-Sing,47,55.0,15,,0,Normal,GenerationI,Putsthetargettosleep.,Status
-Supersonic,48,55.0,20,,0,Normal,GenerationI,Confusesthetarget.,Status
-SonicBoom,49,90.0,20,,0,Normal,GenerationI,Inflicts20pointsofdamage.,Special
-Disable,50,100.0,20,,0,Normal,GenerationI,Disablesthetarget'slastusedmovefor1-8turns.,Status
-Acid,51,100.0,30,40.0,0,Poison,GenerationI,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-Ember,52,100.0,25,40.0,0,Fire,GenerationI,Hasa$effect_chance%chancetoburnthetarget.,Special
-Flamethrower,53,100.0,15,90.0,0,Fire,GenerationI,Hasa$effect_chance%chancetoburnthetarget.,Special
-Mist,54,,30,,0,Ice,GenerationI,Protectstheuser'sstatsfrombeingchangedbyenemymoves.,Status
-WaterGun,55,100.0,25,40.0,0,Water,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Special
-HydroPump,56,80.0,5,110.0,0,Water,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Special
-Surf,57,100.0,15,90.0,0,Water,GenerationI,InflictsregulardamageandcanhitDiveusers.,Special
-IceBeam,58,100.0,10,90.0,0,Ice,GenerationI,Hasa$effect_chance%chancetofreezethetarget.,Special
-Blizzard,59,70.0,5,110.0,0,Ice,GenerationI,Hasa$effect_chance%chancetofreezethetarget.,Special
-Psybeam,60,100.0,20,65.0,0,Psychic,GenerationI,Hasa$effect_chance%chancetoconfusethetarget.,Special
-BubbleBeam,61,100.0,20,65.0,0,Water,GenerationI,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Special
-AuroraBeam,62,100.0,20,65.0,0,Ice,GenerationI,Hasa$effect_chance%chancetolowerthetarget'sAttackbyonestage.,Special
-HyperBeam,63,90.0,5,150.0,0,Normal,GenerationI,Userforegoesitsnextturntorecharge.,Special
-Peck,64,100.0,35,35.0,0,Flying,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DrillPeck,65,100.0,20,80.0,0,Flying,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Submission,66,80.0,20,80.0,0,Fighting,GenerationI,Userreceives1/4thedamageitinflictsinrecoil.,Physical
-LowKick,67,100.0,20,,0,Fighting,GenerationI,"Inflictsmoredamagetoheaviertargets,withamaximumof120power.",Physical
-Counter,68,100.0,20,,-5,Fighting,GenerationI,Inflictstwicethedamagetheuserreceivedfromthelastphysicalhitittook.,Physical
-SeismicToss,69,100.0,20,,0,Fighting,GenerationI,Inflictsdamageequaltotheuser'slevel.,Physical
-Strength,70,100.0,15,80.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Absorb,71,100.0,25,20.0,0,Grass,GenerationI,Drainshalfthedamageinflictedtohealtheuser.,Special
-MegaDrain,72,100.0,15,40.0,0,Grass,GenerationI,Drainshalfthedamageinflictedtohealtheuser.,Special
-LeechSeed,73,90.0,10,,0,Grass,GenerationI,"Seedsthetarget,stealingHPfromiteveryturn.",Status
-Growth,74,,20,,0,Normal,GenerationI,Raisestheuser'sAttackandSpecialAttackbyonestage.,Status
-RazorLeaf,75,95.0,25,55.0,0,Grass,GenerationI,Hasanincreasedchanceforacriticalhit.,Physical
-SolarBeam,76,100.0,10,120.0,0,Grass,GenerationI,Requiresaturntochargebeforeattacking.,Special
-PoisonPowder,77,75.0,35,,0,Poison,GenerationI,Poisonsthetarget.,Status
-StunSpore,78,75.0,30,,0,Grass,GenerationI,Paralyzesthetarget.,Status
-SleepPowder,79,75.0,15,,0,Grass,GenerationI,Putsthetargettosleep.,Status
-PetalDance,80,100.0,10,120.0,0,Grass,GenerationI,"Hitseveryturnfor2-3turns,thenconfusestheuser.",Special
-StringShot,81,95.0,40,,0,Bug,GenerationI,Lowersthetarget'sSpeedbytwostages.,Status
-DragonRage,82,100.0,10,,0,Dragon,GenerationI,Inflicts40pointsofdamage.,Special
-FireSpin,83,85.0,15,35.0,0,Fire,GenerationI,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Special
-ThunderShock,84,100.0,30,40.0,0,Electric,GenerationI,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-Thunderbolt,85,100.0,15,90.0,0,Electric,GenerationI,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-ThunderWave,86,90.0,20,,0,Electric,GenerationI,Paralyzesthetarget.,Status
-Thunder,87,70.0,10,110.0,0,Electric,GenerationI,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-RockThrow,88,90.0,15,50.0,0,Rock,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Earthquake,89,100.0,10,100.0,0,Ground,GenerationI,InflictsregulardamageandcanhitDigusers.,Physical
-Fissure,90,30.0,5,,0,Ground,GenerationI,Causesaone-hitKO.,Physical
-Dig,91,100.0,10,80.0,0,Ground,GenerationI,"Userdigsunderground,dodgingallattacks,andhitsnextturn.",Physical
-Toxic,92,90.0,10,,0,Poison,GenerationI,"Badlypoisonsthetarget,inflictingmoredamageeveryturn.",Status
-Confusion,93,100.0,25,50.0,0,Psychic,GenerationI,Hasa$effect_chance%chancetoconfusethetarget.,Special
-Psychic,94,100.0,10,90.0,0,Psychic,GenerationI,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-Hypnosis,95,60.0,20,,0,Psychic,GenerationI,Putsthetargettosleep.,Status
-Meditate,96,,40,,0,Psychic,GenerationI,Raisestheuser'sAttackbyonestage.,Status
-Agility,97,,30,,0,Psychic,GenerationI,Raisestheuser'sSpeedbytwostages.,Status
-QuickAttack,98,100.0,30,40.0,1,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Rage,99,100.0,20,20.0,0,Normal,GenerationI,"Iftheuserishitafterusingthismove,itsAttackrisesbyonestage.",Physical
-Teleport,100,,20,,-6,Psychic,GenerationI,Immediatelyendswildbattles.Noeffectotherwise.,Status
-NightShade,101,100.0,15,,0,Ghost,GenerationI,Inflictsdamageequaltotheuser'slevel.,Special
-Mimic,102,,10,,0,Normal,GenerationI,Copiesthetarget'slastusedmove.,Status
-Screech,103,85.0,40,,0,Normal,GenerationI,Lowersthetarget'sDefensebytwostages.,Status
-DoubleTeam,104,,15,,0,Normal,GenerationI,Raisestheuser'sevasionbyonestage.,Status
-Recover,105,,10,,0,Normal,GenerationI,HealstheuserbyhalfitsmaxHP.,Status
-Harden,106,,30,,0,Normal,GenerationI,Raisestheuser'sDefensebyonestage.,Status
-Minimize,107,,10,,0,Normal,GenerationI,Raisestheuser'sevasionbytwostages.,Status
-Smokescreen,108,100.0,20,,0,Normal,GenerationI,Lowersthetarget'saccuracybyonestage.,Status
-ConfuseRay,109,100.0,10,,0,Ghost,GenerationI,Confusesthetarget.,Status
-Withdraw,110,,40,,0,Water,GenerationI,Raisestheuser'sDefensebyonestage.,Status
-DefenseCurl,111,,40,,0,Normal,GenerationI,Raisesuser'sDefensebyonestage.,Status
-Barrier,112,,20,,0,Psychic,GenerationI,Raisestheuser'sDefensebytwostages.,Status
-LightScreen,113,,30,,0,Psychic,GenerationI,Reducesdamagefromspecialattacksby50%forfiveturns.,Status
-Haze,114,,30,,0,Ice,GenerationI,"ResetsallPokémon'sstats,accuracy,andevasion.",Status
-Reflect,115,,20,,0,Psychic,GenerationI,Reducesdamagefromphysicalattacksbyhalf.,Status
-FocusEnergy,116,,30,,0,Normal,GenerationI,Increasestheuser'schancetoscoreacriticalhit.,Status
-Bide,117,,10,,1,Normal,GenerationI,"Userwaitsfortwoturns,thenhitsbackfortwicethedamageittook.",Physical
-Metronome,118,,10,,0,Normal,GenerationI,Randomlyselectsandusesanymoveinthegame.,Status
-MirrorMove,119,,20,,0,Flying,GenerationI,Usesthetarget'slastusedmove.,Status
-SelfDestruct,120,100.0,5,200.0,0,Normal,GenerationI,Userfaints.,Physical
-EggBomb,121,75.0,10,100.0,0,Normal,GenerationI,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Lick,122,100.0,30,30.0,0,Ghost,GenerationI,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-Smog,123,70.0,20,30.0,0,Poison,GenerationI,Hasa$effect_chance%chancetopoisonthetarget.,Special
-Sludge,124,100.0,20,65.0,0,Poison,GenerationI,Hasa$effect_chance%chancetopoisonthetarget.,Special
-BoneClub,125,85.0,20,65.0,0,Ground,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-FireBlast,126,85.0,5,110.0,0,Fire,GenerationI,Hasa$effect_chance%chancetoburnthetarget.,Special
-Waterfall,127,100.0,15,80.0,0,Water,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-Clamp,128,85.0,15,35.0,0,Water,GenerationI,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Physical
-Swift,129,,20,60.0,0,Normal,GenerationI,Nevermisses.,Special
-SkullBash,130,100.0,10,130.0,0,Normal,GenerationI,Raisestheuser'sDefensebyonestage.Userchargesforoneturnbeforeattacking.,Physical
-SpikeCannon,131,100.0,15,20.0,0,Normal,GenerationI,Hits2-5timesinoneturn.,Physical
-Constrict,132,100.0,35,10.0,0,Normal,GenerationI,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Physical
-Amnesia,133,,20,,0,Psychic,GenerationI,Raisestheuser'sSpecialDefensebytwostages.,Status
-Kinesis,134,80.0,15,,0,Psychic,GenerationI,Lowersthetarget'saccuracybyonestage.,Status
-SoftBoiled,135,,10,,0,Normal,GenerationI,HealstheuserbyhalfitsmaxHP.,Status
-HighJumpKick,136,90.0,10,130.0,0,Fighting,GenerationI,"Iftheusermisses,ittakeshalfthedamageitwouldhaveinflictedinrecoil.",Physical
-Glare,137,100.0,30,,0,Normal,GenerationI,Paralyzesthetarget.,Status
-DreamEater,138,100.0,15,100.0,0,Psychic,GenerationI,OnlyworksonsleepingPokémon.Drainshalfthedamageinflictedtohealtheuser.,Special
-PoisonGas,139,90.0,40,,0,Poison,GenerationI,Poisonsthetarget.,Status
-Barrage,140,85.0,20,15.0,0,Normal,GenerationI,Hits2-5timesinoneturn.,Physical
-LeechLife,141,100.0,10,80.0,0,Bug,GenerationI,Drainshalfthedamageinflictedtohealtheuser.,Physical
-LovelyKiss,142,75.0,10,,0,Normal,GenerationI,Putsthetargettosleep.,Status
-SkyAttack,143,90.0,5,140.0,0,Flying,GenerationI,Userchargesforoneturnbeforeattacking.Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-Transform,144,,10,,0,Normal,GenerationI,Userbecomesacopyofthetargetuntilitleavesbattle.,Status
-Bubble,145,100.0,30,40.0,0,Water,GenerationI,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Special
-DizzyPunch,146,100.0,10,70.0,0,Normal,GenerationI,Hasa$effect_chance%chancetoconfusethetarget.,Physical
-Spore,147,100.0,15,,0,Grass,GenerationI,Putsthetargettosleep.,Status
-Flash,148,100.0,20,,0,Normal,GenerationI,Lowersthetarget'saccuracybyonestage.,Status
-Psywave,149,100.0,15,,0,Psychic,GenerationI,Inflictsdamagebetween50%and150%oftheuser'slevel.,Special
-Splash,150,,40,,0,Normal,GenerationI,Doesnothing.,Status
-AcidArmor,151,,20,,0,Poison,GenerationI,Raisestheuser'sDefensebytwostages.,Status
-Crabhammer,152,90.0,10,100.0,0,Water,GenerationI,Hasanincreasedchanceforacriticalhit.,Physical
-Explosion,153,100.0,5,250.0,0,Normal,GenerationI,Userfaints.,Physical
-FurySwipes,154,80.0,15,18.0,0,Normal,GenerationI,Hits2-5timesinoneturn.,Physical
-Bonemerang,155,90.0,10,50.0,0,Ground,GenerationI,Hitstwiceinoneturn.,Physical
-Rest,156,,10,,0,Psychic,GenerationI,"Usersleepsfortwoturns,completelyhealingitself.",Status
-RockSlide,157,90.0,10,75.0,0,Rock,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-HyperFang,158,90.0,15,80.0,0,Normal,GenerationI,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-Sharpen,159,,30,,0,Normal,GenerationI,Raisestheuser'sAttackbyonestage.,Status
-Conversion,160,,30,,0,Normal,GenerationI,User'stypechangestothetypeofoneofitsmovesatrandom.,Status
-TriAttack,161,100.0,10,80.0,0,Normal,GenerationI,"Hasa$effect_chance%chancetoburn,freeze,orparalyzethetarget.",Special
-SuperFang,162,90.0,10,,0,Normal,GenerationI,Inflictsdamageequaltohalfthetarget'sHP.,Physical
-Slash,163,100.0,20,70.0,0,Normal,GenerationI,Hasanincreasedchanceforacriticalhit.,Physical
-Substitute,164,,10,,0,Normal,GenerationI,"Transfers1/4oftheuser'smaxHPintoadoll,protectingtheuserfromfurtherdamageorstatuschangesuntilitbreaks.",Status
-Struggle,165,,1,50.0,0,Normal,GenerationI,Usertakes1/4itsmaxHPinrecoil.,Physical
-Sketch,166,,1,,0,Normal,GenerationIi,Permanentlybecomesthetarget'slastusedmove.,Status
-TripleKick,167,90.0,10,10.0,0,Fighting,GenerationIi,"Hitsthreetimes,increasingpowerby100%witheachsuccessfulhit.",Physical
-Thief,168,100.0,25,60.0,0,Dark,GenerationIi,Takesthetarget'sitem.,Physical
-SpiderWeb,169,,10,,0,Bug,GenerationIi,Preventsthetargetfromleavingbattle.,Status
-MindReader,170,,5,,0,Normal,GenerationIi,Ensuresthattheuser'snextmovewillhitthetarget.,Status
-Nightmare,171,100.0,15,,0,Ghost,GenerationIi,Targetloses1/4itsmaxHPeveryturnaslongasit'sasleep.,Status
-FlameWheel,172,100.0,25,60.0,0,Fire,GenerationIi,Hasa$effect_chance%chancetoburnthetarget.LetsfrozenPokémonthawthemselves.,Physical
-Snore,173,100.0,15,50.0,0,Normal,GenerationIi,Hasa$effect_chance%chancetomakethetargetflinch.Onlyworksiftheuserissleeping.,Special
-Curse,174,,10,,0,Ghost,GenerationIi,GhostspayhalftheirmaxHPtohurtthetargeteveryturn.OthersdecreaseSpeedbutraiseAttackandDefense.,Status
-Flail,175,100.0,15,,0,Normal,GenerationIi,"InflictsmoredamagewhentheuserhaslessHPremaining,withamaximumof200power.",Physical
-Conversion2,176,,30,,0,Normal,GenerationIi,Changestheuser'stypetoarandomtypeeitherresistantorimmunetothelastmoveusedagainstit.,Status
-Aeroblast,177,95.0,5,100.0,0,Flying,GenerationIi,Hasanincreasedchanceforacriticalhit.,Special
-CottonSpore,178,100.0,40,,0,Grass,GenerationIi,Lowersthetarget'sSpeedbytwostages.,Status
-Reversal,179,100.0,15,,0,Fighting,GenerationIi,"InflictsmoredamagewhentheuserhaslessHPremaining,withamaximumof200power.",Physical
-Spite,180,100.0,10,,0,Ghost,GenerationIi,LowersthePPofthetarget'slastusedmoveby4.,Status
-PowderSnow,181,100.0,25,40.0,0,Ice,GenerationIi,Hasa$effect_chance%chancetofreezethetarget.,Special
-Protect,182,,10,,4,Normal,GenerationIi,Preventsanymovesfromhittingtheuserthisturn.,Status
-MachPunch,183,100.0,30,40.0,1,Fighting,GenerationIi,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ScaryFace,184,100.0,10,,0,Normal,GenerationIi,Lowersthetarget'sSpeedbytwostages.,Status
-FeintAttack,185,,20,60.0,0,Dark,GenerationIi,Nevermisses.,Physical
-SweetKiss,186,75.0,10,,0,Fairy,GenerationIi,Confusesthetarget.,Status
-BellyDrum,187,,10,,0,Normal,GenerationIi,UserpayshalfitsmaxHPtomaxoutitsAttack.,Status
-SludgeBomb,188,100.0,10,90.0,0,Poison,GenerationIi,Hasa$effect_chance%chancetopoisonthetarget.,Special
-MudSlap,189,100.0,10,20.0,0,Ground,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-Octazooka,190,85.0,10,65.0,0,Water,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-Spikes,191,,20,,0,Ground,GenerationIi,"ScattersSpikes,hurtingopposingPokémonthatswitchin.",Status
-ZapCannon,192,50.0,5,120.0,0,Electric,GenerationIi,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-Foresight,193,,40,,0,Normal,GenerationIi,"ForcesthetargettohavenoEvade,andallowsittobehitbyNormalandFightingmovesevenifit'saGhost.",Status
-DestinyBond,194,,5,,0,Ghost,GenerationIi,"Iftheuserfaintsthisturn,thetargetautomaticallywill,too.",Status
-PerishSong,195,,5,,0,Normal,GenerationIi,Userandtargetbothfaintafterthreeturns.,Status
-IcyWind,196,95.0,15,55.0,0,Ice,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Special
-Detect,197,,5,,4,Fighting,GenerationIi,Preventsanymovesfromhittingtheuserthisturn.,Status
-BoneRush,198,90.0,10,25.0,0,Ground,GenerationIi,Hits2-5timesinoneturn.,Physical
-LockOn,199,,5,,0,Normal,GenerationIi,Ensuresthattheuser'snextmovewillhitthetarget.,Status
-Outrage,200,100.0,10,120.0,0,Dragon,GenerationIi,"Hitseveryturnfor2-3turns,thenconfusestheuser.",Physical
-Sandstorm,201,,10,,0,Rock,GenerationIi,Changestheweathertoasandstormforfiveturns.,Status
-GigaDrain,202,100.0,10,75.0,0,Grass,GenerationIi,Drainshalfthedamageinflictedtohealtheuser.,Special
-Endure,203,,10,,4,Normal,GenerationIi,Preventstheuser'sHPfromloweringbelow1thisturn.,Status
-Charm,204,100.0,20,,0,Fairy,GenerationIi,Lowersthetarget'sAttackbytwostages.,Status
-Rollout,205,90.0,20,30.0,0,Rock,GenerationIi,"Powerdoubleseveryturnthismoveisusedinsuccessionafterthefirst,resettingafterfiveturns.",Physical
-FalseSwipe,206,100.0,40,40.0,0,Normal,GenerationIi,Cannotlowerthetarget'sHPbelow1.,Physical
-Swagger,207,85.0,15,,0,Normal,GenerationIi,Raisesthetarget'sAttackbytwostagesandconfusesthetarget.,Status
-MilkDrink,208,,10,,0,Normal,GenerationIi,HealstheuserbyhalfitsmaxHP.,Status
-Spark,209,100.0,20,65.0,0,Electric,GenerationIi,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-FuryCutter,210,95.0,20,40.0,0,Bug,GenerationIi,"Powerdoubleseveryturnthismoveisusedinsuccessionafterthefirst,maxingoutafterfiveturns.",Physical
-SteelWing,211,90.0,25,70.0,0,Steel,GenerationIi,Hasa$effect_chance%chancetoraisetheuser'sDefensebyonestage.,Physical
-MeanLook,212,,5,,0,Normal,GenerationIi,Preventsthetargetfromleavingbattle.,Status
-Attract,213,100.0,15,,0,Normal,GenerationIi,"Targetfallsinloveifithastheoppositegender,andhasa50%chancetorefuseattackingtheuser.",Status
-SleepTalk,214,,10,,0,Normal,GenerationIi,Randomlyusesoneoftheuser'sotherthreemoves.Onlyworksiftheuserissleeping.,Status
-HealBell,215,,5,,0,Normal,GenerationIi,Curestheentirepartyofmajorstatuseffects.,Status
-Return,216,100.0,20,,0,Normal,GenerationIi,"Powerincreaseswithhappiness,uptoamaximumof102.",Physical
-Present,217,90.0,15,,0,Normal,GenerationIi,Randomlyinflictsdamagewithpowerfrom40to120orhealsthetargetfor1/4itsmaxHP.,Physical
-Frustration,218,100.0,20,,0,Normal,GenerationIi,"Powerincreasesashappinessdecreases,uptoamaximumof102.",Physical
-Safeguard,219,,25,,0,Normal,GenerationIi,Protectstheuser'sfieldfrommajorstatusailmentsandconfusionforfiveturns.,Status
-PainSplit,220,,20,,0,Normal,GenerationIi,Setstheuser'sandtargets'sHPtotheaverageoftheircurrentHP.,Status
-SacredFire,221,95.0,5,100.0,0,Fire,GenerationIi,Hasa$effect_chance%chancetoburnthetarget.LetsfrozenPokémonthawthemselves.,Physical
-Magnitude,222,100.0,30,,0,Ground,GenerationIi,Powervariesrandomlyfrom10to150.,Physical
-DynamicPunch,223,50.0,5,100.0,0,Fighting,GenerationIi,Hasa$effect_chance%chancetoconfusethetarget.,Physical
-Megahorn,224,85.0,10,120.0,0,Bug,GenerationIi,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DragonBreath,225,100.0,20,60.0,0,Dragon,GenerationIi,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-BatonPass,226,,40,,0,Normal,GenerationIi,Allowsthetrainertoswitchouttheuserandpasseffectsalongtoitsreplacement.,Status
-Encore,227,100.0,5,,0,Normal,GenerationIi,Forcesthetargettorepeatitslastusedmoveeveryturnfor2to6turns.,Status
-Pursuit,228,100.0,20,40.0,0,Dark,GenerationIi,"Hasdoublepoweragainst,andcanhit,Pokémonattemptingtoswitchout.",Physical
-RapidSpin,229,100.0,40,50.0,0,Normal,GenerationIi,"Freestheuserfrombindingmoves,removesLeechSeed,andblowsawaySpikes.",Physical
-SweetScent,230,100.0,20,,0,Normal,GenerationIi,Lowersthetarget'sevasionbyonestage.,Status
-IronTail,231,75.0,15,100.0,0,Steel,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-MetalClaw,232,95.0,35,50.0,0,Steel,GenerationIi,Hasa$effect_chance%chancetoraisetheuser'sAttackbyonestage.,Physical
-VitalThrow,233,,10,70.0,-1,Fighting,GenerationIi,Nevermisses.,Physical
-MorningSun,234,,5,,0,Normal,GenerationIi,HealstheuserbyhalfitsmaxHP.Affectedbyweather.,Status
-Synthesis,235,,5,,0,Grass,GenerationIi,HealstheuserbyhalfitsmaxHP.Affectedbyweather.,Status
-Moonlight,236,,5,,0,Fairy,GenerationIi,HealstheuserbyhalfitsmaxHP.Affectedbyweather.,Status
-HiddenPower,237,100.0,15,60.0,0,Normal,GenerationIi,Powerandtypedependuponuser'sIVs.Powercanrangefrom30to70.,Special
-CrossChop,238,80.0,5,100.0,0,Fighting,GenerationIi,Hasanincreasedchanceforacriticalhit.,Physical
-Twister,239,100.0,20,40.0,0,Dragon,GenerationIi,Hasa$effect_chance%chancetomakethetargetflinch.,Special
-RainDance,240,,5,,0,Water,GenerationIi,Changestheweathertorainforfiveturns.,Status
-SunnyDay,241,,5,,0,Fire,GenerationIi,Changestheweathertosunnyforfiveturns.,Status
-Crunch,242,100.0,15,80.0,0,Dark,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-MirrorCoat,243,100.0,20,,-5,Psychic,GenerationIi,Inflictstwicethedamagetheuserreceivedfromthelastspecialhitittook.,Special
-PsychUp,244,,10,,0,Normal,GenerationIi,Discardstheuser'sstatchangesandcopiesthetarget's.,Status
-ExtremeSpeed,245,100.0,5,80.0,2,Normal,GenerationIi,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AncientPower,246,100.0,5,60.0,0,Rock,GenerationIi,Hasa$effect_chance%chancetoraisealloftheuser'sstatsbyonestage.,Special
-ShadowBall,247,100.0,15,80.0,0,Ghost,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-FutureSight,248,100.0,10,120.0,0,Psychic,GenerationIi,Hitsthetargettwoturnslater.,Special
-RockSmash,249,100.0,15,40.0,0,Fighting,GenerationIi,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-Whirlpool,250,85.0,15,35.0,0,Water,GenerationIi,Preventsthetargetfromleavingbattleandinflicts1/16itsmaxHPindamagefor2-5turns.,Special
-BeatUp,251,100.0,10,,0,Dark,GenerationIi,HitsonceforeveryconsciousPokémonthetrainerhas.,Physical
-FakeOut,252,100.0,10,40.0,3,Normal,GenerationIii,Canonlybeusedasthefirstmoveaftertheuserentersbattle.Causesthetargettoflinch.,Physical
-Uproar,253,100.0,10,90.0,0,Normal,GenerationIii,Forcedtousethismoveforseveralturns.Pokémoncannotfallasleepinthattime.,Special
-Stockpile,254,,20,,0,Normal,GenerationIii,StoresenergyuptothreetimesforusewithSpitUpandSwallow.,Status
-SpitUp,255,100.0,10,,0,Normal,GenerationIii,Poweris100timestheamountofenergyStockpiled.,Special
-Swallow,256,,10,,0,Normal,GenerationIii,"Recovers1/4HPafteroneStockpile,1/2HPaftertwoStockpiles,orfullHPafterthreeStockpiles.",Status
-HeatWave,257,90.0,10,95.0,0,Fire,GenerationIii,Hasa$effect_chance%chancetoburnthetarget.,Special
-Hail,258,,10,,0,Ice,GenerationIii,Changestheweathertoahailstormforfiveturns.,Status
-Torment,259,100.0,15,,0,Dark,GenerationIii,Preventsthetargetfromusingthesamemovetwiceinarow.,Status
-Flatter,260,100.0,15,,0,Dark,GenerationIii,Raisesthetarget'sSpecialAttackbyonestageandconfusesthetarget.,Status
-WillOWisp,261,85.0,15,,0,Fire,GenerationIii,Burnsthetarget.,Status
-Memento,262,100.0,10,,0,Dark,GenerationIii,Lowersthetarget'sAttackandSpecialAttackbytwostages.Userfaints.,Status
-Facade,263,100.0,20,70.0,0,Normal,GenerationIii,"Powerdoublesifuserisburned,paralyzed,orpoisoned.",Physical
-FocusPunch,264,100.0,20,150.0,-3,Fighting,GenerationIii,"Iftheusertakesdamagebeforeattacking,theattackiscanceled.",Physical
-SmellingSalts,265,100.0,10,70.0,0,Normal,GenerationIii,"Ifthetargetisparalyzed,inflictsdoubledamageandcurestheparalysis.",Physical
-FollowMe,266,,20,,2,Normal,GenerationIii,Redirectsthetarget'ssingle-targeteffectstotheuserforthisturn.,Status
-NaturePower,267,,20,,0,Normal,GenerationIii,Usesamovewhichdependsupontheterrain.,Status
-Charge,268,,20,,0,Electric,GenerationIii,Raisestheuser'sSpecialDefensebyonestage.User'sElectricmoveshavedoubledpowernextturn.,Status
-Taunt,269,100.0,20,,0,Dark,GenerationIii,"Forthenextfewturns,thetargetcanonlyusedamagingmoves.",Status
-HelpingHand,270,,20,,5,Normal,GenerationIii,Ally'snextmoveinflictshalfmoredamage.,Status
-Trick,271,100.0,10,,0,Psychic,GenerationIii,Userandtargetswapitems.,Status
-RolePlay,272,,10,,0,Psychic,GenerationIii,Copiesthetarget'sability.,Status
-Wish,273,,10,,0,Normal,GenerationIii,UserwillrecoverhalfitsmaxHPattheendofthenextturn.,Status
-Assist,274,,20,,0,Normal,GenerationIii,Randomlyselectsandusesoneofthetrainer'sotherPokémon'smoves.,Status
-Ingrain,275,,20,,0,Grass,GenerationIii,Preventstheuserfromleavingbattle.Userregains1/16ofitsmaxHPeveryturn.,Status
-Superpower,276,100.0,5,120.0,0,Fighting,GenerationIii,Lowerstheuser'sAttackandDefensebyonestageafterinflictingdamage.,Physical
-MagicCoat,277,,15,,4,Psychic,GenerationIii,Reflectsbackthefirsteffectmoveusedontheuserthisturn.,Status
-Recycle,278,,10,,0,Normal,GenerationIii,Userrecoverstheitemitlastusedup.,Status
-Revenge,279,100.0,10,60.0,-4,Fighting,GenerationIii,Inflictsdoubledamageiftheusertakesdamagebeforeattackingthisturn.,Physical
-BrickBreak,280,100.0,15,75.0,0,Fighting,GenerationIii,DestroysReflectandLightScreen.,Physical
-Yawn,281,,10,,0,Normal,GenerationIii,Targetsleepsattheendofthenextturn.,Status
-KnockOff,282,100.0,20,65.0,0,Dark,GenerationIii,Targetdropsitshelditem.,Physical
-Endeavor,283,100.0,5,,0,Normal,GenerationIii,Lowersthetarget'sHPtoequaltheuser's.,Physical
-Eruption,284,100.0,5,150.0,0,Fire,GenerationIii,"InflictsmoredamagewhentheuserhasmoreHPremaining,withamaximumof150power.",Special
-SkillSwap,285,,10,,0,Psychic,GenerationIii,Userandtargetswapabilities.,Status
-Imprison,286,,10,,0,Psychic,GenerationIii,Preventsthetargetfromusinganymovesthattheuseralsoknows.,Status
-Refresh,287,,20,,0,Normal,GenerationIii,"Cleansestheuserofaburn,paralysis,orpoison.",Status
-Grudge,288,,5,,0,Ghost,GenerationIii,"Iftheuserfaintsthisturn,thePPofthemovethatfainteditdropsto0.",Status
-Snatch,289,,10,,4,Dark,GenerationIii,"Stealsthetarget'smove,ifit'sself-targeted.",Status
-SecretPower,290,100.0,20,70.0,0,Normal,GenerationIii,Hasa$effect_chance%chancetoinflictastatuseffectwhichdependsupontheterrain.,Physical
-Dive,291,100.0,10,80.0,0,Water,GenerationIii,"Userdivesunderwater,dodgingallattacks,andhitsnextturn.",Physical
-ArmThrust,292,100.0,20,15.0,0,Fighting,GenerationIii,Hits2-5timesinoneturn.,Physical
-Camouflage,293,,20,,0,Normal,GenerationIii,User'stypechangestomatchtheterrain.,Status
-TailGlow,294,,20,,0,Bug,GenerationIii,Raisestheuser'sSpecialAttackbythreestages.,Status
-LusterPurge,295,100.0,5,70.0,0,Psychic,GenerationIii,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-MistBall,296,100.0,5,70.0,0,Psychic,GenerationIii,Hasa$effect_chance%chancetolowerthetarget'sSpecialAttackbyonestage.,Special
-FeatherDance,297,100.0,15,,0,Flying,GenerationIii,Lowersthetarget'sAttackbytwostages.,Status
-TeeterDance,298,100.0,20,,0,Normal,GenerationIii,Confusesthetarget.,Status
-BlazeKick,299,90.0,10,85.0,0,Fire,GenerationIii,Hasanincreasedchanceforacriticalhitanda$effect_chance%chancetoburnthetarget.,Physical
-MudSport,300,,15,,0,Ground,GenerationIii,HalvesallElectric-typedamage.,Status
-IceBall,301,90.0,20,30.0,0,Ice,GenerationIii,"Powerdoubleseveryturnthismoveisusedinsuccessionafterthefirst,resettingafterfiveturns.",Physical
-NeedleArm,302,100.0,15,60.0,0,Grass,GenerationIii,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-SlackOff,303,,10,,0,Normal,GenerationIii,HealstheuserbyhalfitsmaxHP.,Status
-HyperVoice,304,100.0,10,90.0,0,Normal,GenerationIii,Inflictsregulardamagewithnoadditionaleffect.,Special
-PoisonFang,305,100.0,15,50.0,0,Poison,GenerationIii,Hasa$effect_chance%chancetobadlypoisonthetarget.,Physical
-CrushClaw,306,95.0,10,75.0,0,Normal,GenerationIii,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-BlastBurn,307,90.0,5,150.0,0,Fire,GenerationIii,Userforegoesitsnextturntorecharge.,Special
-HydroCannon,308,90.0,5,150.0,0,Water,GenerationIii,Userforegoesitsnextturntorecharge.,Special
-MeteorMash,309,90.0,10,90.0,0,Steel,GenerationIii,Hasa$effect_chance%chancetoraisetheuser'sAttackbyonestage.,Physical
-Astonish,310,100.0,15,30.0,0,Ghost,GenerationIii,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-WeatherBall,311,100.0,10,50.0,0,Normal,GenerationIii,"Iftherebeweather,thismovehasdoubledpowerandtheweather'stype.",Special
-Aromatherapy,312,,5,,0,Grass,GenerationIii,Curestheentirepartyofmajorstatuseffects.,Status
-FakeTears,313,100.0,20,,0,Dark,GenerationIii,Lowersthetarget'sSpecialDefensebytwostages.,Status
-AirCutter,314,95.0,25,60.0,0,Flying,GenerationIii,Hasanincreasedchanceforacriticalhit.,Special
-Overheat,315,90.0,5,130.0,0,Fire,GenerationIii,Lowerstheuser'sSpecialAttackbytwostagesafterinflictingdamage.,Special
-OdorSleuth,316,,40,,0,Normal,GenerationIii,"ForcesthetargettohavenoEvade,andallowsittobehitbyNormalandFightingmovesevenifit'saGhost.",Status
-RockTomb,317,95.0,15,60.0,0,Rock,GenerationIii,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Physical
-SilverWind,318,100.0,5,60.0,0,Bug,GenerationIii,Hasa$effect_chance%chancetoraisealloftheuser'sstatsbyonestage.,Special
-MetalSound,319,85.0,40,,0,Steel,GenerationIii,Lowersthetarget'sSpecialDefensebytwostages.,Status
-GrassWhistle,320,55.0,15,,0,Grass,GenerationIii,Putsthetargettosleep.,Status
-Tickle,321,100.0,20,,0,Normal,GenerationIii,Lowersthetarget'sAttackandDefensebyonestage.,Status
-CosmicPower,322,,20,,0,Psychic,GenerationIii,Raisestheuser'sDefenseandSpecialDefensebyonestage.,Status
-WaterSpout,323,100.0,5,150.0,0,Water,GenerationIii,"InflictsmoredamagewhentheuserhasmoreHPremaining,withamaximumof150power.",Special
-SignalBeam,324,100.0,15,75.0,0,Bug,GenerationIii,Hasa$effect_chance%chancetoconfusethetarget.,Special
-ShadowPunch,325,,20,60.0,0,Ghost,GenerationIii,Nevermisses.,Physical
-Extrasensory,326,100.0,20,80.0,0,Psychic,GenerationIii,Hasa$effect_chance%chancetomakethetargetflinch.,Special
-SkyUppercut,327,90.0,15,85.0,0,Fighting,GenerationIii,InflictsregulardamageandcanhitBounceandFlyusers.,Physical
-SandTomb,328,85.0,15,35.0,0,Ground,GenerationIii,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Physical
-SheerCold,329,30.0,5,,0,Ice,GenerationIii,Causesaone-hitKO.,Special
-MuddyWater,330,85.0,10,90.0,0,Water,GenerationIii,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-BulletSeed,331,100.0,30,25.0,0,Grass,GenerationIii,Hits2-5timesinoneturn.,Physical
-AerialAce,332,,20,60.0,0,Flying,GenerationIii,Nevermisses.,Physical
-IcicleSpear,333,100.0,30,25.0,0,Ice,GenerationIii,Hits2-5timesinoneturn.,Physical
-IronDefense,334,,15,,0,Steel,GenerationIii,Raisestheuser'sDefensebytwostages.,Status
-Block,335,,5,,0,Normal,GenerationIii,Preventsthetargetfromleavingbattle.,Status
-Howl,336,,40,,0,Normal,GenerationIii,Raisestheuser'sAttackbyonestage.,Status
-DragonClaw,337,100.0,15,80.0,0,Dragon,GenerationIii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-FrenzyPlant,338,90.0,5,150.0,0,Grass,GenerationIii,Userforegoesitsnextturntorecharge.,Special
-BulkUp,339,,20,,0,Fighting,GenerationIii,Raisestheuser'sAttackandDefensebyonestage.,Status
-Bounce,340,85.0,5,85.0,0,Flying,GenerationIii,"Userbounceshighintotheair,dodgingallattacks,andhitsnextturn.",Physical
-MudShot,341,95.0,15,55.0,0,Ground,GenerationIii,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Special
-PoisonTail,342,100.0,25,50.0,0,Poison,GenerationIii,Hasanincreasedchanceforacriticalhitanda$effect_chance%chancetopoisonthetarget.,Physical
-Covet,343,100.0,25,60.0,0,Normal,GenerationIii,Takesthetarget'sitem.,Physical
-VoltTackle,344,100.0,15,120.0,0,Electric,GenerationIii,Usertakes1/3thedamageinflictedinrecoil.Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-MagicalLeaf,345,,20,60.0,0,Grass,GenerationIii,Nevermisses.,Special
-WaterSport,346,,15,,0,Water,GenerationIii,HalvesallFire-typedamage.,Status
-CalmMind,347,,20,,0,Psychic,GenerationIii,Raisestheuser'sSpecialAttackandSpecialDefensebyonestage.,Status
-LeafBlade,348,100.0,15,90.0,0,Grass,GenerationIii,Hasanincreasedchanceforacriticalhit.,Physical
-DragonDance,349,,20,,0,Dragon,GenerationIii,Raisestheuser'sAttackandSpeedbyonestage.,Status
-RockBlast,350,90.0,10,25.0,0,Rock,GenerationIii,Hits2-5timesinoneturn.,Physical
-ShockWave,351,,20,60.0,0,Electric,GenerationIii,Nevermisses.,Special
-WaterPulse,352,100.0,20,60.0,0,Water,GenerationIii,Hasa$effect_chance%chancetoconfusethetarget.,Special
-DoomDesire,353,100.0,5,140.0,0,Steel,GenerationIii,Hitsthetargettwoturnslater.,Special
-PsychoBoost,354,90.0,5,140.0,0,Psychic,GenerationIii,Lowerstheuser'sSpecialAttackbytwostagesafterinflictingdamage.,Special
-Roost,355,,10,,0,Flying,GenerationIv,HealstheuserbyhalfitsmaxHP.,Status
-Gravity,356,,5,,0,Psychic,GenerationIv,Disablesmovesandimmunitiesthatinvolveflyingorlevitatingforfiveturns.,Status
-MiracleEye,357,,40,,0,Psychic,GenerationIv,"Forcesthetargettohavenoevasion,andallowsittobehitbyPsychicmovesevenifit'sDark.",Status
-WakeUpSlap,358,100.0,10,70.0,0,Fighting,GenerationIv,"Ifthetargetisasleep,hasdoublepowerandwakesitup.",Physical
-HammerArm,359,90.0,10,100.0,0,Fighting,GenerationIv,Lowersuser'sSpeedbyonestage.,Physical
-GyroBall,360,100.0,5,,0,Steel,GenerationIv,"PowerraiseswhentheuserhaslowerSpeed,uptoamaximumof150.",Physical
-HealingWish,361,,10,,0,Psychic,GenerationIv,Userfaints.ItsreplacementhasitsHPfullyrestoredandanymajorstatuseffectremoved.,Status
-Brine,362,100.0,10,65.0,0,Water,GenerationIv,HasdoublepoweragainstPokémonthathavelessthanhalftheirmaxHPremaining.,Special
-NaturalGift,363,100.0,15,,0,Normal,GenerationIv,Powerandtypedependontheheldberry.,Physical
-Feint,364,100.0,10,30.0,2,Normal,GenerationIv,HitsthroughProtectandDetect.,Physical
-Pluck,365,100.0,20,60.0,0,Flying,GenerationIv,"Iftargethasaberry,inflictsdoubledamageandusestheberry.",Physical
-Tailwind,366,,15,,0,Flying,GenerationIv,"Forthreeturns,friendlyPokémonhavedoubledSpeed.",Status
-Acupressure,367,,30,,0,Normal,GenerationIv,RaisesoneofafriendlyPokémon'sstatsatrandombytwostages.,Status
-MetalBurst,368,100.0,10,,0,Steel,GenerationIv,StrikesbackatthelastPokémontohittheuserthisturnwith1.5×thedamage.,Physical
-UTurn,369,100.0,20,70.0,0,Bug,GenerationIv,Usermustswitchoutafterattacking.,Physical
-CloseCombat,370,100.0,5,120.0,0,Fighting,GenerationIv,Lowerstheuser'sDefenseandSpecialDefensebyonestageafterinflictingdamage.,Physical
-Payback,371,100.0,10,50.0,0,Dark,GenerationIv,Powerisdoubledifthetargethasalreadymovedthisturn.,Physical
-Assurance,372,100.0,10,60.0,0,Dark,GenerationIv,Powerisdoubledifthetargethasalreadyreceiveddamagethisturn.,Physical
-Embargo,373,100.0,15,,0,Dark,GenerationIv,Targetcannotusehelditems.,Status
-Fling,374,100.0,10,,0,Dark,GenerationIv,Throwshelditematthetarget;powerdependsontheitem.,Physical
-PsychoShift,375,100.0,10,,0,Psychic,GenerationIv,Transferstheuser'smajorstatuseffecttothetarget.,Status
-TrumpCard,376,,5,,0,Normal,GenerationIv,"PowerincreaseswhenthismovehaslessPP,uptoamaximumof200.",Special
-HealBlock,377,100.0,15,,0,Psychic,GenerationIv,PreventstargetfromrestoringitsHPforfiveturns.,Status
-WringOut,378,100.0,5,,0,Normal,GenerationIv,"PowerincreasesagainsttargetswithmoreHPremaining,uptoamaximumof121power.",Special
-PowerTrick,379,,10,,0,Psychic,GenerationIv,UserswapsAttackandDefense.,Status
-GastroAcid,380,100.0,10,,0,Poison,GenerationIv,Nullifiestarget'sabilityuntilitleavesbattle.,Status
-LuckyChant,381,,30,,0,Normal,GenerationIv,Preventsthetargetfromscoringcriticalhitsforfiveturns.,Status
-MeFirst,382,,20,,0,Normal,GenerationIv,"Usesthetarget'smoveagainstitbeforeitattacks,withpowerincreasedbyhalf.",Status
-Copycat,383,,20,,0,Normal,GenerationIv,Usesthetarget'slastusedmove.,Status
-PowerSwap,384,,10,,0,Psychic,GenerationIv,UserswapsAttackandSpecialAttackchangeswiththetarget.,Status
-GuardSwap,385,,10,,0,Psychic,GenerationIv,UserswapsDefenseandSpecialDefensechangeswiththetarget.,Status
-Punishment,386,100.0,5,,0,Dark,GenerationIv,"Powerincreasesagainsttargetswithmoreraisedstats,uptoamaximumof200.",Physical
-LastResort,387,100.0,5,140.0,0,Normal,GenerationIv,Canonlybeusedafteralloftheuser'sothermoveshavebeenused.,Physical
-WorrySeed,388,100.0,10,,0,Grass,GenerationIv,Changesthetarget'sabilitytoInsomnia.,Status
-SuckerPunch,389,100.0,5,70.0,1,Dark,GenerationIv,Onlyworksifthetargetisabouttouseadamagingmove.,Physical
-ToxicSpikes,390,,20,,0,Poison,GenerationIv,"Scatterspoisonedspikes,poisoningopposingPokémonthatswitchin.",Status
-HeartSwap,391,,10,,0,Psychic,GenerationIv,Userandtargetswapstatchanges.,Status
-AquaRing,392,,20,,0,Water,GenerationIv,Restores1/16oftheuser'smaxHPeachturn.,Status
-MagnetRise,393,,10,,0,Electric,GenerationIv,UserisimmunetoGroundmovesandeffectsforfiveturns.,Status
-FlareBlitz,394,100.0,15,120.0,0,Fire,GenerationIv,Usertakes1/3thedamageinflictedinrecoil.Hasa$effect_chance%chancetoburnthetarget.,Physical
-ForcePalm,395,100.0,10,60.0,0,Fighting,GenerationIv,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-AuraSphere,396,,20,80.0,0,Fighting,GenerationIv,Nevermisses.,Special
-RockPolish,397,,20,,0,Rock,GenerationIv,Raisestheuser'sSpeedbytwostages.,Status
-PoisonJab,398,100.0,20,80.0,0,Poison,GenerationIv,Hasa$effect_chance%chancetopoisonthetarget.,Physical
-DarkPulse,399,100.0,15,80.0,0,Dark,GenerationIv,Hasa$effect_chance%chancetomakethetargetflinch.,Special
-NightSlash,400,100.0,15,70.0,0,Dark,GenerationIv,Hasanincreasedchanceforacriticalhit.,Physical
-AquaTail,401,90.0,10,90.0,0,Water,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-SeedBomb,402,100.0,15,80.0,0,Grass,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AirSlash,403,95.0,15,75.0,0,Flying,GenerationIv,Hasa$effect_chance%chancetomakethetargetflinch.,Special
-XScissor,404,100.0,15,80.0,0,Bug,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BugBuzz,405,100.0,10,90.0,0,Bug,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-DragonPulse,406,100.0,10,85.0,0,Dragon,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Special
-DragonRush,407,75.0,10,100.0,0,Dragon,GenerationIv,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-PowerGem,408,100.0,20,80.0,0,Rock,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Special
-DrainPunch,409,100.0,10,75.0,0,Fighting,GenerationIv,Drainshalfthedamageinflictedtohealtheuser.,Physical
-VacuumWave,410,100.0,30,40.0,1,Fighting,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Special
-FocusBlast,411,70.0,5,120.0,0,Fighting,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-EnergyBall,412,100.0,10,90.0,0,Grass,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-BraveBird,413,100.0,15,120.0,0,Flying,GenerationIv,Userreceives1/3thedamageinflictedinrecoil.,Physical
-EarthPower,414,100.0,10,90.0,0,Ground,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-Switcheroo,415,100.0,10,,0,Dark,GenerationIv,Userandtargetswapitems.,Status
-GigaImpact,416,90.0,5,150.0,0,Normal,GenerationIv,Userforegoesitsnextturntorecharge.,Physical
-NastyPlot,417,,20,,0,Dark,GenerationIv,Raisestheuser'sSpecialAttackbytwostages.,Status
-BulletPunch,418,100.0,30,40.0,1,Steel,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Avalanche,419,100.0,10,60.0,-4,Ice,GenerationIv,Inflictsdoubledamageiftheusertakesdamagebeforeattackingthisturn.,Physical
-IceShard,420,100.0,30,40.0,1,Ice,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ShadowClaw,421,100.0,15,70.0,0,Ghost,GenerationIv,Hasanincreasedchanceforacriticalhit.,Physical
-ThunderFang,422,95.0,15,65.0,0,Electric,GenerationIv,Hasa$effect_chance%chancetoparalyzethetargetanda$effect_chance%chancetomakethetargetflinch.,Physical
-IceFang,423,95.0,15,65.0,0,Ice,GenerationIv,Hasa$effect_chance%chancetofreezethetargetanda$effect_chance%chancetomakethetargetflinch.,Physical
-FireFang,424,95.0,15,65.0,0,Fire,GenerationIv,Hasa$effect_chance%chancetoburnthetargetanda$effect_chance%chancetomakethetargetflinch.,Physical
-ShadowSneak,425,100.0,30,40.0,1,Ghost,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MudBomb,426,85.0,10,65.0,0,Ground,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-PsychoCut,427,100.0,20,70.0,0,Psychic,GenerationIv,Hasanincreasedchanceforacriticalhit.,Physical
-ZenHeadbutt,428,90.0,15,80.0,0,Psychic,GenerationIv,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-MirrorShot,429,85.0,10,65.0,0,Steel,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-FlashCannon,430,100.0,10,80.0,0,Steel,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebyonestage.,Special
-RockClimb,431,85.0,20,90.0,0,Normal,GenerationIv,Hasa$effect_chance%chancetoconfusethetarget.,Physical
-Defog,432,,15,,0,Flying,GenerationIv,Lowersthetarget'sevasionbyonestage.Removesfieldeffectsfromtheenemyfield.,Status
-TrickRoom,433,,5,,-7,Psychic,GenerationIv,"Forfiveturns,slowerPokémonwillactbeforefasterPokémon.",Status
-DracoMeteor,434,90.0,5,130.0,0,Dragon,GenerationIv,Lowerstheuser'sSpecialAttackbytwostagesafterinflictingdamage.,Special
-Discharge,435,100.0,15,80.0,0,Electric,GenerationIv,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-LavaPlume,436,100.0,15,80.0,0,Fire,GenerationIv,Hasa$effect_chance%chancetoburnthetarget.,Special
-LeafStorm,437,90.0,5,130.0,0,Grass,GenerationIv,Lowerstheuser'sSpecialAttackbytwostagesafterinflictingdamage.,Special
-PowerWhip,438,85.0,10,120.0,0,Grass,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-RockWrecker,439,90.0,5,150.0,0,Rock,GenerationIv,Userforegoesitsnextturntorecharge.,Physical
-CrossPoison,440,100.0,20,70.0,0,Poison,GenerationIv,Hasanincreasedchanceforacriticalhitanda$effect_chance%chancetopoisonthetarget.,Physical
-GunkShot,441,80.0,5,120.0,0,Poison,GenerationIv,Hasa$effect_chance%chancetopoisonthetarget.,Physical
-IronHead,442,100.0,15,80.0,0,Steel,GenerationIv,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-MagnetBomb,443,,20,60.0,0,Steel,GenerationIv,Nevermisses.,Physical
-StoneEdge,444,80.0,5,100.0,0,Rock,GenerationIv,Hasanincreasedchanceforacriticalhit.,Physical
-Captivate,445,100.0,20,,0,Normal,GenerationIv,Lowersthetarget'sSpecialAttackbytwostagesifit'stheoppositegender.,Status
-StealthRock,446,,20,,0,Rock,GenerationIv,CausesdamagewhenopposingPokémonswitchin.,Status
-GrassKnot,447,100.0,20,,0,Grass,GenerationIv,"Inflictsmoredamagetoheaviertargets,withamaximumof120power.",Special
-Chatter,448,100.0,20,65.0,0,Flying,GenerationIv,Hasahigherchancetoconfusethetargetwhentherecordedsoundislouder.,Special
-Judgment,449,100.0,10,100.0,0,Normal,GenerationIv,"Iftheuserisholdingaappropriateplateordrive,thedamageinflictedwillmatchit.",Special
-BugBite,450,100.0,20,60.0,0,Bug,GenerationIv,"Iftargethasaberry,inflictsdoubledamageandusestheberry.",Physical
-ChargeBeam,451,90.0,10,50.0,0,Electric,GenerationIv,Hasa$effect_chance%chancetoraisetheuser'sSpecialAttackbyonestage.,Special
-WoodHammer,452,100.0,15,120.0,0,Grass,GenerationIv,Userreceives1/3thedamageinflictedinrecoil.,Physical
-AquaJet,453,100.0,20,40.0,1,Water,GenerationIv,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AttackOrder,454,100.0,15,90.0,0,Bug,GenerationIv,Hasanincreasedchanceforacriticalhit.,Physical
-DefendOrder,455,,10,,0,Bug,GenerationIv,Raisestheuser'sDefenseandSpecialDefensebyonestage.,Status
-HealOrder,456,,10,,0,Bug,GenerationIv,HealstheuserbyhalfitsmaxHP.,Status
-HeadSmash,457,80.0,5,150.0,0,Rock,GenerationIv,Userreceives1/2thedamageinflictedinrecoil.,Physical
-DoubleHit,458,90.0,10,35.0,0,Normal,GenerationIv,Hitstwiceinoneturn.,Physical
-RoarOfTime,459,90.0,5,150.0,0,Dragon,GenerationIv,Userforegoesitsnextturntorecharge.,Special
-SpacialRend,460,95.0,5,100.0,0,Dragon,GenerationIv,Hasanincreasedchanceforacriticalhit.,Special
-LunarDance,461,,10,,0,Psychic,GenerationIv,"Userfaints,anditsreplacementisfullyhealed.",Status
-CrushGrip,462,100.0,5,,0,Normal,GenerationIv,"PowerincreasesagainsttargetswithmoreHPremaining,uptoamaximumof121power.",Physical
-MagmaStorm,463,75.0,5,100.0,0,Fire,GenerationIv,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Special
-DarkVoid,464,50.0,10,,0,Dark,GenerationIv,Putsthetargettosleep.,Status
-SeedFlare,465,85.0,5,120.0,0,Grass,GenerationIv,Hasa$effect_chance%chancetolowerthetarget'sSpecialDefensebytwostages.,Special
-OminousWind,466,100.0,5,60.0,0,Ghost,GenerationIv,Hasa$effect_chance%chancetoraisealloftheuser'sstatsbyonestage.,Special
-ShadowForce,467,100.0,5,120.0,0,Ghost,GenerationIv,"Uservanishes,dodgingallattacks,andhitsnextturn.HitsthroughProtectandDetect.",Physical
-HoneClaws,468,,15,,0,Dark,GenerationV,Raisestheuser'sAttackandaccuracybyonestage.,Status
-WideGuard,469,,10,,3,Rock,GenerationV,Preventsanymulti-targetmovesfromhittingfriendlyPokémonthisturn.,Status
-GuardSplit,470,,10,,0,Psychic,GenerationV,AveragesDefenseandSpecialDefensewiththetarget.,Status
-PowerSplit,471,,10,,0,Psychic,GenerationV,AveragesAttackandSpecialAttackwiththetarget.,Status
-WonderRoom,472,,10,,0,Psychic,GenerationV,AllPokémon'sDefenseandSpecialDefenseareswappedfor5turns.,Status
-Psyshock,473,100.0,10,80.0,0,Psychic,GenerationV,"Inflictsdamagebasedonthetarget'sDefense,notSpecialDefense.",Special
-Venoshock,474,100.0,10,65.0,0,Poison,GenerationV,InflictsdoubledamageifthetargetisPoisoned.,Special
-Autotomize,475,,15,,0,Steel,GenerationV,Raisestheuser'sSpeedbytwostagesandhalvestheuser'sweight.,Status
-RagePowder,476,,20,,2,Bug,GenerationV,Redirectsthetarget'ssingle-targeteffectstotheuserforthisturn.,Status
-Telekinesis,477,,15,,0,Psychic,GenerationV,Moveshave100%accuracyagainstthetargetforthreeturns.,Status
-MagicRoom,478,,10,,0,Psychic,GenerationV,Negateshelditemsforfiveturns.,Status
-SmackDown,479,100.0,15,50.0,0,Rock,GenerationV,RemovesanyimmunitytoGrounddamage.,Physical
-StormThrow,480,100.0,10,60.0,0,Fighting,GenerationV,Alwaysscoresacriticalhit.,Physical
-FlameBurst,481,100.0,15,70.0,0,Fire,GenerationV,DealssplashdamagetoPokémonnexttothetarget.,Special
-SludgeWave,482,100.0,10,95.0,0,Poison,GenerationV,Hasa$effect_chance%chancetopoisonthetarget.,Special
-QuiverDance,483,,20,,0,Bug,GenerationV,"Raisestheuser'sSpecialAttack,SpecialDefense,andSpeedbyonestageeach.",Status
-HeavySlam,484,100.0,10,,0,Steel,GenerationV,"Powerishigherwhentheuserweighsmorethanthetarget,uptoamaximumof120.",Physical
-Synchronoise,485,100.0,10,120.0,0,Psychic,GenerationV,HitsanyPokémonthatsharesatypewiththeuser.,Special
-ElectroBall,486,100.0,10,,0,Electric,GenerationV,"PowerishigherwhentheuserhasgreaterSpeedthanthetarget,uptoamaximumof150.",Special
-Soak,487,100.0,20,,0,Water,GenerationV,Changesthetarget'stypetoWater.,Status
-FlameCharge,488,100.0,20,50.0,0,Fire,GenerationV,Inflictsregulardamage.Raisestheuser'sSpeedbyonestage.,Physical
-Coil,489,,20,,0,Poison,GenerationV,"Raisestheuser'sAttack,Defense,andaccuracybyonestageeach.",Status
-LowSweep,490,100.0,20,65.0,0,Fighting,GenerationV,Lowersthetarget'sSpeedbyonestage.,Physical
-AcidSpray,491,100.0,20,40.0,0,Poison,GenerationV,Lowersthetarget'sSpecialDefensebytwostages.,Special
-FoulPlay,492,100.0,15,95.0,0,Dark,GenerationV,Calculatesdamagewiththetarget'sattackingstat.,Physical
-SimpleBeam,493,100.0,15,,0,Normal,GenerationV,Changesthetarget'sabilitytoSimple.,Status
-Entrainment,494,100.0,15,,0,Normal,GenerationV,Copiestheuser'sabilityontothetarget.,Status
-AfterYou,495,,15,,0,Normal,GenerationV,Makesthetargetactnextthisturn.,Status
-Round,496,100.0,15,60.0,0,Normal,GenerationV,Hasdoublepowerifit'susedmorethanonceperturn.,Special
-EchoedVoice,497,100.0,15,40.0,0,Normal,GenerationV,"Powerincreasesby100%foreachconsecutiveusebyanyfriendlyPokémon,toamaximumof200.",Special
-ChipAway,498,100.0,20,70.0,0,Normal,GenerationV,Ignoresthetarget'sstatmodifiers.,Physical
-ClearSmog,499,,15,50.0,0,Poison,GenerationV,Removesallofthetarget'sstatmodifiers.,Special
-StoredPower,500,100.0,10,20.0,0,Psychic,GenerationV,"Powerishigherthemoretheuser'sstatshavebeenraised,toamaximumof31×.",Special
-QuickGuard,501,,15,,3,Fighting,GenerationV,PreventsanyprioritymovesfromhittingfriendlyPokémonthisturn.,Status
-AllySwitch,502,,15,,2,Psychic,GenerationV,UserswitchesplaceswiththefriendlyPokémonoppositeit.,Status
-Scald,503,100.0,15,80.0,0,Water,GenerationV,Hasa$effect_chance%chancetoburnthetarget.,Special
-ShellSmash,504,,15,,0,Normal,GenerationV,"Raisesuser'sAttack,SpecialAttack,andSpeedbytwostages.Loweruser'sDefenseandSpecialDefensebyonestage.",Status
-HealPulse,505,,10,,0,Psychic,GenerationV,HealsthetargetforhalfitsmaxHP.,Status
-Hex,506,100.0,10,65.0,0,Ghost,GenerationV,Hasdoublepowerifthetargethasamajorstatusailment.,Special
-SkyDrop,507,100.0,10,60.0,0,Flying,GenerationV,"Carriesthetargethighintotheair,dodgingallattacksagainsteither,anddropsitnextturn.",Physical
-ShiftGear,508,,10,,0,Steel,GenerationV,Raisestheuser'sAttackbyonestageanditsSpeedbytwostages.,Status
-CircleThrow,509,90.0,10,60.0,-6,Fighting,GenerationV,Endswildbattles.ForcestrainerstoswitchPokémon.,Physical
-Incinerate,510,100.0,15,60.0,0,Fire,GenerationV,Destroysthetarget'sheldberry.,Special
-Quash,511,100.0,15,,0,Dark,GenerationV,Makesthetargetactlastthisturn.,Status
-Acrobatics,512,100.0,15,55.0,0,Flying,GenerationV,Hasdoublepoweriftheuserhasnohelditem.,Physical
-ReflectType,513,,15,,0,Normal,GenerationV,Userbecomesthetarget'stype.,Status
-Retaliate,514,100.0,5,70.0,0,Normal,GenerationV,HasdoublepowerifafriendlyPokémonfaintedlastturn.,Physical
-FinalGambit,515,100.0,5,,0,Fighting,GenerationV,Inflictsdamageequaltotheuser'sremainingHP.Userfaints.,Special
-Bestow,516,,15,,0,Normal,GenerationV,Givestheuser'shelditemtothetarget.,Status
-Inferno,517,50.0,5,100.0,0,Fire,GenerationV,Hasa$effect_chance%chancetoburnthetarget.,Special
-WaterPledge,518,100.0,10,80.0,0,Water,GenerationV,"WithGrassPledge,halvesopposingPokémon'sSpeedforfourturns.",Special
-FirePledge,519,100.0,10,80.0,0,Fire,GenerationV,"WithWaterPledge,doublestheeffectchanceoffriendlyPokémon'smovesforfourturns.",Special
-GrassPledge,520,100.0,10,80.0,0,Grass,GenerationV,"WithFirePledge,damagesopposingPokémonfor1/8theirmaxHPeveryturnforfourturns.",Special
-VoltSwitch,521,100.0,20,70.0,0,Electric,GenerationV,Usermustswitchoutafterattacking.,Special
-StruggleBug,522,100.0,20,50.0,0,Bug,GenerationV,Hasa$effect_chance%chancetolowerthetarget'sSpecialAttackbyonestage.,Special
-Bulldoze,523,100.0,20,60.0,0,Ground,GenerationV,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Physical
-FrostBreath,524,90.0,10,60.0,0,Ice,GenerationV,Alwaysscoresacriticalhit.,Special
-DragonTail,525,90.0,10,60.0,-6,Dragon,GenerationV,Endswildbattles.ForcestrainerstoswitchPokémon.,Physical
-WorkUp,526,,30,,0,Normal,GenerationV,Raisestheuser'sAttackandSpecialAttackbyonestageeach.,Status
-Electroweb,527,95.0,15,55.0,0,Electric,GenerationV,Lowersthetarget'sSpeedbyonestage.,Special
-WildCharge,528,100.0,15,90.0,0,Electric,GenerationV,Userreceives1/4thedamageitinflictsinrecoil.,Physical
-DrillRun,529,95.0,10,80.0,0,Ground,GenerationV,Hasanincreasedchanceforacriticalhit.,Physical
-DualChop,530,90.0,15,40.0,0,Dragon,GenerationV,Hitstwiceinoneturn.,Physical
-HeartStamp,531,100.0,25,60.0,0,Psychic,GenerationV,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-HornLeech,532,100.0,10,75.0,0,Grass,GenerationV,Drainshalfthedamageinflictedtohealtheuser.,Physical
-SacredSword,533,100.0,15,90.0,0,Fighting,GenerationV,Ignoresthetarget'sstatmodifiers.,Physical
-RazorShell,534,95.0,10,75.0,0,Water,GenerationV,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-HeatCrash,535,100.0,10,,0,Fire,GenerationV,"Powerishigherwhentheuserweighsmorethanthetarget,uptoamaximumof120.",Physical
-LeafTornado,536,90.0,10,65.0,0,Grass,GenerationV,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-Steamroller,537,100.0,20,65.0,0,Bug,GenerationV,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-CottonGuard,538,,10,,0,Grass,GenerationV,Raisestheuser'sDefensebythreestages.,Status
-NightDaze,539,95.0,10,85.0,0,Dark,GenerationV,Hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,Special
-Psystrike,540,100.0,10,100.0,0,Psychic,GenerationV,"Inflictsdamagebasedonthetarget'sDefense,notSpecialDefense.",Special
-TailSlap,541,85.0,10,25.0,0,Normal,GenerationV,Hits2-5timesinoneturn.,Physical
-Hurricane,542,70.0,10,110.0,0,Flying,GenerationV,Hasa$effect_chance%chancetoconfusethetarget.,Special
-HeadCharge,543,100.0,15,120.0,0,Normal,GenerationV,Userreceives1/4thedamageitinflictsinrecoil.,Physical
-GearGrind,544,85.0,15,50.0,0,Steel,GenerationV,Hitstwiceinoneturn.,Physical
-SearingShot,545,100.0,5,100.0,0,Fire,GenerationV,Hasa$effect_chance%chancetoburnthetarget.,Special
-TechnoBlast,546,100.0,5,120.0,0,Normal,GenerationV,"Iftheuserisholdingaappropriateplateordrive,thedamageinflictedwillmatchit.",Special
-RelicSong,547,100.0,10,75.0,0,Normal,GenerationV,Hasa$effect_chance%chancetoputthetargettosleep.,Special
-SecretSword,548,100.0,10,85.0,0,Fighting,GenerationV,"Inflictsdamagebasedonthetarget'sDefense,notSpecialDefense.",Special
-Glaciate,549,95.0,10,65.0,0,Ice,GenerationV,Lowersthetarget'sSpeedbyonestage.,Special
-BoltStrike,550,85.0,5,130.0,0,Electric,GenerationV,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-BlueFlare,551,85.0,5,130.0,0,Fire,GenerationV,Hasa$effect_chance%chancetoburnthetarget.,Special
-FieryDance,552,100.0,10,80.0,0,Fire,GenerationV,Hasa$effect_chance%chancetoraisetheuser'sSpecialAttackbyonestage.,Special
-FreezeShock,553,90.0,5,140.0,0,Ice,GenerationV,Requiresaturntochargebeforeattacking.Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-IceBurn,554,90.0,5,140.0,0,Ice,GenerationV,Requiresaturntochargebeforeattacking.Hasa$effect_chance%chancetoburnthetarget.,Special
-Snarl,555,95.0,15,55.0,0,Dark,GenerationV,Hasa$effect_chance%chancetolowerthetarget'sSpecialAttackbyonestage.,Special
-IcicleCrash,556,90.0,10,85.0,0,Ice,GenerationV,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-VCreate,557,95.0,5,180.0,0,Fire,GenerationV,"Lowerstheuser'sDefense,SpecialDefense,andSpeedbyonestageeach.",Physical
-FusionFlare,558,100.0,5,100.0,0,Fire,GenerationV,"WithFusionBolt,inflictsdoubledamage.",Special
-FusionBolt,559,100.0,5,100.0,0,Electric,GenerationV,"WithFusionFlare,inflictsdoubledamage.",Physical
-FlyingPress,560,95.0,10,100.0,0,Fighting,GenerationVi,Dealsbothfightingandflying-typedamage.,Physical
-MatBlock,561,,10,,0,Fighting,GenerationVi,ProtectsallfriendlyPokémonfromdamagingmoves.Onlyworksonthefirstturnaftertheuserissentout.,Status
-Belch,562,90.0,10,120.0,0,Poison,GenerationVi,Canonlybeusedaftertheuserhaseatenaberry.,Special
-Rototiller,563,,10,,0,Ground,GenerationVi,RaisestheAttackandSpecialAttackofallgrassPokémoninbattle.,Status
-StickyWeb,564,,20,,0,Bug,GenerationVi,"Coverstheopposingfield,loweringopponents'Speedbyonestageuponswitchingin.",Status
-FellStinger,565,100.0,25,50.0,0,Bug,GenerationVi,Raisestheuser'sAttackbytwostagesifitKOsthetarget.,Physical
-PhantomForce,566,100.0,10,90.0,0,Ghost,GenerationVi,"Uservanishes,dodgingallattacks,andhitsnextturn.HitsthroughProtectandDetect.",Physical
-TrickOrTreat,567,100.0,20,,0,Ghost,GenerationVi,Addsghosttothetarget'stypes.,Status
-NobleRoar,568,100.0,30,,0,Normal,GenerationVi,Lowersthetarget'sAttackandSpecialAttackbyonestage.,Status
-IonDeluge,569,,25,,1,Electric,GenerationVi,Changesallnormalmovestoelectricmovesfortherestoftheturn.,Status
-ParabolicCharge,570,100.0,20,65.0,0,Electric,GenerationVi,Healstheuserforhalfthetotaldamagedealttoalltargets.,Special
-ForestsCurse,571,100.0,20,,0,Grass,GenerationVi,Addsgrasstothetarget'stypes.,Status
-PetalBlizzard,572,100.0,15,90.0,0,Grass,GenerationVi,Inflictsregulardamage.,Physical
-FreezeDry,573,100.0,20,70.0,0,Ice,GenerationVi,Super-effectiveagainstwater.,Special
-DisarmingVoice,574,,15,40.0,0,Fairy,GenerationVi,Nevermisses.,Special
-PartingShot,575,100.0,20,,0,Dark,GenerationVi,Lowersalltargets'AttackandSpecialAttackbyonestage.Makestheuserswitchout.,Status
-TopsyTurvy,576,,20,,0,Dark,GenerationVi,Invertsthetarget'sstatmodifiers.,Status
-DrainingKiss,577,100.0,10,50.0,0,Fairy,GenerationVi,Drains75%ofthedamageinflictedtohealtheuser.,Special
-CraftyShield,578,,10,,3,Fairy,GenerationVi,ProtectsallfriendlyPokémonfromnon-damagingmoves.,Status
-FlowerShield,579,,10,,0,Fairy,GenerationVi,RaisestheDefenseofallgrassPokémoninbattle.,Status
-GrassyTerrain,580,,10,,0,Grass,GenerationVi,"Forfiveturns,healsallPokémononthegroundfor1/16maxHPeachturnandstrengthenstheirgrassmovesto1.5×theirpower.",Status
-MistyTerrain,581,,10,,0,Fairy,GenerationVi,"Forfiveturns,protectsallPokémononthegroundfrommajorstatusailmentsandconfusion,andhalvesthepowerofincomingdragonmoves.",Status
-Electrify,582,,20,,0,Electric,GenerationVi,Changesthetarget'smove'stypetoelectricifithasn'tmovedyetthisturn.,Status
-PlayRough,583,90.0,10,90.0,0,Fairy,GenerationVi,Hasa$effect_chance%chancetolowerthetarget'sAttackbyonestage.,Physical
-FairyWind,584,100.0,30,40.0,0,Fairy,GenerationVi,Inflictsregulardamagewithnoadditionaleffect.,Special
-Moonblast,585,100.0,15,95.0,0,Fairy,GenerationVi,Hasa$effect_chance%chancetolowerthetarget'sSpecialAttackbyonestage.,Special
-Boomburst,586,100.0,10,140.0,0,Normal,GenerationVi,Inflictsregulardamage.,Special
-FairyLock,587,,10,,0,Fairy,GenerationVi,PreventsallPokémonfromfleeingorswitchingoutduringthenextturn.,Status
-KingsShield,588,,10,,4,Steel,GenerationVi,BlocksdamagingattacksandlowersattackingPokémon'sAttackbytwostagesoncontact.SwitchesAegislashtoShieldForme.,Status
-PlayNice,589,,20,,0,Normal,GenerationVi,Lowersthetarget'sAttackbyonestage.,Status
-Confide,590,,20,,0,Normal,GenerationVi,Lowersthetarget'sSpecialAttackbyonestage.,Status
-DiamondStorm,591,95.0,5,100.0,0,Rock,GenerationVi,Hasa$effect_chance%chancetoraisetheuser'sDefensebytwostagesforeachtargethit.,Physical
-SteamEruption,592,95.0,5,110.0,0,Water,GenerationVi,Hasa$effect_chance%chancetoburnthetarget.,Special
-HyperspaceHole,593,,5,80.0,0,Psychic,GenerationVi,Ignoresanddestroysprotectioneffects.,Special
-WaterShuriken,594,100.0,20,15.0,1,Water,GenerationVi,Hits2–5times.,Special
-MysticalFire,595,100.0,10,75.0,0,Fire,GenerationVi,Hasa$effect_chance%chancetolowerthetarget'sSpecialAttackbyonestage.,Special
-SpikyShield,596,,10,,4,Grass,GenerationVi,BlocksdamagingattacksanddamagesattackingPokémonfor1/8theirmaxHP.,Status
-AromaticMist,597,,20,,0,Fairy,GenerationVi,Raisesaselectedally'sSpecialDefensebyonestage.,Status
-EerieImpulse,598,100.0,15,,0,Electric,GenerationVi,Lowersthetarget'sSpecialAttackbytwostages.,Status
-VenomDrench,599,100.0,20,,0,Poison,GenerationVi,"Lowersthetarget'sAttack,SpecialAttack,andSpeedbyonestageifitispoisoned.",Status
-Powder,600,100.0,20,,1,Bug,GenerationVi,"Explodesifthetargetusesafiremovethisturn,damagingitfor1/4itsmaxHPandpreventingthemove.",Status
-Geomancy,601,,10,,0,Fairy,GenerationVi,"Takesoneturntocharge,thenraisestheuser'sSpecialAttack,SpecialDefense,andSpeedbytwostages.",Status
-MagneticFlux,602,,20,,0,Electric,GenerationVi,RaisestheDefenseandSpecialDefenseofallfriendlyPokémonwithplusorminusbyonestage.,Status
-HappyHour,603,,30,,0,Normal,GenerationVi,Doublesprizemoney.,Status
-ElectricTerrain,604,,10,,0,Electric,GenerationVi,"Forfiveturns,preventsallPokémononthegroundfromsleepingandstrengthenstheirelectricmovesto1.5×theirpower.",Status
-DazzlingGleam,605,100.0,10,80.0,0,Fairy,GenerationVi,Inflictsregulardamagewithnoadditionaleffect.,Special
-Celebrate,606,,40,,0,Normal,GenerationVi,Doesnothing.,Status
-HoldHands,607,,40,,0,Normal,GenerationVi,Doesnothing.,Status
-BabyDollEyes,608,100.0,30,,1,Fairy,GenerationVi,Lowersthetarget'sAttackbyonestage.,Status
-Nuzzle,609,100.0,20,20.0,0,Electric,GenerationVi,Hasa$effect_chance%chancetoparalyzethetarget.,Physical
-HoldBack,610,100.0,40,40.0,0,Normal,GenerationVi,Cannotlowerthetarget'sHPbelow1.,Physical
-Infestation,611,100.0,20,20.0,0,Bug,GenerationVi,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Special
-PowerUpPunch,612,100.0,20,40.0,0,Fighting,GenerationVi,Raisestheuser'sAttackbyonestageafterinflictingdamage.,Physical
-OblivionWing,613,100.0,10,80.0,0,Flying,GenerationVi,Drains75%ofthedamageinflictedtohealtheuser.,Special
-ThousandArrows,614,100.0,10,90.0,0,Ground,GenerationVi,"Groundsthetarget,andhitsevenFlying-typeorlevitatingPokémon.",Physical
-ThousandWaves,615,100.0,10,90.0,0,Ground,GenerationVi,Preventsthetargetfromleavingbattle.,Physical
-LandsWrath,616,100.0,10,90.0,0,Ground,GenerationVi,Inflictsregulardamagewithnoadditionaleffect.,Physical
-LightOfRuin,617,90.0,5,140.0,0,Fairy,GenerationVi,Userreceives1/2thedamageinflictedinrecoil.,Special
-OriginPulse,618,85.0,10,110.0,0,Water,GenerationVi,Inflictsregulardamagewithnoadditionaleffect.,Special
-PrecipiceBlades,619,85.0,10,120.0,0,Ground,GenerationVi,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DragonAscent,620,100.0,5,120.0,0,Flying,GenerationVi,Lowerstheuser'sDefenseandSpecialDefensebyonestageafterinflictingdamage.,Physical
-HyperspaceFury,621,,5,100.0,0,Dark,GenerationVi,Ignoresanddestroysprotectioneffects.,Physical
-BreakneckBlitzPhysical,622,,1,,0,Normal,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BreakneckBlitzSpecial,623,,1,,0,Normal,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-AllOutPummelingPhysical,624,,1,,0,Fighting,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AllOutPummelingSpecial,625,,1,,0,Fighting,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SupersonicSkystrikePhysical,626,,1,,0,Flying,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-SupersonicSkystrikeSpecial,627,,1,,0,Flying,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-AcidDownpourPhysical,628,,1,,0,Poison,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AcidDownpourSpecial,629,,1,,0,Poison,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-TectonicRagePhysical,630,,1,,0,Ground,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-TectonicRageSpecial,631,,1,,0,Ground,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-ContinentalCrushPhysical,632,,1,,0,Rock,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ContinentalCrushSpecial,633,,1,,0,Rock,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SavageSpinOutPhysical,634,,1,,0,Bug,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-SavageSpinOutSpecial,635,,1,,0,Bug,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-NeverEndingNightmarePhysical,636,,1,,0,Ghost,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-NeverEndingNightmareSpecial,637,,1,,0,Ghost,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-CorkscrewCrashPhysical,638,,1,,0,Steel,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-CorkscrewCrashSpecial,639,,1,,0,Steel,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-InfernoOverdrivePhysical,640,,1,,0,Fire,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-InfernoOverdriveSpecial,641,,1,,0,Fire,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-HydroVortexPhysical,642,,1,,0,Water,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-HydroVortexSpecial,643,,1,,0,Water,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-BloomDoomPhysical,644,,1,,0,Grass,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BloomDoomSpecial,645,,1,,0,Grass,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-GigavoltHavocPhysical,646,,1,,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-GigavoltHavocSpecial,647,,1,,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-ShatteredPsychePhysical,648,,1,,0,Psychic,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ShatteredPsycheSpecial,649,,1,,0,Psychic,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SubzeroSlammerPhysical,650,,1,,0,Ice,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-SubzeroSlammerSpecial,651,,1,,0,Ice,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-DevastatingDrakePhysical,652,,1,,0,Dragon,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DevastatingDrakeSpecial,653,,1,,0,Dragon,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-BlackHoleEclipsePhysical,654,,1,,0,Dark,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BlackHoleEclipseSpecial,655,,1,,0,Dark,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-TwinkleTacklePhysical,656,,1,,0,Fairy,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-TwinkleTackleSpecial,657,,1,,0,Fairy,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-Catastropika,658,,1,210.0,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ShoreUp,659,,10,,0,Ground,GenerationVii,"Healstheuserfor½itsmaxHP,or⅔duringasandstorm.",Status
-FirstImpression,660,100.0,10,90.0,2,Bug,GenerationVii,Canonlybeusedasthefirstmoveaftertheuserentersbattle.,Physical
-BanefulBunker,661,,10,,4,Poison,GenerationVii,GrantstheuserprotectionfortherestoftheturnandpoisonsanyPokémonthattriestouseacontactmoveonit.,Status
-SpiritShackle,662,100.0,10,80.0,0,Ghost,GenerationVii,Trapsthetarget.,Physical
-DarkestLariat,663,100.0,10,85.0,0,Dark,GenerationVii,Ignoresthetarget'sstatmodifiers.,Physical
-SparklingAria,664,100.0,10,90.0,0,Water,GenerationVii,Curesthetargetofburns.,Special
-IceHammer,665,90.0,10,100.0,0,Ice,GenerationVii,Lowersuser'sSpeedbyonestage.,Physical
-FloralHealing,666,,10,,0,Fairy,GenerationVii,"Healsthetargetfor½itsmaxHP,or⅔onGrassyTerrain.",Status
-HighHorsepower,667,95.0,10,95.0,0,Ground,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-StrengthSap,668,100.0,10,,0,Grass,GenerationVii,Healstheuserbythetarget'scurrentAttackstatandlowersthetarget'sAttackbyonestage.,Status
-SolarBlade,669,100.0,10,125.0,0,Grass,GenerationVii,Requiresaturntochargebeforeattacking.,Physical
-Leafage,670,100.0,40,40.0,0,Grass,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Spotlight,671,,15,,3,Normal,GenerationVii,Forcesthetarget'sopponentstoaimatthetargetfortherestoftheturn.,Status
-ToxicThread,672,100.0,20,,0,Poison,GenerationVii,PoisonsthetargetandlowersitsSpeedbyonestage.,Status
-LaserFocus,673,,30,,0,Normal,GenerationVii,Guaranteesacriticalhitwiththeuser'snextmove.,Status
-GearUp,674,,20,,0,Steel,GenerationVii,RaisestheAttackandSpecialAttackofallfriendlyPokémonwithplusorminusbyonestage.,Status
-ThroatChop,675,100.0,15,80.0,0,Dark,GenerationVii,Preventsthetargetfromusingsound-basedmovesfortwoturns.,Physical
-PollenPuff,676,100.0,15,90.0,0,Bug,GenerationVii,"Damagesopponents,buthealsalliesfor50%oftheirmaxHP.",Special
-AnchorShot,677,100.0,20,80.0,0,Steel,GenerationVii,Trapsthetarget.,Physical
-PsychicTerrain,678,,10,,0,Psychic,GenerationVii,ProtectsPokémononthegroundfromprioritymovesandincreasesthepoweroftheirPsychicmovesby50%.,Status
-Lunge,679,100.0,15,80.0,0,Bug,GenerationVii,Lowersthetarget'sAttackbyonestageafterinflictingdamage.,Physical
-FireLash,680,100.0,15,80.0,0,Fire,GenerationVii,Lowersthetarget'sDefensebyonestageafterinflictingdamage.,Physical
-PowerTrip,681,100.0,10,20.0,0,Dark,GenerationVii,"Powerishigherthemoretheuser'sstatshavebeenraised,toamaximumof31×.",Physical
-BurnUp,682,100.0,5,130.0,0,Fire,GenerationVii,Removestheuser'sfiretypeafterinflictingdamage.,Special
-SpeedSwap,683,,10,,0,Psychic,GenerationVii,Exchangestheuser'sSpeedwiththetarget's.,Status
-SmartStrike,684,,10,70.0,0,Steel,GenerationVii,Nevermisses.,Physical
-Purify,685,,20,,0,Poison,GenerationVii,Curesthetargetofamajorstatusailmentandhealstheuserfor50%ofitsmaxHP.,Status
-RevelationDance,686,100.0,15,90.0,0,Normal,GenerationVii,Hasthesametypeastheuser.,Special
-CoreEnforcer,687,100.0,10,100.0,0,Dragon,GenerationVii,Nullifiesthetarget'sabilityifitmovesearlier.,Special
-TropKick,688,100.0,15,70.0,0,Grass,GenerationVii,Lowersthetarget'sAttackbyonestageafterinflictingdamage.,Physical
-Instruct,689,,15,,0,Psychic,GenerationVii,Forcesthetargettorepeatitslastusedmove.,Status
-BeakBlast,690,100.0,15,100.0,-3,Flying,GenerationVii,InflictsaburnonanyPokémonthatmakescontactbeforetheattack.,Physical
-ClangingScales,691,100.0,5,110.0,0,Dragon,GenerationVii,Lowerstheuser'sDefensebyonestageafterinflictingdamage.,Special
-DragonHammer,692,100.0,15,90.0,0,Dragon,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BrutalSwing,693,100.0,20,60.0,0,Dark,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AuroraVeil,694,,20,,0,Ice,GenerationVii,"Reducesdamagefiveturns,butmustbeusedduringhail.",Status
-SinisterArrowRaid,695,,1,180.0,0,Ghost,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaliciousMoonsault,696,,1,180.0,0,Dark,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-OceanicOperetta,697,,1,195.0,0,Water,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-GuardianOfAlola,698,,1,,0,Fairy,GenerationVii,Damagesthetargetfor75%ofitsremainingHP.,Special
-SoulStealing7StarStrike,699,,1,195.0,0,Ghost,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-StokedSparksurfer,700,,1,175.0,0,Electric,GenerationVii,Hasa$effect_chance%chancetoparalyzethetarget.,Special
-PulverizingPancake,701,,1,210.0,0,Normal,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ExtremeEvoboost,702,,1,,0,Normal,GenerationVii,Raisesalloftheuser'sstatsbytwostages.,Status
-GenesisSupernova,703,,1,185.0,0,Psychic,GenerationVii,ChangestheterraintoPsychicTerrainafterinflictingdamage.,Special
-ShellTrap,704,100.0,5,150.0,-3,Fire,GenerationVii,Onlyinflictsdamageiftheuserwashitbyaphysicalmovethisturn.,Special
-FleurCannon,705,90.0,5,130.0,0,Fairy,GenerationVii,Lowerstheuser'sSpecialAttackbytwostagesafterinflictingdamage.,Special
-PsychicFangs,706,100.0,10,85.0,0,Psychic,GenerationVii,DestroysReflectandLightScreen.,Physical
-StompingTantrum,707,100.0,10,75.0,0,Ground,GenerationVii,Hasdoublepoweriftheuser'slastmovefailed.,Physical
-ShadowBone,708,100.0,10,85.0,0,Ghost,GenerationVii,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-Accelerock,709,100.0,20,40.0,1,Rock,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Liquidation,710,100.0,10,85.0,0,Water,GenerationVii,Hasa$effect_chance%chancetolowerthetarget'sDefensebyonestage.,Physical
-PrismaticLaser,711,100.0,10,160.0,0,Psychic,GenerationVii,Userforegoesitsnextturntorecharge.,Special
-SpectralThief,712,100.0,10,90.0,0,Ghost,GenerationVii,"Stealsthetarget'sstatincreases,theninflictsdamage.",Physical
-SunsteelStrike,713,100.0,5,100.0,0,Steel,GenerationVii,Cannotbedisruptedbyabilities.,Physical
-MoongeistBeam,714,100.0,5,100.0,0,Ghost,GenerationVii,Cannotbedisruptedbyabilities.,Special
-TearfulLook,715,,20,,0,Normal,GenerationVii,Lowersthetarget'sAttackandSpecialAttackbyonestage.,Status
-ZingZap,716,100.0,10,80.0,0,Electric,GenerationVii,Hasa$effect_chance%chancetomakethetargetflinch.,Physical
-NaturesMadness,717,90.0,10,,0,Fairy,GenerationVii,Inflictsdamageequaltohalfthetarget'sHP.,Special
-MultiAttack,718,100.0,10,120.0,0,Normal,GenerationVii,"Iftheuserisholdingaappropriateplateordrive,thedamageinflictedwillmatchit.",Physical
-10000000VoltThunderbolt,719,,1,195.0,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-MindBlown,720,100.0,5,150.0,0,Fire,GenerationVii,"Inflictsdamage,andtheusertakesdamageequaltohalfofitsmaxHP,roundedup.",Special
-PlasmaFists,721,100.0,15,100.0,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-PhotonGeyser,722,100.0,5,100.0,0,Psychic,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-LightThatBurnsTheSky,723,,1,200.0,0,Psychic,GenerationVii,"InflictsdamageusingeitherAttackorSpecialAttackstat,whicheverishigher.",Special
-SearingSunrazeSmash,724,,1,200.0,0,Steel,GenerationVii,Cannotbedisruptedbyabilities.,Physical
-MenacingMoonrazeMaelstrom,725,,1,200.0,0,Ghost,GenerationVii,Cannotbedisruptedbyabilities.,Special
-LetsSnuggleForever,726,,1,190.0,0,Fairy,GenerationVii,"Afterinflictingdamage,causesallNormal-typemovestobecomeElectric-typefortheremainderoftheturn.",Physical
-SplinteredStormshards,727,,1,190.0,0,Rock,GenerationVii,Inflictsdamageandremovesanyterrainpresentonthebattlefield.,Physical
-ClangorousSoulblaze,728,,1,185.0,0,Dragon,GenerationVii,"InflictsdamagetoallopposingPokémonandincreasestheuser'sAttack,Defense,SpecialAttack,SpecialDefense,andSpeedbyonestageeach.",Special
-ZippyZap,729,100.0,10,80.0,2,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-SplishySplash,730,100.0,15,90.0,0,Water,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-FloatyFall,731,95.0,15,90.0,0,Flying,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-PikaPapow,732,,20,,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-BouncyBubble,733,100.0,20,60.0,0,Water,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-BuzzyBuzz,734,100.0,20,60.0,0,Electric,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SizzlySlide,735,100.0,20,60.0,0,Fire,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-GlitzyGlow,736,95.0,15,80.0,0,Psychic,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-BaddyBad,737,95.0,15,80.0,0,Dark,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SappySeed,738,90.0,10,100.0,0,Grass,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-FreezyFrost,739,90.0,10,100.0,0,Ice,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SparklySwirl,740,85.0,5,120.0,0,Fairy,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Special
-VeeveeVolley,741,,20,,0,Normal,GenerationVii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DoubleIronBash,742,100.0,5,60.0,0,Steel,GenerationVii,Hitstwiceinoneturn.,Physical
-MaxGuard,743,,10,,4,Normal,GenerationViii,Preventsanymovesfromhittingtheuserthisturn.,Status
-DynamaxCannon,744,100.0,5,100.0,0,Dragon,GenerationViii,SetsLightScreenontheuser'ssideofthefieldafterinflictingdamage.,Special
-SnipeShot,745,100.0,15,80.0,0,Water,GenerationViii,SetsReflectontheuser'ssideofthefieldafterinflictingdamage.,Special
-JawLock,746,100.0,10,80.0,0,Dark,GenerationViii,Seedsthetargetafterinflictingdamage.,Physical
-StuffCheeks,747,,10,,0,Normal,GenerationViii,Curestheentirepartyofmajorstatuseffectsafterinflictingdamage.,Status
-NoRetreat,748,,5,,0,Fighting,GenerationViii,"Hitstwiceinoneturn,witha$effect_chance%chancetomakethetargetflinch.",Status
-MaxFlare,757,,10,100.0,0,Fire,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxFlutterby,758,,10,10.0,0,Bug,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxLightning,759,,10,10.0,0,Electric,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxStrike,760,,10,10.0,0,Normal,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxKnuckle,761,,10,10.0,0,Fighting,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxPhantasm,762,,10,10.0,0,Ghost,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxHailstorm,763,,10,10.0,0,Ice,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxOoze,764,,10,10.0,0,Poison,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxGeyser,765,,10,10.0,0,Water,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxAirstream,766,,10,10.0,0,Flying,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxStarfall,767,,10,10.0,0,Fairy,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxWyrmwind,768,,10,10.0,0,Dragon,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxMindstorm,769,,10,10.0,0,Psychic,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxRockfall,770,,10,10.0,0,Rock,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxQuake,771,,10,10.0,0,Ground,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxDarkness,772,,10,10.0,0,Dark,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxOvergrowth,773,,10,10.0,0,Grass,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-MaxSteelspike,774,,10,10.0,0,Steel,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DrumBeating,778,100.0,10,80.0,0,Grass,GenerationViii,Hasa$effect_chance%chancetolowerthetarget'sSpeedbyonestage.,Physical
-SnapTrap,779,100.0,15,35.0,0,Grass,GenerationViii,Preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,Physical
-PyroBall,780,90.0,5,120.0,0,Fire,GenerationViii,Hasa$effect_chance%chancetoburnthetarget.,Physical
-BreakingSwipe,784,100.0,15,60.0,0,Dragon,GenerationViii,Lowersthetarget'sAttackbyonestageafterinflictingdamage.,Physical
-BranchPoke,785,100.0,40,40.0,0,Grass,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-GravApple,788,100.0,10,80.0,0,Grass,GenerationViii,Lowersthetarget'sDefensebyonestageafterinflictingdamage.,Physical
-SpiritBreak,789,100.0,15,75.0,0,Fairy,GenerationViii,Hasa$effect_chance%chancetolowerthetarget'sSpecialAttackbyonestage.,Physical
-StrangeSteam,790,95.0,10,90.0,0,Fairy,GenerationViii,Hasa$effect_chance%chancetoconfusethetarget.,Special
-FalseSurrender,793,,10,80.0,0,Dark,GenerationViii,Nevermisses.,Physical
-MeteorAssault,794,100.0,5,150.0,0,Fighting,GenerationViii,Userforegoesitsnextturntorecharge.,Physical
-Eternabeam,795,90.0,5,160.0,0,Dragon,GenerationViii,Userforegoesitsnextturntorecharge.,Special
-SteelBeam,796,95.0,5,140.0,0,Steel,GenerationViii,"Inflictsdamage,andtheusertakesdamageequaltohalfofitsmaxHP,roundedup.",Special
-ExpandingForce,797,100.0,10,80.0,0,Psychic,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SteelRoller,798,100.0,5,130.0,0,Steel,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ScaleShot,799,90.0,20,25.0,0,Dragon,GenerationViii,Booststheuser'sSpeedandlowerstheirDefensebyonestageafterinflictingdamagetwotofivetimesinarow.,Physical
-MeteorBeam,800,90.0,10,120.0,0,Rock,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-ShellSideArm,801,100.0,10,90.0,0,Poison,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-MistyExplosion,802,100.0,5,100.0,0,Fairy,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-GrassyGlide,803,100.0,20,70.0,0,Grass,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-RisingVoltage,804,100.0,20,70.0,0,Electric,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-TerrainPulse,805,100.0,10,50.0,0,Normal,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-SkitterSmack,806,90.0,10,70.0,0,Bug,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-BurningJealousy,807,100.0,5,70.0,0,Fire,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-LashOut,808,100.0,5,75.0,0,Dark,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-Poltergeist,809,90.0,5,110.0,0,Ghost,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-CorrosiveGas,810,100.0,40,,0,Poison,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Status
-Coaching,811,,10,,0,Fighting,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Status
-FlipTurn,812,100.0,20,60.0,0,Water,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-TripleAxel,813,90.0,10,20.0,0,Ice,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-DualWingbeat,814,90.0,10,40.0,0,Flying,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ScorchingSands,815,100.0,10,70.0,0,Ground,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-JungleHealing,816,,10,,0,Grass,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Status
-WickedBlow,817,100.0,5,80.0,0,Dark,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-SurgingStrikes,818,100.0,5,25.0,0,Water,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-ThunderCage,819,90.0,15,80.0,0,Electric,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-DragonEnergy,820,100.0,5,150.0,0,Dragon,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-FreezingGlare,821,100.0,10,90.0,0,Psychic,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-FieryWrath,822,100.0,10,90.0,0,Dark,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-ThunderousKick,823,100.0,10,90.0,0,Fighting,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-GlacialLance,824,100.0,5,130.0,0,Ice,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Physical
-AstralBarrage,825,100.0,5,120.0,0,Ghost,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
-EerieSpell,826,100.0,5,80.0,0,Psychic,GenerationViii,Inflictsregulardamagewithnoadditionaleffect.,Special
+pound,1,100.0,35,40.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+karatechop,2,100.0,25,50.0,0,fighting,generation I,hasanincreasedchanceforacriticalhit.,physical
+doubleslap,3,85.0,10,15.0,0,normal,generation I,hits2-5timesinoneturn.,physical
+cometpunch,4,85.0,15,18.0,0,normal,generation I,hits2-5timesinoneturn.,physical
+megapunch,5,85.0,20,80.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+payday,6,100.0,20,40.0,0,normal,generation I,scattersmoneyonthegroundworthfivetimestheuser'slevel.,physical
+firepunch,7,100.0,15,75.0,0,fire,generation I,hasa$effect_chance%chancetoburnthetarget.,physical
+icepunch,8,100.0,15,75.0,0,ice,generation I,hasa$effect_chance%chancetofreezethetarget.,physical
+thunderpunch,9,100.0,15,75.0,0,electric,generation I,hasa$effect_chance%chancetoparalyzethetarget.,physical
+scratch,10,100.0,35,40.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+vicegrip,11,100.0,30,55.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+guillotine,12,30.0,5,,0,normal,generation I,causesaone-hitko.,physical
+razorwind,13,100.0,10,80.0,0,normal,generation I,requiresaturntochargebeforeattacking.,special
+swordsdance,14,,20,,0,normal,generation I,raisestheuser'sattackbytwostages.,status
+cut,15,95.0,30,50.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+gust,16,100.0,35,40.0,0,flying,generation I,inflictsregulardamageandcanhitpokémonintheair.,special
+wingattack,17,100.0,35,60.0,0,flying,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+whirlwind,18,,20,,-6,normal,generation I,immediatelyendswildbattles.forcestrainerstoswitchpokémon.,status
+fly,19,95.0,15,90.0,0,flying,generation I,"userflieshighintotheair,dodgingallattacks,andhitsnextturn.",physical
+bind,20,85.0,20,15.0,0,normal,generation I,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,physical
+slam,21,75.0,20,80.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+vinewhip,22,100.0,25,45.0,0,grass,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+stomp,23,100.0,20,65.0,0,normal,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+doublekick,24,100.0,30,30.0,0,fighting,generation I,hitstwiceinoneturn.,physical
+megakick,25,75.0,5,120.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+jumpkick,26,95.0,10,100.0,0,fighting,generation I,"iftheusermisses,ittakeshalfthedamageitwouldhaveinflictedinrecoil.",physical
+rollingkick,27,85.0,15,60.0,0,fighting,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+sandattack,28,100.0,15,,0,ground,generation I,lowersthetarget'saccuracybyonestage.,status
+headbutt,29,100.0,15,70.0,0,normal,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+hornattack,30,100.0,25,65.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+furyattack,31,85.0,20,15.0,0,normal,generation I,hits2-5timesinoneturn.,physical
+horndrill,32,30.0,5,,0,normal,generation I,causesaone-hitko.,physical
+tackle,33,100.0,35,40.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+bodyslam,34,100.0,15,85.0,0,normal,generation I,hasa$effect_chance%chancetoparalyzethetarget.,physical
+wrap,35,90.0,20,15.0,0,normal,generation I,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,physical
+takedown,36,85.0,20,90.0,0,normal,generation I,userreceives1/4thedamageitinflictsinrecoil.,physical
+thrash,37,100.0,10,120.0,0,normal,generation I,"hitseveryturnfor2-3turns,thenconfusestheuser.",physical
+doubleedge,38,100.0,15,120.0,0,normal,generation I,userreceives1/3thedamageinflictedinrecoil.,physical
+tailwhip,39,100.0,30,,0,normal,generation I,lowersthetarget'sdefensebyonestage.,status
+poisonsting,40,100.0,35,15.0,0,poison,generation I,hasa$effect_chance%chancetopoisonthetarget.,physical
+twineedle,41,100.0,20,25.0,0,bug,generation I,hitstwiceinthesameturn.hasa$effect_chance%chancetopoisonthetarget.,physical
+pinmissile,42,95.0,20,25.0,0,bug,generation I,hits2-5timesinoneturn.,physical
+leer,43,100.0,30,,0,normal,generation I,lowersthetarget'sdefensebyonestage.,status
+bite,44,100.0,25,60.0,0,dark,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+growl,45,100.0,40,,0,normal,generation I,lowersthetarget'sattackbyonestage.,status
+roar,46,,20,,-6,normal,generation I,immediatelyendswildbattles.forcestrainerstoswitchpokémon.,status
+sing,47,55.0,15,,0,normal,generation I,putsthetargettosleep.,status
+supersonic,48,55.0,20,,0,normal,generation I,confusesthetarget.,status
+sonicboom,49,90.0,20,,0,normal,generation I,inflicts20pointsofdamage.,special
+disable,50,100.0,20,,0,normal,generation I,disablesthetarget'slastusedmovefor1-8turns.,status
+acid,51,100.0,30,40.0,0,poison,generation I,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+ember,52,100.0,25,40.0,0,fire,generation I,hasa$effect_chance%chancetoburnthetarget.,special
+flamethrower,53,100.0,15,90.0,0,fire,generation I,hasa$effect_chance%chancetoburnthetarget.,special
+mist,54,,30,,0,ice,generation I,protectstheuser'sstatsfrombeingchangedbyenemymoves.,status
+watergun,55,100.0,25,40.0,0,water,generation I,inflictsregulardamagewithnoadditionaleffect.,special
+hydropump,56,80.0,5,110.0,0,water,generation I,inflictsregulardamagewithnoadditionaleffect.,special
+surf,57,100.0,15,90.0,0,water,generation I,inflictsregulardamageandcanhitdiveusers.,special
+icebeam,58,100.0,10,90.0,0,ice,generation I,hasa$effect_chance%chancetofreezethetarget.,special
+blizzard,59,70.0,5,110.0,0,ice,generation I,hasa$effect_chance%chancetofreezethetarget.,special
+psybeam,60,100.0,20,65.0,0,psychic,generation I,hasa$effect_chance%chancetoconfusethetarget.,special
+bubblebeam,61,100.0,20,65.0,0,water,generation I,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,special
+aurorabeam,62,100.0,20,65.0,0,ice,generation I,hasa$effect_chance%chancetolowerthetarget'sattackbyonestage.,special
+hyperbeam,63,90.0,5,150.0,0,normal,generation I,userforegoesitsnextturntorecharge.,special
+peck,64,100.0,35,35.0,0,flying,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+drillpeck,65,100.0,20,80.0,0,flying,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+submission,66,80.0,20,80.0,0,fighting,generation I,userreceives1/4thedamageitinflictsinrecoil.,physical
+lowkick,67,100.0,20,,0,fighting,generation I,"inflictsmoredamagetoheaviertargets,withamaximumof120power.",physical
+counter,68,100.0,20,,-5,fighting,generation I,inflictstwicethedamagetheuserreceivedfromthelastphysicalhitittook.,physical
+seismictoss,69,100.0,20,,0,fighting,generation I,inflictsdamageequaltotheuser'slevel.,physical
+strength,70,100.0,15,80.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+absorb,71,100.0,25,20.0,0,grass,generation I,drainshalfthedamageinflictedtohealtheuser.,special
+megadrain,72,100.0,15,40.0,0,grass,generation I,drainshalfthedamageinflictedtohealtheuser.,special
+leechseed,73,90.0,10,,0,grass,generation I,"seedsthetarget,stealinghpfromiteveryturn.",status
+growth,74,,20,,0,normal,generation I,raisestheuser'sattackandspecialattackbyonestage.,status
+razorleaf,75,95.0,25,55.0,0,grass,generation I,hasanincreasedchanceforacriticalhit.,physical
+solarbeam,76,100.0,10,120.0,0,grass,generation I,requiresaturntochargebeforeattacking.,special
+poisonpowder,77,75.0,35,,0,poison,generation I,poisonsthetarget.,status
+stunspore,78,75.0,30,,0,grass,generation I,paralyzesthetarget.,status
+sleeppowder,79,75.0,15,,0,grass,generation I,putsthetargettosleep.,status
+petaldance,80,100.0,10,120.0,0,grass,generation I,"hitseveryturnfor2-3turns,thenconfusestheuser.",special
+stringshot,81,95.0,40,,0,bug,generation I,lowersthetarget'sspeedbytwostages.,status
+dragonrage,82,100.0,10,,0,dragon,generation I,inflicts40pointsofdamage.,special
+firespin,83,85.0,15,35.0,0,fire,generation I,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,special
+thundershock,84,100.0,30,40.0,0,electric,generation I,hasa$effect_chance%chancetoparalyzethetarget.,special
+thunderbolt,85,100.0,15,90.0,0,electric,generation I,hasa$effect_chance%chancetoparalyzethetarget.,special
+thunderwave,86,90.0,20,,0,electric,generation I,paralyzesthetarget.,status
+thunder,87,70.0,10,110.0,0,electric,generation I,hasa$effect_chance%chancetoparalyzethetarget.,special
+rockthrow,88,90.0,15,50.0,0,rock,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+earthquake,89,100.0,10,100.0,0,ground,generation I,inflictsregulardamageandcanhitdigusers.,physical
+fissure,90,30.0,5,,0,ground,generation I,causesaone-hitko.,physical
+dig,91,100.0,10,80.0,0,ground,generation I,"userdigsunderground,dodgingallattacks,andhitsnextturn.",physical
+toxic,92,90.0,10,,0,poison,generation I,"badlypoisonsthetarget,inflictingmoredamageeveryturn.",status
+confusion,93,100.0,25,50.0,0,psychic,generation I,hasa$effect_chance%chancetoconfusethetarget.,special
+psychic,94,100.0,10,90.0,0,psychic,generation I,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+hypnosis,95,60.0,20,,0,psychic,generation I,putsthetargettosleep.,status
+meditate,96,,40,,0,psychic,generation I,raisestheuser'sattackbyonestage.,status
+agility,97,,30,,0,psychic,generation I,raisestheuser'sspeedbytwostages.,status
+quickattack,98,100.0,30,40.0,1,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+rage,99,100.0,20,20.0,0,normal,generation I,"iftheuserishitafterusingthismove,itsattackrisesbyonestage.",physical
+teleport,100,,20,,-6,psychic,generation I,immediatelyendswildbattles.noeffectotherwise.,status
+nightshade,101,100.0,15,,0,ghost,generation I,inflictsdamageequaltotheuser'slevel.,special
+mimic,102,,10,,0,normal,generation I,copiesthetarget'slastusedmove.,status
+screech,103,85.0,40,,0,normal,generation I,lowersthetarget'sdefensebytwostages.,status
+doubleteam,104,,15,,0,normal,generation I,raisestheuser'sevasionbyonestage.,status
+recover,105,,10,,0,normal,generation I,healstheuserbyhalfitsmaxhp.,status
+harden,106,,30,,0,normal,generation I,raisestheuser'sdefensebyonestage.,status
+minimize,107,,10,,0,normal,generation I,raisestheuser'sevasionbytwostages.,status
+smokescreen,108,100.0,20,,0,normal,generation I,lowersthetarget'saccuracybyonestage.,status
+confuseray,109,100.0,10,,0,ghost,generation I,confusesthetarget.,status
+withdraw,110,,40,,0,water,generation I,raisestheuser'sdefensebyonestage.,status
+defensecurl,111,,40,,0,normal,generation I,raisesuser'sdefensebyonestage.,status
+barrier,112,,20,,0,psychic,generation I,raisestheuser'sdefensebytwostages.,status
+lightscreen,113,,30,,0,psychic,generation I,reducesdamagefromspecialattacksby50%forfiveturns.,status
+haze,114,,30,,0,ice,generation I,"resetsallpokémon'sstats,accuracy,andevasion.",status
+reflect,115,,20,,0,psychic,generation I,reducesdamagefromphysicalattacksbyhalf.,status
+focusenergy,116,,30,,0,normal,generation I,increasestheuser'schancetoscoreacriticalhit.,status
+bide,117,,10,,1,normal,generation I,"userwaitsfortwoturns,thenhitsbackfortwicethedamageittook.",physical
+metronome,118,,10,,0,normal,generation I,randomlyselectsandusesanymoveinthegame.,status
+mirrormove,119,,20,,0,flying,generation I,usesthetarget'slastusedmove.,status
+selfdestruct,120,100.0,5,200.0,0,normal,generation I,userfaints.,physical
+eggbomb,121,75.0,10,100.0,0,normal,generation I,inflictsregulardamagewithnoadditionaleffect.,physical
+lick,122,100.0,30,30.0,0,ghost,generation I,hasa$effect_chance%chancetoparalyzethetarget.,physical
+smog,123,70.0,20,30.0,0,poison,generation I,hasa$effect_chance%chancetopoisonthetarget.,special
+sludge,124,100.0,20,65.0,0,poison,generation I,hasa$effect_chance%chancetopoisonthetarget.,special
+boneclub,125,85.0,20,65.0,0,ground,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+fireblast,126,85.0,5,110.0,0,fire,generation I,hasa$effect_chance%chancetoburnthetarget.,special
+waterfall,127,100.0,15,80.0,0,water,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+clamp,128,85.0,15,35.0,0,water,generation I,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,physical
+swift,129,,20,60.0,0,normal,generation I,nevermisses.,special
+skullbash,130,100.0,10,130.0,0,normal,generation I,raisestheuser'sdefensebyonestage.userchargesforoneturnbeforeattacking.,physical
+spikecannon,131,100.0,15,20.0,0,normal,generation I,hits2-5timesinoneturn.,physical
+constrict,132,100.0,35,10.0,0,normal,generation I,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,physical
+amnesia,133,,20,,0,psychic,generation I,raisestheuser'sspecialdefensebytwostages.,status
+kinesis,134,80.0,15,,0,psychic,generation I,lowersthetarget'saccuracybyonestage.,status
+softboiled,135,,10,,0,normal,generation I,healstheuserbyhalfitsmaxhp.,status
+highjumpkick,136,90.0,10,130.0,0,fighting,generation I,"iftheusermisses,ittakeshalfthedamageitwouldhaveinflictedinrecoil.",physical
+glare,137,100.0,30,,0,normal,generation I,paralyzesthetarget.,status
+dreameater,138,100.0,15,100.0,0,psychic,generation I,onlyworksonsleepingpokémon.drainshalfthedamageinflictedtohealtheuser.,special
+poisongas,139,90.0,40,,0,poison,generation I,poisonsthetarget.,status
+barrage,140,85.0,20,15.0,0,normal,generation I,hits2-5timesinoneturn.,physical
+leechlife,141,100.0,10,80.0,0,bug,generation I,drainshalfthedamageinflictedtohealtheuser.,physical
+lovelykiss,142,75.0,10,,0,normal,generation I,putsthetargettosleep.,status
+skyattack,143,90.0,5,140.0,0,flying,generation I,userchargesforoneturnbeforeattacking.hasa$effect_chance%chancetomakethetargetflinch.,physical
+transform,144,,10,,0,normal,generation I,userbecomesacopyofthetargetuntilitleavesbattle.,status
+bubble,145,100.0,30,40.0,0,water,generation I,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,special
+dizzypunch,146,100.0,10,70.0,0,normal,generation I,hasa$effect_chance%chancetoconfusethetarget.,physical
+spore,147,100.0,15,,0,grass,generation I,putsthetargettosleep.,status
+flash,148,100.0,20,,0,normal,generation I,lowersthetarget'saccuracybyonestage.,status
+psywave,149,100.0,15,,0,psychic,generation I,inflictsdamagebetween50%and150%oftheuser'slevel.,special
+splash,150,,40,,0,normal,generation I,doesnothing.,status
+acidarmor,151,,20,,0,poison,generation I,raisestheuser'sdefensebytwostages.,status
+crabhammer,152,90.0,10,100.0,0,water,generation I,hasanincreasedchanceforacriticalhit.,physical
+explosion,153,100.0,5,250.0,0,normal,generation I,userfaints.,physical
+furyswipes,154,80.0,15,18.0,0,normal,generation I,hits2-5timesinoneturn.,physical
+bonemerang,155,90.0,10,50.0,0,ground,generation I,hitstwiceinoneturn.,physical
+rest,156,,10,,0,psychic,generation I,"usersleepsfortwoturns,completelyhealingitself.",status
+rockslide,157,90.0,10,75.0,0,rock,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+hyperfang,158,90.0,15,80.0,0,normal,generation I,hasa$effect_chance%chancetomakethetargetflinch.,physical
+sharpen,159,,30,,0,normal,generation I,raisestheuser'sattackbyonestage.,status
+conversion,160,,30,,0,normal,generation I,user'stypechangestothetypeofoneofitsmovesatrandom.,status
+triattack,161,100.0,10,80.0,0,normal,generation I,"hasa$effect_chance%chancetoburn,freeze,orparalyzethetarget.",special
+superfang,162,90.0,10,,0,normal,generation I,inflictsdamageequaltohalfthetarget'shp.,physical
+slash,163,100.0,20,70.0,0,normal,generation I,hasanincreasedchanceforacriticalhit.,physical
+substitute,164,,10,,0,normal,generation I,"transfers1/4oftheuser'smaxhpintoadoll,protectingtheuserfromfurtherdamageorstatuschangesuntilitbreaks.",status
+struggle,165,,1,50.0,0,normal,generation I,usertakes1/4itsmaxhpinrecoil.,physical
+sketch,166,,1,,0,normal,generation II,permanentlybecomesthetarget'slastusedmove.,status
+triplekick,167,90.0,10,10.0,0,fighting,generation II,"hitsthreetimes,increasingpowerby100%witheachsuccessfulhit.",physical
+thief,168,100.0,25,60.0,0,dark,generation II,takesthetarget'sitem.,physical
+spiderweb,169,,10,,0,bug,generation II,preventsthetargetfromleavingbattle.,status
+mindreader,170,,5,,0,normal,generation II,ensuresthattheuser'snextmovewillhitthetarget.,status
+nightmare,171,100.0,15,,0,ghost,generation II,targetloses1/4itsmaxhpeveryturnaslongasit'sasleep.,status
+flamewheel,172,100.0,25,60.0,0,fire,generation II,hasa$effect_chance%chancetoburnthetarget.letsfrozenpokémonthawthemselves.,physical
+snore,173,100.0,15,50.0,0,normal,generation II,hasa$effect_chance%chancetomakethetargetflinch.onlyworksiftheuserissleeping.,special
+curse,174,,10,,0,ghost,generation II,ghostspayhalftheirmaxhptohurtthetargeteveryturn.othersdecreasespeedbutraiseattackanddefense.,status
+flail,175,100.0,15,,0,normal,generation II,"inflictsmoredamagewhentheuserhaslesshpremaining,withamaximumof200power.",physical
+conversion2,176,,30,,0,normal,generation II,changestheuser'stypetoarandomtypeeitherresistantorimmunetothelastmoveusedagainstit.,status
+aeroblast,177,95.0,5,100.0,0,flying,generation II,hasanincreasedchanceforacriticalhit.,special
+cottonspore,178,100.0,40,,0,grass,generation II,lowersthetarget'sspeedbytwostages.,status
+reversal,179,100.0,15,,0,fighting,generation II,"inflictsmoredamagewhentheuserhaslesshpremaining,withamaximumof200power.",physical
+spite,180,100.0,10,,0,ghost,generation II,lowerstheppofthetarget'slastusedmoveby4.,status
+powdersnow,181,100.0,25,40.0,0,ice,generation II,hasa$effect_chance%chancetofreezethetarget.,special
+protect,182,,10,,4,normal,generation II,preventsanymovesfromhittingtheuserthisturn.,status
+machpunch,183,100.0,30,40.0,1,fighting,generation II,inflictsregulardamagewithnoadditionaleffect.,physical
+scaryface,184,100.0,10,,0,normal,generation II,lowersthetarget'sspeedbytwostages.,status
+feintattack,185,,20,60.0,0,dark,generation II,nevermisses.,physical
+sweetkiss,186,75.0,10,,0,fairy,generation II,confusesthetarget.,status
+bellydrum,187,,10,,0,normal,generation II,userpayshalfitsmaxhptomaxoutitsattack.,status
+sludgebomb,188,100.0,10,90.0,0,poison,generation II,hasa$effect_chance%chancetopoisonthetarget.,special
+mudslap,189,100.0,10,20.0,0,ground,generation II,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+octazooka,190,85.0,10,65.0,0,water,generation II,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+spikes,191,,20,,0,ground,generation II,"scattersspikes,hurtingopposingpokémonthatswitchin.",status
+zapcannon,192,50.0,5,120.0,0,electric,generation II,hasa$effect_chance%chancetoparalyzethetarget.,special
+foresight,193,,40,,0,normal,generation II,"forcesthetargettohavenoevade,andallowsittobehitbynormalandfightingmovesevenifit'saghost.",status
+destinybond,194,,5,,0,ghost,generation II,"iftheuserfaintsthisturn,thetargetautomaticallywill,too.",status
+perishsong,195,,5,,0,normal,generation II,userandtargetbothfaintafterthreeturns.,status
+icywind,196,95.0,15,55.0,0,ice,generation II,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,special
+detect,197,,5,,4,fighting,generation II,preventsanymovesfromhittingtheuserthisturn.,status
+bonerush,198,90.0,10,25.0,0,ground,generation II,hits2-5timesinoneturn.,physical
+lockon,199,,5,,0,normal,generation II,ensuresthattheuser'snextmovewillhitthetarget.,status
+outrage,200,100.0,10,120.0,0,dragon,generation II,"hitseveryturnfor2-3turns,thenconfusestheuser.",physical
+sandstorm,201,,10,,0,rock,generation II,changestheweathertoasandstormforfiveturns.,status
+gigadrain,202,100.0,10,75.0,0,grass,generation II,drainshalfthedamageinflictedtohealtheuser.,special
+endure,203,,10,,4,normal,generation II,preventstheuser'shpfromloweringbelow1thisturn.,status
+charm,204,100.0,20,,0,fairy,generation II,lowersthetarget'sattackbytwostages.,status
+rollout,205,90.0,20,30.0,0,rock,generation II,"powerdoubleseveryturnthismoveisusedinsuccessionafterthefirst,resettingafterfiveturns.",physical
+falseswipe,206,100.0,40,40.0,0,normal,generation II,cannotlowerthetarget'shpbelow1.,physical
+swagger,207,85.0,15,,0,normal,generation II,raisesthetarget'sattackbytwostagesandconfusesthetarget.,status
+milkdrink,208,,10,,0,normal,generation II,healstheuserbyhalfitsmaxhp.,status
+spark,209,100.0,20,65.0,0,electric,generation II,hasa$effect_chance%chancetoparalyzethetarget.,physical
+furycutter,210,95.0,20,40.0,0,bug,generation II,"powerdoubleseveryturnthismoveisusedinsuccessionafterthefirst,maxingoutafterfiveturns.",physical
+steelwing,211,90.0,25,70.0,0,steel,generation II,hasa$effect_chance%chancetoraisetheuser'sdefensebyonestage.,physical
+meanlook,212,,5,,0,normal,generation II,preventsthetargetfromleavingbattle.,status
+attract,213,100.0,15,,0,normal,generation II,"targetfallsinloveifithastheoppositegender,andhasa50%chancetorefuseattackingtheuser.",status
+sleeptalk,214,,10,,0,normal,generation II,randomlyusesoneoftheuser'sotherthreemoves.onlyworksiftheuserissleeping.,status
+healbell,215,,5,,0,normal,generation II,curestheentirepartyofmajorstatuseffects.,status
+return,216,100.0,20,,0,normal,generation II,"powerincreaseswithhappiness,uptoamaximumof102.",physical
+present,217,90.0,15,,0,normal,generation II,randomlyinflictsdamagewithpowerfrom40to120orhealsthetargetfor1/4itsmaxhp.,physical
+frustration,218,100.0,20,,0,normal,generation II,"powerincreasesashappinessdecreases,uptoamaximumof102.",physical
+safeguard,219,,25,,0,normal,generation II,protectstheuser'sfieldfrommajorstatusailmentsandconfusionforfiveturns.,status
+painsplit,220,,20,,0,normal,generation II,setstheuser'sandtargets'shptotheaverageoftheircurrenthp.,status
+sacredfire,221,95.0,5,100.0,0,fire,generation II,hasa$effect_chance%chancetoburnthetarget.letsfrozenpokémonthawthemselves.,physical
+magnitude,222,100.0,30,,0,ground,generation II,powervariesrandomlyfrom10to150.,physical
+dynamicpunch,223,50.0,5,100.0,0,fighting,generation II,hasa$effect_chance%chancetoconfusethetarget.,physical
+megahorn,224,85.0,10,120.0,0,bug,generation II,inflictsregulardamagewithnoadditionaleffect.,physical
+dragonbreath,225,100.0,20,60.0,0,dragon,generation II,hasa$effect_chance%chancetoparalyzethetarget.,special
+batonpass,226,,40,,0,normal,generation II,allowsthetrainertoswitchouttheuserandpasseffectsalongtoitsreplacement.,status
+encore,227,100.0,5,,0,normal,generation II,forcesthetargettorepeatitslastusedmoveeveryturnfor2to6turns.,status
+pursuit,228,100.0,20,40.0,0,dark,generation II,"hasdoublepoweragainst,andcanhit,pokémonattemptingtoswitchout.",physical
+rapidspin,229,100.0,40,50.0,0,normal,generation II,"freestheuserfrombindingmoves,removesleechseed,andblowsawayspikes.",physical
+sweetscent,230,100.0,20,,0,normal,generation II,lowersthetarget'sevasionbyonestage.,status
+irontail,231,75.0,15,100.0,0,steel,generation II,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+metalclaw,232,95.0,35,50.0,0,steel,generation II,hasa$effect_chance%chancetoraisetheuser'sattackbyonestage.,physical
+vitalthrow,233,,10,70.0,-1,fighting,generation II,nevermisses.,physical
+morningsun,234,,5,,0,normal,generation II,healstheuserbyhalfitsmaxhp.affectedbyweather.,status
+synthesis,235,,5,,0,grass,generation II,healstheuserbyhalfitsmaxhp.affectedbyweather.,status
+moonlight,236,,5,,0,fairy,generation II,healstheuserbyhalfitsmaxhp.affectedbyweather.,status
+hiddenpower,237,100.0,15,60.0,0,normal,generation II,powerandtypedependuponuser'sivs.powercanrangefrom30to70.,special
+crosschop,238,80.0,5,100.0,0,fighting,generation II,hasanincreasedchanceforacriticalhit.,physical
+twister,239,100.0,20,40.0,0,dragon,generation II,hasa$effect_chance%chancetomakethetargetflinch.,special
+raindance,240,,5,,0,water,generation II,changestheweathertorainforfiveturns.,status
+sunnyday,241,,5,,0,fire,generation II,changestheweathertosunnyforfiveturns.,status
+crunch,242,100.0,15,80.0,0,dark,generation II,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+mirrorcoat,243,100.0,20,,-5,psychic,generation II,inflictstwicethedamagetheuserreceivedfromthelastspecialhitittook.,special
+psychup,244,,10,,0,normal,generation II,discardstheuser'sstatchangesandcopiesthetarget's.,status
+extremespeed,245,100.0,5,80.0,2,normal,generation II,inflictsregulardamagewithnoadditionaleffect.,physical
+ancientpower,246,100.0,5,60.0,0,rock,generation II,hasa$effect_chance%chancetoraisealloftheuser'sstatsbyonestage.,special
+shadowball,247,100.0,15,80.0,0,ghost,generation II,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+futuresight,248,100.0,10,120.0,0,psychic,generation II,hitsthetargettwoturnslater.,special
+rocksmash,249,100.0,15,40.0,0,fighting,generation II,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+whirlpool,250,85.0,15,35.0,0,water,generation II,preventsthetargetfromleavingbattleandinflicts1/16itsmaxhpindamagefor2-5turns.,special
+beatup,251,100.0,10,,0,dark,generation II,hitsonceforeveryconsciouspokémonthetrainerhas.,physical
+fakeout,252,100.0,10,40.0,3,normal,generation III,canonlybeusedasthefirstmoveaftertheuserentersbattle.causesthetargettoflinch.,physical
+uproar,253,100.0,10,90.0,0,normal,generation III,forcedtousethismoveforseveralturns.pokémoncannotfallasleepinthattime.,special
+stockpile,254,,20,,0,normal,generation III,storesenergyuptothreetimesforusewithspitupandswallow.,status
+spitup,255,100.0,10,,0,normal,generation III,poweris100timestheamountofenergystockpiled.,special
+swallow,256,,10,,0,normal,generation III,"recovers1/4hpafteronestockpile,1/2hpaftertwostockpiles,orfullhpafterthreestockpiles.",status
+heatwave,257,90.0,10,95.0,0,fire,generation III,hasa$effect_chance%chancetoburnthetarget.,special
+hail,258,,10,,0,ice,generation III,changestheweathertoahailstormforfiveturns.,status
+torment,259,100.0,15,,0,dark,generation III,preventsthetargetfromusingthesamemovetwiceinarow.,status
+flatter,260,100.0,15,,0,dark,generation III,raisesthetarget'sspecialattackbyonestageandconfusesthetarget.,status
+willowisp,261,85.0,15,,0,fire,generation III,burnsthetarget.,status
+memento,262,100.0,10,,0,dark,generation III,lowersthetarget'sattackandspecialattackbytwostages.userfaints.,status
+facade,263,100.0,20,70.0,0,normal,generation III,"powerdoublesifuserisburned,paralyzed,orpoisoned.",physical
+focuspunch,264,100.0,20,150.0,-3,fighting,generation III,"iftheusertakesdamagebeforeattacking,theattackiscanceled.",physical
+smellingsalts,265,100.0,10,70.0,0,normal,generation III,"ifthetargetisparalyzed,inflictsdoubledamageandcurestheparalysis.",physical
+followme,266,,20,,2,normal,generation III,redirectsthetarget'ssingle-targeteffectstotheuserforthisturn.,status
+naturepower,267,,20,,0,normal,generation III,usesamovewhichdependsupontheterrain.,status
+charge,268,,20,,0,electric,generation III,raisestheuser'sspecialdefensebyonestage.user'selectricmoveshavedoubledpowernextturn.,status
+taunt,269,100.0,20,,0,dark,generation III,"forthenextfewturns,thetargetcanonlyusedamagingmoves.",status
+helpinghand,270,,20,,5,normal,generation III,ally'snextmoveinflictshalfmoredamage.,status
+trick,271,100.0,10,,0,psychic,generation III,userandtargetswapitems.,status
+roleplay,272,,10,,0,psychic,generation III,copiesthetarget'sability.,status
+wish,273,,10,,0,normal,generation III,userwillrecoverhalfitsmaxhpattheendofthenextturn.,status
+assist,274,,20,,0,normal,generation III,randomlyselectsandusesoneofthetrainer'sotherpokémon'smoves.,status
+ingrain,275,,20,,0,grass,generation III,preventstheuserfromleavingbattle.userregains1/16ofitsmaxhpeveryturn.,status
+superpower,276,100.0,5,120.0,0,fighting,generation III,lowerstheuser'sattackanddefensebyonestageafterinflictingdamage.,physical
+magiccoat,277,,15,,4,psychic,generation III,reflectsbackthefirsteffectmoveusedontheuserthisturn.,status
+recycle,278,,10,,0,normal,generation III,userrecoverstheitemitlastusedup.,status
+revenge,279,100.0,10,60.0,-4,fighting,generation III,inflictsdoubledamageiftheusertakesdamagebeforeattackingthisturn.,physical
+brickbreak,280,100.0,15,75.0,0,fighting,generation III,destroysreflectandlightscreen.,physical
+yawn,281,,10,,0,normal,generation III,targetsleepsattheendofthenextturn.,status
+knockoff,282,100.0,20,65.0,0,dark,generation III,targetdropsitshelditem.,physical
+endeavor,283,100.0,5,,0,normal,generation III,lowersthetarget'shptoequaltheuser's.,physical
+eruption,284,100.0,5,150.0,0,fire,generation III,"inflictsmoredamagewhentheuserhasmorehpremaining,withamaximumof150power.",special
+skillswap,285,,10,,0,psychic,generation III,userandtargetswapabilities.,status
+imprison,286,,10,,0,psychic,generation III,preventsthetargetfromusinganymovesthattheuseralsoknows.,status
+refresh,287,,20,,0,normal,generation III,"cleansestheuserofaburn,paralysis,orpoison.",status
+grudge,288,,5,,0,ghost,generation III,"iftheuserfaintsthisturn,theppofthemovethatfainteditdropsto0.",status
+snatch,289,,10,,4,dark,generation III,"stealsthetarget'smove,ifit'sself-targeted.",status
+secretpower,290,100.0,20,70.0,0,normal,generation III,hasa$effect_chance%chancetoinflictastatuseffectwhichdependsupontheterrain.,physical
+dive,291,100.0,10,80.0,0,water,generation III,"userdivesunderwater,dodgingallattacks,andhitsnextturn.",physical
+armthrust,292,100.0,20,15.0,0,fighting,generation III,hits2-5timesinoneturn.,physical
+camouflage,293,,20,,0,normal,generation III,user'stypechangestomatchtheterrain.,status
+tailglow,294,,20,,0,bug,generation III,raisestheuser'sspecialattackbythreestages.,status
+lusterpurge,295,100.0,5,70.0,0,psychic,generation III,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+mistball,296,100.0,5,70.0,0,psychic,generation III,hasa$effect_chance%chancetolowerthetarget'sspecialattackbyonestage.,special
+featherdance,297,100.0,15,,0,flying,generation III,lowersthetarget'sattackbytwostages.,status
+teeterdance,298,100.0,20,,0,normal,generation III,confusesthetarget.,status
+blazekick,299,90.0,10,85.0,0,fire,generation III,hasanincreasedchanceforacriticalhitanda$effect_chance%chancetoburnthetarget.,physical
+mudsport,300,,15,,0,ground,generation III,halvesallelectric-typedamage.,status
+iceball,301,90.0,20,30.0,0,ice,generation III,"powerdoubleseveryturnthismoveisusedinsuccessionafterthefirst,resettingafterfiveturns.",physical
+needlearm,302,100.0,15,60.0,0,grass,generation III,hasa$effect_chance%chancetomakethetargetflinch.,physical
+slackoff,303,,10,,0,normal,generation III,healstheuserbyhalfitsmaxhp.,status
+hypervoice,304,100.0,10,90.0,0,normal,generation III,inflictsregulardamagewithnoadditionaleffect.,special
+poisonfang,305,100.0,15,50.0,0,poison,generation III,hasa$effect_chance%chancetobadlypoisonthetarget.,physical
+crushclaw,306,95.0,10,75.0,0,normal,generation III,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+blastburn,307,90.0,5,150.0,0,fire,generation III,userforegoesitsnextturntorecharge.,special
+hydrocannon,308,90.0,5,150.0,0,water,generation III,userforegoesitsnextturntorecharge.,special
+meteormash,309,90.0,10,90.0,0,steel,generation III,hasa$effect_chance%chancetoraisetheuser'sattackbyonestage.,physical
+astonish,310,100.0,15,30.0,0,ghost,generation III,hasa$effect_chance%chancetomakethetargetflinch.,physical
+weatherball,311,100.0,10,50.0,0,normal,generation III,"iftherebeweather,thismovehasdoubledpowerandtheweather'stype.",special
+aromatherapy,312,,5,,0,grass,generation III,curestheentirepartyofmajorstatuseffects.,status
+faketears,313,100.0,20,,0,dark,generation III,lowersthetarget'sspecialdefensebytwostages.,status
+aircutter,314,95.0,25,60.0,0,flying,generation III,hasanincreasedchanceforacriticalhit.,special
+overheat,315,90.0,5,130.0,0,fire,generation III,lowerstheuser'sspecialattackbytwostagesafterinflictingdamage.,special
+odorsleuth,316,,40,,0,normal,generation III,"forcesthetargettohavenoevade,andallowsittobehitbynormalandfightingmovesevenifit'saghost.",status
+rocktomb,317,95.0,15,60.0,0,rock,generation III,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,physical
+silverwind,318,100.0,5,60.0,0,bug,generation III,hasa$effect_chance%chancetoraisealloftheuser'sstatsbyonestage.,special
+metalsound,319,85.0,40,,0,steel,generation III,lowersthetarget'sspecialdefensebytwostages.,status
+grasswhistle,320,55.0,15,,0,grass,generation III,putsthetargettosleep.,status
+tickle,321,100.0,20,,0,normal,generation III,lowersthetarget'sattackanddefensebyonestage.,status
+cosmicpower,322,,20,,0,psychic,generation III,raisestheuser'sdefenseandspecialdefensebyonestage.,status
+waterspout,323,100.0,5,150.0,0,water,generation III,"inflictsmoredamagewhentheuserhasmorehpremaining,withamaximumof150power.",special
+signalbeam,324,100.0,15,75.0,0,bug,generation III,hasa$effect_chance%chancetoconfusethetarget.,special
+shadowpunch,325,,20,60.0,0,ghost,generation III,nevermisses.,physical
+extrasensory,326,100.0,20,80.0,0,psychic,generation III,hasa$effect_chance%chancetomakethetargetflinch.,special
+skyuppercut,327,90.0,15,85.0,0,fighting,generation III,inflictsregulardamageandcanhitbounceandflyusers.,physical
+sandtomb,328,85.0,15,35.0,0,ground,generation III,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,physical
+sheercold,329,30.0,5,,0,ice,generation III,causesaone-hitko.,special
+muddywater,330,85.0,10,90.0,0,water,generation III,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+bulletseed,331,100.0,30,25.0,0,grass,generation III,hits2-5timesinoneturn.,physical
+aerialace,332,,20,60.0,0,flying,generation III,nevermisses.,physical
+iciclespear,333,100.0,30,25.0,0,ice,generation III,hits2-5timesinoneturn.,physical
+irondefense,334,,15,,0,steel,generation III,raisestheuser'sdefensebytwostages.,status
+block,335,,5,,0,normal,generation III,preventsthetargetfromleavingbattle.,status
+howl,336,,40,,0,normal,generation III,raisestheuser'sattackbyonestage.,status
+dragonclaw,337,100.0,15,80.0,0,dragon,generation III,inflictsregulardamagewithnoadditionaleffect.,physical
+frenzyplant,338,90.0,5,150.0,0,grass,generation III,userforegoesitsnextturntorecharge.,special
+bulkup,339,,20,,0,fighting,generation III,raisestheuser'sattackanddefensebyonestage.,status
+bounce,340,85.0,5,85.0,0,flying,generation III,"userbounceshighintotheair,dodgingallattacks,andhitsnextturn.",physical
+mudshot,341,95.0,15,55.0,0,ground,generation III,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,special
+poisontail,342,100.0,25,50.0,0,poison,generation III,hasanincreasedchanceforacriticalhitanda$effect_chance%chancetopoisonthetarget.,physical
+covet,343,100.0,25,60.0,0,normal,generation III,takesthetarget'sitem.,physical
+volttackle,344,100.0,15,120.0,0,electric,generation III,usertakes1/3thedamageinflictedinrecoil.hasa$effect_chance%chancetoparalyzethetarget.,physical
+magicalleaf,345,,20,60.0,0,grass,generation III,nevermisses.,special
+watersport,346,,15,,0,water,generation III,halvesallfire-typedamage.,status
+calmmind,347,,20,,0,psychic,generation III,raisestheuser'sspecialattackandspecialdefensebyonestage.,status
+leafblade,348,100.0,15,90.0,0,grass,generation III,hasanincreasedchanceforacriticalhit.,physical
+dragondance,349,,20,,0,dragon,generation III,raisestheuser'sattackandspeedbyonestage.,status
+rockblast,350,90.0,10,25.0,0,rock,generation III,hits2-5timesinoneturn.,physical
+shockwave,351,,20,60.0,0,electric,generation III,nevermisses.,special
+waterpulse,352,100.0,20,60.0,0,water,generation III,hasa$effect_chance%chancetoconfusethetarget.,special
+doomdesire,353,100.0,5,140.0,0,steel,generation III,hitsthetargettwoturnslater.,special
+psychoboost,354,90.0,5,140.0,0,psychic,generation III,lowerstheuser'sspecialattackbytwostagesafterinflictingdamage.,special
+roost,355,,10,,0,flying,generation IV,healstheuserbyhalfitsmaxhp.,status
+gravity,356,,5,,0,psychic,generation IV,disablesmovesandimmunitiesthatinvolveflyingorlevitatingforfiveturns.,status
+miracleeye,357,,40,,0,psychic,generation IV,"forcesthetargettohavenoevasion,andallowsittobehitbypsychicmovesevenifit'sdark.",status
+wakeupslap,358,100.0,10,70.0,0,fighting,generation IV,"ifthetargetisasleep,hasdoublepowerandwakesitup.",physical
+hammerarm,359,90.0,10,100.0,0,fighting,generation IV,lowersuser'sspeedbyonestage.,physical
+gyroball,360,100.0,5,,0,steel,generation IV,"powerraiseswhentheuserhaslowerspeed,uptoamaximumof150.",physical
+healingwish,361,,10,,0,psychic,generation IV,userfaints.itsreplacementhasitshpfullyrestoredandanymajorstatuseffectremoved.,status
+brine,362,100.0,10,65.0,0,water,generation IV,hasdoublepoweragainstpokémonthathavelessthanhalftheirmaxhpremaining.,special
+naturalgift,363,100.0,15,,0,normal,generation IV,powerandtypedependontheheldberry.,physical
+feint,364,100.0,10,30.0,2,normal,generation IV,hitsthroughprotectanddetect.,physical
+pluck,365,100.0,20,60.0,0,flying,generation IV,"iftargethasaberry,inflictsdoubledamageandusestheberry.",physical
+tailwind,366,,15,,0,flying,generation IV,"forthreeturns,friendlypokémonhavedoubledspeed.",status
+acupressure,367,,30,,0,normal,generation IV,raisesoneofafriendlypokémon'sstatsatrandombytwostages.,status
+metalburst,368,100.0,10,,0,steel,generation IV,strikesbackatthelastpokémontohittheuserthisturnwith1.5×thedamage.,physical
+uturn,369,100.0,20,70.0,0,bug,generation IV,usermustswitchoutafterattacking.,physical
+closecombat,370,100.0,5,120.0,0,fighting,generation IV,lowerstheuser'sdefenseandspecialdefensebyonestageafterinflictingdamage.,physical
+payback,371,100.0,10,50.0,0,dark,generation IV,powerisdoubledifthetargethasalreadymovedthisturn.,physical
+assurance,372,100.0,10,60.0,0,dark,generation IV,powerisdoubledifthetargethasalreadyreceiveddamagethisturn.,physical
+embargo,373,100.0,15,,0,dark,generation IV,targetcannotusehelditems.,status
+fling,374,100.0,10,,0,dark,generation IV,throwshelditematthetarget;powerdependsontheitem.,physical
+psychoshift,375,100.0,10,,0,psychic,generation IV,transferstheuser'smajorstatuseffecttothetarget.,status
+trumpcard,376,,5,,0,normal,generation IV,"powerincreaseswhenthismovehaslesspp,uptoamaximumof200.",special
+healblock,377,100.0,15,,0,psychic,generation IV,preventstargetfromrestoringitshpforfiveturns.,status
+wringout,378,100.0,5,,0,normal,generation IV,"powerincreasesagainsttargetswithmorehpremaining,uptoamaximumof121power.",special
+powertrick,379,,10,,0,psychic,generation IV,userswapsattackanddefense.,status
+gastroacid,380,100.0,10,,0,poison,generation IV,nullifiestarget'sabilityuntilitleavesbattle.,status
+luckychant,381,,30,,0,normal,generation IV,preventsthetargetfromscoringcriticalhitsforfiveturns.,status
+mefirst,382,,20,,0,normal,generation IV,"usesthetarget'smoveagainstitbeforeitattacks,withpowerincreasedbyhalf.",status
+copycat,383,,20,,0,normal,generation IV,usesthetarget'slastusedmove.,status
+powerswap,384,,10,,0,psychic,generation IV,userswapsattackandspecialattackchangeswiththetarget.,status
+guardswap,385,,10,,0,psychic,generation IV,userswapsdefenseandspecialdefensechangeswiththetarget.,status
+punishment,386,100.0,5,,0,dark,generation IV,"powerincreasesagainsttargetswithmoreraisedstats,uptoamaximumof200.",physical
+lastresort,387,100.0,5,140.0,0,normal,generation IV,canonlybeusedafteralloftheuser'sothermoveshavebeenused.,physical
+worryseed,388,100.0,10,,0,grass,generation IV,changesthetarget'sabilitytoinsomnia.,status
+suckerpunch,389,100.0,5,70.0,1,dark,generation IV,onlyworksifthetargetisabouttouseadamagingmove.,physical
+toxicspikes,390,,20,,0,poison,generation IV,"scatterspoisonedspikes,poisoningopposingpokémonthatswitchin.",status
+heartswap,391,,10,,0,psychic,generation IV,userandtargetswapstatchanges.,status
+aquaring,392,,20,,0,water,generation IV,restores1/16oftheuser'smaxhpeachturn.,status
+magnetrise,393,,10,,0,electric,generation IV,userisimmunetogroundmovesandeffectsforfiveturns.,status
+flareblitz,394,100.0,15,120.0,0,fire,generation IV,usertakes1/3thedamageinflictedinrecoil.hasa$effect_chance%chancetoburnthetarget.,physical
+forcepalm,395,100.0,10,60.0,0,fighting,generation IV,hasa$effect_chance%chancetoparalyzethetarget.,physical
+aurasphere,396,,20,80.0,0,fighting,generation IV,nevermisses.,special
+rockpolish,397,,20,,0,rock,generation IV,raisestheuser'sspeedbytwostages.,status
+poisonjab,398,100.0,20,80.0,0,poison,generation IV,hasa$effect_chance%chancetopoisonthetarget.,physical
+darkpulse,399,100.0,15,80.0,0,dark,generation IV,hasa$effect_chance%chancetomakethetargetflinch.,special
+nightslash,400,100.0,15,70.0,0,dark,generation IV,hasanincreasedchanceforacriticalhit.,physical
+aquatail,401,90.0,10,90.0,0,water,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+seedbomb,402,100.0,15,80.0,0,grass,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+airslash,403,95.0,15,75.0,0,flying,generation IV,hasa$effect_chance%chancetomakethetargetflinch.,special
+xscissor,404,100.0,15,80.0,0,bug,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+bugbuzz,405,100.0,10,90.0,0,bug,generation IV,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+dragonpulse,406,100.0,10,85.0,0,dragon,generation IV,inflictsregulardamagewithnoadditionaleffect.,special
+dragonrush,407,75.0,10,100.0,0,dragon,generation IV,hasa$effect_chance%chancetomakethetargetflinch.,physical
+powergem,408,100.0,20,80.0,0,rock,generation IV,inflictsregulardamagewithnoadditionaleffect.,special
+drainpunch,409,100.0,10,75.0,0,fighting,generation IV,drainshalfthedamageinflictedtohealtheuser.,physical
+vacuumwave,410,100.0,30,40.0,1,fighting,generation IV,inflictsregulardamagewithnoadditionaleffect.,special
+focusblast,411,70.0,5,120.0,0,fighting,generation IV,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+energyball,412,100.0,10,90.0,0,grass,generation IV,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+bravebird,413,100.0,15,120.0,0,flying,generation IV,userreceives1/3thedamageinflictedinrecoil.,physical
+earthpower,414,100.0,10,90.0,0,ground,generation IV,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+switcheroo,415,100.0,10,,0,dark,generation IV,userandtargetswapitems.,status
+gigaimpact,416,90.0,5,150.0,0,normal,generation IV,userforegoesitsnextturntorecharge.,physical
+nastyplot,417,,20,,0,dark,generation IV,raisestheuser'sspecialattackbytwostages.,status
+bulletpunch,418,100.0,30,40.0,1,steel,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+avalanche,419,100.0,10,60.0,-4,ice,generation IV,inflictsdoubledamageiftheusertakesdamagebeforeattackingthisturn.,physical
+iceshard,420,100.0,30,40.0,1,ice,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+shadowclaw,421,100.0,15,70.0,0,ghost,generation IV,hasanincreasedchanceforacriticalhit.,physical
+thunderfang,422,95.0,15,65.0,0,electric,generation IV,hasa$effect_chance%chancetoparalyzethetargetanda$effect_chance%chancetomakethetargetflinch.,physical
+icefang,423,95.0,15,65.0,0,ice,generation IV,hasa$effect_chance%chancetofreezethetargetanda$effect_chance%chancetomakethetargetflinch.,physical
+firefang,424,95.0,15,65.0,0,fire,generation IV,hasa$effect_chance%chancetoburnthetargetanda$effect_chance%chancetomakethetargetflinch.,physical
+shadowsneak,425,100.0,30,40.0,1,ghost,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+mudbomb,426,85.0,10,65.0,0,ground,generation IV,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+psychocut,427,100.0,20,70.0,0,psychic,generation IV,hasanincreasedchanceforacriticalhit.,physical
+zenheadbutt,428,90.0,15,80.0,0,psychic,generation IV,hasa$effect_chance%chancetomakethetargetflinch.,physical
+mirrorshot,429,85.0,10,65.0,0,steel,generation IV,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+flashcannon,430,100.0,10,80.0,0,steel,generation IV,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebyonestage.,special
+rockclimb,431,85.0,20,90.0,0,normal,generation IV,hasa$effect_chance%chancetoconfusethetarget.,physical
+defog,432,,15,,0,flying,generation IV,lowersthetarget'sevasionbyonestage.removesfieldeffectsfromtheenemyfield.,status
+trickroom,433,,5,,-7,psychic,generation IV,"forfiveturns,slowerpokémonwillactbeforefasterpokémon.",status
+dracometeor,434,90.0,5,130.0,0,dragon,generation IV,lowerstheuser'sspecialattackbytwostagesafterinflictingdamage.,special
+discharge,435,100.0,15,80.0,0,electric,generation IV,hasa$effect_chance%chancetoparalyzethetarget.,special
+lavaplume,436,100.0,15,80.0,0,fire,generation IV,hasa$effect_chance%chancetoburnthetarget.,special
+leafstorm,437,90.0,5,130.0,0,grass,generation IV,lowerstheuser'sspecialattackbytwostagesafterinflictingdamage.,special
+powerwhip,438,85.0,10,120.0,0,grass,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+rockwrecker,439,90.0,5,150.0,0,rock,generation IV,userforegoesitsnextturntorecharge.,physical
+crosspoison,440,100.0,20,70.0,0,poison,generation IV,hasanincreasedchanceforacriticalhitanda$effect_chance%chancetopoisonthetarget.,physical
+gunkshot,441,80.0,5,120.0,0,poison,generation IV,hasa$effect_chance%chancetopoisonthetarget.,physical
+ironhead,442,100.0,15,80.0,0,steel,generation IV,hasa$effect_chance%chancetomakethetargetflinch.,physical
+magnetbomb,443,,20,60.0,0,steel,generation IV,nevermisses.,physical
+stoneedge,444,80.0,5,100.0,0,rock,generation IV,hasanincreasedchanceforacriticalhit.,physical
+captivate,445,100.0,20,,0,normal,generation IV,lowersthetarget'sspecialattackbytwostagesifit'stheoppositegender.,status
+stealthrock,446,,20,,0,rock,generation IV,causesdamagewhenopposingpokémonswitchin.,status
+grassknot,447,100.0,20,,0,grass,generation IV,"inflictsmoredamagetoheaviertargets,withamaximumof120power.",special
+chatter,448,100.0,20,65.0,0,flying,generation IV,hasahigherchancetoconfusethetargetwhentherecordedsoundislouder.,special
+judgment,449,100.0,10,100.0,0,normal,generation IV,"iftheuserisholdingaappropriateplateordrive,thedamageinflictedwillmatchit.",special
+bugbite,450,100.0,20,60.0,0,bug,generation IV,"iftargethasaberry,inflictsdoubledamageandusestheberry.",physical
+chargebeam,451,90.0,10,50.0,0,electric,generation IV,hasa$effect_chance%chancetoraisetheuser'sspecialattackbyonestage.,special
+woodhammer,452,100.0,15,120.0,0,grass,generation IV,userreceives1/3thedamageinflictedinrecoil.,physical
+aquajet,453,100.0,20,40.0,1,water,generation IV,inflictsregulardamagewithnoadditionaleffect.,physical
+attackorder,454,100.0,15,90.0,0,bug,generation IV,hasanincreasedchanceforacriticalhit.,physical
+defendorder,455,,10,,0,bug,generation IV,raisestheuser'sdefenseandspecialdefensebyonestage.,status
+healorder,456,,10,,0,bug,generation IV,healstheuserbyhalfitsmaxhp.,status
+headsmash,457,80.0,5,150.0,0,rock,generation IV,userreceives1/2thedamageinflictedinrecoil.,physical
+doublehit,458,90.0,10,35.0,0,normal,generation IV,hitstwiceinoneturn.,physical
+roaroftime,459,90.0,5,150.0,0,dragon,generation IV,userforegoesitsnextturntorecharge.,special
+spacialrend,460,95.0,5,100.0,0,dragon,generation IV,hasanincreasedchanceforacriticalhit.,special
+lunardance,461,,10,,0,psychic,generation IV,"userfaints,anditsreplacementisfullyhealed.",status
+crushgrip,462,100.0,5,,0,normal,generation IV,"powerincreasesagainsttargetswithmorehpremaining,uptoamaximumof121power.",physical
+magmastorm,463,75.0,5,100.0,0,fire,generation IV,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,special
+darkvoid,464,50.0,10,,0,dark,generation IV,putsthetargettosleep.,status
+seedflare,465,85.0,5,120.0,0,grass,generation IV,hasa$effect_chance%chancetolowerthetarget'sspecialdefensebytwostages.,special
+ominouswind,466,100.0,5,60.0,0,ghost,generation IV,hasa$effect_chance%chancetoraisealloftheuser'sstatsbyonestage.,special
+shadowforce,467,100.0,5,120.0,0,ghost,generation IV,"uservanishes,dodgingallattacks,andhitsnextturn.hitsthroughprotectanddetect.",physical
+honeclaws,468,,15,,0,dark,generation V,raisestheuser'sattackandaccuracybyonestage.,status
+wideguard,469,,10,,3,rock,generation V,preventsanymulti-targetmovesfromhittingfriendlypokémonthisturn.,status
+guardsplit,470,,10,,0,psychic,generation V,averagesdefenseandspecialdefensewiththetarget.,status
+powersplit,471,,10,,0,psychic,generation V,averagesattackandspecialattackwiththetarget.,status
+wonderroom,472,,10,,0,psychic,generation V,allpokémon'sdefenseandspecialdefenseareswappedfor5turns.,status
+psyshock,473,100.0,10,80.0,0,psychic,generation V,"inflictsdamagebasedonthetarget'sdefense,notspecialdefense.",special
+venoshock,474,100.0,10,65.0,0,poison,generation V,inflictsdoubledamageifthetargetispoisoned.,special
+autotomize,475,,15,,0,steel,generation V,raisestheuser'sspeedbytwostagesandhalvestheuser'sweight.,status
+ragepowder,476,,20,,2,bug,generation V,redirectsthetarget'ssingle-targeteffectstotheuserforthisturn.,status
+telekinesis,477,,15,,0,psychic,generation V,moveshave100%accuracyagainstthetargetforthreeturns.,status
+magicroom,478,,10,,0,psychic,generation V,negateshelditemsforfiveturns.,status
+smackdown,479,100.0,15,50.0,0,rock,generation V,removesanyimmunitytogrounddamage.,physical
+stormthrow,480,100.0,10,60.0,0,fighting,generation V,alwaysscoresacriticalhit.,physical
+flameburst,481,100.0,15,70.0,0,fire,generation V,dealssplashdamagetopokémonnexttothetarget.,special
+sludgewave,482,100.0,10,95.0,0,poison,generation V,hasa$effect_chance%chancetopoisonthetarget.,special
+quiverdance,483,,20,,0,bug,generation V,"raisestheuser'sspecialattack,specialdefense,andspeedbyonestageeach.",status
+heavyslam,484,100.0,10,,0,steel,generation V,"powerishigherwhentheuserweighsmorethanthetarget,uptoamaximumof120.",physical
+synchronoise,485,100.0,10,120.0,0,psychic,generation V,hitsanypokémonthatsharesatypewiththeuser.,special
+electroball,486,100.0,10,,0,electric,generation V,"powerishigherwhentheuserhasgreaterspeedthanthetarget,uptoamaximumof150.",special
+soak,487,100.0,20,,0,water,generation V,changesthetarget'stypetowater.,status
+flamecharge,488,100.0,20,50.0,0,fire,generation V,inflictsregulardamage.raisestheuser'sspeedbyonestage.,physical
+coil,489,,20,,0,poison,generation V,"raisestheuser'sattack,defense,andaccuracybyonestageeach.",status
+lowsweep,490,100.0,20,65.0,0,fighting,generation V,lowersthetarget'sspeedbyonestage.,physical
+acidspray,491,100.0,20,40.0,0,poison,generation V,lowersthetarget'sspecialdefensebytwostages.,special
+foulplay,492,100.0,15,95.0,0,dark,generation V,calculatesdamagewiththetarget'sattackingstat.,physical
+simplebeam,493,100.0,15,,0,normal,generation V,changesthetarget'sabilitytosimple.,status
+entrainment,494,100.0,15,,0,normal,generation V,copiestheuser'sabilityontothetarget.,status
+afteryou,495,,15,,0,normal,generation V,makesthetargetactnextthisturn.,status
+round,496,100.0,15,60.0,0,normal,generation V,hasdoublepowerifit'susedmorethanonceperturn.,special
+echoedvoice,497,100.0,15,40.0,0,normal,generation V,"powerincreasesby100%foreachconsecutiveusebyanyfriendlypokémon,toamaximumof200.",special
+chipaway,498,100.0,20,70.0,0,normal,generation V,ignoresthetarget'sstatmodifiers.,physical
+clearsmog,499,,15,50.0,0,poison,generation V,removesallofthetarget'sstatmodifiers.,special
+storedpower,500,100.0,10,20.0,0,psychic,generation V,"powerishigherthemoretheuser'sstatshavebeenraised,toamaximumof31×.",special
+quickguard,501,,15,,3,fighting,generation V,preventsanyprioritymovesfromhittingfriendlypokémonthisturn.,status
+allyswitch,502,,15,,2,psychic,generation V,userswitchesplaceswiththefriendlypokémonoppositeit.,status
+scald,503,100.0,15,80.0,0,water,generation V,hasa$effect_chance%chancetoburnthetarget.,special
+shellsmash,504,,15,,0,normal,generation V,"raisesuser'sattack,specialattack,andspeedbytwostages.loweruser'sdefenseandspecialdefensebyonestage.",status
+healpulse,505,,10,,0,psychic,generation V,healsthetargetforhalfitsmaxhp.,status
+hex,506,100.0,10,65.0,0,ghost,generation V,hasdoublepowerifthetargethasamajorstatusailment.,special
+skydrop,507,100.0,10,60.0,0,flying,generation V,"carriesthetargethighintotheair,dodgingallattacksagainsteither,anddropsitnextturn.",physical
+shiftgear,508,,10,,0,steel,generation V,raisestheuser'sattackbyonestageanditsspeedbytwostages.,status
+circlethrow,509,90.0,10,60.0,-6,fighting,generation V,endswildbattles.forcestrainerstoswitchpokémon.,physical
+incinerate,510,100.0,15,60.0,0,fire,generation V,destroysthetarget'sheldberry.,special
+quash,511,100.0,15,,0,dark,generation V,makesthetargetactlastthisturn.,status
+acrobatics,512,100.0,15,55.0,0,flying,generation V,hasdoublepoweriftheuserhasnohelditem.,physical
+reflecttype,513,,15,,0,normal,generation V,userbecomesthetarget'stype.,status
+retaliate,514,100.0,5,70.0,0,normal,generation V,hasdoublepowerifafriendlypokémonfaintedlastturn.,physical
+finalgambit,515,100.0,5,,0,fighting,generation V,inflictsdamageequaltotheuser'sremaininghp.userfaints.,special
+bestow,516,,15,,0,normal,generation V,givestheuser'shelditemtothetarget.,status
+inferno,517,50.0,5,100.0,0,fire,generation V,hasa$effect_chance%chancetoburnthetarget.,special
+waterpledge,518,100.0,10,80.0,0,water,generation V,"withgrasspledge,halvesopposingpokémon'sspeedforfourturns.",special
+firepledge,519,100.0,10,80.0,0,fire,generation V,"withwaterpledge,doublestheeffectchanceoffriendlypokémon'smovesforfourturns.",special
+grasspledge,520,100.0,10,80.0,0,grass,generation V,"withfirepledge,damagesopposingpokémonfor1/8theirmaxhpeveryturnforfourturns.",special
+voltswitch,521,100.0,20,70.0,0,electric,generation V,usermustswitchoutafterattacking.,special
+strugglebug,522,100.0,20,50.0,0,bug,generation V,hasa$effect_chance%chancetolowerthetarget'sspecialattackbyonestage.,special
+bulldoze,523,100.0,20,60.0,0,ground,generation V,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,physical
+frostbreath,524,90.0,10,60.0,0,ice,generation V,alwaysscoresacriticalhit.,special
+dragontail,525,90.0,10,60.0,-6,dragon,generation V,endswildbattles.forcestrainerstoswitchpokémon.,physical
+workup,526,,30,,0,normal,generation V,raisestheuser'sattackandspecialattackbyonestageeach.,status
+electroweb,527,95.0,15,55.0,0,electric,generation V,lowersthetarget'sspeedbyonestage.,special
+wildcharge,528,100.0,15,90.0,0,electric,generation V,userreceives1/4thedamageitinflictsinrecoil.,physical
+drillrun,529,95.0,10,80.0,0,ground,generation V,hasanincreasedchanceforacriticalhit.,physical
+dualchop,530,90.0,15,40.0,0,dragon,generation V,hitstwiceinoneturn.,physical
+heartstamp,531,100.0,25,60.0,0,psychic,generation V,hasa$effect_chance%chancetomakethetargetflinch.,physical
+hornleech,532,100.0,10,75.0,0,grass,generation V,drainshalfthedamageinflictedtohealtheuser.,physical
+sacredsword,533,100.0,15,90.0,0,fighting,generation V,ignoresthetarget'sstatmodifiers.,physical
+razorshell,534,95.0,10,75.0,0,water,generation V,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+heatcrash,535,100.0,10,,0,fire,generation V,"powerishigherwhentheuserweighsmorethanthetarget,uptoamaximumof120.",physical
+leaftornado,536,90.0,10,65.0,0,grass,generation V,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+steamroller,537,100.0,20,65.0,0,bug,generation V,hasa$effect_chance%chancetomakethetargetflinch.,physical
+cottonguard,538,,10,,0,grass,generation V,raisestheuser'sdefensebythreestages.,status
+nightdaze,539,95.0,10,85.0,0,dark,generation V,hasa$effect_chance%chancetolowerthetarget'saccuracybyonestage.,special
+psystrike,540,100.0,10,100.0,0,psychic,generation V,"inflictsdamagebasedonthetarget'sdefense,notspecialdefense.",special
+tailslap,541,85.0,10,25.0,0,normal,generation V,hits2-5timesinoneturn.,physical
+hurricane,542,70.0,10,110.0,0,flying,generation V,hasa$effect_chance%chancetoconfusethetarget.,special
+headcharge,543,100.0,15,120.0,0,normal,generation V,userreceives1/4thedamageitinflictsinrecoil.,physical
+geargrind,544,85.0,15,50.0,0,steel,generation V,hitstwiceinoneturn.,physical
+searingshot,545,100.0,5,100.0,0,fire,generation V,hasa$effect_chance%chancetoburnthetarget.,special
+technoblast,546,100.0,5,120.0,0,normal,generation V,"iftheuserisholdingaappropriateplateordrive,thedamageinflictedwillmatchit.",special
+relicsong,547,100.0,10,75.0,0,normal,generation V,hasa$effect_chance%chancetoputthetargettosleep.,special
+secretsword,548,100.0,10,85.0,0,fighting,generation V,"inflictsdamagebasedonthetarget'sdefense,notspecialdefense.",special
+glaciate,549,95.0,10,65.0,0,ice,generation V,lowersthetarget'sspeedbyonestage.,special
+boltstrike,550,85.0,5,130.0,0,electric,generation V,hasa$effect_chance%chancetoparalyzethetarget.,physical
+blueflare,551,85.0,5,130.0,0,fire,generation V,hasa$effect_chance%chancetoburnthetarget.,special
+fierydance,552,100.0,10,80.0,0,fire,generation V,hasa$effect_chance%chancetoraisetheuser'sspecialattackbyonestage.,special
+freezeshock,553,90.0,5,140.0,0,ice,generation V,requiresaturntochargebeforeattacking.hasa$effect_chance%chancetoparalyzethetarget.,physical
+iceburn,554,90.0,5,140.0,0,ice,generation V,requiresaturntochargebeforeattacking.hasa$effect_chance%chancetoburnthetarget.,special
+snarl,555,95.0,15,55.0,0,dark,generation V,hasa$effect_chance%chancetolowerthetarget'sspecialattackbyonestage.,special
+iciclecrash,556,90.0,10,85.0,0,ice,generation V,hasa$effect_chance%chancetomakethetargetflinch.,physical
+vcreate,557,95.0,5,180.0,0,fire,generation V,"lowerstheuser'sdefense,specialdefense,andspeedbyonestageeach.",physical
+fusionflare,558,100.0,5,100.0,0,fire,generation V,"withfusionbolt,inflictsdoubledamage.",special
+fusionbolt,559,100.0,5,100.0,0,electric,generation V,"withfusionflare,inflictsdoubledamage.",physical
+flyingpress,560,95.0,10,100.0,0,fighting,generation VI,dealsbothfightingandflying-typedamage.,physical
+matblock,561,,10,,0,fighting,generation VI,protectsallfriendlypokémonfromdamagingmoves.onlyworksonthefirstturnaftertheuserissentout.,status
+belch,562,90.0,10,120.0,0,poison,generation VI,canonlybeusedaftertheuserhaseatenaberry.,special
+rototiller,563,,10,,0,ground,generation VI,raisestheattackandspecialattackofallgrasspokémoninbattle.,status
+stickyweb,564,,20,,0,bug,generation VI,"coverstheopposingfield,loweringopponents'speedbyonestageuponswitchingin.",status
+fellstinger,565,100.0,25,50.0,0,bug,generation VI,raisestheuser'sattackbytwostagesifitkosthetarget.,physical
+phantomforce,566,100.0,10,90.0,0,ghost,generation VI,"uservanishes,dodgingallattacks,andhitsnextturn.hitsthroughprotectanddetect.",physical
+trickortreat,567,100.0,20,,0,ghost,generation VI,addsghosttothetarget'stypes.,status
+nobleroar,568,100.0,30,,0,normal,generation VI,lowersthetarget'sattackandspecialattackbyonestage.,status
+iondeluge,569,,25,,1,electric,generation VI,changesallnormalmovestoelectricmovesfortherestoftheturn.,status
+paraboliccharge,570,100.0,20,65.0,0,electric,generation VI,healstheuserforhalfthetotaldamagedealttoalltargets.,special
+forestscurse,571,100.0,20,,0,grass,generation VI,addsgrasstothetarget'stypes.,status
+petalblizzard,572,100.0,15,90.0,0,grass,generation VI,inflictsregulardamage.,physical
+freezedry,573,100.0,20,70.0,0,ice,generation VI,super-effectiveagainstwater.,special
+disarmingvoice,574,,15,40.0,0,fairy,generation VI,nevermisses.,special
+partingshot,575,100.0,20,,0,dark,generation VI,lowersalltargets'attackandspecialattackbyonestage.makestheuserswitchout.,status
+topsyturvy,576,,20,,0,dark,generation VI,invertsthetarget'sstatmodifiers.,status
+drainingkiss,577,100.0,10,50.0,0,fairy,generation VI,drains75%ofthedamageinflictedtohealtheuser.,special
+craftyshield,578,,10,,3,fairy,generation VI,protectsallfriendlypokémonfromnon-damagingmoves.,status
+flowershield,579,,10,,0,fairy,generation VI,raisesthedefenseofallgrasspokémoninbattle.,status
+grassyterrain,580,,10,,0,grass,generation VI,"forfiveturns,healsallpokémononthegroundfor1/16maxhpeachturnandstrengthenstheirgrassmovesto1.5×theirpower.",status
+mistyterrain,581,,10,,0,fairy,generation VI,"forfiveturns,protectsallpokémononthegroundfrommajorstatusailmentsandconfusion,andhalvesthepowerofincomingdragonmoves.",status
+electrify,582,,20,,0,electric,generation VI,changesthetarget'smove'stypetoelectricifithasn'tmovedyetthisturn.,status
+playrough,583,90.0,10,90.0,0,fairy,generation VI,hasa$effect_chance%chancetolowerthetarget'sattackbyonestage.,physical
+fairywind,584,100.0,30,40.0,0,fairy,generation VI,inflictsregulardamagewithnoadditionaleffect.,special
+moonblast,585,100.0,15,95.0,0,fairy,generation VI,hasa$effect_chance%chancetolowerthetarget'sspecialattackbyonestage.,special
+boomburst,586,100.0,10,140.0,0,normal,generation VI,inflictsregulardamage.,special
+fairylock,587,,10,,0,fairy,generation VI,preventsallpokémonfromfleeingorswitchingoutduringthenextturn.,status
+kingsshield,588,,10,,4,steel,generation VI,blocksdamagingattacksandlowersattackingpokémon'sattackbytwostagesoncontact.switchesaegislashtoshieldforme.,status
+playnice,589,,20,,0,normal,generation VI,lowersthetarget'sattackbyonestage.,status
+confide,590,,20,,0,normal,generation VI,lowersthetarget'sspecialattackbyonestage.,status
+diamondstorm,591,95.0,5,100.0,0,rock,generation VI,hasa$effect_chance%chancetoraisetheuser'sdefensebytwostagesforeachtargethit.,physical
+steameruption,592,95.0,5,110.0,0,water,generation VI,hasa$effect_chance%chancetoburnthetarget.,special
+hyperspacehole,593,,5,80.0,0,psychic,generation VI,ignoresanddestroysprotectioneffects.,special
+watershuriken,594,100.0,20,15.0,1,water,generation VI,hits2–5times.,special
+mysticalfire,595,100.0,10,75.0,0,fire,generation VI,hasa$effect_chance%chancetolowerthetarget'sspecialattackbyonestage.,special
+spikyshield,596,,10,,4,grass,generation VI,blocksdamagingattacksanddamagesattackingpokémonfor1/8theirmaxhp.,status
+aromaticmist,597,,20,,0,fairy,generation VI,raisesaselectedally'sspecialdefensebyonestage.,status
+eerieimpulse,598,100.0,15,,0,electric,generation VI,lowersthetarget'sspecialattackbytwostages.,status
+venomdrench,599,100.0,20,,0,poison,generation VI,"lowersthetarget'sattack,specialattack,andspeedbyonestageifitispoisoned.",status
+powder,600,100.0,20,,1,bug,generation VI,"explodesifthetargetusesafiremovethisturn,damagingitfor1/4itsmaxhpandpreventingthemove.",status
+geomancy,601,,10,,0,fairy,generation VI,"takesoneturntocharge,thenraisestheuser'sspecialattack,specialdefense,andspeedbytwostages.",status
+magneticflux,602,,20,,0,electric,generation VI,raisesthedefenseandspecialdefenseofallfriendlypokémonwithplusorminusbyonestage.,status
+happyhour,603,,30,,0,normal,generation VI,doublesprizemoney.,status
+electricterrain,604,,10,,0,electric,generation VI,"forfiveturns,preventsallpokémononthegroundfromsleepingandstrengthenstheirelectricmovesto1.5×theirpower.",status
+dazzlinggleam,605,100.0,10,80.0,0,fairy,generation VI,inflictsregulardamagewithnoadditionaleffect.,special
+celebrate,606,,40,,0,normal,generation VI,doesnothing.,status
+holdhands,607,,40,,0,normal,generation VI,doesnothing.,status
+babydolleyes,608,100.0,30,,1,fairy,generation VI,lowersthetarget'sattackbyonestage.,status
+nuzzle,609,100.0,20,20.0,0,electric,generation VI,hasa$effect_chance%chancetoparalyzethetarget.,physical
+holdback,610,100.0,40,40.0,0,normal,generation VI,cannotlowerthetarget'shpbelow1.,physical
+infestation,611,100.0,20,20.0,0,bug,generation VI,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,special
+poweruppunch,612,100.0,20,40.0,0,fighting,generation VI,raisestheuser'sattackbyonestageafterinflictingdamage.,physical
+oblivionwing,613,100.0,10,80.0,0,flying,generation VI,drains75%ofthedamageinflictedtohealtheuser.,special
+thousandarrows,614,100.0,10,90.0,0,ground,generation VI,"groundsthetarget,andhitsevenflying-typeorlevitatingpokémon.",physical
+thousandwaves,615,100.0,10,90.0,0,ground,generation VI,preventsthetargetfromleavingbattle.,physical
+landswrath,616,100.0,10,90.0,0,ground,generation VI,inflictsregulardamagewithnoadditionaleffect.,physical
+lightofruin,617,90.0,5,140.0,0,fairy,generation VI,userreceives1/2thedamageinflictedinrecoil.,special
+originpulse,618,85.0,10,110.0,0,water,generation VI,inflictsregulardamagewithnoadditionaleffect.,special
+precipiceblades,619,85.0,10,120.0,0,ground,generation VI,inflictsregulardamagewithnoadditionaleffect.,physical
+dragonascent,620,100.0,5,120.0,0,flying,generation VI,lowerstheuser'sdefenseandspecialdefensebyonestageafterinflictingdamage.,physical
+hyperspacefury,621,,5,100.0,0,dark,generation VI,ignoresanddestroysprotectioneffects.,physical
+breakneckblitzphysical,622,,1,,0,normal,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+breakneckblitzspecial,623,,1,,0,normal,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+alloutpummelingphysical,624,,1,,0,fighting,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+alloutpummelingspecial,625,,1,,0,fighting,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+supersonicskystrikephysical,626,,1,,0,flying,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+supersonicskystrikespecial,627,,1,,0,flying,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+aciddownpourphysical,628,,1,,0,poison,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+aciddownpourspecial,629,,1,,0,poison,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+tectonicragephysical,630,,1,,0,ground,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+tectonicragespecial,631,,1,,0,ground,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+continentalcrushphysical,632,,1,,0,rock,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+continentalcrushspecial,633,,1,,0,rock,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+savagespinoutphysical,634,,1,,0,bug,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+savagespinoutspecial,635,,1,,0,bug,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+neverendingnightmarephysical,636,,1,,0,ghost,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+neverendingnightmarespecial,637,,1,,0,ghost,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+corkscrewcrashphysical,638,,1,,0,steel,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+corkscrewcrashspecial,639,,1,,0,steel,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+infernooverdrivephysical,640,,1,,0,fire,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+infernooverdrivespecial,641,,1,,0,fire,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+hydrovortexphysical,642,,1,,0,water,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+hydrovortexspecial,643,,1,,0,water,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+bloomdoomphysical,644,,1,,0,grass,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+bloomdoomspecial,645,,1,,0,grass,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+gigavolthavocphysical,646,,1,,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+gigavolthavocspecial,647,,1,,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+shatteredpsychephysical,648,,1,,0,psychic,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+shatteredpsychespecial,649,,1,,0,psychic,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+subzeroslammerphysical,650,,1,,0,ice,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+subzeroslammerspecial,651,,1,,0,ice,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+devastatingdrakephysical,652,,1,,0,dragon,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+devastatingdrakespecial,653,,1,,0,dragon,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+blackholeeclipsephysical,654,,1,,0,dark,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+blackholeeclipsespecial,655,,1,,0,dark,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+twinkletacklephysical,656,,1,,0,fairy,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+twinkletacklespecial,657,,1,,0,fairy,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+catastropika,658,,1,210.0,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+shoreup,659,,10,,0,ground,generation VII,"healstheuserfor½itsmaxhp,or⅔duringasandstorm.",status
+firstimpression,660,100.0,10,90.0,2,bug,generation VII,canonlybeusedasthefirstmoveaftertheuserentersbattle.,physical
+banefulbunker,661,,10,,4,poison,generation VII,grantstheuserprotectionfortherestoftheturnandpoisonsanypokémonthattriestouseacontactmoveonit.,status
+spiritshackle,662,100.0,10,80.0,0,ghost,generation VII,trapsthetarget.,physical
+darkestlariat,663,100.0,10,85.0,0,dark,generation VII,ignoresthetarget'sstatmodifiers.,physical
+sparklingaria,664,100.0,10,90.0,0,water,generation VII,curesthetargetofburns.,special
+icehammer,665,90.0,10,100.0,0,ice,generation VII,lowersuser'sspeedbyonestage.,physical
+floralhealing,666,,10,,0,fairy,generation VII,"healsthetargetfor½itsmaxhp,or⅔ongrassyterrain.",status
+highhorsepower,667,95.0,10,95.0,0,ground,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+strengthsap,668,100.0,10,,0,grass,generation VII,healstheuserbythetarget'scurrentattackstatandlowersthetarget'sattackbyonestage.,status
+solarblade,669,100.0,10,125.0,0,grass,generation VII,requiresaturntochargebeforeattacking.,physical
+leafage,670,100.0,40,40.0,0,grass,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+spotlight,671,,15,,3,normal,generation VII,forcesthetarget'sopponentstoaimatthetargetfortherestoftheturn.,status
+toxicthread,672,100.0,20,,0,poison,generation VII,poisonsthetargetandlowersitsspeedbyonestage.,status
+laserfocus,673,,30,,0,normal,generation VII,guaranteesacriticalhitwiththeuser'snextmove.,status
+gearup,674,,20,,0,steel,generation VII,raisestheattackandspecialattackofallfriendlypokémonwithplusorminusbyonestage.,status
+throatchop,675,100.0,15,80.0,0,dark,generation VII,preventsthetargetfromusingsound-basedmovesfortwoturns.,physical
+pollenpuff,676,100.0,15,90.0,0,bug,generation VII,"damagesopponents,buthealsalliesfor50%oftheirmaxhp.",special
+anchorshot,677,100.0,20,80.0,0,steel,generation VII,trapsthetarget.,physical
+psychicterrain,678,,10,,0,psychic,generation VII,protectspokémononthegroundfromprioritymovesandincreasesthepoweroftheirpsychicmovesby50%.,status
+lunge,679,100.0,15,80.0,0,bug,generation VII,lowersthetarget'sattackbyonestageafterinflictingdamage.,physical
+firelash,680,100.0,15,80.0,0,fire,generation VII,lowersthetarget'sdefensebyonestageafterinflictingdamage.,physical
+powertrip,681,100.0,10,20.0,0,dark,generation VII,"powerishigherthemoretheuser'sstatshavebeenraised,toamaximumof31×.",physical
+burnup,682,100.0,5,130.0,0,fire,generation VII,removestheuser'sfiretypeafterinflictingdamage.,special
+speedswap,683,,10,,0,psychic,generation VII,exchangestheuser'sspeedwiththetarget's.,status
+smartstrike,684,,10,70.0,0,steel,generation VII,nevermisses.,physical
+purify,685,,20,,0,poison,generation VII,curesthetargetofamajorstatusailmentandhealstheuserfor50%ofitsmaxhp.,status
+revelationdance,686,100.0,15,90.0,0,normal,generation VII,hasthesametypeastheuser.,special
+coreenforcer,687,100.0,10,100.0,0,dragon,generation VII,nullifiesthetarget'sabilityifitmovesearlier.,special
+tropkick,688,100.0,15,70.0,0,grass,generation VII,lowersthetarget'sattackbyonestageafterinflictingdamage.,physical
+instruct,689,,15,,0,psychic,generation VII,forcesthetargettorepeatitslastusedmove.,status
+beakblast,690,100.0,15,100.0,-3,flying,generation VII,inflictsaburnonanypokémonthatmakescontactbeforetheattack.,physical
+clangingscales,691,100.0,5,110.0,0,dragon,generation VII,lowerstheuser'sdefensebyonestageafterinflictingdamage.,special
+dragonhammer,692,100.0,15,90.0,0,dragon,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+brutalswing,693,100.0,20,60.0,0,dark,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+auroraveil,694,,20,,0,ice,generation VII,"reducesdamagefiveturns,butmustbeusedduringhail.",status
+sinisterarrowraid,695,,1,180.0,0,ghost,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+maliciousmoonsault,696,,1,180.0,0,dark,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+oceanicoperetta,697,,1,195.0,0,water,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+guardianofalola,698,,1,,0,fairy,generation VII,damagesthetargetfor75%ofitsremaininghp.,special
+soulstealing7starstrike,699,,1,195.0,0,ghost,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+stokedsparksurfer,700,,1,175.0,0,electric,generation VII,hasa$effect_chance%chancetoparalyzethetarget.,special
+pulverizingpancake,701,,1,210.0,0,normal,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+extremeevoboost,702,,1,,0,normal,generation VII,raisesalloftheuser'sstatsbytwostages.,status
+genesissupernova,703,,1,185.0,0,psychic,generation VII,changestheterraintopsychicterrainafterinflictingdamage.,special
+shelltrap,704,100.0,5,150.0,-3,fire,generation VII,onlyinflictsdamageiftheuserwashitbyaphysicalmovethisturn.,special
+fleurcannon,705,90.0,5,130.0,0,fairy,generation VII,lowerstheuser'sspecialattackbytwostagesafterinflictingdamage.,special
+psychicfangs,706,100.0,10,85.0,0,psychic,generation VII,destroysreflectandlightscreen.,physical
+stompingtantrum,707,100.0,10,75.0,0,ground,generation VII,hasdoublepoweriftheuser'slastmovefailed.,physical
+shadowbone,708,100.0,10,85.0,0,ghost,generation VII,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+accelerock,709,100.0,20,40.0,1,rock,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+liquidation,710,100.0,10,85.0,0,water,generation VII,hasa$effect_chance%chancetolowerthetarget'sdefensebyonestage.,physical
+prismaticlaser,711,100.0,10,160.0,0,psychic,generation VII,userforegoesitsnextturntorecharge.,special
+spectralthief,712,100.0,10,90.0,0,ghost,generation VII,"stealsthetarget'sstatincreases,theninflictsdamage.",physical
+sunsteelstrike,713,100.0,5,100.0,0,steel,generation VII,cannotbedisruptedbyabilities.,physical
+moongeistbeam,714,100.0,5,100.0,0,ghost,generation VII,cannotbedisruptedbyabilities.,special
+tearfullook,715,,20,,0,normal,generation VII,lowersthetarget'sattackandspecialattackbyonestage.,status
+zingzap,716,100.0,10,80.0,0,electric,generation VII,hasa$effect_chance%chancetomakethetargetflinch.,physical
+naturesmadness,717,90.0,10,,0,fairy,generation VII,inflictsdamageequaltohalfthetarget'shp.,special
+multiattack,718,100.0,10,120.0,0,normal,generation VII,"iftheuserisholdingaappropriateplateordrive,thedamageinflictedwillmatchit.",physical
+10000000voltthunderbolt,719,,1,195.0,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+mindblown,720,100.0,5,150.0,0,fire,generation VII,"inflictsdamage,andtheusertakesdamageequaltohalfofitsmaxhp,roundedup.",special
+plasmafists,721,100.0,15,100.0,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+photongeyser,722,100.0,5,100.0,0,psychic,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+lightthatburnsthesky,723,,1,200.0,0,psychic,generation VII,"inflictsdamageusingeitherattackorspecialattackstat,whicheverishigher.",special
+searingsunrazesmash,724,,1,200.0,0,steel,generation VII,cannotbedisruptedbyabilities.,physical
+menacingmoonrazemaelstrom,725,,1,200.0,0,ghost,generation VII,cannotbedisruptedbyabilities.,special
+letssnuggleforever,726,,1,190.0,0,fairy,generation VII,"afterinflictingdamage,causesallnormal-typemovestobecomeelectric-typefortheremainderoftheturn.",physical
+splinteredstormshards,727,,1,190.0,0,rock,generation VII,inflictsdamageandremovesanyterrainpresentonthebattlefield.,physical
+clangoroussoulblaze,728,,1,185.0,0,dragon,generation VII,"inflictsdamagetoallopposingpokémonandincreasestheuser'sattack,defense,specialattack,specialdefense,andspeedbyonestageeach.",special
+zippyzap,729,100.0,10,80.0,2,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+splishysplash,730,100.0,15,90.0,0,water,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+floatyfall,731,95.0,15,90.0,0,flying,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+pikapapow,732,,20,,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+bouncybubble,733,100.0,20,60.0,0,water,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+buzzybuzz,734,100.0,20,60.0,0,electric,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+sizzlyslide,735,100.0,20,60.0,0,fire,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+glitzyglow,736,95.0,15,80.0,0,psychic,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+baddybad,737,95.0,15,80.0,0,dark,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+sappyseed,738,90.0,10,100.0,0,grass,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+freezyfrost,739,90.0,10,100.0,0,ice,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+sparklyswirl,740,85.0,5,120.0,0,fairy,generation VII,inflictsregulardamagewithnoadditionaleffect.,special
+veeveevolley,741,,20,,0,normal,generation VII,inflictsregulardamagewithnoadditionaleffect.,physical
+doubleironbash,742,100.0,5,60.0,0,steel,generation VII,hitstwiceinoneturn.,physical
+maxguard,743,,10,,4,normal,generation VIII,preventsanymovesfromhittingtheuserthisturn.,status
+dynamaxcannon,744,100.0,5,100.0,0,dragon,generation VIII,setslightscreenontheuser'ssideofthefieldafterinflictingdamage.,special
+snipeshot,745,100.0,15,80.0,0,water,generation VIII,setsreflectontheuser'ssideofthefieldafterinflictingdamage.,special
+jawlock,746,100.0,10,80.0,0,dark,generation VIII,seedsthetargetafterinflictingdamage.,physical
+stuffcheeks,747,,10,,0,normal,generation VIII,curestheentirepartyofmajorstatuseffectsafterinflictingdamage.,status
+noretreat,748,,5,,0,fighting,generation VIII,"hitstwiceinoneturn,witha$effect_chance%chancetomakethetargetflinch.",status
+maxflare,757,,10,100.0,0,fire,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxflutterby,758,,10,10.0,0,bug,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxlightning,759,,10,10.0,0,electric,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxstrike,760,,10,10.0,0,normal,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxknuckle,761,,10,10.0,0,fighting,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxphantasm,762,,10,10.0,0,ghost,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxhailstorm,763,,10,10.0,0,ice,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxooze,764,,10,10.0,0,poison,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxgeyser,765,,10,10.0,0,water,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxairstream,766,,10,10.0,0,flying,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxstarfall,767,,10,10.0,0,fairy,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxwyrmwind,768,,10,10.0,0,dragon,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxmindstorm,769,,10,10.0,0,psychic,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxrockfall,770,,10,10.0,0,rock,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxquake,771,,10,10.0,0,ground,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxdarkness,772,,10,10.0,0,dark,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxovergrowth,773,,10,10.0,0,grass,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+maxsteelspike,774,,10,10.0,0,steel,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+drumbeating,778,100.0,10,80.0,0,grass,generation VIII,hasa$effect_chance%chancetolowerthetarget'sspeedbyonestage.,physical
+snaptrap,779,100.0,15,35.0,0,grass,generation VIII,preventsthetargetfromfleeingandinflictsdamagefor2-5turns.,physical
+pyroball,780,90.0,5,120.0,0,fire,generation VIII,hasa$effect_chance%chancetoburnthetarget.,physical
+breakingswipe,784,100.0,15,60.0,0,dragon,generation VIII,lowersthetarget'sattackbyonestageafterinflictingdamage.,physical
+branchpoke,785,100.0,40,40.0,0,grass,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+gravapple,788,100.0,10,80.0,0,grass,generation VIII,lowersthetarget'sdefensebyonestageafterinflictingdamage.,physical
+spiritbreak,789,100.0,15,75.0,0,fairy,generation VIII,hasa$effect_chance%chancetolowerthetarget'sspecialattackbyonestage.,physical
+strangesteam,790,95.0,10,90.0,0,fairy,generation VIII,hasa$effect_chance%chancetoconfusethetarget.,special
+falsesurrender,793,,10,80.0,0,dark,generation VIII,nevermisses.,physical
+meteorassault,794,100.0,5,150.0,0,fighting,generation VIII,userforegoesitsnextturntorecharge.,physical
+eternabeam,795,90.0,5,160.0,0,dragon,generation VIII,userforegoesitsnextturntorecharge.,special
+steelbeam,796,95.0,5,140.0,0,steel,generation VIII,"inflictsdamage,andtheusertakesdamageequaltohalfofitsmaxhp,roundedup.",special
+expandingforce,797,100.0,10,80.0,0,psychic,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+steelroller,798,100.0,5,130.0,0,steel,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+scaleshot,799,90.0,20,25.0,0,dragon,generation VIII,booststheuser'sspeedandlowerstheirdefensebyonestageafterinflictingdamagetwotofivetimesinarow.,physical
+meteorbeam,800,90.0,10,120.0,0,rock,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+shellsidearm,801,100.0,10,90.0,0,poison,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+mistyexplosion,802,100.0,5,100.0,0,fairy,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+grassyglide,803,100.0,20,70.0,0,grass,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+risingvoltage,804,100.0,20,70.0,0,electric,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+terrainpulse,805,100.0,10,50.0,0,normal,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+skittersmack,806,90.0,10,70.0,0,bug,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+burningjealousy,807,100.0,5,70.0,0,fire,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+lashout,808,100.0,5,75.0,0,dark,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+poltergeist,809,90.0,5,110.0,0,ghost,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+corrosivegas,810,100.0,40,,0,poison,generation VIII,inflictsregulardamagewithnoadditionaleffect.,status
+coaching,811,,10,,0,fighting,generation VIII,inflictsregulardamagewithnoadditionaleffect.,status
+flipturn,812,100.0,20,60.0,0,water,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+tripleaxel,813,90.0,10,20.0,0,ice,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+dualwingbeat,814,90.0,10,40.0,0,flying,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+scorchingsands,815,100.0,10,70.0,0,ground,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+junglehealing,816,,10,,0,grass,generation VIII,inflictsregulardamagewithnoadditionaleffect.,status
+wickedblow,817,100.0,5,80.0,0,dark,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+surgingstrikes,818,100.0,5,25.0,0,water,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+thundercage,819,90.0,15,80.0,0,electric,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+dragonenergy,820,100.0,5,150.0,0,dragon,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+freezingglare,821,100.0,10,90.0,0,psychic,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+fierywrath,822,100.0,10,90.0,0,dark,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+thunderouskick,823,100.0,10,90.0,0,fighting,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+glaciallance,824,100.0,5,130.0,0,ice,generation VIII,inflictsregulardamagewithnoadditionaleffect.,physical
+astralbarrage,825,100.0,5,120.0,0,ghost,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special
+eeriespell,826,100.0,5,80.0,0,psychic,generation VIII,inflictsregulardamagewithnoadditionaleffect.,special

@@ -111,7 +111,7 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 	t_conf_location	*loc = request.findRightLocation(&srv);
 	if (loc)
 		this->_clients[(*it).fd]->getLocConf() = *loc;
-	request.findRightPath(&(*this->_srvnamemap)[request.getHost()]);
+	request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
 	(*it).events = POLLOUT;
 }
 
@@ -213,7 +213,7 @@ void	Server::createAutoindex(Client &client, std::string &body)
 	while (std::getline(file, line))
 	{
 		line.push_back('\n');
-		find_and_replace(line, "{PATH}", url);
+		find_and_replace(line, "{PATH}", client.getRequest().getUrlOriginal());
 		body += line;
 		if (line.find("<tbody>") != std::string::npos)
 			break ;

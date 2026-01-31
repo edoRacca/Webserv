@@ -45,6 +45,7 @@ class Request
 		headermap		_header;//std::map<key, value> relativi a headers
 		std::string		_method;
 		std::string 	_url;
+		std::string 	_url_orig;
 		std::string 	_http_version;//sempre uguale a HTTP/1.1
 		std::string		_body;
 		IpPortPair		_ipport;
@@ -67,7 +68,7 @@ class Request
 		Request(const Request &other);
 		Request &operator=(const Request &other);
 	//SECTION - checks
-		void			findRightPath(t_conf_server *srv);
+		void			findRightUrl(t_conf_server *srv);
 		t_conf_location	*findRightLocation(t_conf_server *srv);
 		bool			checkVal(std::string key);
 		bool			checkKey(std::string key);
@@ -85,6 +86,7 @@ class Request
 		int				getMethNum() const;
 		e_methods		getMethodEnum() const;
 		std::string 	getUrl() const;
+		std::string 	getUrlOriginal() const;
 		std::string 	getHttpVersion() const;
 		headermap		&getHeader();
 		std::string		getHeaderVal(std::string key);

@@ -1,6 +1,6 @@
 #include "../../hpp/Server.hpp"
 
-static void execute(Client &client, std::string &body, std::fstream *file);
+static void execute_delete(Client &client, std::string &body, std::fstream *file);
 static int	check_delete(Client &client, std::string &body, Server &srv, std::fstream *file);
 
 void	Server::deleteMethod(Client &client, std::string &body, std::fstream *file)
@@ -8,7 +8,7 @@ void	Server::deleteMethod(Client &client, std::string &body, std::fstream *file)
 	if (check_delete(client, body, *this, file) != 0)
 		return ;
 	(*file).close();
-	execute(client, body, file);
+	execute_delete(client, body, file);
 }
 
 static int	check_delete(Client &client, std::string &body, Server &srv, std::fstream *file)
@@ -40,7 +40,7 @@ static int	check_delete(Client &client, std::string &body, Server &srv, std::fst
 	return (1);
 }
 
-static void execute(Client &client, std::string &body, std::fstream *file)
+static void execute_delete(Client &client, std::string &body, std::fstream *file)
 {
 	std::string url;
 	
