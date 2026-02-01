@@ -10,6 +10,14 @@
 #define HTML_NUMBER 4
 #define HTML_FILES "data.html", "field.html", "href_val.html", "static_val.html"
 
+/*
+---Makefile: aggiunti oggetti per velocizzare compilazione, 
+---aggiunte funzioni di utils a url, 
+---aggiunto css a script pokedex.
+---Script pokedex: fix bug scelta cgi giusta con href, da aggiungere immagini a pokemon/mosse. 
+---Da fixare leak di fd con execve quando parte una 
+cgi (non viene chiamato server destructor nel processo figlio).
+*/
 static bool			get_files(std::ifstream html_files[4]);
 static std::string	parse_data(std::ifstream html_files[4], std::string &output, \
 								std::string &url);
