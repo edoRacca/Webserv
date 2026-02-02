@@ -38,7 +38,7 @@ int	requestParsing(Request &request, std::string input)
 static int	lineParsing(Request &request, std::string line)
 {
 	std::string	field;
-
+//-F "image=@/percorso/della/tua/foto.jpg"
 	if (std::isspace(line[0]) != 0)
 		return (request.fail(HTTP_CE_BAD_REQUEST, "First line format"));
 	if (getNextFirstLineField(line, field) == 1)
@@ -126,7 +126,7 @@ static int	bodyParsing(Request &request, std::istringstream &stream)
 	while (std::getline(stream, line, '\n'))
 	{
 		if (line.rbegin()[0] != '\r')
-			return(request.fail(HTTP_CE_BAD_REQUEST, "No \\r in body"));
+			;//return(request.fail(HTTP_CE_BAD_REQUEST, "No \\r in body"));
 		body += line;
 	}
 	request.setBody(body);

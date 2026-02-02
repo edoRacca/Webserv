@@ -9,9 +9,9 @@ struct pollfd			setupPollFd(int client);
 std::string				fileToString(std::string filename);
 dirent					*findUrlDirectory(std::string url);
 
-void			run_cmd(Server &srv, char *const argv[], std::string &output);
-void			get_argv(Client &client, std::string argv[2], std::string &url);
-std::string		createHtmlPokedex(std::string &key, std::string &output);
+void					run_cmd(Server &srv, char *const argv[], std::string &output);
+void					get_argv(Client &client, std::string argv[2], std::string &url);
+std::string				createHtmlPokedex(std::string &key, std::string &output);
 
 
 // NOTE - aggiungiamo il socket del server al vector di server
@@ -69,6 +69,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		{
 			char buffer[2048] = {0};
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
+			std::cout << "checkForConnection " << bytes << "\n";
 			if (bytes <= 0)
 			{
 				static int	n;
@@ -90,6 +91,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
 		{
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
+			std::cout << "checkForConnection: response: " << html << std::endl;
 			send((*it).fd, html.c_str(), html.length(), 0);
 			(*it).events = POLLIN;
 		}
@@ -101,12 +103,15 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffe
 	(void)buffer;
 	Request	&request = this->_clients[(*it).fd]->getRequest();
 	// if (requestParsing(request, fileToString("test_request")) != 0)
+	std::cout << "ProcessRequest" << std::endl;
+	std::cout << "buffer: " << buffer << "\n";
 	if (requestParsing(request, buffer) != 0)//request
 	{
 		(*it).events = POLLOUT;
 		// TODO - da settare status code corretto senza fare return
 		return ;
 	}
+	std::cout << request << std::endl;
 	convertDnsToIp(request, request.getHost(), *this->_srvnamemap);//serverFinder
 	if ((*this->_srvnamemap).count(request.getHost()) == 0)//condition
 	{

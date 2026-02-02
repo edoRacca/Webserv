@@ -89,7 +89,31 @@ int main(int ac, char **av, const char **env)
 	and properly handle client disconnections when 
 	necessary.
 -	Clients must be able to upload files.
--	
+-	You need at least the GET, POST, and DELETE methods
+-	Stress test your server to ensure 
+	it remains available at all times.
+-	Uploading files from the clients to the server is 
+	authorized, and storage location is provided
+-	Just remember that, for chunked requests, 
+	your server needs to un-chunk them, 
+	the CGI will expect EOF as the end of the body.
+- 	The same applies to the output of the CGI. 
+	If no content_length is returned from the CGI, 
+	EOF will mark the end of the returned data.
+-	You must provide configuration files and default 
+	files to test and demonstrate that every feature 
+	works during the evaluation.
+-	We have provided a small tester. 
+	Using it is not mandatory if everything works fine 
+	with your browser and tests, but it can help
+	you find and fix bugs.
+BONUS:
+-	Support cookies and session management 
+	(provide simple examples).
+-	Handle multiple CGI types.
+OTHER:
+-	game cgi
+-	crypter
 */
 
 // int	main(int ac, char **av)
