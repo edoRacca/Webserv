@@ -125,8 +125,8 @@ static int	bodyParsing(Request &request, std::istringstream &stream)
 		{;}//FIXME - gestire transfer encoding
 	while (std::getline(stream, line, '\n'))
 	{
-		if (line.rbegin()[0] != '\r')
-			;//return(request.fail(HTTP_CE_BAD_REQUEST, "No \\r in body"));
+		// if (line.rbegin()[0] != '\r')
+		//	return(request.fail(HTTP_CE_BAD_REQUEST, "No \\r in body"));
 		body += line;
 	}
 	request.setBody(body);

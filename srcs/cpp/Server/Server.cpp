@@ -67,10 +67,19 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
-			char buffer[2048] = {0};
-			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
-			std::cout << "checkForConnection " << bytes << "\n";
-			if (bytes <= 0)
+			std::cout << "Body len request: " << this->_clients[(*it).fd]->getRequest().getBodyLen() << std::endl;
+			size_t bodylen = this->_clients[(*it).fd]->getRequest().getBodyLen();
+			size_t tot = 0;
+			char *buffer = new char[bodylen];
+			while (tot < bodylen)
+			{
+				int bytes = recv((*it).fd, buffer + tot, bodylen - tot, 0);
+				if (bytes == 0)
+					break ;
+				tot += bytes;
+			}
+			std::cout << "QUI CI ARRIVO?" << std::endl;
+			if (tot != bodylen)
 			{
 				static int	n;
 				//da mettere in una funzione a parte
