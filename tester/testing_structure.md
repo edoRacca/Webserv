@@ -20,6 +20,10 @@ Makefile
 -
 ----------------
 
+TODO:
 conf:
-1)	function that updates OUTPUT
-2)	function that compares OUTPUT with file
+1)	function that updates correct conf print
+2)	function that compares correct conf print with program
+request:
+1)	function that updates correct response
+2)	function that compares correct response with program
