@@ -1,6 +1,9 @@
 PROJ_ROOT = ..
 PROJ_OBJ_DIR = $(PROJ_ROOT)/build/srcs
 OBJ_DIR = build
+UTILS_DIR = utils_dir
+CONF_DIR = conf_dir
+REQUEST_DIR = request_dir
 CC = c++
 FLAGS = -Wall -Wextra -Werror -g -D_GLIBCXX_DEBUG
 CPPFLAGS = -std=c++98
@@ -21,9 +24,9 @@ UTILS = $(addprefix utils/, 	utils_page1.o path_checker.o value_checker.o \
 WEB_OBJ = $(addprefix $(PROJ_OBJ_DIR)/, $(CPP) $(PARSING) $(UTILS))
 
 #SECTION - list testing srcs
-SRC_CONF 	= $(addprefix conf/, 	$(shell ls srcs_cpp/conf))
-SRC_REQUEST = $(addprefix request/, $(shell ls srcs_cpp/request))
-SRC_UTILS 	= $(addprefix utils/, 	$(shell ls srcs_cpp/utils))
+SRC_CONF 	= $(addprefix $(CONF_DIR)/, 	$(shell ls srcs_cpp/$(CONF_DIR)))
+SRC_REQUEST = $(addprefix $(REQUEST_DIR)/, $(shell ls srcs_cpp/$(REQUEST_DIR)))
+SRC_UTILS 	= $(addprefix $(UTILS_DIR)/, 	$(shell ls srcs_cpp/$(UTILS_DIR)))
 SRCS = $(addprefix srcs_cpp/, $(SRC_CONF) $(SRC_TESTING) $(SRC_UTILS))
 
 OBJ = 			$(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
@@ -39,29 +42,29 @@ all: compile_web $(OBJ_DIR)/conf $(OBJ_DIR)/request
 compile_web:
 	$(MAKE) -C $(PROJ_ROOT)
 
-$(OBJ_DIR)/conf: $(OBJ_CONF)
-	$(CC) $(FLAGS) $(CPPFLAGS) $(OBJ_CONF) $(WEB_OBJ) -o $@.out
+$(OBJ_DIR)/conf: $(OBJ_CONF) $(WEB_OBJ) | $(OBJ_DIR)
+	$(CC) $(FLAGS) $(CPPFLAGS) $(OBJ_CONF) $(WEB_OBJ) -o $@
 
-$(OBJ_DIR)/request: $(OBJ_REQUEST)
-	$(CC) $(FLAGS) $(CPPFLAGS) $(OBJ_REQUEST) $(WEB_OBJ) -o $@.out
+$(OBJ_DIR)/request: $(OBJ_REQUEST) $(WEB_OBJ) | $(OBJ_DIR)
+	$(CC) $(FLAGS) $(CPPFLAGS) $(OBJ_REQUEST) $(WEB_OBJ) -o $@
 
-$(OBJ_DIR)/conf/%.o: srcs_cpp/conf/%.cpp
+$(OBJ_DIR)/$(CONF_DIR)/%.o: srcs_cpp/$(CONF_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(CC) $(FLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/utils/%.o: srcs_cpp/utils/%.cpp
+$(OBJ_DIR)/$(UTILS_DIR)/%.o: srcs_cpp/$(UTILS_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(CC) $(FLAGS) $(CPPFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/request/%.o: srcs_cpp/request/%.cpp
+$(OBJ_DIR)/$(REQUEST_DIR)/%.o: srcs_cpp/$(REQUEST_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(CC) $(FLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
-	mkdir -p $(OBJ_DIR)/srcs_cpp/conf/
-	mkdir -p $(OBJ_DIR)/srcs_cpp/request/
-	mkdir -p $(OBJ_DIR)/srcs_cpp/utils/
+	mkdir -p $(OBJ_DIR)/srcs_cpp/$(CONF_DIR)/
+	mkdir -p $(OBJ_DIR)/srcs_cpp/$(REQUEST_DIR)/
+	mkdir -p $(OBJ_DIR)/srcs_cpp/$(UTILS_DIR)/
 
 #$(OBJ_DIR)/%/%.o: %.cpp
 #	@mkdir -p $(dir $@)
