@@ -9,6 +9,7 @@ std::string	ft_to_string(T data)
 	return (stream.str());
 }
 
+//returns 1 if replace succeed, else 0
 template <typename old_s, typename new_s>
 bool	find_and_replace(std::string &str, old_s to_replace, new_s content)
 {

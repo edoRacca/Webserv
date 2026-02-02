@@ -4,7 +4,7 @@
 
 static void		run_cmd(char *const argv[], std::string &output);
 static void		get_argv(Client &client, std::string argv[2], std::string &url);
-std::string		createHtmlPokedex(std::string &cmd, std::string &key, std::string &output);
+std::string		createHtmlPokedex(std::string &key, std::string &output);
 
 void	run_script(Client &client, std::string &body)
 {
@@ -19,7 +19,7 @@ void	run_script(Client &client, std::string &body)
 	run_cmd((char *const *)argv, body);
 	client.getRequest().setBodyType("text/html");
 	if (client.getLocConf().script_type == "pokedex")
-		body = createHtmlPokedex(url, argv_str[1], body);
+		body = createHtmlPokedex(argv_str[1], body);
 	else
 	{
 		client.getRequest().setBodyType("text/plain");

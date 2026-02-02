@@ -1,7 +1,8 @@
-#include "../all.h"
+#include "pokedex.h"
 
 static void	print_field(char **field);
-static void	hypertext(bool href_flag, char *val);
+static void	hypertext(int href_flag, char *val);
+static void	pkmn_id(char ***data);
 
 int	main(int ac, char **av)
 {
@@ -20,45 +21,58 @@ int	main(int ac, char **av)
 		ft_printf("pokemon %s not found.\n", pokemon.buff);
 		return (str_terminate(), daft_quit(), 1);
 	}
+	pkmn_id(data);
 	for (int i = 0; data[i]; i++)
 		print_field(data[i]);
 	return (str_terminate(), daft_quit(), 0);
 }
 
-#define KEY_MOVES	 	"Moves"
-#define KEY_MOVES_TUTOR "TutorMoves"
-#define KEY_MOVES_EGG	"EggMoves"
-#define KEY_NAME		"Name"
-#define KEY_EVOLUTION	"Evolutions"
-#define HREF_KEYS 	KEY_MOVES, KEY_MOVES_TUTOR, KEY_MOVES_EGG,\
-					KEY_NAME, KEY_EVOLUTION, NULL
-
 static void	print_field(char **field)
 {
 	static const char	*href_keys[] = {HREF_KEYS};
 	char				*key;
-	bool				href_flag;
+	int					href_flag;
 
 	key = field[0];
-	href_flag = false;
+	href_flag = NO_HREF;
 	ft_printf("|%s:", key);
 	for (int i = 0; href_keys[i]; i++)
 	{
 		if (ft_strncmp(key, href_keys[i], INT_MAX) == 0)
-			href_flag = true;
+			href_flag = i;
 	}
 	for (int i = 1; field[i]; i++)
 		ft_printf("?%p-%d-%p?%s,", hypertext, href_flag, field[i], field[i]);
 }
 
-static void	hypertext(bool href_flag, char *val)
+static void	hypertext(int href_flag, char *val)
 {
-	if (href_flag == false)
+	if (href_flag == NO_HREF)
 		return ;
 	for (int i = 0; val[i]; i++)
 	{
 		if (val[i] < 'A' || val[i] > 'Z')
 			return ;
 	}
-	ft_printf("@");
+	if (href_flag <= RANGE_MOVE)
+		href_flag = ID_MOVE;
+	else if (href_flag <= RANGE_PKMN)
+		href_flag = ID_PKMN;
+	else
+		return (ft_printf("pokemon.cgi: enum error\n"), (void)0);
+	ft_printf("@%d", href_flag);
+}
+
+static void	pkmn_id(char ***data)
+{
+	int	i;
+
+	for (i = 0; data[i]; i++)
+	{
+		if (ft_strncmp("ID", data[i][0], INT_MAX) == 0)
+			break ;
+	}
+	if (!data[i])
+		return (ft_printf("|not_found"), (void)0);
+	ft_printf("{%d}%s", ID_PKMN, data[i][1]);
 }

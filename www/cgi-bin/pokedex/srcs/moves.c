@@ -1,10 +1,11 @@
-#include "../all.h"
+#include "pokedex.h"
 
 static char	**get_info();
+static void	image_id(char **data, char **info);
 
 int	main(int ac, char **av)
 {
-	char	***data;
+	char	**data;
 	char	**info;
 
 	if (ac == 1)
@@ -22,6 +23,7 @@ int	main(int ac, char **av)
 		ft_printf("move %s not found.\n", move.buff);
 		return (str_terminate(), daft_quit(), 1);
 	}
+	image_id(data, info);
 	for (int i = 1; data[i]; i++)
 	{
 		ft_printf("|%s:%s", info[i], data[i]);
@@ -47,4 +49,18 @@ static char	**get_info()
 	info = ft_split(line, ',');
 	FREE(line);
 	return (info);
+}
+
+static void	image_id(char **data, char **info)
+{
+	int	i;
+
+	for (i = 0; info[i]; i++)
+	{
+		if (ft_strncmp("type", info[i], INT_MAX) == 0)
+			break ;
+	}
+	if (!info[i])
+		return (ft_printf("image not found"), (void)0);
+	ft_printf("{%d}%s", ID_MOVE, data[i]);
 }

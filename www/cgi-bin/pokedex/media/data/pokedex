@@ -2,6 +2,7 @@ POKEDEX:
 
 #-------------------------------
 BULBASAUR]1
+ID=1
 Name=Bulbasaur
 Types=GRASS,POISON
 BaseStats=45,49,49,45,65,65
@@ -29,6 +30,7 @@ Generation=1
 Evolutions=IVYSAUR,Level,16
 #-------------------------------
 IVYSAUR]2
+ID=2
 Name=Ivysaur
 Types=GRASS,POISON
 BaseStats=60,62,63,60,80,80
@@ -55,6 +57,7 @@ Generation=1
 Evolutions=VENUSAUR,Level,32
 #-------------------------------
 VENUSAUR]3
+ID=3
 Name=Venusaur
 Types=GRASS,POISON
 BaseStats=80,82,83,80,100,100
@@ -80,6 +83,7 @@ Pokedex=Venusaur's flower is said to take on vivid colors if it gets plenty of n
 Generation=1
 #-------------------------------
 CHARMANDER]4
+ID=4
 Name=Charmander
 Types=FIRE
 BaseStats=39,52,43,65,60,50
@@ -107,6 +111,7 @@ Generation=1
 Evolutions=CHARMELEON,Level,16
 #-------------------------------
 CHARMELEON]5
+ID=5
 Name=Charmeleon
 Types=FIRE
 BaseStats=58,64,58,80,80,65
@@ -133,6 +138,7 @@ Generation=1
 Evolutions=CHARIZARD,Level,36
 #-------------------------------
 CHARIZARD]6
+ID=6
 Name=Charizard
 Types=FIRE,FLYING
 BaseStats=78,84,78,100,109,85
@@ -158,6 +164,7 @@ Pokedex=A Charizard flies about in search of strong opponents. It breathes inten
 Generation=1
 #-------------------------------
 SQUIRTLE]7
+ID=7
 Name=Squirtle
 Types=WATER
 BaseStats=44,48,65,43,50,64
@@ -185,6 +192,7 @@ Generation=1
 Evolutions=WARTORTLE,Level,16
 #-------------------------------
 WARTORTLE]8
+ID=8
 Name=Wartortle
 Types=WATER
 BaseStats=59,63,80,58,65,80
@@ -211,6 +219,7 @@ Generation=1
 Evolutions=BLASTOISE,Level,36
 #-------------------------------
 BLASTOISE]9
+ID=9
 Name=Blastoise
 Types=WATER
 BaseStats=79,83,100,78,85,105
@@ -236,6 +245,7 @@ Pokedex=The waterspouts that protrude from its shell are highly accurate. Their 
 Generation=1
 #-------------------------------
 CATERPIE]10
+ID=10
 Name=Caterpie
 Types=BUG
 BaseStats=45,30,35,45,20,20
@@ -262,6 +272,7 @@ Generation=1
 Evolutions=METAPOD,Level,7
 #-------------------------------
 METAPOD]11
+ID=11
 Name=Metapod
 Types=BUG
 BaseStats=50,20,55,30,25,25
@@ -287,6 +298,7 @@ Generation=1
 Evolutions=BUTTERFREE,Level,10
 #-------------------------------
 BUTTERFREE]12
+ID=12
 Name=Butterfree
 Types=BUG,FLYING
 BaseStats=60,45,50,70,90,80
@@ -313,6 +325,7 @@ Generation=1
 WildItemUncommon=SILVERPOWDER
 #-------------------------------
 WEEDLE]13
+ID=13
 Name=Weedle
 Types=BUG,POISON
 BaseStats=40,35,30,50,20,20
@@ -339,6 +352,7 @@ Generation=1
 Evolutions=KAKUNA,Level,7
 #-------------------------------
 KAKUNA]14
+ID=14
 Name=Kakuna
 Types=BUG,POISON
 BaseStats=45,25,50,35,25,25
@@ -364,6 +378,7 @@ Generation=1
 Evolutions=BEEDRILL,Level,10
 #-------------------------------
 BEEDRILL]15
+ID=15
 Name=Beedrill
 Types=BUG,POISON
 BaseStats=65,90,40,75,45,80
@@ -390,6 +405,7 @@ Generation=1
 WildItemUncommon=POISONBARB
 #-------------------------------
 PIDGEY]16
+ID=16
 Name=Pidgey
 Types=NORMAL,FLYING
 BaseStats=40,45,40,56,35,35
@@ -417,6 +433,7 @@ Generation=1
 Evolutions=PIDGEOTTO,Level,18
 #-------------------------------
 PIDGEOTTO]17
+ID=17
 Name=Pidgeotto
 Types=NORMAL,FLYING
 BaseStats=63,60,55,71,50,50
@@ -443,6 +460,7 @@ Generation=1
 Evolutions=PIDGEOT,Level,36
 #-------------------------------
 PIDGEOT]18
+ID=18
 Name=Pidgeot
 Types=NORMAL,FLYING
 BaseStats=83,80,75,101,70,70
@@ -468,6 +486,7 @@ Pokedex=Pidgeot has gorgeous, glossy feathers. Many trainers are so captivated b
 Generation=1
 #-------------------------------
 RATTATA]19
+ID=19
 Name=Rattata
 Types=NORMAL
 BaseStats=30,56,35,72,25,35
@@ -496,6 +515,7 @@ WildItemUncommon=CHILANBERRY
 Evolutions=RATICATE,Level,20
 #-------------------------------
 RATICATE]20
+ID=20
 Name=Raticate
 Types=NORMAL
 BaseStats=55,81,60,97,50,70
@@ -522,6 +542,7 @@ Generation=1
 WildItemUncommon=CHILANBERRY
 #-------------------------------
 SPEAROW]21
+ID=21
 Name=Spearow
 Types=NORMAL,FLYING
 BaseStats=40,60,30,70,31,31
@@ -550,6 +571,7 @@ WildItemUncommon=SHARPBEAK
 Evolutions=FEAROW,Level,20
 #-------------------------------
 FEAROW]22
+ID=22
 Name=Fearow
 Types=NORMAL,FLYING
 BaseStats=65,90,65,100,61,61
@@ -576,6 +598,7 @@ Generation=1
 WildItemUncommon=SHARPBEAK
 #-------------------------------
 EKANS]23
+ID=23
 Name=Ekans
 Types=POISON
 BaseStats=35,60,44,55,40,54
@@ -603,6 +626,7 @@ Generation=1
 Evolutions=ARBOK,Level,22
 #-------------------------------
 ARBOK]24
+ID=24
 Name=Arbok
 Types=POISON
 BaseStats=60,95,69,80,65,79
@@ -628,6 +652,7 @@ Pokedex=This Pokemon has a terrifically strong constricting power. It can even f
 Generation=1
 #-------------------------------
 PIKACHU]25
+ID=25
 Name=Pikachu
 Types=ELECTRIC
 BaseStats=35,55,40,90,50,50
@@ -655,6 +680,7 @@ WildItemUncommon=LIGHTBALL
 Evolutions=RAICHU,Item,THUNDERSTONE
 #-------------------------------
 RAICHU]26
+ID=26
 Name=Raichu
 Types=ELECTRIC
 BaseStats=60,90,55,110,90,80
@@ -680,6 +706,7 @@ Pokedex=If it stores too much electricity, its behavior turns aggressive. To avo
 Generation=1
 #-------------------------------
 SANDSHREW]27
+ID=27
 Name=Sandshrew
 Types=GROUND
 BaseStats=50,75,85,40,20,30
@@ -708,6 +735,7 @@ WildItemUncommon=GRIPCLAW
 Evolutions=SANDSLASH,Level,22
 #-------------------------------
 SANDSLASH]28
+ID=28
 Name=Sandslash
 Types=GROUND
 BaseStats=75,100,110,65,45,55
@@ -734,6 +762,7 @@ Generation=1
 WildItemUncommon=GRIPCLAW
 #-------------------------------
 NIDORANfE]29
+ID=29
 Name=Nidoran♀
 Types=POISON
 BaseStats=55,47,52,41,40,40
@@ -762,6 +791,7 @@ Generation=1
 Evolutions=NIDORINA,Level,16
 #-------------------------------
 NIDORINA]30
+ID=30
 Name=Nidorina
 Types=POISON
 BaseStats=70,62,67,56,55,55
@@ -788,6 +818,7 @@ Generation=1
 Evolutions=NIDOQUEEN,Item,MOONSTONE
 #-------------------------------
 NIDOQUEEN]31
+ID=31
 Name=Nidoqueen
 Types=POISON,GROUND
 BaseStats=90,92,87,76,75,85
@@ -813,6 +844,7 @@ Pokedex=It is adept at sending foes flying with harsh tackles using its tough, s
 Generation=1
 #-------------------------------
 NIDORANmA]32
+ID=32
 Name=Nidoran♂
 Types=POISON
 BaseStats=46,57,40,50,40,40
@@ -841,6 +873,7 @@ Generation=1
 Evolutions=NIDORINO,Level,16
 #-------------------------------
 NIDORINO]33
+ID=33
 Name=Nidorino
 Types=POISON
 BaseStats=61,72,57,65,55,55
@@ -867,6 +900,7 @@ Generation=1
 Evolutions=NIDOKING,Item,MOONSTONE
 #-------------------------------
 NIDOKING]34
+ID=34
 Name=Nidoking
 Types=POISON,GROUND
 BaseStats=81,102,77,85,85,75
@@ -892,6 +926,7 @@ Pokedex=A Nidoking's thick tail packs enormously destructive power capable of to
 Generation=1
 #-------------------------------
 CLEFAIRY]35
+ID=35
 Name=Clefairy
 Types=FAIRY
 BaseStats=70,45,48,35,60,65
@@ -919,6 +954,7 @@ WildItemUncommon=MOONSTONE
 Evolutions=CLEFABLE,Item,MOONSTONE
 #-------------------------------
 CLEFABLE]36
+ID=36
 Name=Clefable
 Types=FAIRY
 BaseStats=95,70,73,60,95,90
@@ -945,6 +981,7 @@ Generation=1
 WildItemUncommon=MOONSTONE
 #-------------------------------
 VULPIX]37
+ID=37
 Name=Vulpix
 Types=FIRE
 BaseStats=38,41,40,65,50,65
@@ -973,6 +1010,7 @@ WildItemUncommon=CHARCOAL
 Evolutions=NINETALES,Item,FIRESTONE
 #-------------------------------
 NINETALES]38
+ID=38
 Name=Ninetales
 Types=FIRE
 BaseStats=73,76,75,100,81,100
@@ -999,6 +1037,7 @@ Generation=1
 WildItemUncommon=CHARCOAL
 #-------------------------------
 JIGGLYPUFF]39
+ID=39
 Name=Jigglypuff
 Types=NORMAL,FAIRY
 BaseStats=115,45,20,20,45,25
@@ -1026,6 +1065,7 @@ WildItemUncommon=MOONSTONE
 Evolutions=WIGGLYTUFF,Item,MOONSTONE
 #-------------------------------
 WIGGLYTUFF]40
+ID=40
 Name=Wigglytuff
 Types=NORMAL,FAIRY
 BaseStats=140,70,45,45,85,50
@@ -1052,6 +1092,7 @@ Generation=1
 WildItemUncommon=MOONSTONE
 #-------------------------------
 ZUBAT]41
+ID=41
 Name=Zubat
 Types=POISON,FLYING
 BaseStats=40,45,35,55,30,40
@@ -1079,6 +1120,7 @@ Generation=1
 Evolutions=GOLBAT,Level,22
 #-------------------------------
 GOLBAT]42
+ID=42
 Name=Golbat
 Types=POISON,FLYING
 BaseStats=75,80,70,90,65,75
@@ -1105,6 +1147,7 @@ Generation=1
 Evolutions=CROBAT,Happiness,
 #-------------------------------
 ODDISH]43
+ID=43
 Name=Oddish
 Types=GRASS,POISON
 BaseStats=45,50,55,30,75,65
@@ -1133,6 +1176,7 @@ WildItemUncommon=ABSORBBULB
 Evolutions=GLOOM,Level,21
 #-------------------------------
 GLOOM]44
+ID=44
 Name=Gloom
 Types=GRASS,POISON
 BaseStats=60,65,70,40,85,75
@@ -1160,6 +1204,7 @@ WildItemUncommon=ABSORBBULB
 Evolutions=VILEPLUME,Item,LEAFSTONE,BELLOSSOM,Item,SUNSTONE
 #-------------------------------
 VILEPLUME]45
+ID=45
 Name=Vileplume
 Types=GRASS,POISON
 BaseStats=75,80,85,50,110,90
@@ -1186,6 +1231,7 @@ Generation=1
 WildItemUncommon=ABSORBBULB
 #-------------------------------
 PARAS]46
+ID=46
 Name=Paras
 Types=BUG,GRASS
 BaseStats=35,70,55,25,45,55
@@ -1215,6 +1261,7 @@ WildItemUncommon=BIGMUSHROOM
 Evolutions=PARASECT,Level,24
 #-------------------------------
 PARASECT]47
+ID=47
 Name=Parasect
 Types=BUG,GRASS
 BaseStats=60,95,80,30,60,80
@@ -1242,6 +1289,7 @@ WildItemCommon=TINYMUSHROOM
 WildItemUncommon=BIGMUSHROOM
 #-------------------------------
 VENONAT]48
+ID=48
 Name=Venonat
 Types=BUG,POISON
 BaseStats=60,55,50,45,40,55
@@ -1269,6 +1317,7 @@ Generation=1
 Evolutions=VENOMOTH,Level,31
 #-------------------------------
 VENOMOTH]49
+ID=49
 Name=Venomoth
 Types=BUG,POISON
 BaseStats=70,65,60,90,90,75
@@ -1295,6 +1344,7 @@ Generation=1
 WildItemUncommon=SHEDSHELL
 #-------------------------------
 DIGLETT]50
+ID=50
 Name=Diglett
 Types=GROUND
 BaseStats=10,55,25,95,35,45
@@ -1323,6 +1373,7 @@ WildItemUncommon=SOFTSAND
 Evolutions=DUGTRIO,Level,26
 #-------------------------------
 DUGTRIO]51
+ID=51
 Name=Dugtrio
 Types=GROUND
 BaseStats=35,100,50,120,50,70
@@ -1349,6 +1400,7 @@ Generation=1
 WildItemUncommon=SOFTSAND
 #-------------------------------
 MEOWTH]52
+ID=52
 Name=Meowth
 Types=NORMAL
 BaseStats=40,45,35,90,40,40
@@ -1377,6 +1429,7 @@ WildItemUncommon=QUICKCLAW
 Evolutions=PERSIAN,Level,28,PERRSERKER,None,
 #-------------------------------
 PERSIAN]53
+ID=53
 Name=Persian
 Types=NORMAL
 BaseStats=65,70,60,115,65,65
@@ -1403,6 +1456,7 @@ Generation=1
 WildItemUncommon=QUICKCLAW
 #-------------------------------
 PSYDUCK]54
+ID=54
 Name=Psyduck
 Types=WATER
 BaseStats=50,52,48,55,65,50
@@ -1430,6 +1484,7 @@ Generation=1
 Evolutions=GOLDUCK,Level,33
 #-------------------------------
 GOLDUCK]55
+ID=55
 Name=Golduck
 Types=WATER
 BaseStats=80,82,78,85,95,80
@@ -1455,6 +1510,7 @@ Pokedex=A Golduck is an adept swimmer. It sometimes joins competitive swimmers i
 Generation=1
 #-------------------------------
 MANKEY]56
+ID=56
 Name=Mankey
 Types=FIGHTING
 BaseStats=40,80,35,70,35,45
@@ -1482,6 +1538,7 @@ Generation=1
 Evolutions=PRIMEAPE,Level,28
 #-------------------------------
 PRIMEAPE]57
+ID=57
 Name=Primeape
 Types=FIGHTING
 BaseStats=65,105,60,95,60,70
@@ -1507,6 +1564,7 @@ Pokedex=When it becomes furious, its blood circulation becomes more robust, and 
 Generation=1
 #-------------------------------
 GROWLITHE]58
+ID=58
 Name=Growlithe
 Types=FIRE
 BaseStats=55,70,45,60,70,50
@@ -1534,6 +1592,7 @@ Generation=1
 Evolutions=ARCANINE,Item,FIRESTONE
 #-------------------------------
 ARCANINE]59
+ID=59
 Name=Arcanine
 Types=FIRE
 BaseStats=90,110,80,95,100,80
@@ -1559,6 +1618,7 @@ Pokedex=This fleet-footed Pokemon is said to run over 6,200 miles in a single da
 Generation=1
 #-------------------------------
 POLIWAG]60
+ID=60
 Name=Poliwag
 Types=WATER
 BaseStats=40,50,40,90,40,40
@@ -1586,6 +1646,7 @@ Generation=1
 Evolutions=POLIWHIRL,Level,25
 #-------------------------------
 POLIWHIRL]61
+ID=61
 Name=Poliwhirl
 Types=WATER
 BaseStats=65,65,65,90,50,50
@@ -1613,6 +1674,7 @@ WildItemUncommon=KINGSROCK
 Evolutions=POLIWRATH,Item,WATERSTONE,POLITOED,TradeItem,KINGSROCK
 #-------------------------------
 POLIWRATH]62
+ID=62
 Name=Poliwrath
 Types=WATER,FIGHTING
 BaseStats=90,95,95,70,70,90
@@ -1639,6 +1701,7 @@ Generation=1
 WildItemUncommon=KINGSROCK
 #-------------------------------
 ABRA]63
+ID=63
 Name=Abra
 Types=PSYCHIC
 BaseStats=25,20,15,90,105,55
@@ -1667,6 +1730,7 @@ WildItemUncommon=TWISTEDSPOON
 Evolutions=KADABRA,Level,16
 #-------------------------------
 KADABRA]64
+ID=64
 Name=Kadabra
 Types=PSYCHIC
 BaseStats=40,35,30,105,120,70
@@ -1694,6 +1758,7 @@ WildItemUncommon=TWISTEDSPOON
 Evolutions=ALAKAZAM,Trade,
 #-------------------------------
 ALAKAZAM]65
+ID=65
 Name=Alakazam
 Types=PSYCHIC
 BaseStats=55,50,45,120,135,95
@@ -1720,6 +1785,7 @@ Generation=1
 WildItemUncommon=TWISTEDSPOON
 #-------------------------------
 MACHOP]66
+ID=66
 Name=Machop
 Types=FIGHTING
 BaseStats=70,80,50,35,35,35
@@ -1748,6 +1814,7 @@ WildItemUncommon=FOCUSBAND
 Evolutions=MACHOKE,Level,28
 #-------------------------------
 MACHOKE]67
+ID=67
 Name=Machoke
 Types=FIGHTING
 BaseStats=80,100,70,45,50,60
@@ -1775,6 +1842,7 @@ WildItemUncommon=FOCUSBAND
 Evolutions=MACHAMP,Trade,
 #-------------------------------
 MACHAMP]68
+ID=68
 Name=Machamp
 Types=FIGHTING
 BaseStats=90,130,80,55,65,85
@@ -1801,6 +1869,7 @@ Generation=1
 WildItemUncommon=FOCUSBAND
 #-------------------------------
 BELLSPROUT]69
+ID=69
 Name=Bellsprout
 Types=GRASS,POISON
 BaseStats=50,75,35,40,70,30
@@ -1828,6 +1897,7 @@ Generation=1
 Evolutions=WEEPINBELL,Level,21
 #-------------------------------
 WEEPINBELL]70
+ID=70
 Name=Weepinbell
 Types=GRASS,POISON
 BaseStats=65,90,50,55,85,45
@@ -1854,6 +1924,7 @@ Generation=1
 Evolutions=VICTREEBEL,Item,LEAFSTONE
 #-------------------------------
 VICTREEBEL]71
+ID=71
 Name=Victreebel
 Types=GRASS,POISON
 BaseStats=80,105,65,70,100,70
@@ -1879,6 +1950,7 @@ Pokedex=The long vine extending from its head is waved about as if it were a liv
 Generation=1
 #-------------------------------
 TENTACOOL]72
+ID=72
 Name=Tentacool
 Types=WATER,POISON
 BaseStats=40,40,35,70,50,100
@@ -1907,6 +1979,7 @@ WildItemUncommon=POISONBARB
 Evolutions=TENTACRUEL,Level,30
 #-------------------------------
 TENTACRUEL]73
+ID=73
 Name=Tentacruel
 Types=WATER,POISON
 BaseStats=80,70,65,100,80,120
@@ -1933,6 +2006,7 @@ Generation=1
 WildItemUncommon=POISONBARB
 #-------------------------------
 GEODUDE]74
+ID=74
 Name=Geodude
 Types=ROCK,GROUND
 BaseStats=40,80,100,20,30,30
@@ -1961,6 +2035,7 @@ WildItemUncommon=EVERSTONE
 Evolutions=GRAVELER,Level,25
 #-------------------------------
 GRAVELER]75
+ID=75
 Name=Graveler
 Types=ROCK,GROUND
 BaseStats=55,95,115,35,45,45
@@ -1988,6 +2063,7 @@ WildItemUncommon=EVERSTONE
 Evolutions=GOLEM,Trade,
 #-------------------------------
 GOLEM]76
+ID=76
 Name=Golem
 Types=ROCK,GROUND
 BaseStats=80,120,130,45,55,65
@@ -2014,6 +2090,7 @@ Generation=1
 WildItemUncommon=EVERSTONE
 #-------------------------------
 PONYTA]77
+ID=77
 Name=Ponyta
 Types=FIRE
 BaseStats=50,85,55,90,65,65
@@ -2041,6 +2118,7 @@ Generation=1
 Evolutions=RAPIDASH,Level,40
 #-------------------------------
 RAPIDASH]78
+ID=78
 Name=Rapidash
 Types=FIRE
 BaseStats=65,100,70,105,80,80
@@ -2066,6 +2144,7 @@ Pokedex=It usually canters casually in the fields and plains. But once a Rapidas
 Generation=1
 #-------------------------------
 SLOWPOKE]79
+ID=79
 Name=Slowpoke
 Types=WATER,PSYCHIC
 BaseStats=90,65,65,15,40,40
@@ -2094,6 +2173,7 @@ WildItemUncommon=LAGGINGTAIL
 Evolutions=SLOWBRO,Level,37,SLOWKING,TradeItem,KINGSROCK
 #-------------------------------
 SLOWBRO]80
+ID=80
 Name=Slowbro
 Types=WATER,PSYCHIC
 BaseStats=95,75,110,30,100,80
@@ -2120,6 +2200,7 @@ Generation=1
 WildItemUncommon=KINGSROCK
 #-------------------------------
 MAGNEMITE]81
+ID=81
 Name=Magnemite
 Types=ELECTRIC,STEEL
 BaseStats=25,35,70,45,95,55
@@ -2147,6 +2228,7 @@ WildItemUncommon=METALCOAT
 Evolutions=MAGNETON,Level,30
 #-------------------------------
 MAGNETON]82
+ID=82
 Name=Magneton
 Types=ELECTRIC,STEEL
 BaseStats=50,60,95,70,120,70
@@ -2174,6 +2256,7 @@ WildItemUncommon=METALCOAT
 Evolutions=MAGNEZONE,Item,THUNDERSTONE,MAGNEZONE,LocationFlag,Magnetic
 #-------------------------------
 FARFETCHD]83
+ID=83
 Name=Farfetch'd
 Types=NORMAL,FLYING
 BaseStats=52,90,55,60,58,62
@@ -2202,6 +2285,7 @@ WildItemUncommon=LEEK
 Evolutions=SIRFETCHD,None,
 #-------------------------------
 DODUO]84
+ID=84
 Name=Doduo
 Types=NORMAL,FLYING
 BaseStats=35,85,45,75,35,35
@@ -2230,6 +2314,7 @@ WildItemUncommon=SHARPBEAK
 Evolutions=DODRIO,Level,31
 #-------------------------------
 DODRIO]85
+ID=85
 Name=Dodrio
 Types=NORMAL,FLYING
 BaseStats=60,110,70,110,60,60
@@ -2256,6 +2341,7 @@ Generation=1
 WildItemUncommon=SHARPBEAK
 #-------------------------------
 SEEL]86
+ID=86
 Name=Seel
 Types=WATER
 BaseStats=65,45,55,45,45,70
@@ -2283,6 +2369,7 @@ Generation=1
 Evolutions=DEWGONG,Level,34
 #-------------------------------
 DEWGONG]87
+ID=87
 Name=Dewgong
 Types=WATER,ICE
 BaseStats=90,70,80,70,70,95
@@ -2308,6 +2395,7 @@ Pokedex=It loves to snooze on bitterly cold ice. The sight of this Pokemon sleep
 Generation=1
 #-------------------------------
 GRIMER]88
+ID=88
 Name=Grimer
 Types=POISON
 BaseStats=80,80,50,25,40,50
@@ -2336,6 +2424,7 @@ WildItemUncommon=BLACKSLUDGE
 Evolutions=MUK,Level,38
 #-------------------------------
 MUK]89
+ID=89
 Name=Muk
 Types=POISON
 BaseStats=105,105,75,50,65,100
@@ -2362,6 +2451,7 @@ Generation=1
 WildItemCommon=BLACKSLUDGE
 #-------------------------------
 SHELLDER]90
+ID=90
 Name=Shellder
 Types=WATER
 BaseStats=30,65,100,40,45,25
@@ -2391,6 +2481,7 @@ WildItemUncommon=BIGPEARL
 Evolutions=CLOYSTER,Item,WATERSTONE
 #-------------------------------
 CLOYSTER]91
+ID=91
 Name=Cloyster
 Types=WATER,ICE
 BaseStats=50,95,180,70,85,45
@@ -2418,6 +2509,7 @@ WildItemCommon=PEARL
 WildItemUncommon=BIGPEARL
 #-------------------------------
 GASTLY]92
+ID=92
 Name=Gastly
 Types=GHOST,POISON
 BaseStats=30,35,30,80,100,35
@@ -2444,6 +2536,7 @@ Generation=1
 Evolutions=HAUNTER,Level,25
 #-------------------------------
 HAUNTER]93
+ID=93
 Name=Haunter
 Types=GHOST,POISON
 BaseStats=45,50,45,95,115,55
@@ -2469,6 +2562,7 @@ Generation=1
 Evolutions=GENGAR,Trade,
 #-------------------------------
 GENGAR]94
+ID=94
 Name=Gengar
 Types=GHOST,POISON
 BaseStats=60,65,60,110,130,75
@@ -2493,6 +2587,7 @@ Pokedex=Deep in the night, your shadow cast by a streetlight may suddenly overta
 Generation=1
 #-------------------------------
 ONIX]95
+ID=95
 Name=Onix
 Types=ROCK,GROUND
 BaseStats=35,45,160,70,30,45
@@ -2520,6 +2615,7 @@ Generation=1
 Evolutions=STEELIX,TradeItem,METALCOAT
 #-------------------------------
 DROWZEE]96
+ID=96
 Name=Drowzee
 Types=PSYCHIC
 BaseStats=60,48,45,42,43,90
@@ -2547,6 +2643,7 @@ Generation=1
 Evolutions=HYPNO,Level,26
 #-------------------------------
 HYPNO]97
+ID=97
 Name=Hypno
 Types=PSYCHIC
 BaseStats=85,73,70,67,73,115
@@ -2572,6 +2669,7 @@ Pokedex=The arcing movement and glitter of the pendulum in a Hypno's hand lull t
 Generation=1
 #-------------------------------
 KRABBY]98
+ID=98
 Name=Krabby
 Types=WATER
 BaseStats=30,105,90,50,25,25
@@ -2599,6 +2697,7 @@ Generation=1
 Evolutions=KINGLER,Level,28
 #-------------------------------
 KINGLER]99
+ID=99
 Name=Kingler
 Types=WATER
 BaseStats=55,130,115,75,50,50
@@ -2624,6 +2723,7 @@ Pokedex=It waves its huge, oversized claw in the air to communicate with others.
 Generation=1
 #-------------------------------
 VOLTORB]100
+ID=100
 Name=Voltorb
 Types=ELECTRIC
 BaseStats=40,30,50,100,55,55
@@ -2650,6 +2750,7 @@ Generation=1
 Evolutions=ELECTRODE,Level,30
 #-------------------------------
 ELECTRODE]101
+ID=101
 Name=Electrode
 Types=ELECTRIC
 BaseStats=60,50,70,150,80,80
@@ -2675,6 +2776,7 @@ Pokedex=They appear in great numbers at electric power plants. Because they feed
 Generation=1
 #-------------------------------
 EXEGGCUTE]102
+ID=102
 Name=Exeggcute
 Types=GRASS,PSYCHIC
 BaseStats=60,40,80,40,60,45
@@ -2703,6 +2805,7 @@ WildItemUncommon=PSYCHICSEED
 Evolutions=EXEGGUTOR,Item,LEAFSTONE
 #-------------------------------
 EXEGGUTOR]103
+ID=103
 Name=Exeggutor
 Types=GRASS,PSYCHIC
 BaseStats=95,95,85,55,125,75
@@ -2728,6 +2831,7 @@ Pokedex=Originally from the tropics, Exeggutor's heads grow larger with exposure
 Generation=1
 #-------------------------------
 CUBONE]104
+ID=104
 Name=Cubone
 Types=GROUND
 BaseStats=50,50,95,35,40,50
@@ -2756,6 +2860,7 @@ WildItemUncommon=THICKCLUB
 Evolutions=MAROWAK,Level,28
 #-------------------------------
 MAROWAK]105
+ID=105
 Name=Marowak
 Types=GROUND
 BaseStats=60,80,110,45,50,80
@@ -2782,6 +2887,7 @@ Generation=1
 WildItemUncommon=THICKCLUB
 #-------------------------------
 HITMONLEE]106
+ID=106
 Name=Hitmonlee
 Types=FIGHTING
 BaseStats=50,120,53,87,35,110
@@ -2807,6 +2913,7 @@ Pokedex=Its legs freely stretch and contract. Using these springlike limbs, it b
 Generation=1
 #-------------------------------
 HITMONCHAN]107
+ID=107
 Name=Hitmonchan
 Types=FIGHTING
 BaseStats=50,105,79,76,35,110
@@ -2832,6 +2939,7 @@ Pokedex=A Hitmonchan is said to possess the spirit of a boxer who aimed to becom
 Generation=1
 #-------------------------------
 LICKITUNG]108
+ID=108
 Name=Lickitung
 Types=NORMAL
 BaseStats=90,55,75,30,60,75
@@ -2860,6 +2968,7 @@ WildItemUncommon=LAGGINGTAIL
 Evolutions=LICKILICKY,HasMove,ROLLOUT
 #-------------------------------
 KOFFING]109
+ID=109
 Name=Koffing
 Types=POISON
 BaseStats=40,65,95,35,60,45
@@ -2888,6 +2997,7 @@ WildItemUncommon=SMOKEBALL
 Evolutions=WEEZING,Level,35
 #-------------------------------
 WEEZING]110
+ID=110
 Name=Weezing
 Types=POISON
 BaseStats=65,90,120,60,85,70
@@ -2914,6 +3024,7 @@ Generation=1
 WildItemUncommon=SMOKEBALL
 #-------------------------------
 RHYHORN]111
+ID=111
 Name=Rhyhorn
 Types=GROUND,ROCK
 BaseStats=80,85,95,25,30,30
@@ -2941,6 +3052,7 @@ Generation=1
 Evolutions=RHYDON,Level,42
 #-------------------------------
 RHYDON]112
+ID=112
 Name=Rhydon
 Types=GROUND,ROCK
 BaseStats=105,130,120,40,45,45
@@ -2967,6 +3079,7 @@ Generation=1
 Evolutions=RHYPERIOR,TradeItem,PROTECTOR
 #-------------------------------
 CHANSEY]113
+ID=113
 Name=Chansey
 Types=NORMAL
 BaseStats=250,5,5,50,35,105
@@ -2995,6 +3108,7 @@ WildItemCommon=LUCKYPUNCH
 Evolutions=BLISSEY,Happiness,
 #-------------------------------
 TANGELA]114
+ID=114
 Name=Tangela
 Types=GRASS
 BaseStats=65,55,115,60,100,40
@@ -3022,6 +3136,7 @@ Generation=1
 Evolutions=TANGROWTH,HasMove,ANCIENTPOWER
 #-------------------------------
 KANGASKHAN]115
+ID=115
 Name=Kangaskhan
 Types=NORMAL
 BaseStats=105,95,80,90,40,80
@@ -3048,6 +3163,7 @@ Pokedex=If you come across a young Kangaskhan playing by itself, never try to ca
 Generation=1
 #-------------------------------
 HORSEA]116
+ID=116
 Name=Horsea
 Types=WATER
 BaseStats=30,40,70,60,70,25
@@ -3076,6 +3192,7 @@ WildItemUncommon=DRAGONSCALE
 Evolutions=SEADRA,Level,32
 #-------------------------------
 SEADRA]117
+ID=117
 Name=Seadra
 Types=WATER
 BaseStats=55,65,95,85,95,45
@@ -3103,6 +3220,7 @@ WildItemUncommon=DRAGONSCALE
 Evolutions=KINGDRA,TradeItem,DRAGONSCALE
 #-------------------------------
 GOLDEEN]118
+ID=118
 Name=Goldeen
 Types=WATER
 BaseStats=45,67,60,63,35,50
@@ -3131,6 +3249,7 @@ WildItemUncommon=MYSTICWATER
 Evolutions=SEAKING,Level,33
 #-------------------------------
 SEAKING]119
+ID=119
 Name=Seaking
 Types=WATER
 BaseStats=80,92,65,68,65,80
@@ -3157,6 +3276,7 @@ Generation=1
 WildItemUncommon=MYSTICWATER
 #-------------------------------
 STARYU]120
+ID=120
 Name=Staryu
 Types=WATER
 BaseStats=30,45,55,85,70,55
@@ -3185,6 +3305,7 @@ WildItemUncommon=STARPIECE
 Evolutions=STARMIE,Item,WATERSTONE
 #-------------------------------
 STARMIE]121
+ID=121
 Name=Starmie
 Types=WATER,PSYCHIC
 BaseStats=60,75,85,115,100,85
@@ -3212,6 +3333,7 @@ WildItemCommon=STARDUST
 WildItemUncommon=STARPIECE
 #-------------------------------
 MRMIME]122
+ID=122
 Name=Mr. Mime
 Types=PSYCHIC,FAIRY
 BaseStats=40,45,65,90,100,120
@@ -3239,6 +3361,7 @@ Generation=1
 Evolutions=MRRIME,None,
 #-------------------------------
 SCYTHER]123
+ID=123
 Name=Scyther
 Types=BUG,FLYING
 BaseStats=70,110,80,105,55,80
@@ -3266,6 +3389,7 @@ Generation=1
 Evolutions=SCIZOR,TradeItem,METALCOAT
 #-------------------------------
 JYNX]124
+ID=124
 Name=Jynx
 Types=ICE,PSYCHIC
 BaseStats=65,50,35,95,115,95
@@ -3291,6 +3415,7 @@ Pokedex=A Jynx sashays rhythmically as if it were dancing. Its motions are so bo
 Generation=1
 #-------------------------------
 ELECTABUZZ]125
+ID=125
 Name=Electabuzz
 Types=ELECTRIC
 BaseStats=65,83,57,105,95,85
@@ -3318,6 +3443,7 @@ WildItemUncommon=ELECTIRIZER
 Evolutions=ELECTIVIRE,TradeItem,ELECTIRIZER
 #-------------------------------
 MAGMAR]126
+ID=126
 Name=Magmar
 Types=FIRE
 BaseStats=65,95,57,93,100,85
@@ -3345,6 +3471,7 @@ WildItemUncommon=MAGMARIZER
 Evolutions=MAGMORTAR,TradeItem,MAGMARIZER
 #-------------------------------
 PINSIR]127
+ID=127
 Name=Pinsir
 Types=BUG
 BaseStats=65,125,100,85,55,70
@@ -3371,6 +3498,7 @@ Pokedex=Their pincers are strong enough to shatter thick logs. Because they disl
 Generation=1
 #-------------------------------
 TAUROS]128
+ID=128
 Name=Tauros
 Types=NORMAL
 BaseStats=75,100,95,110,40,70
@@ -3396,6 +3524,7 @@ Pokedex=It is not satisfied unless it is rampaging at all times. If there is no 
 Generation=1
 #-------------------------------
 MAGIKARP]129
+ID=129
 Name=Magikarp
 Types=WATER
 BaseStats=20,10,55,80,15,20
@@ -3422,6 +3551,7 @@ Generation=1
 Evolutions=GYARADOS,Level,20
 #-------------------------------
 GYARADOS]130
+ID=130
 Name=Gyarados
 Types=WATER,FLYING
 BaseStats=95,125,79,81,60,100
@@ -3447,6 +3577,7 @@ Pokedex=It is an extremely vicious and violent Pokemon. When humans begin to fig
 Generation=1
 #-------------------------------
 LAPRAS]131
+ID=131
 Name=Lapras
 Types=WATER,ICE
 BaseStats=130,85,80,60,85,95
@@ -3476,6 +3607,7 @@ WildItemUncommon=MYSTICWATER
 WildItemRare=MYSTICWATER
 #-------------------------------
 DITTO]132
+ID=132
 Name=Ditto
 Types=NORMAL
 BaseStats=48,48,48,48,48,48
@@ -3502,6 +3634,7 @@ WildItemCommon=QUICKPOWDER
 WildItemUncommon=METALPOWDER
 #-------------------------------
 EEVEE]133
+ID=133
 Name=Eevee
 Types=NORMAL
 BaseStats=55,55,50,55,45,65
@@ -3529,6 +3662,7 @@ Generation=1
 Evolutions=VAPOREON,Item,WATERSTONE,JOLTEON,Item,THUNDERSTONE,FLAREON,Item,FIRESTONE,LEAFEON,Item,LEAFSTONE,LEAFEON,LocationFlag,MossRock,GLACEON,Item,ICESTONE,GLACEON,LocationFlag,IceRock,SYLVEON,HappinessMoveType,FAIRY,ESPEON,HappinessDay,,UMBREON,HappinessNight,
 #-------------------------------
 VAPOREON]134
+ID=134
 Name=Vaporeon
 Types=WATER
 BaseStats=130,65,60,65,110,95
@@ -3554,6 +3688,7 @@ Pokedex=Vaporeon underwent a spontaneous mutation and grew fins and gills that a
 Generation=1
 #-------------------------------
 JOLTEON]135
+ID=135
 Name=Jolteon
 Types=ELECTRIC
 BaseStats=65,65,60,130,110,95
@@ -3579,6 +3714,7 @@ Pokedex=Its cells generate weak power that is amplified by its fur's static elec
 Generation=1
 #-------------------------------
 FLAREON]136
+ID=136
 Name=Flareon
 Types=FIRE
 BaseStats=65,130,60,65,95,110
@@ -3604,6 +3740,7 @@ Pokedex=Flareon's fluffy fur releases heat into the air so that its body does no
 Generation=1
 #-------------------------------
 PORYGON]137
+ID=137
 Name=Porygon
 Types=NORMAL
 BaseStats=65,60,70,40,85,75
@@ -3630,6 +3767,7 @@ Generation=1
 Evolutions=PORYGON2,TradeItem,UPGRADE
 #-------------------------------
 OMANYTE]138
+ID=138
 Name=Omanyte
 Types=ROCK,WATER
 BaseStats=35,40,100,35,90,55
@@ -3657,6 +3795,7 @@ Generation=1
 Evolutions=OMASTAR,Level,40
 #-------------------------------
 OMASTAR]139
+ID=139
 Name=Omastar
 Types=ROCK,WATER
 BaseStats=70,60,125,55,115,70
@@ -3682,6 +3821,7 @@ Pokedex=An Omastar uses its tentacles to capture its prey. It is believed to hav
 Generation=1
 #-------------------------------
 KABUTO]140
+ID=140
 Name=Kabuto
 Types=ROCK,WATER
 BaseStats=30,80,90,55,55,45
@@ -3709,6 +3849,7 @@ Generation=1
 Evolutions=KABUTOPS,Level,40
 #-------------------------------
 KABUTOPS]141
+ID=141
 Name=Kabutops
 Types=ROCK,WATER
 BaseStats=60,115,105,80,65,70
@@ -3734,6 +3875,7 @@ Pokedex=Kabutops once swam underwater to hunt for prey. It was apparently evolvi
 Generation=1
 #-------------------------------
 AERODACTYL]142
+ID=142
 Name=Aerodactyl
 Types=ROCK,FLYING
 BaseStats=80,105,65,130,60,75
@@ -3760,6 +3902,7 @@ Pokedex=Aerodactyl is a Pokemon from the age of dinosaurs. It was regenerated fr
 Generation=1
 #-------------------------------
 SNORLAX]143
+ID=143
 Name=Snorlax
 Types=NORMAL
 BaseStats=160,110,65,30,65,110
@@ -3789,6 +3932,7 @@ WildItemUncommon=LEFTOVERS
 WildItemRare=LEFTOVERS
 #-------------------------------
 ARTICUNO]144
+ID=144
 Name=Articuno
 Types=ICE,FLYING
 BaseStats=90,85,100,85,95,125
@@ -3815,6 +3959,7 @@ Generation=1
 Flags=Legendary
 #-------------------------------
 ZAPDOS]145
+ID=145
 Name=Zapdos
 Types=ELECTRIC,FLYING
 BaseStats=90,90,85,100,125,90
@@ -3841,6 +3986,7 @@ Generation=1
 Flags=Legendary
 #-------------------------------
 MOLTRES]146
+ID=146
 Name=Moltres
 Types=FIRE,FLYING
 BaseStats=90,100,90,90,125,85
@@ -3867,6 +4013,7 @@ Generation=1
 Flags=Legendary
 #-------------------------------
 DRATINI]147
+ID=147
 Name=Dratini
 Types=DRAGON
 BaseStats=41,64,45,50,50,50
@@ -3895,6 +4042,7 @@ WildItemUncommon=DRAGONSCALE
 Evolutions=DRAGONAIR,Level,30
 #-------------------------------
 DRAGONAIR]148
+ID=148
 Name=Dragonair
 Types=DRAGON
 BaseStats=61,84,65,70,70,70
@@ -3922,6 +4070,7 @@ WildItemUncommon=DRAGONSCALE
 Evolutions=DRAGONITE,Level,55
 #-------------------------------
 DRAGONITE]149
+ID=149
 Name=Dragonite
 Types=DRAGON,FLYING
 BaseStats=91,134,95,80,100,100
@@ -3948,6 +4097,7 @@ Generation=1
 WildItemUncommon=DRAGONSCALE
 #-------------------------------
 MEWTWO]150
+ID=150
 Name=Mewtwo
 Types=PSYCHIC
 BaseStats=106,110,90,130,154,90
@@ -3974,6 +4124,7 @@ Generation=1
 Flags=Legendary
 #-------------------------------
 MEW]151
+ID=151
 Name=Mew
 Types=PSYCHIC
 BaseStats=100,100,100,100,100,100
@@ -4002,6 +4153,7 @@ WildItemUncommon=LUMBERRY
 WildItemRare=LUMBERRY
 #-------------------------------
 CHIKORITA]152
+ID=152
 Name=Chikorita
 Types=GRASS
 BaseStats=45,49,65,45,49,65
@@ -4029,6 +4181,7 @@ Generation=2
 Evolutions=BAYLEEF,Level,16
 #-------------------------------
 BAYLEEF]153
+ID=153
 Name=Bayleef
 Types=GRASS
 BaseStats=60,62,80,60,63,80
@@ -4055,6 +4208,7 @@ Generation=2
 Evolutions=MEGANIUM,Level,32
 #-------------------------------
 MEGANIUM]154
+ID=154
 Name=Meganium
 Types=GRASS
 BaseStats=80,82,100,80,83,100
@@ -4080,6 +4234,7 @@ Pokedex=The fragrance of a Meganium's flower soothes and calms emotions. In batt
 Generation=2
 #-------------------------------
 CYNDAQUIL]155
+ID=155
 Name=Cyndaquil
 Types=FIRE
 BaseStats=39,52,43,65,60,50
@@ -4107,6 +4262,7 @@ Generation=2
 Evolutions=QUILAVA,Level,14
 #-------------------------------
 QUILAVA]156
+ID=156
 Name=Quilava
 Types=FIRE
 BaseStats=58,64,58,80,80,65
@@ -4133,6 +4289,7 @@ Generation=2
 Evolutions=TYPHLOSION,Level,36
 #-------------------------------
 TYPHLOSION]157
+ID=157
 Name=Typhlosion
 Types=FIRE
 BaseStats=78,84,78,100,109,85
@@ -4158,6 +4315,7 @@ Pokedex=It can hide behind a shimmering heat haze that it creates using its inte
 Generation=2
 #-------------------------------
 TOTODILE]158
+ID=158
 Name=Totodile
 Types=WATER
 BaseStats=50,65,64,43,44,48
@@ -4185,6 +4343,7 @@ Generation=2
 Evolutions=CROCONAW,Level,18
 #-------------------------------
 CROCONAW]159
+ID=159
 Name=Croconaw
 Types=WATER
 BaseStats=65,80,80,58,59,63
@@ -4211,6 +4370,7 @@ Generation=2
 Evolutions=FERALIGATR,Level,30
 #-------------------------------
 FERALIGATR]160
+ID=160
 Name=Feraligatr
 Types=WATER
 BaseStats=85,105,100,78,79,83
@@ -4236,6 +4396,7 @@ Pokedex=It opens its huge mouth to intimidate enemies. In battle, it runs using 
 Generation=2
 #-------------------------------
 SENTRET]161
+ID=161
 Name=Sentret
 Types=NORMAL
 BaseStats=35,46,34,20,35,45
@@ -4263,6 +4424,7 @@ Generation=2
 Evolutions=FURRET,Level,15
 #-------------------------------
 FURRET]162
+ID=162
 Name=Furret
 Types=NORMAL
 BaseStats=85,76,64,90,45,55
@@ -4288,6 +4450,7 @@ Pokedex=A Furret has a very slim build. When under attack, it can squirm through
 Generation=2
 #-------------------------------
 HOOTHOOT]163
+ID=163
 Name=Hoothoot
 Types=NORMAL,FLYING
 BaseStats=60,30,30,50,36,56
@@ -4315,6 +4478,7 @@ Generation=2
 Evolutions=NOCTOWL,Level,20
 #-------------------------------
 NOCTOWL]164
+ID=164
 Name=Noctowl
 Types=NORMAL,FLYING
 BaseStats=100,50,50,70,86,96
@@ -4340,6 +4504,7 @@ Pokedex=It unfailingly catches prey in darkness. Noctowl owe their success to su
 Generation=2
 #-------------------------------
 LEDYBA]165
+ID=165
 Name=Ledyba
 Types=BUG,FLYING
 BaseStats=40,20,30,55,40,80
@@ -4367,6 +4532,7 @@ Generation=2
 Evolutions=LEDIAN,Level,18
 #-------------------------------
 LEDIAN]166
+ID=166
 Name=Ledian
 Types=BUG,FLYING
 BaseStats=55,35,50,85,55,110
@@ -4392,6 +4558,7 @@ Pokedex=It is said that in lands with clean air, where the stars fill the sky, t
 Generation=2
 #-------------------------------
 SPINARAK]167
+ID=167
 Name=Spinarak
 Types=BUG,POISON
 BaseStats=40,60,40,30,40,40
@@ -4419,6 +4586,7 @@ Generation=2
 Evolutions=ARIADOS,Level,22
 #-------------------------------
 ARIADOS]168
+ID=168
 Name=Ariados
 Types=BUG,POISON
 BaseStats=70,90,70,40,60,70
@@ -4444,6 +4612,7 @@ Pokedex=Its feet are tipped with tiny hooked claws that enable it to scuttle on 
 Generation=2
 #-------------------------------
 CROBAT]169
+ID=169
 Name=Crobat
 Types=POISON,FLYING
 BaseStats=85,90,80,130,70,80
@@ -4469,6 +4638,7 @@ Pokedex=Over the course of evolution, its hind legs turned into wings. By altern
 Generation=2
 #-------------------------------
 CHINCHOU]170
+ID=170
 Name=Chinchou
 Types=WATER,ELECTRIC
 BaseStats=75,38,38,67,56,56
@@ -4497,6 +4667,7 @@ WildItemUncommon=DEEPSEASCALE
 Evolutions=LANTURN,Level,27
 #-------------------------------
 LANTURN]171
+ID=171
 Name=Lanturn
 Types=WATER,ELECTRIC
 BaseStats=125,58,58,67,76,76
@@ -4523,6 +4694,7 @@ Generation=2
 WildItemUncommon=DEEPSEASCALE
 #-------------------------------
 PICHU]172
+ID=172
 Name=Pichu
 Types=ELECTRIC
 BaseStats=20,40,15,60,35,35
@@ -4550,6 +4722,7 @@ Generation=2
 Evolutions=PIKACHU,Happiness,
 #-------------------------------
 CLEFFA]173
+ID=173
 Name=Cleffa
 Types=FAIRY
 BaseStats=50,25,28,15,45,55
@@ -4578,6 +4751,7 @@ WildItemUncommon=MOONSTONE
 Evolutions=CLEFAIRY,Happiness,
 #-------------------------------
 IGGLYBUFF]174
+ID=174
 Name=Igglybuff
 Types=NORMAL,FAIRY
 BaseStats=90,30,15,15,40,20
@@ -4605,6 +4779,7 @@ Generation=2
 Evolutions=JIGGLYPUFF,Happiness,
 #-------------------------------
 TOGEPI]175
+ID=175
 Name=Togepi
 Types=FAIRY
 BaseStats=35,20,65,20,40,65
@@ -4632,6 +4807,7 @@ Generation=2
 Evolutions=TOGETIC,Happiness,
 #-------------------------------
 TOGETIC]176
+ID=176
 Name=Togetic
 Types=FAIRY,FLYING
 BaseStats=55,40,85,40,80,105
@@ -4658,6 +4834,7 @@ Generation=2
 Evolutions=TOGEKISS,Item,SHINYSTONE
 #-------------------------------
 NATU]177
+ID=177
 Name=Natu
 Types=PSYCHIC,FLYING
 BaseStats=40,50,45,70,70,45
@@ -4685,6 +4862,7 @@ Generation=2
 Evolutions=XATU,Level,25
 #-------------------------------
 XATU]178
+ID=178
 Name=Xatu
 Types=PSYCHIC,FLYING
 BaseStats=65,75,70,95,95,70
@@ -4710,6 +4888,7 @@ Pokedex=It has the enigmatic power of foreseeing the future. Some people in diff
 Generation=2
 #-------------------------------
 MAREEP]179
+ID=179
 Name=Mareep
 Types=ELECTRIC
 BaseStats=55,40,40,35,65,45
@@ -4737,6 +4916,7 @@ Generation=2
 Evolutions=FLAAFFY,Level,15
 #-------------------------------
 FLAAFFY]180
+ID=180
 Name=Flaaffy
 Types=ELECTRIC
 BaseStats=70,55,55,45,80,60
@@ -4763,6 +4943,7 @@ Generation=2
 Evolutions=AMPHAROS,Level,30
 #-------------------------------
 AMPHAROS]181
+ID=181
 Name=Ampharos
 Types=ELECTRIC
 BaseStats=90,75,85,55,115,90
@@ -4788,6 +4969,7 @@ Pokedex=It gives off so much light that it can be seen even from space. People i
 Generation=2
 #-------------------------------
 BELLOSSOM]182
+ID=182
 Name=Bellossom
 Types=GRASS
 BaseStats=75,80,95,50,90,100
@@ -4814,6 +4996,7 @@ Generation=2
 WildItemUncommon=ABSORBBULB
 #-------------------------------
 MARILL]183
+ID=183
 Name=Marill
 Types=WATER,FAIRY
 BaseStats=70,20,50,40,20,50
@@ -4841,6 +5024,7 @@ Generation=2
 Evolutions=AZUMARILL,Level,18
 #-------------------------------
 AZUMARILL]184
+ID=184
 Name=Azumarill
 Types=WATER,FAIRY
 BaseStats=100,50,80,50,60,80
@@ -4866,6 +5050,7 @@ Pokedex=It lives in water virtually all day long. Its body color and pattern act
 Generation=2
 #-------------------------------
 SUDOWOODO]185
+ID=185
 Name=Sudowoodo
 Types=ROCK
 BaseStats=70,100,115,30,30,65
@@ -4892,6 +5077,7 @@ Pokedex=It mimics a tree to avoid being attacked by enemies. But since its forel
 Generation=2
 #-------------------------------
 POLITOED]186
+ID=186
 Name=Politoed
 Types=WATER
 BaseStats=90,75,75,70,90,100
@@ -4918,6 +5104,7 @@ Generation=2
 WildItemUncommon=KINGSROCK
 #-------------------------------
 HOPPIP]187
+ID=187
 Name=Hoppip
 Types=GRASS,FLYING
 BaseStats=35,35,40,50,35,55
@@ -4945,6 +5132,7 @@ Generation=2
 Evolutions=SKIPLOOM,Level,18
 #-------------------------------
 SKIPLOOM]188
+ID=188
 Name=Skiploom
 Types=GRASS,FLYING
 BaseStats=55,45,50,80,45,65
@@ -4971,6 +5159,7 @@ Generation=2
 Evolutions=JUMPLUFF,Level,27
 #-------------------------------
 JUMPLUFF]189
+ID=189
 Name=Jumpluff
 Types=GRASS,FLYING
 BaseStats=75,55,70,110,55,95
@@ -4996,6 +5185,7 @@ Pokedex=Jumpluff ride warm southern winds to cross the sea and fly to foreign la
 Generation=2
 #-------------------------------
 AIPOM]190
+ID=190
 Name=Aipom
 Types=NORMAL
 BaseStats=55,70,55,85,40,55
@@ -5023,6 +5213,7 @@ Generation=2
 Evolutions=AMBIPOM,HasMove,DOUBLEHIT
 #-------------------------------
 SUNKERN]191
+ID=191
 Name=Sunkern
 Types=GRASS
 BaseStats=30,30,30,30,30,30
@@ -5050,6 +5241,7 @@ Generation=2
 Evolutions=SUNFLORA,Item,SUNSTONE
 #-------------------------------
 SUNFLORA]192
+ID=192
 Name=Sunflora
 Types=GRASS
 BaseStats=75,75,55,30,105,85
@@ -5075,6 +5267,7 @@ Pokedex=Sunflora convert solar energy into nutrition. They are highly active in 
 Generation=2
 #-------------------------------
 YANMA]193
+ID=193
 Name=Yanma
 Types=BUG,FLYING
 BaseStats=65,65,45,95,75,45
@@ -5103,6 +5296,7 @@ WildItemUncommon=WIDELENS
 Evolutions=YANMEGA,HasMove,ANCIENTPOWER
 #-------------------------------
 WOOPER]194
+ID=194
 Name=Wooper
 Types=WATER,GROUND
 BaseStats=55,45,45,15,25,25
@@ -5130,6 +5324,7 @@ Generation=2
 Evolutions=QUAGSIRE,Level,20
 #-------------------------------
 QUAGSIRE]195
+ID=195
 Name=Quagsire
 Types=WATER,GROUND
 BaseStats=95,85,85,35,65,65
@@ -5155,6 +5350,7 @@ Pokedex=A Quagsire hunts by leaving its mouth wide open in water and waiting for
 Generation=2
 #-------------------------------
 ESPEON]196
+ID=196
 Name=Espeon
 Types=PSYCHIC
 BaseStats=65,65,60,110,130,95
@@ -5180,6 +5376,7 @@ Pokedex=An Espeon is extremely loyal to any trainer it considers to be worthy. I
 Generation=2
 #-------------------------------
 UMBREON]197
+ID=197
 Name=Umbreon
 Types=DARK
 BaseStats=95,65,110,65,60,130
@@ -5205,6 +5402,7 @@ Pokedex=Umbreon evolved from exposure to the moon's energy pulses. It lurks in d
 Generation=2
 #-------------------------------
 MURKROW]198
+ID=198
 Name=Murkrow
 Types=DARK,FLYING
 BaseStats=60,85,42,91,85,42
@@ -5232,6 +5430,7 @@ Generation=2
 Evolutions=HONCHKROW,Item,DUSKSTONE
 #-------------------------------
 SLOWKING]199
+ID=199
 Name=Slowking
 Types=WATER,PSYCHIC
 BaseStats=95,75,80,30,100,110
@@ -5258,6 +5457,7 @@ Generation=2
 WildItemUncommon=KINGSROCK
 #-------------------------------
 MISDREAVUS]200
+ID=200
 Name=Misdreavus
 Types=GHOST
 BaseStats=60,60,60,85,85,85
@@ -5284,8 +5484,9 @@ Generation=2
 Evolutions=MISMAGIUS,Item,DUSKSTONE
 #-------------------------------
 UNOWN]201
+ID=201
 Name=Unown
-FormName=A
+Form=A
 Types=PSYCHIC
 BaseStats=48,72,48,48,72,48
 GenderRatio=Genderless
@@ -5309,6 +5510,7 @@ Pokedex=This Pokemon is shaped like ancient text characters. Although research i
 Generation=2
 #-------------------------------
 WOBBUFFET]202
+ID=202
 Name=Wobbuffet
 Types=PSYCHIC
 BaseStats=190,33,58,33,33,58
@@ -5334,6 +5536,7 @@ Pokedex=Usually docile, a Wobbuffet strikes back ferociously if its black tail i
 Generation=2
 #-------------------------------
 GIRAFARIG]203
+ID=203
 Name=Girafarig
 Types=NORMAL,PSYCHIC
 BaseStats=70,80,65,85,90,65
@@ -5360,6 +5563,7 @@ Pokedex=A Girafarig is an herbivore--it eats grass and tree shoots. While it is 
 Generation=2
 #-------------------------------
 PINECO]204
+ID=204
 Name=Pineco
 Types=BUG
 BaseStats=50,65,90,15,35,35
@@ -5387,6 +5591,7 @@ Generation=2
 Evolutions=FORRETRESS,Level,31
 #-------------------------------
 FORRETRESS]205
+ID=205
 Name=Forretress
 Types=BUG,STEEL
 BaseStats=75,90,140,40,60,60
@@ -5412,6 +5617,7 @@ Pokedex=It keeps itself inside its steel shell. The shell is opened when it is c
 Generation=2
 #-------------------------------
 DUNSPARCE]206
+ID=206
 Name=Dunsparce
 Types=NORMAL
 BaseStats=100,70,70,45,65,65
@@ -5438,6 +5644,7 @@ Pokedex=Its drill-tipped tail is used to burrow into the ground backwards. This 
 Generation=2
 #-------------------------------
 GLIGAR]207
+ID=207
 Name=Gligar
 Types=GROUND,FLYING
 BaseStats=65,75,105,85,35,65
@@ -5465,6 +5672,7 @@ Generation=2
 Evolutions=GLISCOR,NightHoldItem,RAZORFANG
 #-------------------------------
 STEELIX]208
+ID=208
 Name=Steelix
 Types=STEEL,GROUND
 BaseStats=75,85,200,30,55,65
@@ -5491,6 +5699,7 @@ Generation=2
 WildItemUncommon=METALCOAT
 #-------------------------------
 SNUBBULL]209
+ID=209
 Name=Snubbull
 Types=FAIRY
 BaseStats=60,80,50,30,40,40
@@ -5518,6 +5727,7 @@ Generation=2
 Evolutions=GRANBULL,Level,23
 #-------------------------------
 GRANBULL]210
+ID=210
 Name=Granbull
 Types=FAIRY
 BaseStats=90,120,75,45,60,60
@@ -5543,6 +5753,7 @@ Pokedex=It has a particularly well-developed lower jaw. The huge fangs are heavy
 Generation=2
 #-------------------------------
 QWILFISH]211
+ID=211
 Name=Qwilfish
 Types=WATER,POISON
 BaseStats=65,95,85,85,55,55
@@ -5570,6 +5781,7 @@ Generation=2
 WildItemUncommon=POISONBARB
 #-------------------------------
 SCIZOR]212
+ID=212
 Name=Scizor
 Types=BUG,STEEL
 BaseStats=70,130,100,65,55,80
@@ -5595,6 +5807,7 @@ Pokedex=A Scizor has a body with the hardness of steel. It is not easily fazed b
 Generation=2
 #-------------------------------
 SHUCKLE]213
+ID=213
 Name=Shuckle
 Types=BUG,ROCK
 BaseStats=20,10,230,5,10,230
@@ -5624,6 +5837,7 @@ WildItemUncommon=BERRYJUICE
 WildItemRare=BERRYJUICE
 #-------------------------------
 HERACROSS]214
+ID=214
 Name=Heracross
 Types=BUG,FIGHTING
 BaseStats=80,125,75,85,40,95
@@ -5650,6 +5864,7 @@ Pokedex=They gather in forests seeking the sweet sap of trees. It is completely 
 Generation=2
 #-------------------------------
 SNEASEL]215
+ID=215
 Name=Sneasel
 Types=DARK,ICE
 BaseStats=55,95,55,115,35,75
@@ -5678,6 +5893,7 @@ WildItemUncommon=QUICKCLAW
 Evolutions=WEAVILE,NightHoldItem,RAZORCLAW
 #-------------------------------
 TEDDIURSA]216
+ID=216
 Name=Teddiursa
 Types=NORMAL
 BaseStats=60,80,50,40,50,50
@@ -5705,6 +5921,7 @@ Generation=2
 Evolutions=URSARING,Level,30
 #-------------------------------
 URSARING]217
+ID=217
 Name=Ursaring
 Types=NORMAL
 BaseStats=90,130,75,55,75,75
@@ -5730,6 +5947,7 @@ Pokedex=In forests, it is said that there are many streams and towering trees wh
 Generation=2
 #-------------------------------
 SLUGMA]218
+ID=218
 Name=Slugma
 Types=FIRE
 BaseStats=40,40,40,20,70,40
@@ -5757,6 +5975,7 @@ Generation=2
 Evolutions=MAGCARGO,Level,38
 #-------------------------------
 MAGCARGO]219
+ID=219
 Name=Magcargo
 Types=FIRE,ROCK
 BaseStats=60,50,120,30,90,80
@@ -5782,6 +6001,7 @@ Pokedex=The shell on its back is made of hardened magma. Tens of thousands of ye
 Generation=2
 #-------------------------------
 SWINUB]220
+ID=220
 Name=Swinub
 Types=ICE,GROUND
 BaseStats=50,50,40,50,30,30
@@ -5809,6 +6029,7 @@ Generation=2
 Evolutions=PILOSWINE,Level,33
 #-------------------------------
 PILOSWINE]221
+ID=221
 Name=Piloswine
 Types=ICE,GROUND
 BaseStats=100,100,80,50,60,60
@@ -5835,6 +6056,7 @@ Generation=2
 Evolutions=MAMOSWINE,HasMove,ANCIENTPOWER
 #-------------------------------
 CORSOLA]222
+ID=222
 Name=Corsola
 Types=WATER,ROCK
 BaseStats=65,55,95,35,65,95
@@ -5863,6 +6085,7 @@ WildItemUncommon=LUMINOUSMOSS
 Evolutions=CURSOLA,None,
 #-------------------------------
 REMORAID]223
+ID=223
 Name=Remoraid
 Types=WATER
 BaseStats=35,65,35,65,65,35
@@ -5890,6 +6113,7 @@ Generation=2
 Evolutions=OCTILLERY,Level,25
 #-------------------------------
 OCTILLERY]224
+ID=224
 Name=Octillery
 Types=WATER
 BaseStats=75,105,75,45,105,75
@@ -5915,6 +6139,7 @@ Pokedex=It ensnares its foe with its suction- cupped tentacles before delivering
 Generation=2
 #-------------------------------
 DELIBIRD]225
+ID=225
 Name=Delibird
 Types=ICE,FLYING
 BaseStats=45,55,45,75,65,45
@@ -5941,6 +6166,7 @@ Pokedex=It carries food bundled up in its tail. There was a famous explorer who 
 Generation=2
 #-------------------------------
 MANTINE]226
+ID=226
 Name=Mantine
 Types=WATER,FLYING
 BaseStats=85,40,70,70,80,140
@@ -5967,6 +6193,7 @@ Pokedex=On sunny days, schools of Mantine can be seen elegantly leaping over the
 Generation=2
 #-------------------------------
 SKARMORY]227
+ID=227
 Name=Skarmory
 Types=STEEL,FLYING
 BaseStats=65,80,140,70,40,70
@@ -5994,6 +6221,7 @@ Generation=2
 WildItemUncommon=METALCOAT
 #-------------------------------
 HOUNDOUR]228
+ID=228
 Name=Houndour
 Types=DARK,FIRE
 BaseStats=45,60,30,65,80,50
@@ -6021,6 +6249,7 @@ Generation=2
 Evolutions=HOUNDOOM,Level,24
 #-------------------------------
 HOUNDOOM]229
+ID=229
 Name=Houndoom
 Types=DARK,FIRE
 BaseStats=75,90,50,95,110,80
@@ -6046,6 +6275,7 @@ Pokedex=In a Houndoom pack, the one with its horns raked sharply back serves a l
 Generation=2
 #-------------------------------
 KINGDRA]230
+ID=230
 Name=Kingdra
 Types=WATER,DRAGON
 BaseStats=75,95,95,85,95,95
@@ -6072,6 +6302,7 @@ Generation=2
 WildItemUncommon=DRAGONSCALE
 #-------------------------------
 PHANPY]231
+ID=231
 Name=Phanpy
 Types=GROUND
 BaseStats=90,60,60,40,40,40
@@ -6099,6 +6330,7 @@ Generation=2
 Evolutions=DONPHAN,Level,25
 #-------------------------------
 DONPHAN]232
+ID=232
 Name=Donphan
 Types=GROUND
 BaseStats=90,120,120,50,60,60
@@ -6124,6 +6356,7 @@ Pokedex=A Donphan is so strong it can easily haul a dump truck. Its hide has tou
 Generation=2
 #-------------------------------
 PORYGON2]233
+ID=233
 Name=Porygon2
 Types=NORMAL
 BaseStats=85,80,90,60,105,95
@@ -6150,6 +6383,7 @@ Generation=2
 Evolutions=PORYGONZ,TradeItem,DUBIOUSDISC
 #-------------------------------
 STANTLER]234
+ID=234
 Name=Stantler
 Types=NORMAL
 BaseStats=73,95,62,85,85,65
@@ -6176,6 +6410,7 @@ Pokedex=Stantler's magnificent antlers were once traded at high prices as works 
 Generation=2
 #-------------------------------
 SMEARGLE]235
+ID=235
 Name=Smeargle
 Types=NORMAL
 BaseStats=55,20,35,75,20,45
@@ -6200,6 +6435,7 @@ Pokedex=A Smeargle marks its territory using a fluid that leaks out from the tip
 Generation=2
 #-------------------------------
 TYROGUE]236
+ID=236
 Name=Tyrogue
 Types=FIGHTING
 BaseStats=35,35,35,35,35,35
@@ -6227,6 +6463,7 @@ Generation=2
 Evolutions=HITMONLEE,AttackGreater,20,HITMONCHAN,DefenseGreater,20,HITMONTOP,AtkDefEqual,20
 #-------------------------------
 HITMONTOP]237
+ID=237
 Name=Hitmontop
 Types=FIGHTING
 BaseStats=50,95,95,70,35,110
@@ -6252,6 +6489,7 @@ Pokedex=Its technique of kicking while spinning is a remarkable mix of both offe
 Generation=2
 #-------------------------------
 SMOOCHUM]238
+ID=238
 Name=Smoochum
 Types=ICE,PSYCHIC
 BaseStats=45,30,15,65,85,65
@@ -6279,6 +6517,7 @@ Generation=2
 Evolutions=JYNX,Level,30
 #-------------------------------
 ELEKID]239
+ID=239
 Name=Elekid
 Types=ELECTRIC
 BaseStats=45,63,37,95,65,55
@@ -6307,6 +6546,7 @@ WildItemUncommon=ELECTIRIZER
 Evolutions=ELECTABUZZ,Level,30
 #-------------------------------
 MAGBY]240
+ID=240
 Name=Magby
 Types=FIRE
 BaseStats=45,75,37,83,70,55
@@ -6335,6 +6575,7 @@ WildItemUncommon=MAGMARIZER
 Evolutions=MAGMAR,Level,30
 #-------------------------------
 MILTANK]241
+ID=241
 Name=Miltank
 Types=NORMAL
 BaseStats=95,80,105,100,40,70
@@ -6364,6 +6605,7 @@ WildItemUncommon=MOOMOOMILK
 WildItemRare=MOOMOOMILK
 #-------------------------------
 BLISSEY]242
+ID=242
 Name=Blissey
 Types=NORMAL
 BaseStats=255,10,10,55,75,135
@@ -6392,6 +6634,7 @@ WildItemUncommon=LUCKYEGG
 WildItemRare=LUCKYEGG
 #-------------------------------
 RAIKOU]243
+ID=243
 Name=Raikou
 Types=ELECTRIC
 BaseStats=90,85,75,115,115,100
@@ -6418,6 +6661,7 @@ Generation=2
 Flags=Legendary
 #-------------------------------
 ENTEI]244
+ID=244
 Name=Entei
 Types=FIRE
 BaseStats=115,115,85,100,90,75
@@ -6444,6 +6688,7 @@ Generation=2
 Flags=Legendary
 #-------------------------------
 SUICUNE]245
+ID=245
 Name=Suicune
 Types=WATER
 BaseStats=100,75,115,85,90,115
@@ -6470,6 +6715,7 @@ Generation=2
 Flags=Legendary
 #-------------------------------
 LARVITAR]246
+ID=246
 Name=Larvitar
 Types=ROCK,GROUND
 BaseStats=50,64,50,41,45,50
@@ -6497,6 +6743,7 @@ Generation=2
 Evolutions=PUPITAR,Level,30
 #-------------------------------
 PUPITAR]247
+ID=247
 Name=Pupitar
 Types=ROCK,GROUND
 BaseStats=70,84,70,51,65,70
@@ -6522,6 +6769,7 @@ Generation=2
 Evolutions=TYRANITAR,Level,55
 #-------------------------------
 TYRANITAR]248
+ID=248
 Name=Tyranitar
 Types=ROCK,DARK
 BaseStats=100,134,110,61,95,100
@@ -6547,6 +6795,7 @@ Pokedex=A Tyranitar is so overwhelmingly powerful, it can bring down a whole mou
 Generation=2
 #-------------------------------
 LUGIA]249
+ID=249
 Name=Lugia
 Types=PSYCHIC,FLYING
 BaseStats=106,90,130,110,90,154
@@ -6573,6 +6822,7 @@ Generation=2
 Flags=Legendary
 #-------------------------------
 HOOH]250
+ID=250
 Name=Ho-Oh
 Types=FIRE,FLYING
 BaseStats=106,130,90,90,110,154
@@ -6602,6 +6852,7 @@ WildItemUncommon=SACREDASH
 WildItemRare=SACREDASH
 #-------------------------------
 CELEBI]251
+ID=251
 Name=Celebi
 Types=PSYCHIC,GRASS
 BaseStats=100,100,100,100,100,100
@@ -6630,6 +6881,7 @@ WildItemUncommon=LUMBERRY
 WildItemRare=LUMBERRY
 #-------------------------------
 TREECKO]252
+ID=252
 Name=Treecko
 Types=GRASS
 BaseStats=40,45,35,70,65,55
@@ -6657,6 +6909,7 @@ Generation=3
 Evolutions=GROVYLE,Level,16
 #-------------------------------
 GROVYLE]253
+ID=253
 Name=Grovyle
 Types=GRASS
 BaseStats=50,65,45,95,85,65
@@ -6683,6 +6936,7 @@ Generation=3
 Evolutions=SCEPTILE,Level,36
 #-------------------------------
 SCEPTILE]254
+ID=254
 Name=Sceptile
 Types=GRASS
 BaseStats=70,85,65,120,105,85
@@ -6708,6 +6962,7 @@ Pokedex=In the jungle, its power is without equal. This Pokemon carefully grows 
 Generation=3
 #-------------------------------
 TORCHIC]255
+ID=255
 Name=Torchic
 Types=FIRE
 BaseStats=45,60,40,45,70,50
@@ -6735,6 +6990,7 @@ Generation=3
 Evolutions=COMBUSKEN,Level,16
 #-------------------------------
 COMBUSKEN]256
+ID=256
 Name=Combusken
 Types=FIRE,FIGHTING
 BaseStats=60,85,60,55,85,60
@@ -6761,6 +7017,7 @@ Generation=3
 Evolutions=BLAZIKEN,Level,36
 #-------------------------------
 BLAZIKEN]257
+ID=257
 Name=Blaziken
 Types=FIRE,FIGHTING
 BaseStats=80,120,70,80,110,70
@@ -6786,6 +7043,7 @@ Pokedex=It learns martial arts that use punches and kicks. Every several years, 
 Generation=3
 #-------------------------------
 MUDKIP]258
+ID=258
 Name=Mudkip
 Types=WATER
 BaseStats=50,70,50,40,50,50
@@ -6813,6 +7071,7 @@ Generation=3
 Evolutions=MARSHTOMP,Level,16
 #-------------------------------
 MARSHTOMP]259
+ID=259
 Name=Marshtomp
 Types=WATER,GROUND
 BaseStats=70,85,70,50,60,70
@@ -6839,6 +7098,7 @@ Generation=3
 Evolutions=SWAMPERT,Level,36
 #-------------------------------
 SWAMPERT]260
+ID=260
 Name=Swampert
 Types=WATER,GROUND
 BaseStats=100,110,90,60,85,90
@@ -6864,6 +7124,7 @@ Pokedex=If it senses the approach of a storm and a tidal wave, it protects its s
 Generation=3
 #-------------------------------
 POOCHYENA]261
+ID=261
 Name=Poochyena
 Types=DARK
 BaseStats=35,55,35,35,30,30
@@ -6891,6 +7152,7 @@ Generation=3
 Evolutions=MIGHTYENA,Level,18
 #-------------------------------
 MIGHTYENA]262
+ID=262
 Name=Mightyena
 Types=DARK
 BaseStats=70,90,70,70,60,60
@@ -6916,6 +7178,7 @@ Pokedex=In the wild, Mightyena live in a pack. They never defy their leader's or
 Generation=3
 #-------------------------------
 ZIGZAGOON]263
+ID=263
 Name=Zigzagoon
 Types=NORMAL
 BaseStats=38,30,41,60,30,41
@@ -6945,6 +7208,7 @@ WildItemUncommon=REVIVE
 Evolutions=LINOONE,Level,20
 #-------------------------------
 LINOONE]264
+ID=264
 Name=Linoone
 Types=NORMAL
 BaseStats=78,70,61,100,50,61
@@ -6973,6 +7237,7 @@ WildItemUncommon=MAXREVIVE
 Evolutions=OBSTAGOON,None,
 #-------------------------------
 WURMPLE]265
+ID=265
 Name=Wurmple
 Types=BUG
 BaseStats=45,45,35,20,20,30
@@ -7001,6 +7266,7 @@ WildItemUncommon=BRIGHTPOWDER
 Evolutions=SILCOON,Silcoon,7,CASCOON,Cascoon,7
 #-------------------------------
 SILCOON]266
+ID=266
 Name=Silcoon
 Types=BUG
 BaseStats=50,35,55,15,25,25
@@ -7026,6 +7292,7 @@ Generation=3
 Evolutions=BEAUTIFLY,Level,10
 #-------------------------------
 BEAUTIFLY]267
+ID=267
 Name=Beautifly
 Types=BUG,FLYING
 BaseStats=60,70,50,65,100,50
@@ -7052,6 +7319,7 @@ Generation=3
 WildItemUncommon=SHEDSHELL
 #-------------------------------
 CASCOON]268
+ID=268
 Name=Cascoon
 Types=BUG
 BaseStats=50,35,55,15,25,25
@@ -7077,6 +7345,7 @@ Generation=3
 Evolutions=DUSTOX,Level,10
 #-------------------------------
 DUSTOX]269
+ID=269
 Name=Dustox
 Types=BUG,POISON
 BaseStats=60,50,70,65,50,90
@@ -7103,6 +7372,7 @@ Generation=3
 WildItemUncommon=SHEDSHELL
 #-------------------------------
 LOTAD]270
+ID=270
 Name=Lotad
 Types=WATER,GRASS
 BaseStats=40,30,30,30,40,50
@@ -7131,6 +7401,7 @@ WildItemUncommon=MENTALHERB
 Evolutions=LOMBRE,Level,14
 #-------------------------------
 LOMBRE]271
+ID=271
 Name=Lombre
 Types=WATER,GRASS
 BaseStats=60,50,50,50,60,70
@@ -7158,6 +7429,7 @@ WildItemUncommon=MENTALHERB
 Evolutions=LUDICOLO,Item,WATERSTONE
 #-------------------------------
 LUDICOLO]272
+ID=272
 Name=Ludicolo
 Types=WATER,GRASS
 BaseStats=80,70,70,70,90,100
@@ -7184,6 +7456,7 @@ Generation=3
 WildItemUncommon=MENTALHERB
 #-------------------------------
 SEEDOT]273
+ID=273
 Name=Seedot
 Types=GRASS
 BaseStats=40,40,50,30,30,30
@@ -7212,6 +7485,7 @@ WildItemUncommon=POWERHERB
 Evolutions=NUZLEAF,Level,14
 #-------------------------------
 NUZLEAF]274
+ID=274
 Name=Nuzleaf
 Types=GRASS,DARK
 BaseStats=70,70,40,60,60,40
@@ -7239,6 +7513,7 @@ WildItemUncommon=POWERHERB
 Evolutions=SHIFTRY,Item,LEAFSTONE
 #-------------------------------
 SHIFTRY]275
+ID=275
 Name=Shiftry
 Types=GRASS,DARK
 BaseStats=90,100,60,80,90,60
@@ -7265,6 +7540,7 @@ Generation=3
 WildItemUncommon=POWERHERB
 #-------------------------------
 TAILLOW]276
+ID=276
 Name=Taillow
 Types=NORMAL,FLYING
 BaseStats=40,55,30,85,30,30
@@ -7292,6 +7568,7 @@ Generation=3
 Evolutions=SWELLOW,Level,22
 #-------------------------------
 SWELLOW]277
+ID=277
 Name=Swellow
 Types=NORMAL,FLYING
 BaseStats=60,85,60,125,75,50
@@ -7317,6 +7594,7 @@ Pokedex=A Swellow dives upon prey from far above. It never misses its targets. I
 Generation=3
 #-------------------------------
 WINGULL]278
+ID=278
 Name=Wingull
 Types=WATER,FLYING
 BaseStats=40,30,30,85,55,30
@@ -7345,6 +7623,7 @@ WildItemCommon=PRETTYFEATHER
 Evolutions=PELIPPER,Level,25
 #-------------------------------
 PELIPPER]279
+ID=279
 Name=Pelipper
 Types=WATER,FLYING
 BaseStats=60,50,100,65,95,70
@@ -7371,6 +7650,7 @@ Generation=3
 WildItemCommon=PRETTYFEATHER
 #-------------------------------
 RALTS]280
+ID=280
 Name=Ralts
 Types=PSYCHIC,FAIRY
 BaseStats=28,25,25,40,45,35
@@ -7398,6 +7678,7 @@ Generation=3
 Evolutions=KIRLIA,Level,20
 #-------------------------------
 KIRLIA]281
+ID=281
 Name=Kirlia
 Types=PSYCHIC,FAIRY
 BaseStats=38,35,35,50,65,55
@@ -7424,6 +7705,7 @@ Generation=3
 Evolutions=GARDEVOIR,Level,30,GALLADE,ItemMale,DAWNSTONE
 #-------------------------------
 GARDEVOIR]282
+ID=282
 Name=Gardevoir
 Types=PSYCHIC,FAIRY
 BaseStats=68,65,65,80,125,115
@@ -7449,6 +7731,7 @@ Pokedex=It apparently does not feel the pull of gravity because it supports itse
 Generation=3
 #-------------------------------
 SURSKIT]283
+ID=283
 Name=Surskit
 Types=BUG,WATER
 BaseStats=40,30,32,65,50,52
@@ -7477,6 +7760,7 @@ WildItemCommon=HONEY
 Evolutions=MASQUERAIN,Level,22
 #-------------------------------
 MASQUERAIN]284
+ID=284
 Name=Masquerain
 Types=BUG,FLYING
 BaseStats=70,60,62,80,100,82
@@ -7503,6 +7787,7 @@ Generation=3
 WildItemUncommon=SILVERPOWDER
 #-------------------------------
 SHROOMISH]285
+ID=285
 Name=Shroomish
 Types=GRASS
 BaseStats=60,40,60,35,40,60
@@ -7532,6 +7817,7 @@ WildItemUncommon=BIGMUSHROOM
 Evolutions=BRELOOM,Level,23
 #-------------------------------
 BRELOOM]286
+ID=286
 Name=Breloom
 Types=GRASS,FIGHTING
 BaseStats=60,130,80,70,60,60
@@ -7559,6 +7845,7 @@ WildItemCommon=TINYMUSHROOM
 WildItemUncommon=BIGMUSHROOM
 #-------------------------------
 SLAKOTH]287
+ID=287
 Name=Slakoth
 Types=NORMAL
 BaseStats=60,60,60,30,35,35
@@ -7585,6 +7872,7 @@ Generation=3
 Evolutions=VIGOROTH,Level,18
 #-------------------------------
 VIGOROTH]288
+ID=288
 Name=Vigoroth
 Types=NORMAL
 BaseStats=80,80,80,90,55,55
@@ -7610,6 +7898,7 @@ Generation=3
 Evolutions=SLAKING,Level,36
 #-------------------------------
 SLAKING]289
+ID=289
 Name=Slaking
 Types=NORMAL
 BaseStats=150,160,100,100,95,65
@@ -7634,6 +7923,7 @@ Pokedex=Hordes of Slaking gather around trees when fruits come into season. They
 Generation=3
 #-------------------------------
 NINCADA]290
+ID=290
 Name=Nincada
 Types=BUG,GROUND
 BaseStats=31,45,90,40,30,30
@@ -7662,6 +7952,7 @@ WildItemUncommon=SOFTSAND
 Evolutions=NINJASK,Ninjask,20,SHEDINJA,Shedinja,20
 #-------------------------------
 NINJASK]291
+ID=291
 Name=Ninjask
 Types=BUG,FLYING
 BaseStats=61,90,45,160,50,50
@@ -7687,6 +7978,7 @@ Pokedex=Because it darts about vigorously at high speed, it is very difficult to
 Generation=3
 #-------------------------------
 SHEDINJA]292
+ID=292
 Name=Shedinja
 Types=BUG,GHOST
 BaseStats=1,90,45,40,30,30
@@ -7711,6 +8003,7 @@ Pokedex=A peculiar Pokemon that floats in air even though its wings remain compl
 Generation=3
 #-------------------------------
 WHISMUR]293
+ID=293
 Name=Whismur
 Types=NORMAL
 BaseStats=64,51,23,28,51,23
@@ -7738,6 +8031,7 @@ Generation=3
 Evolutions=LOUDRED,Level,20
 #-------------------------------
 LOUDRED]294
+ID=294
 Name=Loudred
 Types=NORMAL
 BaseStats=84,71,43,48,71,43
@@ -7764,6 +8058,7 @@ Generation=3
 Evolutions=EXPLOUD,Level,40
 #-------------------------------
 EXPLOUD]295
+ID=295
 Name=Exploud
 Types=NORMAL
 BaseStats=104,91,63,68,91,73
@@ -7789,6 +8084,7 @@ Pokedex=It has sound-generating organs all over its body. It communicates with o
 Generation=3
 #-------------------------------
 MAKUHITA]296
+ID=296
 Name=Makuhita
 Types=FIGHTING
 BaseStats=72,60,30,25,20,30
@@ -7817,6 +8113,7 @@ WildItemUncommon=BLACKBELT
 Evolutions=HARIYAMA,Level,24
 #-------------------------------
 HARIYAMA]297
+ID=297
 Name=Hariyama
 Types=FIGHTING
 BaseStats=144,120,60,50,40,60
@@ -7843,6 +8140,7 @@ Generation=3
 WildItemUncommon=KINGSROCK
 #-------------------------------
 AZURILL]298
+ID=298
 Name=Azurill
 Types=NORMAL,FAIRY
 BaseStats=50,20,40,20,20,40
@@ -7871,6 +8169,7 @@ Generation=3
 Evolutions=MARILL,Happiness,
 #-------------------------------
 NOSEPASS]299
+ID=299
 Name=Nosepass
 Types=ROCK
 BaseStats=30,45,135,30,45,90
@@ -7899,6 +8198,7 @@ WildItemUncommon=MAGNET
 Evolutions=PROBOPASS,LocationFlag,Magnetic,PROBOPASS,Item,THUNDERSTONE
 #-------------------------------
 SKITTY]300
+ID=300
 Name=Skitty
 Types=NORMAL
 BaseStats=50,45,45,50,35,35
@@ -7926,6 +8226,7 @@ Generation=3
 Evolutions=DELCATTY,Item,MOONSTONE
 #-------------------------------
 DELCATTY]301
+ID=301
 Name=Delcatty
 Types=NORMAL
 BaseStats=70,65,65,90,55,55
@@ -7951,6 +8252,7 @@ Pokedex=Rather than keeping a permanent lair, it habitually seeks comfortable sp
 Generation=3
 #-------------------------------
 SABLEYE]302
+ID=302
 Name=Sableye
 Types=DARK,GHOST
 BaseStats=50,75,75,50,65,65
@@ -7978,6 +8280,7 @@ Generation=3
 WildItemUncommon=WIDELENS
 #-------------------------------
 MAWILE]303
+ID=303
 Name=Mawile
 Types=STEEL,FAIRY
 BaseStats=50,85,85,50,55,55
@@ -8005,6 +8308,7 @@ Generation=3
 WildItemUncommon=IRONBALL
 #-------------------------------
 ARON]304
+ID=304
 Name=Aron
 Types=STEEL,ROCK
 BaseStats=50,70,100,30,40,40
@@ -8033,6 +8337,7 @@ WildItemUncommon=HARDSTONE
 Evolutions=LAIRON,Level,32
 #-------------------------------
 LAIRON]305
+ID=305
 Name=Lairon
 Types=STEEL,ROCK
 BaseStats=60,90,140,40,50,50
@@ -8060,6 +8365,7 @@ WildItemUncommon=HARDSTONE
 Evolutions=AGGRON,Level,42
 #-------------------------------
 AGGRON]306
+ID=306
 Name=Aggron
 Types=STEEL,ROCK
 BaseStats=70,110,180,50,60,60
@@ -8086,6 +8392,7 @@ Generation=3
 WildItemUncommon=HARDSTONE
 #-------------------------------
 MEDITITE]307
+ID=307
 Name=Meditite
 Types=FIGHTING,PSYCHIC
 BaseStats=30,40,55,60,40,55
@@ -8113,6 +8420,7 @@ Generation=3
 Evolutions=MEDICHAM,Level,37
 #-------------------------------
 MEDICHAM]308
+ID=308
 Name=Medicham
 Types=FIGHTING,PSYCHIC
 BaseStats=60,60,75,80,60,75
@@ -8138,6 +8446,7 @@ Pokedex=Through crushingly harsh yoga training, it gained the power to foretell 
 Generation=3
 #-------------------------------
 ELECTRIKE]309
+ID=309
 Name=Electrike
 Types=ELECTRIC
 BaseStats=40,45,40,65,65,40
@@ -8165,6 +8474,7 @@ Generation=3
 Evolutions=MANECTRIC,Level,26
 #-------------------------------
 MANECTRIC]310
+ID=310
 Name=Manectric
 Types=ELECTRIC
 BaseStats=70,75,60,105,105,60
@@ -8190,6 +8500,7 @@ Pokedex=Because lightning falls in their vicinities, Manectric were thought to h
 Generation=3
 #-------------------------------
 PLUSLE]311
+ID=311
 Name=Plusle
 Types=ELECTRIC
 BaseStats=60,50,40,95,85,75
@@ -8217,6 +8528,7 @@ Generation=3
 WildItemUncommon=CELLBATTERY
 #-------------------------------
 MINUN]312
+ID=312
 Name=Minun
 Types=ELECTRIC
 BaseStats=60,40,50,95,75,85
@@ -8244,6 +8556,7 @@ Generation=3
 WildItemUncommon=CELLBATTERY
 #-------------------------------
 VOLBEAT]313
+ID=313
 Name=Volbeat
 Types=BUG
 BaseStats=65,73,75,85,47,85
@@ -8272,6 +8585,7 @@ Generation=3
 WildItemUncommon=BRIGHTPOWDER
 #-------------------------------
 ILLUMISE]314
+ID=314
 Name=Illumise
 Types=BUG
 BaseStats=65,47,75,85,73,85
@@ -8300,6 +8614,7 @@ Generation=3
 WildItemUncommon=BRIGHTPOWDER
 #-------------------------------
 ROSELIA]315
+ID=315
 Name=Roselia
 Types=GRASS,POISON
 BaseStats=50,60,45,65,100,80
@@ -8328,6 +8643,7 @@ WildItemUncommon=POISONBARB
 Evolutions=ROSERADE,Item,SHINYSTONE
 #-------------------------------
 GULPIN]316
+ID=316
 Name=Gulpin
 Types=POISON
 BaseStats=70,43,53,40,43,53
@@ -8357,6 +8673,7 @@ WildItemUncommon=SITRUSBERRY
 Evolutions=SWALOT,Level,26
 #-------------------------------
 SWALOT]317
+ID=317
 Name=Swalot
 Types=POISON
 BaseStats=100,73,83,55,73,83
@@ -8384,6 +8701,7 @@ WildItemCommon=ORANBERRY
 WildItemUncommon=SITRUSBERRY
 #-------------------------------
 CARVANHA]318
+ID=318
 Name=Carvanha
 Types=WATER,DARK
 BaseStats=45,90,20,65,65,20
@@ -8412,6 +8730,7 @@ WildItemUncommon=DEEPSEATOOTH
 Evolutions=SHARPEDO,Level,30
 #-------------------------------
 SHARPEDO]319
+ID=319
 Name=Sharpedo
 Types=WATER,DARK
 BaseStats=70,120,40,95,95,40
@@ -8438,6 +8757,7 @@ Generation=3
 WildItemUncommon=DEEPSEATOOTH
 #-------------------------------
 WAILMER]320
+ID=320
 Name=Wailmer
 Types=WATER
 BaseStats=130,70,35,60,70,35
@@ -8465,6 +8785,7 @@ Generation=3
 Evolutions=WAILORD,Level,40
 #-------------------------------
 WAILORD]321
+ID=321
 Name=Wailord
 Types=WATER
 BaseStats=170,90,45,60,90,45
@@ -8490,6 +8811,7 @@ Pokedex=It breathes through nostrils that it raises above the sea. By inhaling t
 Generation=3
 #-------------------------------
 NUMEL]322
+ID=322
 Name=Numel
 Types=FIRE,GROUND
 BaseStats=60,60,40,35,65,45
@@ -8517,6 +8839,7 @@ Generation=3
 Evolutions=CAMERUPT,Level,33
 #-------------------------------
 CAMERUPT]323
+ID=323
 Name=Camerupt
 Types=FIRE,GROUND
 BaseStats=70,100,70,40,105,75
@@ -8542,6 +8865,7 @@ Pokedex=A Pokemon that lives in the crater of a volcano. Every 10 years, the vol
 Generation=3
 #-------------------------------
 TORKOAL]324
+ID=324
 Name=Torkoal
 Types=FIRE
 BaseStats=70,85,140,20,85,70
@@ -8569,6 +8893,7 @@ Generation=3
 WildItemUncommon=CHARCOAL
 #-------------------------------
 SPOINK]325
+ID=325
 Name=Spoink
 Types=PSYCHIC
 BaseStats=60,25,35,60,70,80
@@ -8596,6 +8921,7 @@ Generation=3
 Evolutions=GRUMPIG,Level,32
 #-------------------------------
 GRUMPIG]326
+ID=326
 Name=Grumpig
 Types=PSYCHIC
 BaseStats=80,45,65,80,90,110
@@ -8621,6 +8947,7 @@ Pokedex=It stores power in the black pearls on its forehead. When it uses psychi
 Generation=3
 #-------------------------------
 SPINDA]327
+ID=327
 Name=Spinda
 Types=NORMAL
 BaseStats=60,60,60,60,60,60
@@ -8647,6 +8974,7 @@ Pokedex=It is distinguished by a pattern of spots that is always different. Its 
 Generation=3
 #-------------------------------
 TRAPINCH]328
+ID=328
 Name=Trapinch
 Types=GROUND
 BaseStats=45,100,45,10,45,45
@@ -8675,6 +9003,7 @@ WildItemUncommon=SOFTSAND
 Evolutions=VIBRAVA,Level,35
 #-------------------------------
 VIBRAVA]329
+ID=329
 Name=Vibrava
 Types=GROUND,DRAGON
 BaseStats=50,70,50,70,50,50
@@ -8700,6 +9029,7 @@ Generation=3
 Evolutions=FLYGON,Level,45
 #-------------------------------
 FLYGON]330
+ID=330
 Name=Flygon
 Types=GROUND,DRAGON
 BaseStats=80,100,80,100,80,80
@@ -8724,6 +9054,7 @@ Pokedex=The flapping of its wings sounds like singing. To prevent detection by e
 Generation=3
 #-------------------------------
 CACNEA]331
+ID=331
 Name=Cacnea
 Types=GRASS
 BaseStats=50,85,40,35,85,40
@@ -8752,6 +9083,7 @@ WildItemUncommon=STICKYBARB
 Evolutions=CACTURNE,Level,32
 #-------------------------------
 CACTURNE]332
+ID=332
 Name=Cacturne
 Types=GRASS,DARK
 BaseStats=70,115,60,55,115,60
@@ -8778,6 +9110,7 @@ Generation=3
 WildItemUncommon=STICKYBARB
 #-------------------------------
 SWABLU]333
+ID=333
 Name=Swablu
 Types=NORMAL,FLYING
 BaseStats=45,40,60,50,40,75
@@ -8805,6 +9138,7 @@ Generation=3
 Evolutions=ALTARIA,Level,35
 #-------------------------------
 ALTARIA]334
+ID=334
 Name=Altaria
 Types=DRAGON,FLYING
 BaseStats=75,70,90,80,70,105
@@ -8830,6 +9164,7 @@ Pokedex=It hums in a beautiful soprano voice. It flies among white clouds in the
 Generation=3
 #-------------------------------
 ZANGOOSE]335
+ID=335
 Name=Zangoose
 Types=NORMAL
 BaseStats=73,115,60,90,60,60
@@ -8857,6 +9192,7 @@ Generation=3
 WildItemUncommon=QUICKCLAW
 #-------------------------------
 SEVIPER]336
+ID=336
 Name=Seviper
 Types=POISON
 BaseStats=73,100,60,65,100,60
@@ -8884,6 +9220,7 @@ Generation=3
 WildItemUncommon=SHEDSHELL
 #-------------------------------
 LUNATONE]337
+ID=337
 Name=Lunatone
 Types=ROCK,PSYCHIC
 BaseStats=90,55,65,70,95,85
@@ -8910,6 +9247,7 @@ WildItemCommon=STARDUST
 WildItemUncommon=MOONSTONE
 #-------------------------------
 SOLROCK]338
+ID=338
 Name=Solrock
 Types=ROCK,PSYCHIC
 BaseStats=90,95,85,70,55,65
@@ -8936,6 +9274,7 @@ WildItemCommon=STARDUST
 WildItemUncommon=SUNSTONE
 #-------------------------------
 BARBOACH]339
+ID=339
 Name=Barboach
 Types=WATER,GROUND
 BaseStats=50,48,43,60,46,41
@@ -8963,6 +9302,7 @@ Generation=3
 Evolutions=WHISCASH,Level,30
 #-------------------------------
 WHISCASH]340
+ID=340
 Name=Whiscash
 Types=WATER,GROUND
 BaseStats=110,78,73,60,76,71
@@ -8988,6 +9328,7 @@ Pokedex=Mysteriously, it can foretell earthquakes. In the daytime, it sleeps in 
 Generation=3
 #-------------------------------
 CORPHISH]341
+ID=341
 Name=Corphish
 Types=WATER
 BaseStats=43,80,65,35,50,35
@@ -9015,6 +9356,7 @@ Generation=3
 Evolutions=CRAWDAUNT,Level,30
 #-------------------------------
 CRAWDAUNT]342
+ID=342
 Name=Crawdaunt
 Types=WATER,DARK
 BaseStats=63,120,85,55,90,55
@@ -9040,6 +9382,7 @@ Pokedex=A brutish Pokemon that loves to battle. A veteran Crawdaunt that has pre
 Generation=3
 #-------------------------------
 BALTOY]343
+ID=343
 Name=Baltoy
 Types=GROUND,PSYCHIC
 BaseStats=40,40,55,55,40,70
@@ -9066,6 +9409,7 @@ WildItemUncommon=LIGHTCLAY
 Evolutions=CLAYDOL,Level,36
 #-------------------------------
 CLAYDOL]344
+ID=344
 Name=Claydol
 Types=GROUND,PSYCHIC
 BaseStats=60,70,105,75,70,120
@@ -9091,6 +9435,7 @@ Generation=3
 WildItemUncommon=LIGHTCLAY
 #-------------------------------
 LILEEP]345
+ID=345
 Name=Lileep
 Types=ROCK,GRASS
 BaseStats=66,41,77,23,61,87
@@ -9119,6 +9464,7 @@ WildItemUncommon=BIGROOT
 Evolutions=CRADILY,Level,40
 #-------------------------------
 CRADILY]346
+ID=346
 Name=Cradily
 Types=ROCK,GRASS
 BaseStats=86,81,97,43,81,107
@@ -9145,6 +9491,7 @@ Generation=3
 WildItemUncommon=BIGROOT
 #-------------------------------
 ANORITH]347
+ID=347
 Name=Anorith
 Types=ROCK,BUG
 BaseStats=45,95,50,75,40,50
@@ -9172,6 +9519,7 @@ Generation=3
 Evolutions=ARMALDO,Level,40
 #-------------------------------
 ARMALDO]348
+ID=348
 Name=Armaldo
 Types=ROCK,BUG
 BaseStats=75,125,100,45,70,80
@@ -9197,6 +9545,7 @@ Pokedex=Armaldo usually lives on land. However, when it hunts for prey, it dives
 Generation=3
 #-------------------------------
 FEEBAS]349
+ID=349
 Name=Feebas
 Types=WATER
 BaseStats=20,15,20,80,10,55
@@ -9224,6 +9573,7 @@ Generation=3
 Evolutions=MILOTIC,TradeItem,PRISMSCALE,MILOTIC,Beauty,170
 #-------------------------------
 MILOTIC]350
+ID=350
 Name=Milotic
 Types=WATER
 BaseStats=95,60,79,81,100,125
@@ -9249,6 +9599,7 @@ Pokedex=It is said to live at the bottom of large lakes. Considered to be the mo
 Generation=3
 #-------------------------------
 CASTFORM]351
+ID=351
 Name=Castform
 FormName=Normal Form
 Types=NORMAL
@@ -9278,6 +9629,7 @@ WildItemUncommon=MYSTICWATER
 WildItemRare=MYSTICWATER
 #-------------------------------
 KECLEON]352
+ID=352
 Name=Kecleon
 Types=NORMAL
 BaseStats=60,90,70,40,60,120
@@ -9304,6 +9656,7 @@ Pokedex=A Pokemon that has the ability to alter its body colors to match its sur
 Generation=3
 #-------------------------------
 SHUPPET]353
+ID=353
 Name=Shuppet
 Types=GHOST
 BaseStats=44,75,35,45,63,33
@@ -9332,6 +9685,7 @@ WildItemUncommon=SPELLTAG
 Evolutions=BANETTE,Level,37
 #-------------------------------
 BANETTE]354
+ID=354
 Name=Banette
 Types=GHOST
 BaseStats=64,115,65,65,83,63
@@ -9358,6 +9712,7 @@ Generation=3
 WildItemUncommon=SPELLTAG
 #-------------------------------
 DUSKULL]355
+ID=355
 Name=Duskull
 Types=GHOST
 BaseStats=20,40,90,25,30,90
@@ -9386,6 +9741,7 @@ WildItemUncommon=SPELLTAG
 Evolutions=DUSCLOPS,Level,37
 #-------------------------------
 DUSCLOPS]356
+ID=356
 Name=Dusclops
 Types=GHOST
 BaseStats=40,70,130,25,60,130
@@ -9413,6 +9769,7 @@ WildItemUncommon=SPELLTAG
 Evolutions=DUSKNOIR,TradeItem,REAPERCLOTH
 #-------------------------------
 TROPIUS]357
+ID=357
 Name=Tropius
 Types=GRASS,FLYING
 BaseStats=99,68,83,51,72,87
@@ -9439,6 +9796,7 @@ Pokedex=It flies by flapping its broad leaves. The bunch of fruit that grows aro
 Generation=3
 #-------------------------------
 CHIMECHO]358
+ID=358
 Name=Chimecho
 Types=PSYCHIC
 BaseStats=75,50,80,65,95,90
@@ -9465,6 +9823,7 @@ Generation=3
 WildItemUncommon=CLEANSETAG
 #-------------------------------
 ABSOL]359
+ID=359
 Name=Absol
 Types=DARK
 BaseStats=65,130,60,75,75,60
@@ -9491,6 +9850,7 @@ Pokedex=It sharply senses even subtle changes in the sky and the land to predict
 Generation=3
 #-------------------------------
 WYNAUT]360
+ID=360
 Name=Wynaut
 Types=PSYCHIC
 BaseStats=95,23,48,23,23,48
@@ -9518,6 +9878,7 @@ Generation=3
 Evolutions=WOBBUFFET,Level,15
 #-------------------------------
 SNORUNT]361
+ID=361
 Name=Snorunt
 Types=ICE
 BaseStats=50,50,50,50,50,50
@@ -9546,6 +9907,7 @@ WildItemUncommon=SNOWBALL
 Evolutions=GLALIE,Level,42,FROSLASS,ItemFemale,DAWNSTONE
 #-------------------------------
 GLALIE]362
+ID=362
 Name=Glalie
 Types=ICE
 BaseStats=80,80,80,80,80,80
@@ -9571,6 +9933,7 @@ Pokedex=A Glalie has the power to instantaneously freeze moisture in the atmosph
 Generation=3
 #-------------------------------
 SPHEAL]363
+ID=363
 Name=Spheal
 Types=ICE,WATER
 BaseStats=70,40,50,25,55,50
@@ -9598,6 +9961,7 @@ Generation=3
 Evolutions=SEALEO,Level,32
 #-------------------------------
 SEALEO]364
+ID=364
 Name=Sealeo
 Types=ICE,WATER
 BaseStats=90,60,70,45,75,70
@@ -9624,6 +9988,7 @@ Generation=3
 Evolutions=WALREIN,Level,44
 #-------------------------------
 WALREIN]365
+ID=365
 Name=Walrein
 Types=ICE,WATER
 BaseStats=110,80,90,65,95,90
@@ -9649,6 +10014,7 @@ Pokedex=To protect its herd, the leader battles anything that invades its territ
 Generation=3
 #-------------------------------
 CLAMPERL]366
+ID=366
 Name=Clamperl
 Types=WATER
 BaseStats=35,64,85,32,74,55
@@ -9678,6 +10044,7 @@ WildItemUncommon=BIGPEARL
 Evolutions=HUNTAIL,TradeItem,DEEPSEATOOTH,GOREBYSS,TradeItem,DEEPSEASCALE
 #-------------------------------
 HUNTAIL]367
+ID=367
 Name=Huntail
 Types=WATER
 BaseStats=55,104,105,52,94,75
@@ -9704,6 +10071,7 @@ Generation=3
 WildItemUncommon=DEEPSEATOOTH
 #-------------------------------
 GOREBYSS]368
+ID=368
 Name=Gorebyss
 Types=WATER
 BaseStats=55,84,105,52,114,75
@@ -9730,6 +10098,7 @@ Generation=3
 WildItemUncommon=DEEPSEASCALE
 #-------------------------------
 RELICANTH]369
+ID=369
 Name=Relicanth
 Types=WATER,ROCK
 BaseStats=100,90,130,55,45,65
@@ -9757,6 +10126,7 @@ Generation=3
 WildItemUncommon=DEEPSEASCALE
 #-------------------------------
 LUVDISC]370
+ID=370
 Name=Luvdisc
 Types=WATER
 BaseStats=43,30,55,97,40,65
@@ -9784,6 +10154,7 @@ Generation=3
 WildItemCommon=HEARTSCALE
 #-------------------------------
 BAGON]371
+ID=371
 Name=Bagon
 Types=DRAGON
 BaseStats=45,75,60,50,40,30
@@ -9812,6 +10183,7 @@ WildItemUncommon=DRAGONFANG
 Evolutions=SHELGON,Level,30
 #-------------------------------
 SHELGON]372
+ID=372
 Name=Shelgon
 Types=DRAGON
 BaseStats=65,95,100,50,60,50
@@ -9839,6 +10211,7 @@ WildItemUncommon=DRAGONFANG
 Evolutions=SALAMENCE,Level,50
 #-------------------------------
 SALAMENCE]373
+ID=373
 Name=Salamence
 Types=DRAGON,FLYING
 BaseStats=95,135,80,100,110,80
@@ -9865,6 +10238,7 @@ Generation=3
 WildItemUncommon=DRAGONFANG
 #-------------------------------
 BELDUM]374
+ID=374
 Name=Beldum
 Types=STEEL,PSYCHIC
 BaseStats=40,55,80,30,35,60
@@ -9892,6 +10266,7 @@ WildItemUncommon=METALCOAT
 Evolutions=METANG,Level,20
 #-------------------------------
 METANG]375
+ID=375
 Name=Metang
 Types=STEEL,PSYCHIC
 BaseStats=60,75,100,50,55,80
@@ -9919,6 +10294,7 @@ WildItemUncommon=METALCOAT
 Evolutions=METAGROSS,Level,45
 #-------------------------------
 METAGROSS]376
+ID=376
 Name=Metagross
 Types=STEEL,PSYCHIC
 BaseStats=80,135,130,70,95,90
@@ -9945,6 +10321,7 @@ Generation=3
 WildItemUncommon=METALCOAT
 #-------------------------------
 REGIROCK]377
+ID=377
 Name=Regirock
 Types=ROCK
 BaseStats=80,100,200,50,50,100
@@ -9971,6 +10348,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 REGICE]378
+ID=378
 Name=Regice
 Types=ICE
 BaseStats=80,50,100,50,100,200
@@ -9997,6 +10375,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 REGISTEEL]379
+ID=379
 Name=Registeel
 Types=STEEL
 BaseStats=80,75,150,50,75,150
@@ -10023,6 +10402,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 LATIAS]380
+ID=380
 Name=Latias
 Types=DRAGON,PSYCHIC
 BaseStats=80,80,90,110,110,130
@@ -10048,6 +10428,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 LATIOS]381
+ID=381
 Name=Latios
 Types=DRAGON,PSYCHIC
 BaseStats=80,90,80,110,130,110
@@ -10073,6 +10454,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 KYOGRE]382
+ID=382
 Name=Kyogre
 Types=WATER
 BaseStats=100,100,90,90,150,140
@@ -10098,6 +10480,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 GROUDON]383
+ID=383
 Name=Groudon
 Types=GROUND
 BaseStats=100,150,140,90,100,90
@@ -10123,6 +10506,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 RAYQUAZA]384
+ID=384
 Name=Rayquaza
 Types=DRAGON,FLYING
 BaseStats=105,150,90,95,150,90
@@ -10148,6 +10532,7 @@ Generation=3
 Flags=Legendary
 #-------------------------------
 JIRACHI]385
+ID=385
 Name=Jirachi
 Types=STEEL,PSYCHIC
 BaseStats=100,100,100,100,100,100
@@ -10176,6 +10561,7 @@ WildItemUncommon=STARPIECE
 WildItemRare=STARPIECE
 #-------------------------------
 DEOXYS]386
+ID=386
 Name=Deoxys
 FormName=Normal Forme
 Types=PSYCHIC
@@ -10202,6 +10588,7 @@ Generation=3
 Flags=Mythical
 #-------------------------------
 TURTWIG]387
+ID=387
 Name=Turtwig
 Types=GRASS
 BaseStats=55,68,64,31,45,55
@@ -10228,6 +10615,7 @@ Generation=4
 Evolutions=GROTLE,Level,18
 #-------------------------------
 GROTLE]388
+ID=388
 Name=Grotle
 Types=GRASS
 BaseStats=75,89,85,36,55,65
@@ -10253,6 +10641,7 @@ Generation=4
 Evolutions=TORTERRA,Level,32
 #-------------------------------
 TORTERRA]389
+ID=389
 Name=Torterra
 Types=GRASS,GROUND
 BaseStats=95,109,105,56,75,85
@@ -10277,6 +10666,7 @@ Pokedex=Small Pokemon occasionally gather on its unmoving back to begin building
 Generation=4
 #-------------------------------
 CHIMCHAR]390
+ID=390
 Name=Chimchar
 Types=FIRE
 BaseStats=44,58,44,61,58,44
@@ -10303,6 +10693,7 @@ Generation=4
 Evolutions=MONFERNO,Level,14
 #-------------------------------
 MONFERNO]391
+ID=391
 Name=Monferno
 Types=FIRE,FIGHTING
 BaseStats=64,78,52,81,78,52
@@ -10328,6 +10719,7 @@ Generation=4
 Evolutions=INFERNAPE,Level,36
 #-------------------------------
 INFERNAPE]392
+ID=392
 Name=Infernape
 Types=FIRE,FIGHTING
 BaseStats=76,104,71,108,104,71
@@ -10352,6 +10744,7 @@ Pokedex=It uses a special kind of martial arts involving all its limbs. Its fire
 Generation=4
 #-------------------------------
 PIPLUP]393
+ID=393
 Name=Piplup
 Types=WATER
 BaseStats=53,51,53,40,61,56
@@ -10378,6 +10771,7 @@ Generation=4
 Evolutions=PRINPLUP,Level,16
 #-------------------------------
 PRINPLUP]394
+ID=394
 Name=Prinplup
 Types=WATER
 BaseStats=64,66,68,50,81,76
@@ -10403,6 +10797,7 @@ Generation=4
 Evolutions=EMPOLEON,Level,36
 #-------------------------------
 EMPOLEON]395
+ID=395
 Name=Empoleon
 Types=WATER,STEEL
 BaseStats=84,86,88,60,111,101
@@ -10427,6 +10822,7 @@ Pokedex=The three horns that extend from its beak attest to its power. The leade
 Generation=4
 #-------------------------------
 STARLY]396
+ID=396
 Name=Starly
 Types=NORMAL,FLYING
 BaseStats=40,55,30,60,30,30
@@ -10453,6 +10849,7 @@ Generation=4
 Evolutions=STARAVIA,Level,14
 #-------------------------------
 STARAVIA]397
+ID=397
 Name=Staravia
 Types=NORMAL,FLYING
 BaseStats=55,75,50,80,40,40
@@ -10478,6 +10875,7 @@ Generation=4
 Evolutions=STARAPTOR,Level,34
 #-------------------------------
 STARAPTOR]398
+ID=398
 Name=Staraptor
 Types=NORMAL,FLYING
 BaseStats=85,120,70,100,50,60
@@ -10502,6 +10900,7 @@ Pokedex=It has a savage nature. It will courageously challenge foes that are muc
 Generation=4
 #-------------------------------
 BIDOOF]399
+ID=399
 Name=Bidoof
 Types=NORMAL
 BaseStats=59,45,40,31,35,40
@@ -10528,6 +10927,7 @@ Generation=4
 Evolutions=BIBAREL,Level,15
 #-------------------------------
 BIBAREL]400
+ID=400
 Name=Bibarel
 Types=NORMAL,WATER
 BaseStats=79,85,60,71,55,60
@@ -10552,6 +10952,7 @@ Pokedex=It makes its nest by damming streams with bark and mud. It is known as a
 Generation=4
 #-------------------------------
 KRICKETOT]401
+ID=401
 Name=Kricketot
 Types=BUG
 BaseStats=37,25,41,25,25,41
@@ -10578,6 +10979,7 @@ WildItemUncommon=METRONOME
 Evolutions=KRICKETUNE,Level,10
 #-------------------------------
 KRICKETUNE]402
+ID=402
 Name=Kricketune
 Types=BUG
 BaseStats=77,85,51,65,55,51
@@ -10603,6 +11005,7 @@ Generation=4
 WildItemUncommon=METRONOME
 #-------------------------------
 SHINX]403
+ID=403
 Name=Shinx
 Types=ELECTRIC
 BaseStats=45,65,34,45,40,34
@@ -10629,6 +11032,7 @@ Generation=4
 Evolutions=LUXIO,Level,15
 #-------------------------------
 LUXIO]404
+ID=404
 Name=Luxio
 Types=ELECTRIC
 BaseStats=60,85,49,60,60,49
@@ -10654,6 +11058,7 @@ Generation=4
 Evolutions=LUXRAY,Level,30
 #-------------------------------
 LUXRAY]405
+ID=405
 Name=Luxray
 Types=ELECTRIC
 BaseStats=80,120,79,70,95,79
@@ -10678,6 +11083,7 @@ Pokedex=It has eyes that can see through anything. It spots and captures prey hi
 Generation=4
 #-------------------------------
 BUDEW]406
+ID=406
 Name=Budew
 Types=GRASS,POISON
 BaseStats=40,30,35,55,50,70
@@ -10706,6 +11112,7 @@ WildItemUncommon=POISONBARB
 Evolutions=ROSELIA,HappinessDay,
 #-------------------------------
 ROSERADE]407
+ID=407
 Name=Roserade
 Types=GRASS,POISON
 BaseStats=60,70,65,90,125,105
@@ -10731,6 +11138,7 @@ Generation=4
 WildItemUncommon=POISONBARB
 #-------------------------------
 CRANIDOS]408
+ID=408
 Name=Cranidos
 Types=ROCK
 BaseStats=67,125,40,58,30,30
@@ -10757,6 +11165,7 @@ Generation=4
 Evolutions=RAMPARDOS,Level,30
 #-------------------------------
 RAMPARDOS]409
+ID=409
 Name=Rampardos
 Types=ROCK
 BaseStats=97,165,60,58,65,50
@@ -10781,6 +11190,7 @@ Pokedex=Its powerful head butt has enough power to shatter even the most durable
 Generation=4
 #-------------------------------
 SHIELDON]410
+ID=410
 Name=Shieldon
 Types=ROCK,STEEL
 BaseStats=30,42,118,30,42,88
@@ -10807,6 +11217,7 @@ Generation=4
 Evolutions=BASTIODON,Level,30
 #-------------------------------
 BASTIODON]411
+ID=411
 Name=Bastiodon
 Types=ROCK,STEEL
 BaseStats=60,52,168,30,47,138
@@ -10831,6 +11242,7 @@ Pokedex=Any frontal attack is repulsed. It is a docile Pokemon that feeds on gra
 Generation=4
 #-------------------------------
 BURMY]412
+ID=412
 Name=Burmy
 FormName=Plant Cloak
 Types=BUG
@@ -10858,6 +11270,7 @@ Flags=InheritFormFromMother
 Evolutions=WORMADAM,LevelFemale,20,MOTHIM,LevelMale,20
 #-------------------------------
 WORMADAM]413
+ID=413
 Name=Wormadam
 FormName=Plant Cloak
 Types=BUG,GRASS
@@ -10885,6 +11298,7 @@ Flags=InheritFormFromMother
 WildItemUncommon=SILVERPOWDER
 #-------------------------------
 MOTHIM]414
+ID=414
 Name=Mothim
 Types=BUG,FLYING
 BaseStats=70,94,50,66,94,50
@@ -10911,6 +11325,7 @@ Flags=DefaultForm_0
 WildItemUncommon=SILVERPOWDER
 #-------------------------------
 COMBEE]415
+ID=415
 Name=Combee
 Types=BUG,FLYING
 BaseStats=30,30,42,70,30,42
@@ -10937,6 +11352,7 @@ WildItemUncommon=HONEY
 Evolutions=VESPIQUEN,LevelFemale,21
 #-------------------------------
 VESPIQUEN]416
+ID=416
 Name=Vespiquen
 Types=BUG,FLYING
 BaseStats=70,80,102,40,80,102
@@ -10962,6 +11378,7 @@ Generation=4
 WildItemUncommon=POISONBARB
 #-------------------------------
 PACHIRISU]417
+ID=417
 Name=Pachirisu
 Types=ELECTRIC
 BaseStats=60,45,70,95,45,90
@@ -10987,6 +11404,7 @@ Pokedex=It makes fur balls that crackle with static electricity. It stores them 
 Generation=4
 #-------------------------------
 BUIZEL]418
+ID=418
 Name=Buizel
 Types=WATER
 BaseStats=55,65,35,85,60,30
@@ -11013,6 +11431,7 @@ Generation=4
 Evolutions=FLOATZEL,Level,26
 #-------------------------------
 FLOATZEL]419
+ID=419
 Name=Floatzel
 Types=WATER
 BaseStats=85,105,55,115,85,50
@@ -11037,6 +11456,7 @@ Pokedex=It floats using its well-developed flotation sac. It assists in the resc
 Generation=4
 #-------------------------------
 CHERUBI]420
+ID=420
 Name=Cherubi
 Types=GRASS
 BaseStats=45,35,45,35,62,53
@@ -11063,6 +11483,7 @@ WildItemUncommon=MIRACLESEED
 Evolutions=CHERRIM,Level,25
 #-------------------------------
 CHERRIM]421
+ID=421
 Name=Cherrim
 FormName=Overcast Form
 Types=GRASS
@@ -11088,6 +11509,7 @@ Generation=4
 WildItemUncommon=MIRACLESEED
 #-------------------------------
 SHELLOS]422
+ID=422
 Name=Shellos
 FormName=West Sea
 Types=WATER
@@ -11116,6 +11538,7 @@ Flags=InheritFormFromMother
 Evolutions=GASTRODON,Level,30
 #-------------------------------
 GASTRODON]423
+ID=423
 Name=Gastrodon
 FormName=West Sea
 Types=WATER,GROUND
@@ -11142,6 +11565,7 @@ Generation=4
 Flags=InheritFormFromMother
 #-------------------------------
 AMBIPOM]424
+ID=424
 Name=Ambipom
 Types=NORMAL
 BaseStats=75,100,66,115,60,66
@@ -11166,6 +11590,7 @@ Pokedex=To eat, it deftly shucks nuts with its two tails. It rarely uses its arm
 Generation=4
 #-------------------------------
 DRIFLOON]425
+ID=425
 Name=Drifloon
 Types=GHOST,FLYING
 BaseStats=90,50,34,70,60,44
@@ -11192,6 +11617,7 @@ Generation=4
 Evolutions=DRIFBLIM,Level,28
 #-------------------------------
 DRIFBLIM]426
+ID=426
 Name=Drifblim
 Types=GHOST,FLYING
 BaseStats=150,80,44,80,90,54
@@ -11216,6 +11642,7 @@ Pokedex=It's drowzy in daytime, but flies off in the evening in big groups. No o
 Generation=4
 #-------------------------------
 BUNEARY]427
+ID=427
 Name=Buneary
 Types=NORMAL
 BaseStats=55,66,44,85,44,56
@@ -11242,6 +11669,7 @@ Generation=4
 Evolutions=LOPUNNY,Happiness,
 #-------------------------------
 LOPUNNY]428
+ID=428
 Name=Lopunny
 Types=NORMAL
 BaseStats=65,76,84,105,54,96
@@ -11266,6 +11694,7 @@ Pokedex=An extremely cautious Pokemon. It cloaks its body with its fluffy ear fu
 Generation=4
 #-------------------------------
 MISMAGIUS]429
+ID=429
 Name=Mismagius
 Types=GHOST
 BaseStats=60,60,60,105,105,105
@@ -11289,6 +11718,7 @@ Pokedex=Its cries sound like incantations. Those hearing it are tormented by hea
 Generation=4
 #-------------------------------
 HONCHKROW]430
+ID=430
 Name=Honchkrow
 Types=DARK,FLYING
 BaseStats=100,125,52,71,105,52
@@ -11313,6 +11743,7 @@ Pokedex=Becoming active at night, it is known to swarm with numerous Murkrow in 
 Generation=4
 #-------------------------------
 GLAMEOW]431
+ID=431
 Name=Glameow
 Types=NORMAL
 BaseStats=49,55,42,85,42,37
@@ -11339,6 +11770,7 @@ Generation=4
 Evolutions=PURUGLY,Level,38
 #-------------------------------
 PURUGLY]432
+ID=432
 Name=Purugly
 Types=NORMAL
 BaseStats=71,82,64,112,64,59
@@ -11363,6 +11795,7 @@ Pokedex=It is a brazen brute that barges its way into another Pokemon's nest and
 Generation=4
 #-------------------------------
 CHINGLING]433
+ID=433
 Name=Chingling
 Types=PSYCHIC
 BaseStats=45,30,50,45,65,50
@@ -11390,6 +11823,7 @@ WildItemUncommon=CLEANSETAG
 Evolutions=CHIMECHO,HappinessNight,
 #-------------------------------
 STUNKY]434
+ID=434
 Name=Stunky
 Types=POISON,DARK
 BaseStats=63,63,47,74,41,41
@@ -11416,6 +11850,7 @@ Generation=4
 Evolutions=SKUNTANK,Level,34
 #-------------------------------
 SKUNTANK]435
+ID=435
 Name=Skuntank
 Types=POISON,DARK
 BaseStats=103,93,67,84,71,61
@@ -11440,6 +11875,7 @@ Pokedex=It sprays a vile-smelling fluid from the tip of its tail to attack. Its 
 Generation=4
 #-------------------------------
 BRONZOR]436
+ID=436
 Name=Bronzor
 Types=STEEL,PSYCHIC
 BaseStats=57,24,86,23,24,86
@@ -11466,6 +11902,7 @@ WildItemUncommon=METALCOAT
 Evolutions=BRONZONG,Level,33
 #-------------------------------
 BRONZONG]437
+ID=437
 Name=Bronzong
 Types=STEEL,PSYCHIC
 BaseStats=67,89,116,33,79,116
@@ -11491,6 +11928,7 @@ Generation=4
 WildItemUncommon=METALCOAT
 #-------------------------------
 BONSLY]438
+ID=438
 Name=Bonsly
 Types=ROCK
 BaseStats=50,80,95,10,10,45
@@ -11518,6 +11956,7 @@ Generation=4
 Evolutions=SUDOWOODO,HasMove,MIMIC
 #-------------------------------
 MIMEJR]439
+ID=439
 Name=Mime Jr.
 Types=PSYCHIC,FAIRY
 BaseStats=20,25,45,60,70,90
@@ -11545,6 +11984,7 @@ Generation=4
 Evolutions=MRMIME,HasMove,MIMIC
 #-------------------------------
 HAPPINY]440
+ID=440
 Name=Happiny
 Types=NORMAL
 BaseStats=100,5,5,30,15,65
@@ -11573,6 +12013,7 @@ WildItemCommon=OVALSTONE
 Evolutions=CHANSEY,DayHoldItem,OVALSTONE
 #-------------------------------
 CHATOT]441
+ID=441
 Name=Chatot
 Types=NORMAL,FLYING
 BaseStats=76,65,45,91,92,42
@@ -11599,6 +12040,7 @@ Generation=4
 WildItemUncommon=METRONOME
 #-------------------------------
 SPIRITOMB]442
+ID=442
 Name=Spiritomb
 Types=GHOST,DARK
 BaseStats=50,92,108,35,92,108
@@ -11624,6 +12066,7 @@ Pokedex=A Pokemon that was formed by 108 spirits. It is bound to a fissure in an
 Generation=4
 #-------------------------------
 GIBLE]443
+ID=443
 Name=Gible
 Types=DRAGON,GROUND
 BaseStats=58,70,45,42,40,45
@@ -11650,6 +12093,7 @@ Generation=4
 Evolutions=GABITE,Level,24
 #-------------------------------
 GABITE]444
+ID=444
 Name=Gabite
 Types=DRAGON,GROUND
 BaseStats=68,90,65,82,50,55
@@ -11675,6 +12119,7 @@ Generation=4
 Evolutions=GARCHOMP,Level,48
 #-------------------------------
 GARCHOMP]445
+ID=445
 Name=Garchomp
 Types=DRAGON,GROUND
 BaseStats=108,130,95,102,80,85
@@ -11699,6 +12144,7 @@ Pokedex=When it folds up its body and extends its wings, it looks like a jet pla
 Generation=4
 #-------------------------------
 MUNCHLAX]446
+ID=446
 Name=Munchlax
 Types=NORMAL
 BaseStats=135,85,40,5,40,85
@@ -11729,6 +12175,7 @@ WildItemRare=LEFTOVERS
 Evolutions=SNORLAX,Happiness,
 #-------------------------------
 RIOLU]447
+ID=447
 Name=Riolu
 Types=FIGHTING
 BaseStats=40,70,40,60,35,40
@@ -11755,6 +12202,7 @@ Generation=4
 Evolutions=LUCARIO,HappinessDay,
 #-------------------------------
 LUCARIO]448
+ID=448
 Name=Lucario
 Types=FIGHTING,STEEL
 BaseStats=70,110,70,90,115,70
@@ -11779,6 +12227,7 @@ Pokedex=It has the ability to sense the auras of all things. It understands huma
 Generation=4
 #-------------------------------
 HIPPOPOTAS]449
+ID=449
 Name=Hippopotas
 Types=GROUND
 BaseStats=68,72,78,32,38,42
@@ -11805,6 +12254,7 @@ Generation=4
 Evolutions=HIPPOWDON,Level,34
 #-------------------------------
 HIPPOWDON]450
+ID=450
 Name=Hippowdon
 Types=GROUND
 BaseStats=108,112,118,47,68,72
@@ -11829,6 +12279,7 @@ Pokedex=It blasts internally stored sand from ports on its body to create a towe
 Generation=4
 #-------------------------------
 SKORUPI]451
+ID=451
 Name=Skorupi
 Types=POISON,BUG
 BaseStats=40,50,90,65,30,55
@@ -11856,6 +12307,7 @@ WildItemUncommon=POISONBARB
 Evolutions=DRAPION,Level,40
 #-------------------------------
 DRAPION]452
+ID=452
 Name=Drapion
 Types=POISON,DARK
 BaseStats=70,90,110,95,60,75
@@ -11881,6 +12333,7 @@ Generation=4
 WildItemUncommon=POISONBARB
 #-------------------------------
 CROAGUNK]453
+ID=453
 Name=Croagunk
 Types=POISON,FIGHTING
 BaseStats=48,61,40,50,61,40
@@ -11908,6 +12361,7 @@ WildItemUncommon=BLACKSLUDGE
 Evolutions=TOXICROAK,Level,37
 #-------------------------------
 TOXICROAK]454
+ID=454
 Name=Toxicroak
 Types=POISON,FIGHTING
 BaseStats=83,106,65,85,86,65
@@ -11933,6 +12387,7 @@ Generation=4
 WildItemUncommon=BLACKSLUDGE
 #-------------------------------
 CARNIVINE]455
+ID=455
 Name=Carnivine
 Types=GRASS
 BaseStats=74,100,72,46,90,72
@@ -11957,6 +12412,7 @@ Pokedex=It attracts prey with its sweet-smelling saliva, then chomps down. It ta
 Generation=4
 #-------------------------------
 FINNEON]456
+ID=456
 Name=Finneon
 Types=WATER
 BaseStats=49,49,56,66,49,61
@@ -11983,6 +12439,7 @@ Generation=4
 Evolutions=LUMINEON,Level,31
 #-------------------------------
 LUMINEON]457
+ID=457
 Name=Lumineon
 Types=WATER
 BaseStats=69,69,76,91,69,86
@@ -12007,6 +12464,7 @@ Pokedex=It lives on the deep-sea floor. It attracts prey by flashing the pattern
 Generation=4
 #-------------------------------
 MANTYKE]458
+ID=458
 Name=Mantyke
 Types=WATER,FLYING
 BaseStats=45,20,50,50,60,120
@@ -12034,6 +12492,7 @@ Generation=4
 Evolutions=MANTINE,HasInParty,REMORAID
 #-------------------------------
 SNOVER]459
+ID=459
 Name=Snover
 Types=GRASS,ICE
 BaseStats=60,62,50,40,62,60
@@ -12061,6 +12520,7 @@ WildItemUncommon=NEVERMELTICE
 Evolutions=ABOMASNOW,Level,40
 #-------------------------------
 ABOMASNOW]460
+ID=460
 Name=Abomasnow
 Types=GRASS,ICE
 BaseStats=90,92,75,60,92,85
@@ -12086,6 +12546,7 @@ Generation=4
 WildItemUncommon=NEVERMELTICE
 #-------------------------------
 WEAVILE]461
+ID=461
 Name=Weavile
 Types=DARK,ICE
 BaseStats=70,120,65,125,45,85
@@ -12111,6 +12572,7 @@ Generation=4
 WildItemUncommon=QUICKCLAW
 #-------------------------------
 MAGNEZONE]462
+ID=462
 Name=Magnezone
 Types=ELECTRIC,STEEL
 BaseStats=70,70,115,60,130,90
@@ -12136,6 +12598,7 @@ Generation=4
 WildItemUncommon=METALCOAT
 #-------------------------------
 LICKILICKY]463
+ID=463
 Name=Lickilicky
 Types=NORMAL
 BaseStats=110,85,95,50,80,95
@@ -12161,6 +12624,7 @@ Generation=4
 WildItemUncommon=LAGGINGTAIL
 #-------------------------------
 RHYPERIOR]464
+ID=464
 Name=Rhyperior
 Types=GROUND,ROCK
 BaseStats=115,140,130,40,55,55
@@ -12185,6 +12649,7 @@ Pokedex=It puts rocks in holes in its palms and uses its muscles to shoot them. 
 Generation=4
 #-------------------------------
 TANGROWTH]465
+ID=465
 Name=Tangrowth
 Types=GRASS
 BaseStats=100,100,125,50,110,50
@@ -12209,6 +12674,7 @@ Pokedex=It ensnares prey by extending arms made of vines. Losing arms to predato
 Generation=4
 #-------------------------------
 ELECTIVIRE]466
+ID=466
 Name=Electivire
 Types=ELECTRIC
 BaseStats=75,123,67,95,95,85
@@ -12234,6 +12700,7 @@ Generation=4
 WildItemUncommon=ELECTIRIZER
 #-------------------------------
 MAGMORTAR]467
+ID=467
 Name=Magmortar
 Types=FIRE
 BaseStats=75,95,67,83,125,95
@@ -12259,6 +12726,7 @@ Generation=4
 WildItemUncommon=MAGMARIZER
 #-------------------------------
 TOGEKISS]468
+ID=468
 Name=Togekiss
 Types=FAIRY,FLYING
 BaseStats=85,50,95,80,120,115
@@ -12283,6 +12751,7 @@ Pokedex=It will never appear where there is strife. Its sightings have become ra
 Generation=4
 #-------------------------------
 YANMEGA]469
+ID=469
 Name=Yanmega
 Types=BUG,FLYING
 BaseStats=86,76,86,95,116,56
@@ -12308,6 +12777,7 @@ Generation=4
 WildItemUncommon=WIDELENS
 #-------------------------------
 LEAFEON]470
+ID=470
 Name=Leafeon
 Types=GRASS
 BaseStats=65,110,130,95,60,65
@@ -12332,6 +12802,7 @@ Pokedex=Just like a plant, it uses photosynthesis. As a result, it is always env
 Generation=4
 #-------------------------------
 GLACEON]471
+ID=471
 Name=Glaceon
 Types=ICE
 BaseStats=65,60,110,65,130,95
@@ -12356,6 +12827,7 @@ Pokedex=As a protective technique, it can completely freeze its fur to make its 
 Generation=4
 #-------------------------------
 GLISCOR]472
+ID=472
 Name=Gliscor
 Types=GROUND,FLYING
 BaseStats=75,95,125,95,45,75
@@ -12380,6 +12852,7 @@ Pokedex=It observes prey while hanging inverted from branches. When the chance p
 Generation=4
 #-------------------------------
 MAMOSWINE]473
+ID=473
 Name=Mamoswine
 Types=ICE,GROUND
 BaseStats=110,130,80,80,70,60
@@ -12404,6 +12877,7 @@ Pokedex=Its impressive tusks are made of ice. The population thinned when it tur
 Generation=4
 #-------------------------------
 PORYGONZ]474
+ID=474
 Name=Porygon-Z
 Types=NORMAL
 BaseStats=85,80,70,90,135,75
@@ -12428,6 +12902,7 @@ Pokedex=Additional software was installed to make it a better Pokemon. It began 
 Generation=4
 #-------------------------------
 GALLADE]475
+ID=475
 Name=Gallade
 Types=PSYCHIC,FIGHTING
 BaseStats=68,125,65,80,65,115
@@ -12452,6 +12927,7 @@ Pokedex=A master of courtesy and swordsmanship, it fights using extending swords
 Generation=4
 #-------------------------------
 PROBOPASS]476
+ID=476
 Name=Probopass
 Types=ROCK,STEEL
 BaseStats=60,55,145,40,75,150
@@ -12477,6 +12953,7 @@ Generation=4
 WildItemUncommon=MAGNET
 #-------------------------------
 DUSKNOIR]477
+ID=477
 Name=Dusknoir
 Types=GHOST
 BaseStats=45,100,135,45,65,135
@@ -12502,6 +12979,7 @@ Generation=4
 WildItemUncommon=SPELLTAG
 #-------------------------------
 FROSLASS]478
+ID=478
 Name=Froslass
 Types=ICE,GHOST
 BaseStats=70,80,70,110,80,70
@@ -12526,6 +13004,7 @@ Pokedex=It freezes foes with an icy breath nearly -60 degrees F. What seems to b
 Generation=4
 #-------------------------------
 ROTOM]479
+ID=479
 Name=Rotom
 FormName=Rotom
 Types=ELECTRIC,GHOST
@@ -12550,6 +13029,7 @@ Pokedex=Its body is composed of plasma. It is known to infiltrate electronic dev
 Generation=4
 #-------------------------------
 UXIE]480
+ID=480
 Name=Uxie
 Types=PSYCHIC
 BaseStats=75,75,130,95,75,130
@@ -12574,6 +13054,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 MESPRIT]481
+ID=481
 Name=Mesprit
 Types=PSYCHIC
 BaseStats=80,105,105,80,105,105
@@ -12598,6 +13079,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 AZELF]482
+ID=482
 Name=Azelf
 Types=PSYCHIC
 BaseStats=75,125,70,115,125,70
@@ -12622,6 +13104,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 DIALGA]483
+ID=483
 Name=Dialga
 Types=STEEL,DRAGON
 BaseStats=100,120,120,90,150,100
@@ -12647,6 +13130,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 PALKIA]484
+ID=484
 Name=Palkia
 Types=WATER,DRAGON
 BaseStats=90,120,100,100,150,120
@@ -12672,6 +13156,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 HEATRAN]485
+ID=485
 Name=Heatran
 Types=FIRE,STEEL
 BaseStats=91,90,106,77,130,106
@@ -12697,6 +13182,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 REGIGIGAS]486
+ID=486
 Name=Regigigas
 Types=NORMAL
 BaseStats=110,160,110,100,80,110
@@ -12721,6 +13207,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 GIRATINA]487
+ID=487
 Name=Giratina
 FormName=Altered Forme
 Types=GHOST,DRAGON
@@ -12747,6 +13234,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 CRESSELIA]488
+ID=488
 Name=Cresselia
 Types=PSYCHIC
 BaseStats=120,70,120,85,75,130
@@ -12771,6 +13259,7 @@ Generation=4
 Flags=Legendary
 #-------------------------------
 PHIONE]489
+ID=489
 Name=Phione
 Types=WATER
 BaseStats=80,80,80,80,80,80
@@ -12795,6 +13284,7 @@ Generation=4
 Flags=Mythical
 #-------------------------------
 MANAPHY]490
+ID=490
 Name=Manaphy
 Types=WATER
 BaseStats=100,100,100,100,100,100
@@ -12820,6 +13310,7 @@ Generation=4
 Flags=Mythical
 #-------------------------------
 DARKRAI]491
+ID=491
 Name=Darkrai
 Types=DARK
 BaseStats=70,90,90,125,135,90
@@ -12844,6 +13335,7 @@ Generation=4
 Flags=Mythical
 #-------------------------------
 SHAYMIN]492
+ID=492
 Name=Shaymin
 FormName=Land Forme
 Types=GRASS
@@ -12872,6 +13364,7 @@ WildItemUncommon=LUMBERRY
 WildItemRare=LUMBERRY
 #-------------------------------
 ARCEUS]493
+ID=493
 Name=Arceus
 FormName=Normal Type
 Types=NORMAL
@@ -12897,6 +13390,7 @@ Generation=4
 Flags=Mythical
 #-------------------------------
 VICTINI]494
+ID=494
 Name=Victini
 Types=PSYCHIC,FIRE
 BaseStats=100,100,100,100,100,100
@@ -12921,6 +13415,7 @@ Generation=5
 Flags=Mythical
 #-------------------------------
 SNIVY]495
+ID=495
 Name=Snivy
 Types=GRASS
 BaseStats=45,45,55,63,45,55
@@ -12947,6 +13442,7 @@ Generation=5
 Evolutions=SERVINE,Level,17
 #-------------------------------
 SERVINE]496
+ID=496
 Name=Servine
 Types=GRASS
 BaseStats=60,60,75,83,60,75
@@ -12972,6 +13468,7 @@ Generation=5
 Evolutions=SERPERIOR,Level,36
 #-------------------------------
 SERPERIOR]497
+ID=497
 Name=Serperior
 Types=GRASS
 BaseStats=75,75,95,113,75,95
@@ -12996,6 +13493,7 @@ Pokedex=They raise their heads to intimidate opponents, but only give it their a
 Generation=5
 #-------------------------------
 TEPIG]498
+ID=498
 Name=Tepig
 Types=FIRE
 BaseStats=65,63,45,45,45,45
@@ -13022,6 +13520,7 @@ Generation=5
 Evolutions=PIGNITE,Level,17
 #-------------------------------
 PIGNITE]499
+ID=499
 Name=Pignite
 Types=FIRE,FIGHTING
 BaseStats=90,93,55,55,70,55
@@ -13047,6 +13546,7 @@ Generation=5
 Evolutions=EMBOAR,Level,36
 #-------------------------------
 EMBOAR]500
+ID=500
 Name=Emboar
 Types=FIRE,FIGHTING
 BaseStats=110,123,65,65,100,65
@@ -13071,6 +13571,7 @@ Pokedex=It can throw a fire punch by setting its fists on fire with its fiery ch
 Generation=5
 #-------------------------------
 OSHAWOTT]501
+ID=501
 Name=Oshawott
 Types=WATER
 BaseStats=55,55,45,45,63,45
@@ -13097,6 +13598,7 @@ Generation=5
 Evolutions=DEWOTT,Level,17
 #-------------------------------
 DEWOTT]502
+ID=502
 Name=Dewott
 Types=WATER
 BaseStats=75,75,60,60,83,60
@@ -13122,6 +13624,7 @@ Generation=5
 Evolutions=SAMUROTT,Level,36
 #-------------------------------
 SAMUROTT]503
+ID=503
 Name=Samurott
 Types=WATER
 BaseStats=95,100,85,70,108,70
@@ -13146,6 +13649,7 @@ Pokedex=Part of the armor on its anterior legs becomes a giant sword. Its cry al
 Generation=5
 #-------------------------------
 PATRAT]504
+ID=504
 Name=Patrat
 Types=NORMAL
 BaseStats=45,55,39,42,35,39
@@ -13172,6 +13676,7 @@ Generation=5
 Evolutions=WATCHOG,Level,20
 #-------------------------------
 WATCHOG]505
+ID=505
 Name=Watchog
 Types=NORMAL
 BaseStats=60,85,69,77,60,69
@@ -13196,6 +13701,7 @@ Pokedex=They make the patterns on their bodies shine in order to threaten predat
 Generation=5
 #-------------------------------
 LILLIPUP]506
+ID=506
 Name=Lillipup
 Types=NORMAL
 BaseStats=45,60,45,55,25,45
@@ -13222,6 +13728,7 @@ Generation=5
 Evolutions=HERDIER,Level,16
 #-------------------------------
 HERDIER]507
+ID=507
 Name=Herdier
 Types=NORMAL
 BaseStats=65,80,65,60,35,65
@@ -13247,6 +13754,7 @@ Generation=5
 Evolutions=STOUTLAND,Level,32
 #-------------------------------
 STOUTLAND]508
+ID=508
 Name=Stoutland
 Types=NORMAL
 BaseStats=85,110,90,80,45,90
@@ -13271,6 +13779,7 @@ Pokedex=This extremely wise Pokemon excels at rescuing people stranded at sea or
 Generation=5
 #-------------------------------
 PURRLOIN]509
+ID=509
 Name=Purrloin
 Types=DARK
 BaseStats=41,50,37,66,50,37
@@ -13297,6 +13806,7 @@ Generation=5
 Evolutions=LIEPARD,Level,20
 #-------------------------------
 LIEPARD]510
+ID=510
 Name=Liepard
 Types=DARK
 BaseStats=64,88,50,106,88,50
@@ -13321,6 +13831,7 @@ Pokedex=Stealthily, it sneaks up on its target, striking from behind before its 
 Generation=5
 #-------------------------------
 PANSAGE]511
+ID=511
 Name=Pansage
 Types=GRASS
 BaseStats=50,53,48,64,53,48
@@ -13347,6 +13858,7 @@ Generation=5
 Evolutions=SIMISAGE,Item,LEAFSTONE
 #-------------------------------
 SIMISAGE]512
+ID=512
 Name=Simisage
 Types=GRASS
 BaseStats=75,98,63,101,98,63
@@ -13371,6 +13883,7 @@ Pokedex=Ill tempered, it fights by swinging its barbed tail around wildly. The l
 Generation=5
 #-------------------------------
 PANSEAR]513
+ID=513
 Name=Pansear
 Types=FIRE
 BaseStats=50,53,48,64,53,48
@@ -13397,6 +13910,7 @@ Generation=5
 Evolutions=SIMISEAR,Item,FIRESTONE
 #-------------------------------
 SIMISEAR]514
+ID=514
 Name=Simisear
 Types=FIRE
 BaseStats=75,98,63,101,98,63
@@ -13421,6 +13935,7 @@ Pokedex=A flame burns inside its body. It scatters embers from its head and tail
 Generation=5
 #-------------------------------
 PANPOUR]515
+ID=515
 Name=Panpour
 Types=WATER
 BaseStats=50,53,48,64,53,48
@@ -13447,6 +13962,7 @@ Generation=5
 Evolutions=SIMIPOUR,Item,WATERSTONE
 #-------------------------------
 SIMIPOUR]516
+ID=516
 Name=Simipour
 Types=WATER
 BaseStats=75,98,63,101,98,63
@@ -13471,6 +13987,7 @@ Pokedex=The high-pressure water expelled from its tail is so powerful, it can de
 Generation=5
 #-------------------------------
 MUNNA]517
+ID=517
 Name=Munna
 Types=PSYCHIC
 BaseStats=76,25,45,24,67,55
@@ -13497,6 +14014,7 @@ Generation=5
 Evolutions=MUSHARNA,Item,MOONSTONE
 #-------------------------------
 MUSHARNA]518
+ID=518
 Name=Musharna
 Types=PSYCHIC
 BaseStats=116,55,85,29,107,95
@@ -13521,6 +14039,7 @@ Pokedex=With the mist from its forehead, it can create shapes of things from dre
 Generation=5
 #-------------------------------
 PIDOVE]519
+ID=519
 Name=Pidove
 Types=NORMAL,FLYING
 BaseStats=50,55,50,43,36,30
@@ -13547,6 +14066,7 @@ Generation=5
 Evolutions=TRANQUILL,Level,21
 #-------------------------------
 TRANQUILL]520
+ID=520
 Name=Tranquill
 Types=NORMAL,FLYING
 BaseStats=62,77,62,65,50,42
@@ -13572,6 +14092,7 @@ Generation=5
 Evolutions=UNFEZANT,Level,32
 #-------------------------------
 UNFEZANT]521
+ID=521
 Name=Unfezant
 Types=NORMAL,FLYING
 BaseStats=80,115,80,93,65,55
@@ -13596,6 +14117,7 @@ Pokedex=Males have plumage on their heads. They will never let themselves feel c
 Generation=5
 #-------------------------------
 BLITZLE]522
+ID=522
 Name=Blitzle
 Types=ELECTRIC
 BaseStats=45,60,32,76,50,32
@@ -13622,6 +14144,7 @@ Generation=5
 Evolutions=ZEBSTRIKA,Level,27
 #-------------------------------
 ZEBSTRIKA]523
+ID=523
 Name=Zebstrika
 Types=ELECTRIC
 BaseStats=75,100,63,116,80,63
@@ -13646,6 +14169,7 @@ Pokedex=This ill-tempered Pokemon is dangerous because when it's angry, it shoot
 Generation=5
 #-------------------------------
 ROGGENROLA]524
+ID=524
 Name=Roggenrola
 Types=ROCK
 BaseStats=55,75,85,15,25,25
@@ -13674,6 +14198,7 @@ WildItemUncommon=HARDSTONE
 Evolutions=BOLDORE,Level,25
 #-------------------------------
 BOLDORE]525
+ID=525
 Name=Boldore
 Types=ROCK
 BaseStats=70,105,105,20,50,40
@@ -13701,6 +14226,7 @@ WildItemUncommon=HARDSTONE
 Evolutions=GIGALITH,Trade,
 #-------------------------------
 GIGALITH]526
+ID=526
 Name=Gigalith
 Types=ROCK
 BaseStats=85,135,130,25,60,80
@@ -13727,6 +14253,7 @@ WildItemCommon=EVERSTONE
 WildItemUncommon=HARDSTONE
 #-------------------------------
 WOOBAT]527
+ID=527
 Name=Woobat
 Types=PSYCHIC,FLYING
 BaseStats=65,45,43,72,55,43
@@ -13753,6 +14280,7 @@ Generation=5
 Evolutions=SWOOBAT,Happiness,
 #-------------------------------
 SWOOBAT]528
+ID=528
 Name=Swoobat
 Types=PSYCHIC,FLYING
 BaseStats=67,57,55,114,77,55
@@ -13777,6 +14305,7 @@ Pokedex=Anyone who comes into contact with the ultrasonic waves emitted by a cou
 Generation=5
 #-------------------------------
 DRILBUR]529
+ID=529
 Name=Drilbur
 Types=GROUND
 BaseStats=60,85,40,68,30,45
@@ -13803,6 +14332,7 @@ Generation=5
 Evolutions=EXCADRILL,Level,31
 #-------------------------------
 EXCADRILL]530
+ID=530
 Name=Excadrill
 Types=GROUND,STEEL
 BaseStats=110,135,60,88,50,65
@@ -13827,6 +14357,7 @@ Pokedex=More than 300 feet below the surface, they build mazelike nests. Their a
 Generation=5
 #-------------------------------
 AUDINO]531
+ID=531
 Name=Audino
 Types=NORMAL
 BaseStats=103,60,86,50,60,86
@@ -13854,6 +14385,7 @@ WildItemCommon=ORANBERRY
 WildItemUncommon=SITRUSBERRY
 #-------------------------------
 TIMBURR]532
+ID=532
 Name=Timburr
 Types=FIGHTING
 BaseStats=75,80,55,35,25,35
@@ -13880,6 +14412,7 @@ Generation=5
 Evolutions=GURDURR,Level,25
 #-------------------------------
 GURDURR]533
+ID=533
 Name=Gurdurr
 Types=FIGHTING
 BaseStats=85,105,85,40,40,50
@@ -13905,6 +14438,7 @@ Generation=5
 Evolutions=CONKELDURR,Trade,
 #-------------------------------
 CONKELDURR]534
+ID=534
 Name=Conkeldurr
 Types=FIGHTING
 BaseStats=105,140,95,45,55,65
@@ -13929,6 +14463,7 @@ Pokedex=They use concrete pillars as walking canes. They know moves that enable 
 Generation=5
 #-------------------------------
 TYMPOLE]535
+ID=535
 Name=Tympole
 Types=WATER
 BaseStats=50,50,40,64,50,40
@@ -13955,6 +14490,7 @@ Generation=5
 Evolutions=PALPITOAD,Level,25
 #-------------------------------
 PALPITOAD]536
+ID=536
 Name=Palpitoad
 Types=WATER,GROUND
 BaseStats=75,65,55,69,65,55
@@ -13980,6 +14516,7 @@ Generation=5
 Evolutions=SEISMITOAD,Level,36
 #-------------------------------
 SEISMITOAD]537
+ID=537
 Name=Seismitoad
 Types=WATER,GROUND
 BaseStats=105,95,75,74,85,75
@@ -14004,6 +14541,7 @@ Pokedex=It increases the power of its punches by vibrating the bumps on its fist
 Generation=5
 #-------------------------------
 THROH]538
+ID=538
 Name=Throh
 Types=FIGHTING
 BaseStats=120,100,85,45,30,85
@@ -14029,6 +14567,7 @@ Generation=5
 WildItemUncommon=BLACKBELT
 #-------------------------------
 SAWK]539
+ID=539
 Name=Sawk
 Types=FIGHTING
 BaseStats=75,125,75,85,30,75
@@ -14054,6 +14593,7 @@ Generation=5
 WildItemUncommon=BLACKBELT
 #-------------------------------
 SEWADDLE]540
+ID=540
 Name=Sewaddle
 Types=BUG,GRASS
 BaseStats=45,53,70,42,40,60
@@ -14081,6 +14621,7 @@ WildItemUncommon=MENTALHERB
 Evolutions=SWADLOON,Level,20
 #-------------------------------
 SWADLOON]541
+ID=541
 Name=Swadloon
 Types=BUG,GRASS
 BaseStats=55,63,90,42,50,80
@@ -14107,6 +14648,7 @@ WildItemUncommon=MENTALHERB
 Evolutions=LEAVANNY,Happiness,
 #-------------------------------
 LEAVANNY]542
+ID=542
 Name=Leavanny
 Types=BUG,GRASS
 BaseStats=75,103,80,92,70,80
@@ -14132,6 +14674,7 @@ Generation=5
 WildItemUncommon=MENTALHERB
 #-------------------------------
 VENIPEDE]543
+ID=543
 Name=Venipede
 Types=BUG,POISON
 BaseStats=30,45,59,57,30,39
@@ -14159,6 +14702,7 @@ WildItemUncommon=POISONBARB
 Evolutions=WHIRLIPEDE,Level,22
 #-------------------------------
 WHIRLIPEDE]544
+ID=544
 Name=Whirlipede
 Types=BUG,POISON
 BaseStats=40,55,99,47,40,79
@@ -14185,6 +14729,7 @@ WildItemUncommon=POISONBARB
 Evolutions=SCOLIPEDE,Level,30
 #-------------------------------
 SCOLIPEDE]545
+ID=545
 Name=Scolipede
 Types=BUG,POISON
 BaseStats=60,100,89,112,55,69
@@ -14210,6 +14755,7 @@ Generation=5
 WildItemUncommon=POISONBARB
 #-------------------------------
 COTTONEE]546
+ID=546
 Name=Cottonee
 Types=GRASS,FAIRY
 BaseStats=40,27,60,66,37,50
@@ -14237,6 +14783,7 @@ WildItemUncommon=ABSORBBULB
 Evolutions=WHIMSICOTT,Item,SUNSTONE
 #-------------------------------
 WHIMSICOTT]547
+ID=547
 Name=Whimsicott
 Types=GRASS,FAIRY
 BaseStats=60,67,85,116,77,75
@@ -14262,6 +14809,7 @@ Generation=5
 WildItemUncommon=ABSORBBULB
 #-------------------------------
 PETILIL]548
+ID=548
 Name=Petilil
 Types=GRASS
 BaseStats=45,35,50,30,70,50
@@ -14289,6 +14837,7 @@ WildItemUncommon=ABSORBBULB
 Evolutions=LILLIGANT,Item,SUNSTONE
 #-------------------------------
 LILLIGANT]549
+ID=549
 Name=Lilligant
 Types=GRASS
 BaseStats=70,60,75,90,110,75
@@ -14314,6 +14863,7 @@ Generation=5
 WildItemUncommon=ABSORBBULB
 #-------------------------------
 BASCULIN]550
+ID=550
 Name=Basculin
 FormName=Red-Striped
 Types=WATER
@@ -14342,6 +14892,7 @@ Flags=InheritFormFromMother
 WildItemUncommon=DEEPSEATOOTH
 #-------------------------------
 SANDILE]551
+ID=551
 Name=Sandile
 Types=GROUND,DARK
 BaseStats=50,72,35,65,35,35
@@ -14369,6 +14920,7 @@ WildItemUncommon=BLACKGLASSES
 Evolutions=KROKOROK,Level,29
 #-------------------------------
 KROKOROK]552
+ID=552
 Name=Krokorok
 Types=GROUND,DARK
 BaseStats=60,82,45,74,45,45
@@ -14395,6 +14947,7 @@ WildItemUncommon=BLACKGLASSES
 Evolutions=KROOKODILE,Level,40
 #-------------------------------
 KROOKODILE]553
+ID=553
 Name=Krookodile
 Types=GROUND,DARK
 BaseStats=95,117,80,92,65,70
@@ -14420,6 +14973,7 @@ Generation=5
 WildItemCommon=BLACKGLASSES
 #-------------------------------
 DARUMAKA]554
+ID=554
 Name=Darumaka
 Types=FIRE
 BaseStats=70,90,45,50,15,45
@@ -14446,6 +15000,7 @@ Generation=5
 Evolutions=DARMANITAN,Level,35
 #-------------------------------
 DARMANITAN]555
+ID=555
 Name=Darmanitan
 FormName=Standard Mode
 Types=FIRE
@@ -14471,6 +15026,7 @@ Pokedex=When weakened in battle, it transforms into a stone statue. Then it shar
 Generation=5
 #-------------------------------
 MARACTUS]556
+ID=556
 Name=Maractus
 Types=GRASS
 BaseStats=75,86,67,60,106,67
@@ -14497,6 +15053,7 @@ Generation=5
 WildItemUncommon=MIRACLESEED
 #-------------------------------
 DWEBBLE]557
+ID=557
 Name=Dwebble
 Types=BUG,ROCK
 BaseStats=50,65,85,55,35,35
@@ -14524,6 +15081,7 @@ WildItemUncommon=HARDSTONE
 Evolutions=CRUSTLE,Level,34
 #-------------------------------
 CRUSTLE]558
+ID=558
 Name=Crustle
 Types=BUG,ROCK
 BaseStats=70,105,125,45,65,75
@@ -14549,6 +15107,7 @@ Generation=5
 WildItemUncommon=HARDSTONE
 #-------------------------------
 SCRAGGY]559
+ID=559
 Name=Scraggy
 Types=DARK,FIGHTING
 BaseStats=50,75,70,48,35,70
@@ -14576,6 +15135,7 @@ WildItemUncommon=SHEDSHELL
 Evolutions=SCRAFTY,Level,39
 #-------------------------------
 SCRAFTY]560
+ID=560
 Name=Scrafty
 Types=DARK,FIGHTING
 BaseStats=65,90,115,58,45,115
@@ -14601,6 +15161,7 @@ Generation=5
 WildItemUncommon=SHEDSHELL
 #-------------------------------
 SIGILYPH]561
+ID=561
 Name=Sigilyph
 Types=PSYCHIC,FLYING
 BaseStats=72,58,80,97,103,80
@@ -14626,6 +15187,7 @@ Pokedex=The guardians of an ancient city, they use their psychic power to attack
 Generation=5
 #-------------------------------
 YAMASK]562
+ID=562
 Name=Yamask
 Types=GHOST
 BaseStats=38,30,85,30,55,65
@@ -14652,6 +15214,7 @@ WildItemUncommon=SPELLTAG
 Evolutions=COFAGRIGUS,Level,34,RUNERIGUS,None,
 #-------------------------------
 COFAGRIGUS]563
+ID=563
 Name=Cofagrigus
 Types=GHOST
 BaseStats=58,50,145,30,95,105
@@ -14676,6 +15239,7 @@ Generation=5
 WildItemUncommon=SPELLTAG
 #-------------------------------
 TIRTOUGA]564
+ID=564
 Name=Tirtouga
 Types=WATER,ROCK
 BaseStats=54,78,103,22,53,45
@@ -14702,6 +15266,7 @@ Generation=5
 Evolutions=CARRACOSTA,Level,37
 #-------------------------------
 CARRACOSTA]565
+ID=565
 Name=Carracosta
 Types=WATER,ROCK
 BaseStats=74,108,133,32,83,65
@@ -14726,6 +15291,7 @@ Pokedex=Incredible jaw strength enables them to chew up steel beams and rocks al
 Generation=5
 #-------------------------------
 ARCHEN]566
+ID=566
 Name=Archen
 Types=ROCK,FLYING
 BaseStats=55,112,45,70,74,45
@@ -14751,6 +15317,7 @@ Generation=5
 Evolutions=ARCHEOPS,Level,37
 #-------------------------------
 ARCHEOPS]567
+ID=567
 Name=Archeops
 Types=ROCK,FLYING
 BaseStats=75,140,65,110,112,65
@@ -14774,6 +15341,7 @@ Pokedex=It runs better than it flies. It catches prey by running at speeds compa
 Generation=5
 #-------------------------------
 TRUBBISH]568
+ID=568
 Name=Trubbish
 Types=POISON
 BaseStats=50,50,62,65,40,62
@@ -14801,6 +15369,7 @@ WildItemUncommon=SILKSCARF
 Evolutions=GARBODOR,Level,36
 #-------------------------------
 GARBODOR]569
+ID=569
 Name=Garbodor
 Types=POISON
 BaseStats=80,95,82,75,60,82
@@ -14827,6 +15396,7 @@ WildItemCommon=SILKSCARF
 WildItemUncommon=BLACKSLUDGE
 #-------------------------------
 ZORUA]570
+ID=570
 Name=Zorua
 Types=DARK
 BaseStats=40,65,40,65,80,40
@@ -14852,6 +15422,7 @@ Generation=5
 Evolutions=ZOROARK,Level,30
 #-------------------------------
 ZOROARK]571
+ID=571
 Name=Zoroark
 Types=DARK
 BaseStats=60,105,60,105,120,60
@@ -14875,6 +15446,7 @@ Pokedex=Each has the ability to fool a large group of people simultaneously. The
 Generation=5
 #-------------------------------
 MINCCINO]572
+ID=572
 Name=Minccino
 Types=NORMAL
 BaseStats=55,50,40,75,40,40
@@ -14901,6 +15473,7 @@ Generation=5
 Evolutions=CINCCINO,Item,SHINYSTONE
 #-------------------------------
 CINCCINO]573
+ID=573
 Name=Cinccino
 Types=NORMAL
 BaseStats=75,95,60,115,65,60
@@ -14925,6 +15498,7 @@ Pokedex=Their white fur feels amazing to touch. Their fur repels dust and preven
 Generation=5
 #-------------------------------
 GOTHITA]574
+ID=574
 Name=Gothita
 Types=PSYCHIC
 BaseStats=45,30,50,45,55,65
@@ -14951,6 +15525,7 @@ Generation=5
 Evolutions=GOTHORITA,Level,32
 #-------------------------------
 GOTHORITA]575
+ID=575
 Name=Gothorita
 Types=PSYCHIC
 BaseStats=60,45,70,55,75,85
@@ -14976,6 +15551,7 @@ Generation=5
 Evolutions=GOTHITELLE,Level,41
 #-------------------------------
 GOTHITELLE]576
+ID=576
 Name=Gothitelle
 Types=PSYCHIC
 BaseStats=70,55,95,65,95,110
@@ -15000,6 +15576,7 @@ Pokedex=They can predict the future from the placement and movement of the stars
 Generation=5
 #-------------------------------
 SOLOSIS]577
+ID=577
 Name=Solosis
 Types=PSYCHIC
 BaseStats=45,30,40,20,105,50
@@ -15026,6 +15603,7 @@ Generation=5
 Evolutions=DUOSION,Level,32
 #-------------------------------
 DUOSION]578
+ID=578
 Name=Duosion
 Types=PSYCHIC
 BaseStats=65,40,50,30,125,60
@@ -15051,6 +15629,7 @@ Generation=5
 Evolutions=REUNICLUS,Level,41
 #-------------------------------
 REUNICLUS]579
+ID=579
 Name=Reuniclus
 Types=PSYCHIC
 BaseStats=110,65,75,30,125,85
@@ -15075,6 +15654,7 @@ Pokedex=These remarkably intelligent Pokemon fight by controlling arms that can 
 Generation=5
 #-------------------------------
 DUCKLETT]580
+ID=580
 Name=Ducklett
 Types=WATER,FLYING
 BaseStats=62,44,50,55,44,50
@@ -15101,6 +15681,7 @@ Generation=5
 Evolutions=SWANNA,Level,35
 #-------------------------------
 SWANNA]581
+ID=581
 Name=Swanna
 Types=WATER,FLYING
 BaseStats=75,87,63,98,87,63
@@ -15125,6 +15706,7 @@ Pokedex=It administers sharp, powerful pecks with its bill. It whips its long ne
 Generation=5
 #-------------------------------
 VANILLITE]582
+ID=582
 Name=Vanillite
 Types=ICE
 BaseStats=36,50,50,44,65,60
@@ -15152,6 +15734,7 @@ WildItemUncommon=NEVERMELTICE
 Evolutions=VANILLISH,Level,35
 #-------------------------------
 VANILLISH]583
+ID=583
 Name=Vanillish
 Types=ICE
 BaseStats=51,65,65,59,80,75
@@ -15178,6 +15761,7 @@ WildItemUncommon=NEVERMELTICE
 Evolutions=VANILLUXE,Level,47
 #-------------------------------
 VANILLUXE]584
+ID=584
 Name=Vanilluxe
 Types=ICE
 BaseStats=71,95,85,79,110,95
@@ -15203,6 +15787,7 @@ Generation=5
 WildItemCommon=NEVERMELTICE
 #-------------------------------
 DEERLING]585
+ID=585
 Name=Deerling
 FormName=Spring Form
 Types=NORMAL,GRASS
@@ -15230,6 +15815,7 @@ Generation=5
 Evolutions=SAWSBUCK,Level,34
 #-------------------------------
 SAWSBUCK]586
+ID=586
 Name=Sawsbuck
 FormName=Spring Form
 Types=NORMAL,GRASS
@@ -15255,6 +15841,7 @@ Pokedex=The plants growing on its horns change according to the season. The lead
 Generation=5
 #-------------------------------
 EMOLGA]587
+ID=587
 Name=Emolga
 Types=ELECTRIC,FLYING
 BaseStats=55,75,60,103,75,60
@@ -15280,6 +15867,7 @@ Pokedex=They live on treetops and glide using the inside of a cape-like membrane
 Generation=5
 #-------------------------------
 KARRABLAST]588
+ID=588
 Name=Karrablast
 Types=BUG
 BaseStats=50,75,45,60,40,45
@@ -15306,6 +15894,7 @@ Generation=5
 Evolutions=ESCAVALIER,TradeSpecies,SHELMET
 #-------------------------------
 ESCAVALIER]589
+ID=589
 Name=Escavalier
 Types=BUG,STEEL
 BaseStats=70,135,105,20,60,105
@@ -15330,6 +15919,7 @@ Pokedex=These Pokemon evolve by wearing the shell covering of a Shelmet. The ste
 Generation=5
 #-------------------------------
 FOONGUS]590
+ID=590
 Name=Foongus
 Types=GRASS,POISON
 BaseStats=69,55,45,15,55,55
@@ -15358,6 +15948,7 @@ WildItemUncommon=BIGMUSHROOM
 Evolutions=AMOONGUSS,Level,39
 #-------------------------------
 AMOONGUSS]591
+ID=591
 Name=Amoonguss
 Types=GRASS,POISON
 BaseStats=114,85,70,30,85,80
@@ -15384,6 +15975,7 @@ WildItemCommon=TINYMUSHROOM
 WildItemUncommon=BIGMUSHROOM
 #-------------------------------
 FRILLISH]592
+ID=592
 Name=Frillish
 Types=WATER,GHOST
 BaseStats=55,40,50,40,65,85
@@ -15410,6 +16002,7 @@ Generation=5
 Evolutions=JELLICENT,Level,40
 #-------------------------------
 JELLICENT]593
+ID=593
 Name=Jellicent
 Types=WATER,GHOST
 BaseStats=100,60,70,60,85,105
@@ -15434,6 +16027,7 @@ Pokedex=They propel themselves by expelling absorbed seawater from their bodies.
 Generation=5
 #-------------------------------
 ALOMOMOLA]594
+ID=594
 Name=Alomomola
 Types=WATER
 BaseStats=165,75,80,65,40,45
@@ -15459,6 +16053,7 @@ Pokedex=Floating in the open sea is how they live. When they find a wounded Poke
 Generation=5
 #-------------------------------
 JOLTIK]595
+ID=595
 Name=Joltik
 Types=BUG,ELECTRIC
 BaseStats=50,47,50,65,57,50
@@ -15485,6 +16080,7 @@ Generation=5
 Evolutions=GALVANTULA,Level,36
 #-------------------------------
 GALVANTULA]596
+ID=596
 Name=Galvantula
 Types=BUG,ELECTRIC
 BaseStats=70,77,60,108,97,60
@@ -15509,6 +16105,7 @@ Pokedex=They employ an electrically charged web to trap their prey. While it is 
 Generation=5
 #-------------------------------
 FERROSEED]597
+ID=597
 Name=Ferroseed
 Types=GRASS,STEEL
 BaseStats=44,50,91,10,24,86
@@ -15535,6 +16132,7 @@ WildItemUncommon=STICKYBARB
 Evolutions=FERROTHORN,Level,40
 #-------------------------------
 FERROTHORN]598
+ID=598
 Name=Ferrothorn
 Types=GRASS,STEEL
 BaseStats=74,94,131,20,54,116
@@ -15560,6 +16158,7 @@ Generation=5
 WildItemUncommon=STICKYBARB
 #-------------------------------
 KLINK]599
+ID=599
 Name=Klink
 Types=STEEL
 BaseStats=40,55,70,30,45,60
@@ -15585,6 +16184,7 @@ Generation=5
 Evolutions=KLANG,Level,38
 #-------------------------------
 KLANG]600
+ID=600
 Name=Klang
 Types=STEEL
 BaseStats=60,80,95,50,70,85
@@ -15610,6 +16210,7 @@ Generation=5
 Evolutions=KLINKLANG,Level,49
 #-------------------------------
 KLINKLANG]601
+ID=601
 Name=Klinklang
 Types=STEEL
 BaseStats=60,100,115,90,70,85
@@ -15634,6 +16235,7 @@ Pokedex=The gear with the red core is rotated at high speed for a rapid energy c
 Generation=5
 #-------------------------------
 TYNAMO]602
+ID=602
 Name=Tynamo
 Types=ELECTRIC
 BaseStats=35,55,40,60,45,40
@@ -15658,6 +16260,7 @@ Generation=5
 Evolutions=EELEKTRIK,Level,39
 #-------------------------------
 EELEKTRIK]603
+ID=603
 Name=Eelektrik
 Types=ELECTRIC
 BaseStats=65,85,70,40,75,70
@@ -15682,6 +16285,7 @@ Generation=5
 Evolutions=EELEKTROSS,Item,THUNDERSTONE
 #-------------------------------
 EELEKTROSS]604
+ID=604
 Name=Eelektross
 Types=ELECTRIC
 BaseStats=85,115,80,50,105,80
@@ -15705,6 +16309,7 @@ Pokedex=With their sucker mouths, they suck in prey. Then they use their fangs t
 Generation=5
 #-------------------------------
 ELGYEM]605
+ID=605
 Name=Elgyem
 Types=PSYCHIC
 BaseStats=55,55,55,30,85,55
@@ -15731,6 +16336,7 @@ Generation=5
 Evolutions=BEHEEYEM,Level,42
 #-------------------------------
 BEHEEYEM]606
+ID=606
 Name=Beheeyem
 Types=PSYCHIC
 BaseStats=75,75,75,40,125,95
@@ -15755,6 +16361,7 @@ Pokedex=It uses psychic power to control an opponent's brain and tamper with its
 Generation=5
 #-------------------------------
 LITWICK]607
+ID=607
 Name=Litwick
 Types=GHOST,FIRE
 BaseStats=50,30,55,20,65,55
@@ -15781,6 +16388,7 @@ Generation=5
 Evolutions=LAMPENT,Level,41
 #-------------------------------
 LAMPENT]608
+ID=608
 Name=Lampent
 Types=GHOST,FIRE
 BaseStats=60,40,60,55,95,60
@@ -15806,6 +16414,7 @@ Generation=5
 Evolutions=CHANDELURE,Item,DUSKSTONE
 #-------------------------------
 CHANDELURE]609
+ID=609
 Name=Chandelure
 Types=GHOST,FIRE
 BaseStats=60,55,90,80,145,90
@@ -15830,6 +16439,7 @@ Pokedex=Being consumed in Chandelure's flame burns up the spirit, leaving the bo
 Generation=5
 #-------------------------------
 AXEW]610
+ID=610
 Name=Axew
 Types=DRAGON
 BaseStats=46,87,60,57,30,40
@@ -15856,6 +16466,7 @@ Generation=5
 Evolutions=FRAXURE,Level,38
 #-------------------------------
 FRAXURE]611
+ID=611
 Name=Fraxure
 Types=DRAGON
 BaseStats=66,117,70,67,40,50
@@ -15881,6 +16492,7 @@ Generation=5
 Evolutions=HAXORUS,Level,48
 #-------------------------------
 HAXORUS]612
+ID=612
 Name=Haxorus
 Types=DRAGON
 BaseStats=76,147,90,97,60,70
@@ -15905,6 +16517,7 @@ Pokedex=Their sturdy tusks will stay sharp even if used to cut steel beams. Thes
 Generation=5
 #-------------------------------
 CUBCHOO]613
+ID=613
 Name=Cubchoo
 Types=ICE
 BaseStats=55,70,40,40,60,40
@@ -15931,6 +16544,7 @@ Generation=5
 Evolutions=BEARTIC,Level,37
 #-------------------------------
 BEARTIC]614
+ID=614
 Name=Beartic
 Types=ICE
 BaseStats=95,130,80,50,70,80
@@ -15955,6 +16569,7 @@ Pokedex=It freezes its breath to create fangs and claws of ice to fight with. Co
 Generation=5
 #-------------------------------
 CRYOGONAL]615
+ID=615
 Name=Cryogonal
 Types=ICE
 BaseStats=80,50,50,105,95,135
@@ -15979,6 +16594,7 @@ Generation=5
 WildItemUncommon=NEVERMELTICE
 #-------------------------------
 SHELMET]616
+ID=616
 Name=Shelmet
 Types=BUG
 BaseStats=50,40,85,25,40,65
@@ -16005,6 +16621,7 @@ Generation=5
 Evolutions=ACCELGOR,TradeSpecies,KARRABLAST
 #-------------------------------
 ACCELGOR]617
+ID=617
 Name=Accelgor
 Types=BUG
 BaseStats=80,70,40,145,100,60
@@ -16029,6 +16646,7 @@ Pokedex=Having removed its heavy shell, it becomes very light and can fight with
 Generation=5
 #-------------------------------
 STUNFISK]618
+ID=618
 Name=Stunfisk
 Types=GROUND,ELECTRIC
 BaseStats=109,66,84,32,81,99
@@ -16055,6 +16673,7 @@ Generation=5
 WildItemUncommon=SOFTSAND
 #-------------------------------
 MIENFOO]619
+ID=619
 Name=Mienfoo
 Types=FIGHTING
 BaseStats=45,85,50,65,55,50
@@ -16081,6 +16700,7 @@ Generation=5
 Evolutions=MIENSHAO,Level,50
 #-------------------------------
 MIENSHAO]620
+ID=620
 Name=Mienshao
 Types=FIGHTING
 BaseStats=65,125,60,105,95,60
@@ -16105,6 +16725,7 @@ Pokedex=They use the long fur on their arms as a whip to strike their opponents.
 Generation=5
 #-------------------------------
 DRUDDIGON]621
+ID=621
 Name=Druddigon
 Types=DRAGON
 BaseStats=77,120,90,48,60,90
@@ -16131,6 +16752,7 @@ Generation=5
 WildItemUncommon=DRAGONFANG
 #-------------------------------
 GOLETT]622
+ID=622
 Name=Golett
 Types=GROUND,GHOST
 BaseStats=59,74,50,35,35,50
@@ -16157,6 +16779,7 @@ WildItemUncommon=LIGHTCLAY
 Evolutions=GOLURK,Level,43
 #-------------------------------
 GOLURK]623
+ID=623
 Name=Golurk
 Types=GROUND,GHOST
 BaseStats=89,124,80,55,55,80
@@ -16182,6 +16805,7 @@ Generation=5
 WildItemUncommon=LIGHTCLAY
 #-------------------------------
 PAWNIARD]624
+ID=624
 Name=Pawniard
 Types=DARK,STEEL
 BaseStats=45,85,70,60,40,40
@@ -16208,6 +16832,7 @@ Generation=5
 Evolutions=BISHARP,Level,52
 #-------------------------------
 BISHARP]625
+ID=625
 Name=Bisharp
 Types=DARK,STEEL
 BaseStats=65,125,100,70,60,70
@@ -16232,6 +16857,7 @@ Pokedex=Bisharp pursues prey in the company of a large group of Pawniard. Then B
 Generation=5
 #-------------------------------
 BOUFFALANT]626
+ID=626
 Name=Bouffalant
 Types=NORMAL
 BaseStats=95,110,95,55,40,95
@@ -16257,6 +16883,7 @@ Pokedex=They charge wildly and headbutt everything. They headbutts have enough d
 Generation=5
 #-------------------------------
 RUFFLET]627
+ID=627
 Name=Rufflet
 Types=NORMAL,FLYING
 BaseStats=70,83,50,60,37,50
@@ -16282,6 +16909,7 @@ Generation=5
 Evolutions=BRAVIARY,Level,54
 #-------------------------------
 BRAVIARY]628
+ID=628
 Name=Braviary
 Types=NORMAL,FLYING
 BaseStats=100,123,75,80,57,75
@@ -16306,6 +16934,7 @@ Pokedex=The more scars they have, the more respect these brave soldiers of the s
 Generation=5
 #-------------------------------
 VULLABY]629
+ID=629
 Name=Vullaby
 Types=DARK,FLYING
 BaseStats=70,55,75,60,45,65
@@ -16332,6 +16961,7 @@ Generation=5
 Evolutions=MANDIBUZZ,Level,54
 #-------------------------------
 MANDIBUZZ]630
+ID=630
 Name=Mandibuzz
 Types=DARK,FLYING
 BaseStats=110,65,105,80,55,95
@@ -16356,6 +16986,7 @@ Pokedex=Watching from the sky, they swoop to strike weakened Pokemon on the grou
 Generation=5
 #-------------------------------
 HEATMOR]631
+ID=631
 Name=Heatmor
 Types=FIRE
 BaseStats=85,97,66,65,105,66
@@ -16381,6 +17012,7 @@ Pokedex=Using their very hot, flame-covered tongues, they burn through Durant's 
 Generation=5
 #-------------------------------
 DURANT]632
+ID=632
 Name=Durant
 Types=BUG,STEEL
 BaseStats=58,109,112,109,48,48
@@ -16406,6 +17038,7 @@ Pokedex=Durant dig nests in mountains. They build their complicated, interconnec
 Generation=5
 #-------------------------------
 DEINO]633
+ID=633
 Name=Deino
 Types=DARK,DRAGON
 BaseStats=52,65,50,38,45,50
@@ -16431,6 +17064,7 @@ Generation=5
 Evolutions=ZWEILOUS,Level,50
 #-------------------------------
 ZWEILOUS]634
+ID=634
 Name=Zweilous
 Types=DARK,DRAGON
 BaseStats=72,85,70,58,65,70
@@ -16455,6 +17089,7 @@ Generation=5
 Evolutions=HYDREIGON,Level,64
 #-------------------------------
 HYDREIGON]635
+ID=635
 Name=Hydreigon
 Types=DARK,DRAGON
 BaseStats=92,105,90,98,125,90
@@ -16478,6 +17113,7 @@ Pokedex=The heads on their arms do not have brains. They use all three heads to 
 Generation=5
 #-------------------------------
 LARVESTA]636
+ID=636
 Name=Larvesta
 Types=BUG,FIRE
 BaseStats=55,85,55,60,50,55
@@ -16504,6 +17140,7 @@ Generation=5
 Evolutions=VOLCARONA,Level,59
 #-------------------------------
 VOLCARONA]637
+ID=637
 Name=Volcarona
 Types=BUG,FIRE
 BaseStats=85,60,65,100,135,105
@@ -16531,6 +17168,7 @@ WildItemUncommon=SILVERPOWDER
 WildItemRare=SILVERPOWDER
 #-------------------------------
 COBALION]638
+ID=638
 Name=Cobalion
 Types=STEEL,FIGHTING
 BaseStats=91,90,129,108,90,72
@@ -16555,6 +17193,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 TERRAKION]639
+ID=639
 Name=Terrakion
 Types=ROCK,FIGHTING
 BaseStats=91,129,90,108,72,90
@@ -16579,6 +17218,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 VIRIZION]640
+ID=640
 Name=Virizion
 Types=GRASS,FIGHTING
 BaseStats=91,90,72,108,90,129
@@ -16603,6 +17243,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 TORNADUS]641
+ID=641
 Name=Tornadus
 FormName=Incarnate Forme
 Types=FLYING
@@ -16629,6 +17270,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 THUNDURUS]642
+ID=642
 Name=Thundurus
 FormName=Incarnate Forme
 Types=ELECTRIC,FLYING
@@ -16655,6 +17297,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 RESHIRAM]643
+ID=643
 Name=Reshiram
 Types=DRAGON,FIRE
 BaseStats=100,120,100,90,150,120
@@ -16679,6 +17322,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 ZEKROM]644
+ID=644
 Name=Zekrom
 Types=DRAGON,ELECTRIC
 BaseStats=100,150,120,90,120,100
@@ -16703,6 +17347,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 LANDORUS]645
+ID=645
 Name=Landorus
 FormName=Incarnate Forme
 Types=GROUND,FLYING
@@ -16729,6 +17374,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 KYUREM]646
+ID=646
 Name=Kyurem
 Types=DRAGON,ICE
 BaseStats=125,130,90,95,130,90
@@ -16753,6 +17399,7 @@ Generation=5
 Flags=Legendary
 #-------------------------------
 KELDEO]647
+ID=647
 Name=Keldeo
 FormName=Ordinary Form
 Types=WATER,FIGHTING
@@ -16778,6 +17425,7 @@ Generation=5
 Flags=Mythical
 #-------------------------------
 MELOETTA]648
+ID=648
 Name=Meloetta
 FormName=Aria Forme
 Types=NORMAL,PSYCHIC
@@ -16806,6 +17454,7 @@ WildItemUncommon=STARPIECE
 WildItemRare=STARPIECE
 #-------------------------------
 GENESECT]649
+ID=649
 Name=Genesect
 FormName=Normal
 Types=BUG,STEEL
@@ -16831,6 +17480,7 @@ Generation=5
 Flags=Mythical
 #-------------------------------
 CHESPIN]650
+ID=650
 Name=Chespin
 Types=GRASS
 BaseStats=56,61,65,38,48,45
@@ -16857,6 +17507,7 @@ Generation=6
 Evolutions=QUILLADIN,Level,16
 #-------------------------------
 QUILLADIN]651
+ID=651
 Name=Quilladin
 Types=GRASS
 BaseStats=61,78,95,57,56,58
@@ -16882,6 +17533,7 @@ Generation=6
 Evolutions=CHESNAUGHT,Level,36
 #-------------------------------
 CHESNAUGHT]652
+ID=652
 Name=Chesnaught
 Types=GRASS,FIGHTING
 BaseStats=88,107,122,64,74,75
@@ -16906,6 +17558,7 @@ Pokedex=Its Tackle is forceful enough to flip a 50-ton tank. It shields its alli
 Generation=6
 #-------------------------------
 FENNEKIN]653
+ID=653
 Name=Fennekin
 Types=FIRE
 BaseStats=40,45,40,60,62,60
@@ -16932,6 +17585,7 @@ Generation=6
 Evolutions=BRAIXEN,Level,16
 #-------------------------------
 BRAIXEN]654
+ID=654
 Name=Braixen
 Types=FIRE
 BaseStats=59,59,58,73,90,70
@@ -16957,6 +17611,7 @@ Generation=6
 Evolutions=DELPHOX,Level,36
 #-------------------------------
 DELPHOX]655
+ID=655
 Name=Delphox
 Types=FIRE,PSYCHIC
 BaseStats=75,69,72,104,114,100
@@ -16981,6 +17636,7 @@ Pokedex=It gazes into the flame at the tip of its branch to achieve a focused st
 Generation=6
 #-------------------------------
 FROAKIE]656
+ID=656
 Name=Froakie
 Types=WATER
 BaseStats=41,56,40,71,62,44
@@ -17007,6 +17663,7 @@ Generation=6
 Evolutions=FROGADIER,Level,16
 #-------------------------------
 FROGADIER]657
+ID=657
 Name=Frogadier
 Types=WATER
 BaseStats=54,63,52,97,83,56
@@ -17032,6 +17689,7 @@ Generation=6
 Evolutions=GRENINJA,Level,36
 #-------------------------------
 GRENINJA]658
+ID=658
 Name=Greninja
 Types=WATER,DARK
 BaseStats=72,95,67,122,103,71
@@ -17056,6 +17714,7 @@ Pokedex=It appears and vanishes with a ninja's grace. It toys with its enemies u
 Generation=6
 #-------------------------------
 BUNNELBY]659
+ID=659
 Name=Bunnelby
 Types=NORMAL
 BaseStats=38,36,38,57,32,36
@@ -17082,6 +17741,7 @@ Generation=6
 Evolutions=DIGGERSBY,Level,20
 #-------------------------------
 DIGGERSBY]660
+ID=660
 Name=Diggersby
 Types=NORMAL,GROUND
 BaseStats=85,56,77,78,50,77
@@ -17106,6 +17766,7 @@ Pokedex=As powerful as an excavator, its ears can reduce dense bedrock to rubble
 Generation=6
 #-------------------------------
 FLETCHLING]661
+ID=661
 Name=Fletchling
 Types=NORMAL,FLYING
 BaseStats=45,50,43,62,40,38
@@ -17132,6 +17793,7 @@ Generation=6
 Evolutions=FLETCHINDER,Level,17
 #-------------------------------
 FLETCHINDER]662
+ID=662
 Name=Fletchinder
 Types=FIRE,FLYING
 BaseStats=62,73,55,84,56,52
@@ -17157,6 +17819,7 @@ Generation=6
 Evolutions=TALONFLAME,Level,35
 #-------------------------------
 TALONFLAME]663
+ID=663
 Name=Talonflame
 Types=FIRE,FLYING
 BaseStats=78,81,71,126,74,69
@@ -17181,6 +17844,7 @@ Pokedex=In the fever of an exciting battle, it showers embers from the gaps betw
 Generation=6
 #-------------------------------
 SCATTERBUG]664
+ID=664
 Name=Scatterbug
 Types=BUG
 BaseStats=38,35,40,35,27,25
@@ -17207,6 +17871,7 @@ Generation=6
 Evolutions=SPEWPA,Level,9
 #-------------------------------
 SPEWPA]665
+ID=665
 Name=Spewpa
 Types=BUG
 BaseStats=45,22,60,29,27,30
@@ -17232,6 +17897,7 @@ Generation=6
 Evolutions=VIVILLON,Level,12
 #-------------------------------
 VIVILLON]666
+ID=666
 Name=Vivillon
 FormName=Archipelago Pattern
 Types=BUG,FLYING
@@ -17257,6 +17923,7 @@ Pokedex=Vivillon with many different patterns are found all over the world. Thes
 Generation=6
 #-------------------------------
 LITLEO]667
+ID=667
 Name=Litleo
 Types=FIRE,NORMAL
 BaseStats=62,50,58,72,73,54
@@ -17283,6 +17950,7 @@ Generation=6
 Evolutions=PYROAR,Level,35
 #-------------------------------
 PYROAR]668
+ID=668
 Name=Pyroar
 Types=FIRE,NORMAL
 BaseStats=86,68,72,106,109,66
@@ -17307,6 +17975,7 @@ Pokedex=With fiery breath of more than 6,000 degrees Celsius, they viciously thr
 Generation=6
 #-------------------------------
 FLABEBE]669
+ID=669
 Name=Flabebe
 FormName=Red Flower
 Types=FAIRY
@@ -17335,6 +18004,7 @@ Flags=InheritFormFromMother
 Evolutions=FLOETTE,Level,19
 #-------------------------------
 FLOETTE]670
+ID=670
 Name=Floette
 FormName=Red Flower
 Types=FAIRY
@@ -17362,6 +18032,7 @@ Flags=InheritFormFromMother
 Evolutions=FLORGES,Item,SHINYSTONE
 #-------------------------------
 FLORGES]671
+ID=671
 Name=Florges
 FormName=Red Flower
 Types=FAIRY
@@ -17388,6 +18059,7 @@ Generation=6
 Flags=InheritFormFromMother
 #-------------------------------
 SKIDDO]672
+ID=672
 Name=Skiddo
 Types=GRASS
 BaseStats=66,65,48,52,62,57
@@ -17414,6 +18086,7 @@ Generation=6
 Evolutions=GOGOAT,Level,32
 #-------------------------------
 GOGOAT]673
+ID=673
 Name=Gogoat
 Types=GRASS
 BaseStats=123,100,62,68,97,81
@@ -17438,6 +18111,7 @@ Pokedex=It can tell how its trainer is feeling by subtle shifts in the grip on i
 Generation=6
 #-------------------------------
 PANCHAM]674
+ID=674
 Name=Pancham
 Types=FIGHTING
 BaseStats=67,82,62,43,46,48
@@ -17465,6 +18139,7 @@ WildItemUncommon=MENTALHERB
 Evolutions=PANGORO,LevelDarkInParty,32
 #-------------------------------
 PANGORO]675
+ID=675
 Name=Pangoro
 Types=FIGHTING,DARK
 BaseStats=95,124,78,58,69,71
@@ -17490,6 +18165,7 @@ Generation=6
 WildItemUncommon=MENTALHERB
 #-------------------------------
 FURFROU]676
+ID=676
 Name=Furfrou
 FormName=Natural Form
 Types=NORMAL
@@ -17515,6 +18191,7 @@ Pokedex=Trimming its fluffy fur not only makes it more elegant but also increase
 Generation=6
 #-------------------------------
 ESPURR]677
+ID=677
 Name=Espurr
 Types=PSYCHIC
 BaseStats=62,48,54,68,63,60
@@ -17541,6 +18218,7 @@ Generation=6
 Evolutions=MEOWSTIC,Level,25
 #-------------------------------
 MEOWSTIC]678
+ID=678
 Name=Meowstic
 FormName=Male
 Types=PSYCHIC
@@ -17566,6 +18244,7 @@ Pokedex=Revealing the eyelike patterns on the insides of its ears will unleash i
 Generation=6
 #-------------------------------
 HONEDGE]679
+ID=679
 Name=Honedge
 Types=STEEL,GHOST
 BaseStats=45,80,100,28,35,37
@@ -17591,6 +18270,7 @@ Generation=6
 Evolutions=DOUBLADE,Level,35
 #-------------------------------
 DOUBLADE]680
+ID=680
 Name=Doublade
 Types=STEEL,GHOST
 BaseStats=59,110,150,35,45,49
@@ -17615,6 +18295,7 @@ Generation=6
 Evolutions=AEGISLASH,Item,DUSKSTONE
 #-------------------------------
 AEGISLASH]681
+ID=681
 Name=Aegislash
 FormName=Shield Forme
 Types=STEEL,GHOST
@@ -17639,6 +18320,7 @@ Pokedex=In this defensive stance, Aegislash uses its steel body and a force fiel
 Generation=6
 #-------------------------------
 SPRITZEE]682
+ID=682
 Name=Spritzee
 Types=FAIRY
 BaseStats=78,52,60,23,63,65
@@ -17665,6 +18347,7 @@ Generation=6
 Evolutions=AROMATISSE,TradeItem,SACHET
 #-------------------------------
 AROMATISSE]683
+ID=683
 Name=Aromatisse
 Types=FAIRY
 BaseStats=101,72,72,29,99,89
@@ -17689,6 +18372,7 @@ Pokedex=It devises various scents, pleasant and unpleasant, and emits scents tha
 Generation=6
 #-------------------------------
 SWIRLIX]684
+ID=684
 Name=Swirlix
 Types=FAIRY
 BaseStats=62,48,66,49,59,57
@@ -17715,6 +18399,7 @@ Generation=6
 Evolutions=SLURPUFF,TradeItem,WHIPPEDDREAM
 #-------------------------------
 SLURPUFF]685
+ID=685
 Name=Slurpuff
 Types=FAIRY
 BaseStats=82,80,86,72,85,75
@@ -17739,6 +18424,7 @@ Pokedex=It can distinguish the faintest of scents. It puts its sensitive sense o
 Generation=6
 #-------------------------------
 INKAY]686
+ID=686
 Name=Inkay
 Types=DARK,PSYCHIC
 BaseStats=53,54,53,45,37,46
@@ -17765,6 +18451,7 @@ Generation=6
 Evolutions=MALAMAR,Level,30
 #-------------------------------
 MALAMAR]687
+ID=687
 Name=Malamar
 Types=DARK,PSYCHIC
 BaseStats=86,92,88,73,68,75
@@ -17789,6 +18476,7 @@ Pokedex=It lures prey close with hypnotic motions, then wraps its tentacles arou
 Generation=6
 #-------------------------------
 BINACLE]688
+ID=688
 Name=Binacle
 Types=ROCK,WATER
 BaseStats=42,52,67,50,39,56
@@ -17815,6 +18503,7 @@ Generation=6
 Evolutions=BARBARACLE,Level,39
 #-------------------------------
 BARBARACLE]689
+ID=689
 Name=Barbaracle
 Types=ROCK,WATER
 BaseStats=72,105,115,68,54,86
@@ -17839,6 +18528,7 @@ Pokedex=Barbaracle's legs and hands have minds of their own, and they will move 
 Generation=6
 #-------------------------------
 SKRELP]690
+ID=690
 Name=Skrelp
 Types=POISON,WATER
 BaseStats=50,60,60,30,60,60
@@ -17865,6 +18555,7 @@ Generation=6
 Evolutions=DRAGALGE,Level,48
 #-------------------------------
 DRAGALGE]691
+ID=691
 Name=Dragalge
 Types=POISON,DRAGON
 BaseStats=65,75,90,44,97,123
@@ -17889,6 +18580,7 @@ Pokedex=Their poison is strong enough to eat through the hull of a tanker, and t
 Generation=6
 #-------------------------------
 CLAUNCHER]692
+ID=692
 Name=Clauncher
 Types=WATER
 BaseStats=50,53,62,44,58,63
@@ -17914,6 +18606,7 @@ Generation=6
 Evolutions=CLAWITZER,Level,37
 #-------------------------------
 CLAWITZER]693
+ID=693
 Name=Clawitzer
 Types=WATER
 BaseStats=71,73,88,59,120,89
@@ -17937,6 +18630,7 @@ Pokedex=By expelling water from the nozzle in the back of its claw, it can move 
 Generation=6
 #-------------------------------
 HELIOPTILE]694
+ID=694
 Name=Helioptile
 Types=ELECTRIC,NORMAL
 BaseStats=44,38,33,70,61,43
@@ -17963,6 +18657,7 @@ Generation=6
 Evolutions=HELIOLISK,Item,SUNSTONE
 #-------------------------------
 HELIOLISK]695
+ID=695
 Name=Heliolisk
 Types=ELECTRIC,NORMAL
 BaseStats=62,55,52,109,109,94
@@ -17987,6 +18682,7 @@ Pokedex=They flare their frills and generate energy. A single Heliolisk can gene
 Generation=6
 #-------------------------------
 TYRUNT]696
+ID=696
 Name=Tyrunt
 Types=ROCK,DRAGON
 BaseStats=58,89,77,48,45,45
@@ -18013,6 +18709,7 @@ Generation=6
 Evolutions=TYRANTRUM,LevelDay,39
 #-------------------------------
 TYRANTRUM]697
+ID=697
 Name=Tyrantrum
 Types=ROCK,DRAGON
 BaseStats=82,121,119,71,69,59
@@ -18037,6 +18734,7 @@ Pokedex=Thanks to its gargantuan jaws, which could shred thick metal plates as i
 Generation=6
 #-------------------------------
 AMAURA]698
+ID=698
 Name=Amaura
 Types=ROCK,ICE
 BaseStats=77,59,50,46,67,63
@@ -18063,6 +18761,7 @@ Generation=6
 Evolutions=AURORUS,LevelNight,39
 #-------------------------------
 AURORUS]699
+ID=699
 Name=Aurorus
 Types=ROCK,ICE
 BaseStats=123,77,72,58,99,92
@@ -18087,6 +18786,7 @@ Pokedex=Using its diamond-shaped crystals, it can instantly create a wall of ice
 Generation=6
 #-------------------------------
 SYLVEON]700
+ID=700
 Name=Sylveon
 Types=FAIRY
 BaseStats=95,65,65,60,110,130
@@ -18111,6 +18811,7 @@ Pokedex=Its ribbonlike feelers give off an aura that weakens hostility in its pr
 Generation=6
 #-------------------------------
 HAWLUCHA]701
+ID=701
 Name=Hawlucha
 Types=FIGHTING,FLYING
 BaseStats=78,92,75,118,74,63
@@ -18137,6 +18838,7 @@ Generation=6
 WildItemUncommon=KINGSROCK
 #-------------------------------
 DEDENNE]702
+ID=702
 Name=Dedenne
 Types=ELECTRIC,FAIRY
 BaseStats=67,58,57,101,81,67
@@ -18162,6 +18864,7 @@ Pokedex=Its whiskers serve as antennas. By sending and receiving electrical wave
 Generation=6
 #-------------------------------
 CARBINK]703
+ID=703
 Name=Carbink
 Types=ROCK,FAIRY
 BaseStats=50,50,150,50,50,150
@@ -18186,6 +18889,7 @@ Pokedex=Born from the high temperatures and pressures deep underground, it defen
 Generation=6
 #-------------------------------
 GOOMY]704
+ID=704
 Name=Goomy
 Types=DRAGON
 BaseStats=45,50,35,40,55,75
@@ -18213,6 +18917,7 @@ WildItemUncommon=SHEDSHELL
 Evolutions=SLIGGOO,Level,40
 #-------------------------------
 SLIGGOO]705
+ID=705
 Name=Sliggoo
 Types=DRAGON
 BaseStats=68,75,53,60,83,113
@@ -18239,6 +18944,7 @@ WildItemUncommon=SHEDSHELL
 Evolutions=GOODRA,LevelRain,50
 #-------------------------------
 GOODRA]706
+ID=706
 Name=Goodra
 Types=DRAGON
 BaseStats=90,100,70,80,110,150
@@ -18263,6 +18969,7 @@ Pokedex=It gets picked on because it's meek. But then, whoever teased it gets to
 Generation=6
 #-------------------------------
 KLEFKI]707
+ID=707
 Name=Klefki
 Types=STEEL,FAIRY
 BaseStats=57,80,91,75,80,87
@@ -18288,6 +18995,7 @@ Pokedex=It never lets go of a key that it likes, so people give it the keys to v
 Generation=6
 #-------------------------------
 PHANTUMP]708
+ID=708
 Name=Phantump
 Types=GHOST,GRASS
 BaseStats=43,70,48,38,50,60
@@ -18314,6 +19022,7 @@ Generation=6
 Evolutions=TREVENANT,Trade,
 #-------------------------------
 TREVENANT]709
+ID=709
 Name=Trevenant
 Types=GHOST,GRASS
 BaseStats=85,110,76,56,65,82
@@ -18338,6 +19047,7 @@ Pokedex=Through its roots, it exerts control over other trees. A deadly curse fa
 Generation=6
 #-------------------------------
 PUMPKABOO]710
+ID=710
 Name=Pumpkaboo
 FormName=Small Size
 Types=GHOST,GRASS
@@ -18365,6 +19075,7 @@ Flags=InheritFormFromMother
 Evolutions=GOURGEIST,Trade,
 #-------------------------------
 GOURGEIST]711
+ID=711
 Name=Gourgeist
 FormName=Small Size
 Types=GHOST,GRASS
@@ -18390,6 +19101,7 @@ Generation=6
 Flags=InheritFormFromMother
 #-------------------------------
 BERGMITE]712
+ID=712
 Name=Bergmite
 Types=ICE
 BaseStats=55,69,85,28,32,35
@@ -18416,6 +19128,7 @@ Generation=6
 Evolutions=AVALUGG,Level,37
 #-------------------------------
 AVALUGG]713
+ID=713
 Name=Avalugg
 Types=ICE
 BaseStats=95,117,184,28,44,46
@@ -18440,6 +19153,7 @@ Pokedex=Its ice-covered body is as hard as steel. Its cumbersome frame crushes a
 Generation=6
 #-------------------------------
 NOIBAT]714
+ID=714
 Name=Noibat
 Types=FLYING,DRAGON
 BaseStats=40,30,35,55,45,40
@@ -18466,6 +19180,7 @@ Generation=6
 Evolutions=NOIVERN,Level,48
 #-------------------------------
 NOIVERN]715
+ID=715
 Name=Noivern
 Types=FLYING,DRAGON
 BaseStats=85,70,80,123,97,80
@@ -18490,6 +19205,7 @@ Pokedex=They fly around on moonless nights and attack careless prey. Nothing can
 Generation=6
 #-------------------------------
 XERNEAS]716
+ID=716
 Name=Xerneas
 FormName=Neutral Mode
 Types=FAIRY
@@ -18515,6 +19231,7 @@ Generation=6
 Flags=Legendary
 #-------------------------------
 YVELTAL]717
+ID=717
 Name=Yveltal
 Types=DARK,FLYING
 BaseStats=126,131,95,99,131,98
@@ -18539,6 +19256,7 @@ Generation=6
 Flags=Legendary
 #-------------------------------
 ZYGARDE]718
+ID=718
 Name=Zygarde
 FormName=50% Forme
 Types=DRAGON,GROUND
@@ -18564,6 +19282,7 @@ Generation=6
 Flags=Legendary
 #-------------------------------
 DIANCIE]719
+ID=719
 Name=Diancie
 Types=ROCK,FAIRY
 BaseStats=50,100,150,50,100,150
@@ -18588,6 +19307,7 @@ Generation=6
 Flags=Mythical
 #-------------------------------
 HOOPA]720
+ID=720
 Name=Hoopa
 FormName=Hoopa Confined
 Types=PSYCHIC,GHOST
@@ -18613,6 +19333,7 @@ Generation=6
 Flags=Mythical
 #-------------------------------
 VOLCANION]721
+ID=721
 Name=Volcanion
 Types=FIRE,WATER
 BaseStats=80,110,120,70,130,90
@@ -18637,6 +19358,7 @@ Generation=6
 Flags=Mythical
 #-------------------------------
 ROWLET]722
+ID=722
 Name=Rowlet
 Types=GRASS,FLYING
 BaseStats=68,55,55,42,50,50
@@ -18663,6 +19385,7 @@ Generation=7
 Evolutions=DARTRIX,Level,17
 #-------------------------------
 DARTRIX]723
+ID=723
 Name=Dartrix
 Types=GRASS,FLYING
 BaseStats=78,75,75,52,70,70
@@ -18688,6 +19411,7 @@ Generation=7
 Evolutions=DECIDUEYE,Level,34
 #-------------------------------
 DECIDUEYE]724
+ID=724
 Name=Decidueye
 Types=GRASS,GHOST
 BaseStats=78,107,75,70,100,100
@@ -18712,6 +19436,7 @@ Pokedex=It fires arrow quills from its wings with such precision, they can pierc
 Generation=7
 #-------------------------------
 LITTEN]725
+ID=725
 Name=Litten
 Types=FIRE
 BaseStats=45,65,40,70,60,40
@@ -18738,6 +19463,7 @@ Generation=7
 Evolutions=TORRACAT,Level,17
 #-------------------------------
 TORRACAT]726
+ID=726
 Name=Torracat
 Types=FIRE
 BaseStats=65,85,50,90,80,50
@@ -18763,6 +19489,7 @@ Generation=7
 Evolutions=INCINEROAR,Level,34
 #-------------------------------
 INCINEROAR]727
+ID=727
 Name=Incineroar
 Types=FIRE,DARK
 BaseStats=95,115,90,60,80,90
@@ -18787,6 +19514,7 @@ Pokedex=Although it's rough mannered and egotistical, it finds beating down unwo
 Generation=7
 #-------------------------------
 POPPLIO]728
+ID=728
 Name=Popplio
 Types=WATER
 BaseStats=50,54,54,40,66,56
@@ -18813,6 +19541,7 @@ Generation=7
 Evolutions=BRIONNE,Level,17
 #-------------------------------
 BRIONNE]729
+ID=729
 Name=Brionne
 Types=WATER
 BaseStats=60,69,69,50,91,81
@@ -18838,6 +19567,7 @@ Generation=7
 Evolutions=PRIMARINA,Level,34
 #-------------------------------
 PRIMARINA]730
+ID=730
 Name=Primarina
 Types=WATER,FAIRY
 BaseStats=80,74,74,60,126,116
@@ -18862,6 +19592,7 @@ Pokedex=It controls its water balloons with song. The melody is learned from oth
 Generation=7
 #-------------------------------
 PIKIPEK]731
+ID=731
 Name=Pikipek
 Types=NORMAL,FLYING
 BaseStats=35,75,30,65,30,30
@@ -18889,6 +19620,7 @@ WildItemUncommon=ORANBERRY
 Evolutions=TRUMBEAK,Level,14
 #-------------------------------
 TRUMBEAK]732
+ID=732
 Name=Trumbeak
 Types=NORMAL,FLYING
 BaseStats=55,85,50,75,40,50
@@ -18915,6 +19647,7 @@ WildItemUncommon=SITRUSBERRY
 Evolutions=TOUCANNON,Level,28
 #-------------------------------
 TOUCANNON]733
+ID=733
 Name=Toucannon
 Types=NORMAL,FLYING
 BaseStats=80,120,75,60,75,75
@@ -18940,6 +19673,7 @@ Generation=7
 WildItemUncommon=RAWSTBERRY
 #-------------------------------
 YUNGOOS]734
+ID=734
 Name=Yungoos
 Types=NORMAL
 BaseStats=48,70,30,45,30,30
@@ -18967,6 +19701,7 @@ WildItemUncommon=PECHABERRY
 Evolutions=GUMSHOOS,LevelDay,20
 #-------------------------------
 GUMSHOOS]735
+ID=735
 Name=Gumshoos
 Types=NORMAL
 BaseStats=88,110,60,45,55,60
@@ -18992,6 +19727,7 @@ Generation=7
 WildItemUncommon=PECHABERRY
 #-------------------------------
 GRUBBIN]736
+ID=736
 Name=Grubbin
 Types=BUG
 BaseStats=47,62,45,46,55,45
@@ -19017,6 +19753,7 @@ Generation=7
 Evolutions=CHARJABUG,Level,20
 #-------------------------------
 CHARJABUG]737
+ID=737
 Name=Charjabug
 Types=BUG,ELECTRIC
 BaseStats=57,82,95,36,55,75
@@ -19042,6 +19779,7 @@ WildItemUncommon=CELLBATTERY
 Evolutions=VIKAVOLT,Item,THUNDERSTONE,VIKAVOLT,LocationFlag,Magnetic
 #-------------------------------
 VIKAVOLT]738
+ID=738
 Name=Vikavolt
 Types=BUG,ELECTRIC
 BaseStats=77,70,90,43,145,75
@@ -19065,6 +19803,7 @@ Pokedex=It zips around, on sharp lookout for an opening. It concentrates electri
 Generation=7
 #-------------------------------
 CRABRAWLER]739
+ID=739
 Name=Crabrawler
 Types=FIGHTING
 BaseStats=47,82,57,63,42,47
@@ -19092,6 +19831,7 @@ WildItemUncommon=ASPEARBERRY
 Evolutions=CRABOMINABLE,LocationFlag,IceRock
 #-------------------------------
 CRABOMINABLE]740
+ID=740
 Name=Crabominable
 Types=FIGHTING,ICE
 BaseStats=97,132,77,43,62,67
@@ -19117,6 +19857,7 @@ Generation=7
 WildItemUncommon=CHERIBERRY
 #-------------------------------
 ORICORIO]741
+ID=741
 Name=Oricorio
 FormName=Baile Style
 Types=FIRE,FLYING
@@ -19144,6 +19885,7 @@ Flags=InheritFormFromMother
 WildItemUncommon=HONEY
 #-------------------------------
 CUTIEFLY]742
+ID=742
 Name=Cutiefly
 Types=BUG,FAIRY
 BaseStats=40,45,40,84,55,40
@@ -19171,6 +19913,7 @@ WildItemUncommon=HONEY
 Evolutions=RIBOMBEE,Level,25
 #-------------------------------
 RIBOMBEE]743
+ID=743
 Name=Ribombee
 Types=BUG,FAIRY
 BaseStats=60,55,60,124,95,70
@@ -19196,6 +19939,7 @@ Generation=7
 WildItemUncommon=HONEY
 #-------------------------------
 ROCKRUFF]744
+ID=744
 Name=Rockruff
 Types=ROCK
 BaseStats=45,65,40,60,30,40
@@ -19222,6 +19966,7 @@ Generation=7
 Evolutions=LYCANROC,Level,25
 #-------------------------------
 LYCANROC]745
+ID=745
 Name=Lycanroc
 FormName=Midday Form
 Types=ROCK
@@ -19247,6 +19992,7 @@ Pokedex=Its quick movements confuse its enemies. Well equipped with claws and fa
 Generation=7
 #-------------------------------
 WISHIWASHI]746
+ID=746
 Name=Wishiwashi
 FormName=Solo Form
 Types=WATER
@@ -19272,6 +20018,7 @@ Pokedex=It's awfully weak and notably tasty, so everyone is always out to get it
 Generation=7
 #-------------------------------
 MAREANIE]747
+ID=747
 Name=Mareanie
 Types=POISON,WATER
 BaseStats=50,53,62,45,43,52
@@ -19299,6 +20046,7 @@ WildItemUncommon=POISONBARB
 Evolutions=TOXAPEX,Level,38
 #-------------------------------
 TOXAPEX]748
+ID=748
 Name=Toxapex
 Types=POISON,WATER
 BaseStats=50,63,152,35,53,142
@@ -19324,6 +20072,7 @@ Generation=7
 WildItemUncommon=POISONBARB
 #-------------------------------
 MUDBRAY]749
+ID=749
 Name=Mudbray
 Types=GROUND
 BaseStats=70,100,70,45,45,55
@@ -19351,6 +20100,7 @@ WildItemUncommon=LIGHTCLAY
 Evolutions=MUDSDALE,Level,30
 #-------------------------------
 MUDSDALE]750
+ID=750
 Name=Mudsdale
 Types=GROUND
 BaseStats=100,125,100,35,55,85
@@ -19376,6 +20126,7 @@ Generation=7
 WildItemUncommon=LIGHTCLAY
 #-------------------------------
 DEWPIDER]751
+ID=751
 Name=Dewpider
 Types=WATER,BUG
 BaseStats=38,40,52,27,40,72
@@ -19403,6 +20154,7 @@ WildItemUncommon=MYSTICWATER
 Evolutions=ARAQUANID,Level,22
 #-------------------------------
 ARAQUANID]752
+ID=752
 Name=Araquanid
 Types=WATER,BUG
 BaseStats=68,70,92,42,50,132
@@ -19428,6 +20180,7 @@ Generation=7
 WildItemUncommon=MYSTICWATER
 #-------------------------------
 FOMANTIS]753
+ID=753
 Name=Fomantis
 Types=GRASS
 BaseStats=40,55,35,35,50,35
@@ -19455,6 +20208,7 @@ WildItemUncommon=MIRACLESEED
 Evolutions=LURANTIS,LevelDay,34
 #-------------------------------
 LURANTIS]754
+ID=754
 Name=Lurantis
 Types=GRASS
 BaseStats=70,105,90,45,80,90
@@ -19480,6 +20234,7 @@ Generation=7
 WildItemUncommon=MIRACLESEED
 #-------------------------------
 MORELULL]755
+ID=755
 Name=Morelull
 Types=GRASS,FAIRY
 BaseStats=40,35,55,15,65,75
@@ -19508,6 +20263,7 @@ WildItemUncommon=BIGMUSHROOM
 Evolutions=SHIINOTIC,Level,24
 #-------------------------------
 SHIINOTIC]756
+ID=756
 Name=Shiinotic
 Types=GRASS,FAIRY
 BaseStats=60,45,80,30,90,100
@@ -19534,6 +20290,7 @@ WildItemCommon=TINYMUSHROOM
 WildItemUncommon=BIGMUSHROOM
 #-------------------------------
 SALANDIT]757
+ID=757
 Name=Salandit
 Types=POISON,FIRE
 BaseStats=48,44,40,77,71,40
@@ -19561,6 +20318,7 @@ WildItemUncommon=SMOKEBALL
 Evolutions=SALAZZLE,LevelFemale,33
 #-------------------------------
 SALAZZLE]758
+ID=758
 Name=Salazzle
 Types=POISON,FIRE
 BaseStats=68,64,60,117,111,60
@@ -19586,6 +20344,7 @@ Generation=7
 WildItemUncommon=SMOKEBALL
 #-------------------------------
 STUFFUL]759
+ID=759
 Name=Stufful
 Types=NORMAL,FIGHTING
 BaseStats=70,75,50,50,45,50
@@ -19612,6 +20371,7 @@ Generation=7
 Evolutions=BEWEAR,Level,27
 #-------------------------------
 BEWEAR]760
+ID=760
 Name=Bewear
 Types=NORMAL,FIGHTING
 BaseStats=120,125,80,60,55,60
@@ -19636,6 +20396,7 @@ Pokedex=It waves its hands wildly in intimidation and warning. Life is over for 
 Generation=7
 #-------------------------------
 BOUNSWEET]761
+ID=761
 Name=Bounsweet
 Types=GRASS
 BaseStats=42,30,38,32,30,38
@@ -19663,6 +20424,7 @@ WildItemUncommon=GRASSYSEED
 Evolutions=STEENEE,Level,18
 #-------------------------------
 STEENEE]762
+ID=762
 Name=Steenee
 Types=GRASS
 BaseStats=52,40,48,62,40,48
@@ -19689,6 +20451,7 @@ WildItemUncommon=GRASSYSEED
 Evolutions=TSAREENA,HasMove,STOMP
 #-------------------------------
 TSAREENA]763
+ID=763
 Name=Tsareena
 Types=GRASS
 BaseStats=72,120,98,72,50,98
@@ -19714,6 +20477,7 @@ Generation=7
 WildItemCommon=GRASSYSEED
 #-------------------------------
 COMFEY]764
+ID=764
 Name=Comfey
 Types=FAIRY
 BaseStats=51,52,90,100,82,110
@@ -19740,6 +20504,7 @@ Generation=7
 WildItemUncommon=MISTYSEED
 #-------------------------------
 ORANGURU]765
+ID=765
 Name=Oranguru
 Types=NORMAL,PSYCHIC
 BaseStats=90,60,80,60,90,110
@@ -19765,6 +20530,7 @@ Pokedex=It normally spends its time meditating in the treetops. It throws Poke B
 Generation=7
 #-------------------------------
 PASSIMIAN]766
+ID=766
 Name=Passimian
 Types=FIGHTING
 BaseStats=100,120,90,80,40,60
@@ -19790,6 +20556,7 @@ Pokedex=Berries are its weapons as well as the staple of its diet. The one that 
 Generation=7
 #-------------------------------
 WIMPOD]767
+ID=767
 Name=Wimpod
 Types=BUG,WATER
 BaseStats=25,35,40,80,20,30
@@ -19815,6 +20582,7 @@ Generation=7
 Evolutions=GOLISOPOD,Level,30
 #-------------------------------
 GOLISOPOD]768
+ID=768
 Name=Golisopod
 Types=BUG,WATER
 BaseStats=75,125,140,40,60,90
@@ -19838,6 +20606,7 @@ Pokedex=It battles skillfully with its six arms, but spends most of its time pea
 Generation=7
 #-------------------------------
 SANDYGAST]769
+ID=769
 Name=Sandygast
 Types=GHOST,GROUND
 BaseStats=55,55,80,15,70,45
@@ -19865,6 +20634,7 @@ WildItemUncommon=SPELLTAG
 Evolutions=PALOSSAND,Level,42
 #-------------------------------
 PALOSSAND]770
+ID=770
 Name=Palossand
 Types=GHOST,GROUND
 BaseStats=85,75,110,35,100,75
@@ -19890,6 +20660,7 @@ Generation=7
 WildItemUncommon=SPELLTAG
 #-------------------------------
 PYUKUMUKU]771
+ID=771
 Name=Pyukumuku
 Types=WATER
 BaseStats=55,60,130,5,30,130
@@ -19915,6 +20686,7 @@ Pokedex=It lives in shallow seas, such as areas near a beach. It can eject its i
 Generation=7
 #-------------------------------
 TYPENULL]772
+ID=772
 Name=Type: Null
 Types=NORMAL
 BaseStats=95,95,95,59,95,95
@@ -19940,6 +20712,7 @@ Flags=Legendary
 Evolutions=SILVALLY,Happiness,
 #-------------------------------
 SILVALLY]773
+ID=773
 Name=Silvally
 FormName=Type: Normal
 Types=NORMAL
@@ -19965,6 +20738,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 MINIOR]774
+ID=774
 Name=Minior
 FormName=Meteor Form
 Types=ROCK,FLYING
@@ -19990,6 +20764,7 @@ Generation=7
 WildItemUncommon=STARPIECE
 #-------------------------------
 KOMALA]775
+ID=775
 Name=Komala
 Types=NORMAL
 BaseStats=65,115,65,65,75,95
@@ -20014,6 +20789,7 @@ Pokedex=It remains asleep from birth to death as a result of the sedative proper
 Generation=7
 #-------------------------------
 TURTONATOR]776
+ID=776
 Name=Turtonator
 Types=FIRE,DRAGON
 BaseStats=60,78,135,36,91,85
@@ -20039,6 +20815,7 @@ Generation=7
 WildItemUncommon=CHARCOAL
 #-------------------------------
 TOGEDEMARU]777
+ID=777
 Name=Togedemaru
 Types=ELECTRIC,STEEL
 BaseStats=65,98,63,96,40,73
@@ -20065,6 +20842,7 @@ Generation=7
 WildItemUncommon=ELECTRICSEED
 #-------------------------------
 MIMIKYU]778
+ID=778
 Name=Mimikyu
 FormName=Disguised Form
 Types=GHOST,FAIRY
@@ -20091,6 +20869,7 @@ Generation=7
 WildItemUncommon=CHESTOBERRY
 #-------------------------------
 BRUXISH]779
+ID=779
 Name=Bruxish
 Types=WATER,PSYCHIC
 BaseStats=68,105,70,92,70,70
@@ -20117,6 +20896,7 @@ Generation=7
 WildItemUncommon=RAZORFANG
 #-------------------------------
 DRAMPA]780
+ID=780
 Name=Drampa
 Types=NORMAL,DRAGON
 BaseStats=78,60,85,36,135,91
@@ -20143,6 +20923,7 @@ Generation=7
 WildItemUncommon=PERSIMBERRY
 #-------------------------------
 DHELMISE]781
+ID=781
 Name=Dhelmise
 Types=GHOST,GRASS
 BaseStats=70,131,100,40,86,90
@@ -20166,6 +20947,7 @@ Pokedex=The soul of seaweed adrift in the waves became reborn as this Pokemon. I
 Generation=7
 #-------------------------------
 JANGMOO]782
+ID=782
 Name=Jangmo-o
 Types=DRAGON
 BaseStats=45,55,65,45,45,45
@@ -20193,6 +20975,7 @@ WildItemUncommon=RAZORCLAW
 Evolutions=HAKAMOO,Level,35
 #-------------------------------
 HAKAMOO]783
+ID=783
 Name=Hakamo-o
 Types=DRAGON,FIGHTING
 BaseStats=55,75,90,65,65,70
@@ -20219,6 +21002,7 @@ WildItemUncommon=RAZORCLAW
 Evolutions=KOMMOO,Level,45
 #-------------------------------
 KOMMOO]784
+ID=784
 Name=Kommo-o
 Types=DRAGON,FIGHTING
 BaseStats=75,110,125,85,100,105
@@ -20244,6 +21028,7 @@ Generation=7
 WildItemCommon=RAZORCLAW
 #-------------------------------
 TAPUKOKO]785
+ID=785
 Name=Tapu Koko
 Types=ELECTRIC,FAIRY
 BaseStats=70,115,85,130,95,75
@@ -20269,6 +21054,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 TAPULELE]786
+ID=786
 Name=Tapu Lele
 Types=PSYCHIC,FAIRY
 BaseStats=70,85,75,95,130,115
@@ -20294,6 +21080,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 TAPUBULU]787
+ID=787
 Name=Tapu Bulu
 Types=GRASS,FAIRY
 BaseStats=70,130,115,75,85,95
@@ -20319,6 +21106,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 TAPUFINI]788
+ID=788
 Name=Tapu Fini
 Types=WATER,FAIRY
 BaseStats=70,75,115,85,95,130
@@ -20344,6 +21132,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 COSMOG]789
+ID=789
 Name=Cosmog
 Types=PSYCHIC
 BaseStats=43,29,31,37,29,31
@@ -20368,6 +21157,7 @@ Flags=Legendary
 Evolutions=COSMOEM,Level,43
 #-------------------------------
 COSMOEM]790
+ID=790
 Name=Cosmoem
 Types=PSYCHIC
 BaseStats=43,29,131,37,29,131
@@ -20393,6 +21183,7 @@ Flags=Legendary
 Evolutions=SOLGALEO,LevelDay,53,LUNALA,LevelNight,53
 #-------------------------------
 SOLGALEO]791
+ID=791
 Name=Solgaleo
 Types=PSYCHIC,STEEL
 BaseStats=137,137,107,97,113,89
@@ -20417,6 +21208,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 LUNALA]792
+ID=792
 Name=Lunala
 Types=PSYCHIC,GHOST
 BaseStats=137,113,89,97,137,107
@@ -20441,6 +21233,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 NIHILEGO]793
+ID=793
 Name=Nihilego
 Types=ROCK,POISON
 BaseStats=109,53,47,103,127,131
@@ -20465,6 +21258,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 BUZZWOLE]794
+ID=794
 Name=Buzzwole
 Types=BUG,FIGHTING
 BaseStats=107,139,139,79,53,53
@@ -20489,6 +21283,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 PHEROMOSA]795
+ID=795
 Name=Pheromosa
 Types=BUG,FIGHTING
 BaseStats=71,137,37,151,137,37
@@ -20513,6 +21308,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 XURKITREE]796
+ID=796
 Name=Xurkitree
 Types=ELECTRIC
 BaseStats=83,89,71,83,173,71
@@ -20537,6 +21333,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 CELESTEELA]797
+ID=797
 Name=Celesteela
 Types=STEEL,FLYING
 BaseStats=97,101,103,61,107,101
@@ -20561,6 +21358,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 KARTANA]798
+ID=798
 Name=Kartana
 Types=GRASS,STEEL
 BaseStats=59,181,131,109,59,31
@@ -20585,6 +21383,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 GUZZLORD]799
+ID=799
 Name=Guzzlord
 Types=DARK,DRAGON
 BaseStats=223,101,53,43,97,53
@@ -20609,6 +21408,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 NECROZMA]800
+ID=800
 Name=Necrozma
 Types=PSYCHIC
 BaseStats=97,107,101,79,127,89
@@ -20633,6 +21433,7 @@ Generation=7
 Flags=Legendary
 #-------------------------------
 MAGEARNA]801
+ID=801
 Name=Magearna
 Types=STEEL,FAIRY
 BaseStats=80,95,115,65,130,115
@@ -20657,6 +21458,7 @@ Generation=7
 Flags=Mythical
 #-------------------------------
 MARSHADOW]802
+ID=802
 Name=Marshadow
 Types=FIGHTING,GHOST
 BaseStats=90,125,80,125,90,90
@@ -20681,6 +21483,7 @@ Generation=7
 Flags=Mythical
 #-------------------------------
 POIPOLE]803
+ID=803
 Name=Poipole
 Types=POISON
 BaseStats=67,73,67,73,73,67
@@ -20706,6 +21509,7 @@ Flags=UltraBeast
 Evolutions=NAGANADEL,HasMove,DRAGONPULSE
 #-------------------------------
 NAGANADEL]804
+ID=804
 Name=Naganadel
 Types=POISON,DRAGON
 BaseStats=73,73,73,121,127,73
@@ -20730,6 +21534,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 STAKATAKA]805
+ID=805
 Name=Stakataka
 Types=ROCK,STEEL
 BaseStats=61,131,211,13,53,101
@@ -20754,6 +21559,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 BLACEPHALON]806
+ID=806
 Name=Blacephalon
 Types=FIRE,GHOST
 BaseStats=53,127,53,107,151,79
@@ -20778,6 +21584,7 @@ Generation=7
 Flags=UltraBeast
 #-------------------------------
 ZERAORA]807
+ID=807
 Name=Zeraora
 Types=ELECTRIC
 BaseStats=88,112,75,143,102,80
@@ -20802,6 +21609,7 @@ Generation=7
 Flags=Mythical
 #-------------------------------
 MELTAN]808
+ID=808
 Name=Meltan
 Types=STEEL
 BaseStats=46,65,65,34,55,35
@@ -20827,6 +21635,7 @@ Flags=Mythical
 Evolutions=MELMETAL,Level,45
 #-------------------------------
 MELMETAL]809
+ID=809
 Name=Melmetal
 Types=STEEL
 BaseStats=135,143,143,34,80,65
@@ -20851,6 +21660,7 @@ Generation=7
 Flags=Mythical
 #-------------------------------
 GROOKEY]810
+ID=810
 Name=Grookey
 Types=GRASS
 BaseStats=50,65,50,65,40,40
@@ -20877,6 +21687,7 @@ Generation=8
 Evolutions=THWACKEY,Level,16
 #-------------------------------
 THWACKEY]811
+ID=811
 Name=Thwackey
 Types=GRASS
 BaseStats=70,85,70,80,55,60
@@ -20902,6 +21713,7 @@ Generation=8
 Evolutions=RILLABOOM,Level,35
 #-------------------------------
 RILLABOOM]812
+ID=812
 Name=Rillaboom
 Types=GRASS
 BaseStats=100,125,90,85,60,70
@@ -20926,6 +21738,7 @@ Pokedex=By drumming, it taps into the power of its special tree stump. The roots
 Generation=8
 #-------------------------------
 SCORBUNNY]813
+ID=813
 Name=Scorbunny
 Types=FIRE
 BaseStats=50,71,40,69,40,40
@@ -20952,6 +21765,7 @@ Generation=8
 Evolutions=RABOOT,Level,16
 #-------------------------------
 RABOOT]814
+ID=814
 Name=Raboot
 Types=FIRE
 BaseStats=65,86,60,94,55,60
@@ -20977,6 +21791,7 @@ Generation=8
 Evolutions=CINDERACE,Level,35
 #-------------------------------
 CINDERACE]815
+ID=815
 Name=Cinderace
 Types=FIRE
 BaseStats=80,116,75,119,65,75
@@ -21001,6 +21816,7 @@ Pokedex=It juggles a pebble with its feet, turning it into a burning soccer ball
 Generation=8
 #-------------------------------
 SOBBLE]816
+ID=816
 Name=Sobble
 Types=WATER
 BaseStats=50,40,40,70,70,40
@@ -21027,6 +21843,7 @@ Generation=8
 Evolutions=DRIZZILE,Level,16
 #-------------------------------
 DRIZZILE]817
+ID=817
 Name=Drizzile
 Types=WATER
 BaseStats=65,60,55,90,95,55
@@ -21052,6 +21869,7 @@ Generation=8
 Evolutions=INTELEON,Level,35
 #-------------------------------
 INTELEON]818
+ID=818
 Name=Inteleon
 Types=WATER
 BaseStats=70,85,65,120,125,65
@@ -21076,6 +21894,7 @@ Pokedex=It has many hidden capabilities, such as fingertips that can shoot water
 Generation=8
 #-------------------------------
 SKWOVET]819
+ID=819
 Name=Skwovet
 Types=NORMAL
 BaseStats=70,55,55,25,35,35
@@ -21103,6 +21922,7 @@ WildItemUncommon=ORANBERRY
 Evolutions=GREEDENT,Level,24
 #-------------------------------
 GREEDENT]820
+ID=820
 Name=Greedent
 Types=NORMAL
 BaseStats=120,95,95,20,55,75
@@ -21128,6 +21948,7 @@ Generation=8
 WildItemUncommon=SITRUSBERRY
 #-------------------------------
 ROOKIDEE]821
+ID=821
 Name=Rookidee
 Types=FLYING
 BaseStats=38,47,35,57,33,35
@@ -21154,6 +21975,7 @@ Generation=8
 Evolutions=CORVISQUIRE,Level,18
 #-------------------------------
 CORVISQUIRE]822
+ID=822
 Name=Corvisquire
 Types=FLYING
 BaseStats=68,67,55,77,43,55
@@ -21179,6 +22001,7 @@ Generation=8
 Evolutions=CORVIKNIGHT,Level,38
 #-------------------------------
 CORVIKNIGHT]823
+ID=823
 Name=Corviknight
 Types=FLYING,STEEL
 BaseStats=98,87,105,67,53,85
@@ -21203,6 +22026,7 @@ Pokedex=This Pokemon reigns supreme in the skies. The black luster of its steel 
 Generation=8
 #-------------------------------
 BLIPBUG]824
+ID=824
 Name=Blipbug
 Types=BUG
 BaseStats=25,20,20,45,25,45
@@ -21228,6 +22052,7 @@ Generation=8
 Evolutions=DOTTLER,Level,10
 #-------------------------------
 DOTTLER]825
+ID=825
 Name=Dottler
 Types=BUG,PSYCHIC
 BaseStats=50,35,80,30,50,90
@@ -21254,6 +22079,7 @@ WildItemUncommon=PSYCHICSEED
 Evolutions=ORBEETLE,Level,30
 #-------------------------------
 ORBEETLE]826
+ID=826
 Name=Orbeetle
 Types=BUG,PSYCHIC
 BaseStats=60,45,110,90,80,120
@@ -21279,6 +22105,7 @@ Generation=8
 WildItemUncommon=PSYCHICSEED
 #-------------------------------
 NICKIT]827
+ID=827
 Name=Nickit
 Types=DARK
 BaseStats=40,28,28,50,47,52
@@ -21305,6 +22132,7 @@ Generation=8
 Evolutions=THIEVUL,Level,18
 #-------------------------------
 THIEVUL]828
+ID=828
 Name=Thievul
 Types=DARK
 BaseStats=70,58,58,90,87,92
@@ -21329,6 +22157,7 @@ Pokedex=It secretly marks potential targets with a scent. By following the scent
 Generation=8
 #-------------------------------
 GOSSIFLEUR]829
+ID=829
 Name=Gossifleur
 Types=GRASS
 BaseStats=40,40,60,10,40,60
@@ -21355,6 +22184,7 @@ Generation=8
 Evolutions=ELDEGOSS,Level,20
 #-------------------------------
 ELDEGOSS]830
+ID=830
 Name=Eldegoss
 Types=GRASS
 BaseStats=60,50,90,60,80,120
@@ -21379,6 +22209,7 @@ Pokedex=The seeds attached to its cotton fluff are full of nutrients. It spreads
 Generation=8
 #-------------------------------
 WOOLOO]831
+ID=831
 Name=Wooloo
 Types=NORMAL
 BaseStats=42,40,55,48,40,45
@@ -21405,6 +22236,7 @@ Generation=8
 Evolutions=DUBWOOL,Level,24
 #-------------------------------
 DUBWOOL]832
+ID=832
 Name=Dubwool
 Types=NORMAL
 BaseStats=72,80,100,88,60,90
@@ -21429,6 +22261,7 @@ Pokedex=Its majestic horns are meant only to impress the opposite gender. They n
 Generation=8
 #-------------------------------
 CHEWTLE]833
+ID=833
 Name=Chewtle
 Types=WATER
 BaseStats=50,64,50,44,38,38
@@ -21455,6 +22288,7 @@ Generation=8
 Evolutions=DREDNAW,Level,22
 #-------------------------------
 DREDNAW]834
+ID=834
 Name=Drednaw
 Types=WATER,ROCK
 BaseStats=90,115,90,74,48,68
@@ -21479,6 +22313,7 @@ Pokedex=With jaws that can shear through steel rods, this highly aggressive Poke
 Generation=8
 #-------------------------------
 YAMPER]835
+ID=835
 Name=Yamper
 Types=ELECTRIC
 BaseStats=59,45,50,26,40,50
@@ -21505,6 +22340,7 @@ Generation=8
 Evolutions=BOLTUND,Level,25
 #-------------------------------
 BOLTUND]836
+ID=836
 Name=Boltund
 Types=ELECTRIC
 BaseStats=69,90,60,121,90,60
@@ -21529,6 +22365,7 @@ Pokedex=This Pokemon generates electricity and channels it into its legs to keep
 Generation=8
 #-------------------------------
 ROLYCOLY]837
+ID=837
 Name=Rolycoly
 Types=ROCK
 BaseStats=30,40,50,30,40,50
@@ -21555,6 +22392,7 @@ Generation=8
 Evolutions=CARKOL,Level,18
 #-------------------------------
 CARKOL]838
+ID=838
 Name=Carkol
 Types=ROCK,FIRE
 BaseStats=80,60,90,50,60,70
@@ -21580,6 +22418,7 @@ Generation=8
 Evolutions=COALOSSAL,Level,34
 #-------------------------------
 COALOSSAL]839
+ID=839
 Name=Coalossal
 Types=ROCK,FIRE
 BaseStats=110,80,120,30,80,90
@@ -21604,6 +22443,7 @@ Pokedex=While it's engaged in battle, its mountain of coal will burn bright red,
 Generation=8
 #-------------------------------
 APPLIN]840
+ID=840
 Name=Applin
 Types=GRASS,DRAGON
 BaseStats=40,40,80,20,40,40
@@ -21630,6 +22470,7 @@ Generation=8
 Evolutions=FLAPPLE,Item,TARTAPPLE,APPLETUN,Item,SWEETAPPLE
 #-------------------------------
 FLAPPLE]841
+ID=841
 Name=Flapple
 Types=GRASS,DRAGON
 BaseStats=70,110,80,70,95,60
@@ -21654,6 +22495,7 @@ Pokedex=It ate a sour apple, and that induced its evolution. In its cheeks, it s
 Generation=8
 #-------------------------------
 APPLETUN]842
+ID=842
 Name=Appletun
 Types=GRASS,DRAGON
 BaseStats=110,85,80,30,100,80
@@ -21678,6 +22520,7 @@ Pokedex=Its body is covered in sweet nectar, and the skin on its back is especia
 Generation=8
 #-------------------------------
 SILICOBRA]843
+ID=843
 Name=Silicobra
 Types=GROUND
 BaseStats=52,57,75,46,35,50
@@ -21704,6 +22547,7 @@ Generation=8
 Evolutions=SANDACONDA,Level,36
 #-------------------------------
 SANDACONDA]844
+ID=844
 Name=Sandaconda
 Types=GROUND
 BaseStats=72,107,125,71,65,70
@@ -21728,6 +22572,7 @@ Pokedex=Its unique style of coiling allows it to blast sand out of its sand sac 
 Generation=8
 #-------------------------------
 CRAMORANT]845
+ID=845
 Name=Cramorant
 Types=FLYING,WATER
 BaseStats=70,85,55,85,85,95
@@ -21752,6 +22597,7 @@ Pokedex=It's so strong that it can knock out some opponents in a single hit, but
 Generation=8
 #-------------------------------
 ARROKUDA]846
+ID=846
 Name=Arrokuda
 Types=WATER
 BaseStats=41,63,40,66,40,30
@@ -21778,6 +22624,7 @@ Generation=8
 Evolutions=BARRASKEWDA,Level,26
 #-------------------------------
 BARRASKEWDA]847
+ID=847
 Name=Barraskewda
 Types=WATER
 BaseStats=61,123,60,136,60,50
@@ -21802,6 +22649,7 @@ Pokedex=This Pokemon has a jaw that's as sharp as a spear and as strong as steel
 Generation=8
 #-------------------------------
 TOXEL]848
+ID=848
 Name=Toxel
 Types=ELECTRIC,POISON
 BaseStats=40,38,35,40,54,35
@@ -21828,6 +22676,7 @@ Generation=8
 Evolutions=TOXTRICITY,Level,30
 #-------------------------------
 TOXTRICITY]849
+ID=849
 Name=Toxtricity
 FormName=Amped Form
 Types=ELECTRIC,POISON
@@ -21853,6 +22702,7 @@ Pokedex=When this Pokemon sounds as if it's strumming a guitar, it's actually cl
 Generation=8
 #-------------------------------
 SIZZLIPEDE]850
+ID=850
 Name=Sizzlipede
 Types=FIRE,BUG
 BaseStats=50,65,45,45,50,50
@@ -21879,6 +22729,7 @@ Generation=8
 Evolutions=CENTISKORCH,Level,28
 #-------------------------------
 CENTISKORCH]851
+ID=851
 Name=Centiskorch
 Types=FIRE,BUG
 BaseStats=100,115,65,65,90,90
@@ -21903,6 +22754,7 @@ Pokedex=While its burning body is already dangerous on its own, this excessively
 Generation=8
 #-------------------------------
 CLOBBOPUS]852
+ID=852
 Name=Clobbopus
 Types=FIGHTING
 BaseStats=50,68,60,32,50,50
@@ -21929,6 +22781,7 @@ Generation=8
 Evolutions=GRAPPLOCT,HasMove,TAUNT
 #-------------------------------
 GRAPPLOCT]853
+ID=853
 Name=Grapploct
 Types=FIGHTING
 BaseStats=80,118,90,42,70,80
@@ -21953,6 +22806,7 @@ Pokedex=A body made up of nothing but muscle makes the grappling moves this Poke
 Generation=8
 #-------------------------------
 SINISTEA]854
+ID=854
 Name=Sinistea
 FormName=Phony Form
 Types=GHOST
@@ -21979,6 +22833,7 @@ Generation=8
 Evolutions=POLTEAGEIST,Item,CRACKEDPOT
 #-------------------------------
 POLTEAGEIST]855
+ID=855
 Name=Polteageist
 FormName=Phony Form
 Types=GHOST
@@ -22004,6 +22859,7 @@ Pokedex=This species lives in antique teapots. Most pots are forgeries, but on r
 Generation=8
 #-------------------------------
 HATENNA]856
+ID=856
 Name=Hatenna
 Types=PSYCHIC
 BaseStats=42,30,45,39,56,53
@@ -22030,6 +22886,7 @@ Generation=8
 Evolutions=HATTREM,Level,32
 #-------------------------------
 HATTREM]857
+ID=857
 Name=Hattrem
 Types=PSYCHIC
 BaseStats=57,40,65,49,86,73
@@ -22055,6 +22912,7 @@ Generation=8
 Evolutions=HATTERENE,Level,42
 #-------------------------------
 HATTERENE]858
+ID=858
 Name=Hatterene
 Types=PSYCHIC,FAIRY
 BaseStats=57,90,95,29,136,103
@@ -22079,6 +22937,7 @@ Pokedex=It emits psychic power strong enough to cause headaches as a deterrent t
 Generation=8
 #-------------------------------
 IMPIDIMP]859
+ID=859
 Name=Impidimp
 Types=DARK,FAIRY
 BaseStats=45,45,30,50,55,40
@@ -22104,6 +22963,7 @@ Generation=8
 Evolutions=MORGREM,Level,32
 #-------------------------------
 MORGREM]860
+ID=860
 Name=Morgrem
 Types=DARK,FAIRY
 BaseStats=65,60,45,70,75,55
@@ -22129,6 +22989,7 @@ Generation=8
 Evolutions=GRIMMSNARL,Level,42
 #-------------------------------
 GRIMMSNARL]861
+ID=861
 Name=Grimmsnarl
 Types=DARK,FAIRY
 BaseStats=95,120,65,60,95,75
@@ -22153,6 +23014,7 @@ Pokedex=Its hairs work like muscle fibers. When its hairs unfurl, they latch on 
 Generation=8
 #-------------------------------
 OBSTAGOON]862
+ID=862
 Name=Obstagoon
 Types=DARK,NORMAL
 BaseStats=93,90,101,95,60,81
@@ -22179,6 +23041,7 @@ Generation=8
 Flags=DefaultForm_1,InheritFormWithEverStone
 #-------------------------------
 PERRSERKER]863
+ID=863
 Name=Perrserker
 Types=STEEL
 BaseStats=70,110,100,50,50,60
@@ -22205,6 +23068,7 @@ Generation=8
 Flags=DefaultForm_2,InheritFormWithEverStone
 #-------------------------------
 CURSOLA]864
+ID=864
 Name=Cursola
 Types=GHOST
 BaseStats=60,95,50,30,145,130
@@ -22231,6 +23095,7 @@ Generation=8
 Flags=DefaultForm_1,InheritFormWithEverStone
 #-------------------------------
 SIRFETCHD]865
+ID=865
 Name=Sirfetch'd
 Types=FIGHTING
 BaseStats=62,135,95,65,68,82
@@ -22258,6 +23123,7 @@ Flags=DefaultForm_1,InheritFormWithEverStone
 WildItemUncommon=LEEK
 #-------------------------------
 MRRIME]866
+ID=866
 Name=Mr. Rime
 Types=ICE,PSYCHIC
 BaseStats=80,85,75,70,110,100
@@ -22284,6 +23150,7 @@ Generation=8
 Flags=DefaultForm_1,InheritFormWithEverStone
 #-------------------------------
 RUNERIGUS]867
+ID=867
 Name=Runerigus
 Types=GROUND,GHOST
 BaseStats=58,95,145,30,50,105
@@ -22309,6 +23176,7 @@ Generation=8
 Flags=DefaultForm_1,InheritFormWithEverStone
 #-------------------------------
 MILCERY]868
+ID=868
 Name=Milcery
 Types=FAIRY
 BaseStats=45,40,40,34,50,61
@@ -22335,6 +23203,7 @@ Generation=8
 Evolutions=ALCREMIE,HoldItem,STRAWBERRYSWEET,ALCREMIE,HoldItem,BERRYSWEET,ALCREMIE,HoldItem,LOVESWEET,ALCREMIE,HoldItem,STARSWEET,ALCREMIE,HoldItem,CLOVERSWEET,ALCREMIE,HoldItem,FLOWERSWEET,ALCREMIE,HoldItem,RIBBONSWEET
 #-------------------------------
 ALCREMIE]869
+ID=869
 Name=Alcremie
 FormName=Vanilla Cream
 Types=FAIRY
@@ -22360,6 +23229,7 @@ Pokedex=When Alcremie is content, the cream it secretes from its hands becomes s
 Generation=8
 #-------------------------------
 FALINKS]870
+ID=870
 Name=Falinks
 Types=FIGHTING
 BaseStats=65,100,100,75,70,60
@@ -22384,6 +23254,7 @@ Pokedex=The six of them work together as one Pokemon. Teamwork is also their bat
 Generation=8
 #-------------------------------
 PINCURCHIN]871
+ID=871
 Name=Pincurchin
 Types=ELECTRIC
 BaseStats=48,101,95,15,91,85
@@ -22409,6 +23280,7 @@ Pokedex=It stores electricity in each spine. Even if one gets broken off, it sti
 Generation=8
 #-------------------------------
 SNOM]872
+ID=872
 Name=Snom
 Types=ICE,BUG
 BaseStats=30,25,35,20,45,30
@@ -22436,6 +23308,7 @@ WildItemUncommon=SNOWBALL
 Evolutions=FROSMOTH,HappinessNight,
 #-------------------------------
 FROSMOTH]873
+ID=873
 Name=Frosmoth
 Types=ICE,BUG
 BaseStats=70,65,60,65,125,90
@@ -22460,6 +23333,7 @@ Pokedex=It shows no mercy to any who desecrate fields and mountains. It will fly
 Generation=8
 #-------------------------------
 STONJOURNER]874
+ID=874
 Name=Stonjourner
 Types=ROCK
 BaseStats=100,125,135,70,20,20
@@ -22484,6 +23358,7 @@ Pokedex=Once a year, on a specific date and at a specific time, they gather out 
 Generation=8
 #-------------------------------
 EISCUE]875
+ID=875
 Name=Eiscue
 FormName=Ice Face
 Types=ICE
@@ -22509,6 +23384,7 @@ Pokedex=It drifted in on the flow of ocean waters from a frigid place. It keeps 
 Generation=8
 #-------------------------------
 INDEEDEE]876
+ID=876
 Name=Indeedee
 FormName=Male
 Types=PSYCHIC,NORMAL
@@ -22535,6 +23411,7 @@ Pokedex=It uses the horns on its head to sense the emotions of others. Males wil
 Generation=8
 #-------------------------------
 MORPEKO]877
+ID=877
 Name=Morpeko
 FormName=Full Belly Mode
 Types=ELECTRIC,DARK
@@ -22560,6 +23437,7 @@ Pokedex=As it eats the seeds stored up in its pocket-like pouches, this Pokemon 
 Generation=8
 #-------------------------------
 CUFANT]878
+ID=878
 Name=Cufant
 Types=STEEL
 BaseStats=72,80,49,40,40,49
@@ -22587,6 +23465,7 @@ WildItemUncommon=LAGGINGTAIL
 Evolutions=COPPERAJAH,Level,34
 #-------------------------------
 COPPERAJAH]879
+ID=879
 Name=Copperajah
 Types=STEEL
 BaseStats=122,130,69,30,80,69
@@ -22612,6 +23491,7 @@ Generation=8
 WildItemUncommon=LAGGINGTAIL
 #-------------------------------
 DRACOZOLT]880
+ID=880
 Name=Dracozolt
 Types=ELECTRIC,DRAGON
 BaseStats=90,100,90,75,80,70
@@ -22636,6 +23516,7 @@ Pokedex=In ancient times, it was unbeatable thanks to its powerful lower body, b
 Generation=8
 #-------------------------------
 ARCTOZOLT]881
+ID=881
 Name=Arctozolt
 Types=ELECTRIC,ICE
 BaseStats=90,100,90,55,90,80
@@ -22660,6 +23541,7 @@ Pokedex=The shaking of its freezing upper half is what generates its electricity
 Generation=8
 #-------------------------------
 DRACOVISH]882
+ID=882
 Name=Dracovish
 Types=WATER,DRAGON
 BaseStats=90,90,100,75,70,80
@@ -22684,6 +23566,7 @@ Pokedex=Powerful legs and jaws made it the apex predator of its time. Its own ov
 Generation=8
 #-------------------------------
 ARCTOVISH]883
+ID=883
 Name=Arctovish
 Types=WATER,ICE
 BaseStats=90,90,100,55,80,90
@@ -22708,6 +23591,7 @@ Pokedex=Though it's able to capture prey by freezing its surroundings, it has tr
 Generation=8
 #-------------------------------
 DURALUDON]884
+ID=884
 Name=Duraludon
 Types=STEEL,DRAGON
 BaseStats=70,95,115,85,120,50
@@ -22733,6 +23617,7 @@ Pokedex=Its body resembles polished metal, and it's both lightweight and strong.
 Generation=8
 #-------------------------------
 DREEPY]885
+ID=885
 Name=Dreepy
 Types=DRAGON,GHOST
 BaseStats=28,60,30,82,40,30
@@ -22759,6 +23644,7 @@ Generation=8
 Evolutions=DRAKLOAK,Level,50
 #-------------------------------
 DRAKLOAK]886
+ID=886
 Name=Drakloak
 Types=DRAGON,GHOST
 BaseStats=68,80,50,102,60,50
@@ -22784,6 +23670,7 @@ Generation=8
 Evolutions=DRAGAPULT,Level,60
 #-------------------------------
 DRAGAPULT]887
+ID=887
 Name=Dragapult
 Types=DRAGON,GHOST
 BaseStats=88,120,75,142,100,75
@@ -22808,6 +23695,7 @@ Pokedex=When it isn't battling, it keeps Dreepy in the holes on its horns. Once 
 Generation=8
 #-------------------------------
 ZACIAN]888
+ID=888
 Name=Zacian
 FormName=Hero of Many Battles
 Types=FAIRY
@@ -22836,6 +23724,7 @@ WildItemUncommon=RUSTEDSWORD
 WildItemRare=RUSTEDSWORD
 #-------------------------------
 ZAMAZENTA]889
+ID=889
 Name=Zamazenta
 FormName=Hero of Many Battles
 Types=FIGHTING
@@ -22864,6 +23753,7 @@ WildItemUncommon=RUSTEDSHIELD
 WildItemRare=RUSTEDSHIELD
 #-------------------------------
 ETERNATUS]890
+ID=890
 Name=Eternatus
 Types=POISON,DRAGON
 BaseStats=140,85,95,130,145,95
@@ -22888,6 +23778,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 KUBFU]891
+ID=891
 Name=Kubfu
 Types=FIGHTING
 BaseStats=60,90,60,72,53,50
@@ -22913,6 +23804,7 @@ Flags=Legendary
 Evolutions=URSHIFU,Event,1
 #-------------------------------
 URSHIFU]892
+ID=892
 Name=Urshifu
 FormName=Single Strike Style
 Types=FIGHTING,DARK
@@ -22938,6 +23830,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 ZARUDE]893
+ID=893
 Name=Zarude
 Types=DARK,GRASS
 BaseStats=105,120,105,105,70,95
@@ -22962,6 +23855,7 @@ Generation=8
 Flags=Mythical
 #-------------------------------
 REGIELEKI]894
+ID=894
 Name=Regieleki
 Types=ELECTRIC
 BaseStats=80,100,50,200,100,50
@@ -22986,6 +23880,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 REGIDRAGO]895
+ID=895
 Name=Regidrago
 Types=DRAGON
 BaseStats=200,100,50,80,100,50
@@ -23010,6 +23905,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 GLASTRIER]896
+ID=896
 Name=Glastrier
 Types=ICE
 BaseStats=100,145,130,30,65,110
@@ -23034,6 +23930,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 SPECTRIER]897
+ID=897
 Name=Spectrier
 Types=GHOST
 BaseStats=100,65,60,130,145,80
@@ -23058,6 +23955,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 CALYREX]898
+ID=898
 Name=Calyrex
 Types=PSYCHIC,GRASS
 BaseStats=100,80,80,80,80,80
@@ -23082,6 +23980,7 @@ Generation=8
 Flags=Legendary
 #-------------------------------
 NULL]899
+ID=899
 Name=Missingno.
 Types=GRASS,POISON
 BaseStats=1,255,255,255,255,255
@@ -23105,6 +24004,7 @@ Pokedex=???
 Generation=1
 
 SQUALO]
+ID=900
 Name=Cramorant
 Types=FLYING,WATER
 BaseStats=70,85,55,85,85,95
@@ -23130,6 +24030,7 @@ Generation=8
 #-------------------------------
 
 IR_GABIBBO]
+ID=901
 Name=Cramorant
 Types=FLYING,WATER
 BaseStats=70,85,55,85,85,95
