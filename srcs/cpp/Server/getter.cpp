@@ -21,6 +21,11 @@ SrvNameMap		&Server::getSrvNameMap() const
 	return (*this->_srvnamemap);
 }
 
+packetBuffer	&Server::getPacketBuffer()
+{
+	return (this->_packet_buffer);
+}
+
 const std::string	&Server::getProtectedFiles() const
 {
 	return (this->_protected_files);

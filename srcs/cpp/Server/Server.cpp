@@ -67,19 +67,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
-			std::cout << "Body len request: " << this->_clients[(*it).fd]->getRequest().getBodyLen() << std::endl;
-			size_t bodylen = this->_clients[(*it).fd]->getRequest().getBodyLen();
-			size_t tot = 0;
-			char *buffer = new char[bodylen];
-			while (tot < bodylen)
-			{
-				int bytes = recv((*it).fd, buffer + tot, bodylen - tot, 0);
-				if (bytes == 0)
-					break ;
-				tot += bytes;
-			}
-			std::cout << "QUI CI ARRIVO?" << std::endl;
-			if (tot != bodylen)
+			if (ft_recv((*it).fd, this->_packet_buffer, 2048) <= 0)
 			{
 				static int	n;
 				//da mettere in una funzione a parte
@@ -95,7 +83,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				}
 			}
 			else
-				processRequest(it, buffer);
+				processRequest(it);
 		}
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
 		{
@@ -107,14 +95,14 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	}
 }
 
-void	Server::processRequest(std::vector<struct pollfd>::iterator it, char *buffer)
+void	Server::processRequest(std::vector<struct pollfd>::iterator &it)
 {//FIXME - TESTING PER POST
-	(void)buffer;
 	Request	&request = this->_clients[(*it).fd]->getRequest();
+	ft_to_string(this->_packet_buffer, this->_request_buffer);
 	// if (requestParsing(request, fileToString("test_request")) != 0)
 	std::cout << "ProcessRequest" << std::endl;
-	std::cout << "buffer: " << buffer << "\n";
-	if (requestParsing(request, buffer) != 0)//request
+	std::cout << "buffer: " << this->_request_buffer << "\n";
+	if (requestParsing(request, this->_request_buffer) != 0)//request
 	{
 		(*it).events = POLLOUT;
 		// TODO - da settare status code corretto senza fare return

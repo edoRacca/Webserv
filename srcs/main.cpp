@@ -12,8 +12,9 @@ int		test_request(Conf &conf, Server &server)
 	std::ifstream	file("test_request");
 	std::string		input;
 	Request			request;
-
-	(void)conf;
+	// ok, quindi il buffer lo prende bene però nel tot
+//sisi, è il delete finale che al secondo buffer esplode vai in test()
+	(void)conf;//crasha quando si libera la memoria finale della matrice di buffer
 	if (file.fail())
 		return (std::cout << "cannot open test_request\n" << std::endl, 1);
 	std::getline(file, input, '\0');
@@ -47,53 +48,10 @@ void	get_conf_path(int ac, char **av, std::string &path)
 		throw std::runtime_error("\033[1;31mToo many configuration files\nPlease pass only one!\033[0m");
 }
 
-#include <list>
-
-void	create(std::list<char *> &packages, size_t &size)
-{
-	int		bytes = 1;
-	size_t	total = 0;
-	char	*buff;
-	int		fd = open("srcs/main.cpp", O_RDONLY);
-	
-	if (fd == -1)
-		return (std::cout << "no file\n", (void)0);
-	buff = new char[size + 1];
-	bytes = read(fd, buff, size);
-	while (bytes > 0)
-	{
-		packages.push_back(buff);
-		total += bytes;
-		buff = new char[size + 1];
-		bytes = read(fd, buff, size);
-	}
-	size = total;
-}
-
-int	test()
-{
-	size_t				size = 255;
-	std::list<char *> 	packages(1);
-	int					n_package = 0;
-
-	create(packages, size);
-	for (std::list<char *>::iterator it = packages.begin(); it != packages.end(); it++)
-	{
-		std::cout << "\npackage number " << n_package++ << std::endl;
-		for (int i = 0; (*it)[i]; i++)
-			std::cout << "Result: " << (*it)[i];
-	}
-	std::cout << std::endl;
-	return (0);
-}
-
-
 int main(int ac, char **av, const char **env)
 {
 	std::string	conf_path;
 
-	return (test());
-	close(open("www/var/index.html", O_CREAT | O_APPEND, 0666));
 	signal(SIGINT, stopServer);
 	std::cout << "\033[1;32mStarting web server ...\033[0m" << std::endl;
 	try

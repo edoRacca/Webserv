@@ -20,6 +20,7 @@
 # define CONNECTION_FAIL (struct pollfd){-1, -1, -1}
 
 class Client;
+typedef std::vector<char *>	packetBuffer;
 
 class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 {
@@ -28,6 +29,8 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		std::map<int, Client *>			_clients;
 		std::map<int, t_conf_server *>	_server_data;
 		SrvNameMap						*_srvnamemap;
+		packetBuffer					_packet_buffer;
+		std::string						_request_buffer;
 		std::string						_protected_files;
 		const char						**_env;
 		int								_server_num;
@@ -39,10 +42,11 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		void 				addSocket(int index);
 		struct pollfd		*getAddrs(void);
 		size_t				getAddrSize(void) const;
-		void				processRequest(std::vector<struct pollfd>::iterator it, char *buffer);
+		void				processRequest(std::vector<struct pollfd>::iterator &it);
 		void				checkForConnection();
 		int					getServerNum() const;
 		SrvNameMap			&getSrvNameMap() const;
+		packetBuffer		&getPacketBuffer();
 		const std::string	&getProtectedFiles() const;
 
 		void				listDirectoriesAutoIndex(std::string &body, std::string &url, dirent *cont);
@@ -59,6 +63,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		void				suppressSocket();
 };
 
-void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap);
+void		ft_to_string(std::vector<char *> &packets, std::string &request_buff);
+void		convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap);
 
 #endif

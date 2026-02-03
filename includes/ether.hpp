@@ -85,6 +85,8 @@ int 		    checkValidCode(int code);
 dirent	*findUrlDirectory(std::string url);
 void	  ft_ls(std::string path, std::string &files);
 
+int			ft_recv(int fd, std::vector<char *> &packets, size_t packet_size);
+
 void	run_script(Server &srv, Client &client, std::string &body);
 std::string	env_value(const char **env, std::string key);
 void		vect_split(std::vector<std::string> &vect, std::string s, char c);

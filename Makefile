@@ -17,7 +17,7 @@ CPP = $(addprefix cpp/, 		Client.cpp \
 		$(addprefix conf/, 		getter.cpp setter.cpp print.cpp Conf.cpp) \
 		$(addprefix request/, 	getter.cpp setter.cpp print.cpp Request.cpp))
 UTILS = $(addprefix utils/, 	utils_page1.cpp path_checker.cpp value_checker.cpp \
-								string/string.cpp url.cpp env.cpp directory.cpp \
+								string/string.cpp string/buffer.cpp url.cpp env.cpp directory.cpp \
 								cgi.cpp html_pokedex.cpp)
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
