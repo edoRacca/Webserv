@@ -9,11 +9,6 @@ struct pollfd			setupPollFd(int client);
 std::string				fileToString(std::string filename);
 dirent					*findUrlDirectory(std::string url);
 
-void					run_cmd(Server &srv, char *const argv[], std::string &output);
-void					get_argv(Client &client, std::string argv[2], std::string &url);
-std::string				createHtmlPokedex(std::string &key, std::string &output);
-
-
 // NOTE - aggiungiamo il socket del server al vector di server
 Server::Server(Conf &conf, const char **env):_env(env)
 {
@@ -50,6 +45,7 @@ Server::~Server()
 
 void Server::suppressSocket()
 {
+	//SECTION - client disconnection
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + this->_server_num; it != this->_addrs.end(); ++it)
 	{
 		close((*it).fd);
@@ -57,8 +53,13 @@ void Server::suppressSocket()
 		this->_clients.erase((*it).fd);
 		it = this->_addrs.erase(it) - 1;
 	}
+	//SECTION - server disconnection
 	for (int i = 0; i != this->_server_num; i++)
 		close(this->_addrs[i].fd);
+	//SECTION - socket buffer clearup
+	for (packetBuffer::iterator it = this->_packet_buffer.begin(); \
+	it != this->_packet_buffer.end(); it++)
+		delete [] (*it);
 }
 
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
@@ -100,8 +101,6 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it)
 	Request	&request = this->_clients[(*it).fd]->getRequest();
 	ft_to_string(this->_packet_buffer, this->_request_buffer);
 	// if (requestParsing(request, fileToString("test_request")) != 0)
-	std::cout << "ProcessRequest" << std::endl;
-	std::cout << "buffer: " << this->_request_buffer << "\n";
 	if (requestParsing(request, this->_request_buffer) != 0)//request
 	{
 		(*it).events = POLLOUT;
