@@ -8,7 +8,7 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		return (1);
 	chdir(PROG_PATH);
-	run_cmd((char*const[]){PROG_NAME, av[1], NULL}, output, 1);
+	run_cmd((char*const[]){(char *)PROG_NAME, av[1], NULL}, output, 1);
 	erase_space(output);
 	if (ac == 3 && av[2] == (std::string)"update")
 		exit_code = update_result(av[1], output);

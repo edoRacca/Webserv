@@ -60,7 +60,7 @@ int		update_result(std::string filename, std::string &output)
 
 	if (get_file_input(filename, file_input) != 0)
 		return (1);
-	fd.open(filename, std::ios_base::trunc);
+	fd.open(filename.c_str(), std::ios_base::trunc);
 	if (fd.fail())
 	{
 		std::cerr << "cannot update " << filename << std::endl;
@@ -90,7 +90,7 @@ int		compare_result(std::string filename, std::string &output)
 
 static int	get_file_input(std::string filename, std::string &input)
 {
-	std::fstream	fd(filename);
+	std::fstream	fd(filename.c_str());
 	std::string		temp;
 
 	if (fd.fail())
@@ -107,7 +107,7 @@ static int	get_file_input(std::string filename, std::string &input)
 
 static int	get_file_output(std::string filename, std::string &output)
 {
-	std::fstream	fd(filename);
+	std::fstream	fd(filename.c_str());
 	std::string		temp;
 
 	if (fd.fail())

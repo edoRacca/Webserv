@@ -29,7 +29,7 @@ CPP = $(addprefix cpp/, 		Client.o \
 		$(addprefix conf/, 		getter.o setter.o print.o Conf.o) \
 		$(addprefix request/, 	getter.o setter.o print.o Request.o))
 UTILS = $(addprefix utils/, 	utils_page1.o path_checker.o value_checker.o \
-								string/string.o url.o env.o directory.o \
+								string/string.o string/buffer.o url.o env.o directory.o \
 								cgi.o html_pokedex.o)
 
 WEB_OBJ = $(addprefix $(PROJ_OBJ_DIR)/, $(CPP) $(PARSING) $(UTILS))

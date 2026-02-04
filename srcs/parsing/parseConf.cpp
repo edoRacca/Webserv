@@ -36,6 +36,7 @@ Read configuration file. Parse it. Saves data in Conf class.
 									-	;	instruction end sign
 									-	{	open block sign
 									-	}	close block sign
+									-	!	DEBUG stop parsing
 [vector<std::string> list]->	list of all tokens.
 								When a token separator is found,
 								list is processed and reset.
@@ -61,9 +62,11 @@ void	confParse(Conf &conf, std::ifstream &fd)
 				closeBlock(conf, list, i);
 			else if (line[0] == '#')
 				break ;
+			else if (line[0] == '!')
+				fd.seekg(0, std::ios_base::end);
 			else 
 				token = line.substr(0, find_first_special_char(line));
-			if (!token.empty())
+			if (!token.empty() && line[0] != '!')
 				list.push_back(token);//list[0] = alias
 			line = line.substr(find_first_special_char(line));//LINE: /www/var/;
 			token = "";
