@@ -7,6 +7,7 @@ bool	server_run = true;
 
 void	convertDnsToIp(IpPortPair &ipport, SrvNameMap &srvmap);
 
+/*
 int		test_request(Conf &conf, Server &server)
 {
 	std::ifstream	file("test_request");
@@ -30,7 +31,7 @@ int		test_request(Conf &conf, Server &server)
 	else
 		std:: cout << server.getSrvNameMap()[request.getHost()] << std::endl;
 	return (0);
-}
+}*/
 
 void	stopServer(int sig)
 {

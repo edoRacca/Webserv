@@ -4,25 +4,29 @@
 #include "../hpp/Request.hpp"
 #include "../hpp/Server.hpp"
 
+
 static int	lineParsing(Request &request, std::string line);
 static int	headerParsing(Request &request, std::istringstream &header);
-static int	bodyParsing(Request &request, std::istringstream &header);
+static int	bodyParsing(Client &client, Request &request, std::istringstream &header, std::string &body);
 bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 bool		getNextFirstLineField(std::string &line, std::string &field);
 std::string	removeWhitespaces(std::string line);
 
-int	requestParsing(Request &request, std::string input)
+int	requestParsing(Client &client, std::string input)
 {
 	std::string			lines = "\r";
 	std::istringstream	s(input);
+	Request				&request = client.getRequest();
 
 	while (lines == "\r")//NOTE - linee vuote iniziali accettate da RFC
+	{
 		std::getline(s, lines, '\n');
+	}
 	if (lineParsing(request, lines) != 0) // first line parsing
 		return (request.getStatusCode());
 	if (headerParsing(request, s) != 0) // header parsing
 		return (request.getStatusCode());
-	if (bodyParsing(request, s) != 0)
+	if (bodyParsing(client, request, s, input) != 0)
 		return (request.getStatusCode());
 	request.setStatusCode(HTTP_OK);
 	return (0);
@@ -113,22 +117,21 @@ static int	headerParsing(Request &request, std::istringstream &header)
 }
 
 //FIXME - non va letta una nuova linea
-static int	bodyParsing(Request &request, std::istringstream &stream)
+static int	bodyParsing(Client &client, Request &request, std::istringstream &header, std::string &body)
 {
-	std::string	body;
-
 	request.setBodyLen(std::atoi(request.getHeaderVal("Content-Length").c_str()));
 	//if (!line.empty())
 	//	return(request.fail(HTTP_CE_BAD_REQUEST, "No \\n between header/body"));
 	if (request.getHeaderVal("Transfer-Encoding") != "")
 		{;}//FIXME - gestire transfer encoding
-	while (std::getline(stream, body));
 	std::cout << "bodyParsing: raw body:\n" << body << "---\nBODY_END\n---";
+	body.erase(0, header.tellg());
 	request.setBody(body);
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			return (bodyChecker(request, body, false));
+			return (ft_recv(client.getSockFd(), request));
+			// return (bodyChecker(request, body, false));
 		case GET :
 			return (bodyChecker(request, body, true));
 		case DELETE :

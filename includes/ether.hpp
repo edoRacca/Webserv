@@ -27,6 +27,7 @@
 # include <ctime>
 
 # include "../srcs/hpp/Conf.hpp"
+# include "../srcs/hpp/Request.hpp"
 # include "../srcs/utils/print.tpp"
 # include "../srcs/utils/string/string.tpp"
 
@@ -47,7 +48,7 @@ typedef struct s_conf_location	t_conf_location;
 typedef std::pair<std::string, int>	IpPortPair;
 typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 
-int			requestParsing(Request &request, std::string input);
+int			requestParsing(Client &client, std::string input);
 
 //SEXTION - utils
 std::string removeWhitespaces(std::string line);
@@ -85,7 +86,8 @@ int 		    checkValidCode(int code);
 dirent	*findUrlDirectory(std::string url);
 void	  ft_ls(std::string path, std::string &files);
 
-int			ft_recv(int fd, std::vector<char *> &packets, size_t packet_size);
+// int			ft_recv(int fd, std::vector<char *> &packets, size_t packet_size);
+int	ft_recv(int fd, Request &request);
 
 void	run_script(Server &srv, Client &client, std::string &body);
 std::string	env_value(const char **env, std::string key);

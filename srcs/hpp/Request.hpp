@@ -39,7 +39,6 @@ enum	e_methods
 
 class Request
 {
-
 	private:
 		std::string		_validmethods[METH_NUM];//array di metodi validi
 		headermap		_header;//std::map<key, value> relativi a headers

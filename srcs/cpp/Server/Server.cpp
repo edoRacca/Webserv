@@ -68,7 +68,9 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	{
 		if ((*it).fd != -1 && ((*it).revents & POLLIN))
 		{
-			if (ft_recv((*it).fd, this->_packet_buffer, 2048) <= 0)
+			char buffer[2048] = {0};
+			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
+			if (bytes <= 0)
 			{
 				static int	n;
 				//da mettere in una funzione a parte
@@ -84,13 +86,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				}
 			}
 			else
-				processRequest(it);
-			// {
-			// 	parsing
-			//  processazione della richiesta
-			//  lettura del body
-			// 	...
-			// }
+				processRequest(it, buffer);
 		}
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
 		{
@@ -102,12 +98,12 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	}
 }
 
-void	Server::processRequest(std::vector<struct pollfd>::iterator &it)
-{//FIXME - TESTING PER POST
+void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buffer)
+{
+	//FIXME - TESTING PER POST
 	Request	&request = this->_clients[(*it).fd]->getRequest();
-	ft_to_string(this->_packet_buffer, this->_request_buffer);
 	// if (requestParsing(request, fileToString("test_request")) != 0)
-	if (requestParsing(request, this->_request_buffer) != 0)//request
+	if (requestParsing(*this->_clients[(*it).fd], buffer) != 0)//request
 	{
 		(*it).events = POLLOUT;
 		// TODO - da settare status code corretto senza fare return

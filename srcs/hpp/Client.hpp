@@ -27,6 +27,7 @@ class Client
 		Client	operator=(const Client &other);
 
 		//SECTION - getters
+		int				getSockFd() const;
 		Request			&getRequest();
 		t_conf_server	&getSrvConf();
 		t_conf_location	&getLocConf();

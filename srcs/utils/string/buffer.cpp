@@ -1,8 +1,63 @@
-#include "../../../includes/ether.hpp"
 
-static void	alloc_packets(std::vector<char *> &packets, size_t pos, size_t len);
-void		print_packets(std::vector<char *> &packets, size_t &size);
+#include "../../../includes/ether.hpp" 
 
+
+// static void	alloc_packets(std::vector<char *> &packets, size_t pos, size_t len);
+// void		print_packets(std::vector<char *> &packets, size_t &size);
+
+/* 
+** 1. Prendere content length
+** 2. Cercare boundary e salvarlo (se c'e)
+** 3. ciclare finche byte letti (nel totale) sono diversi da content length
+		OPPURE bytes != 0
+** 4. Controllare boundary finale (-- + boundary + --) oppure continuazione (-- + boundary)
+** 5. 
+*/
+
+int	ft_recv(int fd, Request &request)
+{
+	std::cout << "ft_recv, fd is: " << fd << "\n";
+	// std::cout << "INCHINATEVI DINANZI A MEGA GABIBBO " << CHARIZARD << "\n";
+	if (fd < 0)
+		return (-69);
+
+	size_t				tot = 0;
+	char				buf[2048] = {0};
+	size_t				bodyLength = request.getBodyLen();
+	std::vector<char>	body(bodyLength + 1);
+	std::string			bound;
+	std::string			contType = request.getHeaderVal("Content-Type");
+	int					left;
+	int					DEBUG_COUNTER = 0;
+
+	// print_file("REQUEST", std::ios_base::trunc);
+	if (contType.find("boundary") != std::string::npos)
+	{
+		bound = contType.substr(contType.find("boundary="));
+		std::cout << "BOUNDARY TROVATO: " << bound << std::endl;
+	}
+	left = bodyLength;
+	while (tot < bodyLength)
+	{
+		int bytes = recv(fd, buf, left, 0);//!check size!		
+		std::cout << "Bytes: " << bytes << std::endl;
+		std::cout << "Tot bytes: " << tot << std::endl;
+		if (bytes <= 0)
+		{
+			std::cout << "ft_recv: exit with bytes " << bytes << ", counter " << DEBUG_COUNTER << "\n";
+			std::cout << "ft_recv: fd is " << fd << "\n";
+			break ; 
+		}
+		tot += bytes;
+		left -= bytes;
+		body.insert(body.end(), buf, buf + bytes);
+	}
+	std::cout << "MEGA GABIBBO\n";
+	exit(0);
+	return (69 - 69);
+}
+
+/*
 int	ft_recv(int fd, std::vector<char *> &packets, size_t packet_size)
 {
 	int		bytes = 1;
@@ -12,16 +67,26 @@ int	ft_recv(int fd, std::vector<char *> &packets, size_t packet_size)
 	if (fd == -1)
 		return (-1);
 	alloc_packets(packets, 0, packet_size);
-	bytes = recv(fd, packets[0], packet_size, 0);
+	bytes = recv(fd, packets[0], packet_size, 0); 
 	while (1)
 	{
 		if (bytes < 0)
 			return (-1);
-		total += bytes;	
+		total += bytes;
+		std::string pck = packets[i];
+		// std::cout << "find boundary: " << (pck.find("--") == std::string::npos ? "not found" : "found") << std::endl;
+		// boundary=--------------abc
+		// -- + --------------abc
+		// -- + --------------abc + --
+		if (pck.find("Content-Length") != std::string::npos)
+		{
+			size_t contlen = std::atol(pck.substr(pck.find("Content-Length")).c_str());
+			std::cout << "SIZE: " << contlen << std::endl << std::endl;
+		}
 		// print_file("REQUEST", "------BEGIN-----\n");
 		print_file("REQUEST", packets[i]);
 		// print_file("REQUEST", "\n------END-----\n");
-		if ((size_t)bytes < packet_size)
+		if ((size_t)bytes <= 0)
 			break ;
 		alloc_packets(packets, ++i, packet_size);
 		bytes = recv(fd, packets[i], packet_size, 0);
@@ -34,6 +99,7 @@ int	ft_recv(int fd, std::vector<char *> &packets, size_t packet_size)
 	print_file("REQUEST", "---DELIMITATORE LEGGIBILE DA UN UMANO---");
 	return (total);
 }
+*/
 
 void	ft_to_string(std::vector<char *> &packets, std::string &request_buff)
 {
@@ -47,18 +113,18 @@ void	ft_to_string(std::vector<char *> &packets, std::string &request_buff)
 }
 
 //allocs only when needed
-static void	alloc_packets(std::vector<char *> &packets, size_t pos, size_t len)
-{
-	if (pos < packets.size() && packets[pos] != NULL)
-	{
-		packets[pos][0] = 0;
-		return ;
-	}
-	if (pos < packets.size())
-		packets[pos] = new char[len + 2];
-	else
-		packets.push_back(new char[len + 2]);
-}
+// static void	alloc_packets(std::vector<char *> &packets, size_t pos, size_t len)
+// {
+// 	if (pos < packets.size() && packets[pos] != NULL)
+// 	{
+// 		packets[pos][0] = 0;
+// 		return ;
+// 	}
+// 	if (pos < packets.size())
+// 		packets[pos] = new char[len + 2];
+// 	else
+// 		packets.push_back(new char[len + 2]);
+// }
 
 void	print_packets(std::vector<char *> &packets, size_t &size)
 {

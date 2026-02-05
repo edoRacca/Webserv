@@ -23,6 +23,12 @@ Client	Client::operator=(const Client &other)
 	return (*this);
 }
 
+int	Client::getSockFd() const
+{
+	std::cout << "fd restituito: " << this->_sockfd << std::endl;
+	return (this->_sockfd);
+}
+
 Request	&Client::getRequest()
 {
 	return (this->_request);
@@ -37,6 +43,7 @@ t_conf_location	&Client::getLocConf()
 {
 	return (this->_loc_config);
 }
+
 
 	// void 	setRequest(std::string); // format request
 	// void	setMethNum(int);
