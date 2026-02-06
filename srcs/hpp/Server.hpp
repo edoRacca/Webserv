@@ -42,7 +42,7 @@ class Server //classe Server(HTTP) -> gestisce piu ip:porta in contemporanea
 		void 				addSocket(int index);
 		struct pollfd		*getAddrs(void);
 		size_t				getAddrSize(void) const;
-		void				processRequest(std::vector<struct pollfd>::iterator &it, char *buffer);
+		void				processRequest(std::vector<struct pollfd>::iterator &it, char *buffer, int bytes);
 		void				checkForConnection();
 		int					getServerNum() const;
 		SrvNameMap			&getSrvNameMap() const;
@@ -67,3 +67,24 @@ void		ft_to_string(std::vector<char *> &packets, std::string &request_buff);
 void		convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap);
 
 #endif
+
+// Tu stai facendo cose tipo:
+
+// usare std::string(buf) su dati binari
+
+// cercare il boundary dentro un buffer non terminato
+
+// trattare un file binario come se fosse testo UTF-8 educato
+
+// Il risultato?
+
+// std::string(buf) si ferma al primo \0
+
+// il favicon contiene zero byte
+
+// metà file sparisce nel nulla cosmico
+
+// il boundary “non esiste” perché è stato segato da un \0
+
+// Non è che il boundary non arriva.
+// È che tu lo stai cancellando con un sorriso.

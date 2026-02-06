@@ -1,9 +1,0 @@
-ERROR in test number 2
-test: tester/tests/conf/miss3.conf:
----------------------------------
-
-Starting web server ...
-|KO|ConfException in line 6: block cannot|
-|OK|ConfException in line 6: block cannot be opened|
-
----------------------------------

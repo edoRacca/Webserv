@@ -86,7 +86,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 				}
 			}
 			else
-				processRequest(it, buffer);
+				processRequest(it, buffer, bytes);
 		}
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
 		{
@@ -98,12 +98,12 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	}
 }
 
-void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buffer)
+void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buffer, int bytes)
 {
 	//FIXME - TESTING PER POST
 	Request	&request = this->_clients[(*it).fd]->getRequest();
 	// if (requestParsing(request, fileToString("test_request")) != 0)
-	if (requestParsing(*this->_clients[(*it).fd], buffer) != 0)//request
+	if (requestParsing(*this->_clients[(*it).fd], buffer, bytes) != 0)//request
 	{
 		(*it).events = POLLOUT;
 		// TODO - da settare status code corretto senza fare return

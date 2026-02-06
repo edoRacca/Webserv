@@ -48,7 +48,7 @@ typedef struct s_conf_location	t_conf_location;
 typedef std::pair<std::string, int>	IpPortPair;
 typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 
-int			requestParsing(Client &client, std::string input);
+int	requestParsing(Client &client, char *input, int bytes);
 
 //SEXTION - utils
 std::string removeWhitespaces(std::string line);

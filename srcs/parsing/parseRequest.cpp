@@ -7,12 +7,12 @@
 
 static int	lineParsing(Request &request, std::string line);
 static int	headerParsing(Request &request, std::istringstream &header);
-static int	bodyParsing(Client &client, Request &request, std::istringstream &header, std::string &body);
+static int	bodyParsing(Client &client, Request &request, std::istringstream &header, char *buf, int bytes);
 bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 bool		getNextFirstLineField(std::string &line, std::string &field);
 std::string	removeWhitespaces(std::string line);
 
-int	requestParsing(Client &client, std::string input)
+int	requestParsing(Client &client, char *input, int bytes)
 {
 	std::string			lines = "\r";
 	std::istringstream	s(input);
@@ -27,7 +27,7 @@ int	requestParsing(Client &client, std::string input)
 		return (request.getStatusCode());
 	if (headerParsing(request, s) != 0) // header parsing
 		return (request.getStatusCode());
-	if (bodyParsing(client, request, s, input) != 0)
+	if (bodyParsing(client, request, s, input, bytes) != 0)
 		return (request.getStatusCode());
 	request.setStatusCode(HTTP_OK);
 	return (0);
@@ -118,15 +118,51 @@ static int	headerParsing(Request &request, std::istringstream &header)
 }
 
 //FIXME - non va letta una nuova linea
-static int	bodyParsing(Client &client, Request &request, std::istringstream &header, std::string &body)
+static int	bodyParsing(Client &client, Request &request, std::istringstream &header, char *buf, int bytes)
 {
 	request.setBodyLen(std::atoi(request.getHeaderVal("Content-Length").c_str()));
 	//if (!line.empty())
 	//	return(request.fail(HTTP_CE_BAD_REQUEST, "No \\n between header/body"));
 	if (request.getHeaderVal("Transfer-Encoding") != "")
 		{;}//FIXME - gestire transfer encoding
-	std::cout << "bodyParsing: raw body:\n" << body << "---\nBODY_END\n---";
-	body.erase(0, header.tellg());
+	//std::cout << "bodyParsing: raw body:\n" << body << "---\nBODY_END\n---";
+	/*fare*/
+	/*
+		s = "!  !  c  i  a  o"
+			[0][1][2][3][4][5]
+		bytes = 6
+	]	c!ciao
+			
+	std::string	body = buf;amo len = 4
+	nt i;
+
+		for (i = 0; i !buftes - h_len; i++)
+			s[i] = s[i + h_len]
+		bytes -= h_len
+	*/
+
+			std::string	temp;
+			while (std::getline(header, temp, '\n'))
+			{
+				if (temp == "\r")
+					break ;
+			}
+			size_t	len = header.tellg();
+			for (int i = 0; i != len; i++)
+				buf[i] = buf[i + len];	/*
+, buff, lbytes	header
+
+	altri header
+	altri header
+	--boundary--
+	PNG
+	*/
+	while (std::getline(header, ))
+	size_t	h_len = header.tellg();
+	bytes -= (int)h_len;
+	for (int i = 0; i != bytes; i++)
+		buf[i] = buf[i + h_len];
+	//body.erase(0, header.tellg());
 	request.setBody(body);
 	switch (request.getMethodEnum())
 	{
