@@ -8,6 +8,7 @@
 		-	Body
 		-	Status code, error bool
 		-	Flags (autoindex)
+		-	SockData
 */
 
 //SECTION - method
@@ -155,4 +156,25 @@ bool	Request::getAutoIndexBool() const
 bool	Request::getRunScriptBool() const
 {
 	return (this->_run_script);
+}
+
+//SECTION - SockData
+char	*Request::getSockBuff()
+{
+	return (this->_sock_buff);
+}
+
+int		&Request::getSockBytes()
+{
+	return (this->_sock_bytes);
+}
+
+int		&Request::getSockFd()
+{
+	return (this->_sock_fd);
+}
+
+std::istringstream	&Request::getRequestStream()
+{
+	return (*this->_requestStream);
 }

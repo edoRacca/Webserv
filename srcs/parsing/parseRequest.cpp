@@ -4,10 +4,9 @@
 #include "../hpp/Request.hpp"
 #include "../hpp/Server.hpp"
 
-
 static int	lineParsing(Request &request, std::string line);
-static int	headerParsing(Request &request, std::istringstream &header);
-static int	bodyParsing(Client &client, Request &request, std::istringstream &header, char *buf, int bytes);
+static int	headerParsing(Request &request);
+static int	bodyParsing(Request &request);
 bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 bool		getNextFirstLineField(std::string &line, std::string &field);
 std::string	removeWhitespaces(std::string line);
@@ -15,19 +14,19 @@ std::string	removeWhitespaces(std::string line);
 int	requestParsing(Client &client, char *input, int bytes)
 {
 	std::string			lines = "\r";
-	std::istringstream	s(input);
+	std::istringstream	stream(input);
 	Request				&request = client.getRequest();
 
-	std::remove("MEGA_RAYQUAZA");
+	request.setParsingData(stream, client.getSockFd(), bytes, input);
 	while (lines == "\r")//NOTE - linee vuote iniziali accettate da RFC
 	{
-		std::getline(s, lines, '\n');
+		std::getline(stream, lines, '\n');
 	}
 	if (lineParsing(request, lines) != 0) // first line parsing
 		return (request.getStatusCode());
-	if (headerParsing(request, s) != 0) // header parsing
+	if (headerParsing(request) != 0) // header parsing
 		return (request.getStatusCode());
-	if (bodyParsing(client, request, s, input, bytes) != 0)
+	if (bodyParsing(request) != 0)
 		return (request.getStatusCode());
 	request.setStatusCode(HTTP_OK);
 	return (0);
@@ -76,14 +75,14 @@ static int	lineParsing(Request &request, std::string line)
 	richiesta di connessione e si assicura che ci siano tutti i membri necessari in
 	in base ai metodi che dobbiamo gestire -GET -POST -DELETE -HEAD
 */
-static int	headerParsing(Request &request, std::istringstream &header)
+static int	headerParsing(Request &request)
 {
 	std::string		line;
 	std::string		key;
 	size_t			sep;
 
 	request.resetRequest();
-	while (std::getline(header, line) && line != "\r") // da trimmare \r
+	while (std::getline(request.getRequestStream(), line) && line != "\r") // da trimmare \r
 	{
 //SECTION - Key
 		if (line[0] == '\t')
@@ -117,34 +116,42 @@ static int	headerParsing(Request &request, std::istringstream &header)
 	return (0);
 }
 
-//FIXME - non va letta una nuova linea
-static int	bodyParsing(Client &client, Request &request, std::istringstream &header, char *buf, int bytes)
+int	TEMPpostMethod(Request &request)
 {
+	size_t		h_len;
+	std::string	line;
+	size_t		header_leftover[2];
+
+	header_leftover[0] = request.getRequestStream().tellg();
+	while (std::getline(request.getRequestStream(), line, '\n'))
+	{
+		if (line == "\r")
+			break ;
+	}
+	header_leftover[1] = request.getRequestStream().tellg();
+	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
+	h_len = request.getRequestStream().tellg();
+	request.getSockBytes() -= (int)h_len;
+	for (int i = 0; i != request.getSockBytes(); i++)
+		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
+	return (ft_recv(request.getSockFd(), request, request.getSockBuff(), request.getSockBytes()));
+}
+
+//FIXME - non va letta una nuova linea
+static int	bodyParsing(Request &request)
+{
+	std::string	body;
+
 	request.setBodyLen(std::atoi(request.getHeaderVal("Content-Length").c_str()));
 	if (request.getHeaderVal("Transfer-Encoding") != "")
 		{;}//FIXME - gestire transfer encoding
-	std::string	body = buf;
-	body.erase(0, header.tellg());
+	if (request.getMethodEnum() != POST)
+		std::getline(request.getRequestStream(), body, '\0');
 	request.setBody(body);
-	size_t	h_len;
-	std::string	line;
-	size_t	header_leftover[2];
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			header_leftover[0] = header.tellg();
-			while (std::getline(header, line, '\n'))
-			{
-				if (line == "\r")
-					break ;
-			}
-			header_leftover[1] = header.tellg();
-			request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
-			h_len = header.tellg();
-			bytes -= (int)h_len;
-			for (int i = 0; i != bytes; i++)
-				buf[i] = buf[i + h_len];
-			return (ft_recv(client.getSockFd(), request, buf, bytes));
+			return (TEMPpostMethod(request));
 		case GET :
 			return (bodyChecker(request, body, true));
 		case DELETE :

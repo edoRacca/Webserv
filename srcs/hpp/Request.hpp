@@ -40,25 +40,29 @@ enum	e_methods
 class Request
 {
 	private:
-		std::string		_validmethods[METH_NUM];//array di metodi validi
-		headermap		_header;//std::map<key, value> relativi a headers
-		std::string		_method;
-		std::string 	_url;
-		std::string 	_url_orig;
-		std::string 	_http_version;//sempre uguale a HTTP/1.1
-		std::string		_body;
-		std::string		_body_type;
-		IpPortPair		_ipport;
-		e_http_codes	_status_code;
-		size_t			_max_method_length;
-		size_t			_body_len;
-		bool			_error;
-		bool			_autoindex;
-		bool			_run_script;
+		std::string			_validmethods[METH_NUM];//array di metodi validi
+		headermap			_header;//std::map<key, value> relativi a headers
+		std::istringstream 	*_requestStream;
+		std::string			_method;
+		std::string 		_url;
+		std::string 		_url_orig;
+		std::string 		_http_version;//sempre uguale a HTTP/1.1
+		std::string			_body;
+		std::string			_body_type;
+		IpPortPair			_ipport;
+		e_http_codes		_status_code;
+		size_t				_max_method_length;
+		size_t				_body_len;
+		char				*_sock_buff;
+		int					_sock_bytes;
+		int					_sock_fd;
+		bool				_error;
+		bool				_autoindex;
+		bool				_run_script;
 
-		int				_checkPost(void);
-		int				_checkGet(void);
-		int				_checkDelete(void);
+		int					_checkPost(void);
+		int					_checkGet(void);
+		int					_checkDelete(void);
 
 	public:
 	//ANCHOR - Request.cpp
@@ -81,23 +85,28 @@ class Request
 		void			resetRequest(void);
 
 	//ANCHOR - getters.cpp
-		std::string		getValidMethod(int idx) const;
-		std::string		getMethod() const;
-		int				getMethNum() const;
-		e_methods		getMethodEnum() const;
-		std::string 	getUrl() const;
-		std::string 	getUrlOriginal() const;
-		std::string 	getHttpVersion() const;
-		headermap		&getHeader();
-		std::string		getHeaderVal(std::string key);
-		IpPortPair		&getHost();
-		std::string 	getBody() const;
-		size_t			getBodyLen() const;
-		std::string 	getBodyType() const;
-		e_http_codes	getStatusCode() const;
-		bool			getDnsErrorBool() const;
-		bool			getAutoIndexBool() const;
-		bool			getRunScriptBool() const;
+		std::string					getValidMethod(int idx) const;
+		std::string					getMethod() const;
+		int							getMethNum() const;
+		e_methods					getMethodEnum() const;
+		std::string 				getUrl() const;
+		std::string 				getUrlOriginal() const;
+		std::string 				getHttpVersion() const;
+		headermap					&getHeader();
+		std::string					getHeaderVal(std::string key);
+		IpPortPair					&getHost();
+		std::string 				getBody() const;
+		size_t						getBodyLen() const;
+		std::string 				getBodyType() const;
+		e_http_codes				getStatusCode() const;
+		bool						getDnsErrorBool() const;
+		bool						getAutoIndexBool() const;
+		bool						getRunScriptBool() const;
+		char						*getSockBuff();
+		int							&getSockBytes();
+		int							&getSockFd();
+		std::istringstream	&getRequestStream();
+		
 	//ANCHOR - setters.cpp
 		void			setMethod(std::string method);
 		void 			setUrl(std::string);
@@ -108,6 +117,7 @@ class Request
 		void 			setBodyType(std::string type);
 		void			setStatusCode(e_http_codes status_code);
 		void			setRequestErrorBool(bool error);
+		void			setParsingData(std::istringstream &s, int fd, int bytes, char *buf);
 	//ANCHOR - print.cpp
 		void			printHeader(void);
 };

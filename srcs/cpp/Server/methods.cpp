@@ -67,3 +67,8 @@ static void execute_delete(Client &client, std::string &body, std::fstream *file
 	}
 	body = file_opener(*file, "delete_method: cannot open file on error");
 }
+
+int	Server::postMethod()
+{
+	return (0);
+}

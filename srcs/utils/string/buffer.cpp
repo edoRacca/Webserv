@@ -72,7 +72,7 @@ int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 	body.insert(body.begin(), input, input + bytes_first_recv);
 	//SECTION - recv
 	std::remove("newfile.ico");
-	std::ofstream		ofile("newfilw.ico", std::ios_base::binary);
+	std::ofstream		ofile("newfile.ico", std::ios_base::binary);
 	while (left)
 	{
 		bytes = recv(fd, buf, 2048, MSG_DONTWAIT);

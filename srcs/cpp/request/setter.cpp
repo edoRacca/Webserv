@@ -7,6 +7,7 @@
 		-	Headers
 		-	Body
 		-	Status code, error bool
+		-	sockData
 */
 
 //SECTION - method
@@ -85,4 +86,14 @@ void	Request::setRequestErrorBool(bool error)
 	this->_error = error;
 	if (this->_error)
 		DBG_MSG("SERVER NOT FOUND\n");
+}
+
+//SECTION - sockData
+
+void	Request::setParsingData(std::istringstream &s, int fd, int bytes, char *buf)
+{
+	this->_requestStream = &s;
+	this->_sock_fd = fd;
+	this->_sock_bytes = bytes;
+	this->_sock_buff = buf;
 }
