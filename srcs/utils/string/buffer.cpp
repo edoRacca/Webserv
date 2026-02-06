@@ -60,12 +60,9 @@ void	print_bin(std::ofstream &ofile, const char *content, size_t size)
 
 int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 {
-	std::cout << "ft_recv, fd is: " << fd << "\n";
-	// std::cout << "INCHINATEVI DINANZI A MEGA GABIBBO " << CHARIZARD << "\n";
 	if (fd < 0)
 		return (-69);
 
-	size_t				tot = 0;
 	size_t				bodyLength = request.getBodyLen() - bytes_first_recv;
 	int					left = bodyLength;
 	char				buf[2048] = {0};
@@ -73,19 +70,14 @@ int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 	int 				bytes;
 
 	body.insert(body.begin(), input, input + bytes_first_recv);
-	(void)tot;
 	//SECTION - recv
-	std::remove("PORNO_EMMA_WATSON.ico");
-	std::ofstream		ofile("PORNO_EMMA_WATSON.ico", std::ios_base::binary);
+	std::remove("newfile.ico");
+	std::ofstream		ofile("newfilw.ico", std::ios_base::binary);
 	while (left)
 	{
 		bytes = recv(fd, buf, 2048, MSG_DONTWAIT);
 		if (bytes == -1)
 		{
-			//print_file("PORNO_EMMA_WATSON.ico", body);
-			//print_in_file = false;
-			//perror("failed because ");
-			//std::cout << "errno is " << errno << "\n";
 			std::cout << "Continue: left is " << left << "\n";
 			break;
 			// continue;
@@ -111,54 +103,6 @@ int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 	exit(0);
 	return (69 - 69);
 }
-
-
-// --------------------------cNMUpdzlv0oCW51YRqJn7s--
-
-
-/*
-int	ft_recv(int fd, std::vector<char *> &packets, size_t packet_size)
-{
-	int		bytes = 1;
-	size_t	total = 0;
-	size_t	i = 0;
-
-	if (fd == -1)
-		return (-1);
-	alloc_packets(packets, 0, packet_size);
-	bytes = recv(fd, packets[0], packet_size, 0); 
-	while (1)
-	{
-		if (bytes < 0)
-			return (-1);
-		total += bytes;
-		std::string pck = packets[i];
-		// std::cout << "find boundary: " << (pck.find("--") == std::string::npos ? "not found" : "found") << std::endl;
-		// boundary=--------------abc
-		// -- + --------------abc
-		// -- + --------------abc + --
-		if (pck.find("Content-Length") != std::string::npos)
-		{
-			size_t contlen = std::atol(pck.substr(pck.find("Content-Length")).c_str());
-			std::cout << "SIZE: " << contlen << std::endl << std::endl;
-		}
-		// print_file("REQUEST", "------BEGIN-----\n");
-		print_file("REQUEST", packets[i]);
-		// print_file("REQUEST", "\n------END-----\n");
-		if ((size_t)bytes <= 0)
-			break ;
-		alloc_packets(packets, ++i, packet_size);
-		bytes = recv(fd, packets[i], packet_size, 0);
-	}
-	packets[i][bytes] = 0;
-	++i;
-	if (i < packets.size() && packets[i] != NULL)
-		packets[i][0] = 0;
-	print_packets(packets, total);
-	print_file("REQUEST", "---DELIMITATORE LEGGIBILE DA UN UMANO---");
-	return (total);
-}
-*/
 
 /*void	ft_to_string(std::vector<char *> &packets, std::string &request_buff)
 {

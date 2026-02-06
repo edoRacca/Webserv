@@ -121,40 +121,8 @@ static int	headerParsing(Request &request, std::istringstream &header)
 static int	bodyParsing(Client &client, Request &request, std::istringstream &header, char *buf, int bytes)
 {
 	request.setBodyLen(std::atoi(request.getHeaderVal("Content-Length").c_str()));
-	//if (!line.empty())
-	//	return(request.fail(HTTP_CE_BAD_REQUEST, "No \\n between header/body"));
 	if (request.getHeaderVal("Transfer-Encoding") != "")
 		{;}//FIXME - gestire transfer encoding
-	//std::cout << "bodyParsing: raw body:\n" << body << "---\nBODY_END\n---";
-	/*fare*/
-	/*
-		s = "!  !  c  i  a  o"
-			[0][1][2][3][4][5]
-		bytes = 6
-	]	c!ciao
-			
-	std::string	body = buf;amo len = 4
-	nt i;
-
-		for (i = 0; i !buftes - h_len; i++)
-			s[i] = s[i + h_len]
-		bytes -= h_len
-	*/
-/*
-, buff, lbytes	header
-
-	altri header
-	altri header
-	--boundary--
-	PNG
-	*/
-// Content-Disposition: form-data; name="file"; filename="favicon.ico"
-// Content-Type: application/octet-stream\r\n
-// \r\n
-// �PNG
-// 
-	std::remove("REQUEST");
-	print_bin("REQUEST", buf, bytes);
 	std::string	body = buf;
 	body.erase(0, header.tellg());
 	request.setBody(body);
@@ -173,12 +141,10 @@ static int	bodyParsing(Client &client, Request &request, std::istringstream &hea
 			header_leftover[1] = header.tellg();
 			request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
 			h_len = header.tellg();
-			bytes -= (int)h_len; //161 -> left
-			//request.setBodyLen(request.getBodyLen() - )
+			bytes -= (int)h_len;
 			for (int i = 0; i != bytes; i++)
 				buf[i] = buf[i + h_len];
 			return (ft_recv(client.getSockFd(), request, buf, bytes));
-			// return (bodyChecker(request, body, false));
 		case GET :
 			return (bodyChecker(request, body, true));
 		case DELETE :
