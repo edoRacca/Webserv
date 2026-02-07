@@ -53,57 +53,6 @@
 //     return 0;
 // }
 
-void	print_bin(std::ofstream &ofile, const char *content, size_t size)
-{
-	ofile.write(content, size);
-}
-
-int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
-{
-	if (fd < 0)
-		return (-69);
-
-	size_t				bodyLength = request.getBodyLen() - bytes_first_recv;
-	int					left = bodyLength;
-	char				buf[2048] = {0};
-	std::vector<char>	body;
-	int 				bytes;
-
-	body.insert(body.begin(), input, input + bytes_first_recv);
-	//SECTION - recv
-	std::remove("newfile.ico");
-	std::ofstream		ofile("newfile.ico", std::ios_base::binary);
-	while (left)
-	{
-		bytes = recv(fd, buf, 2048, MSG_DONTWAIT);
-		if (bytes == -1)
-		{
-			std::cout << "Continue: left is " << left << "\n";
-			break;
-			// continue;
-		}
-		if (bytes == 0)
-		{
-			std::cout << "connessione chiusa\n";
-			break ;
-		}
-		if (left < 0)
-		{
-			std::cout << "muori JOJO! \n";
-			std::abort();
-		}
-		left -= bytes;
-		body.insert(body.end(), buf, buf + bytes);
-	}
-	//SECTION - print result
-		// print_file("PORNO_EMMA_WATSON.ico", body[i]);
-	ofile.write(body.data(), body.size());
-	//print_file("PORNO_EMMA_WATSON.ico", body.data());
-	std::cout << "MEGA GABIBBO\n";
-	exit(0);
-	return (69 - 69);
-}
-
 /*void	ft_to_string(std::vector<char *> &packets, std::string &request_buff)
 {
 	request_buff.clear();

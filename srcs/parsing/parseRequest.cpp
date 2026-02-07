@@ -10,6 +10,7 @@ static int	bodyParsing(Request &request);
 bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 bool		getNextFirstLineField(std::string &line, std::string &field);
 std::string	removeWhitespaces(std::string line);
+int			executePost(Request &request);
 
 int	requestParsing(Client &client, char *input, int bytes)
 {
@@ -116,27 +117,6 @@ static int	headerParsing(Request &request)
 	return (0);
 }
 
-int	TEMPpostMethod(Request &request)
-{
-	size_t		h_len;
-	std::string	line;
-	size_t		header_leftover[2];
-
-	header_leftover[0] = request.getRequestStream().tellg();
-	while (std::getline(request.getRequestStream(), line, '\n'))
-	{
-		if (line == "\r")
-			break ;
-	}
-	header_leftover[1] = request.getRequestStream().tellg();
-	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
-	h_len = request.getRequestStream().tellg();
-	request.getSockBytes() -= (int)h_len;
-	for (int i = 0; i != request.getSockBytes(); i++)
-		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
-	return (ft_recv(request.getSockFd(), request, request.getSockBuff(), request.getSockBytes()));
-}
-
 //FIXME - non va letta una nuova linea
 static int	bodyParsing(Request &request)
 {
@@ -151,7 +131,7 @@ static int	bodyParsing(Request &request)
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			return (TEMPpostMethod(request));
+			return (executePost(request));
 		case GET :
 			return (bodyChecker(request, body, true));
 		case DELETE :

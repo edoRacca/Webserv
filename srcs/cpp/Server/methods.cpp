@@ -3,6 +3,14 @@
 static void execute_delete(Client &client, std::string &body, std::fstream *file);
 static int	check_delete(Client &client, std::string &body, Server &srv, std::fstream *file);
 
+/*NOTE - summary
+
+	-	DELETE
+	-	POST
+*/
+
+//SECTION - DELETE
+
 void	Server::deleteMethod(Client &client, std::string &body, std::fstream *file)
 {
 	if (check_delete(client, body, *this, file) != 0)
@@ -68,7 +76,75 @@ static void execute_delete(Client &client, std::string &body, std::fstream *file
 	body = file_opener(*file, "delete_method: cannot open file on error");
 }
 
+//SECTION - POST
+
 int	Server::postMethod()
+{//questa funzione verra chiamata da runMethod
+//semplicemente sceglie quale html displayare
+//in base allo status code della richiesta
+	return (0);
+}
+
+static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv);
+
+int	executePost(Request &request)
 {
+	size_t		h_len;
+	std::string	line;
+	size_t		header_leftover[2];
+
+	header_leftover[0] = request.getRequestStream().tellg();
+	while (std::getline(request.getRequestStream(), line, '\n'))
+	{
+		if (line == "\r")
+			break ;
+	}
+	header_leftover[1] = request.getRequestStream().tellg();
+	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
+	h_len = request.getRequestStream().tellg();
+	request.getSockBytes() -= (int)h_len;
+	for (int i = 0; i != request.getSockBytes(); i++)
+		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
+	return (ft_recv(request.getSockFd(), request, request.getSockBuff(), request.getSockBytes()));
+}
+
+static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
+{
+	size_t				bodyLength = request.getBodyLen() - bytes_first_recv;
+	int					left = bodyLength;
+	char				buf[2048] = {0};
+	std::vector<char>	body;
+	int 				bytes;
+
+	if (fd < 0)
+		return (-69);
+	body.insert(body.begin(), input, input + bytes_first_recv);
+	//SECTION - recv
+	std::remove("newfile.ico");
+	std::ofstream	ofile("newfile.ico", std::ios_base::binary);
+	while (left)
+	{
+		bytes = recv(fd, buf, 2048, MSG_DONTWAIT);
+		if (bytes == -1)
+		{//non dovrebbe entrare qui, da capire se fare break o exit
+			std::cout << "Continue: left is " << left << "\n";
+			break;
+			// continue;
+		}
+		if (bytes == 0)
+		{//FIXME - gestire se client chiude connessione mentre leggiamo
+			std::cout << "connessione chiusa\n";
+			break ;
+		}
+		if (left < 0)
+		{
+			std::cout << "muori JOJO! \n";
+			std::abort();
+		}
+		left -= bytes;
+		body.insert(body.end(), buf, buf + bytes);
+	}
+	//SECTION - print result
+	ofile.write(body.data(), body.size());
 	return (0);
 }
