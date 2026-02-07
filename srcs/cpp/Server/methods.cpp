@@ -82,12 +82,42 @@ static void execute_delete(Client &client, std::string &body, std::fstream *file
 /*
 	1)	decidere dove buttare roba
 	2)	fare hT(ETTE)ml
-*//*
+*/
 void	Server::postMethod(Client &client, std::string &body, std::fstream *file)
 {
-	
-	
-}*/
+	Request	&request = client.getRequest();
+
+	(void)body, (void)file;
+	std::cout << "Location: " << client.getLocConf().root << std::endl;
+	std::cout << "Location2: " << client.getRequest().getUrl() << std::endl;
+	std::cout << "Content-Type: " << request.getHeader()["Content-Type"] << std::endl;
+	std::cout << "Content-Disposition: " << request.getHeader()["Content-Disposition"] << std::endl;
+	if (request.checkKey("Content-Type") && request.getHeader()["Content-Type"].find("multipart/form-data") != std::string::npos)
+	{
+		std::string file;
+		std::string val = request.getHeader()["Content-Disposition"];
+		if (val.find("filename=\"") != std::string::npos && val.rbegin()[0] == '"')
+		{
+			file = val.substr(val.find("filename=\"") + 10, val.find_last_of('\"'));
+			if (file.rbegin()[0] == '\"')
+				file.erase(file.length() - 1, 1);				
+			std::cout << "file: " << file << std::endl;
+		}
+		else
+			request.fail(HTTP_CE_BAD_REQUEST, "Bad \"Content-Disposition\" header format");
+		if (!client.getLocConf().root.empty())
+			file = client.getLocConf().root + file;
+		else
+			file = client.getSrvConf().root + file;
+		std::cout << "file path: " << file << std::endl;
+		if (file_checker(file))
+			request.fail(HTTP_CE_CONFLICT, "File already exists!");
+		std::ofstream	ofile(file.c_str(), std::ios_base::binary);
+		if (ofile.fail())
+			std::cout << "Error opening file\n";
+		ofile.write(request.getBinBody().data(), request.getBinBody().size());
+	}
+}
 
 static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv);
 int			headerParsing(Request &request, bool reset);
@@ -123,20 +153,14 @@ static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 	if (fd < 0)
 		return (-69);
 	body.insert(body.begin(), input, input + bytes_first_recv);
-	// if (request.checkKey("Content-Type") && request.getHeader()["Content-Type"] == "multipart/form-data")
-	// {
-	// 	std::ofstream	ofile("newfile.ico", std::ios_base::binary);
-
-	// }
 	//SECTION - recv
 	while (left)
 	{
-		bytes = recv(fd, buf, 2048, MSG_DONTWAIT);
+		bytes = recv(fd, buf, 2048, 0);
 		if (bytes == -1)
-		{//non dovrebbe entrare qui, da capire se fare break o exit
+		{
 			std::cout << "Error in ft_recv by recv, left: " << left << "\n";
 			break;
-			// continue;
 		}
 		if (bytes == 0)
 		{//FIXME - gestire se client chiude connessione mentre leggiamo
@@ -151,7 +175,5 @@ static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 		left -= bytes;
 		body.insert(body.end(), buf, buf + bytes);
 	}
-	//SECTION - print result
-	// ofile.write(body.data(), body.size());
 	return (69 - 69);
 }

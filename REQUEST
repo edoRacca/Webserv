@@ -2,7 +2,12 @@ POST / HTTP/1.1
 Host: localhost:9020
 User-Agent: curl/8.18.0-DEV
 Accept: */*
-Content-Length: 24
-Content-Type: application/x-www-form-urlencoded
+Content-Length: 247148
+Content-Type: multipart/form-data; boundary=------------------------QppZP7b5t3lPqZ7RKWXbTZ
 
-Ciao minestra di fagioli
+--------------------------QppZP7b5t3lPqZ7RKWXbTZ
+Content-Disposition: form-data; name="file"; filename="test.ico"
+Content-Type: application/octet-stream
+
+‰PNG
+

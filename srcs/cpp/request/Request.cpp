@@ -103,18 +103,20 @@ int	Request::_checkDelete(void)
 	return (0);
 }
 
+//torna 0 se non trova
+//altrimenti 1
 bool	Request::checkKey(std::string key)
 {
 	if (this->_header.find(key) == this->_header.end())
-		return (1);
-	return (0);
+		return (false);
+	return (true);
 }
 
 bool	Request::checkVal(std::string key)
 {
 	// std::cout << "\033[33mChecking key:\t" << "\033[0m" << key << "\n";
-	if (checkKey(key) == 1)
-		return (1);
+	if (checkKey(key) == false)
+		return (false);
 	return (this->_header[key].empty());
 	// std::cout << key << "\033[32m è stata riempita!\n\033[0m";
 }

@@ -118,7 +118,10 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 		return ;
 	}
 	if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
-		request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
+	{
+		if (!(request.getHeaderVal("Content-Type").find("multipart/form-data") != std::string::npos && request.getMethodEnum() == POST))
+			request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
+	}
 	t_conf_server	srv = (*this->_srvnamemap)[request.getHost()];
 	this->_clients[(*it).fd]->getSrvConf() = srv;
 	t_conf_location	*loc = request.findRightLocation(&srv);
@@ -151,7 +154,6 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 		// if (url.rbegin()[0] != '/')
 			// std::cout << "passed a file in choose_file with no extension!" << std::endl;
 	}
-		// std::cout << (client.getRequest().getAutoIndexBool() == true ? "autoindex true\n" : "autoindex off\n");
 	if (client.getRequest().getAutoIndexBool() && valid_directory(url))
 		createAutoindex(client, body);
 	else
@@ -164,23 +166,24 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	return (createHtml(client, body));
 }
 
-void	Server::runMethod(Client &client, std::string &body, std::fstream &file)
+void	Server::runMethod(Client &client, std::string &resp_body, std::fstream &file)
 {
-	if (body.empty() == false)
+	if (resp_body.empty() == false)
 		return ;
 	switch (client.getRequest().getMethodEnum())
 	{
 		case GET:
 			if (client.getRequest().getRunScriptBool() == true)
-				run_script(*this, client, body);
+				run_script(*this, client, resp_body);
 			else
-				body = file_opener(file, "runMethod GET: Cannot open file");
+				resp_body = file_opener(file, "runMethod GET: Cannot open file");
 			break ;
 		case DELETE:
-			this->deleteMethod(client, body, &file);
+			this->deleteMethod(client, resp_body, &file);
 			break ;
 		case POST:
 			//parseData
+			this->postMethod(client, resp_body, &file);
 			//se script lancia lo script
 			//funzione che gestisce POST
 			break ;

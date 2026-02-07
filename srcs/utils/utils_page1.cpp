@@ -125,6 +125,18 @@ std::string	file_opener(std::fstream &file)
 {
 	return (file_opener(file, "cannot open file"));
 }
+
+bool	file_checker(std::string filename)
+{
+	std::fstream file(filename);
+
+	if (file.fail())
+	{
+		return (false);
+	}
+	else
+		return (true);
+}
 //
 //     /{  :; http    xvzv   dsdcsdf 
 // {

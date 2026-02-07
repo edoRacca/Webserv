@@ -52,9 +52,11 @@ bool	Request::setHeaderVal(std::string key, std::string val)
 {
 	// std::cout << "\033[33mNEW:" COLOR_RESET << key << " " << val << "\n";
 	if (key == "Content-Length" && !charFinder(val, std::isdigit))
-		return (1);
+		return (true);
+	if (checkKey(key) == true)
+		return (false);
 	this->_header[key] = val;
-	return (0);
+	return (false);
 }
 
 //SECTION - body
