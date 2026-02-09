@@ -11,6 +11,7 @@ bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 bool		getNextFirstLineField(std::string &line, std::string &field);
 std::string	removeWhitespaces(std::string line);
 int			executePost(Request &request);
+void	print_bin(std::string filename, char *bin_data, size_t len);
 
 int	requestParsing(Client &client, char *input, int bytes)
 {
@@ -19,6 +20,8 @@ int	requestParsing(Client &client, char *input, int bytes)
 	Request				&request = client.getRequest();
 
 	request.setParsingData(stream, client.getSockFd(), bytes, input);
+	print_file("REQUEST", "parseRequest:\n");
+	print_file("REQUEST", input);
 	while (lines == "\r")//NOTE - linee vuote iniziali accettate da RFC
 	{
 		std::getline(stream, lines, '\n');

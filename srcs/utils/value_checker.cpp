@@ -20,7 +20,7 @@ int	valid_ip_address(std::string addr)
 	if (dots != 3)
 		return (false);
 	for (int i = 4; i; i--)
-	{
+	{//FIXME - BLOCCO per IP che non iniziano con 127
 		ip = std::atoi(addr.c_str());
 		if ((i == 4 && ip != 127) || ip > UINT8_MAX || (ip != 0 && addr[0] == '0'))
 			return (false);

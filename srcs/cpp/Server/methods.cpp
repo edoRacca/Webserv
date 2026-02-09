@@ -92,7 +92,7 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 	// NOTE - trova file e fa upload in base alla location
 	if (request.checkKey("Content-Type") && request.getHeader()["Content-Type"].find("multipart/form-data") != std::string::npos)
 	{
-		std::string file;
+		std::string file("pippo");
 		std::string val = request.getHeader()["Content-Disposition"];
 		// std::cout << "VAL: " << val << std::endl;
 		// std::cout << request << std::endl;
@@ -125,20 +125,51 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 	}
 }
 
+void	print_bin(std::string filename, char *bin_data, size_t len);
+
+/*
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,\\**;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+
+header nome file
+header pippo
+
+header gabibbo
+*/
 int	executePost(Request &request)
 {
 	size_t		h_len;
 	std::string	line;
 	size_t		header_leftover[2];
 
-	std::remove("REQUEST");
-	print_file("REQUEST", request.getSockBuff());
+	//std::remove("REQUEST_post");
 	header_leftover[0] = request.getRequestStream().tellg();
-	std::getline(request.getRequestStream(), line, '\n');
+	while (!std::getline(request.getRequestStream(), line, '\n'))
+	{
+		request.getSockBytes() = recv(request.getSockFd(), request.getSockBuff(), 2048, 0);
+		request.getRequestStream().str(request.getSockBuff());
+		request.getRequestStream().clear();
+		header_leftover[0] = 0;
+	}
 	headerParsing(request, false);
 	header_leftover[1] = request.getRequestStream().tellg();
 	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
-	h_len = request.getRequestStream().tellg();
+	h_len = header_leftover[1];
 	request.getSockBytes() -= (int)h_len;
 	for (int i = 0; i != request.getSockBytes(); i++)
 		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
@@ -175,6 +206,7 @@ static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
 			std::cout << "muori JOJO! \n";
 			std::cout << "abort\n";
 		}
+		print_file("REQUEST_post", buf);
 		left -= bytes;
 		body.insert(body.end(), buf, buf + bytes);
 	}

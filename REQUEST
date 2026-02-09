@@ -1,5 +1,81 @@
-POST /upload/success_upload.html HTTP/1.1
-Host: localhost:9020
+parseRequest:
+GET /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+
+parseRequest:
+GET /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+
+parseRequest:
+GET /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+
+parseRequest:
+GET /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
 Connection: keep-alive
 Content-Length: 3692
 Cache-Control: max-age=0
@@ -8,8 +84,8 @@ sec-ch-ua-mobile: ?0
 sec-ch-ua-platform: "Linux"
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-Origin: http://localhost:9020
-Content-Type: multipart/form-data; boundary=----WebKitFormBoundarytP3bgMO8AjuGS5AN
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary5c0i9G57b0tQy7Vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
 Sec-GPC: 1
 Accept-Language: en-US,en;q=0.5
@@ -17,44 +93,260 @@ Sec-Fetch-Site: same-origin
 Sec-Fetch-Mode: navigate
 Sec-Fetch-User: ?1
 Sec-Fetch-Dest: document
-Referer: http://localhost:9020/upload/success_upload.html
+Referer: http://localhost:9021/upload/
 Accept-Encoding: gzip, deflate, br, zstd
 
-------WebKitFormBoundarytP3bgMO8AjuGS5AN
-Content-Disposition: form-data; name="file"; filename="script.sh"
-Content-Type: application/x-shellscript
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 3692
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary5c0i9G57b0tQy7Vn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-# #!/bin/bash
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 3692
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary81us2BRsvkzbtosj
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-set -e
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 3692
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryqDsrwZOnYjCNTNj8
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-# Directory necessarie
-mkdir -p /var/lib/mysql /var/run/mysqld
-chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+parseRequest:
+GET /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
 
-# Se MariaDB non Ã¨ inizializzato
-if [ ! -d /var/lib/mysql/mysql ]; then
-    echo ">> Inizializzazione MariaDB (prima installazione)..."
-    mysqld --initialize-insecure --user=mysql --datadir=/var/lib/mysql
-fi
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 3692
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarycNPWCwM2N2UuJMbU
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-# Se ci sono variabili da configurare, genero init.sql
-INIT_FILE=""
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 3692
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarycNPWCwM2N2UuJMbU
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-if [ -n "$MYSQL_ROOT_PASSWORD" ] || [ -n "$MYSQL_DATABASE" ] || [ -n "$MYSQL_USER" ]; then
-    INIT_FILE="/tmp/init.sql"
-    echo "SET @@SESSION.SQL_LOG_BIN=0;" > "$INIT_FILE"
+parseRequest:
+GET /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
 
-    # Password root
-    if [ -n "$MYSQL_ROOT_PASSWORD" ]; then
-        echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';" >> "$INIT_FILE"
-    fi
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 3692
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryXQy71G2eADSgOe71
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-    # Database
-    if [ -n "$MYSQL_DATABASE" ]; then
-        echo "CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;" >> "$INIT_FILE"
-    fi
+parseRequest:
+POST /upload/ HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 247189
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Brave";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:9021
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryhHKNw3omakPB6BXj
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
 
-    # Utente applicazione
-    if [ -n "$MYSQL_USER" ] && [ -n "$MYSQL_PASSWORD" ]; then
-        echo "CREATE 
+parseRequest:
+POST / HTTP/1.1
+Host: localhost:9021
+User-Agent: curl/8.18.0-DEV
+Accept: */*
+Content-Length: 247205
+Content-Type: multipart/form-data; boundary=------------------------7WoWQDl8JoEKUUuQU74itJ
+
+--------------------------7WoWQDl8JoEKUUuQU74itJ
+Content-Disposition: form-data; name="file"; filename="favicon.ico"
+Content-Type: application/octet-stream
+
+‰PNG
+
+parseRequest:
+POST / HTTP/1.1
+Host: localhost:9021
+User-Agent: curl/8.18.0-DEV
+Accept: */*
+Content-Length: 247259
+Content-Type: multipart/form-data; boundary=------------------------huJ286VHG7iTTUgY5jePAK
+
+--------------------------huJ286VHG7iTTUgY5jePAK
+Content-Disposition: form-data; name="file"; filename="favicon.ico"
+Content-Type: application/octet-stream
+
+‰PNG
+
+parseRequest:
+POST / HTTP/1.1
+Host: localhost:9021
+User-Agent: curl/8.18.0-DEV
+Accept: */*
+Content-Length: 247313
+Content-Type: multipart/form-data; boundary=------------------------3VXnDzrE0szXwURhyoANxz
+
+--------------------------3VXnDzrE0szXwURhyoANxz
+Content-Disposition: form-data; name="file"; filename="favicon.ico"
+Content-Type: application/octet-stream
+
+‰PNG
+
+parseRequest:
+POST / HTTP/1.1
+Host: localhost:9021
+User-Agent: curl/8.18.0-DEV
+Accept: */*
+Content-Length: 247367
+Content-Type: multipart/form-data; boundary=------------------------xpeOQsCGc7b2k03clT7rUw
+
+--------------------------xpeOQsCGc7b2k03clT7rUw
+Content-Disposition: form-data; name="file"; filename="favicon.ico"
+Content-Type: application/octet-stream
+
+‰PNG
+

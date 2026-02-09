@@ -49,6 +49,18 @@ void	get_conf_path(int ac, char **av, std::string &path)
 		throw std::runtime_error("\033[1;31mToo many configuration files\nPlease pass only one!\033[0m");
 }
 
+void	print_bin(std::string filename, char *bin_data, size_t len)
+{
+	std::fstream	stream(filename.c_str(), std::ios_base::app | std::ios_base::binary);
+
+	if (stream.fail())
+	{
+		std::abort();
+		return (std::cerr << "cannot open " + filename + "\n", (void)0);
+	}
+	stream.write(bin_data, len);
+}
+
 int main(int ac, char **av, const char **env)
 {
 	std::string	conf_path;

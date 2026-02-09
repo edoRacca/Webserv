@@ -90,5 +90,4 @@ void	print_file(std::string filename, T content)
 	stream << content;
 }
 
-
 #endif
