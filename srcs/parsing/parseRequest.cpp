@@ -16,16 +16,17 @@ void	print_bin(std::string filename, char *bin_data, size_t len);
 int	requestParsing(Client &client, char *input, int bytes)
 {
 	std::string			lines = "\r";
-	std::istringstream	stream(input);
 	Request				&request = client.getRequest();
-
-	request.setParsingData(stream, client.getSockFd(), bytes, input);
+	std::istringstream *stream = &request.getRequestStream();
+	
+	stream->str(input);
+	if (stream->fail()){;}
+		//500 server error out of memory
+	request.setParsingData(client.getSockFd(), bytes, input);
 	print_file("REQUEST", "parseRequest:\n");
 	print_file("REQUEST", input);
 	while (lines == "\r")//NOTE - linee vuote iniziali accettate da RFC
-	{
-		std::getline(stream, lines, '\n');
-	}
+		std::getline(*stream, lines, '\n');
 	if (lineParsing(request, lines) != 0) // first line parsing
 		return (request.getStatusCode());
 	if (headerParsing(request, true) != 0) // header parsing
@@ -135,7 +136,8 @@ static int	bodyParsing(Request &request)
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			return (executePost(request));
+			request.getBytesLeft() = request.getBodyLen();
+			return (0);
 		case GET :
 			return (bodyChecker(request, body, true));
 		case DELETE :
@@ -151,3 +153,5 @@ static int	bodyParsing(Request &request)
 	}
 	return (0);
 }
+
+

@@ -42,7 +42,7 @@ class Request
 	private:
 		std::string			_validmethods[METH_NUM];//array di metodi validi
 		headermap			_header;//std::map<key, value> relativi a headers
-		std::istringstream 	*_requestStream;
+		std::istringstream 	_requestStream;
 		std::string			_method;
 		std::string 		_url;
 		std::string 		_url_orig;
@@ -58,10 +58,13 @@ class Request
 		char				*_sock_buff;
 		int					_sock_bytes;
 		int					_sock_fd;
+		int					_bytes_first_recvd;
+		int					_bytes_left;
 		bool				_error;
 		bool				_autoindex;
 		bool				_run_script;
-
+		bool				_first_read;
+		bool				_body_headers_bool;
 		int					_checkPost(void);
 		int					_checkGet(void);
 		int					_checkDelete(void);
@@ -94,6 +97,7 @@ class Request
 		std::string					getHeaderVal(std::string key);
 		std::string 				getBody() const;
 		std::string 				getUrlOriginal() const;
+		std::string					getFailMsg() const;
 		int							getMethNum() const;
 		e_methods					getMethodEnum() const;
 		headermap					&getHeader();
@@ -102,12 +106,14 @@ class Request
 		std::string 				getBodyType() const;
 		e_http_codes				getStatusCode() const;
 		bool						getDnsErrorBool() const;
-		std::string					getFailMsg() const;
 		bool						getAutoIndexBool() const;
 		bool						getRunScriptBool() const;
+		bool						&getFirstRead();
+		bool						&getBodyHeaders();
 		char						*getSockBuff();
 		int							&getSockBytes();
 		int							&getSockFd();
+		int							&getBytesLeft();
 		std::istringstream			&getRequestStream();
 		std::vector<char>			&getBinBody();
 
@@ -121,7 +127,7 @@ class Request
 		void 			setBodyType(std::string type);
 		void			setStatusCode(e_http_codes status_code);
 		void			setRequestErrorBool(bool error);
-		void			setParsingData(std::istringstream &s, int fd, int bytes, char *buf);
+		void			setParsingData(int fd, int bytes, char *buf);
 	//ANCHOR - print.cpp
 		void			printHeader(void);
 };

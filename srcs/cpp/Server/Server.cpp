@@ -66,10 +66,11 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 {
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + this->_server_num; it != this->_addrs.end(); ++it)
 	{
-		if ((*it).fd != -1 && ((*it).revents & POLLIN))
+		if ((*it).fd != -1 && ((*it).revents & POLLIN)) // revents & POLLIN -> pronto per leggere
 		{
 			char buffer[2048] = {0};
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
+			std::cout <<"bytes: " << bytes << std::endl;
 			if (bytes <= 0)
 			{
 				static int	n;
@@ -88,7 +89,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			else
 				processRequest(it, buffer, bytes);
 		}
-		else if ((*it).fd != -1 && ((*it).revents & POLLOUT))
+		else if ((*it).fd != -1 && ((*it).revents & POLLOUT)) // revents & POLLOUT -> pronto per ricevere
 		{
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
 			// std::cout << "checkForConnection: response: " << html << std::endl;
@@ -98,37 +99,69 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	}
 }
 
+int	bodyHeaderParsing(Request &request);
+
 void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buffer, int bytes)
 {
 	//FIXME - TESTING PER POST
 	Request	&request = this->_clients[(*it).fd]->getRequest();
-	// if (requestParsing(request, fileToString("test_request")) != 0)
-	if (requestParsing(*this->_clients[(*it).fd], buffer, bytes) != 0)//request
+	request.getBytesLeft() = std::atoi(request.getHeaderVal("Content-Length").c_str());
+
+	if (request.getFirstRead() == true) // legge la prima volta
 	{
+		request.getFirstRead() = false;
+		//INIT REQUEST FUNCTION
+		if (requestParsing(*this->_clients[(*it).fd], buffer, bytes) != 0)//request
+		{
+			(*it).events = POLLOUT;
+			// TODO - da settare status code corretto senza fare return
+			return ;
+		}
+		// std::cout << request << std::endl;
+		convertDnsToIp(request, request.getHost(), *this->_srvnamemap);//serverFinder
+		if ((*this->_srvnamemap).count(request.getHost()) == 0)//condition
+		{
+			(*it).events = POLLOUT;
+			request.setRequestErrorBool(true);
+			return ;
+		}
+		if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
+		{
+			if (!(request.getHeaderVal("Content-Type").find("multipart/form-data") != std::string::npos && request.getMethodEnum() == POST))
+				request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
+		}
+		t_conf_server	srv = (*this->_srvnamemap)[request.getHost()];
+		this->_clients[(*it).fd]->getSrvConf() = srv;
+		t_conf_location	*loc = request.findRightLocation(&srv);
+		if (loc)
+			this->_clients[(*it).fd]->getLocConf() = *loc;
+		request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
+		request.getBytesLeft() -= std::atoi(request.getHeaderVal("Content-Length").c_str());
+		std::cout << "Body Length: " << request.getHeaderVal("Content-Length");
+		std::cout << "First time Bytes left: " << request.getBytesLeft() << std::endl;
+	}
+	// vediamo cosa succede
+	else // Ci sono ancora bytes da leggere
+	{
+		//se gli header del body sono stati gia parsati
+		if (bodyHeaderParsing(request) == 0)
+		{
+			//1) append su vector del body;
+			std::cout << "BODYHEADERPARSING È TRU!" << std::endl;
+			request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
+			std::cout << "BYTES IN BIN BODY: " << std::string(request.getBinBody().data()).find("--") << std::endl;
+			//2) modifica bytes_read
+			request.getBytesLeft() -= request.getSockBytes();
+			std::cout << "Bytes left: " << request.getBytesLeft() << std::endl;
+		}
+	}
+	std::cout << "MI BLOCCO QUI PORCODDI" << std::endl;
+	// if !content_length || content_length = bytes_read || request.fail == true
+	if (request.getBytesLeft() == 0/* && request.getStatusCode() != 200 */)
+	{
+		std::cout << "Sto andando in POLLOUT" << std::endl;
 		(*it).events = POLLOUT;
-		// TODO - da settare status code corretto senza fare return
-		return ;
 	}
-	std::cout << request << std::endl;
-	convertDnsToIp(request, request.getHost(), *this->_srvnamemap);//serverFinder
-	if ((*this->_srvnamemap).count(request.getHost()) == 0)//condition
-	{
-		(*it).events = POLLOUT;
-		request.setRequestErrorBool(true);
-		return ;
-	}
-	if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
-	{
-		if (!(request.getHeaderVal("Content-Type").find("multipart/form-data") != std::string::npos && request.getMethodEnum() == POST))
-			request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
-	}
-	t_conf_server	srv = (*this->_srvnamemap)[request.getHost()];
-	this->_clients[(*it).fd]->getSrvConf() = srv;
-	t_conf_location	*loc = request.findRightLocation(&srv);
-	if (loc)
-		this->_clients[(*it).fd]->getLocConf() = *loc;
-	request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
-	(*it).events = POLLOUT;
 }
 
 // NOTE - crea la risposta html da inviare al client tramite HTTP

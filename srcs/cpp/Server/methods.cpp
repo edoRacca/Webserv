@@ -3,7 +3,7 @@
 
 static void execute_delete(Client &client, std::string &body, std::fstream *file);
 static int	check_delete(Client &client, std::string &body, Server &srv, std::fstream *file);
-static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv);
+// static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv);
 int			headerParsing(Request &request, bool reset);
 
 /*NOTE - summary
@@ -79,13 +79,6 @@ static void execute_delete(Client &client, std::string &body, std::fstream *file
 	body = file_opener(*file, "delete_method: cannot open file on error");
 }
 
-void	TEST(Request &request)
-{
-	std::ofstream	ofile("PIPPO.ico", std::ios_base::binary);
-	if (ofile.fail())
-		std::cout << "Error opening file\n";
-	ofile.write(request.getBinBody().data(), request.getBinBody().size());
-}
 
 //SECTION - POST
 
@@ -162,21 +155,42 @@ header pippo
 
 header gabibbo
 */
-int	executePost(Request &request)
+
+void	trimBody(Request &request);
+
+int	bodyHeaderParsing(Request &request)
+{
+	std::string	temp;
+
+	/*
+		torna OK se:
+			body header bool settata a true (gia parsato)
+			trim fatto
+		torna FAIL se:
+			richiesta non e finita !std::getline entra
+	*/
+	if (request.getBodyHeaders() == true)//body gia parsato
+		return (1);
+	/*if (request.getRequestStream().fail() == 0 && \
+		!std::getline(request.getRequestStream(), temp, '\n'))
+	{
+		request.getRequestStream().str(request.getSockBuff());
+		request.getRequestStream().clear();
+		return (1);
+	}*/
+	request.getBodyHeaders() = true;
+	std::cout << "Sock bytes:\n" << request.getSockBuff() << std::endl;
+	trimBody(request);
+	return (0);
+}
+
+void	trimBody(Request &request)
 {
 	size_t		h_len;
 	std::string	line;
 	size_t		header_leftover[2];
 
-	//std::remove("REQUEST_post");
 	header_leftover[0] = request.getRequestStream().tellg();
-	while (!std::getline(request.getRequestStream(), line, '\n'))
-	{
-		request.getSockBytes() = recv(request.getSockFd(), request.getSockBuff(), 2048, 0);
-		request.getRequestStream().str(request.getSockBuff());
-		request.getRequestStream().clear();
-		header_leftover[0] = 0;
-	}
 	headerParsing(request, false);
 	header_leftover[1] = request.getRequestStream().tellg();
 	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
@@ -184,76 +198,33 @@ int	executePost(Request &request)
 	request.getSockBytes() -= (int)h_len;
 	for (int i = 0; i != request.getSockBytes(); i++)
 		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
-	return (ft_recv(request.getSockFd(), request, request.getSockBuff(), request.getSockBytes()));
+	request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
+	std::cout << "BYTES DA HEADER TRIMMATO: " << request.getBytesLeft() - request.getSockBytes() << std::endl;
+	request.getBytesLeft() -= request.getSockBytes();
 }
 
-static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
-{
-	size_t				bodyLength = request.getBodyLen() - bytes_first_recv;
-	int					left = bodyLength;
-	char				buf[2048] = {0};
-	std::vector<char>	&body = request.getBinBody();
-	int 				bytes;
-
-	if (fd < 0)
-		return (-69);
-	body.insert(body.begin(), input, input + bytes_first_recv);
-	//SECTION - recv
-	while (left)
-	{
-		bytes = recv(fd, buf, 2048, 0);
-		if (bytes == -1)
-		{
-			std::cout << "Error in ft_recv by recv, left: " << left << "\n";
-			break;
-		}
-		if (bytes == 0)
-		{//FIXME - gestire se client chiude connessione mentre leggiamo
-			std::cout << "connessione chiusa\n";
-			break ;
-		}
-		if (left < 0)
-		{
-			std::cout << "muori JOJO! \n";
-			std::cout << "abort\n";
-		}
-		print_file("REQUEST_post", buf);
-		left -= bytes;
-		body.insert(body.end(), buf, buf + bytes);
-	}
-	return (69 - 69);
-}
-
-// static int	ft_recv(int fd, Request &request, char *input, int bytes_first_recv)
+// int	ft_recv(Request &request)
 // {
-// 	size_t				bodyLength = request.getBodyLen() - bytes_first_recv;
-// 	static int			left = bodyLength;
 // 	char				buf[2048] = {0};
 // 	std::vector<char>	&body = request.getBinBody();
 // 	int 				bytes;
+// 	int					fd;
 
+// 	fd = request.getSockFd();
 // 	if (fd < 0)
-// 		return (-69);
-// 	body.insert(body.begin(), input, input + bytes_first_recv);
+// 		return (-1);
 // 	//SECTION - recv
 // 	bytes = recv(fd, buf, 2048, 0);
 // 	if (bytes == -1)
 // 	{
-// 		std::cout << "Error in ft_recv by recv, left: " << left << "\n";
-// 		return;
+// 		std::cout << "Error in ft_recv by recv, left: " << request.getBytesLeft() << "\n";
+// 		return (-1);
 // 	}
 // 	if (bytes == 0)
 // 	{//FIXME - gestire se client chiude connessione mentre leggiamo
-// 		std::cout << "connessione chiusa\n";
-// 		return;
+// 		//eliminare client
 // 	}
-// 	if (left < 0)
-// 	{
-// 		std::cout << "muori JOJO! \n";
-// 		std::cout << "abort\n";
-// 	}
-// 	print_file("REQUEST_post", buf);
-// 	left -= bytes;
+// 	request.getBytesLeft() -= bytes;
 // 	body.insert(body.end(), buf, buf + bytes);
-// 	return (69 - 69);
+// 	return (0);
 // }

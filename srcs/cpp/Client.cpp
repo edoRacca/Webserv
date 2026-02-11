@@ -44,6 +44,14 @@ t_conf_location	&Client::getLocConf()
 	return (this->_loc_config);
 }
 
+std::vector<char>	&Client::getBuffer()
+{
+	return (this->_buffer);
+}
+char				*Client::getBufferChar()
+{
+	return (this->_buffer.data());
+}
 
 	// void 	setRequest(std::string); // format request
 	// void	setMethNum(int);

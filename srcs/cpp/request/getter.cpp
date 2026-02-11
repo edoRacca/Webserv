@@ -181,10 +181,25 @@ int		&Request::getSockFd()
 
 std::istringstream	&Request::getRequestStream()
 {
-	return (*this->_requestStream);
+	return (this->_requestStream);
 }
 
 std::vector<char>	&Request::getBinBody()
 {
 	return (this->_bin_body);
+}
+
+bool	&Request::getBodyHeaders()
+{
+	return (this->_body_headers_bool);
+}
+
+bool	&Request::getFirstRead()
+{
+	return (this->_first_read);
+}
+
+int	&Request::getBytesLeft()
+{
+	return (this->_bytes_left);
 }

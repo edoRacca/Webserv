@@ -3,6 +3,7 @@
 
 # include "Request.hpp"
 # include "Conf.hpp"
+# include <vector>
 
 typedef struct s_conf_server	t_conf_server;
 typedef struct s_conf_location	t_conf_location;
@@ -19,6 +20,7 @@ class Client
 		Request				_request;
 		t_conf_server		_srv_config;
 		t_conf_location		_loc_config;
+		std::vector<char>	_buffer;
 
 	public:
 		Client(int sockfd, int srvfd);
@@ -27,10 +29,12 @@ class Client
 		Client	operator=(const Client &other);
 
 		//SECTION - getters
-		int				getSockFd() const;
-		Request			&getRequest();
-		t_conf_server	&getSrvConf();
-		t_conf_location	&getLocConf();
+		int					getSockFd() const;
+		Request				&getRequest();
+		t_conf_server		&getSrvConf();
+		t_conf_location		&getLocConf();
+		std::vector<char>	&getBuffer();
+		char				*getBufferChar();
 };
 
 #endif

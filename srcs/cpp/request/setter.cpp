@@ -92,9 +92,8 @@ void	Request::setRequestErrorBool(bool error)
 
 //SECTION - sockData
 
-void	Request::setParsingData(std::istringstream &s, int fd, int bytes, char *buf)
+void	Request::setParsingData(int fd, int bytes, char *buf)
 {
-	this->_requestStream = &s;
 	this->_sock_fd = fd;
 	this->_sock_bytes = bytes;
 	this->_sock_buff = buf;

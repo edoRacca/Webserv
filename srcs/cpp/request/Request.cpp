@@ -16,6 +16,9 @@ Request::Request()
 	this->_validmethods[DELETE] = "DELETE";
 	this->_validmethods[HEAD] = "HEAD";
 	this->_max_method_length = 0;
+	this->_first_read = true;
+	this->_bytes_left = 0;
+	this->_body_headers_bool = false;
 	for (int i = 0; i != METH_NUM; i++)
 		if (this->_validmethods[i].length() > this->_max_method_length)
 			this->_max_method_length = this->_validmethods[i].length();
@@ -71,8 +74,6 @@ int	Request::checkHeader(void)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Invalid Transfer-Encoding"));
 	if (this->_method == "POST")
 		return (this->_checkPost());
-	// else if (this->_method == "GET")
-	// 	return (this->_checkGet());
 	else if (this->_method == "DELETE")
 		return (this->_checkDelete());
 	std::cout << "\033[31mWARNING: METHOD " COLOR_RESET << this->_method;
