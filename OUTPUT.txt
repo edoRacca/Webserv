@@ -1,0 +1,690 @@
+[1;32mStarting web server ...[0m
+[31mConfWarning: in line 62, instruction[0mindex index.html [31m:
+index already defined. Old is replaced[0m
+[31mConfWarning: in line 74, instruction[0mindex index.html [31m:
+index already defined. Old is replaced[0m
+
+
+[1;37mCreating server 1[0m
+Listening on -> [1;32m10.11.4.3:9020[0m
+
+[1;37mCreating server 2[0m
+Listening on -> [1;32m127.0.0.1:9006[0m
+
+[1;37mCreating server 3[0m
+Listening on -> [1;32m127.0.0.1:9007[0m
+
+[1;37mCreating server 4[0m
+Listening on -> [1;32m127.0.0.1:9021[0m
+bytes left: 0
+fd restituito: 7
+[31mWARNING: METHOD [0mGET[31m HAS NO PARSING!![0m
+
+bodyParsing()::bytesLeft=0
+[33m FINDRIGHTPATH: [0murl: /favicon.ico
+	---> RESULT: www/var/favicon.ico
+Body Length: First time Bytes left: 0
+Sto andando in POLLOUT
+URL: www/var/favicon.ico
+bytes left: 0
+chiudo connessione 0
+======================================
+[2J[Hbytes left: 0
+fd restituito: 7
+bodyParsing()::bytesLeft=247673
+--------
+STREAM
+---------
+: POST /upload/success_upload.html HTTP/1.1
+Host: localhost:9021
+Connection: keep-alive
+Content-Length: 247673
+Cache-Control: max-age=0
+sec-ch-ua: "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Linux"
+Origin: http://localhost:9021
+DNT: 1
+Upgrade-Insecure-Requests: 1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryFpbr6K0JHGI2TwvT
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: http://localhost:9021/upload/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+[33m FINDRIGHTPATH: [0murl: /upload/success_upload.html
+	---> RESULT: www/var/upload/success_upload.html
+Body Length: 247673First time Bytes left: 247673
+bytes left: 247673
+Body Length: 247673
+processRequest()::bytesLeft=247673
+--------
+STREAM
+---------
+: ------WebKitFormBoundaryFpbr6K0JHGI2TwvT
+Content-Disposition: form-data; name="file"; filename="PIPPO.ico"
+Content-Type: image/vnd.microsoft.icon
+
+‰PNG
+
+
+TROVATO 
+! adesso trimmo il body
+RequestBytesLeft: 247673
+Getsockbytes(): 1896
+bytes left: 245777
+Body Length: 247673
+processRequest()::bytesLeft=245777
+RequestBytesLeft: 245777
+Getsockbytes(): 2047
+bytes left: 243730
+Body Length: 247673
+processRequest()::bytesLeft=243730
+RequestBytesLeft: 243730
+Getsockbytes(): 2047
+bytes left: 241683
+Body Length: 247673
+processRequest()::bytesLeft=241683
+RequestBytesLeft: 241683
+Getsockbytes(): 2047
+bytes left: 239636
+Body Length: 247673
+processRequest()::bytesLeft=239636
+RequestBytesLeft: 239636
+Getsockbytes(): 2047
+bytes left: 237589
+Body Length: 247673
+processRequest()::bytesLeft=237589
+RequestBytesLeft: 237589
+Getsockbytes(): 2047
+bytes left: 235542
+Body Length: 247673
+processRequest()::bytesLeft=235542
+RequestBytesLeft: 235542
+Getsockbytes(): 2047
+bytes left: 233495
+Body Length: 247673
+processRequest()::bytesLeft=233495
+RequestBytesLeft: 233495
+Getsockbytes(): 2047
+bytes left: 231448
+Body Length: 247673
+processRequest()::bytesLeft=231448
+RequestBytesLeft: 231448
+Getsockbytes(): 2047
+bytes left: 229401
+Body Length: 247673
+processRequest()::bytesLeft=229401
+RequestBytesLeft: 229401
+Getsockbytes(): 2047
+bytes left: 227354
+Body Length: 247673
+processRequest()::bytesLeft=227354
+RequestBytesLeft: 227354
+Getsockbytes(): 2047
+bytes left: 225307
+Body Length: 247673
+processRequest()::bytesLeft=225307
+RequestBytesLeft: 225307
+Getsockbytes(): 2047
+bytes left: 223260
+Body Length: 247673
+processRequest()::bytesLeft=223260
+RequestBytesLeft: 223260
+Getsockbytes(): 2047
+bytes left: 221213
+Body Length: 247673
+processRequest()::bytesLeft=221213
+RequestBytesLeft: 221213
+Getsockbytes(): 2047
+bytes left: 219166
+Body Length: 247673
+processRequest()::bytesLeft=219166
+RequestBytesLeft: 219166
+Getsockbytes(): 2047
+bytes left: 217119
+Body Length: 247673
+processRequest()::bytesLeft=217119
+RequestBytesLeft: 217119
+Getsockbytes(): 2047
+bytes left: 215072
+Body Length: 247673
+processRequest()::bytesLeft=215072
+RequestBytesLeft: 215072
+Getsockbytes(): 2047
+bytes left: 213025
+Body Length: 247673
+processRequest()::bytesLeft=213025
+RequestBytesLeft: 213025
+Getsockbytes(): 2047
+bytes left: 210978
+Body Length: 247673
+processRequest()::bytesLeft=210978
+RequestBytesLeft: 210978
+Getsockbytes(): 2047
+bytes left: 208931
+Body Length: 247673
+processRequest()::bytesLeft=208931
+RequestBytesLeft: 208931
+Getsockbytes(): 2047
+bytes left: 206884
+Body Length: 247673
+processRequest()::bytesLeft=206884
+RequestBytesLeft: 206884
+Getsockbytes(): 2047
+bytes left: 204837
+Body Length: 247673
+processRequest()::bytesLeft=204837
+RequestBytesLeft: 204837
+Getsockbytes(): 2047
+bytes left: 202790
+Body Length: 247673
+processRequest()::bytesLeft=202790
+RequestBytesLeft: 202790
+Getsockbytes(): 2047
+bytes left: 200743
+Body Length: 247673
+processRequest()::bytesLeft=200743
+RequestBytesLeft: 200743
+Getsockbytes(): 2047
+bytes left: 198696
+Body Length: 247673
+processRequest()::bytesLeft=198696
+RequestBytesLeft: 198696
+Getsockbytes(): 2047
+bytes left: 196649
+Body Length: 247673
+processRequest()::bytesLeft=196649
+RequestBytesLeft: 196649
+Getsockbytes(): 2047
+bytes left: 194602
+Body Length: 247673
+processRequest()::bytesLeft=194602
+RequestBytesLeft: 194602
+Getsockbytes(): 2047
+bytes left: 192555
+Body Length: 247673
+processRequest()::bytesLeft=192555
+RequestBytesLeft: 192555
+Getsockbytes(): 2047
+bytes left: 190508
+Body Length: 247673
+processRequest()::bytesLeft=190508
+RequestBytesLeft: 190508
+Getsockbytes(): 2047
+bytes left: 188461
+Body Length: 247673
+processRequest()::bytesLeft=188461
+RequestBytesLeft: 188461
+Getsockbytes(): 2047
+bytes left: 186414
+Body Length: 247673
+processRequest()::bytesLeft=186414
+RequestBytesLeft: 186414
+Getsockbytes(): 2047
+bytes left: 184367
+Body Length: 247673
+processRequest()::bytesLeft=184367
+RequestBytesLeft: 184367
+Getsockbytes(): 2047
+bytes left: 182320
+Body Length: 247673
+processRequest()::bytesLeft=182320
+RequestBytesLeft: 182320
+Getsockbytes(): 2047
+bytes left: 180273
+Body Length: 247673
+processRequest()::bytesLeft=180273
+RequestBytesLeft: 180273
+Getsockbytes(): 2047
+bytes left: 178226
+Body Length: 247673
+processRequest()::bytesLeft=178226
+RequestBytesLeft: 178226
+Getsockbytes(): 2047
+bytes left: 176179
+Body Length: 247673
+processRequest()::bytesLeft=176179
+RequestBytesLeft: 176179
+Getsockbytes(): 2047
+bytes left: 174132
+Body Length: 247673
+processRequest()::bytesLeft=174132
+RequestBytesLeft: 174132
+Getsockbytes(): 2047
+bytes left: 172085
+Body Length: 247673
+processRequest()::bytesLeft=172085
+RequestBytesLeft: 172085
+Getsockbytes(): 2047
+bytes left: 170038
+Body Length: 247673
+processRequest()::bytesLeft=170038
+RequestBytesLeft: 170038
+Getsockbytes(): 2047
+bytes left: 167991
+Body Length: 247673
+processRequest()::bytesLeft=167991
+RequestBytesLeft: 167991
+Getsockbytes(): 2047
+bytes left: 165944
+Body Length: 247673
+processRequest()::bytesLeft=165944
+RequestBytesLeft: 165944
+Getsockbytes(): 40
+bytes left: 165904
+Body Length: 247673
+processRequest()::bytesLeft=165904
+RequestBytesLeft: 165904
+Getsockbytes(): 2047
+bytes left: 163857
+Body Length: 247673
+processRequest()::bytesLeft=163857
+RequestBytesLeft: 163857
+Getsockbytes(): 2047
+bytes left: 161810
+Body Length: 247673
+processRequest()::bytesLeft=161810
+RequestBytesLeft: 161810
+Getsockbytes(): 2047
+bytes left: 159763
+Body Length: 247673
+processRequest()::bytesLeft=159763
+RequestBytesLeft: 159763
+Getsockbytes(): 2047
+bytes left: 157716
+Body Length: 247673
+processRequest()::bytesLeft=157716
+RequestBytesLeft: 157716
+Getsockbytes(): 2047
+bytes left: 155669
+Body Length: 247673
+processRequest()::bytesLeft=155669
+RequestBytesLeft: 155669
+Getsockbytes(): 2047
+bytes left: 153622
+Body Length: 247673
+processRequest()::bytesLeft=153622
+RequestBytesLeft: 153622
+Getsockbytes(): 2047
+bytes left: 151575
+Body Length: 247673
+processRequest()::bytesLeft=151575
+RequestBytesLeft: 151575
+Getsockbytes(): 2047
+bytes left: 149528
+Body Length: 247673
+processRequest()::bytesLeft=149528
+RequestBytesLeft: 149528
+Getsockbytes(): 2047
+bytes left: 147481
+Body Length: 247673
+processRequest()::bytesLeft=147481
+RequestBytesLeft: 147481
+Getsockbytes(): 2047
+bytes left: 145434
+Body Length: 247673
+processRequest()::bytesLeft=145434
+RequestBytesLeft: 145434
+Getsockbytes(): 2047
+bytes left: 143387
+Body Length: 247673
+processRequest()::bytesLeft=143387
+RequestBytesLeft: 143387
+Getsockbytes(): 2047
+bytes left: 141340
+Body Length: 247673
+processRequest()::bytesLeft=141340
+RequestBytesLeft: 141340
+Getsockbytes(): 2047
+bytes left: 139293
+Body Length: 247673
+processRequest()::bytesLeft=139293
+RequestBytesLeft: 139293
+Getsockbytes(): 2047
+bytes left: 137246
+Body Length: 247673
+processRequest()::bytesLeft=137246
+RequestBytesLeft: 137246
+Getsockbytes(): 2047
+bytes left: 135199
+Body Length: 247673
+processRequest()::bytesLeft=135199
+RequestBytesLeft: 135199
+Getsockbytes(): 2047
+bytes left: 133152
+Body Length: 247673
+processRequest()::bytesLeft=133152
+RequestBytesLeft: 133152
+Getsockbytes(): 2047
+bytes left: 131105
+Body Length: 247673
+processRequest()::bytesLeft=131105
+RequestBytesLeft: 131105
+Getsockbytes(): 2047
+bytes left: 129058
+Body Length: 247673
+processRequest()::bytesLeft=129058
+RequestBytesLeft: 129058
+Getsockbytes(): 2047
+bytes left: 127011
+Body Length: 247673
+processRequest()::bytesLeft=127011
+RequestBytesLeft: 127011
+Getsockbytes(): 2047
+bytes left: 124964
+Body Length: 247673
+processRequest()::bytesLeft=124964
+RequestBytesLeft: 124964
+Getsockbytes(): 2047
+bytes left: 122917
+Body Length: 247673
+processRequest()::bytesLeft=122917
+RequestBytesLeft: 122917
+Getsockbytes(): 2047
+bytes left: 120870
+Body Length: 247673
+processRequest()::bytesLeft=120870
+RequestBytesLeft: 120870
+Getsockbytes(): 2047
+bytes left: 118823
+Body Length: 247673
+processRequest()::bytesLeft=118823
+RequestBytesLeft: 118823
+Getsockbytes(): 2047
+bytes left: 116776
+Body Length: 247673
+processRequest()::bytesLeft=116776
+RequestBytesLeft: 116776
+Getsockbytes(): 2047
+bytes left: 114729
+Body Length: 247673
+processRequest()::bytesLeft=114729
+RequestBytesLeft: 114729
+Getsockbytes(): 2047
+bytes left: 112682
+Body Length: 247673
+processRequest()::bytesLeft=112682
+RequestBytesLeft: 112682
+Getsockbytes(): 2047
+bytes left: 110635
+Body Length: 247673
+processRequest()::bytesLeft=110635
+RequestBytesLeft: 110635
+Getsockbytes(): 2047
+bytes left: 108588
+Body Length: 247673
+processRequest()::bytesLeft=108588
+RequestBytesLeft: 108588
+Getsockbytes(): 2047
+bytes left: 106541
+Body Length: 247673
+processRequest()::bytesLeft=106541
+RequestBytesLeft: 106541
+Getsockbytes(): 2047
+bytes left: 104494
+Body Length: 247673
+processRequest()::bytesLeft=104494
+RequestBytesLeft: 104494
+Getsockbytes(): 2047
+bytes left: 102447
+Body Length: 247673
+processRequest()::bytesLeft=102447
+RequestBytesLeft: 102447
+Getsockbytes(): 2047
+bytes left: 100400
+Body Length: 247673
+processRequest()::bytesLeft=100400
+RequestBytesLeft: 100400
+Getsockbytes(): 2047
+bytes left: 98353
+Body Length: 247673
+processRequest()::bytesLeft=98353
+RequestBytesLeft: 98353
+Getsockbytes(): 2047
+bytes left: 96306
+Body Length: 247673
+processRequest()::bytesLeft=96306
+RequestBytesLeft: 96306
+Getsockbytes(): 2047
+bytes left: 94259
+Body Length: 247673
+processRequest()::bytesLeft=94259
+RequestBytesLeft: 94259
+Getsockbytes(): 2047
+bytes left: 92212
+Body Length: 247673
+processRequest()::bytesLeft=92212
+RequestBytesLeft: 92212
+Getsockbytes(): 2047
+bytes left: 90165
+Body Length: 247673
+processRequest()::bytesLeft=90165
+RequestBytesLeft: 90165
+Getsockbytes(): 2047
+bytes left: 88118
+Body Length: 247673
+processRequest()::bytesLeft=88118
+RequestBytesLeft: 88118
+Getsockbytes(): 2047
+bytes left: 86071
+Body Length: 247673
+processRequest()::bytesLeft=86071
+RequestBytesLeft: 86071
+Getsockbytes(): 2047
+bytes left: 84024
+Body Length: 247673
+processRequest()::bytesLeft=84024
+RequestBytesLeft: 84024
+Getsockbytes(): 2047
+bytes left: 81977
+Body Length: 247673
+processRequest()::bytesLeft=81977
+RequestBytesLeft: 81977
+Getsockbytes(): 2047
+bytes left: 79930
+Body Length: 247673
+processRequest()::bytesLeft=79930
+RequestBytesLeft: 79930
+Getsockbytes(): 2047
+bytes left: 77883
+Body Length: 247673
+processRequest()::bytesLeft=77883
+RequestBytesLeft: 77883
+Getsockbytes(): 2047
+bytes left: 75836
+Body Length: 247673
+processRequest()::bytesLeft=75836
+RequestBytesLeft: 75836
+Getsockbytes(): 2047
+bytes left: 73789
+Body Length: 247673
+processRequest()::bytesLeft=73789
+RequestBytesLeft: 73789
+Getsockbytes(): 2047
+bytes left: 71742
+Body Length: 247673
+processRequest()::bytesLeft=71742
+RequestBytesLeft: 71742
+Getsockbytes(): 2047
+bytes left: 69695
+Body Length: 247673
+processRequest()::bytesLeft=69695
+RequestBytesLeft: 69695
+Getsockbytes(): 2014
+bytes left: 67681
+Body Length: 247673
+processRequest()::bytesLeft=67681
+RequestBytesLeft: 67681
+Getsockbytes(): 2047
+bytes left: 65634
+Body Length: 247673
+processRequest()::bytesLeft=65634
+RequestBytesLeft: 65634
+Getsockbytes(): 2047
+bytes left: 63587
+Body Length: 247673
+processRequest()::bytesLeft=63587
+RequestBytesLeft: 63587
+Getsockbytes(): 2047
+bytes left: 61540
+Body Length: 247673
+processRequest()::bytesLeft=61540
+RequestBytesLeft: 61540
+Getsockbytes(): 2047
+bytes left: 59493
+Body Length: 247673
+processRequest()::bytesLeft=59493
+RequestBytesLeft: 59493
+Getsockbytes(): 2047
+bytes left: 57446
+Body Length: 247673
+processRequest()::bytesLeft=57446
+RequestBytesLeft: 57446
+Getsockbytes(): 2047
+bytes left: 55399
+Body Length: 247673
+processRequest()::bytesLeft=55399
+RequestBytesLeft: 55399
+Getsockbytes(): 2047
+bytes left: 53352
+Body Length: 247673
+processRequest()::bytesLeft=53352
+RequestBytesLeft: 53352
+Getsockbytes(): 2047
+bytes left: 51305
+Body Length: 247673
+processRequest()::bytesLeft=51305
+RequestBytesLeft: 51305
+Getsockbytes(): 2047
+bytes left: 49258
+Body Length: 247673
+processRequest()::bytesLeft=49258
+RequestBytesLeft: 49258
+Getsockbytes(): 2047
+bytes left: 47211
+Body Length: 247673
+processRequest()::bytesLeft=47211
+RequestBytesLeft: 47211
+Getsockbytes(): 2047
+bytes left: 45164
+Body Length: 247673
+processRequest()::bytesLeft=45164
+RequestBytesLeft: 45164
+Getsockbytes(): 2047
+bytes left: 43117
+Body Length: 247673
+processRequest()::bytesLeft=43117
+RequestBytesLeft: 43117
+Getsockbytes(): 2047
+bytes left: 41070
+Body Length: 247673
+processRequest()::bytesLeft=41070
+RequestBytesLeft: 41070
+Getsockbytes(): 2047
+bytes left: 39023
+Body Length: 247673
+processRequest()::bytesLeft=39023
+RequestBytesLeft: 39023
+Getsockbytes(): 2047
+bytes left: 36976
+Body Length: 247673
+processRequest()::bytesLeft=36976
+RequestBytesLeft: 36976
+Getsockbytes(): 2047
+bytes left: 34929
+Body Length: 247673
+processRequest()::bytesLeft=34929
+RequestBytesLeft: 34929
+Getsockbytes(): 2047
+bytes left: 32882
+Body Length: 247673
+processRequest()::bytesLeft=32882
+RequestBytesLeft: 32882
+Getsockbytes(): 2047
+bytes left: 30835
+Body Length: 247673
+processRequest()::bytesLeft=30835
+RequestBytesLeft: 30835
+Getsockbytes(): 2047
+bytes left: 28788
+Body Length: 247673
+processRequest()::bytesLeft=28788
+RequestBytesLeft: 28788
+Getsockbytes(): 2047
+bytes left: 26741
+Body Length: 247673
+processRequest()::bytesLeft=26741
+RequestBytesLeft: 26741
+Getsockbytes(): 2047
+bytes left: 24694
+Body Length: 247673
+processRequest()::bytesLeft=24694
+RequestBytesLeft: 24694
+Getsockbytes(): 2047
+bytes left: 22647
+Body Length: 247673
+processRequest()::bytesLeft=22647
+RequestBytesLeft: 22647
+Getsockbytes(): 2047
+bytes left: 20600
+Body Length: 247673
+processRequest()::bytesLeft=20600
+RequestBytesLeft: 20600
+Getsockbytes(): 2047
+bytes left: 18553
+Body Length: 247673
+processRequest()::bytesLeft=18553
+RequestBytesLeft: 18553
+Getsockbytes(): 2047
+bytes left: 16506
+Body Length: 247673
+processRequest()::bytesLeft=16506
+RequestBytesLeft: 16506
+Getsockbytes(): 2047
+bytes left: 14459
+Body Length: 247673
+processRequest()::bytesLeft=14459
+RequestBytesLeft: 14459
+Getsockbytes(): 2047
+bytes left: 12412
+Body Length: 247673
+processRequest()::bytesLeft=12412
+RequestBytesLeft: 12412
+Getsockbytes(): 2047
+bytes left: 10365
+Body Length: 247673
+processRequest()::bytesLeft=10365
+RequestBytesLeft: 10365
+Getsockbytes(): 2047
+bytes left: 8318
+Body Length: 247673
+processRequest()::bytesLeft=8318
+RequestBytesLeft: 8318
+Getsockbytes(): 2047
+bytes left: 6271
+Body Length: 247673
+processRequest()::bytesLeft=6271
+RequestBytesLeft: 6271
+Getsockbytes(): 2047
+bytes left: 4224
+Body Length: 247673
+processRequest()::bytesLeft=4224
+RequestBytesLeft: 4224
+Getsockbytes(): 2047
+bytes left: 2177
+Body Length: 247673
+processRequest()::bytesLeft=2177
+RequestBytesLeft: 2177
+Getsockbytes(): 2026
+
+
+[1;31mRequested closing server...
+[0m
+[32mserver destructor![0m

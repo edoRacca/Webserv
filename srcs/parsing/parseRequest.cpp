@@ -17,11 +17,8 @@ int	requestParsing(Client &client, char *input, int bytes)
 {
 	std::string			lines = "\r";
 	Request				&request = client.getRequest();
-	std::istringstream *stream = &request.getRequestStream();
-	
-	stream->str(input);
-	if (stream->fail()){;}
-		//500 server error out of memory
+	std::istringstream	*stream = &request.getRequestStream();
+
 	request.setParsingData(client.getSockFd(), bytes, input);
 	print_file("REQUEST", "parseRequest:\n");
 	print_file("REQUEST", input);
@@ -90,6 +87,8 @@ int			headerParsing(Request &request, bool reset)
 		request.resetRequest();
 	while (std::getline(request.getRequestStream(), line) && line != "\r") // da trimmare \r
 	{
+		if (line[0] == '-')
+			continue ;
 		//SECTION - Key
 		if (line[0] == '\t')
 			return (request.fail(HTTP_CE_BAD_REQUEST, "Line folding is deprecated"));
@@ -134,14 +133,16 @@ static int	bodyParsing(Request &request)
 		std::getline(request.getRequestStream(), body, '\0');
 	request.setBody(body);
 	request.getBytesLeft() = request.getBodyLen();
+	std::cout << "bodyParsing()::bytesLeft=" << request.getBytesLeft() << "\n";
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			/*if (bodyHeaderParsing(request) == 0)//NOTE - aggiungo questa cosa anche in parseRequest
+			if (bodyHeaderParsing(request) == true)//NOTE - aggiungo questa cosa anche in parseRequest
 			{
 				request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
 				request.getBytesLeft() -= request.getSockBytes();
-			}*/
+				std::cout << "bodyParsing()::bytesLeft=" << request.getBytesLeft() << "\n";
+			}
 			return (0);
 		case GET :
 			return (bodyChecker(request, body, true));

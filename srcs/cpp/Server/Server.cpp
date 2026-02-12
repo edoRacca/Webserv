@@ -69,7 +69,10 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		if ((*it).fd != -1 && ((*it).revents & POLLIN)) // revents & POLLIN -> pronto per leggere
 		{
 			char buffer[2048] = {0};
+			std::cout << "bytes left: " << this->_clients[(*it).fd]->getRequest().getBytesLeft() << "\n";
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
+			// this)->_clients[(*it).fd]->getRequest()->str(buffer);
+			// if (stream->fail()){;}//500 server error out of memory
 			// std::cout <<"bytes: " << bytes << std::endl;
 			if (bytes <= 0)
 			{
@@ -103,8 +106,10 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 {
 	//FIXME - TESTING PER POST
 	Request	&request = this->_clients[(*it).fd]->getRequest();
-	request.getBytesLeft() = std::atoi(request.getHeaderVal("Content-Length").c_str());
-
+	this->_clients[(*it).fd]->getRequest().getRequestStream().str(buffer);
+	this->_clients[(*it).fd]->getRequest().getRequestStream().clear();
+	this->_clients[(*it).fd]->getRequest().getSockBytes() = bytes;
+	// if (stream->fail()){;}//500 server error out of memory
 	if (request.getFirstRead() == true) // legge la prima volta
 	{
 		request.getFirstRead() = false;
@@ -134,25 +139,30 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 		if (loc)
 			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
-		request.getBytesLeft() -= std::atoi(request.getHeaderVal("Content-Length").c_str());
+		//request.getBytesLeft() -= std::atoi(request.getHeaderVal("Content-Length").c_str());
 		std::cout << "Body Length: " << request.getHeaderVal("Content-Length");
 		std::cout << "First time Bytes left: " << request.getBytesLeft() << std::endl;
 	}
 	else // Ci sono ancora bytes da leggere
 	{
+		std::cout << "Body Length: " << request.getHeaderVal("Content-Length") << "\n";
 		//se gli header del body sono stati gia parsati
-		if (bodyHeaderParsing(request) == 0)//NOTE - aggiungo questa cosa anche in parseRequest
+		std::cout << "processRequest()::bytesLeft=" << request.getBytesLeft() << "\n";
+		if (bodyHeaderParsing(request) == true)//NOTE - aggiungo questa cosa anche in parseRequest
 		{
+			// std::cout << "processRequest() sto aggiornando i bytes!\n";
 			//1) append su vector del body;
 			// std::cout << "BODYHEADERPARSING È TRU!" << std::endl;
 			request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
 			// std::cout << "BYTES IN BIN BODY: " << std::string(request.getBinBody().data()).find("--") << std::endl;
 			//2) modifica bytes_read
+			std::cout << "RequestBytesLeft: " << request.getBytesLeft() << std::endl;
+			std::cout << "Getsockbytes(): " << request.getSockBytes() << std::endl;
 			request.getBytesLeft() -= request.getSockBytes();
 			// std::cout << "Bytes left: " << request.getBytesLeft() << std::endl;
 		}
 	}
-	// std::cout << "MI BLOCCO QUI PORCODDI" << std::endl;
+	// std::cout << "MI BLOCCO QUI PORCODDIO" << std::endl;
 	// if !content_length || content_length = bytes_read || request.fail == true
 	if (request.getBytesLeft() == 0/* && request.getStatusCode() != 200 */)
 	{
