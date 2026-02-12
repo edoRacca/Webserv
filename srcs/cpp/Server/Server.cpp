@@ -1,7 +1,7 @@
 
 #include "../../hpp/Server.hpp"
 
-#define SIZE_STR "B", "KB", "MG", "GB", "TB"
+#define SIZE_STR "B", "KB", "MB", "GB", "TB"
 
 std::string				createHtml(Client &client, const std::string &body);
 struct pollfd			createServerSock(int port_n);
@@ -70,7 +70,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		{
 			char buffer[2048] = {0};
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
-			std::cout <<"bytes: " << bytes << std::endl;
+			// std::cout <<"bytes: " << bytes << std::endl;
 			if (bytes <= 0)
 			{
 				static int	n;
@@ -99,8 +99,6 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 	}
 }
 
-int	bodyHeaderParsing(Request &request);
-
 void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buffer, int bytes)
 {
 	//FIXME - TESTING PER POST
@@ -118,8 +116,8 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 			return ;
 		}
 		// std::cout << request << std::endl;
-		convertDnsToIp(request, request.getHost(), *this->_srvnamemap);//serverFinder
-		if ((*this->_srvnamemap).count(request.getHost()) == 0)//condition
+		convertDnsToIp(request, request.getHost(), *this->_srvnamemap);// serverFinder
+		if ((*this->_srvnamemap).count(request.getHost()) == 0)
 		{
 			(*it).events = POLLOUT;
 			request.setRequestErrorBool(true);
@@ -140,22 +138,21 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 		std::cout << "Body Length: " << request.getHeaderVal("Content-Length");
 		std::cout << "First time Bytes left: " << request.getBytesLeft() << std::endl;
 	}
-	// vediamo cosa succede
 	else // Ci sono ancora bytes da leggere
 	{
 		//se gli header del body sono stati gia parsati
-		if (bodyHeaderParsing(request) == 0)
+		if (bodyHeaderParsing(request) == 0)//NOTE - aggiungo questa cosa anche in parseRequest
 		{
 			//1) append su vector del body;
-			std::cout << "BODYHEADERPARSING È TRU!" << std::endl;
+			// std::cout << "BODYHEADERPARSING È TRU!" << std::endl;
 			request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
-			std::cout << "BYTES IN BIN BODY: " << std::string(request.getBinBody().data()).find("--") << std::endl;
+			// std::cout << "BYTES IN BIN BODY: " << std::string(request.getBinBody().data()).find("--") << std::endl;
 			//2) modifica bytes_read
 			request.getBytesLeft() -= request.getSockBytes();
-			std::cout << "Bytes left: " << request.getBytesLeft() << std::endl;
+			// std::cout << "Bytes left: " << request.getBytesLeft() << std::endl;
 		}
 	}
-	std::cout << "MI BLOCCO QUI PORCODDI" << std::endl;
+	// std::cout << "MI BLOCCO QUI PORCODDI" << std::endl;
 	// if !content_length || content_length = bytes_read || request.fail == true
 	if (request.getBytesLeft() == 0/* && request.getStatusCode() != 200 */)
 	{

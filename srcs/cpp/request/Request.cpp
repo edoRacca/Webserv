@@ -104,8 +104,7 @@ int	Request::_checkDelete(void)
 	return (0);
 }
 
-//torna 0 se non trova
-//altrimenti 1
+// NOTE - torna true se la chiave esiste, altrimenti false
 bool	Request::checkKey(std::string key)
 {
 	if (this->_header.find(key) == this->_header.end())

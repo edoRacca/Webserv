@@ -56,10 +56,3 @@ std::string	fileToString(std::string filename)
 	return (file);
 }
 
-
-/*
-	@client: reference to client object
-	@body: reference to response body
-
-	exece
-*/

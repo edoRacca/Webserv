@@ -117,7 +117,7 @@ class Request
 		std::istringstream			&getRequestStream();
 		std::vector<char>			&getBinBody();
 
-	//ANCHOR - setters.cpp
+		//ANCHOR - setters.cpp
 		void			setMethod(std::string method);
 		void 			setUrl(std::string);
 		void			setHttpVersion(std::string version);
@@ -128,7 +128,8 @@ class Request
 		void			setStatusCode(e_http_codes status_code);
 		void			setRequestErrorBool(bool error);
 		void			setParsingData(int fd, int bytes, char *buf);
-	//ANCHOR - print.cpp
+
+		//ANCHOR - print.cpp
 		void			printHeader(void);
 };
 

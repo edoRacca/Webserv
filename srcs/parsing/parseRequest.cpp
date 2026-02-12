@@ -11,7 +11,7 @@ bool		bodyChecker(Request &request, std::string &body, bool accept_empty);
 bool		getNextFirstLineField(std::string &line, std::string &field);
 std::string	removeWhitespaces(std::string line);
 int			executePost(Request &request);
-void	print_bin(std::string filename, char *bin_data, size_t len);
+void		print_bin(std::string filename, char *bin_data, size_t len);
 
 int	requestParsing(Client &client, char *input, int bytes)
 {
@@ -119,7 +119,7 @@ int			headerParsing(Request &request, bool reset)
 //NOTE - controlli sui nostri header
 	if (request.checkHeader() == 1)
 		return (1);
-	return (0);
+	return (line != "\r");//NOTE - se linea diversa da \r, torna errore
 }
 
 //FIXME - non va letta una nuova linea
@@ -133,10 +133,15 @@ static int	bodyParsing(Request &request)
 	if (request.getMethodEnum() != POST)
 		std::getline(request.getRequestStream(), body, '\0');
 	request.setBody(body);
+	request.getBytesLeft() = request.getBodyLen();
 	switch (request.getMethodEnum())
 	{
 		case POST :
-			request.getBytesLeft() = request.getBodyLen();
+			/*if (bodyHeaderParsing(request) == 0)//NOTE - aggiungo questa cosa anche in parseRequest
+			{
+				request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
+				request.getBytesLeft() -= request.getSockBytes();
+			}*/
 			return (0);
 		case GET :
 			return (bodyChecker(request, body, true));

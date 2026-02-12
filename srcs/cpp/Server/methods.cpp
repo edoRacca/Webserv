@@ -129,7 +129,7 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 	}
 }
 
-void	print_bin(std::string filename, char *bin_data, size_t len);
+void	print_bin(std::string filename, char *bin_data, size_t len); 
 
 /*
 POST /upload/ HTTP/1.1
@@ -156,75 +156,49 @@ header pippo
 header gabibbo
 */
 
-void	trimBody(Request &request);
+bool	trimBody(Request &request);
 
 int	bodyHeaderParsing(Request &request)
 {
-	std::string	temp;
-
-	/*
-		torna OK se:
-			body header bool settata a true (gia parsato)
-			trim fatto
-		torna FAIL se:
-			richiesta non e finita !std::getline entra
-	*/
 	if (request.getBodyHeaders() == true)//body gia parsato
 		return (1);
-	/*if (request.getRequestStream().fail() == 0 && \
-		!std::getline(request.getRequestStream(), temp, '\n'))
-	{
-		request.getRequestStream().str(request.getSockBuff());
-		request.getRequestStream().clear();
-		return (1);
-	}*/
-	request.getBodyHeaders() = true;
-	std::cout << "Sock bytes:\n" << request.getSockBuff() << std::endl;
-	trimBody(request);
-	return (0);
+	request.getBodyHeaders() = trimBody(request);
+	return (request.getBodyHeaders());
 }
 
-void	trimBody(Request &request)
+bool	trimBody(Request &request)//se finisce di leggere torna true
 {
 	size_t		h_len;
 	std::string	line;
 	size_t		header_leftover[2];
-
 	header_leftover[0] = request.getRequestStream().tellg();
-	headerParsing(request, false);
-	header_leftover[1] = request.getRequestStream().tellg();
-	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
-	h_len = header_leftover[1];
+	std::cout << "--------\nSTREAM\n---------\n: " << request.getRequestStream().str() << std::endl;
+	//NOTE - se headerParsing non trova linea vuota, torna 1 (\r\n\r\n non ancora trovato, mancano headers)
+	if (headerParsing(request, false) != 0)//<----------------------------------------------------------------------------------------
+		;// return (false);																						//	|
+	header_leftover[1] = request.getRequestStream().tellg();															//	|
+	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));								//	|
+	h_len = header_leftover[1];																							//	|	
 	request.getSockBytes() -= (int)h_len;
+	std::cout << "----\nSock bytes:\n------\n" << request.getSockBuff() << std::endl;
+	if (std::string(request.getSockBuff()).find("Content-Disposition:") != std::string::npos)//lo andiamo gia a settare in header_parsing
+	{
+		std::cout << "FLAGGINO: " << (request.checkVal("Content-Disposition") == true ? "true" : "false") << std::endl;
+		if(request.getHeaderVal("Content-Disposition").empty())
+		{
+			std::string temp = request.getSockBuff();
+			size_t		val_start = temp.find("Content-Disposition: ") + 21;
+			std::string val = temp.substr(val_start);
+			std::string val2 = val.substr(0, val.find("\n"));
+			std::cout << "val: " << val << "\tval2: " << val2 << std::endl;
+			request.setHeaderVal("Content-Disposition:", val2);
+			std::cout << "CONTENTDISPO: " << val2 << std::endl;
+		}
+	}
 	for (int i = 0; i != request.getSockBytes(); i++)
 		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
-	request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
-	std::cout << "BYTES DA HEADER TRIMMATO: " << request.getBytesLeft() - request.getSockBytes() << std::endl;
-	request.getBytesLeft() -= request.getSockBytes();
+	/*request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
+	// std::cout << "BYTES DA HEADER TRIMMATO: " << request.getBytesLeft() - request.getSockBytes() << std::endl;
+	request.getBytesLeft() -= request.getSockBytes();*/
+	return (true);
 }
-
-// int	ft_recv(Request &request)
-// {
-// 	char				buf[2048] = {0};
-// 	std::vector<char>	&body = request.getBinBody();
-// 	int 				bytes;
-// 	int					fd;
-
-// 	fd = request.getSockFd();
-// 	if (fd < 0)
-// 		return (-1);
-// 	//SECTION - recv
-// 	bytes = recv(fd, buf, 2048, 0);
-// 	if (bytes == -1)
-// 	{
-// 		std::cout << "Error in ft_recv by recv, left: " << request.getBytesLeft() << "\n";
-// 		return (-1);
-// 	}
-// 	if (bytes == 0)
-// 	{//FIXME - gestire se client chiude connessione mentre leggiamo
-// 		//eliminare client
-// 	}
-// 	request.getBytesLeft() -= bytes;
-// 	body.insert(body.end(), buf, buf + bytes);
-// 	return (0);
-// }

@@ -49,6 +49,7 @@ typedef std::pair<std::string, int>	IpPortPair;
 typedef std::map<IpPortPair, t_conf_server> SrvNameMap;
 
 int	requestParsing(Client &client, char *input, int bytes);
+int	bodyHeaderParsing(Request &request);
 
 //SEXTION - utils
 std::string removeWhitespaces(std::string line);
