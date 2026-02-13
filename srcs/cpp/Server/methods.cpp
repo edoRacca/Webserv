@@ -86,6 +86,12 @@ static void execute_delete(Client &client, std::string &body, std::fstream *file
 	1)	decidere dove buttare roba
 	2)	fare hT(ETTE)ml
 */
+
+//curl -X POST http://localhost:9021/upload/files/ -F "file=@PIPPO.ico"
+// /upload/files/
+// /www/var/upload/files/ + filename
+// PIPPO.ico
+
 void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_file)
 {
 	Request	&request = client.getRequest();
@@ -100,15 +106,12 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 		if (val.find("filename=\"") != std::string::npos && val.rbegin()[0] == '"')
 		{
 			file = val.substr(val.find("filename=\"") + 10, val.find_last_of('\"'));
-			if (file.rbegin()[0] == '\"')//Mi vergogno, ma papà ha detto che va bene
+			if (file.rbegin()[0] == '\"')
 				file.erase(file.length() - 1, 1);
 		}
 		else
 			request.fail(HTTP_CE_BAD_REQUEST, "Bad \"Content-Disposition\" header format");
-		if (!client.getLocConf().root.empty())
-			file = client.getLocConf().root /* + "Files/" */ + file;
-		else
-			file = client.getSrvConf().root /* + "Files/" */ + file;
+		file = url_arg_remove(client.getRequest().getUrl(), '/') + file;
 		std::cout << "postMethod(): " << file << std::endl;
 		if (file_checker(file))
 			request.fail(HTTP_CE_CONFLICT, "File already exists!");
