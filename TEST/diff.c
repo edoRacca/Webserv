@@ -6,8 +6,8 @@
 #include <fcntl.h>
 #include <stdbool.h>
 
-#define FILE_1 "../newfile.ico"
-#define FILE_2 "../newfile.ico"
+#define FILE_1 "../www/var/PIPPO.ico"
+#define FILE_2 "../REQUEST"
 #define SIZE 233816
 
 typedef struct s_diff
@@ -57,7 +57,7 @@ int	main()
 		if (bin_strcmp(f1.tmp, f2.tmp, f1.tmplen, f2.tmplen))
 			print_diff(&f1, &f2, newline_counter);
 		else
-			print_diff(&f1, &f2, newline_counter);
+			{;}//print_diff(&f1, &f2, newline_counter);
 		free(f1.tmp);
 		free(f2.tmp);
 		newline_counter++;

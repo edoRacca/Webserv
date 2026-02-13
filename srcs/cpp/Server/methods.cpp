@@ -160,7 +160,7 @@ bool	trimBody(Request &request);
 
 int	bodyHeaderParsing(Request &request)
 {
-	if (request.getBodyHeaders() == true)//body gia parsato
+	if (request.getBodyHeaders() == true) // body gia parsato
 		return (true);
 	request.getBodyHeaders() = trimBody(request);
 	return (request.getBodyHeaders());
@@ -171,15 +171,18 @@ bool	trimBody(Request &request)//se finisce di leggere torna true
 	size_t		h_len;
 	std::string	line;
 	size_t		header_leftover[2];
+
 	header_leftover[0] = request.getRequestStream().tellg();
-	std::cout << "--------\nSTREAM\n---------\n: " << request.getRequestStream().str() << std::endl;
+	if (!header_leftover[0])
+		header_leftover[0] = 0;
+	std::cout << "--------\nSTREAM\n---------\n: " << request.getSockBuff() << std::endl;
 	//NOTE - se headerParsing non trova linea vuota, torna 1 (\r\n\r\n non ancora trovato, mancano headers)
 	if (headerParsing(request, false) != 0) // <----------------------------------------------------------------------------------------
 		return (false);
 	std::cout << "TROVATO \r\n! adesso trimmo il body\n";
 	header_leftover[1] = request.getRequestStream().tellg();
 	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
-	h_len = header_leftover[1];	
+	h_len = header_leftover[1];
 	request.getSockBytes() -= (int)h_len;
 	// std::cout << "----\nSock bytes:\n------\n" << request.getSockBuff() << std::endl;
 	// if (std::string(request.getSockBuff()).find("Content-Disposition:") != std::string::npos)//lo andiamo gia a settare in header_parsing
@@ -198,6 +201,7 @@ bool	trimBody(Request &request)//se finisce di leggere torna true
 	// }
 	for (int i = 0; i != request.getSockBytes(); i++)
 		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
+	request.getSockBytes() += (int)h_len;
 	/*request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
 	// std::cout << "BYTES DA HEADER TRIMMATO: " << request.getBytesLeft() - request.getSockBytes() << std::endl;
 	request.getBytesLeft() -= request.getSockBytes();*/

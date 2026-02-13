@@ -63,6 +63,7 @@ void	print_bin(std::string filename, char *bin_data, size_t len)
 
 int main(int ac, char **av, const char **env)
 {
+	std::remove("REQUEST.ico");//FIXME - togliere, solo per debug
 	std::string	conf_path;
 
 	signal(SIGINT, stopServer);

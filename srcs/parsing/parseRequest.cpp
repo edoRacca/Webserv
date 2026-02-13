@@ -132,6 +132,7 @@ static int	bodyParsing(Request &request)
 	if (request.getMethodEnum() != POST)
 		std::getline(request.getRequestStream(), body, '\0');
 	request.setBody(body);
+	std::cout << "bodyParsing()::INITbytesLeft=" << request.getBytesLeft() << "\n";
 	request.getBytesLeft() = request.getBodyLen();
 	std::cout << "bodyParsing()::bytesLeft=" << request.getBytesLeft() << "\n";
 	switch (request.getMethodEnum())
@@ -139,9 +140,8 @@ static int	bodyParsing(Request &request)
 		case POST :
 			if (bodyHeaderParsing(request) == true)//NOTE - aggiungo questa cosa anche in parseRequest
 			{
-				request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
+				request.getBinBody().insert(request.getBinBody().end(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
 				request.getBytesLeft() -= request.getSockBytes();
-				std::cout << "bodyParsing()::bytesLeft=" << request.getBytesLeft() << "\n";
 			}
 			return (0);
 		case GET :

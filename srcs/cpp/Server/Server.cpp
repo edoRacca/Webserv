@@ -73,7 +73,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
 			// this)->_clients[(*it).fd]->getRequest()->str(buffer);
 			// if (stream->fail()){;}//500 server error out of memory
-			// std::cout <<"bytes: " << bytes << std::endl;
+			std::cout << " recv bytes: " << bytes << std::endl;
 			if (bytes <= 0)
 			{
 				static int	n;
@@ -140,8 +140,6 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
 		//request.getBytesLeft() -= std::atoi(request.getHeaderVal("Content-Length").c_str());
-		std::cout << "Body Length: " << request.getHeaderVal("Content-Length");
-		std::cout << "First time Bytes left: " << request.getBytesLeft() << std::endl;
 	}
 	else // Ci sono ancora bytes da leggere
 	{
@@ -153,22 +151,24 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 			// std::cout << "processRequest() sto aggiornando i bytes!\n";
 			//1) append su vector del body;
 			// std::cout << "BODYHEADERPARSING È TRU!" << std::endl;
-			request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
+			request.getBinBody().insert(request.getBinBody().end(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
 			// std::cout << "BYTES IN BIN BODY: " << std::string(request.getBinBody().data()).find("--") << std::endl;
 			//2) modifica bytes_read
+			request.getBytesLeft() -= request.getSockBytes();
 			std::cout << "RequestBytesLeft: " << request.getBytesLeft() << std::endl;
 			std::cout << "Getsockbytes(): " << request.getSockBytes() << std::endl;
-			request.getBytesLeft() -= request.getSockBytes();
 			// std::cout << "Bytes left: " << request.getBytesLeft() << std::endl;
 		}
 	}
-	// std::cout << "MI BLOCCO QUI PORCODDIO" << std::endl;
+	// std::cout << "MI BLOCCO QUI" << std::endl;
 	// if !content_length || content_length = bytes_read || request.fail == true
 	if (request.getBytesLeft() == 0/* && request.getStatusCode() != 200 */)
 	{
 		std::cout << "Sto andando in POLLOUT" << std::endl;
 		(*it).events = POLLOUT;
 	}
+	std::ofstream	ALL("REQUEST.ico", std::iostream::binary | std::iostream::trunc);
+	ALL.write(request.getBinBody().data(), request.getBinBody().size());
 }
 
 // NOTE - crea la risposta html da inviare al client tramite HTTP
