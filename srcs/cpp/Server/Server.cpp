@@ -150,10 +150,12 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 			request.getBytesLeft() -= request.getSockBytes();
 		}
 	}
+	std::cout << "bytesLeft " << request.getBytesLeft() << "\n";
 	if (request.getBytesLeft() == 0)
 	{
-		// std::cout << "Sto andando in POLLOUT" << std::endl;
+		std::cout << "Sto andando in POLLOUT" << std::endl;
 		(*it).events = POLLOUT;
+		request.getFirstRead() = true;
 	}
 }
 

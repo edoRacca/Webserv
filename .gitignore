@@ -1,6 +1,5 @@
 .out
 webserv
 build
-www/Files/*
 .vscode
 CGI_HTML_OUTPUT.html
