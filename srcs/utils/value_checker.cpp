@@ -8,7 +8,7 @@ int	valid_ip_address(std::string addr)
 	size_t	dots;
 	int		len;
 	int		ip;
-	size_t	separator_index;
+	// size_t	separator_index;
 
 	dots = 0;
 	for (len = 0; addr[len] && addr[len] != ':'; len++)
@@ -27,9 +27,10 @@ int	valid_ip_address(std::string addr)
 			return (false);
 		while (addr[0] != '.' && addr[0] != ':' && !addr.empty())
 			addr.erase(0, 1);
-		separator_index = addr.find_first_of(".:", 1);
-		if (addr[0] == '.' && separator_index > 3 && separator_index != addr.npos)
-			return (false);
+		// FIXME - da controllare perche non funziona con ip tipo 100.xxx.xxx.xxx con il controllo sotto
+		// separator_index = addr.find_first_of(".:", 1);
+	//	if (addr[0] == '.' && separator_index > 3 && separator_index != addr.npos)
+	//		return (false);
 		if (addr[0] && addr[1] && (addr[1] == '.' || addr[1] == ':'))
 			return (false);
 		addr.erase(0, 1);

@@ -250,7 +250,6 @@ void	Server::createAutoindex(Client &client, std::string &resp_body)
 
 	url = client.getRequest().getUrl();
 	// TODO - aggiungere parametro alla richiesta (basic_url) che mantenga l'url della richiesta nudo e crudo senza modifiche da displayare nell'autoindex e varie pagine
-	findUrlDirectory(url);
 	while (std::getline(file, line))
 	{
 		line.push_back('\n');
@@ -260,12 +259,16 @@ void	Server::createAutoindex(Client &client, std::string &resp_body)
 			break ;
 	}
 	content = findUrlDirectory(url);
+	std::cout << "Content: " << content << std::endl;
 	while (content)
 	{
+		std::cout << "Entratooooo" << std::endl;
 		std::string dname = content->d_name;
-		if (dname != "..")
+		if (dname[0] != '.')
 			listDirectoriesAutoIndex(resp_body, url, content);//FIXME - da vedere qui per stat
-		content = findUrlDirectory(url); 
+		else
+			std::cout << "\033[31mIGNORED.\n\033[0m";
+		content = findUrlDirectory(url);
 	}
 	while (std::getline(file, line))
 		if (line.find("</tbody>") != std::string::npos)
@@ -366,9 +369,13 @@ void Server::listDirectoriesAutoIndex(std::string &body, std::string &url, diren
 	std::string	s_cont;
 	struct stat	info;
 
+	std::cout << "listDirectAutoIndex()\n";
+	std::cout << "\033[32m SUCA\033[0m\n";
+	std::cout << "nome: " << cont->d_name << "\n";
 	s_cont = (std::string)cont->d_name + (cont->d_type == 8 ? "" : "/");
 	std::memset(&info, 0, sizeof(struct stat));
 	path = url + '/' + cont->d_name;
+	std::cout << "PATH: " << path << std::endl;
 	std::cout << "\033[32m" << path << COLOR_RESET << std::endl;
 	stat(path.c_str(), &info);
 	if (var.fail())
