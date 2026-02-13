@@ -82,6 +82,8 @@ static void execute_delete(Client &client, std::string &body, std::fstream *file
 
 //SECTION - POST
 
+#define UPLOAD_ROOT "www/Files/"
+
 /*
 	1)	decidere dove buttare roba
 	2)	fare hT(ETTE)ml
@@ -96,6 +98,7 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 	{
 		std::string file;
 		std::string val = request.getHeader()["Content-Disposition"];
+		std::cout << "postMethod() Cont-Disp: " << val << "\n";
 		if (val.find("filename=\"") != std::string::npos && val.rbegin()[0] == '"')
 		{
 			file = val.substr(val.find("filename=\"") + 10, val.find_last_of('\"'));
@@ -104,16 +107,19 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 		}
 		else
 			request.fail(HTTP_CE_BAD_REQUEST, "Bad \"Content-Disposition\" header format");
-		if (!client.getLocConf().root.empty())
+		/*if (!client.getLocConf().root.empty())
 			file = client.getLocConf().root + file;
 		else
-			file = client.getSrvConf().root + file;
+			file = client.getSrvConf().root + file;*/
+		file = UPLOAD_ROOT + file;
 		if (file_checker(file))
 			request.fail(HTTP_CE_CONFLICT, "File already exists!");
 		std::ofstream	ofile(file.c_str(), std::ios_base::binary);
 		if (ofile.fail())
 			std::cout << "Error opening file\n";
-		ofile.write(request.getBinBody().data(), request.getBinBody().size());
+		//- Aggiungiamo il numero di carattteri aggiunti dal protocollo al boundary (\r\n--boundary--\r\n)
+		size_t	bound_len = request.getHeaderVal("Boundary").length() + 8;
+		ofile.write(request.getBinBody().data(), request.getBinBody().size() - bound_len);
 		if (request.getStatusCode() == 200)
 			resp_file->open("www/var/upload/success_upload.html");
 		else
@@ -123,13 +129,13 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 			client.getRequest().fail(HTTP_CE_NOT_FOUND, ": upload file not found!");
 			resp_file->open((checkErrorPages(client.getRequest())).c_str());
 		}
-		std::cout << "FAILE: " << file << std::endl;
+		// std::cout << "FAILE: " << file << std::endl;
 		body = file_opener(*resp_file);
 		find_and_replace(body, "{MSG}", request.getFailMsg());
 	}
 }
 
-void	print_bin(std::string filename, char *bin_data, size_t len); 
+void	print_bin(std::string filename, char *bin_data, size_t len);
 
 /*
 POST /upload/ HTTP/1.1
@@ -170,16 +176,21 @@ int	bodyHeaderParsing(Request &request)
 bool	trimBody(Request &request)//se finisce di leggere torna true
 {
 	size_t		h_len;
-	std::string	line;
 	std::string	temp;
+	std::string	boundary;
 
 	//salva la posizione del cursore dopo headerParsing
+	boundary = request.getHeaderVal("Boundary");
 	h_len = file_cursor_pos(request.getRequestStream());
 	std::getline(request.getRequestStream(), temp, '\n');
+	// std::cout << "TrimBody()\n";
+	// std::cout << "temp: " << temp <<std::endl;
+	// std::cout << "bound " << request.getHeaderVal("Boundary") << std::endl;
 	if (temp == "")
 		return (false);
-	else if (temp[0] == '-')
+	else if ("--" + boundary + '\r' == temp)
 	{
+		std::cout << "trimBody " << request.getHeaderVal("Content-Type") << std::endl;
 		if (headerParsing(request, false) != 0)
 			{;}//dare 400: errore bodyHeaderParsing
 		//salva la posizione del cursore dopo headerParsing

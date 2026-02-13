@@ -20,8 +20,6 @@ int	requestParsing(Client &client, char *input, int bytes)
 	std::istringstream	*stream = &request.getRequestStream();
 
 	request.setParsingData(client.getSockFd(), bytes, input);
-	print_file("REQUEST", "parseRequest:\n");
-	print_file("REQUEST", input);
 	while (lines == "\r")//NOTE - linee vuote iniziali accettate da RFC
 		std::getline(*stream, lines, '\n');
 	if (lineParsing(request, lines) != 0) // first line parsing
@@ -116,6 +114,15 @@ int			headerParsing(Request &request, bool reset)
 //NOTE - controlli sui nostri header
 	if (request.checkHeader() == 1)
 		return (1);
+//NOTE - Assegnazione della key boundary (\r finale e -- iniziali aggiunti manualmente)
+	if (request.getHeaderVal("Content-Type").find("boundary=") != std::string::npos)
+	{
+		size_t		start = request.getHeaderVal("Content-Type").find("boundary=") + 9;
+		std::cout << "headerParsing() FIND RESULT: " << start << "Value: " << request.getHeaderVal("Content-Type")[start] << std::endl;
+		std::string temp = request.getHeaderVal("Content-Type").substr(start);
+		request.setHeaderVal("Boundary", temp);
+		std::cout << "headerParsing(): BOUNDARY: " << request.getHeaderVal("Boundary");
+	}
 	return (line != "\r");//NOTE - se linea diversa da \r, torna errore
 }
 

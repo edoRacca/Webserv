@@ -69,7 +69,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		if ((*it).fd != -1 && ((*it).revents & POLLIN)) // revents & POLLIN -> pronto per leggere
 		{
 			char buffer[2048] = {0};
-			std::cout << "bytes left: " << this->_clients[(*it).fd]->getRequest().getBytesLeft() << "\n";
+			// std::cout << "bytes left: " << this->_clients[(*it).fd]->getRequest().getBytesLeft() << "\n";
 			int bytes = recv((*it).fd, buffer, sizeof(buffer) - 1, 0);
 			// this)->_clients[(*it).fd]->getRequest()->str(buffer);
 			// if (stream->fail()){;}//500 server error out of memory
@@ -95,11 +95,11 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT)) // revents & POLLOUT -> pronto per ricevere
 		{
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
-			std::cout << "checkForConnection: response: " << html << std::endl;
-			std::cout << "checkForConnection: totalBinBody: " << std::endl;
-			for (size_t i = 0; i != this->_clients[(*it).fd]->getRequest().getBinBody().size();i++)
-				std::cout << this->_clients[(*it).fd]->getRequest().getBinBody().data()[i];
-			std::cout << "\n";
+			//std::cout << "checkForConnection: response: " << html << std::endl;
+			//std::cout << "checkForConnection: totalBinBody: " << std::endl;
+			//for (size_t i = 0; i != this->_clients[(*it).fd]->getRequest().getBinBody().size();i++)
+			//	std::cout << this->_clients[(*it).fd]->getRequest().getBinBody().data()[i];
+			//std::cout << "\n";
 			send((*it).fd, html.c_str(), html.length(), 0);
 			(*it).events = POLLIN;
 		}
@@ -117,14 +117,12 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 	if (request.getFirstRead() == true) // legge la prima volta
 	{
 		request.getFirstRead() = false;
-		//INIT REQUEST FUNCTION
 		if (requestParsing(*this->_clients[(*it).fd], buffer, bytes) != 0)//request
 		{
 			(*it).events = POLLOUT;
 			// TODO - da settare status code corretto senza fare return
 			return ;
 		}
-		// std::cout << request << std::endl;
 		convertDnsToIp(request, request.getHost(), *this->_srvnamemap);// serverFinder
 		if ((*this->_srvnamemap).count(request.getHost()) == 0)
 		{
@@ -143,42 +141,19 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 		if (loc)
 			this->_clients[(*it).fd]->getLocConf() = *loc;
 		request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
-		// TODO - da aggiungere questo controllo se la POST non è per UPLOAD FILE
-		// request.getBytesLeft() -= std::atoi(request.getHeaderVal("Content-Length").c_str());
 	}
-	else // Ci sono ancora bytes da leggere
+	else
 	{
-		std::cout << "Body Length: " << request.getHeaderVal("Content-Length") << "\n";
-		//se gli header del body sono stati gia parsati
-		std::cout << "processRequest()::bytesLeft=" << request.getBytesLeft() << "\n";
 		if (bodyHeaderParsing(request) == true)//NOTE - aggiungo questa cosa anche in parseRequest
 		{
-			// std::cout << "processRequest() sto aggiornando i bytes!\n";
-			//1) append su vector del body;
-			// std::cout << "BODYHEADERPARSING È TRU!" << std::endl;
 			request.getBinBody().insert(request.getBinBody().end(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
-			// std::cout << "BYTES IN BIN BODY: " << std::string(request.getBinBody().data()).find("--") << std::endl;
-			//2) modifica bytes_read
 			request.getBytesLeft() -= request.getSockBytes();
-			// std::cout << "RequestBytesLeft: " << request.getBytesLeft() << std::endl;
-			// std::cout << "Getsockbytes(): " << request.getSockBytes() << std::endl;
-			// std::cout << "Bytes left: " << request.getBytesLeft() << std::endl;
 		}
 	}
-	// std::cout << "MI BLOCCO QUI" << std::endl;
-	// if !content_length || content_length = bytes_read || request.fail == true
-	if (request.getBytesLeft() == 0/* && request.getStatusCode() != 200 */)
+	if (request.getBytesLeft() == 0)
 	{
-		// std::cout << "--------------\n" << "BINBODY PALLE\n";
-		// for (size_t i = 0; i < request.getBinBody().size(); i++)
-		// {
-		// 	std::cout << request.getBinBody().data()[i];
-		// }
-		// std::cout << "----------------- PALLE\n";
 		std::cout << "Sto andando in POLLOUT" << std::endl;
 		(*it).events = POLLOUT;
-		std::ofstream	ALL("REQUEST.ico", std::iostream::binary | std::iostream::trunc);
-		ALL.write(request.getBinBody().data(), request.getBinBody().size());
 	}
 }
 

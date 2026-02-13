@@ -63,11 +63,11 @@ Request::Request(const Request &other)
 // restituisce l'errore di corrispondenza e questa cosa va gestita, per ora restituiamo
 int	Request::checkHeader(void)
 {
-	if (this->checkVal("Host") || this->checkVal("Accept") || this->checkVal("User-Agent"))
+	if (this->checkVal("Host") == false)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Missing Host"));
-	else if (this->checkVal("Accept"))
+	else if (this->checkVal("Accept") == false)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Missing Accept"));
-	else if (this->checkVal("User-Agent"))
+	else if (this->checkVal("User-Agent") == false)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Missing User-Agent"));
 	if (this->_header["Transfer-Encoding"] != "chunked" && \
 	this->_header["Transfer-Encoding"] != "unchunked")
@@ -83,11 +83,11 @@ int	Request::checkHeader(void)
 
 int	Request::_checkPost(void)
 {
-	if (this->checkVal("Content-Type"))
+	if (this->checkVal("Content-Type") == false)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Missing Content-Type"));
 	if (this->_header["Transfer-Encoding"] == "unchunked")
 		return (0);
-	if (this->checkVal("Content-Length"))
+	if (this->checkVal("Content-Length") == false)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Missing Content-Length"));
 	return (0);
 }
@@ -99,7 +99,7 @@ int	Request::_checkGet(void)
 
 int	Request::_checkDelete(void)
 {
-	if (this->checkVal("Authorization"))
+	if (this->checkVal("Authorization") == false)
 		return (this->fail(HTTP_CE_BAD_REQUEST, "Missing Authorization"));
 	return (0);
 }
@@ -112,12 +112,17 @@ bool	Request::checkKey(std::string key)
 	return (true);
 }
 
+/*
+	se non c'è la chiave:	FALSE
+	se non c'è il valore:	FALSE
+	se c'è e il valore:		TRUE
+*/
 bool	Request::checkVal(std::string key)
 {
 	// std::cout << "\033[33mChecking key:\t" << "\033[0m" << key << "\n";
 	if (checkKey(key) == false)
 		return (false);
-	return (this->_header[key].empty());
+	return (this->_header[key].empty() == false ? true : false);
 	// std::cout << key << "\033[32m è stata riempita!\n\033[0m";
 }
 
