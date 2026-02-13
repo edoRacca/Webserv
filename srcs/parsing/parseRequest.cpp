@@ -87,8 +87,6 @@ int			headerParsing(Request &request, bool reset)
 		request.resetRequest();
 	while (std::getline(request.getRequestStream(), line) && line != "\r") // da trimmare \r
 	{
-		if (line[0] == '-')
-			continue ;
 		//SECTION - Key
 		if (line[0] == '\t')
 			return (request.fail(HTTP_CE_BAD_REQUEST, "Line folding is deprecated"));

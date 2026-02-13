@@ -29,6 +29,7 @@
 # include "../srcs/hpp/Conf.hpp"
 # include "../srcs/hpp/Request.hpp"
 # include "../srcs/utils/print.tpp"
+# include "../srcs/utils/file.tpp"
 # include "../srcs/utils/string/string.tpp"
 
 # define COLOR_RESET "\033[0m"

@@ -95,7 +95,11 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT)) // revents & POLLOUT -> pronto per ricevere
 		{
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
-			// std::cout << "checkForConnection: response: " << html << std::endl;
+			std::cout << "checkForConnection: response: " << html << std::endl;
+			std::cout << "checkForConnection: totalBinBody: " << std::endl;
+			for (size_t i = 0; i != this->_clients[(*it).fd]->getRequest().getBinBody().size();i++)
+				std::cout << this->_clients[(*it).fd]->getRequest().getBinBody().data()[i];
+			std::cout << "\n";
 			send((*it).fd, html.c_str(), html.length(), 0);
 			(*it).events = POLLIN;
 		}

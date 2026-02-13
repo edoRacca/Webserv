@@ -171,32 +171,31 @@ bool	trimBody(Request &request)//se finisce di leggere torna true
 {
 	size_t		h_len;
 	std::string	line;
-	size_t		header_leftover[2];
+	std::string	temp;
 
-	header_leftover[0] = request.getRequestStream().tellg();
-	if (!header_leftover[0])
-		header_leftover[0] = 0;
-	// std::cout << "--------\nSTREAM\n---------\n: " << request.getSockBuff() << std::endl;
-	//NOTE - se headerParsing non trova linea vuota, torna 1 (\r\n\r\n non ancora trovato, mancano headers)
-	if (headerParsing(request, false) != 0) // <----------------------------------------------------------------------------------------
+	//salva la posizione del cursore dopo headerParsing
+	h_len = file_cursor_pos(request.getRequestStream());
+	std::getline(request.getRequestStream(), temp, '\n');
+	if (temp == "")
 		return (false);
-	// std::cout << "BODY PRIMA DI TRIMMARE IL BODY\n";
-	// std::cout << request.getSockBuff() << std::endl;
+	else if (temp[0] == '-')
+	{
+		if (headerParsing(request, false) != 0)
+			{;}//dare 400: errore bodyHeaderParsing
+		//salva la posizione del cursore dopo headerParsing
+		h_len = file_cursor_pos(request.getRequestStream()) - h_len;
+		request.getBytesLeft() -= request.getSockBytes();
+	}//else: è un body normale senza immagine, niente headerBodyParsing
+	else
+		request.getBytesLeft() -= (request.getSockBytes() - h_len);
 	std::cout << "TROVATO \r\n! adesso trimmo il body\n";
-	header_leftover[1] = request.getRequestStream().tellg();
-	request.setBodyLen(request.getBodyLen() - (header_leftover[1] - header_leftover[0]));
-	h_len = header_leftover[1];
 	request.getSockBytes() -= (int)h_len;
 	for (int i = 0; i != request.getSockBytes(); i++)
 		request.getSockBuff()[i] = request.getSockBuff()[i + h_len];
 	request.getSockBytes() += (int)h_len;
-	// std::cout << "BODY DOPO AVER TRIMMATO IL BODY\n";
-	// std::cout << request.getSockBuff() << std::endl;
-	/*request.getBinBody().insert(request.getBinBody().begin(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
-	// std::cout << "BYTES DA HEADER TRIMMATO: " << request.getBytesLeft() - request.getSockBytes() << std::endl;
-	request.getBytesLeft() -= request.getSockBytes();*/
 	request.getBinBody().insert(request.getBinBody().end(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes() - (int)h_len);
-	request.getBytesLeft() -= request.getSockBytes();
+	
+	//request.getBytesLeft() -= request.getSockBytes();
 	request.getBodyHeaders() = true;
 	return (false);
 }
