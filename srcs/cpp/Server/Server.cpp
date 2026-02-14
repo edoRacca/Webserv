@@ -26,7 +26,7 @@ Server::Server(Conf &conf, const char **env):_env(env)
 		{
 			this->_server_data[port_connection.fd] = &(*it).second;
 			this->_addrs.push_back(port_connection);
-			printServerConfiguration(conf, it);
+			printServerConfiguration(it);
 			this->_server_num++;
 		}
 		else
@@ -62,6 +62,7 @@ void Server::suppressSocket()
 		delete [] (*it);
 }
 
+//TODO - refactoring: spostare funzioni poll, request, response file(?)
 void	Server::checkForConnection() //checkare tutti i socket client per vedere se c'e stata una connessione
 {
 	for (std::vector<struct pollfd>::iterator it = this->_addrs.begin() + this->_server_num; it != this->_addrs.end(); ++it)
@@ -95,7 +96,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT)) // revents & POLLOUT -> pronto per ricevere
 		{
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
-			std::cout << "checkForConnection: response: " << html << std::endl;
+			// std::cout << "checkForConnection: response: " << html << std::endl;
 			//std::cout << "checkForConnection: totalBinBody: " << std::endl;
 			//for (size_t i = 0; i != this->_clients[(*it).fd]->getRequest().getBinBody().size();i++)
 			//	std::cout << this->_clients[(*it).fd]->getRequest().getBinBody().data()[i];
@@ -114,7 +115,7 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 	this->_clients[(*it).fd]->getRequest().getSockBytes() = bytes;
 
 	if (request.getFirstRead() == true) // legge la prima volta
-	{
+	{//TODO - refactoring: per favore splittiamo sti controlli
 		request.getFirstRead() = false;
 		if (requestParsing(*this->_clients[(*it).fd], buffer, bytes) != 0)//request
 		{
@@ -130,7 +131,7 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 			return ;
 		}
 		if ((size_t)(*this->_srvnamemap)[request.getHost()].client_max_body_size < request.getBodyLen())
-		{
+		{//TODO - refactoring: bleah che schifo, poi gestire da conf
 			if (!(request.getHeaderVal("Content-Type").find("multipart/form-data") != std::string::npos && request.getMethodEnum() == POST))
 				request.fail(HTTP_CE_CONTENT_UNPROCESSABLE, "Declared max body size exceeded in current request (che scimmia che sei)");
 		}
@@ -139,6 +140,13 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 		t_conf_location	*loc = request.findRightLocation(&srv);
 		if (loc)
 			this->_clients[(*it).fd]->getLocConf() = *loc;
+		unsigned char	allowed_methods;
+		if (loc)
+			allowed_methods = loc->mask_methods;
+		else
+			allowed_methods = srv.mask_methods;
+		if ((allowed_methods & (1 << request.getMethodEnum())) == MASK_NO_METHODS)
+			request.fail(HTTP_CE_METHOD_NOT_ALLOWED, "Ti puzzano i piedi (della zia del tuo ragazzo)");
 		request.findRightUrl(&(*this->_srvnamemap)[request.getHost()]);
 	}
 	else
@@ -240,6 +248,7 @@ void	Server::choose_file(Client &client, std::fstream &file, std::string url)
 }
 
 // NOTE - crea un body per autoindex delle cartelle, utilizza dirent * e findUrlDirectory()
+//TODO - refactoring file a parte queste funzioni
 void	Server::createAutoindex(Client &client, std::string &resp_body)
 {
 	std::ifstream	file("www/var/autoindex/autoindex.html");
@@ -401,12 +410,14 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 	request.setRequestErrorBool(true);
 }
 
-void	Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
+void	Server::printServerConfiguration(SrvNameMap::iterator it) const
 {
-	(void)conf;
+	if (!SERVER)
+		return ;
 	std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num + 1<< "\033[0m" << std::endl;
 	std::cout << "Listening on -> \033[1;32m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl;
-	std::cout << (*it).second;
+	//NOTE - questa linea stampa tutto l'universo
+	//std::cout << (*it).second;
 }
 
 

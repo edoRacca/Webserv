@@ -9,6 +9,8 @@ static void	parseRoot(Conf &conf, std::vector<std::string> list, int line);
 static void	parseIndex(Conf &conf, std::vector<std::string> list, int line);
 static void	parseBodySize(Conf &conf, std::vector<std::string> list, int line);
 static void	parseErrorPages(Conf &conf, std::vector<std::string> &list, int line);
+static void	parseMethodsList(Conf &conf, std::vector<std::string> &list, int line);
+static void	parseStorage(Conf &conf, std::vector<std::string> &list, int line);
 
 //NOTE - Allowed server instructions
 /*
@@ -32,6 +34,10 @@ void	confParseServer(Conf &conf, std::vector<std::string> list, int line)
 		parseBodySize(conf, list, line);
 	else if (list[0] == "error_page")
 		parseErrorPages(conf, list, line);
+	else if (list[0] == "methods")
+		parseMethodsList(conf, list, line);
+	else if (list[0] == "storage")
+		parseStorage(conf, list, line);
 	else
 		instructionError(list, line, "unrecognized instruction");
 }
@@ -155,4 +161,39 @@ static void	parseErrorPages(Conf &conf, std::vector<std::string> &list, int line
 	if (conf.getServerBlock().err_pages.count(code) > 0)
 		instructionError(list, line, "error page for this status code already set");
 	conf.getServerBlock().err_pages[code] = list[2];
+}
+
+static void	parseMethodsList(Conf &conf, std::vector<std::string> &list, int line)
+{
+	if (list.size() < 2)
+		instructionError(list, line, "bad methods params");
+	if (conf.getServerBlock().mask_methods != MASK_NO_METHODS)
+		instructionError(list, line, "methods already set");
+	for (size_t i = 1; i != list.size(); i++)
+	{
+		if (list[i] == "GET")
+			conf.getServerBlock().mask_methods |= MASK_GET;
+		else if (list[i] == "POST")
+			conf.getServerBlock().mask_methods |= MASK_POST;
+		else if (list[i] == "DELETE")
+			conf.getServerBlock().mask_methods |= MASK_DELETE;
+		else if (list[i] == "HEAD")
+			conf.getServerBlock().mask_methods |= MASK_HEAD;
+		else if (list[i] == "ALL")
+			conf.getServerBlock().mask_methods = MASK_ALL_METHODS;
+		else if (list[i] == "NONE")
+			conf.getServerBlock().mask_methods = MASK_NO_METHODS;
+		else
+			instructionError(list, line, "unrecognized method");
+	}
+}
+
+static void	parseStorage(Conf &conf, std::vector<std::string> &list, int line)
+{
+	if (list.size() != 2)
+		instructionError(list, line, "bad storage path param");
+	if (valid_directory(list[1]))
+		conf.getServerBlock().post_storage = list[1];
+	else
+		instructionError(list, line, "storage path not valid");	
 }

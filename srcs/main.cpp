@@ -96,6 +96,13 @@ int main(int ac, char **av, const char **env)
 }
 
 /*
+	[]	upload con autorizzazioni, html bellino
+	[]	cgi non bloccanti
+	[]	cookie
+	[]	refactoring
+	[]	test
+*/
+/*
 - 	Your server must remain non-blocking at all times 
 	and properly handle client disconnections when 
 	necessary.

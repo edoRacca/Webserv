@@ -3,6 +3,7 @@
 
 # include "../../includes/ether.hpp"
 # include "../../includes/status_codes.hpp"
+# include "Request.hpp"
 
 class	Conf;
 typedef struct s_conf_server	t_conf_server;
@@ -24,6 +25,8 @@ typedef std::map<int, std::string> 							errPages;
 # define DEFAULT_CONF_IP "127.0.0.1"
 # define DEFAULT_CONF_SERVNAME "localhost"
 # define DEFAULT_CONF_BODYSIZE 1024
+# define DEFAULT_STORAGE "www/storage/"
+# define DEFAULT_ALLOWED_METHODS 0
 
 //SECTION - s_conf_server: the data structure for server block
 
@@ -42,8 +45,10 @@ struct s_conf_server
 	std::map<std::string, t_conf_location>	location; // <"/pippo", struct *>
 	std::string								root;//root /var/www/html;
 	std::string								index;//index /var/www/html;
+	std::string								post_storage;
 	std::vector<std::string>				server_names;//server_name example.com www.example.com *example.com;
 	int										client_max_body_size;//client_max_body_size 10m;
+	unsigned char							mask_methods;
 	bool									listen_set;//is listen istruction set?
 	bool									autoindex;//is autoindex tette?
 	std::map<int, std::string> 				err_pages;//error codes associated to their error page
@@ -79,8 +84,10 @@ struct s_conf_location
 	std::string					index;
 	std::string					ret_uri;
 	std::string					ret_text;
+	std::string					post_storage;
 	std::string					script_type;
 	int							ret_code;
+	unsigned char				mask_methods;
 	bool						autoindex; //set autoindex mode on
 	bool						run_script; //set script mode on
 	bool						script_daemon; //set script mode on
@@ -235,6 +242,16 @@ enum	e_conf_error
 	CONF_MISSING_BLOCK,
 	CONF_PATH_INVALID,
 	CONF_MULT_LOCATION,
+};
+
+enum	e_methods_mask
+{
+	MASK_NO_METHODS = 0,
+	MASK_POST = 1 << POST,
+	MASK_GET = 1 << GET,
+	MASK_DELETE = 1 << DELETE,
+	MASK_HEAD = 1 << HEAD,
+	MASK_ALL_METHODS = (1 << 8) - 1,
 };
 
 /*

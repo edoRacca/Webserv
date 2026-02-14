@@ -58,6 +58,8 @@ void	s_conf_server::set_if_empty(Conf &conf)
 		this->server_names.push_back(DEFAULT_CONF_SERVNAME);
 	if (this->client_max_body_size == 0)
 		this->client_max_body_size = DEFAULT_CONF_BODYSIZE;
+	if (this->post_storage.empty())
+		this->post_storage = DEFAULT_STORAGE;
 	if (this->listen_set == false)
 		conf.setIpPort(std::string(DEFAULT_CONF_IP), DEFAULT_CONF_PORT);
 	for (int i = conf.getIpPortNumber(); i < (int)conf.getIpPort().size(); i++)
@@ -74,6 +76,7 @@ void	s_conf_server::set(void)
 	this->server_names.clear();
 	this->client_max_body_size = 0;
 	this->location.clear();
+	this->mask_methods = 0;
 	this->listen_set = false;
 	this->autoindex = false;
 }
@@ -89,6 +92,8 @@ void	s_conf_location::set_if_empty(Conf &conf)
 		this->root = "";
 	if (this->ret_code == 0 && !this->ret_uri.empty())
 		this->ret_code = 302; //HTTP_RD_FOUND
+	if (this->post_storage.empty())
+		this->post_storage = DEFAULT_STORAGE;
 }
 
 void	s_conf_location::set(std::string path)
@@ -98,6 +103,7 @@ void	s_conf_location::set(std::string path)
 	this->cgiparam.clear();
 	this->autoindex = false;
 	this->run_script = false;
+	this->mask_methods = 0;
 	this->alias = false;
 	this->ret_code = 0, this->ret_uri.clear(), this->ret_text.clear();
 }

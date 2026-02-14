@@ -34,12 +34,26 @@
 # include "../srcs/utils/string/string.tpp"
 
 # define COLOR_RESET "\033[0m"
-# define DEBUG 0
+# define DEBUG false
+# define CONF false
+# define SERVER true
 
 #if defined(DEBUG) && DEBUG
   #define DBG_MSG(msg) (std::cout << "\033[31m" << (msg) << COLOR_RESET << std::endl)
 #else
   #define DBG_MSG(msg) ((void)0)
+#endif
+
+#if defined(CONF) && CONF
+  #define DBG_CNF(msg) (std::cout << "\033[31m" << (msg) << COLOR_RESET << std::endl)
+#else
+  #define DBG_CNF(msg) ((void)0)
+#endif
+
+#if defined(SERVER) && SERVER
+  #define DBG_SRV(msg) (std::cout << "\033[31m" << (msg) << COLOR_RESET << std::endl)
+#else
+  #define DBG_SRV(msg) ((void)0)
 #endif
 
 class Request;

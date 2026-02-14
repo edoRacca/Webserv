@@ -35,6 +35,7 @@ enum	e_methods
 	HEAD,
 	METH_NUM,
 };
+
 // FIXME - gestire transfer-encoding
 
 class Request

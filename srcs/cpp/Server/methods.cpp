@@ -101,8 +101,12 @@ void	Server::postMethod(Client &client, std::string &body, std::fstream *resp_fi
 		}
 		else
 			request.fail(HTTP_CE_BAD_REQUEST, "Bad \"Content-Disposition\" header format");
-		file = url_arg_remove(client.getRequest().getUrl(), '/') + file;
-		// std::cout << "postMethod(): " << file << std::endl;
+		if (client.getLocConf().post_storage.empty() == false)
+			file = client.getLocConf().post_storage + file;
+		else
+			file = client.getSrvConf().post_storage + file;
+		//file = url_arg_remove(client.getRequest().getUrl(), '/') + file;
+		std::cout << "postMethod(): " << file << std::endl;
 		if (file_checker(file))
 			request.fail(HTTP_CE_CONFLICT, "File already exists!");
 		std::ofstream	ofile(file.c_str(), std::ios_base::binary);
