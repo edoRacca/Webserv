@@ -168,6 +168,8 @@ int	Request::fail(e_http_codes code, std::string info)
 			SWITCH_LOG(info, "ClientError: Wtf" PIEDI_DELLA_ZIA_DEL_TUO_RAGAZZO);	
 	}
 	this->_fail_msg = info;
+	if (this->_fail_msg.empty() == true)
+		this->_fail_msg = "Err";
 	this->setStatusCode(code);
 	return (1);
 }

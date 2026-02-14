@@ -188,7 +188,8 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	}
 	if (client.getRequest().getAutoIndexBool() && valid_directory(url) && client.getRequest().getMethodEnum() != POST)
 		createAutoindex(client, body);
-	else if (client.getRequest().getMethodEnum() != POST)
+	//else if (client.getRequest().getMethodEnum() != POST)
+	else
 		choose_file(client, file, url);
 	client.getRequest().setBodyType(type);
 	runMethod(client, body, file);
@@ -199,13 +200,14 @@ void	Server::runMethod(Client &client, std::string &resp_body, std::fstream &fil
 {
 	if (resp_body.empty() == false)
 		return ;
+	resp_body = file_opener(file, "runMethod GET: Cannot open file");
+	if (client.getRequest().getFailMsg().empty() == false)
+		return ;
 	switch (client.getRequest().getMethodEnum())
 	{
 		case GET:
 			if (client.getRequest().getRunScriptBool() == true)
 				run_script(*this, client, resp_body);
-			else
-				resp_body = file_opener(file, "runMethod GET: Cannot open file");
 			break ;
 		case DELETE:
 			this->deleteMethod(client, resp_body, &file);
