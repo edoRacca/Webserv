@@ -38,7 +38,7 @@ static void		get_argv(Client &client, t_cgi &cgi_data, std::string argv[2])
 	std::string	url;
 
 	url = client.getRequest().getUrl();
-	if (url.find('?') != std::string::npos && url.find('&') == std::string::npos)
+	if (url.find('?') != std::string::npos)
 	{
 		argv[0] = url.substr(0, url.find_last_of('?'));
 		argv[1] = url.substr(url.find_last_of('?') + 1, url.length());
@@ -107,8 +107,6 @@ static void		run_daemon(Server &srv, Client &client, t_cgi &cgi_data)
 			return (std::cout << "run_script fatal error: fork\n", (void)0);
 		else if (cgi_data.pid == 0)
 		{
-			std::cout << "|" << cgi_data.argv[0] << "|" << cgi_data.argv[1] << "|" << (cgi_data.argv[2] == NULL) << std::endl;
-			std::cout << "dir: " << getcwd(NULL, 0) << std::endl;
 			dup2(pipes[0][1], STDOUT_FILENO);
 			dup2(pipes[1][0], STDIN_FILENO);
 			close(pipes[0][0]);

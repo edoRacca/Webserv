@@ -94,7 +94,7 @@ button:active {
     <!-- CENTER SCREEN -->
     <div class="screen-container">
         <!-- Aggiornato per leggere BMP statico -->
-        <img id="screen" src="/static/render.bmp">
+        <img id="screen" src="/render.bmp">
     </div>
 
     <!-- RIGHT -->
@@ -122,7 +122,7 @@ const screen = document.getElementById("screen");
 // path statico già aggiornato dal server/CGI
 // aggiunge timestamp per bypassare cache se necessario
 function refreshImage() {
-    screen.src = "/static/render.bmp?t=" + Date.now();
+    screen.src = "/render.bmp?t=" + Date.now();
 }
 
 // invia richieste al server per input, log, heartbeat

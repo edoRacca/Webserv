@@ -93,7 +93,8 @@ button:active {
 
     <!-- CENTER SCREEN -->
     <div class="screen-container">
-        <img id="screen" src="/cgi-bin/cub3D/cub.cgi">
+        <!-- Aggiornato per leggere BMP statico -->
+        <img id="screen" src="/render.bmp">
     </div>
 
     <!-- RIGHT -->
@@ -118,14 +119,32 @@ button:active {
 const FPS = 30;
 const screen = document.getElementById("screen");
 
-function refreshFrame() {
-    screen.src = "/script/cub3D/cub.cgi?t=" + Date.now();
+// path statico già aggiornato dal server/CGI
+// aggiunge timestamp per bypassare cache se necessario
+function refreshImage() {
+    screen.src = "/render.bmp?t=" + Date.now();
 }
 
-setInterval(refreshFrame, 1000 / FPS);
+// invia richieste al server per input, log, heartbeat
+function serverPing() {
+    fetch("/script/cub3D/cub3D.cgi?www/cgi-bin/cub3D/debug.cub")
+        .then(resp => resp.text())
+        .then(text => console.log("server update:", text))
+        .catch(err => console.error(err));
+}
 
+// loop principale
+setInterval(() => {
+    refreshImage();  // aggiorna immagine
+    serverPing();    // aggiorna server
+}, 1000 / FPS);
+
+// gestione input dai pulsanti
 function sendInput(action) {
-    fetch("/input?action=" + action);
+    fetch("/input?action=" + action)
+        .then(resp => resp.text())
+        .then(text => console.log("input:", action, "resp:", text))
+        .catch(err => console.error(err));
 }
 </script>
 
