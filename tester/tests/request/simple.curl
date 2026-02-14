@@ -1,0 +1,6 @@
+exec 200 NAME=home - curl http://localhost:9020
+exec 404 NAME=error_404 - curl http://localhost:9020/wrong_path/
+loop 120
+	exec 200 NAME=home - curl http://localhost:9020
+	#commento
+stop

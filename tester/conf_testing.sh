@@ -19,8 +19,8 @@ run()
 
 #SECTION - bash code
 
-rm -f "$OUT_DIR_LOCAL/errors.txt"
-rm -f "$OUT_DIR_LOCAL/temp.txt"
+rm -f "$OUT_DIR_LOCAL/conf_errors.txt"
+rm -f "$OUT_DIR_LOCAL/conf_temp.txt"
 if [[ "$1" == "all" ]];then
 	for conf in "${all[@]}"; do
 		run "$conf"
