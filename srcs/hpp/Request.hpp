@@ -3,7 +3,6 @@
 
 # include "../../includes/ether.hpp"
 # include "../../includes/status_codes.hpp"
-# include "Conf.hpp"
 
 # define UNDEFINED ""//method undefined
 # define MAX_URI_LENGTH 8000//see status code HTTP_CE_URI_TOO_LONG
@@ -34,6 +33,16 @@ enum	e_methods
 	DELETE,
 	HEAD,
 	METH_NUM,
+};
+
+enum	e_methods_mask
+{
+	MASK_NO_METHODS = 0,
+	MASK_POST = 1 << POST,
+	MASK_GET = 1 << GET,
+	MASK_DELETE = 1 << DELETE,
+	MASK_HEAD = 1 << HEAD,
+	MASK_ALL_METHODS = (1 << 8) - 1,
 };
 
 // FIXME - gestire transfer-encoding

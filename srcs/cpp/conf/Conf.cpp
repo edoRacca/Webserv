@@ -92,8 +92,6 @@ void	s_conf_location::set_if_empty(Conf &conf)
 		this->root = "";
 	if (this->ret_code == 0 && !this->ret_uri.empty())
 		this->ret_code = 302; //HTTP_RD_FOUND
-	if (this->post_storage.empty())
-		this->post_storage = DEFAULT_STORAGE;
 }
 
 void	s_conf_location::set(std::string path)

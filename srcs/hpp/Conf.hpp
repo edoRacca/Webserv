@@ -244,16 +244,6 @@ enum	e_conf_error
 	CONF_MULT_LOCATION,
 };
 
-enum	e_methods_mask
-{
-	MASK_NO_METHODS = 0,
-	MASK_POST = 1 << POST,
-	MASK_GET = 1 << GET,
-	MASK_DELETE = 1 << DELETE,
-	MASK_HEAD = 1 << HEAD,
-	MASK_ALL_METHODS = (1 << 8) - 1,
-};
-
 /*
 	QUALE SERVER SCEGLIERE?
 
