@@ -95,7 +95,7 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 		else if ((*it).fd != -1 && ((*it).revents & POLLOUT)) // revents & POLLOUT -> pronto per ricevere
 		{
 			std::string	html = createResponse(*(this->_clients[(*it).fd]));
-			//std::cout << "checkForConnection: response: " << html << std::endl;
+			std::cout << "checkForConnection: response: " << html << std::endl;
 			//std::cout << "checkForConnection: totalBinBody: " << std::endl;
 			//for (size_t i = 0; i != this->_clients[(*it).fd]->getRequest().getBinBody().size();i++)
 			//	std::cout << this->_clients[(*it).fd]->getRequest().getBinBody().data()[i];
@@ -108,19 +108,18 @@ void	Server::checkForConnection() //checkare tutti i socket client per vedere se
 
 void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buffer, int bytes)
 {
-	//FIXME - TESTING PER POST
 	Request	&request = this->_clients[(*it).fd]->getRequest();
 	this->_clients[(*it).fd]->getRequest().getRequestStream().str(buffer);
 	this->_clients[(*it).fd]->getRequest().getRequestStream().clear();
 	this->_clients[(*it).fd]->getRequest().getSockBytes() = bytes;
-	// if (stream->fail()){;}//500 server error out of memory
+
 	if (request.getFirstRead() == true) // legge la prima volta
 	{
 		request.getFirstRead() = false;
 		if (requestParsing(*this->_clients[(*it).fd], buffer, bytes) != 0)//request
 		{
 			(*it).events = POLLOUT;
-			// TODO - da settare status code corretto senza fare return
+			// TODO - da settare status code corretto senza fare return ?????
 			return ;
 		}
 		convertDnsToIp(request, request.getHost(), *this->_srvnamemap);// serverFinder
@@ -144,16 +143,15 @@ void	Server::processRequest(std::vector<struct pollfd>::iterator &it, char *buff
 	}
 	else
 	{
-		if (bodyHeaderParsing(request) == true)//NOTE - aggiungo questa cosa anche in parseRequest
+		if (bodyHeaderParsing(request) == true)
 		{
 			request.getBinBody().insert(request.getBinBody().end(), request.getSockBuff(), request.getSockBuff() + request.getSockBytes());
 			request.getBytesLeft() -= request.getSockBytes();
 		}
 	}
-	std::cout << "bytesLeft " << request.getBytesLeft() << "\n";
 	if (request.getBytesLeft() == 0)
 	{
-		std::cout << "Sto andando in POLLOUT" << std::endl;
+		std::cout << "processRequest(): Sto andando in POLLOUT" << std::endl;
 		(*it).events = POLLOUT;
 		request.getFirstRead() = true;
 	}
@@ -185,7 +183,6 @@ std::string	Server::createResponse(Client &client) // create html va messo anche
 	else if (client.getRequest().getMethodEnum() != POST)
 		choose_file(client, file, url);
 	client.getRequest().setBodyType(type);
-	// std::cout << "URL after: " << url << std::endl;
 	runMethod(client, body, file);
 	return (createHtml(client, body));
 }
@@ -251,7 +248,6 @@ void	Server::createAutoindex(Client &client, std::string &resp_body)
 	std::string		url;
 
 	url = client.getRequest().getUrl();
-	// TODO - aggiungere parametro alla richiesta (basic_url) che mantenga l'url della richiesta nudo e crudo senza modifiche da displayare nell'autoindex e varie pagine
 	while (std::getline(file, line))
 	{
 		line.push_back('\n');
@@ -261,15 +257,11 @@ void	Server::createAutoindex(Client &client, std::string &resp_body)
 			break ;
 	}
 	content = findUrlDirectory(url);
-	std::cout << "Content: " << content << std::endl;
 	while (content)
 	{
-		std::cout << "Entratooooo" << std::endl;
 		std::string dname = content->d_name;
 		if (dname[0] != '.')
 			listDirectoriesAutoIndex(resp_body, url, content);//FIXME - da vedere qui per stat
-		else
-			std::cout << "\033[31mIGNORED.\n\033[0m";
 		content = findUrlDirectory(url);
 	}
 	while (std::getline(file, line))
@@ -298,11 +290,7 @@ std::string	createHtml(Client &client, const std::string &body)
 	response << "Content-Length: " << body.size() << "\r\n\r\n";
 	response << body << "\n\n";
 
-	// std::cout << "CREATE RESPONSE ERROR: " << (client.getRequest().getDnsErrorBool() == true ? "true" : "false") << std::endl;
-	// std::cout << "CREATE RESPONSE STATUS: " << client.getRequest().getStatusCode() << std::endl;
-	std::cout << "URL: " << url << std::endl;
-
-	// std::cout << response.str() << std::endl;
+	std::cout << "createHtml() URL: " << url << std::endl;
 	return (response.str());
 }
 
@@ -311,7 +299,7 @@ std::string	Server::checkErrorPages(Request &request)
 {
 	std::ifstream	file;
 	s_conf_server 	*server = &(*this->_srvnamemap)[request.getHost()];
-	s_conf_location	*loc; //?
+	s_conf_location	*loc;
 	int				status_code = request.getStatusCode();
 	std::string 	url = request.getUrl();
 
@@ -320,13 +308,9 @@ std::string	Server::checkErrorPages(Request &request)
 		if (server->err_pages.count(status_code) > 0) // check su server se ci sono error pages adeguate
 		{
 			file.open((server->root + server->err_pages[status_code]).c_str());
-			// std::cout << "Status code error page: " << status_code << std::endl; 
-			// std::cout << "Server prova ad aprire: " << server->root + server->err_pages[status_code] << std::endl;
 			if (file.fail() == true)
 				return (url_rooting("/errors/default.html", *server));
-				// return (server->root + "/errors/default.html");
 			return (url_rooting(server->err_pages[status_code], *server));
-			// return (server->root + server->err_pages[status_code]); // ritorni error page server
 		}
 	}
 	else if (server->location[url].err_pages.count(status_code) > 0) // controllo se location ha l'error page richiesta
@@ -371,14 +355,9 @@ void Server::listDirectoriesAutoIndex(std::string &body, std::string &url, diren
 	std::string	s_cont;
 	struct stat	info;
 
-	std::cout << "listDirectAutoIndex()\n";
-	std::cout << "\033[32m SUCA\033[0m\n";
-	std::cout << "nome: " << cont->d_name << "\n";
 	s_cont = (std::string)cont->d_name + (cont->d_type == 8 ? "" : "/");
 	std::memset(&info, 0, sizeof(struct stat));
 	path = url + '/' + cont->d_name;
-	std::cout << "PATH: " << path << std::endl;
-	std::cout << "\033[32m" << path << COLOR_RESET << std::endl;
 	stat(path.c_str(), &info);
 	if (var.fail())
 	{
@@ -400,11 +379,9 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 {
 	if (std::isdigit(ipport.first[0]) != 0)
 		return;
-	// std::cout << "------------DNS CONVERSION------------\n";
-	// std::cout << "Host CONVERT DNS: " << ipport.first << "," << ipport.second << std::endl;
+
 	if (ipport.first == "localhost")
 	{
-		// std::cout << "DNS: convert localhost ----> 127.0.0.1\n\n";
 		ipport.first = "127.0.0.1";
 		return ;
 	}
@@ -415,22 +392,18 @@ void	convertDnsToIp(Request &request, IpPortPair &ipport, SrvNameMap &srvmap)
 		{
 			if (ipport.first == *vit && ipport.second == (*it).first.second)
 			{
-				// std::cout << "DNS: convert " << ipport.first;
 				ipport.first = (*it).first.first;
 				std::cout << " ----> " << ipport.first << "\n";
-				// std::cout << "---------------DNS CONVERSION----------------\n";
 				return ;
 			}
 		}
 	}
-	// std::cout << "Qui ci arrivo?" << std::endl << std::endl;
 	request.setRequestErrorBool(true);
 }
 
 void	Server::printServerConfiguration(Conf &conf, SrvNameMap::iterator it) const
 {
 	(void)conf;
-	// return ;
 	std::cout << std::endl << "\033[1;37m" << "Creating server " << this->_server_num + 1<< "\033[0m" << std::endl;
 	std::cout << "Listening on -> \033[1;32m" << (*it).first.first << ":" << (*it).first.second << "\033[0m" << std::endl;
 	std::cout << (*it).second;

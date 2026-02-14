@@ -99,8 +99,9 @@ int main(int ac, char **av, const char **env)
 - 	Your server must remain non-blocking at all times 
 	and properly handle client disconnections when 
 	necessary.
--	Clients must be able to upload files.
--	You need at least the GET, POST, and DELETE methods
+X	Clients must be able to upload files.
+	Page with delete and post.
+X	You need at least the GET, POST, and DELETE methods
 -	Stress test your server to ensure 
 	it remains available at all times.
 -	Uploading files from the clients to the server is 
@@ -111,7 +112,7 @@ int main(int ac, char **av, const char **env)
 - 	The same applies to the output of the CGI. 
 	If no content_length is returned from the CGI, 
 	EOF will mark the end of the returned data.
--	You must provide configuration files and default 
+X	You must provide configuration files and default 
 	files to test and demonstrate that every feature 
 	works during the evaluation.
 -	We have provided a small tester. 

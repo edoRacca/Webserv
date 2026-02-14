@@ -26,7 +26,7 @@ dirent	*findUrlDirectory(std::string url)
 		dir = NULL;
 		return (NULL);
 	}
-	std::cout << "findUrlDirectory(): " << content->d_name << std::endl;
+	// std::cout << "findUrlDirectory(): " << content->d_name << std::endl;
 	return (content);
 }
 

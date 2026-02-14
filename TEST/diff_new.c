@@ -1,53 +1,43 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <stdlib.h>
 #include <malloc.h>
 #include <string.h>
 #include <fcntl.h>
 #include <stdbool.h>
 
-#define FILE_1 "../REQUEST.ico"
-#define FILE_2 "../favicon.ico"
-#define SIZE 233816
-
 typedef struct s_diff
 {
-	int		fd;
-	char	bf[SIZE + 3];
+	char	*bf;
 	char	*tmp;
+	char	*filename;
+	int		filesize;
+	int		fd;
 	int		tmplen;
 	int		left;
 }		t_diff;
 
+static int	files_constructor(t_diff *f1, t_diff *f2);
+static int	stat_syscall(int ac, char **av, t_diff *f1, t_diff *f2);
 static char	*itoa(int n, int *len);
 static bool	ft_getline(t_diff *f);
 static int	bin_strcmp(char *tmp1, char *tmp2, int len1, int len2);
 static void	print_diff(t_diff *f1, t_diff *f2, int newline_counter);
 static int	end(t_diff *f1, t_diff *f2, int ecode);
 
-int	main()
+int	main(int ac, char **av)
 {
 	t_diff	f1;
 	t_diff	f2;
 	int		newline_counter;
 
-	f1 = (t_diff){0};
-	f2 = (t_diff){0};
-	f1.fd = open(FILE_1, O_RDONLY);//"../PORNO_EMMA_WATSON.ico"
-	f2.fd = open(FILE_2, O_RDONLY);//"../www/var/favicon.ico"
+	if (stat_syscall(ac, av, &f1, &f2) != 0)
+		return (1);
+	if (files_constructor(&f1, &f2) != 0)
+		return (1);
 	newline_counter = 0;
-	if (!f1.fd || !f2.fd)
-		return (end(&f1, &f2, 1));
-	if (read(f1.fd, f1.bf, SIZE) != SIZE)
-		{;}
-		//return (end(&f1, &f2, 2));
-	if (read(f2.fd, f2.bf, SIZE) != SIZE)
-		{;}
-		//return (end(&f1, &f2, 3));
-	f1.left = SIZE + 3, f2.left = SIZE + 3; 
-	f1.bf[SIZE] = 'E', f2.bf[SIZE] = 'E';
-	f1.bf[SIZE + 1] = 'O', f2.bf[SIZE + 1] = 'O';
-	f1.bf[SIZE + 2] = 'F', f2.bf[SIZE + 2] = 'F';
 	for (;f1.left > 0;)
 	{
 		if (ft_getline(&f1) != 0)
@@ -56,26 +46,72 @@ int	main()
 			return (end(&f1, &f2, 5));
 		if (bin_strcmp(f1.tmp, f2.tmp, f1.tmplen, f2.tmplen))
 			print_diff(&f1, &f2, newline_counter);
-		else
-			{;}//print_diff(&f1, &f2, newline_counter);
 		free(f1.tmp);
+		f1.tmp = NULL;
 		free(f2.tmp);
+		f2.tmp = NULL;
 		newline_counter++;
 	}
 	end(&f1, &f2, 0);
 }
 
-/*
-			h_len = header.tellg();
-			bytes -= (int)h_len; //161 -> left
-			//request.setBodyLen(request.getBodyLen() - )
-			for (int i = 0; i != bytes; i++)
-				buf[i] = buf[i + h_len];
-*/
+static int	files_constructor(t_diff *f1, t_diff *f2)
+{
+	f1->fd = open(f1->filename, O_RDONLY);
+	f2->fd = open(f2->filename, O_RDONLY);
+	if (!f1->fd || !f2->fd)
+		return (end(f1, f2, 1));
+	f1->bf = malloc(f1->filesize + 3);
+	f2->bf = malloc(f2->filesize + 3);
+	if (!f1->bf || !f2->bf)
+		return (end(f1, f2, 4));
+	if (read(f1->fd, f1->bf, f1->filesize) != f1->filesize)
+		return (end(f1, f2, 2));
+	if (read(f2->fd, f2->bf, f2->filesize) != f2->filesize)
+		return (end(f1, f2, 3));
+	f1->left = f1->filesize + 3;
+	f2->left = f2->filesize + 3; 
+	f1->bf[f1->filesize] = 'E';
+	f2->bf[f2->filesize] = 'E';
+	f1->bf[f1->filesize + 1] = 'O';
+	f2->bf[f2->filesize + 1] = 'O';
+	f1->bf[f1->filesize + 2] = 'F';
+	f2->bf[f2->filesize + 2] = 'F';
+	return (0);
+}
+
+static int	stat_syscall(int ac, char **av, t_diff *f1, t_diff *f2)
+{
+	struct stat f1_stat;
+	struct stat f2_stat;
+
+	if (ac != 3)
+		return (write(1, "you must pass two args: path/file1 path/file2\n", 46));
+	f1_stat = (struct stat){0};
+	f2_stat = (struct stat){0};
+	if (stat(av[1], &f1_stat))
+	{
+		write(1, av[1], strlen(av[1]));
+		return (write(1, " is invalid\n", 12));
+	}
+	if (stat(av[2], &f2_stat))
+	{
+		write(1, av[2], strlen(av[2]));
+		return (write(1, " is invalid\n", 12));
+	}
+	f1->filename = av[1];
+	f2->filename = av[2];
+	f1->filesize = f1_stat.st_size;
+	f2->filesize = f2_stat.st_size;
+	return (0);
+}
+
 static bool	ft_getline(t_diff *f)
 {
-	int	endline;//h_len
+	int	endline;
 
+	if (f->left == 0)
+		return (0);
 	endline = 0;
 	while (f->bf[endline] != '\n' && \
 	f->bf[endline] != 'E' && f->bf[endline] != 'O' && f->bf[endline] != 'F')
@@ -84,7 +120,7 @@ static bool	ft_getline(t_diff *f)
 	}
 	f->tmplen = endline;
 	++endline;
-	f->left -= endline;//trim
+	f->left -= endline;
 	f->tmp = malloc(endline);
 	if (!f->tmp)
 		return (1);
@@ -99,6 +135,12 @@ static int	bin_strcmp(char *tmp1, char *tmp2, int len1, int len2)
 {
 	int	i;
 
+	if (!tmp1 && !tmp2)
+		return (0);
+	else if (!tmp1)
+		return (-1);
+	else if (!tmp2)
+		return (1);
 	for (i = 0; i != len1 && i != len2; i++)
 	{
 		if (tmp1[i] != tmp2[i])
@@ -142,7 +184,10 @@ static void	print_diff(t_diff *f1, t_diff *f2, int newline_counter)
 
 static int	end(t_diff *f1, t_diff *f2, int ecode)
 {
-	close(f1->fd), close(f2->fd);
+	close(f1->fd);
+	close(f2->fd);
+	free(f1->bf);
+	free(f2->bf);
 	switch (ecode)
 	{
 		case 1:
@@ -153,6 +198,9 @@ static int	end(t_diff *f1, t_diff *f2, int ecode)
 			break ;
 		case 3:
 			printf("cannot read file 2 to the end\n");
+			break ;
+		case 4:
+			printf("malloc failure\n");
 			break ;
 	}
 	return (ecode);
@@ -202,6 +250,7 @@ static char	*itoa(int n, int *len)
 		str[i++] = '-';
 	str[i] = '\0';
 	reverse(str, i);
-	*len = i;
+	if (len)
+		*len = i;
 	return str;
 }
