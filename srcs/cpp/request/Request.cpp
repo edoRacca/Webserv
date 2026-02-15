@@ -60,7 +60,7 @@ Request::Request(const Request &other)
 //SECTION - checks
 
 // FIXME Quetsa funzione controlla che se uno dei membri richiesti è assente 
-// restituisce l'errore di corrispondenza e questa cosa va gestita, per ora restituiamo
+// restituisce l'errore di corrispondenza
 int	Request::checkHeader(void)
 {
 	if (this->checkVal("Host") == false)
@@ -76,8 +76,8 @@ int	Request::checkHeader(void)
 		return (this->_checkPost());
 	else if (this->_method == "DELETE")
 		return (this->_checkDelete());
-	std::cout << "\033[31mWARNING: METHOD " COLOR_RESET << this->_method;
-	std::cout << "\033[31m HAS NO PARSING!!" COLOR_RESET << std::endl << std::endl;
+	std::cout << "METHOD ==> |"<< this->_method << "|\n";
+	// std::cout << "\033[31m HAS NO PARSING!!" COLOR_RESET << std::endl << std::endl;
 	return (0);
 }
 
@@ -200,8 +200,8 @@ t_conf_location	*Request::findRightLocation(t_conf_server *srv)
 void	Request::findRightUrl(t_conf_server *srv)
 {
 	// controllo se esiste uri nelle location, altrimenti root server
-	std::cout << "\033[33m FINDRIGHTPATH: " COLOR_RESET;
-	std::cout << "url: " << getUrl() << std::endl;
+	// std::cout << "\033[33m FINDRIGHTPATH: " COLOR_RESET;
+	// std::cout << "url: " << getUrl() << std::endl;
 	t_conf_location *loc;
 
 	this->_url_orig = this->_url;
@@ -214,7 +214,8 @@ void	Request::findRightUrl(t_conf_server *srv)
 		this->_url = url_rooting(this->_url, *loc);
 	else
 		this->_url = url_rooting(this->_url, *srv);
-	std::cout << "\t---> RESULT: " << this->getUrl() << "\n";
+	// std::cout << "\t---> RESULT: " << this->getUrl() << "\n";
+	std::cout << "findRightUrl(): " << this->getUrl() << std::endl;
 }
 
 // NOTE - controlliamo se autoindex e index sono settati e li impostiamo
